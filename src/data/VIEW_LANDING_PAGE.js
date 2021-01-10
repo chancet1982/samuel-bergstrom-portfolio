@@ -13,7 +13,7 @@ export const VIEW_LANDING_PAGE = [
           overline: "Samuel Bergström",
           title: (
             <>
-              A <mark>typical</mark> designer
+              A <mark>non-typical</mark> designer
             </>
           ),
           imageUrl: "assets/new-cover2.jpg",
