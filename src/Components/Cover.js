@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import {
   motion,
@@ -7,7 +7,6 @@ import {
   useSpring,
 } from "framer-motion";
 import PropTypes from "prop-types";
-import { useIntersection } from "react-use";
 import TitleAndText from "./TitleAndText";
 import Overline from "./Overline";
 import breakpoints from "../theme/breakpoints";
@@ -24,10 +23,6 @@ const StyledCover = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   overflow: hidden;
-  /*${({ bgColor }) =>
-    bgColor && {
-      backgroundColor: bgColor,
-    }};*/
 `;
 
 const StyledCoverImage = styled(motion.div)`
@@ -90,19 +85,6 @@ const StyledBlindEffect = styled(motion.div)`
 `;
 
 const Cover = ({ overline, title, text, imageUrl, bgColor }) => {
-  const [inView, setInView] = useState(false);
-  const intersectionRef = React.useRef(null);
-  const intersection = useIntersection(intersectionRef, {
-    threshold: 0,
-  });
-
-  useEffect(() => {
-    const inViewNow = intersection && intersection.intersectionRatio > 0;
-    if (inViewNow) {
-      return setInView(inViewNow);
-    }
-  }, [intersection]);
-
   const { scrollYProgress } = useViewportScroll();
   const yRange = [0, 0.1];
   const scaleRange = [1, 1.2];
@@ -164,7 +146,6 @@ const Cover = ({ overline, title, text, imageUrl, bgColor }) => {
 
   return (
     <StyledCover
-      ref={intersectionRef}
       bgColor={bgColor}
       variants={coverVariants}
       initial="hidden"

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
@@ -25,7 +25,7 @@ const Input = ({ type, value, name, required }) => {
     }
   };
 
-  const getHintText = () => {
+  /*const getHintText = () => {
     switch (type) {
       case "text":
         return "Cannot be empty";
@@ -36,7 +36,7 @@ const Input = ({ type, value, name, required }) => {
       default:
         return "Cannot be empty";
     }
-  };
+  };*/
 
   return (
     <StyledInput

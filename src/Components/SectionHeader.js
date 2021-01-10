@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { useIntersection } from "react-use";
 import Title from "./Elements/Title";
 
 const StyledSectionHeader = styled(motion.header)`
@@ -19,7 +18,6 @@ const StyledSectionHeader = styled(motion.header)`
     margin: 0;
     font-weight: 500;
     writing-mode: vertical-lr;
-    /*text-transform: uppercase;*/
     padding: 2rem 0;
     width: fit-content;
     display: inline-block;
@@ -41,42 +39,8 @@ const StyledSectionHeader = styled(motion.header)`
 `;
 
 const SectionHeader = ({ children, light, disableAnimations }) => {
-  const [inView, setInView] = useState(false);
-  const intersectionRef = React.useRef(null);
-  const intersection = useIntersection(intersectionRef, {
-    threshold: 0,
-  });
-
-  useEffect(() => {
-    const inViewNow = intersection && intersection.intersectionRatio > 0;
-    if (inViewNow) {
-      return setInView(inViewNow);
-    }
-  }, [intersection]);
-
-  /* const sectionHeaderVariants = {
-    inView: {
-      x: "0%",
-      opacity: 1,
-      rotate: 90,
-      transition: { delay: 0.6, type: "spring", damping: 20 },
-    },
-    hidden: {
-      x: "-100%",
-      opacity: 0,
-      rotate: 90,
-      transition: { type: "spring", damping: 20 },
-    },
-  }; */
-
   return (
-    <StyledSectionHeader
-      ref={intersectionRef}
-      light={light}
-      /* initial="hidden"
-      animate={disableAnimations || inView ? "inView" : "hidden"}
-      variants={sectionHeaderVariants} */
-    >
+    <StyledSectionHeader light={light}>
       <Title h={5}>{children}</Title>
     </StyledSectionHeader>
   );
