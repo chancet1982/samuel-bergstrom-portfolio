@@ -34,6 +34,7 @@ const StyledFinalResult = styled(motion.div)`
   height: fit-content;
 `;
 
+//TODO: fix layout on mobile.
 const FinalResult = ({ imageUrl, bgColor, title, text, results }) => {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);

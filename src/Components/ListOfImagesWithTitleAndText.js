@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import ImageWithTitleAndText from "./ImageWithTitleAndText";
 import padding from "../theme/padding";
 
+//TODO: fix layout on mobile and generally
 const StyledListOfImagesWithTitleAndText = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);

@@ -190,6 +190,7 @@ const StyledMenuToggler = styled(motion.a)`
   }
 `;
 
+//TODO: Fix nicer menu on mobile
 const Navigation = () => {
   const { width } = useWindowSize();
   const isDesktop = width >= breakpoints.desktop;

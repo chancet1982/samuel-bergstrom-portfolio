@@ -13,6 +13,8 @@ const StyledDiv = styled.div`
   padding-bottom: ${padding.vertical.half};
 `;
 
+//TODO: better styling for the textarea.
+//TODO: fix email input onChange event to hold the value
 const ContactForm = () => {
   const [status, setStatus] = useState("");
 

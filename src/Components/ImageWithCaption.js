@@ -6,6 +6,7 @@ import { useIntersection } from "react-use";
 import Image from "./Elements/Image";
 import { variants } from "../animations/animations";
 import padding from "../theme/padding";
+import Span from "./Elements/Span";
 
 /* TODO: investigate if we could remove this */
 
@@ -80,7 +81,11 @@ const ImageWithCaption = ({
         withCaption={!!caption}
         inTextbox={inTextbox}
       />
-      {caption && <StyledCaption>{caption}</StyledCaption>}
+      {caption && (
+        <StyledCaption>
+          <Span small>{caption}</Span>
+        </StyledCaption>
+      )}
     </StyledImageWithCaption>
   );
 };

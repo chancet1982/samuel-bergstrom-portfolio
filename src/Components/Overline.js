@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useIntersection } from "react-use";
 import { variants } from "../animations/animations";
+import Span from "./Elements/Span";
 
 const StyledOverline = styled(motion.div)`
   color: ${({
@@ -52,7 +53,7 @@ const Overline = ({ children, light, sectionOverline, disableAnimations }) => {
       variants={sectionOverline ? sectionOverlineVariants : variants}
       sectionOverline={sectionOverline}
     >
-      {children}
+      <Span small>{children}</Span>
     </StyledOverline>
   );
 };

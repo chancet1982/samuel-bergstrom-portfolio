@@ -10,6 +10,7 @@ import List from "../Components/Elements/List";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 
+//TODO: image gallery "red" background showing through images.
 export const CASE_1 = {
   caseStatus: CASE_STATUS.PUBLISHED,
   thumbnail: {
