@@ -1,0 +1,77 @@
+/*
+typography settings for Mobile
+
+inc: .25
+line-height inc: .1
+*/
+
+h1 {
+  font-size: 3.054rem;
+  line-height: 1;
+  margin-block-start: 2rem;
+  margin-block-end: 1rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 2.443rem;
+  line-height: 1.1;
+  margin-block-start: 1rem;
+  margin-block-end: 1rem;
+  font-weight: bold;
+}
+
+h3 {
+  font-size: 1.954rem;
+  line-height: 1.2;
+  margin-block-start: 0.75rem;
+  margin-block-end: 0.75rem;
+  font-weight: bold;
+}
+
+h4 {
+  font-size: 1.563rem;
+  line-height: 1.3;
+  margin-block-start: 0.5rem;
+  margin-block-end: 0.5rem;
+  font-weight: bold;
+}
+
+q {
+  font-size: 1.563rem;
+  line-height: 1.3;
+  margin-block-start: 0.5rem;
+  margin-block-end: 0.5rem;
+}
+
+h5 {
+  font-size: 1.25rem;
+  line-height: 1.4;
+  margin-block-start: 0.25rem;
+  margin-block-end: 0.25rem;
+  font-weight: bold;
+}
+
+li,
+a,
+p {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-block-start: 0.25rem;
+  margin-block-end: 0.75rem;
+}
+
+.small {
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+.large {
+  font-size: 1.25rem;
+  line-height: 1.4;
+}
+
+li {
+  margin-block-start: 0.25rem;
+  margin-block-end: 0.25rem;
+}

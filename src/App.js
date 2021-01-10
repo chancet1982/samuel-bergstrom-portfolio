@@ -1,0 +1,65 @@
+import React, { Suspense, lazy } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { ThemeProvider } from "styled-components";
+import AppContextProvider from "./Context/AppContext";
+import ViewLoading from "./Components/Views/ViewLoading";
+import Navigation from "./Components/Navigation";
+import Footer from "./Components/Footer";
+import ErrorBoundary from "./Components/ErrorBoundary";
+import ScrollToTop from "./utils/ScrollToTop";
+import theme from "./theme/theme";
+
+const ViewLandingPage = lazy(() =>
+  import("./Components/Views/ViewLandingPage")
+);
+
+const ViewCase = lazy(() => import("./Components/Views/ViewCase"));
+
+const ViewCases = lazy(() => import("./Components/Views/ViewCases"));
+
+const ViewAboutMe = lazy(() => import("./Components/Views/ViewAboutMe"));
+
+const ViewContact = lazy(() => import("./Components/Views/ViewContact"));
+
+const ViewTestTypography = lazy(() =>
+  import("./Components/Views/ViewTestTypography")
+);
+
+const ViewPageNotFound = lazy(() =>
+  import("./Components/Views/ViewPageNotFound")
+);
+
+function App() {
+  return (
+    <ThemeProvider theme={theme}>
+      <ErrorBoundary>
+        <AppContextProvider>
+          <Router>
+            <Navigation />
+            <Suspense fallback={<ViewLoading />}>
+              <ScrollToTop />
+              <Switch>
+                <Route exact path="/" component={ViewLandingPage} />
+                <Route exact path="/cases" component={ViewCases} />
+                <Route exact path="/cases/:id" component={ViewCase} />
+                <Route exact path="/about" component={ViewAboutMe} />
+                <Route exact path="/contact" component={ViewContact} />
+                {/*<Route exact path="/test" component={ViewTest} />*/}
+                <Route
+                  exact
+                  path="/typography"
+                  component={ViewTestTypography}
+                />
+                <Route exact path="/loading" component={ViewLoading} />
+                <Route exact path="*" component={ViewPageNotFound} />
+              </Switch>
+            </Suspense>
+            <Footer />
+          </Router>
+        </AppContextProvider>
+      </ErrorBoundary>
+    </ThemeProvider>
+  );
+}
+
+export default App;
