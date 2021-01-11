@@ -175,7 +175,7 @@ export const CASE_1 = {
             ),
             imageUrl: "assets/case-1/flow-mapping.jpg",
             imageAlt: "Flow mapping stock photography",
-            caption: "TODO: REPLACE ME Flow mapping stock photography",
+            caption: "Flow mapping stock photography",
           },
         },
         {
@@ -234,7 +234,7 @@ export const CASE_1 = {
             items: [
               {
                 imageUrl: "assets/case-1/sneakpeek-1.png",
-                imageAlt: "TODO: REPLACE ME",
+                imageAlt: "Easy access to common discrepancies",
                 title: "Easy access to common discrepancies",
                 text: (
                   <>
@@ -255,7 +255,7 @@ export const CASE_1 = {
               },
               {
                 imageUrl: "assets/case-1/sneakpeek-2.png",
-                imageAlt: "TODO: REPLACE ME",
+                imageAlt: "Making route messages prominant",
                 title: "Making route messages prominant",
                 text: (
                   <>
@@ -276,7 +276,7 @@ export const CASE_1 = {
               },
               {
                 imageUrl: "assets/case-1/sneakpeek-3.png",
-                imageAlt: "TODO: REPLACE ME",
+                imageAlt: "Adding support for long customer names",
                 title: "Adding support for long customer names",
                 text: (
                   <>

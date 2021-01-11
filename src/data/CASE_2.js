@@ -217,7 +217,7 @@ export const CASE_2 = {
             items: [
               {
                 imageUrl: "assets/case-2/sneakpeek-1.png",
-                imageAlt: "TODO: REPLACE ME",
+                imageAlt: "Reducing friction in self-reporting.",
                 title: "Reducing friction in self-reporting.",
                 text: (
                   <>
@@ -244,7 +244,7 @@ export const CASE_2 = {
               },
               {
                 imageUrl: "assets/case-2/sneakpeek-2.png",
-                imageAlt: "TODO: REPLACE ME",
+                imageAlt: "Finding dialysis clinics abroad",
                 title: "Finding dialysis clinics abroad",
                 text: (
                   <>
@@ -263,7 +263,7 @@ export const CASE_2 = {
               },
               {
                 imageUrl: "assets/case-2/sneakpeek-3.png",
-                imageAlt: "TODO: REPLACE ME",
+                imageAlt: "Health tips, not values",
                 title: "Health tips, not values",
                 text: (
                   <>
@@ -283,7 +283,7 @@ export const CASE_2 = {
               },
               {
                 imageUrl: "assets/case-2/sneakpeek-4.png",
-                imageAlt: "TODO: REPLACE ME",
+                imageAlt: "Medication reminders",
                 title: "Medication reminders",
                 text: (
                   <>

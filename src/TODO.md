@@ -1,5 +1,7 @@
 TODO list (What's left before you're done)
 
+Add authentication
+
 /_ FIX ME_/
 Vertical spacing between sections.
 Cover caption needs padding to the right.

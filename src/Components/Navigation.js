@@ -67,6 +67,7 @@ const StyledMenu = styled(motion.menu)`
   align-items: center;
 `;
 
+//TODO: logo should link back to home
 //TODO: menu links need hover on desktop
 //TODO: menu link missing link to typography
 const StyledNavLink = styled(NavLink)`

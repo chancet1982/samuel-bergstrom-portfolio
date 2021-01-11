@@ -8,17 +8,9 @@ import { variants } from "../animations/animations";
 import padding from "../theme/padding";
 import Span from "./Elements/Span";
 
-/* TODO: investigate if we could remove this */
+//TODO: investigate if we could remove this
 
 const StyledImageWithCaption = styled(motion.figure)`
-  /*${({ inGallery, columns, height }) =>
-    !inGallery && {
-      gridColumn: columns,
-      height,
-      paddingTop: padding.vertical.double,
-      paddingBottom: padding.vertical.double,
-    }}*/
-
   margin: 0;
   grid-area: ${({ gridArea }) => gridArea};
   overflow: hidden;
@@ -44,7 +36,6 @@ const ImageWithCaption = ({
   inTextbox,
   disableAnimations,
   padded,
-  /* size: { columns, height }, */
   gridArea,
 }) => {
   const [inView, setInView] = useState(false);
@@ -64,13 +55,11 @@ const ImageWithCaption = ({
     <StyledImageWithCaption
       ref={intersectionRef}
       inGallery={inGallery}
-      /* columns={!gridArea && columns} */
       gridArea={gridArea}
       initial="hidden"
       variants={variants}
       animate={disableAnimations || inView ? "inView" : "hidden"}
       padded={padded}
-      /* height={!gridArea && height} */
     >
       <Image
         imageUrl={`${process.env.PUBLIC_URL}/${imageUrl}`}
