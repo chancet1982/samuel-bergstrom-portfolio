@@ -36,7 +36,7 @@ const StyledScreenTransitionContent = styled(motion.div)`
 `;
 
 const StyledScreenTransition = styled(motion.div)`
-  background: ${({ bgColor, theme: { colors } }) => bgColor || colors.dark};
+  background: ${({ bgColor, theme: { colors } }) => bgColor || colors.darkgray};
   position: absolute;
   top: 0;
   right: 0;

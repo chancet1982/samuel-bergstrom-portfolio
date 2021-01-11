@@ -51,7 +51,7 @@ const StyledMenu = styled(motion.menu)`
     right: 0;
     width: 100vw;
     height: calc(100vh - 5.5rem);
-    background: ${colors.dark};
+    background: ${colors.darkgray};
     padding-top: 5.5rem;
     flex-direction: column;
     z-index: -1;

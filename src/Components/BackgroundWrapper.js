@@ -6,7 +6,7 @@ const StyledBackground = styled.div`
   height: 100%;
   width: 100%;
   background-color: ${({ bgColor, theme: { colors } }) =>
-    bgColor || colors.light};
+    bgColor || colors.offwhite};
 `;
 
 const BackgroundWrapper = ({ bgColor, children }) => {

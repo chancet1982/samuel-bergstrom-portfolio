@@ -9,21 +9,6 @@ const StyledText = styled.div`
       colors: { text },
     },
   }) => (light ? text.light.medium : text.dark.medium)};
-
-  /*ul {
-    list-style-type: none;
-    padding-inline-start: 0px;
-
-    li:before {
-      display: inline-block;
-      content: "-";
-      width: 1rem;
-      margin-left: -1rem;
-      color: ${({
-    theme: { colors },
-  }) => colors.primary};
-    }
-  }*/
 `;
 
 const Text = ({ children, light }) => {

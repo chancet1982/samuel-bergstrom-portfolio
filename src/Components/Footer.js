@@ -5,7 +5,7 @@ import Span from "./Elements/Span";
 
 const StyledFooter = styled.footer`
   padding: ${padding.vertical.double} ${padding.horizontal.quadruple};
-  background-color: ${({ theme: { colors } }) => colors.light};
+  background-color: ${({ theme: { colors } }) => colors.offwhite};
   position: relative;
 
   p {

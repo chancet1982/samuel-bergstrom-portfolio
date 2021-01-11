@@ -79,9 +79,9 @@ const CoverTransition = styled(motion.div)`
 const StyledBlindEffect = styled(motion.div)`
   background-color: ${({
     theme: {
-      colors: { light },
+      colors: { offwhite },
     },
-  }) => light};
+  }) => offwhite};
 `;
 
 //TODO: Add better image for landing page.

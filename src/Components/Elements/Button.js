@@ -8,7 +8,7 @@ import shadows from "../../theme/shadows";
 const StyledButton = styled.button`
   padding: ${padding.vertical.half} ${padding.horizontal.quadruple};
   background-color: ${({ dark, light }) =>
-    dark ? colors.dark : light ? colors.light : colors.primary};
+    dark ? colors.darkgray : light ? colors.offwhite : colors.primary};
   color: ${({ dark, light }) =>
     dark
       ? colors.text.light.high

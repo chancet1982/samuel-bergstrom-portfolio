@@ -15,14 +15,8 @@ const colors = {
     },
   },
   primary: "#F8C62A",
-  /* text_new: {
-    high: "rgba(0, 0, 0, 0.88)",
-    medium: "rgba(0, 0, 0, 0.64)",
-    low: "rgba(0, 0, 0, 0.48)",
-  }, */
-  light: "#F6F6F6" /* More monochrome layout */,
-  dark: "#333333" /* More monochrome layout */,
-  /*  */
+  offwhite: "#F6F6F6" /* More monochrome layout */,
+  darkgray: "#333333" /* More monochrome layout */,
 };
 
 export default colors;

@@ -25,9 +25,9 @@ const StyledOverviewText = styled.div`
 
   background-color: ${({
     theme: {
-      colors: { light },
+      colors: { offwhite },
     },
-  }) => light};
+  }) => offwhite};
 
   padding-top: ${padding.vertical.quadruple};
   padding-right: ${padding.horizontal.quadruple};
