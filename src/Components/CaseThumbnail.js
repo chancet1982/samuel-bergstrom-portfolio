@@ -14,7 +14,6 @@ import Span from "./Elements/Span";
 import shadows from "../theme/shadows";
 
 const StyledCaseThumbnail = styled(motion.div)`
-  height: 41.919vw;
   flex: 1 1 150px;
   display: flex;
   align-items: center;
@@ -25,6 +24,15 @@ const StyledCaseThumbnail = styled(motion.div)`
 
   @media (max-width: ${breakpoints.tablet}px) {
     height: 83.96vw;
+  }
+
+  @media (min-width: ${breakpoints.tablet}px) and (max-width: ${breakpoints.desktop -
+    1}px) {
+    height: 49.25vw;
+  }
+
+  @media (min-width: ${breakpoints.desktop}px) {
+    height: 32.828vw;
   }
 
   a {

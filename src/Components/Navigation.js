@@ -50,9 +50,10 @@ const StyledMenu = styled(motion.menu)`
     top: 0rem;
     right: 0;
     width: 100vw;
-    height: calc(100vh - 5.5rem);
+    height: calc(100vh - 11rem);
     background: ${colors.darkgray};
     padding-top: 5.5rem;
+    padding-bottom: 5.5rem;
     flex-direction: column;
     z-index: -1;
     align-items: center;
@@ -131,8 +132,8 @@ const StyledNavLink = styled(NavLink)`
     display: block;
     padding: 0 3vw;
     flex: 1;
-    height: calc(25vh - 5.5rem / 4);
-    line-height: calc(25vh - 5.5rem / 4);
+    height: calc(25vh - 11rem / 4);
+    line-height: calc(25vh - 11rem / 4);
     width: 100%;
     text-align: center;
   }

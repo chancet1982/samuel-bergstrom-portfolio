@@ -32,7 +32,7 @@ export const VIEW_LANDING_PAGE = [
           light: true,
           title: (
             <>
-              Some of the <mark>client cases</mark>.
+              Some of <mark>my work</mark>
             </>
           ),
           text: (

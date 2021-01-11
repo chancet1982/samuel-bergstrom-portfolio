@@ -12,7 +12,7 @@ export const VIEW_CASES = [
         data: {
           title: (
             <>
-              Some of the <mark>client cases</mark>.
+              Some of <mark>my work</mark>
             </>
           ),
           text: (

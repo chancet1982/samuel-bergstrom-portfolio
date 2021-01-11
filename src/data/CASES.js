@@ -6,6 +6,6 @@ import { CASE_5 } from "./CASE_5";
 import { CASE_6 } from "./CASE_6";
 import { CASE_7 } from "./CASE_7";
 
-const CASES = [CASE_1, CASE_2, CASE_3, CASE_4, CASE_5, CASE_6, CASE_7];
+const CASES = [CASE_2, CASE_1, CASE_3, CASE_4, CASE_5, CASE_6, CASE_7];
 
 export default CASES;

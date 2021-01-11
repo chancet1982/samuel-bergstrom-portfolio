@@ -13,22 +13,31 @@ import { CASE_STATUS } from "../data/dictionaries/CASE_STATUS";
 
 const StyledCases = styled(motion.div)`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   column-gap: 0.25rem;
   row-gap: 0.25rem;
 
   padding-top: ${padding.vertical.quadruple};
   padding-bottom: ${padding.vertical.quadruple};
 
-  /*background-color: black;*/
+  @media (min-width: ${breakpoints.tablet}px) and (max-width: ${breakpoints.desktop -
+    1}px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: ${breakpoints.desktop}px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
 
   > div {
-    @media (max-width: ${breakpoints.tablet}px) {
-      grid-column: 1 / span 2;
-    }
-
     &:nth-child(1) {
       padding-left: ${padding.horizontal.double};
+    }
+
+    &:nth-child(2) {
+      @media (min-width: ${breakpoints.desktop}px) {
+        grid-column: 2 / span 2;
+      }
     }
   }
 `;

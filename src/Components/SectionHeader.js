@@ -4,7 +4,6 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import Title from "./Elements/Title";
 
-//TODO: Fix connection to typography.
 const StyledSectionHeader = styled(motion.header)`
   position: absolute;
   top: 0;
@@ -13,7 +12,7 @@ const StyledSectionHeader = styled(motion.header)`
   width: 2vw;
   height: 100%;
 
-  h5 {
+  h1 {
     position: sticky;
     top: 5.5rem;
     margin: 0;
@@ -22,7 +21,6 @@ const StyledSectionHeader = styled(motion.header)`
     padding: 2rem 0;
     width: fit-content;
     display: inline-block;
-    font-size: 4.8rem;
     line-height: 1;
     transform: rotateZ(180deg);
     font-family: "Fira Sans", sans-serif;
@@ -42,7 +40,7 @@ const StyledSectionHeader = styled(motion.header)`
 const SectionHeader = ({ children, light, disableAnimations }) => {
   return (
     <StyledSectionHeader light={light}>
-      <Title h={5}>{children}</Title>
+      <Title h={1}>{children}</Title>
     </StyledSectionHeader>
   );
 };
