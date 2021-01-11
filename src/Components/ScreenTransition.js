@@ -5,7 +5,6 @@ import { motion } from "framer-motion";
 import { AppContext } from "../Context/AppContext";
 import Title from "./Elements/Title";
 import padding from "../theme/padding";
-import breakpoints from "../theme/breakpoints";
 
 const StyledCardFace = styled(motion.div)`
   background: ${({
@@ -20,24 +19,25 @@ const StyledCardFace = styled(motion.div)`
 const StyledScreenTransitionContent = styled(motion.div)`
   display: flex;
   height: 100vh;
-  width: 100vw;
+  max-height: 100vh;
+  width: calc(100vw - 2 * ${padding.horizontal.quadruple});
+  flex-grow: 0;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   z-index: 2;
   padding-left: ${padding.horizontal.quadruple};
-  padding-right: ${padding.horizontal.double};
+  padding-right: ${padding.horizontal.quadruple};
 
-  @media (min-width: ${breakpoints.tablet}px) {
-    padding-left: 0;
-    padding-right: 0;
+  > h1 {
+    text-align: center;
   }
 `;
 
 const StyledScreenTransition = styled(motion.div)`
   background: ${({ bgColor, theme: { colors } }) => bgColor || colors.darkgray};
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   bottom: 0;
@@ -47,8 +47,6 @@ const StyledScreenTransition = styled(motion.div)`
   z-index: 1;
 `;
 
-//TODO: hide scrollbar while animating.
-//TODO: scroll to page top while animating
 //TODO: remove screen transition between page and home screen (perhaps just a short transition in case no text is being sent?)
 //TODO: longer transition first time anyone uses the site (perhaps saving with a flag not to show again for the same session)
 const ScreenTransition = ({ animationFinished }) => {
@@ -60,7 +58,7 @@ const ScreenTransition = ({ animationFinished }) => {
       opacity: [0, 0, 1, 1, 0],
       y: ["0%", "0%", "0%", "0%", "-100%"],
       transition: {
-        duration: 6,
+        duration: 60,
         times: [0, 0.2, 0.3, 0.9, 0.95],
         easing: "anticipate",
       },
@@ -73,7 +71,7 @@ const ScreenTransition = ({ animationFinished }) => {
       scale: [0, 1, 1, 1],
       y: ["0%", "0%", "0%", "-100%"],
       transition: {
-        duration: 6,
+        duration: 60,
         times: [0, 0.05, 0.95, 1],
         easing: "anticipate",
         staggerChildren: 0.2,
