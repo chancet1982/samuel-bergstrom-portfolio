@@ -63,7 +63,7 @@ const StyledCaption = styled(motion.div)`
   align-items: flex-start;
   box-sizing: border-box;
   padding-left: ${padding.horizontal.quadruple};
-  padding-right: ${padding.horizontal.double};
+  padding-right: ${padding.horizontal.quadruple};
   background-color: white;
 `;
 

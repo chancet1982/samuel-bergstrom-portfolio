@@ -16,7 +16,7 @@ const StyledTextbox = styled(motion.div)`
   > div {
     grid-column: 1 / span 3;
 
-    @media (min-width: ${breakpoints.tablet}px) {
+    @media (min-width: ${breakpoints.desktop}px) {
       grid-column: ${({ flip }) => (flip ? "3 / span 1" : "1 / span 2")};
     }
 
@@ -30,13 +30,12 @@ const StyledTextbox = styled(motion.div)`
     max-height: ${sizes.large};
     grid-column: 1 / span 3;
 
-    @media (min-width: ${breakpoints.tablet}px) {
+    @media (min-width: ${breakpoints.desktop}px) {
       grid-column: ${({ flip }) => (flip ? "1 / span 2" : "3 / span 1")};
     }
   }
 `;
 
-//TODO: fix figure in textbox to take 100% height of the textbox
 const Textbox = ({
   title,
   h,

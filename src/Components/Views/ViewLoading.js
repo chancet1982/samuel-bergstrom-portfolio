@@ -2,75 +2,67 @@ import React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import FullScreenCenteredFlexContainer from "../FullScreenCenteredFlexContainer";
-import Title from "../Elements/Title";
+import colors from "../../theme/colors";
 
-//TODO: Fix better loading screen
 const ViewLoading = () => {
-  const loadingContainerVariants = {
-    start: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-    end: {
-      transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const loadingCircleVariants = {
-    start: {
-      y: "50%",
-    },
-    end: {
-      y: "150%",
-    },
-  };
-
-  const loadingCircleTransition = {
-    duration: 0.6,
-    yoyo: Infinity,
-    ease: "easeInOut",
-  };
-
-  const LoadingContainer = styled(motion.div)`
-    background: white;
-    width: 8vw;
-    height: 8vw;
-    display: flex;
-    justify-content: space-between;
+  const LoadingSlider = styled(motion.div)`
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0.25rem;
+    overflow-x: hidden;
   `;
 
-  const LoadingCircle = styled(motion.div)`
-    background: ${({ theme: { colors } }) => colors.primary};
-    width: 2vw;
-    height: 2vw;
-    border-radius: 50%;
+  const LoadingLine = styled(motion.div)`
+    position: absolute;
+    opacity: 0.4;
+    background: ${colors.primary};
+    height: 0.25rem;
+  `;
+
+  const LoadingSubline = styled(motion.div)`
+    position: absolute;
+    background: ${colors.primary};
+    width: 150%;
+    height: 0.25rem;
+
+    &.inc {
+      animation: increase 2s infinite;
+    }
+    &.dec {
+      animation: decrease 2s 0.5s infinite;
+    }
+
+    @keyframes increase {
+      from {
+        left: -5%;
+        width: 5%;
+      }
+      to {
+        left: 130%;
+        width: 100%;
+      }
+    }
+    @keyframes decrease {
+      from {
+        left: -80%;
+        width: 80%;
+      }
+      to {
+        left: 110%;
+        width: 10%;
+      }
+    }
   `;
 
   return (
     <FullScreenCenteredFlexContainer>
-      <LoadingContainer
-        variants={loadingContainerVariants}
-        initial="start"
-        animate="end"
-      >
-        <LoadingCircle
-          variants={loadingCircleVariants}
-          transition={loadingCircleTransition}
-        />
-        <LoadingCircle
-          variants={loadingCircleVariants}
-          transition={loadingCircleTransition}
-        />
-        <LoadingCircle
-          variants={loadingCircleVariants}
-          transition={loadingCircleTransition}
-        />
-      </LoadingContainer>
-
-      <Title h={3}>Loading...</Title>
+      <LoadingSlider>
+        <LoadingLine />
+        <LoadingSubline className="inc"></LoadingSubline>
+        <LoadingSubline className="dec"></LoadingSubline>
+      </LoadingSlider>
     </FullScreenCenteredFlexContainer>
   );
 };

@@ -5,10 +5,7 @@ import { motion } from "framer-motion";
 import { useIntersection } from "react-use";
 import Image from "./Elements/Image";
 import { variants } from "../animations/animations";
-import padding from "../theme/padding";
 import Span from "./Elements/Span";
-
-//TODO: investigate if we could remove this
 
 const StyledImageWithCaption = styled(motion.figure)`
   margin: 0;

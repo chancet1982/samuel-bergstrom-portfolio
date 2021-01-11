@@ -28,7 +28,7 @@ const StyledBlockQuote = styled(motion.blockquote)`
   margin: 0 auto;
 `;
 
-//TODO: reveal on scroll (fixed under other content?)
+//TODO: (later) reveal on scroll (fixed under other content?)
 const BlockQuote = ({ cite, quote }) => {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
