@@ -95,25 +95,27 @@ const ScreenTransition = ({ animationFinished }) => {
 
   return (
     <>
-      <StyledScreenTransitionContent
-        initial="initial"
-        animate="animate"
-        variants={screenTransitionContentVariants}
-        onAnimationComplete={onComplete}
-      >
-        <Title h={1} light>
-          {content}
-        </Title>
-      </StyledScreenTransitionContent>
-      <StyledScreenTransition
-        initial="initial"
-        animate="animate"
-        variants={screenTransitionVariants}
-      >
-        <StyledCardFace variants={variants} transition={transition} />
-        <StyledCardFace variants={variants} transition={transition} />
-        <StyledCardFace variants={variants} transition={transition} />
-      </StyledScreenTransition>
+      <div style={{ height: "100vh" }}>
+        <StyledScreenTransitionContent
+          initial="initial"
+          animate="animate"
+          variants={screenTransitionContentVariants}
+          onAnimationComplete={onComplete}
+        >
+          <Title h={1} light>
+            {content}
+          </Title>
+        </StyledScreenTransitionContent>
+        <StyledScreenTransition
+          initial="initial"
+          animate="animate"
+          variants={screenTransitionVariants}
+        >
+          <StyledCardFace variants={variants} transition={transition} />
+          <StyledCardFace variants={variants} transition={transition} />
+          <StyledCardFace variants={variants} transition={transition} />
+        </StyledScreenTransition>
+      </div>
     </>
   );
 };
