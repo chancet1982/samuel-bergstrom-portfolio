@@ -48,8 +48,8 @@ const StyledCoverImage = styled(motion.div)`
 const StyledCaption = styled(motion.div)`
   grid-column: 1 / span 3;
   height: 100%;
-
-  padding-top: ${padding.vertical.double};
+  padding-top: ${padding.vertical.quadruple};
+  padding-bottom: ${padding.vertical.double};
 
   @media (min-width: ${breakpoints.desktop}px) {
     grid-column: 1 / span 1;

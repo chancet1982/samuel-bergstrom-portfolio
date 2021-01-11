@@ -88,7 +88,6 @@ const ScreenTransition = ({ animationFinished }) => {
   };
 
   const onComplete = () => {
-    console.log("Finished the animation sequence");
     animationFinished();
   };
 

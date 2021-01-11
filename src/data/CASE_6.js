@@ -6,9 +6,11 @@ import { ROLES } from "./dictionaries/ROLES";
 import { PLATFORMS } from "./dictionaries/PLATFORMS";
 import Paragraph from "../Components/Elements/Paragraph";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
+import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 
 export const CASE_6 = {
   caseStatus: CASE_STATUS.PUBLISHED,
+  caseType: CASE_TYPES.DesignOps,
   thumbnail: {
     overline: "Euro Finans",
     title: "Design system",
@@ -453,7 +455,7 @@ export const CASE_6 = {
                 </Paragraph>
               </>
             ),
-            imageUrl: "assets/case-6/final-thoughts.jpg",
+            imageUrl: "assets/case-6/final-toughts.jpg",
             imageAlt: "?",
             caption: "CTO and Legal advisor with NNg stickers on their laptops",
           },

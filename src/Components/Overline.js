@@ -7,12 +7,6 @@ import { variants } from "../animations/animations";
 import Span from "./Elements/Span";
 
 const StyledOverline = styled(motion.div)`
-  color: ${({
-    light,
-    theme: {
-      colors: { text },
-    },
-  }) => (light ? text.light.medium : text.dark.medium)};
   text-transform: uppercase;
   position: relative;
 `;
@@ -53,7 +47,9 @@ const Overline = ({ children, light, sectionOverline, disableAnimations }) => {
       variants={sectionOverline ? sectionOverlineVariants : variants}
       sectionOverline={sectionOverline}
     >
-      <Span small>{children}</Span>
+      <Span small light={light}>
+        {children}
+      </Span>
     </StyledOverline>
   );
 };

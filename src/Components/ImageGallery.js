@@ -14,7 +14,6 @@ const StyledImageGallery = styled.div`
 `;
 
 const ImageGallery = ({ images, template }) => {
-  console.log("TEMPLATE:", template);
   return (
     <StyledImageGallery template={template}>
       {images.map(({ imageUrl, imageAlt, caption }, index) => (

@@ -13,11 +13,11 @@ import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 /* there is an IMAGE_WITH_CAPTION here that is wrong. */
 export const CASE_4 = {
   caseStatus: CASE_STATUS.COMING_SOON,
-  caseType: CASE_TYPES.REDESIGN,
+  caseType: CASE_TYPES.CONCEPT,
   thumbnail: {
-    overline: "NoWaste",
-    title: "e-drop",
-    imageUrl: "assets/case-4/thumbnail.png",
+    overline: "Mitsubishi Electric",
+    title: "e-commerce",
+    imageUrl: "assets/case-8/thumbnail.png",
     imageAlt: "thumbnail",
     text: "Delivery, unattended",
     bgColor: "rgba(99, 182, 187, .72)",
@@ -31,7 +31,7 @@ export const CASE_4 = {
           data: {
             overline: "NoWaste",
             title: "e-drop",
-            imageUrl: "assets/case-4/cover.png",
+            imageUrl: "assets/case-8/cover.png",
             text: (
               <>
                 <Paragraph large>Delivery, unattended</Paragraph>
@@ -100,19 +100,19 @@ export const CASE_4 = {
             template: IMAGE_GALLERY_TEMPLATES.FOUR_IMAGES_TWO_COLUMNS,
             images: [
               {
-                imageUrl: "assets/case-4/mood-1.jpg",
+                imageUrl: "assets/case-8/mood-1.jpg",
                 imageAlt: "?",
               },
               {
-                imageUrl: "assets/case-4/mood-2.jpg",
+                imageUrl: "assets/case-8/mood-2.jpg",
                 imageAlt: "?",
               },
               {
-                imageUrl: "assets/case-4/mood-3.jpg",
+                imageUrl: "assets/case-8/mood-3.jpg",
                 imageAlt: "?",
               },
               {
-                imageUrl: "assets/case-4/mood-4.png",
+                imageUrl: "assets/case-8/mood-4.png",
                 imageAlt: "?",
               },
             ],
@@ -220,7 +220,7 @@ export const CASE_4 = {
             items: [
               {
                 bgColor: "rgba(9, 93, 132, .28)",
-                imageUrl: "assets/case-4/before.png",
+                imageUrl: "assets/case-8/before.png",
                 imageAlt: "Flows before redesign",
                 title: "Flows before redesign",
                 text: (
@@ -233,7 +233,7 @@ export const CASE_4 = {
               },
               {
                 bgColor: "rgba(9, 93, 132, .28)",
-                imageUrl: "assets/case-4/after.png",
+                imageUrl: "assets/case-8/after.png",
                 imageAlt: "Flows before redesign",
                 title: "Flows before redesign",
                 text: (
@@ -407,7 +407,7 @@ export const CASE_4 = {
         {
           template: SECTION_ELEMENTS.RESULT,
           data: {
-            imageUrl: "assets/case-4/result.png",
+            imageUrl: "assets/case-8/result.png",
             bgColor: "rgba(99, 182, 187, .72)",
             results: [
               {

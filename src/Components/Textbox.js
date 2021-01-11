@@ -14,30 +14,29 @@ const StyledTextbox = styled(motion.div)`
   grid-template-columns: repeat(3, 1fr);
 
   > div {
-    grid-column:1 / span 3;
+    grid-column: 1 / span 3;
 
     @media (min-width: ${breakpoints.tablet}px) {
-      grid-column:${({ flip }) => (flip ? "3 / span 1" : "1 / span 2")};
+      grid-column: ${({ flip }) => (flip ? "3 / span 1" : "1 / span 2")};
     }
-    
-    p, li {
-      max-width:80ch;
-    }
-  } 
 
+    p,
+    li {
+      max-width: 80ch;
+    }
   }
 
   > figure {
-    max-height:${sizes.large};
-    grid-column:1 / span 3;
+    max-height: ${sizes.large};
+    grid-column: 1 / span 3;
 
     @media (min-width: ${breakpoints.tablet}px) {
-      grid-column:${({ flip }) => (flip ? "1 / span 2" : "3 / span 1")};
+      grid-column: ${({ flip }) => (flip ? "1 / span 2" : "3 / span 1")};
     }
-  }
   }
 `;
 
+//TODO: fix figure in textbox to take 100% height of the textbox
 const Textbox = ({
   title,
   h,
@@ -74,7 +73,6 @@ const Textbox = ({
           imageUrl={imageUrl}
           imageAlt={imageAlt}
           caption={caption}
-          /* size={IMAGE_WITH_CAPTION_SIZES.MEDIUM_SINGLE_LEFT} */
           disableAnimations
           inTextbox
         />
@@ -89,7 +87,6 @@ const Textbox = ({
           imageUrl={imageUrl}
           imageAlt={imageAlt}
           caption={caption}
-          /* size={IMAGE_WITH_CAPTION_SIZES.MEDIUM_SINGLE_RIGHT} */
           disableAnimations
           inTextbox
         />

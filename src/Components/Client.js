@@ -22,7 +22,6 @@ const Client = ({ imageUrl, imageAlt }) => {
     }
   }, [intersection]);
 
-  console.log(imageUrl);
   return (
     <StyledClient
       ref={intersectionRef}

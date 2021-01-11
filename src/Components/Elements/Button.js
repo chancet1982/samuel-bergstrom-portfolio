@@ -16,7 +16,7 @@ const StyledButton = styled.button`
       ? colors.text.dark.high
       : colors.text.dark.high};
   border: none;
-  box-shadow: ${shadows.short};
+  ${shadows.short};
   border-radius: ${padding.vertical.single};
 `;
 

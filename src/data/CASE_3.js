@@ -6,10 +6,12 @@ import Paragraph from "../Components/Elements/Paragraph";
 import { ROLES } from "./dictionaries/ROLES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
+import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 
 // eslint-disable-next-line import/prefer-default-export
 export const CASE_3 = {
   caseStatus: CASE_STATUS.PUBLISHED,
+  caseType: CASE_TYPES.DESIGN,
   thumbnail: {
     overline: "Lumens",
     title: "Lumito",

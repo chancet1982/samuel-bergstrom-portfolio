@@ -18,7 +18,6 @@ const View = ({ children, padded, transition }) => {
   const removeTransition = () => {
     setScreenTransition(false);
   };
-  console.log(screenTransition);
   return screenTransition ? (
     <ScreenTransition animationFinished={() => removeTransition()} />
   ) : (

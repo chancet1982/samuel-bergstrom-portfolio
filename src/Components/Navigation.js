@@ -10,6 +10,8 @@ import { useScrollDirection } from "../utils/useScrollDirection";
 import breakpoints from "../theme/breakpoints";
 import padding from "../theme/padding";
 import { ReactComponent as Logo } from "../assets/logo.svg";
+import colors from "../theme/colors";
+import shadows from "../theme/shadows";
 
 const StyledNavigation = styled(motion.nav)`
   height: 5.5rem;
@@ -17,8 +19,8 @@ const StyledNavigation = styled(motion.nav)`
   top: 0;
   background-color: rgba(255, 255, 255, 0);
   width: 100%;
-  padding-left: ${padding.horizontal.double};
-  padding-right: ${padding.horizontal.double};
+  padding-left: ${padding.horizontal.quadruple};
+  padding-right: ${padding.horizontal.quadruple};
   z-index: 1;
   box-sizing: border-box;
   display: flex;
@@ -40,11 +42,6 @@ const StyledLogo = styled.div`
   }) => text.dark.high};
   font-weight: 600;
   padding-right: ${padding.horizontal.half};
-  padding-left: ${padding.horizontal.double};
-
-  @media (min-width: ${breakpoints.desktop}px) {
-    padding-left: 0;
-  }
 `;
 
 const StyledMenu = styled(motion.menu)`
@@ -53,11 +50,13 @@ const StyledMenu = styled(motion.menu)`
     top: 0rem;
     right: 0;
     width: 100vw;
-    height: calc(100vh - 4rem);
-    background: white;
+    height: calc(100vh - 5.5rem);
+    background: ${colors.dark};
     padding-top: 5.5rem;
     flex-direction: column;
     z-index: -1;
+    align-items: center;
+    justify-content: center;
   }
 
   margin: 0;
@@ -68,44 +67,73 @@ const StyledMenu = styled(motion.menu)`
   align-items: center;
 `;
 
+//TODO: menu links need hover on desktop
+//TODO: menu link missing link to typography
 const StyledNavLink = styled(NavLink)`
+  text-decoration: none;
+  font-weight: 400;
+  margin: 0;
+
   color: ${({
     theme: {
       colors: { text },
     },
-  }) => text.dark.medium};
-  text-decoration: none;
-  font-weight: 400;
-  margin: 0;
+  }) => text.light.medium};
 
   &.active {
     color: ${({
       theme: {
         colors: { text },
       },
-    }) => text.dark.high};
+    }) => text.light.high};
     font-weight: 600;
   }
 
-  &.primary {
-    background-color: ${({
-      theme: {
-        colors: { primary },
-      },
-    }) => primary};
-    border-radius: 2rem;
+  @media (max-width: ${breakpoints.desktop - 1}px) {
+    font-size: 3.4529765914192145rem;
+    font-family: "Lora", serif;
+  }
+
+  @media (min-width: ${breakpoints.desktop}px) {
     color: ${({
       theme: {
         colors: { text },
       },
-    }) => text.dark.high};
-    font-weight: 600;
+    }) => text.dark.medium};
+
+    &.active {
+      color: ${({
+        theme: {
+          colors: { text },
+        },
+      }) => text.dark.high};
+    }
+
+    &.primary {
+      background-color: ${({
+        theme: {
+          colors: { primary },
+        },
+      }) => primary};
+      border-radius: 0.25rem;
+      ${shadows.short};
+      color: ${({
+        theme: {
+          colors: { text },
+        },
+      }) => text.dark.high};
+      font-weight: 600;
+    }
   }
 
   @media (max-width: ${breakpoints.desktop - 1}px) {
     display: block;
     padding: 0 3vw;
-    line-height: 3rem;
+    flex: 1;
+    height: calc(25vh - 5.5rem / 4);
+    line-height: calc(25vh - 5.5rem / 4);
+    width: 100%;
+    text-align: center;
   }
 
   @media (min-width: ${breakpoints.desktop}px) {
@@ -196,7 +224,6 @@ const Navigation = () => {
   const isDesktop = width >= breakpoints.desktop;
 
   const scrollDirection = useScrollDirection();
-  console.log("scrollDirection", scrollDirection);
 
   const [, setContent] = useContext(AppContext);
 
@@ -217,8 +244,6 @@ const Navigation = () => {
   useEffect(() => {
     setExpanded(!!isDesktop);
   }, [isDesktop]);
-
-  console.log("expanded", expanded);
 
   const changeLoaderContent = (newContent) => {
     setContent(newContent);

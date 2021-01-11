@@ -61,8 +61,6 @@ const ParallaxBox = ({
     "anticipate"
   );
 
-  console.log("scrollY", scrollY);
-
   return (
     <div ref={ref} initial={{ y: 0 }} style={{ y, opacity }} {...rest}>
       {children}

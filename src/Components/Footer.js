@@ -1,14 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import padding from "../theme/padding";
-import Paragraph from "./Elements/Paragraph";
+import Span from "./Elements/Span";
 
 const StyledFooter = styled.footer`
-  padding: ${padding.vertical.double} ${padding.horizontal.double};
-  text-align: center;
+  padding: ${padding.vertical.double} ${padding.horizontal.quadruple};
   background-color: ${({ theme: { colors } }) => colors.light};
-  display: sticky;
-  bottom: 0;
+  position: relative;
 
   p {
     color: ${({
@@ -23,7 +21,7 @@ const StyledFooter = styled.footer`
 const SectionFooter = () => {
   return (
     <StyledFooter>
-      <Paragraph small>2020, Making stuff happen</Paragraph>
+      <Span small>2020, Making stuff happen</Span>
     </StyledFooter>
   );
 };

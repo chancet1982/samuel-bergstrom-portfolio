@@ -4,6 +4,7 @@ import styled from "styled-components";
 import FullScreenCenteredFlexContainer from "../FullScreenCenteredFlexContainer";
 import Title from "../Elements/Title";
 
+//TODO: Fix better loading screen
 const ViewLoading = () => {
   const loadingContainerVariants = {
     start: {

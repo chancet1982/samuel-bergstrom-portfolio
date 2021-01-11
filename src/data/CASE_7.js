@@ -9,12 +9,14 @@ import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import Title from "../Components/Elements/Title";
 import List from "../Components/Elements/List";
 import TitleAndText from "../Components/TitleAndText";
+import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 
 export const CASE_7 = {
   caseStatus: CASE_STATUS.PUBLISHED,
+  caseType: CASE_TYPES.CONCEPT,
   thumbnail: {
     overline: "Fitness24Seven",
-    title: "e-Commerce pre-study system",
+    title: "e-Commerce",
     imageUrl: "assets/case-7/thumbnail.png",
     coverImageUrl: "assets/case-7/cover.png",
     imageAlt: "assets/case-7/cover.png",

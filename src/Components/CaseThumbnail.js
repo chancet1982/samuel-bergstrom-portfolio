@@ -190,7 +190,6 @@ const CaseThumbnail = ({ data, caseKey, status }) => {
   };
 
   const renderCaseThumbnail = () => {
-    console.log(imageUrl);
     return (
       <>
         <StyledCaseThumbnailImage

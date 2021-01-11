@@ -1,5 +1,9 @@
 const CLIENTS = [
   {
+    imageUrl: "assets/clients/client-00.svg",
+    imageAlt: "Mitsubishi Electric",
+  },
+  {
     imageUrl: "assets/clients/client-01.svg",
     imageAlt: "Nasdaq OMX Nordic",
   },

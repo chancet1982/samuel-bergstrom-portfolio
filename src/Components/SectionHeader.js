@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import Title from "./Elements/Title";
 
+//TODO: Fix connection to typography.
 const StyledSectionHeader = styled(motion.header)`
   position: absolute;
   top: 0;

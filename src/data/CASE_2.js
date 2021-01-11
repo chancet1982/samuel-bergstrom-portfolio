@@ -8,9 +8,11 @@ import Paragraph from "../Components/Elements/Paragraph";
 import List from "../Components/Elements/List";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
+import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 
 export const CASE_2 = {
   caseStatus: CASE_STATUS.PUBLISHED,
+  caseType: CASE_TYPES.REDESIGN,
   thumbnail: {
     overline: "Diaverum",
     title: "d. Care",
