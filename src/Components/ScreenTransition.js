@@ -58,7 +58,7 @@ const ScreenTransition = ({ animationFinished }) => {
       opacity: [0, 0, 1, 1, 0],
       y: ["0%", "0%", "0%", "0%", "-100%"],
       transition: {
-        duration: 60,
+        duration: 6,
         times: [0, 0.2, 0.3, 0.9, 0.95],
         easing: "anticipate",
       },
@@ -71,7 +71,7 @@ const ScreenTransition = ({ animationFinished }) => {
       scale: [0, 1, 1, 1],
       y: ["0%", "0%", "0%", "-100%"],
       transition: {
-        duration: 60,
+        duration: 6,
         times: [0, 0.05, 0.95, 1],
         easing: "anticipate",
         staggerChildren: 0.2,
