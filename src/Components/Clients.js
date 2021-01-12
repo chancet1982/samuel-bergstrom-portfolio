@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { v4 as uuid } from "uuid";
 import Client from "./Client";
-import CLIENTS from "../data/CLIENTS";
+import CLIENTS from "../data/dictionaries/CLIENTS";
 import Title from "./Elements/Title";
 import padding from "../theme/padding";
 
@@ -21,6 +21,7 @@ const StyledClients = styled.div`
   }
 `;
 
+//TODO: remove clients headline, and add InView for the component
 const Clients = () => {
   const renderClients = CLIENTS.map((item) => (
     <Client

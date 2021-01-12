@@ -4,6 +4,7 @@ import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import Paragraph from "../Components/Elements/Paragraph";
 import List from "../Components/Elements/List";
 import { Link } from "react-router-dom";
+import colors from "../theme/colors.js";
 
 //TODO: (later) fix screen transition content setting
 export const VIEW_ABOUT_ME = [
@@ -73,6 +74,7 @@ export const VIEW_ABOUT_ME = [
   },
   {
     header: "Clients",
+    bgColor: colors.offwhite,
     elements: [
       {
         template: SECTION_ELEMENTS.CLIENTS,

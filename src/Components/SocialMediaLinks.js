@@ -67,7 +67,7 @@ const SocialMediaLinks = (props) => {
         target="_blank"
         rel="noopener noreferrer"
         bgColor="#0C66C2"
-        bgColorHover="Blue"
+        bgColorHover="#0B5CAF"
       >
         <Span large light>
           LinkedIn
@@ -79,7 +79,7 @@ const SocialMediaLinks = (props) => {
         target="_blank"
         rel="noopener noreferrer"
         bgColor="#F48024"
-        bgColorHover="Orange"
+        bgColorHover="#DC7320"
       >
         <Span large light>
           StackOverflow
@@ -91,7 +91,7 @@ const SocialMediaLinks = (props) => {
         target="_blank"
         rel="noopener noreferrer"
         bgColor="#1777F2"
-        bgColorHover="Teal"
+        bgColorHover="#156BDA"
       >
         <Span large light>
           Facebook
@@ -103,7 +103,7 @@ const SocialMediaLinks = (props) => {
         target="_blank"
         rel="noopener noreferrer"
         bgColor="#000000"
-        bgColorHover="Black"
+        bgColorHover={colors.darkgray}
       >
         <Span large light>
           Medium

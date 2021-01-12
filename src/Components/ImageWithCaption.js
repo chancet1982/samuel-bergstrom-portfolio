@@ -7,13 +7,11 @@ import Image from "./Elements/Image";
 import { variants } from "../animations/animations";
 import Span from "./Elements/Span";
 
+//TODO: fix caption now its on the side, might be a simple flex-column issue
 const StyledImageWithCaption = styled(motion.figure)`
   margin: 0;
   grid-area: ${({ gridArea }) => gridArea};
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 `;
 
 const StyledCaption = styled(motion.figcaption)`
