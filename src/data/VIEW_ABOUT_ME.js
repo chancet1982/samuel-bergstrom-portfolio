@@ -12,13 +12,13 @@ export const VIEW_ABOUT_ME = [
     elements: [
       {
         template: SECTION_ELEMENTS.TEXTBOX,
-        h: 1,
         data: {
           title: (
             <>
               Meet <mark>Sam</mark>
             </>
           ),
+          h: 1,
           text: (
             <>
               <Paragraph>
@@ -84,13 +84,14 @@ export const VIEW_ABOUT_ME = [
     elements: [
       {
         template: SECTION_ELEMENTS.TEXTBOX,
-        h: 4,
+
         data: {
           title: (
             <>
               Just some of my <mark>credentials</mark>:
             </>
           ),
+          h: 2,
           text: (
             <>
               <List
@@ -105,6 +106,59 @@ export const VIEW_ABOUT_ME = [
                   <>
                     <strong>Assoc. Deg.</strong> Graphic Design, College of
                     Management
+                  </>,
+                ]}
+              />
+            </>
+          ),
+        },
+      },
+    ],
+  },
+  {
+    header: "Online",
+    elements: [
+      {
+        template: SECTION_ELEMENTS.TEXTBOX,
+        data: {
+          title: (
+            <>
+              Find me on <mark>social media</mark>:
+            </>
+          ),
+          h: 2,
+          text: (
+            <>
+              <List
+                items={[
+                  <>
+                    <a
+                      href="https://www.linkedin.com/in/samuel-bergstr%C3%B6m-13bb8b1b/"
+                      target="_blank"
+                    >
+                      Linkedin
+                    </a>
+                  </>,
+                  <>
+                    <a
+                      href="https://stackoverflow.com/users/4042508/samuel-bergstr%C3%B6m"
+                      target="_blank"
+                    >
+                      Stackoverflow
+                    </a>
+                  </>,
+                  <>
+                    <a
+                      href="https://www.facebook.com/samuel.maayan"
+                      target="_blank"
+                    >
+                      Facebook
+                    </a>
+                  </>,
+                  <>
+                    <a href="https://medium.com/@chancet1982" target="_blank">
+                      Medium
+                    </a>
                   </>,
                 ]}
               />
