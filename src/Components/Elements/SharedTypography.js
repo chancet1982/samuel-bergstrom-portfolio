@@ -1,3 +1,3 @@
 const baseTypography = css`
-  //TODO: placeholder for typography
+  //NOTE: placeholder for typography
 `;

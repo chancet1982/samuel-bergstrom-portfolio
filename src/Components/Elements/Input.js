@@ -20,37 +20,11 @@ const StyledInput = styled.input`
   padding: 0.5rem;
 `;
 
-//TODO: fix some errors (pattern, value, onChange)
+//TODO: (later) add input validation
 const Input = ({ type, name, required, small, large, huge }) => {
   const handleChange = (event) => {
     event.target.checkValidity();
   };
-
-  /*const getValidationPattern = () => {
-    switch (type) {
-      case "text":
-        return ".{1,}";
-      case "email":
-        return "[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,}$";
-      case "password":
-        return "(?=.*d)(?=.*[a-z])(?=.*[A-Z]).{8,}";
-      default:
-        return ".{1,}";
-    }
-  };*/
-
-  /*const getHintText = () => {
-    switch (type) {
-      case "text":
-        return "Cannot be empty";
-      case "email":
-        return "Must contain a valid email address";
-      case "password":
-        return "Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters";
-      default:
-        return "Cannot be empty";
-    }
-  };*/
 
   return (
     <StyledInput

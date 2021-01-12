@@ -10,7 +10,7 @@ const StyledDiv = styled.div`
   padding-bottom: ${padding.vertical.half};
 `;
 
-//TODO: provide better styling for the success/error messages
+//TODO: (later) provide better styling for the success/error messages
 const ContactForm = () => {
   const [status, setStatus] = useState("");
 
