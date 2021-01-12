@@ -20,35 +20,46 @@ export const VIEW_ABOUT_ME = [
           text: (
             <>
               <Paragraph>
-                I'm a digital product designer, Accessibility nerd, A father,
+                I'm a digital product designer, Accessibility nerd, father,
                 husband, and quite a nice guy. Or at least a semi-decent human
-                being. During the last 13 years I've worked with many companies
-                operation in a wide array of domains. To name a few: Finance,
-                healthcare, and e-commerece.
+                being. During the last 13 years, I've worked with many companies
+                operating in a wide array of domains. To name a few: Finance,
+                healthcare, and e-commerce.
               </Paragraph>
               <Paragraph>
                 I believe in creating <strong>practical designs</strong>.
                 Designs that are fast to implement, easy to use, and are scaled
-                to fit. That requires more than just knowing what looks nice. It
-                requires a deeper understanding of business and technology. From
-                the business aspect of things, I believe that decisions need to
-                be based on evidence, in lack of evidence, its simply guided by
-                intuition and opinions. I believe that designers need to
-                understand code (not write code) but at least understand the
-                medium in which we operate. I write code (mostly React & Vue)
-                not to be the best developer but because it forces me to drink
-                my own soup. If I know how to develop it, im sure it would be
-                impementable. On top of that, it helps me overcome the
-                limitations of using typical prototyping tools.
+                to fit. That requires more than having an “eye” for design. It
+                requires a deeper understanding of business and technology. I
+                believe that decisions need to be based on evidence, in lack of
+                evidence, decisions are based on gut-feeling, intuition, which
+                simply creates friction and mediocre results.
               </Paragraph>
               <Paragraph>
-                When im not working I'm most likely chasing down my kids, trying
-                to prevent the next disaster from happening at home. While not
-                doing that, I make pizza... I love pizza, who doesnt? Well it is
-                more of an obssession to be honest. It took over my life a
-                couple of years ago and ive never looked back since. If that
-                sounds like something you'd like come over, and let's talk over
-                a warm slice of pizza and some cold beer
+                I don’t know if designers should code or not, but believe that a
+                basic understanding of code can only make designers better at
+                creating designs that are feasible.
+              </Paragraph>
+              <Paragraph>
+                I personally am a semi-decent coder focusing on the front-end
+                (mostly React & Vue) I do this because it forces me to drink my
+                own soup. I know what is implementable and what is just Dribbble
+                material. It helps me communicate better with team members and
+                it allows me to test my ideas at a fidelity level that is
+                impossible even using current prototyping tools. I simply do it
+                because it makes me a better designer.
+              </Paragraph>
+              <Paragraph>
+                When I’m not working I'm most likely chasing down my kids,
+                trying to prevent the next disaster from happening, from houses
+                on fire to cats in dishwashers that wonders of parenthood are
+                endless.
+              </Paragraph>
+              <Paragraph>
+                If any of this sounds interesting or if you just want to start a
+                flamewar regarding web accessibility, just reach out. I’m sure
+                we could sort it over some warm slice of pizza and some cold
+                beer.
               </Paragraph>
             </>
           ),
