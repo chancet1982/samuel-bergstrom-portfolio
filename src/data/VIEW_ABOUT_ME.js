@@ -101,31 +101,4 @@ export const VIEW_ABOUT_ME = [
       },
     ],
   },
-  {
-    header: "Timeline",
-    elements: [
-      {
-        template: SECTION_ELEMENTS.TIMELINE,
-        data: {
-          items: [
-            {
-              date: "DATE1 from data",
-              title: "TITLE1 from data",
-              content: "CONTENT1 from data",
-            },
-            {
-              date: "DATE2 from data",
-              title: "TITLE2 from data",
-              content: "CONTENT2 from data",
-            },
-            {
-              date: "DATE3 from data",
-              title: "TITLE3 from data",
-              content: "CONTENT3 from data",
-            },
-          ],
-        },
-      },
-    ],
-  },
 ];

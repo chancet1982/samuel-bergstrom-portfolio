@@ -2,7 +2,7 @@
 import React, { useContext, useEffect, useState } from "react";
 /* import PropTypes from "prop-types"; */
 import styled from "styled-components";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useWindowScroll, useWindowSize } from "react-use";
 import { AppContext } from "../Context/AppContext";
@@ -12,6 +12,7 @@ import padding from "../theme/padding";
 import { ReactComponent as Logo } from "../assets/logo.svg";
 import colors from "../theme/colors";
 import shadows from "../theme/shadows";
+import typography from "../theme/typography";
 
 const StyledNavigation = styled(motion.nav)`
   height: 5.5rem;
@@ -68,32 +69,48 @@ const StyledMenu = styled(motion.menu)`
   align-items: center;
 `;
 
+const { size } = typography;
+
 const StyledNavLink = styled(NavLink)`
+  font-size: ${size}rem;
   text-decoration: none;
   font-weight: 400;
   margin: 0;
 
-  color: ${({
-    theme: {
-      colors: { text },
-    },
-  }) => text.light.medium};
-
   &.active {
-    color: ${({
-      theme: {
-        colors: { text },
-      },
-    }) => text.light.high};
     font-weight: 600;
   }
 
   @media (max-width: ${breakpoints.desktop - 1}px) {
+    color: ${({
+      theme: {
+        colors: { text },
+      },
+    }) => text.light.medium};
+
     font-size: 3.4529765914192145rem;
     font-family: "Lora", serif;
+    display: block;
+    padding: 0 3vw;
+    flex: 1;
+    height: calc(25vh - 11rem / 4);
+    line-height: calc(25vh - 11rem / 4);
+    width: 100%;
+    text-align: center;
+
+    &.active {
+      color: ${({
+        theme: {
+          colors: { text },
+        },
+      }) => text.light.high};
+
+      background-color: ${colors.primary};
+    }
   }
 
   @media (min-width: ${breakpoints.desktop}px) {
+    padding: 0.75rem 1.25rem;
     color: ${({
       theme: {
         colors: { text },
@@ -109,6 +126,8 @@ const StyledNavLink = styled(NavLink)`
     }
 
     &.primary {
+      position: absolute;
+      right: 0;
       background-color: ${({
         theme: {
           colors: { primary },
@@ -122,25 +141,6 @@ const StyledNavLink = styled(NavLink)`
         },
       }) => text.dark.high};
       font-weight: 600;
-    }
-  }
-
-  @media (max-width: ${breakpoints.desktop - 1}px) {
-    display: block;
-    padding: 0 3vw;
-    flex: 1;
-    height: calc(25vh - 11rem / 4);
-    line-height: calc(25vh - 11rem / 4);
-    width: 100%;
-    text-align: center;
-  }
-
-  @media (min-width: ${breakpoints.desktop}px) {
-    padding: 0.75rem 1.25rem;
-
-    &.primary {
-      position: absolute;
-      right: 0;
     }
   }
 `;
@@ -217,11 +217,7 @@ const StyledMenuToggler = styled(motion.a)`
   }
 `;
 
-//TODO: logo should link back to home
-//TODO: menu links need hover on desktop
-//TODO: menu links need better selected state (maybe similar to Marked)
-//TODO: Navigation links dont have a connection to typography.
-//TODO: change contact form in the navigation to use Button and center the menu
+//TODO: (later) menu links need hover on desktop
 const Navigation = () => {
   const { width } = useWindowSize();
   const isDesktop = width >= breakpoints.desktop;
@@ -291,7 +287,9 @@ const Navigation = () => {
       variants={navVariants}
     >
       <StyledLogo>
-        <Logo />
+        <Link to="/" onClick={() => changeLoaderContent("Samuel Bergström")}>
+          <Logo />
+        </Link>
       </StyledLogo>
 
       {!isDesktop && (
@@ -311,7 +309,7 @@ const Navigation = () => {
         <StyledNavLink
           exact
           to="/"
-          onClick={() => changeLoaderContent("SAMUEL BERGSTRÖM")}
+          onClick={() => changeLoaderContent("Samuel Bergström")}
         >
           Home
         </StyledNavLink>

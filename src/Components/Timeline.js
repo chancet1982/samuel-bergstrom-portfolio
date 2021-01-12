@@ -57,11 +57,6 @@ const TimelineItem = ({ date, title, content }) => (
     <TimelineItemContent title={title}>{content}</TimelineItemContent>
   </StyledTimelineItem>
 );
-{
-  /** 
-
-     */
-}
 
 const Timeline = ({ items }) => {
   console.log(items);

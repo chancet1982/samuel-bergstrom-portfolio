@@ -11,6 +11,9 @@ const StyledImageWithCaption = styled(motion.figure)`
   margin: 0;
   grid-area: ${({ gridArea }) => gridArea};
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const StyledCaption = styled(motion.figcaption)`
