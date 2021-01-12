@@ -4,15 +4,31 @@ import FullScreenCenteredFlexContainer from "../FullScreenCenteredFlexContainer"
 import Paragraph from "../Elements/Paragraph";
 import Title from "../Elements/Title";
 import ContactForm from "../ContactForm";
-import colors from "../../theme/colors";
+import List from "../Elements/List";
 
 const ViewContact = () => {
   return (
     <View>
-      <FullScreenCenteredFlexContainer bgColor={colors.primary}>
+      <FullScreenCenteredFlexContainer>
         <Title h={4}>Get in touch</Title>
-        <Paragraph>Here will be a contact form</Paragraph>
-        <ContactForm></ContactForm>
+        <Paragraph>You can always reach out to me using</Paragraph>
+        <List
+          plain
+          items={[
+            <>
+              <Title h={5}>Email:</Title>
+              <Paragraph>chancet1982@gmail.com</Paragraph>
+            </>,
+            <>
+              <Title h={5}>Phone:</Title>
+              <Paragraph>072 545 1337</Paragraph>
+            </>,
+            <>
+              <Title h={5}>Or the form below:</Title>
+              <ContactForm></ContactForm>
+            </>,
+          ]}
+        />
       </FullScreenCenteredFlexContainer>
     </View>
   );

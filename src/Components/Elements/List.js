@@ -3,6 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { v4 as uuid } from "uuid";
+import colors from "../../theme/colors";
 
 const StyledList = styled.ul`
   list-style-type: none;
@@ -18,11 +19,14 @@ const styleListItem = (size, lh, margin) => `
 
 const StyledListItem = styled.li`
   :before {
-    display: inline-block;
-    content: "-";
-    width: 1rem;
-    margin-left: -1rem;
-    color: ${({ theme: { colors } }) => colors.primary};
+    ${({ plain }) =>
+      !plain && {
+        display: "inline-block",
+        content: "-",
+        width: "1rem",
+        marginLeft: "-1rem",
+        color: colors.primary,
+      }}
   }
 
   color: ${({ light, theme: { colors } }) =>
@@ -36,11 +40,13 @@ const StyledListItem = styled.li`
   }) => styleListItem(size, lh, margin)}
 `;
 
-const List = ({ items }) => {
+const List = ({ items, plain }) => {
   return (
     <StyledList>
       {items.map((item) => (
-        <StyledListItem key={uuid()}>{item}</StyledListItem>
+        <StyledListItem key={uuid()} plain={plain}>
+          {item}
+        </StyledListItem>
       ))}
     </StyledList>
   );
@@ -48,10 +54,12 @@ const List = ({ items }) => {
 
 List.propTypes = {
   items: PropTypes.arrayOf(PropTypes.node),
+  plain: PropTypes.bool,
 };
 
 List.defaultProps = {
   items: [],
+  plain: false,
 };
 
 export default List;

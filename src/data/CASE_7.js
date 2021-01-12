@@ -12,7 +12,7 @@ import TitleAndText from "../Components/TitleAndText";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 
 export const CASE_7 = {
-  caseStatus: CASE_STATUS.PUBLISHED,
+  caseStatus: CASE_STATUS.COMING_SOON,
   caseType: CASE_TYPES.CONCEPT,
   thumbnail: {
     overline: "Fitness24Seven",
