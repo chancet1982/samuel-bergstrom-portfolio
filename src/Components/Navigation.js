@@ -220,7 +220,8 @@ const StyledMenuToggler = styled(motion.a)`
   }
 `;
 
-//TODO: Fix nicer menu on mobile
+//TODO: Navigation links dont have a connection to typography.
+//TODO: change contact form in the navigation to use Button and center the menu
 const Navigation = () => {
   const { width } = useWindowSize();
   const isDesktop = width >= breakpoints.desktop;
