@@ -11,6 +11,7 @@ import Image from "./Elements/Image";
 import TitleAndText from "./TitleAndText";
 import { variants } from "../animations/animations";
 import padding from "../theme/padding";
+import breakpoints from "../theme/breakpoints";
 
 const StyledResultCaption = styled.div`
   padding-top: ${padding.vertical.double};
@@ -23,12 +24,20 @@ const StyledFinalResult = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
-  > div:first-of-type {
-    grid-column: 1 / span 2;
+  @media (max-width: ${breakpoints.desktop - 1}px) {
+    > div {
+      grid-area: span 1 / span 3;
+    }
   }
 
-  > div:last-of-type {
-    grid-column: 3 / span 1;
+  @media (min-width: ${breakpoints.desktop}px) {
+    > div:first-of-type {
+      grid-column: 1 / span 2;
+    }
+
+    > div:last-of-type {
+      grid-column: 3 / span 1;
+    }
   }
 
   height: fit-content;

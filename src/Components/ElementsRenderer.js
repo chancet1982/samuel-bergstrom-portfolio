@@ -13,6 +13,7 @@ import BlockQuote from "./BlockQuote";
 import SideBySideImagesAndText from "./SideBySideImagesAndText";
 import ListOfImagesWithTitleAndText from "./ListOfImagesWithTitleAndText";
 import ImageWithCaption from "./ImageWithCaption";
+import Timeline from "./Timeline";
 
 const SectionElementsRenderer = ({ elementKey, data, template }) => {
   if (!template) {
@@ -70,7 +71,6 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
           flip={data.flip}
         />
       );
-
     case SECTION_ELEMENTS.IMAGE_GALLERY:
       return (
         <ImageGallery
@@ -79,6 +79,8 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
           template={data.template}
         />
       );
+    case SECTION_ELEMENTS.TIMELINE:
+      return <Timeline key={elementKey} items={data.items} />;
     case SECTION_ELEMENTS.IMAGE_WITH_CAPTION:
       return (
         <ImageWithCaption

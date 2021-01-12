@@ -2,10 +2,9 @@
 import React from "react";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import Paragraph from "../Components/Elements/Paragraph";
-import Title from "../Components/Elements/Title";
 import List from "../Components/Elements/List";
 
-export const ABOUT_ME = [
+export const VIEW_ABOUT_ME = [
   {
     header: "About Me",
     elements: [
@@ -51,9 +50,36 @@ export const ABOUT_ME = [
                 sounds like something you'd like come over, and let's talk over
                 a warm slice of pizza and some cold beer
               </Paragraph>
-              <Title h={4}>
-                Just some of my <mark>credentials</mark>:
-              </Title>
+            </>
+          ),
+          imageUrl: "assets/me.jpg",
+          imageAlt: "A wonderful picture of me being myself",
+        },
+      },
+    ],
+  },
+  {
+    header: "Clients",
+    elements: [
+      {
+        template: SECTION_ELEMENTS.CLIENTS,
+      },
+    ],
+  },
+  {
+    header: "Education",
+    elements: [
+      {
+        template: SECTION_ELEMENTS.TEXTBOX,
+        h: 4,
+        data: {
+          title: (
+            <>
+              Just some of my <mark>credentials</mark>:
+            </>
+          ),
+          text: (
+            <>
               <List
                 items={[
                   <>
@@ -76,10 +102,29 @@ export const ABOUT_ME = [
     ],
   },
   {
-    header: "Clients",
+    header: "Timeline",
     elements: [
       {
-        template: SECTION_ELEMENTS.CLIENTS,
+        template: SECTION_ELEMENTS.TIMELINE,
+        data: {
+          items: [
+            {
+              date: "DATE1 from data",
+              title: "TITLE1 from data",
+              content: "CONTENT1 from data",
+            },
+            {
+              date: "DATE2 from data",
+              title: "TITLE2 from data",
+              content: "CONTENT2 from data",
+            },
+            {
+              date: "DATE3 from data",
+              title: "TITLE3 from data",
+              content: "CONTENT3 from data",
+            },
+          ],
+        },
       },
     ],
   },

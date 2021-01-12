@@ -34,7 +34,7 @@ View.propTypes = {
 View.defaultProps = {
   children: null,
   padded: false,
-  transition: true,
+  transition: false,
 };
 
 export default View;

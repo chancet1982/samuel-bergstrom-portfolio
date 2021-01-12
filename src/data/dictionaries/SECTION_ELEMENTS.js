@@ -12,4 +12,5 @@ export const SECTION_ELEMENTS = {
   SIDE_BY_SIDE_IMAGES_AND_TEXT: "sideBySideImagesAndText",
   LIST_OF_IMAGES_WITH_TITLE_AND_TEXT: "listOfImagesWithTitleAndText",
   RESULT: "result",
+  TIMELINE: "timeline",
 };
