@@ -1,20 +1,16 @@
-// Customize this 'myform.js' script and add it to your JS bundle.
-// Then import it with 'import MyForm from "./myform.js"'.
-// Finally, add a <MyForm/> element whereever you wish to display the form.
-
 import React, { useState } from "react";
 import styled from "styled-components";
 import padding from "../theme/padding";
 import Button from "./Elements/Button";
 import Input from "./Elements/Input";
 import Label from "./Elements/Label";
+import Textarea from "./Elements/Textarea";
 
 const StyledDiv = styled.div`
   padding-bottom: ${padding.vertical.half};
 `;
 
-//TODO: better styling for the textarea.
-//TODO: fix email input onChange event to hold the value
+//TODO: provide better styling for the success/error messages
 const ContactForm = () => {
   const [status, setStatus] = useState("");
 
@@ -46,13 +42,19 @@ const ContactForm = () => {
     >
       <StyledDiv>
         <Label>Email: </Label>
-        <Input type="email" name="email" />
+        <Input type="email" name="email" required />
       </StyledDiv>
       <StyledDiv>
         <Label>Message: </Label>
-        <textarea name="message" rows="4" cols="50"></textarea>
+        <Textarea name="message" rows="4" cols="50"></Textarea>
       </StyledDiv>
-      {status === "SUCCESS" ? <p>Thanks!</p> : <Button dark>Submit</Button>}
+      {status === "SUCCESS" ? (
+        <p>Thanks!</p>
+      ) : (
+        <Button dark large>
+          Submit
+        </Button>
+      )}
       {status === "ERROR" && <p>Ooops! There was an error.</p>}
     </form>
   );

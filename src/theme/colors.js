@@ -15,8 +15,11 @@ const colors = {
     },
   },
   primary: "#F8C62A",
-  offwhite: "#F6F6F6" /* More monochrome layout */,
-  darkgray: "#333333" /* More monochrome layout */,
+  primaryHover: "#E4B627",
+  offwhite: "#F6F6F6",
+  offwhiteHover: "#E2E2E2",
+  darkgray: "#333333",
+  darkgrayHover: "#2B2B2B",
 };
 
 export default colors;

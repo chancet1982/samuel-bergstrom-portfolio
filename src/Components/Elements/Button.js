@@ -4,6 +4,9 @@ import styled from "styled-components";
 import padding from "../../theme/padding";
 import colors from "../../theme/colors";
 import shadows from "../../theme/shadows";
+import typography from "../../theme/typography";
+
+const { size } = typography;
 
 const StyledButton = styled.button`
   padding: ${padding.vertical.half} ${padding.horizontal.quadruple};
@@ -18,13 +21,39 @@ const StyledButton = styled.button`
   border: none;
   ${shadows.short};
   border-radius: ${padding.vertical.single};
+  font-family: "Fira Sans", sans-serif;
+  font-size: ${({ small, large, huge }) =>
+    small ? size / 1.2 : large ? size * 1.2 : huge ? size * 1.618 : size}rem;
+  transition: all 0.3s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: ${({ dark, light }) =>
+      dark
+        ? colors.darkgrayHover
+        : light
+        ? colors.offwhiteHover
+        : colors.primaryHover};
+    ${shadows.soft}
+  }
+
+  &:active {
+    box-shadow: none;
+  }
 `;
 
-const Button = ({ onClick, children, dark, light }) => {
+const Button = ({ onClick, children, dark, light, small, large, huge }) => {
   //const [loading, setLoading] = useState(false);
 
   return (
-    <StyledButton dark={dark} light={light} onClick={onClick}>
+    <StyledButton
+      dark={dark}
+      light={light}
+      onClick={onClick}
+      small={small}
+      large={large}
+      huge={huge}
+    >
       {children}
     </StyledButton>
   );
@@ -36,6 +65,9 @@ Button.propTypes = {
   dark: PropTypes.bool,
   light: PropTypes.bool,
   disabled: PropTypes.bool,
+  small: PropTypes.bool,
+  large: PropTypes.bool,
+  huge: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -44,6 +76,9 @@ Button.defaultProps = {
   dark: false,
   light: false,
   disabled: false,
+  small: false,
+  large: false,
+  huge: false,
 };
 
 export default Button;
