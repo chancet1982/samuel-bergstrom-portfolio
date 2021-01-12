@@ -116,62 +116,9 @@ export const VIEW_ABOUT_ME = [
     ],
   },
   {
-    header: "Online",
     elements: [
       {
-        template: SECTION_ELEMENTS.TEXTBOX,
-        data: {
-          title: (
-            <>
-              Find me on <mark>social media</mark>:
-            </>
-          ),
-          h: 2,
-          text: (
-            <>
-              <List
-                items={[
-                  <>
-                    <a
-                      href="https://www.linkedin.com/in/samuel-bergstr%C3%B6m-13bb8b1b/"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Linkedin
-                    </a>
-                  </>,
-                  <>
-                    <a
-                      href="https://stackoverflow.com/users/4042508/samuel-bergstr%C3%B6m"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Stackoverflow
-                    </a>
-                  </>,
-                  <>
-                    <a
-                      href="https://www.facebook.com/samuel.maayan"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Facebook
-                    </a>
-                  </>,
-                  <>
-                    <a
-                      href="https://medium.com/@chancet1982"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Medium
-                    </a>
-                  </>,
-                ]}
-              />
-            </>
-          ),
-        },
+        template: SECTION_ELEMENTS.SOCIAL_MEDIA_LINKS,
       },
     ],
   },

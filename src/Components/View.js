@@ -8,7 +8,6 @@ const StyledView = styled.main`
   ${({ padded }) =>
     padded && {
       paddingTop: padding.vertical.quadruple,
-      paddingBottom: padding.vertical.quadruple,
     }}
 `;
 

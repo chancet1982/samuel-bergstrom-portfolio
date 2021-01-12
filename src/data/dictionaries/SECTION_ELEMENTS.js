@@ -13,4 +13,5 @@ export const SECTION_ELEMENTS = {
   LIST_OF_IMAGES_WITH_TITLE_AND_TEXT: "listOfImagesWithTitleAndText",
   RESULT: "result",
   TIMELINE: "timeline",
+  SOCIAL_MEDIA_LINKS: "socialmedialinks",
 };
