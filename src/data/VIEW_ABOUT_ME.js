@@ -3,7 +3,9 @@ import React from "react";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import Paragraph from "../Components/Elements/Paragraph";
 import List from "../Components/Elements/List";
+import { Link } from "react-router-dom";
 
+//TODO: (later) fix screen transition content setting
 export const VIEW_ABOUT_ME = [
   {
     header: "About Me",
@@ -57,9 +59,9 @@ export const VIEW_ABOUT_ME = [
               </Paragraph>
               <Paragraph>
                 If any of this sounds interesting or if you just want to start a
-                flamewar regarding web accessibility, just reach out. I’m sure
-                we could sort it over some warm slice of pizza and some cold
-                beer.
+                flamewar regarding web accessibility, just{" "}
+                <Link to="/contact">reach out</Link>. I’m sure we could sort it
+                over some warm slice of pizza and some cold beer.
               </Paragraph>
             </>
           ),
@@ -94,8 +96,8 @@ export const VIEW_ABOUT_ME = [
               <List
                 items={[
                   <>
-                    <strong>UXC Spec. UX Management, Spec. Research</strong>,
-                    NNg (Nielson Norman Group)
+                    <strong>UXC Spec. UX Management</strong>, NNg (Nielson
+                    Norman Group)
                   </>,
                   <>
                     <strong>BSc</strong> Eng. ICT, Ålborg university
