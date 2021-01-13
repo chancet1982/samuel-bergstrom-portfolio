@@ -89,14 +89,15 @@ export const CASE_1 = {
             text: (
               <>
                 <Paragraph>
-                  Loomis&apos;s a mission statement is: &quot;Managing Cash in
-                  Sociaty&quot;, they do just that in more than 20 countries.
-                  Their curriours and service technicians take daily routes
-                  where they distributing, collecting, and servicing ATMs and
-                  small businesses. In order to do that they use PDAs that are
-                  slow, and increasingly hard to service and replace. The new
-                  devices chosen to replace the old hardware were using a
-                  different platform, and the software needed to be redone.
+                  Loomis’s mission statement is: “Managing Cash in Society”,
+                  they do just that in more than 20 countries. Their couriers
+                  and service technicians take daily routes where they
+                  distributing, collecting, and servicing ATMs and small
+                  businesses. In order to do that couriers and service
+                  technicians use PDAs that are slow, and increasingly hard to
+                  service and replace. The new devices chosen to replace the old
+                  hardware were using a different platform, and that required a
+                  redesign of the old interface.
                 </Paragraph>
               </>
             ),
@@ -131,7 +132,7 @@ export const CASE_1 = {
               <>
                 <Paragraph>
                   The goal was creating a solution that would be “fast and
-                  simple” to implement, “fermiliar” to the users, include all
+                  simple” to implement, “familiar” to the users, including all
                   functionality, and addresses some of the known issues that
                   exists with the old design.
                 </Paragraph>
@@ -161,14 +162,14 @@ export const CASE_1 = {
               <>
                 <Paragraph>
                   This wasn’t an easy starting point, I needed to get my
-                  bearings fast. I sat with all stakeholders and mapped existing
-                  functionality.
+                  bearings fast. I sat with all stakeholders and mapped the
+                  functionality included in the existing app.
                 </Paragraph>
                 <Paragraph>
-                  Then sat with the developer to define our ways of working. We
-                  agreed that we will collaborate and deliver the design
-                  iteratively to reduce risks. Focusing first on the known areas
-                  I could ensure that the first pieces would be ready to
+                  I then sat with the developer to define our ways of working.
+                  We agreed that we will collaborate and deliver the design
+                  iteratively to reduce risks. Focusing first on the known
+                  areas, I could ensure that the first pieces would be ready to
                   implement after only 7 days.
                 </Paragraph>
               </>
@@ -181,17 +182,18 @@ export const CASE_1 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: "Meeting cash curriours and ATM technicians",
+            title: "Meeting couriers and ATM service technicians",
             h: 2,
             text: (
               <>
                 <Paragraph>
-                  Once the current app was mapped, and scope defined, it was
-                  important uncover problems that could be addressed during the
-                  redesign. For that I conducted virtual group interviews with
-                  curriours, service technicians, and internal stakeholders.
+                  Once the existing app was mapped, and the scope defined, it
+                  was time to shift the focus and uncover problems that could be
+                  addressed during the redesign. For that, I conducted virtual
+                  group interviews with couriers, service technicians, and
+                  internal stakeholders.
                 </Paragraph>
-                <Title h={5}>Some of the issues this uncovered:</Title>
+                <Title h={5}>Some of the issues found during this phase:</Title>
                 <List
                   items={[
                     <>
@@ -204,21 +206,21 @@ export const CASE_1 = {
                     </>,
                     <>
                       Messages are used to communicate vital information about
-                      customer stops but but were only available before
-                      accepting a route.
+                      customer stops but were only available before couriers
+                      accepted the route.
                     </>,
                     <>
-                      Curriours had problems when information from backoffice
-                      was inccorrect. This resulted in them trying to
-                      pickup/deliver to the wrong clients.
+                      Couriers had problems with incorrect back-office data.
+                      This often resulted in couriers trying to pick up/deliver
+                      to the wrong clients.
                     </>,
                     <>
-                      When reporting discrepancies. Couriers used 4 error codes
-                      for 80% of the time. Finding those was hard to do in a
-                      long list of error codes.
+                      When reporting discrepancies, couriers used 4 error codes
+                      80% of the time. Finding those was hard to do in a long
+                      list of error codes.
                     </>,
                     <>
-                      Customer addresses were incorrect in 70% of the time.
+                      Customer addresses were incorrect 70% of the time.
                       Couriers were unable to inform the dispatch of these
                       errors.
                     </>,
@@ -239,9 +241,9 @@ export const CASE_1 = {
                 text: (
                   <>
                     <Paragraph>
-                      During our interviews, curriours stated that reporting a
-                      discrepency takes a long time. There are simply too many
-                      discrepencies in the system. Digging deeper into the data,
+                      During our interviews, couriers stated that reporting a
+                      discrepancy takes a long time. There are simply too many
+                      discrepancies in the system. Digging deeper into the data,
                       couriers used 4 error codes for 80% of the time.
                     </Paragraph>
                     <Paragraph>
@@ -255,8 +257,8 @@ export const CASE_1 = {
               },
               {
                 imageUrl: "assets/case-1/sneakpeek-2.png",
-                imageAlt: "Making route messages prominant",
-                title: "Making route messages prominant",
+                imageAlt: "Making route messages prominent",
+                title: "Making route messages prominent",
                 text: (
                   <>
                     <Paragraph>
@@ -264,7 +266,7 @@ export const CASE_1 = {
                       only available before accepting a route.
                     </Paragraph>
                     <Paragraph>
-                      <strong>Soluiton:</strong> It was decided to lift messages
+                      <strong>Solution:</strong> It was decided to lift messages
                       into their own link accessible at all times as a
                       notification center. On top of that, messages will pop-up
                       before couriers accept the route and if a client has any
@@ -288,7 +290,7 @@ export const CASE_1 = {
                       <strong>Solution:</strong> After finding the maximum
                       length of both names and addresses it was decided that we
                       should allow them to wrap into several lines instead of
-                      limiting to one line.
+                      limiting them to one line.
                     </Paragraph>
                   </>
                 ),
@@ -320,21 +322,20 @@ export const CASE_1 = {
                   minimize development time.
                 </Paragraph>
                 <Paragraph>
-                  At this point both the tech-stack and platform were knwon
-                  (Android, Xamarin forms) we decided to use ready made
+                  At this point both the tech-stack and platform were known
+                  (Android, Xamarin forms) we decided to use ready-made
                   component libraries in order to minimize implementation time.
-                  After evaluation of different alternatives we decided to go
-                  with Material Design as it fit the platform and had an
+                  After evaluating different alternatives, we decided to go with
+                  Material Design as it fit the platform and had an
                   off-the-shelf implementation for Xamarin.
                 </Paragraph>
                 <Paragraph>
                   I only tweaked the color scheme to match Loomis’s corporate
                   identity and added making a collection of unique illustrations
-                  for the project to give the design some
-                  &quot;personality&quot;.
+                  for the project to give the design some “personality”.
                 </Paragraph>
                 <Paragraph>
-                  I started off creating low fidelity mockup of the entire
+                  I started off by creating low fidelity mockup of the entire
                   system. This went through several rounds of iteration based on
                   stakeholder and user input, then a high fidelity mockup was
                   created and converted into an interactive prototype.
@@ -414,11 +415,20 @@ export const CASE_1 = {
             imageUrl: "assets/case-1/result.png",
             bgColor: "rgba(254, 38, 55, .72)",
             text: (
-              <Paragraph large>
-                Initial feedback from couriers and stakeholders was very
-                positive. The app is still in development and will be released
-                soon.
-              </Paragraph>
+              <>
+                <Paragraph large>
+                  Initial feedback from couriers and stakeholders was very
+                  positive. The app is still in development and will be released
+                  soon.
+                </Paragraph>
+                <Title h={2}>After thoughts:</Title>
+                <Paragraph large>
+                  Despite time constraints and focus on speedy delivery, a lot
+                  of the issues uncovered during the research phase were
+                  addressed. Given more time I would have loved to revisit this
+                  redesign to gather some concrete data about its impact.
+                </Paragraph>
+              </>
             ),
           },
         },

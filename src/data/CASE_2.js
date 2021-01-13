@@ -18,7 +18,12 @@ export const CASE_2 = {
     title: "d. Care",
     imageUrl: "assets/case-2/thumbnail.png",
     imageAlt: "thumbnail",
-    text: <>Empowering renal patients</>,
+    text: (
+      <>
+        Redesigning a companion app to empower renal patients and take charge of
+        their health.
+      </>
+    ),
     bgColor: "rgba(233, 183, 114, .72)",
   },
   details: [
@@ -34,7 +39,8 @@ export const CASE_2 = {
             text: (
               <>
                 <Paragraph large>
-                  Empowering renal patients and improving health.
+                  Redesigning a companion app to empower renal patients and take
+                  charge of their health.
                 </Paragraph>
               </>
             ),
@@ -50,12 +56,12 @@ export const CASE_2 = {
             bgColor: "rgba(233, 183, 114, .72)",
             text: (
               <Paragraph huge>
-                Our client is one of the largest private renal care providers in
+                Diaverum is one of the largest private renal care providers in
                 the world. They treat more than 40 000 patients, operate over
                 400 clinics in 20 countries. Renal patients need to constantly
                 keep an eye on their intake, reporting it back as part of their
                 treatment, previous attempt at creating an app have failed to
-                gain tracktion, now this initiative got a second chance to
+                gain traction, now this initiative got a second chance to
                 improve patients lives.
               </Paragraph>
             ),
@@ -90,18 +96,18 @@ export const CASE_2 = {
             text: (
               <>
                 <Paragraph>
-                  Proving care for a chronic condition is a never ending battle.
+                  Proving care for a chronic condition is a never-ending battle.
                   You cant treat patients in the clinics alone. In order to
                   provide optimal treatment for over 40 000 renal patients
-                  worldwide you need to track their intake and values even at
+                  worldwide, you need to track their intake and values even at
                   home. This is a laborious task, reporting back daily puts a
                   burden both on patients and staff.
                 </Paragraph>
                 <Paragraph>
                   In its previous life, d. care started off as an initiative to
                   empower patients but it never really took off. Reporting
-                  figures were low, rating on App store, and Google lay store
-                  negative and generally it didnt really preformed as expected.
+                  figures were low, rating on App Store and Google lay store
+                  negative, and generally, it didn’t really perform as expected.
                 </Paragraph>
               </>
             ),
@@ -139,13 +145,12 @@ export const CASE_2 = {
             text: (
               <>
                 <Paragraph>
-                  The goal in this case we simple, "make a better app". From an
-                  internal point of view a better app would mean more patient
-                  are reporting their vitals. From an external perspective,
-                  would that be a better app? or will it be considered a chore?
-                  Dialysis treatment already requires that patients will spend
-                  12-18 hours in clinics weekly. How could we provide enough
-                  value for patients to encourage daily use?
+                  The goal, in this case, was simply, “make a better app”. From
+                  an internal point of view, a better app would mean that more
+                  patients are reporting their vitals. But would users agree?
+                  Dialysis patients already spend 12-18 hours weekly in clinics.
+                  How could we provide enough value for patients to encourage
+                  daily use?
                 </Paragraph>
               </>
             ),
@@ -165,26 +170,24 @@ export const CASE_2 = {
               <>
                 <Paragraph>
                   Before everything, we needed to understand why the current app
-                  failed and a clear understand of our goal. We sat down with a
-                  group of internal stakeholders, then interviewed different
+                  failed and a clear understanding of our goal. We sat down with
+                  a group of internal stakeholders, then interviewed different
                   groups internally to provide their perspectives. Then we
                   needed to look outwards...
                 </Paragraph>
                 <Paragraph>
-                  There is plenty of research and insights regarding designing
-                  for the elderlies and accessible design. We read through a lot
-                  of material hoping that by removing friction users would take
-                  a more active role in their wellbeing. experience we could get
-                  them to take a more active role in their treatment. On top of
-                  that A survey was sent to multiple countries in order to
-                  understand what is important for patients.
+                  We gathered general insights and best practices regarding
+                  designing for the elderly and accessible design from NNg’s
+                  research report on the matter, hoping to avoid common pitfalls
+                  and known design issues.
                 </Paragraph>
                 <Paragraph>
-                  Renal patients are a very specific group. We needed to
-                  understand their condition, treatment, abilities, motivations,
-                  ambitions. We conducted Surveys and collected results from
-                  different clinics accross the globe to ensure we are limiting
-                  our sampling bias.
+                  We later looked more specifically at Renal patients. We needed
+                  to understand their condition, treatment, abilities,
+                  motivations, ambitions. We conducted Surveys and collected
+                  results from different clinics across the globe to ensure we
+                  are limiting our sampling bias in order to understand what is
+                  essential for our users.
                 </Paragraph>
               </>
             ),
@@ -199,10 +202,11 @@ export const CASE_2 = {
             text: (
               <>
                 <Paragraph>
-                  With the survey results, we could prioritize features based on
-                  our protopersona. We sat with all stakeholders and mapped the
-                  functionality, the capacity of the team, prioritized, and
-                  created a road-map that would balance user and business goals.
+                  With some initial data in place, we could prioritize features
+                  based on our proto persona (dialysis patient). We sat with all
+                  stakeholders and mapped the functionality, the capacity of the
+                  team, prioritized, and created a road-map that would balance
+                  user needs and business goals.
                 </Paragraph>
               </>
             ),
@@ -222,22 +226,22 @@ export const CASE_2 = {
                 text: (
                   <>
                     <Paragraph>
-                      Self-reporting wasnt directly visible for users. It
-                      required users to look through the app in order to find
-                      it.
+                      In the old-design, self-reporting wasn’t directly visible
+                      for users. It required users to look through the app in
+                      order to find it.
                     </Paragraph>
                     <Paragraph>
-                      <strong>Solution:</strong> We opted for much simpler
-                      feedback mechnism and adding reminders for reporting
-                      vitals.
+                      <strong>Solution:</strong> We opted for a much simpler
+                      feedback mechanism and the abitility of reporting outside
+                      the app using notification actions.
                     </Paragraph>
 
                     <Paragraph>
                       <strong>Note:</strong> The reporting mechanism could have
-                      been even simpler, monitoring a "change" in wellbeing
+                      been even simpler, monitoring a “change” in wellbeing
                       (from good to bad or vice versa) instead of a linear value
-                      would have provided a simpler reporting system but wouldnt
-                      fullfil the medical requirements.
+                      would have provided a simpler reporting system but
+                      wouldn’t fulfill the medical requirements.
                     </Paragraph>
                   </>
                 ),
@@ -251,12 +255,11 @@ export const CASE_2 = {
                     <Paragraph>
                       Based on our surveys, one of the most sought-after
                       features for dialysis patients is finding and being able
-                      to book clinics on vacations.{" "}
+                      to book clinics on vacations.
                     </Paragraph>
                     <Paragraph>
-                      <strong>Solution:</strong> We added a feature to look for
-                      a clinic, and even reserve treatment for existing
-                      patients.
+                      <strong>Solution:</strong> We added a feature to find book
+                      treatments in clinics abroad for existing patients.
                     </Paragraph>
                   </>
                 ),
@@ -268,15 +271,21 @@ export const CASE_2 = {
                 text: (
                   <>
                     <Paragraph>
-                      Patients weren't interested or could interprate obscure
-                      medical values and terms and have a limited number of
-                      values that they care about and understand.
-                      <strong>Solution: </strong> We kept only a select few
+                      Diaverum aims to encourage its patients to take an active
+                      role in their treatment. In order to do that, they added
+                      test results and medical values in the old app. Based on
+                      our research we learned that patients weren’t interested
+                      and couldn’t decipher obscure medical values and terms.
+                      Moreover, most patients had a limited number of values
+                      that they cared about and understood.
+                    </Paragraph>
+                    <Paragraph>
+                      <strong>Solution:</strong> We kept only a select few
                       values that are known to be important for renal patients.
                       We used additional values to produce health tips and
-                      reccomendations. Users got a recomendation for what they
+                      recommendations. Users got a recommendation for what they
                       should do in order to improve their wellbeing instead of
-                      showing a number that they couldnt interprate.
+                      showing a number that they couldn’t interpret.
                     </Paragraph>
                   </>
                 ),
@@ -288,14 +297,20 @@ export const CASE_2 = {
                 text: (
                   <>
                     <Paragraph>
-                      Renal patients need a lot of medication. Mental abilities
-                      degenerate with age making intake of medicine challanging,
-                      people simply put, forget it.
-                      <strong>Solution:</strong> We decided to add a feature
-                      that will be connected to the clinics. Patients will be
-                      automatically reminded to take their perscribed medicine,
-                      they can even report back their intake to the clinical
-                      staff opening the door for even better treatment.
+                      Renal patients need a lot of medication daily. Mental
+                      abilities degenerate with age, and with an average age of
+                      50 (and older in some clinics), people simply put, seem to
+                      forget. Some used special pillboxes, other invented their
+                      own systems to remind them. But without an exception,
+                      every patient admitted to forgetting their medication from
+                      time to time.
+                    </Paragraph>
+                    <Paragraph>
+                      <strong>Solution:</strong> We decided to add automatic
+                      reminds for prescribed medication. Dismissing the
+                      notification (by clicking “taken”) would alert the
+                      clinical staff allowing for better monitoring of general
+                      medication intake.
                     </Paragraph>
                   </>
                 ),
@@ -316,13 +331,13 @@ export const CASE_2 = {
             text: (
               <>
                 <Paragraph>
-                  We needed to support multiple platforms and devices. We didnt
-                  want to create separate Android and iOS version so instead we
-                  made an app that was neither.
+                  We needed to support multiple platforms and devices. We didn’t
+                  want to create separate Android and iOS versions so instead,
+                  we made an app that was neither.
                 </Paragraph>
                 <Paragraph>
-                  It was meant to be purely Diaverum, playful and colorful
-                  without reducing its accessability.
+                  It was meant to be purely Diaverum, playful, and colorful
+                  without reducing its accessibility.
                 </Paragraph>
               </>
             ),
@@ -332,17 +347,18 @@ export const CASE_2 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             flip: true,
-            title: <>A sidenote about accessability:</>,
+            title: <>A sidenote about accessibility:</>,
             h: 3,
             text: (
               <>
                 <List
+                  plain
                   items={[
                     <>
-                      It is always important to have accessability in mind,
-                      specially when designing for elderlies. We made sure All
-                      colors are WCAG 2.0 AA compatible. "Heavier" font weights
-                      were used and font sizes were tested to ensure legability.
+                      It is always important to have accessibility in mind,
+                      especially when designing for elderlies. We made sure All
+                      colors are WCAG 2.0 AA compatible. “Heavier” font weights
+                      were used and font sizes were tested to ensure legibility.
                     </>,
                     <>
                       In order to address cognitive impairments, we simplified
@@ -350,16 +366,16 @@ export const CASE_2 = {
                       possible.
                     </>,
                     <>
-                      We utilized micro interactions in order to to reduce
+                      We utilized micro-interactions in order to to reduce
                       confusion when things just vanish or appear on the screen,
-                      these were subtle animations to avoid seazures.
+                      these were subtle animations to avoid seizures.
                     </>,
                     <>
                       Loss of sensation around the fingertips and loss of motor
                       control is quite common in renal care. This makes
-                      scrolling specially challanging. In order to mitigate that
-                      we layed out the content to minimize the need for
-                      scrolling. We made sure that we provided at least 9mm
+                      scrolling especially challenging. In order to mitigate
+                      that we laid out the content to minimize the need for
+                      scrolling. We made sure that we provided at least a 9mm
                       target area for all links and buttons to avoid
                       miss-clicks.
                     </>,
@@ -380,13 +396,15 @@ export const CASE_2 = {
             text: (
               <>
                 <Paragraph>
-                  We had an untested design proposal that accounts for
-                  accessability and needs to be validated.
+                  At this point, we had an untested, accessible, pretty, design
+                  but will it be usable?
                 </Paragraph>
                 <Paragraph>
-                  But how do you test an app for clinics that operate globally?
-                  where can you find old patients that will be willing to test
-                  out a new application for improving their wellbeing?
+                  How do you test an app for clinics that operate globally?
+                  Recruiting highly specific users for usability testing could
+                  be very challenging. Where can you find old patients that will
+                  be willing to test out a new application for improving their
+                  wellbeing?
                 </Paragraph>
               </>
             ),
@@ -405,20 +423,22 @@ export const CASE_2 = {
             text: (
               <>
                 <Paragraph>
-                  Like most things in Sweden the answer was there all along.
+                  Like most things in Sweden, the answer was there all along.{" "}
                   <strong>Fika</strong>
                 </Paragraph>
                 <Paragraph>
                   If you need treatment, you go to a hospital. If you need a
-                  break, you go to the cafeteria. So with 500SEK in our pocket
+                  break, you go to the cafeteria. So with 500SEK in our pocket,
                   we did some guerilla testing offering fika for 5 minutes of
-                  people's time. Looking to find if all our hard work paid off.
+                  people’s time. Looking to find if all our hard work paid off.
                 </Paragraph>
                 <Paragraph>
-                  The feedback was amazing. Patients couldnt wait getting their
+                  The feedback was amazing. Patients couldn’t wait to get their
                   hands on the app and since then the app was rolled out to 16
-                  different countries, and the number of daily active users have
-                  increated exponentially.
+                  different countries. Since then, the number of daily active
+                  users medication intake reportings, and daily values reporting
+                  has increased exponentially. App Store reviews and Google play
+                  reviews are now far more positive as well.
                 </Paragraph>
               </>
             ),
@@ -450,7 +470,7 @@ export const CASE_2 = {
                 description: "Active users",
               }, */
               {
-                value: "+14",
+                value: "+16",
                 description: "New countries",
               },
               {
