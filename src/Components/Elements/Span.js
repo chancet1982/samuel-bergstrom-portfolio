@@ -1,7 +1,7 @@
 /* eslint-disable no-nested-ternary */
 import styled from "styled-components";
 
-const styleSpan = (small, large, huge, size, lh, margin, inc) => `
+const styleSpan = (small, large, huge, size, lh, inc) => `
   font-size: ${
     small ? size / 1.2 : large ? size * 1.2 : huge ? size * 1.618 : size
   }rem;
@@ -17,9 +17,9 @@ const Span = styled.span`
     large,
     huge,
     theme: {
-      typography: { size, lh, margin, inc },
+      typography: { size, lh, inc },
     },
-  }) => styleSpan(small, large, huge, size, lh, margin, inc)}
+  }) => styleSpan(small, large, huge, size, lh, inc)}
 `;
 
 export default Span;

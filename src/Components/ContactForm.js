@@ -10,7 +10,7 @@ const StyledDiv = styled.div`
   padding-bottom: ${padding.vertical.half};
 `;
 
-//TODO: (later) provide better styling for the success/error messages
+// TODO: (later) provide better styling for the success/error messages
 const ContactForm = () => {
   const [status, setStatus] = useState("");
 
@@ -46,7 +46,7 @@ const ContactForm = () => {
       </StyledDiv>
       <StyledDiv>
         <Label>Message: </Label>
-        <Textarea name="message" rows="4" cols="50"></Textarea>
+        <Textarea name="message" rows="4" cols="50" />
       </StyledDiv>
       {status === "SUCCESS" ? (
         <p>Thanks!</p>

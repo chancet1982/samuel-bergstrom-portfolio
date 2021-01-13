@@ -18,6 +18,7 @@ const Overline = ({ children, light, sectionOverline, disableAnimations }) => {
     threshold: 0,
   });
 
+  // eslint-disable-next-line consistent-return
   useEffect(() => {
     const inViewNow = intersection && intersection.intersectionRatio > 0;
     if (inViewNow) {

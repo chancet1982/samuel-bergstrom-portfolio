@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -20,7 +21,7 @@ const StyledInput = styled.input`
   padding: 0.5rem;
 `;
 
-//TODO: (later) add input validation
+// TODO: (later) add input validation
 const Input = ({ type, name, required, small, large, huge }) => {
   const handleChange = (event) => {
     event.target.checkValidity();
@@ -35,7 +36,7 @@ const Input = ({ type, name, required, small, large, huge }) => {
       small={small}
       large={large}
       huge={huge}
-    ></StyledInput>
+    />
   );
 };
 

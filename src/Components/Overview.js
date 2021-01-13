@@ -16,8 +16,6 @@ const StyledOverviewWrapper = styled.div`
   position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  /*position:sticky;
-  bottom: 0;*/
 `;
 
 const StyledOverviewText = styled.div`

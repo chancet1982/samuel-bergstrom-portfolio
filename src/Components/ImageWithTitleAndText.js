@@ -3,12 +3,12 @@ import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { useIntersection } from "react-use";
+import { motion } from "framer-motion";
 import TitleAndText from "./TitleAndText";
 import ImageWithCaption from "./ImageWithCaption";
 import { IMAGE_WITH_CAPTION_SIZES } from "../data/dictionaries/IMAGE_WITH_CAPTION_SIZES";
 import { variants } from "../animations/animations";
 import padding from "../theme/padding";
-import { motion } from "framer-motion";
 
 const StyledImageWithTitleAndText = styled(motion.div)`
   display: flex;
@@ -45,6 +45,7 @@ const ImageWithTitleAndText = ({
     threshold: 0,
   });
 
+  // eslint-disable-next-line consistent-return
   useEffect(() => {
     const inViewNow = intersection && intersection.intersectionRatio > 0;
     if (inViewNow) {

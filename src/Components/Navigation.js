@@ -217,7 +217,7 @@ const StyledMenuToggler = styled(motion.a)`
   }
 `;
 
-//TODO: menu links need hover on desktop
+// TODO: menu links need hover on desktop
 const Navigation = () => {
   const { width } = useWindowSize();
   const isDesktop = width >= breakpoints.desktop;
@@ -322,9 +322,9 @@ const Navigation = () => {
         <StyledNavLink to="/cases" onClick={() => changeLoaderContent("Cases")}>
           Cases
         </StyledNavLink>
-        {/*<StyledNavLink to="/test" onClick={() => changeLoaderContent("Test")}>
+        {/* <StyledNavLink to="/test" onClick={() => changeLoaderContent("Test")}>
           Test
-        </StyledNavLink>*/}
+        </StyledNavLink> */}
         <StyledNavLink
           className="primary"
           to="/contact"

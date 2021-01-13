@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -29,7 +28,7 @@ const StyledListItem = styled.li`
       }}
   }
 
-  color: ${({ light, theme: { colors } }) =>
+  color: ${({ light }) =>
     light ? colors.text.light.medium : colors.text.dark.medium};
   max-width: 80ch;
 

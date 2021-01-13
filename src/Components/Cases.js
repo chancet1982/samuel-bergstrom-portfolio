@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { v4 as uuid } from "uuid";
 import PropTypes from "prop-types";
 import CaseThumbnail from "./CaseThumbnail";
-import CASES from "../data/dictionaries/CASES";
+import { CASES } from "../data/dictionaries/CASES";
 import breakpoints from "../theme/breakpoints";
 import padding from "../theme/padding";
 import Textbox from "./Textbox";

@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
+import { useIntersection } from "react-use";
+import { motion } from "framer-motion";
 import colors from "../theme/colors";
 import padding from "../theme/padding";
 import Span from "./Elements/Span";
 import Title from "./Elements/Title";
 import breakpoints from "../theme/breakpoints";
-import { useIntersection } from "react-use";
 import { variants } from "../animations/animations";
-import { motion } from "framer-motion";
 
 const StyledSocialMediaLinks = styled(motion.div)`
   display: grid;
@@ -57,13 +57,14 @@ const StyledLink = styled.a`
   }
 `;
 
-const SocialMediaLinks = (props) => {
+const SocialMediaLinks = () => {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
     threshold: 0,
   });
 
+  // eslint-disable-next-line consistent-return
   useEffect(() => {
     const inViewNow = intersection && intersection.intersectionRatio > 0;
     if (inViewNow) {

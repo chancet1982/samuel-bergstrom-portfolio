@@ -1,4 +1,5 @@
-const CLIENTS = [
+/* eslint-disable import/prefer-default-export */
+export const CLIENTS = [
   {
     imageUrl: "assets/clients/client-00.svg",
     imageAlt: "Mitsubishi Electric",
@@ -23,10 +24,10 @@ const CLIENTS = [
     imageUrl: "assets/clients/client-05.svg",
     imageAlt: "ATEA",
   },
-  /*{
+  /* {
     imageUrl: "assets/clients/client-06.svg",
     imageAlt: "tretton37",
-  },*/
+  }, */
   {
     imageUrl: "assets/clients/client-07.svg",
     imageAlt: "Capish",
@@ -63,14 +64,12 @@ const CLIENTS = [
     imageUrl: "assets/clients/client-15.svg",
     imageAlt: "Loomis",
   },
-  /*{
+  /* {
     imageUrl: "assets/clients/client-16.svg",
     imageAlt: "SilverRail",
-  },*/
+  }, */
   {
     imageUrl: "assets/clients/client-17.svg",
     imageAlt: "Fitness 24/7",
   },
 ];
-
-export default CLIENTS;

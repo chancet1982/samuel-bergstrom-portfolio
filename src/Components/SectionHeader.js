@@ -1,10 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { motion } from "framer-motion";
 import Title from "./Elements/Title";
 
-const StyledSectionHeader = styled(motion.header)`
+const StyledSectionHeader = styled.header`
   position: absolute;
   top: 0;
   left: 0;
@@ -37,7 +36,7 @@ const StyledSectionHeader = styled(motion.header)`
   }
 `;
 
-const SectionHeader = ({ children, light, disableAnimations }) => {
+const SectionHeader = ({ children, light }) => {
   return (
     <StyledSectionHeader light={light}>
       <Title h={1}>{children}</Title>
@@ -48,13 +47,11 @@ const SectionHeader = ({ children, light, disableAnimations }) => {
 SectionHeader.propTypes = {
   children: PropTypes.node,
   light: PropTypes.bool,
-  disableAnimations: PropTypes.bool,
 };
 
 SectionHeader.defaultProps = {
   children: "overline",
   light: false,
-  disableAnimations: false,
 };
 
 export default SectionHeader;

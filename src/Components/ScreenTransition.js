@@ -47,8 +47,8 @@ const StyledScreenTransition = styled(motion.div)`
   z-index: 1;
 `;
 
-//TODO: remove screen transition between page and home screen (perhaps just a short transition in case no text is being sent?)
-//TODO: longer transition first time anyone uses the site (perhaps saving with a flag not to show again for the same session)
+// TODO: remove screen transition between page and home screen (perhaps just a short transition in case no text is being sent?)
+// TODO: longer transition first time anyone uses the site (perhaps saving with a flag not to show again for the same session)
 const ScreenTransition = ({ animationFinished }) => {
   const [content] = useContext(AppContext);
 

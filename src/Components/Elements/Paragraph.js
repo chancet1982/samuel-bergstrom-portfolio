@@ -44,7 +44,7 @@ Paragraph.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-Paragraph.defaultProp = {
+Paragraph.defaultProps = {
   small: false,
   large: false,
   huge: false,

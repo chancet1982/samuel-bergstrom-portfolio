@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -42,8 +43,17 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({ onClick, children, dark, light, small, large, huge }) => {
-  //const [loading, setLoading] = useState(false);
+const Button = ({
+  onClick,
+  children,
+  dark,
+  light,
+  small,
+  large,
+  huge,
+  disabled,
+}) => {
+  // const [loading, setLoading] = useState(false);
 
   return (
     <StyledButton
@@ -53,6 +63,7 @@ const Button = ({ onClick, children, dark, light, small, large, huge }) => {
       small={small}
       large={large}
       huge={huge}
+      disabled={disabled}
     >
       {children}
     </StyledButton>

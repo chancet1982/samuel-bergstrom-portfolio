@@ -7,18 +7,20 @@ class ErrorBoundary extends React.Component {
   }
 
   static getDerivedStateFromError(error) {
-    // Update state so the next render will show the fallback UI.
+    // eslint-disable-next-line no-console
+    console.error(error);
     return { hasError: true };
   }
 
   componentDidCatch(error, errorInfo) {
-    // You can also log the error to an error reporting service
+    // eslint-disable-next-line no-console
     console.error(error, errorInfo);
   }
 
   render() {
     const {
       state,
+      // eslint-disable-next-line react/prop-types
       props: { children },
     } = this;
 

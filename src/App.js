@@ -44,7 +44,7 @@ function App() {
                 <Route exact path="/cases/:id" component={ViewCase} />
                 <Route exact path="/about" component={ViewAboutMe} />
                 <Route exact path="/contact" component={ViewContact} />
-                {/*<Route exact path="/test" component={ViewTest} />*/}
+                {/* <Route exact path="/test" component={ViewTest} /> */}
                 <Route
                   exact
                   path="/typography"

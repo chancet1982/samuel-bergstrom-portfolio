@@ -1,12 +1,12 @@
 /* eslint-disable import/prefer-default-export */
 import React from "react";
+import { Link } from "react-router-dom";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import Paragraph from "../Components/Elements/Paragraph";
 import List from "../Components/Elements/List";
-import { Link } from "react-router-dom";
-import colors from "../theme/colors.js";
+import colors from "../theme/colors";
 
-//TODO: (later) fix screen transition content setting
+// TODO: (later) fix screen transition content setting
 export const VIEW_ABOUT_ME = [
   {
     header: "About Me",
@@ -23,11 +23,11 @@ export const VIEW_ABOUT_ME = [
           text: (
             <>
               <Paragraph>
-                I'm a digital product designer, Accessibility nerd, father,
+                I&apos;m a digital product designer, Accessibility nerd, father,
                 husband, and quite a nice guy. Or at least a semi-decent human
-                being. During the last 13 years, I've worked with many companies
-                operating in a wide array of domains. To name a few: Finance,
-                healthcare, and e-commerce.
+                being. During the last 13 years, I&apos;ve worked with many
+                companies operating in a wide array of domains. To name a few:
+                Finance, healthcare, and e-commerce.
               </Paragraph>
               <Paragraph>
                 I believe in creating <strong>practical designs</strong>.
@@ -53,7 +53,7 @@ export const VIEW_ABOUT_ME = [
                 because it makes me a better designer.
               </Paragraph>
               <Paragraph>
-                When I’m not working I'm most likely chasing down my kids,
+                When I’m not working I&apos;m most likely chasing down my kids,
                 trying to prevent the next disaster from happening, from houses
                 on fire to cats in dishwashers that wonders of parenthood are
                 endless.

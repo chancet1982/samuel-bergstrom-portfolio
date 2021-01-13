@@ -10,12 +10,7 @@ import padding from "../theme/padding";
 const StyledTitleAndText = styled(motion.div)`
   ${({ padded }) =>
     padded && {
-      /* paddingLeft: padding.horizontal.double,
-      paddingRight: padding.horizontal.double, */
-      paddingTop: padding.vertical.double,
-      paddingRight: padding.horizontal.double,
-      paddingBottom: padding.vertical.double,
-      paddingLeft: padding.horizontal.double,
+      padding: `${padding.vertical.double} ${padding.horizontal.double}`,
     }}
 
   ${({ sticky }) =>
@@ -41,6 +36,7 @@ const TitleAndText = ({
     threshold: 0,
   });
 
+  // eslint-disable-next-line consistent-return
   useEffect(() => {
     const inViewNow = intersection && intersection.intersectionRatio > 0;
     if (inViewNow) {

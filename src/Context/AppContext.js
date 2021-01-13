@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-export const AppContext = React.createContext({ content: "SAMUEL BERGSTRÖM" });
+export const AppContext = React.createContext({ content: "Samuel Bergström" });
 
 const AppContextProvider = (props) => {
   const { children } = props;
-  const [content, setContent] = useState("SAMUEL BERGSTRÖM");
+  const [content, setContent] = useState("Samuel Bergström");
 
   return (
     <AppContext.Provider value={[content, setContent]}>

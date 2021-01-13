@@ -84,7 +84,7 @@ const StyledBlindEffect = styled(motion.div)`
   }) => offwhite};
 `;
 
-//TODO: (later) Add better image for landing page.
+// TODO: (later) Add better image for landing page.
 const Cover = ({ overline, title, text, imageUrl, bgColor }) => {
   const { scrollYProgress } = useViewportScroll();
   const yRange = [0, 0.1];

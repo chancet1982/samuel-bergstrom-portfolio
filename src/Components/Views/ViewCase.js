@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import View from "../View";
-import CASES from "../../data/dictionaries/CASES";
+import { CASES } from "../../data/dictionaries/CASES";
 import SectionsRenderer from "../SectionsRenderer";
 
 const ViewCase = () => {

@@ -44,6 +44,7 @@ const Section = (props) => {
   const { header, children } = props;
 
   return (
+    // eslint-disable-next-line react/jsx-props-no-spreading
     <StyledSection {...props}>
       {header && !isMobile && <SectionHeader>{header}</SectionHeader>}
       {children}

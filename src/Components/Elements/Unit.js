@@ -19,13 +19,13 @@ const getMod = (res, minMod, maxMod) =>
     ? minMod + ((res - mobile) * (maxMod - minMod)) / (desktop - mobile)
     : minMod;
 
-const styleUnit = (h, size, lh, margin, inc, mod) => `
+const styleUnit = (h, size, lh, inc, mod) => `
   font-size: ${magnify(size, mod, 6 - h)}rem;
   line-height: ${decrease(lh, inc, 6 - h)};
 `;
 
 // 1 - Same size as H1, 2 -H2, ETC...
-const { size, lh, margin, inc, minMod, maxMod } = typography;
+const { size, lh, inc, minMod, maxMod } = typography;
 
 const StyledUnit = styled.span`
   color: ${({ light, theme: { colors } }) =>
@@ -34,7 +34,7 @@ const StyledUnit = styled.span`
   font-weight: 300;
 
   ${({ h, width }) =>
-    styleUnit(h, size, lh, margin, inc, getMod(width, minMod, maxMod))}
+    styleUnit(h, size, lh, inc, getMod(width, minMod, maxMod))}
 `;
 
 const Unit = ({ light, h, children }) => {

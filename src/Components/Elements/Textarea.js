@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -21,23 +22,13 @@ const StyledTextarea = styled.textarea`
   resize: none;
 `;
 
-const Textarea = ({
-  type,
-  name,
-  rows,
-  columns,
-  required,
-  small,
-  large,
-  huge,
-}) => {
+const Textarea = ({ name, rows, columns, required, small, large, huge }) => {
   const handleChange = (event) => {
     event.target.checkValidity();
   };
 
   return (
     <StyledTextarea
-      type={type}
       name={name}
       rows={rows}
       columns={columns}
@@ -46,7 +37,7 @@ const Textarea = ({
       small={small}
       large={large}
       huge={huge}
-    ></StyledTextarea>
+    />
   );
 };
 
@@ -61,7 +52,6 @@ Textarea.propTypes = {
 };
 
 Textarea.defaultProps = {
-  type: "text",
   rows: "4",
   columns: "50",
   required: false,

@@ -60,8 +60,8 @@ const ViewLoading = () => {
     <FullScreenCenteredFlexContainer>
       <LoadingSlider>
         <LoadingLine />
-        <LoadingSubline className="inc"></LoadingSubline>
-        <LoadingSubline className="dec"></LoadingSubline>
+        <LoadingSubline className="inc" />
+        <LoadingSubline className="dec" />
       </LoadingSlider>
     </FullScreenCenteredFlexContainer>
   );

@@ -2,13 +2,13 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { v4 as uuid } from "uuid";
+import { useIntersection } from "react-use";
+import { motion } from "framer-motion";
 import Client from "./Client";
-import CLIENTS from "../data/dictionaries/CLIENTS";
+import { CLIENTS } from "../data/dictionaries/CLIENTS";
 import Title from "./Elements/Title";
 import padding from "../theme/padding";
-import { useIntersection } from "react-use";
 import { variants } from "../animations/animations";
-import { motion } from "framer-motion";
 
 const StyledClients = styled(motion.div)`
   padding-left: ${padding.horizontal.quadruple};
@@ -24,7 +24,7 @@ const StyledClients = styled(motion.div)`
   }
 `;
 
-//TODO: fix inView animation repeats itself...
+// TODO: fix inView animation repeats itself...
 const Clients = () => {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
@@ -32,6 +32,7 @@ const Clients = () => {
     threshold: 0,
   });
 
+  // eslint-disable-next-line consistent-return
   useEffect(() => {
     const inViewNow = intersection && intersection.intersectionRatio > 0;
     if (inViewNow) {

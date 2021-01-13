@@ -15,6 +15,7 @@ const Client = ({ imageUrl, imageAlt }) => {
     threshold: 0,
   });
 
+  // eslint-disable-next-line consistent-return
   useEffect(() => {
     const inViewNow = intersection && intersection.intersectionRatio > 0;
     if (inViewNow) {

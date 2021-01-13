@@ -43,7 +43,7 @@ const StyledFinalResult = styled(motion.div)`
   height: fit-content;
 `;
 
-//TODO: fix results display on mobile.
+// TODO: fix results display on mobile.
 const FinalResult = ({ imageUrl, bgColor, title, text, results }) => {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
@@ -51,6 +51,7 @@ const FinalResult = ({ imageUrl, bgColor, title, text, results }) => {
     threshold: 0,
   });
 
+  // eslint-disable-next-line consistent-return
   useEffect(() => {
     const inViewNow = intersection && intersection.intersectionRatio > 0;
     if (inViewNow) {

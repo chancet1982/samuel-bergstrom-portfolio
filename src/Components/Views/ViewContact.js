@@ -6,6 +6,7 @@ import Title from "../Elements/Title";
 import ContactForm from "../ContactForm";
 import List from "../Elements/List";
 
+// TODO: Fix overflow
 const ViewContact = () => {
   return (
     <View>
@@ -25,7 +26,7 @@ const ViewContact = () => {
             </>,
             <>
               <Title h={5}>Or the form below:</Title>
-              <ContactForm></ContactForm>
+              <ContactForm />
             </>,
           ]}
         />

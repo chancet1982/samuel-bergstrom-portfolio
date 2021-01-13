@@ -21,11 +21,16 @@ const TimelineItemSeparator = () => (
 );
 
 const StyledTimelineItemOppositeContent = styled.div``;
+
 const TimelineItemOppositeContent = ({ children }) => (
   <StyledTimelineItemOppositeContent>
     <Span>{children}</Span>
   </StyledTimelineItemOppositeContent>
 );
+
+TimelineItemOppositeContent.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 const StyledTimelineItemContent = styled(TitleAndText)``;
 
@@ -34,6 +39,11 @@ const TimelineItemContent = ({ title, children }) => (
     {children}
   </StyledTimelineItemContent>
 );
+
+TimelineItemContent.propTypes = {
+  title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
+};
 
 const StyledTimelineItem = styled.dt`
   display: grid;
@@ -58,8 +68,13 @@ const TimelineItem = ({ date, title, content }) => (
   </StyledTimelineItem>
 );
 
+TimelineItem.propTypes = {
+  date: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+};
+
 const Timeline = ({ items }) => {
-  console.log(items);
   return (
     <StyledTimeline alternate>
       {items.map(({ date, title, content }) => (

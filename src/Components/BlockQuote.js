@@ -28,7 +28,7 @@ const StyledBlockQuote = styled(motion.blockquote)`
   margin: 0 auto;
 `;
 
-//TODO: (later) reveal on scroll (fixed under other content?)
+// TODO: (later) reveal on scroll (fixed under other content?)
 const BlockQuote = ({ cite, quote }) => {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
@@ -36,6 +36,7 @@ const BlockQuote = ({ cite, quote }) => {
     threshold: 0,
   });
 
+  // eslint-disable-next-line consistent-return
   useEffect(() => {
     const inViewNow = intersection && intersection.intersectionRatio > 0;
     if (inViewNow) {
