@@ -1,5 +1,7 @@
 /* eslint-disable no-nested-ternary */
+import React from "react";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const styleParagraph = (small, large, huge, size, lh, margin, inc) => `
   font-size: ${
@@ -10,7 +12,7 @@ const styleParagraph = (small, large, huge, size, lh, margin, inc) => `
   line-height: ${small ? lh + inc : large ? lh - inc : lh};
 `;
 
-const Paragraph = styled.p`
+const StyledParagraph = styled.p`
   color: ${({ light, theme: { colors } }) =>
     light ? colors.text.light.medium : colors.text.dark.medium};
 
@@ -25,5 +27,28 @@ const Paragraph = styled.p`
     },
   }) => styleParagraph(small, large, huge, size, lh, margin, inc)}
 `;
+
+const Paragraph = ({ small, large, huge, light, children }) => {
+  return (
+    <StyledParagraph small={small} large={large} huge={huge} light={light}>
+      {children}
+    </StyledParagraph>
+  );
+};
+
+Paragraph.propTypes = {
+  small: PropTypes.bool,
+  large: PropTypes.bool,
+  huge: PropTypes.bool,
+  light: PropTypes.bool,
+  children: PropTypes.node.isRequired,
+};
+
+Paragraph.defaultProp = {
+  small: false,
+  large: false,
+  huge: false,
+  light: false,
+};
 
 export default Paragraph;

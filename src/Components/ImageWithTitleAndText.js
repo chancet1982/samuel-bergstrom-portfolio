@@ -8,8 +8,9 @@ import ImageWithCaption from "./ImageWithCaption";
 import { IMAGE_WITH_CAPTION_SIZES } from "../data/dictionaries/IMAGE_WITH_CAPTION_SIZES";
 import { variants } from "../animations/animations";
 import padding from "../theme/padding";
+import { motion } from "framer-motion";
 
-const StyledImageWithTitleAndText = styled.div`
+const StyledImageWithTitleAndText = styled(motion.div)`
   display: flex;
 
   flex-direction: ${({ horizontal, flip }) =>

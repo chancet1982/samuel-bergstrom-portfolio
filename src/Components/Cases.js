@@ -36,9 +36,21 @@ const StyledCases = styled(motion.div)`
 
     &:nth-child(2) {
       @media (min-width: ${breakpoints.desktop}px) {
-        grid-column: 2 / span 2;
+        grid-area: span 1 / span 2;
       }
     }
+
+    /*&:nth-child(4n - 3) {
+      @media (min-width: ${breakpoints.desktop}px) {
+        grid-area: span 1 / span 2;
+      }
+    }
+
+    &:nth-child(4n - 2) {
+      @media (min-width: ${breakpoints.desktop}px) {
+        grid-area: span 1 / span 2;
+      }
+    }*/
   }
 `;
 

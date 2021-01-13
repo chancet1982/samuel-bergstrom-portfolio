@@ -1,15 +1,18 @@
 /* eslint-disable import/prefer-default-export */
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { v4 as uuid } from "uuid";
 import Client from "./Client";
 import CLIENTS from "../data/dictionaries/CLIENTS";
 import Title from "./Elements/Title";
 import padding from "../theme/padding";
+import { useIntersection } from "react-use";
+import { variants } from "../animations/animations";
+import { motion } from "framer-motion";
 
-const StyledClients = styled.div`
-  padding-left: ${padding.horizontal.double};
-  padding-right: ${padding.horizontal.double};
+const StyledClients = styled(motion.div)`
+  padding-left: ${padding.horizontal.quadruple};
+  padding-right: ${padding.horizontal.quadruple};
   > div {
     display: grid;
     grid-gap: 1rem;
@@ -21,8 +24,21 @@ const StyledClients = styled.div`
   }
 `;
 
-//TODO: remove clients headline, and add InView for the component
+//TODO: fix inView animation repeats itself...
 const Clients = () => {
+  const [inView, setInView] = useState(false);
+  const intersectionRef = React.useRef(null);
+  const intersection = useIntersection(intersectionRef, {
+    threshold: 0,
+  });
+
+  useEffect(() => {
+    const inViewNow = intersection && intersection.intersectionRatio > 0;
+    if (inViewNow) {
+      return setInView(inViewNow);
+    }
+  }, [intersection]);
+
   const renderClients = CLIENTS.map((item) => (
     <Client
       key={uuid()}
@@ -34,7 +50,12 @@ const Clients = () => {
   ));
 
   return (
-    <StyledClients>
+    <StyledClients
+      ref={intersectionRef}
+      initial="hidden"
+      animate={inView ? "inView" : "hidden"}
+      variants={variants}
+    >
       <Title h={2}>
         Some of the <mark>companies</mark> I worked with
       </Title>

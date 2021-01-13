@@ -1,13 +1,17 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import colors from "../theme/colors";
 import padding from "../theme/padding";
 import Span from "./Elements/Span";
 import Title from "./Elements/Title";
 import breakpoints from "../theme/breakpoints";
+import { useIntersection } from "react-use";
+import { variants } from "../animations/animations";
+import { motion } from "framer-motion";
 
-const StyledSocialMediaLinks = styled.div`
+const StyledSocialMediaLinks = styled(motion.div)`
   display: grid;
+  min-height: 10rem;
   grid-template-columns: repeat(1, 1fr);
 
   @media (min-width: ${breakpoints.mobile_lg}px) and (max-width: ${breakpoints.tablet -
@@ -54,8 +58,26 @@ const StyledLink = styled.a`
 `;
 
 const SocialMediaLinks = (props) => {
+  const [inView, setInView] = useState(false);
+  const intersectionRef = React.useRef(null);
+  const intersection = useIntersection(intersectionRef, {
+    threshold: 0,
+  });
+
+  useEffect(() => {
+    const inViewNow = intersection && intersection.intersectionRatio > 0;
+    if (inViewNow) {
+      return setInView(inViewNow);
+    }
+  }, [intersection]);
+
   return (
-    <StyledSocialMediaLinks>
+    <StyledSocialMediaLinks
+      ref={intersectionRef}
+      initial="hidden"
+      animate={inView ? "inView" : "hidden"}
+      variants={variants}
+    >
       <StyledTitle>
         <Title h={2}>
           Find me on <mark>social media</mark>:
