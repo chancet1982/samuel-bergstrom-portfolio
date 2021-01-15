@@ -16,7 +16,7 @@ export const VIEW_LANDING_PAGE = [
               A <mark>non-typical</mark> designer
             </>
           ),
-          imageUrl: "assets/new-cover2.jpg",
+          imageUrl: "assets/cover.svg",
           bgColor: "#ffffff",
         },
       },

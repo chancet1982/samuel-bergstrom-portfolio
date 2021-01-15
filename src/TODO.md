@@ -3,7 +3,7 @@ TODO list (What's left before you're done)
 Better image for Loomis (workflow)
 CASE_4: 2 Images missing from (NoWaste) showing before and after flows.
 CASE_4: add sneak peek images
-
+CASE_4 finish content review (stopped at "research")
 Add authentication
 
 /_ FIX ME_/

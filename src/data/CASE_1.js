@@ -347,19 +347,11 @@ export const CASE_1 = {
         {
           template: SECTION_ELEMENTS.IMAGE_GALLERY,
           data: {
-            template: IMAGE_GALLERY_TEMPLATES.THREE_IMAGES_ROW,
+            template: IMAGE_GALLERY_TEMPLATES.ONE_IMAGE_FULLSIZE,
             images: [
               {
-                imageUrl: "assets/case-1/flow-mapping.png",
-                imageAlt: "?",
-              },
-              {
-                imageUrl: "assets/case-1/high-fidelity.png",
-                imageAlt: "Co-creating wireframes",
-              },
-              {
-                imageUrl: "assets/case-1/prototype.png",
-                imageAlt: "Co-creating wireframes",
+                imageUrl: "assets/case-1/wip.png",
+                imageAlt: "Workfloe",
               },
             ],
           },
