@@ -82,13 +82,13 @@ export const CASE_4 = {
             text: (
               <>
                 <Paragraph>
-                  NoWaste is a leading Global Logistics and transport company.
-                  Their subsidiary e-drop was trying to solve some of the issues
-                  with food deliveries. In Sweden, most supermarkets provide
-                  home delivery services, but these services require that people
-                  will be at home at a certain time. This is a challenge as most
-                  people are home around the same time which means that
-                  deliveries are limited to those hours.
+                  It is never a good experience sitting at home waiting for a
+                  delivery. This is especially true when comes to delivering
+                  fresh goods. Left unattended, milk can go sour, and fresh
+                  vegetable shelf life is drastically reduced. NoWaste is set to
+                  solve this problem by creating a refrigerated outdoor delivery
+                  box unlocked using an app. The existing was not received harsh
+                  criticism by all test users and needed to be redesigned.
                 </Paragraph>
               </>
             ),
@@ -128,8 +128,25 @@ export const CASE_4 = {
                 <Paragraph>
                   In order to solve this problem, NoWaste created a smart
                   outdoor delivery unit intended to keep deliveries fresh and
-                  secure. We were contacted in order to help them improve the
-                  performance of their companion app.
+                  secure. To unlock these units, users were instructed to use an
+                  app. No designer was involved in creating the existing app and
+                  the initial team responsible for it left mid-delivery. All in
+                  all, it was a mess that needed some love and care.
+                </Paragraph>
+                <Paragraph>
+                  The premise for this project was redesigning an
+                  underperforming app. The team developing the app didn’t have a
+                  designer on board, decisions were based on gut-feeling, and
+                  backend developers making design decisions. The outcome as
+                  expected didn’t impress.
+                </Paragraph>
+                <Paragraph>
+                  <strong>Important note:</strong> It was not intended to test
+                  if these apps are “the right way forward”, I personally
+                  believe that an unobtrusive lock/unlock functionality (using
+                  proximity for example) would have been better for end-users.
+                  But as contracts were signed and promise made, the focus was
+                  on improving commonly used functionality and visual appeal.
                 </Paragraph>
               </>
             ),
@@ -139,45 +156,6 @@ export const CASE_4 = {
     },
     {
       header: "Process",
-      elements: [
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: (
-              <>
-                Focus on the <strong>goal</strong>
-              </>
-            ),
-            text: (
-              <>
-                <Paragraph>
-                  The premise for this project was redesigning an
-                  underpreforming app. The team developing the app didnt have a
-                  designer onboard, decisions were based on gut-feeling, and
-                  backend developers making design decisions. The outcome as
-                  expected, didnt impress.
-                </Paragraph>
-                <Paragraph>
-                  <strong>Important note:</strong> It was not intended to test
-                  if these apps are “the right way forward” but instead focused
-                  on improving the app to a state where it would allow users to
-                  interact with their fridges.
-                </Paragraph>
-                <Paragraph>
-                  For this reason, we did not look into if users will actually
-                  need an app but instead focused on what functionality will
-                  users be looking for, what are the common use cases for such
-                  an app, creating a benchmark for comparison of our redesigned
-                  app.
-                </Paragraph>
-              </>
-            ),
-            bgColor: "rgba(99, 182, 187, .72)",
-          },
-        },
-      ],
-    },
-    {
       elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
@@ -193,6 +171,13 @@ export const CASE_4 = {
                   their food deliveries, what is important for them and how do
                   they experience the current app.
                 </Paragraph>
+                <Paragraph>
+                  We decided to send a feedback questionnaire to test users and
+                  An open survey to users that match the products’ target
+                  audience. We were hoping to get a better understanding of the
+                  extent of the problems, desirable features, and even use for
+                  of the responders to a future usability test.
+                </Paragraph>
               </>
             ),
           },
@@ -200,15 +185,24 @@ export const CASE_4 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Creating a benchmark for comparison</>,
+            title: <>Mapping out user-flows and identifying red routes</>,
             h: 2,
             text: (
               <>
                 <Paragraph>
-                  It was decided that a survey would be sent to the current test
-                  users and that based on its results we would use some of those
-                  people for usability testing on the current app for creating a
-                  benchmark for comparison.
+                  While we were waiting for the survey results, I sat with the
+                  Product Owner and Tech lead to map out the current flows in
+                  the application. Afterward, based on feedback from test users
+                  and responses to our open survey we were able to map the user
+                  flows in the current app and identify the most commonly used
+                  flows.
+                </Paragraph>
+                <Paragraph>
+                  Based on that I could create scenarios to cover key
+                  functionality and conducted usability testing to serve as a
+                  benchmark. After conducting an inIt was evident that some key
+                  features were not easily discoverable and often included
+                  obscure naming and overly complex interfaces.
                 </Paragraph>
               </>
             ),
