@@ -68,14 +68,6 @@ export const CLIENTS = [
     imageUrl: "assets/clients/client-02.svg",
     imageAlt: "NoWaste Logistics",
   },
-  {
-    imageUrl: "assets/clients/client-02.svg",
-    imageAlt: "NoWaste Logistics",
-  },
-  {
-    imageUrl: "assets/clients/client-02.svg",
-    imageAlt: "NoWaste Logistics",
-  },
   /* {
     imageUrl: "assets/clients/client-19.svg",
     imageAlt: "Clas Ohlson",
