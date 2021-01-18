@@ -47,9 +47,7 @@ const StyledScreenTransition = styled(motion.div)`
   z-index: 1;
 `;
 
-// TODO: remove screen transition between page and home screen (perhaps just a short transition in case no text is being sent?)
-// TODO: longer transition first time anyone uses the site (perhaps saving with a flag not to show again for the same session)
-const ScreenTransition = ({ animationFinished }) => {
+const LongScreenTransition = ({ animationFinished }) => {
   const [content] = useContext(AppContext);
 
   const screenTransitionContentVariants = {
@@ -120,8 +118,8 @@ const ScreenTransition = ({ animationFinished }) => {
   );
 };
 
-ScreenTransition.propTypes = {
+LongScreenTransition.propTypes = {
   animationFinished: PropTypes.func.isRequired,
 };
 
-export default ScreenTransition;
+export default LongScreenTransition;

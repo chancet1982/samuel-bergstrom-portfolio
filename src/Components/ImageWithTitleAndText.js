@@ -12,7 +12,7 @@ import padding from "../theme/padding";
 
 const StyledImageWithTitleAndText = styled(motion.div)`
   display: flex;
-
+  background-color: ${({ bgColor }) => bgColor && bgColor};
   flex-direction: ${({ horizontal, flip }) =>
     horizontal
       ? flip
@@ -38,6 +38,7 @@ const ImageWithTitleAndText = ({
   bgColor,
   horizontal,
   flip,
+  light,
 }) => {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
@@ -61,9 +62,9 @@ const ImageWithTitleAndText = ({
       animate={inView ? "inView" : "hidden"}
       horizontal={horizontal}
       flip={flip}
+      bgColor={bgColor}
     >
       <ImageWithCaption
-        bgColor={bgColor}
         imageUrl={imageUrl}
         imageAlt={imageAlt}
         caption={caption}
@@ -71,7 +72,7 @@ const ImageWithTitleAndText = ({
         size={IMAGE_WITH_CAPTION_SIZES.MEDIUM_DOUBLE}
         disableAnimations
       />
-      <TitleAndText h={3} title={title} padded disableAnimations>
+      <TitleAndText h={3} title={title} padded disableAnimations light={light}>
         {text}
       </TitleAndText>
     </StyledImageWithTitleAndText>
@@ -87,6 +88,7 @@ ImageWithTitleAndText.propTypes = {
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   horizontal: PropTypes.bool,
   flip: PropTypes.bool,
+  light: PropTypes.bool,
 };
 
 ImageWithTitleAndText.defaultProps = {
@@ -94,6 +96,7 @@ ImageWithTitleAndText.defaultProps = {
   bgColor: null,
   horizontal: false,
   flip: false,
+  light: false,
 };
 
 export default ImageWithTitleAndText;

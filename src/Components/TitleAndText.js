@@ -21,6 +21,7 @@ const StyledTitleAndText = styled(motion.div)`
     }}
 `;
 
+// TODO: Fix that if "light" then child components will be "light" as well
 const TitleAndText = ({
   title,
   h,

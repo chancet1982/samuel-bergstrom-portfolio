@@ -217,6 +217,7 @@ const StyledMenuToggler = styled(motion.a)`
   }
 `;
 
+// TODO: Menu links on mobile dont have a connection to typography, should be the same size as H3s
 // TODO: menu links need hover on desktop
 const Navigation = () => {
   const { width } = useWindowSize();

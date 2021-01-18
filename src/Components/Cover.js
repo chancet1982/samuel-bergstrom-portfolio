@@ -8,6 +8,7 @@ import Overline from "./Overline";
 import breakpoints from "../theme/breakpoints";
 import padding from "../theme/padding";
 import Image from "./Elements/Image";
+import Blinds from "./Blinds";
 
 const StyledCover = styled(motion.div)`
   height: ${({
@@ -63,24 +64,7 @@ const StyledCaption = styled(motion.div)`
   background-color: white;
 `;
 
-const CoverTransition = styled(motion.div)`
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  overflow: hidden;
-`;
-
-const StyledBlindEffect = styled(motion.div)`
-  background-color: ${({
-    theme: {
-      colors: { offwhite },
-    },
-  }) => offwhite};
-`;
-
-// TODO: parallax effect on the cover in the landing page
+// TODO: parallax effect on the cover in the landing page  needs some fine-tuning
 const Cover = ({
   overline,
   title,
@@ -120,20 +104,6 @@ const Cover = ({
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const blindVariants = {
-    initial: {
-      y: "-100%",
-    },
-    animate: {
-      y: ["-100%", "0%", "0%", "101%"],
-      transition: {
-        duration: 2,
-        times: [0, 0.1, 0.9, 1],
-        easing: "anticipate",
       },
     },
   };
@@ -183,11 +153,7 @@ const Cover = ({
         />
       </StyledCoverImage>
 
-      <CoverTransition>
-        <StyledBlindEffect variants={blindVariants} />
-        <StyledBlindEffect variants={blindVariants} />
-        <StyledBlindEffect variants={blindVariants} />
-      </CoverTransition>
+      <Blinds />
     </StyledCover>
   );
 };

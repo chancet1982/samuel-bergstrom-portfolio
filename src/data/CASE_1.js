@@ -109,7 +109,7 @@ export const CASE_1 = {
             template: IMAGE_GALLERY_TEMPLATES.THREE_IMAGES_TWO_COLUMNS,
             images: [
               {
-                imageUrl: "assets/case-1/mood-1.jpg",
+                imageUrl: "assets/case-1/mood-0.jpg",
                 imageAlt: "?",
               },
               {
