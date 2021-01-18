@@ -48,7 +48,7 @@ const Blinds = ({ up, bgColor }) => {
     animate: {
       y: ["100%", "0%", "0%", "-101%"],
       transition: {
-        duration: 2,
+        duration: 1.2,
         times: [0, 0.1, 0.9, 1],
         easing: "anticipate",
       },

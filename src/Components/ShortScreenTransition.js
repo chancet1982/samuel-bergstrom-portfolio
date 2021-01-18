@@ -25,7 +25,7 @@ const ShortScreenTransition = ({ animationFinished }) => {
     animate: {
       opacity: 1,
       transition: {
-        duration: 4,
+        duration: 1.6,
         staggerChildren: 0.2,
       },
     },
