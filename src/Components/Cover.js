@@ -1,12 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  motion,
-  useViewportScroll,
-  useTransform,
-  useSpring,
-} from "framer-motion";
+import { motion, useViewportScroll, useTransform } from "framer-motion";
 import PropTypes from "prop-types";
+import { useWindowSize } from "react-use";
 import TitleAndText from "./TitleAndText";
 import Overline from "./Overline";
 import breakpoints from "../theme/breakpoints";
@@ -85,15 +81,36 @@ const StyledBlindEffect = styled(motion.div)`
 `;
 
 // TODO: parallax effect on the cover in the landing page
-const Cover = ({ overline, title, text, imageUrl, bgColor }) => {
-  const { scrollYProgress } = useViewportScroll();
-  const yRange = [0, 0.1];
-  const scaleRange = [1, 1.2];
-  const scaleImage = useTransform(scrollYProgress, yRange, scaleRange);
-  const smoothScaleImage = useSpring(scaleImage, {
+const Cover = ({
+  overline,
+  title,
+  text,
+  imageUrl,
+  bgColor,
+  parallax,
+  sticky,
+}) => {
+  const { scrollY } = useViewportScroll();
+  const { height } = useWindowSize();
+
+  const coverHeight = (height / 100) * 92;
+  const scrollYrange = [0, coverHeight];
+
+  /* scale image on scroll */
+  const scale = 1.6; // Magic number
+  const scaleImageRange = [1, scale];
+  const scaleImage = useTransform(scrollY, scrollYrange, scaleImageRange);
+
+  /* move image on scroll */
+  const proximity = 2; // 1 - normal scroll speed, 2 - faster scrolling, < 1 further away objects
+  const yImageRange = sticky ? [0, coverHeight] : [0, -coverHeight * proximity];
+  const parallaxImage = useTransform(scrollY, scrollYrange, yImageRange);
+
+  const imageEffect = parallax ? parallaxImage : scaleImage;
+  /* const imageEffect = useSpring(parallax ? parallaxImage : scaleImage, {
     stiffness: 400,
-    damping: 90,
-  });
+    damping: 10,
+  }); */
 
   const coverVariants = {
     initial: {
@@ -162,7 +179,7 @@ const Cover = ({ overline, title, text, imageUrl, bgColor }) => {
       <StyledCoverImage bgColor={bgColor} variants={imageVariants}>
         <Image
           imageUrl={`${process.env.PUBLIC_URL}/${imageUrl}`}
-          style={{ scale: smoothScaleImage }}
+          style={parallax ? { y: imageEffect } : { scale: imageEffect }}
         />
       </StyledCoverImage>
 
@@ -181,6 +198,8 @@ Cover.propTypes = {
   imageUrl: PropTypes.string,
   bgColor: PropTypes.string,
   overline: PropTypes.string,
+  parallax: PropTypes.bool,
+  sticky: PropTypes.bool, // requires parallax to be enabled but will make the object "resist" the scrolling
 };
 
 Cover.defaultProps = {
@@ -189,6 +208,8 @@ Cover.defaultProps = {
   text: null,
   imageUrl: null,
   bgColor: null,
+  parallax: false,
+  sticky: false,
 };
 
 export default Cover;

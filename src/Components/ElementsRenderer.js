@@ -33,6 +33,8 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
           text={data.text}
           imageUrl={data.imageUrl}
           bgColor={data.bgColor}
+          parallax={data.parallax}
+          sticky={data.sticky}
         />
       );
     case SECTION_ELEMENTS.OVERVIEW:

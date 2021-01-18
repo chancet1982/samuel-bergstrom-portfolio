@@ -16,7 +16,6 @@ Result
 
 --CONTENT REVIEW:--
 Landing page -> Update Text for cover caption & Update intro text for case list.
-case-1 -> Go (images for design need a better layout)
 case-3 -> Go (need to find a tablet with horizontal orientation)
 case-4 -> Go through and rewrite
 case-5 -> Go through and rewrite
