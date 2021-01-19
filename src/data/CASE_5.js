@@ -59,7 +59,9 @@ export const CASE_5 = {
                 </Paragraph>
                 <Paragraph huge>
                   Admission and discharge blocked the treatment stations and
-                  required staff intervention for every patient.
+                  required staff intervention for every patient. I helped our
+                  client create a self-service kiosk for patient admission and
+                  discharge for all clinics.
                 </Paragraph>
               </>
             ),
@@ -88,32 +90,34 @@ export const CASE_5 = {
             text: (
               <>
                 <Paragraph>
-                  Renal patients are a very specific group. Mostly elderly,
-                  suffering from different impairments such as diabetes, motor,
-                  cognitive, visory, and hearing impairments.
+                  Renal patients are a very specific group. On top of their
+                  illness (Kidney failure) most of them suffer from a vast array
+                  of other conditions due to background diseases, such as
+                  diabetes, and age-related problems such as loss of hearing
+                  cognitive degradation loss of motor control, and deteriorating
+                  eyesight.
                 </Paragraph>
                 <Paragraph>
                   Dialysis patients need to register their weight before and
                   after every treatment. This is done to both ensure proper
-                  treatment and to follow up on patients health when not in the
+                  treatment and to follow up on patients’ health when not in the
                   clinics. This means that until their weight is registered
                   their treatment cannot be terminated and the treatment station
                   is blocked.
                 </Paragraph>
                 <Paragraph>
-                  This is a manual process in which patients need to be
-                  disconnected from the dialysis machines. Then patients queue
-                  up for taking their weight and then communicate this back to
-                  the medical staff.
+                  It is a manual process in which patients disconnect from the
+                  dialysis machines, queue up for taking their weight, and then
+                  communicate this back to the medical staff.{" "}
                 </Paragraph>
                 <Paragraph>
-                  This is very error prone and time consuming and almost all
-                  require assistance to ensure that the correct weight in
-                  entered into the systems.
+                  This is very error-prone and time-consuming process in which,
+                  almost all patients require assistance to ensure that the
+                  correct weight is entered into the systems.
                 </Paragraph>
                 <Paragraph>
                   On top of that upwards of 10% of their patients use
-                  wheelchairs which creates an additional challange: A patient
+                  wheelchairs which creates an additional challenge: A patient
                   needs to be moved from the treatment stations to a temporary
                   wheelchair, then taken to a special scale from which nurses
                   deduct the weight of the temporary wheelchair manually.
@@ -150,8 +154,8 @@ export const CASE_5 = {
             text: (
               <>
                 <Paragraph>
-                  The client asked us to deliver a self admission and discharge
-                  system to free their staff and shorten admission times to free
+                  The client asked us to deliver a self-admission and discharge
+                  system to free their staff, shorten admission times, and free
                   up treatment stations.
                 </Paragraph>
               </>
@@ -170,17 +174,22 @@ export const CASE_5 = {
             text: (
               <>
                 <Paragraph>
-                  Early in the process we realised that we need to achieve 3
-                  main goals: Identifying patients (without disclosing their
-                  identity), registering their weight, and allowing staff to
-                  assist and correct invalid measurements.
+                  Early in the process, we realized that for every
+                  admission/discharge we need to achieve 2 things: Identifying
+                  patients (without disclosing their identity), and registering
+                  their weight.
                 </Paragraph>
                 <Paragraph>
-                  On the surface these are simple tasks, but having to support
-                  multiple languages, oparate in over 20 countries, be
-                  accessible and easy enough for our grandparents to use. On top
-                  that is even before accounting to specific impariments that
-                  are common for renal patients. We needed to do some homework.
+                  In some cases, our system needs to allow staff to assist
+                  patients and correct invalid measurements.
+                </Paragraph>
+                <Paragraph>
+                  On the surface, these are simple tasks, but having to support
+                  multiple languages, operate in over 20 countries, be
+                  accessible and easy enough for our grandparents to use things
+                  get complicated. All of that is of course before we’re taking
+                  into account the specific impairments that are common for
+                  renal patients. We needed to do some homework.
                 </Paragraph>
               </>
             ),
@@ -194,15 +203,14 @@ export const CASE_5 = {
             text: (
               <>
                 <Paragraph>
-                  There is plenty of reports that provide insights regarding
-                  tech and “elderlies”. then there are reports about how to make
-                  accessible applications. So we did our homework and read
-                  through a lot of material hoping to find a way that will allow
-                  patients to assist their care-givers.
+                  There are plenty of reports about designing for the elderly
+                  and accessibility. So we did our homework and read through a
+                  lot of material hoping to find a way that will allow patients
+                  to assist their care-givers.
                 </Paragraph>
                 <Paragraph>
                   We conducted field studies, competitor analysis, interviewed
-                  hospital staff and patients for collect as much information as
+                  hospital staff, and patients to collect as much information as
                   possible.
                 </Paragraph>
               </>
@@ -223,146 +231,49 @@ export const CASE_5 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Identification & authentication</>,
-            h: 5,
+            title: <>General research findings:</>,
             text: (
               <>
                 <Paragraph>
-                  Manual input of people’s identifying details is time
-                  consuming. Specially considering the target audience. we set
-                  out to find a solution in which we could gather that
-                  information automatically without involving the patients.
-                  After this the patients will need to authenticate their
-                  identity to prevent errors and potential impersonations.
+                  <strong>Manual input of information: </strong>Based on
+                  research elderly type more than 3 times slower compared to
+                  young adults For patients with NP this is even more
+                  challenging as they lose sensation in their fingertips so we
+                  should expect that manual input would be time-consuming and
+                  error prone. Any manual input should be limited to the minimum
+                  and errors are to be expected.
+                </Paragraph>
+
+                <Paragraph>
+                  <strong>Patient identification & GDPR concerns: </strong>
+                  Patients had no hard time selecting their names from a list.
+                  However, openly displaying a list of full names raised
+                  concerns about GDPR compliance. When showing only partial
+                  names, staff pointed out that in some countries, you had 6
+                  patients with the same name scheduled for the same shift.
                 </Paragraph>
                 <Paragraph>
-                  <strong>Solution:</strong> We suggested using a facial
-                  recognition software and cameras to fully automate the
-                  identification and authentication. On top of that a manual
-                  “assistive mode” in which care-givers will be able to assist
-                  patients that need help.
+                  <strong>Weighing patients:</strong>I looked into different
+                  ways of registering patients’ weight. From nowadays shouting,
+                  through manually inputting values, to fully automated hardware
+                  integrations. Shouting is ineffective and error-prone.
+                  Hardware proved too costly and complex to implement. Manually
+                  inputting values were sub-optimal but much cheaper to
+                  implement.
+                </Paragraph>
+                <Paragraph>
+                  <strong>Accounting for wheelchairs:</strong>Accurately
+                  following the patient weight is crucial for dialysis. In the
+                  clinics, patients using a wheelchair suffer the most. Every
+                  wheelchair varies in weight so caregivers move patients to a
+                  “reference chair” with known weight, then manually calculate
+                  the weight of the patient (without the chair). A process that
+                  is far from ideal for both patients and staff.
                 </Paragraph>
               </>
             ),
           },
         },
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: <>Registering patients’ weight</>,
-            h: 5,
-            text: (
-              <>
-                <Paragraph>
-                  Registering patients weight before and after treatment is an
-                  important step for dialysis. patients manually shouting their
-                  weight to the nearest care-giver just proved ineffective and
-                  error prone. Hardware integration with noumerous models of
-                  weights available all around the world prooved too costly and
-                  manual input was sub-optimal and error prone.
-                </Paragraph>
-                <Paragraph>
-                  <strong>Solution:</strong> We suggested using OCR readers
-                  mounted on a camera feed directly above the weight itself.
-                  doing this, elimintated the need for hardware integration and
-                  required software only.
-                </Paragraph>
-              </>
-            ),
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: <>Accounting for wheelchairs</>,
-            h: 5,
-            text: (
-              <>
-                <Paragraph>
-                  Ideally when weight is crusial for treatment you want to be
-                  accurate. In order to get accurate readings you will aim at
-                  weighing people in the morning, naked, and after their first
-                  toilet visit. In the clinics patient's are weighed fully
-                  clothed, in different times based on their treatment schedule
-                  and available treatment station. For patients using a
-                  wheelchair things get trickier. Every wheelchair has a
-                  different weight. In most clinics, caregivers will move
-                  patients to a "reference chair" with known weight, then
-                  manually deduct the weight of that chair from the reading on
-                  the display. A process which is far from ideal for both
-                  patients and staff.
-                </Paragraph>
-                <Paragraph>
-                  <strong>Solution:</strong> Instead of using reference
-                  wheelchairs, it is possible to register which patients are
-                  using a wheelchair and store the weight of each patients chair
-                  in the system. That way "accounting" for wheelchairs can
-                  happen automatically. Using this approach, the patient get
-                  weighed using their own wheelchair, and the system
-                  automatically deducts the known weight of the chair from the
-                  recorded weight.
-                </Paragraph>
-                <Paragraph>
-                  <strong>Note:</strong> This approach is not perfect, staff
-                  intervention might still be required when patients replace
-                  their wheelchair or in case patients start using a wheelchair.
-                  In such cases staff can go into the system and make the
-                  required changes.
-                </Paragraph>
-              </>
-            ),
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: <>Legal considerations and GDPR</>,
-            h: 5,
-            text: (
-              <>
-                <Paragraph>
-                  Looking at the options for identification, it is easy to
-                  simply list the patients and ask them to choose their name in
-                  the list. This entails some security risks but should provide
-                  an "easy way out". But what do you do when you have 2 patients
-                  with the same name? This is common in some countries where the
-                  staff flaged us that they had sometimes 6 patients with the
-                  same name for the same scheduled for the same shift. How can
-                  you solve that without compremising patients right to privacy?
-                </Paragraph>
-                <Paragraph>
-                  <strong>Solution:</strong> We decided to split the
-                  identification into 2 parts. In order to avoid breach of GDPR
-                  in the first step we only presented a list of patients
-                  scheduled for treatment and their first name and first letter
-                  of their last name. If 2 patients or more had the same
-                  combination then a question was presented showing one of the
-                  full names, "are you X?" once a full name match was found, if
-                  more than one patient had the same first and last name, an
-                  additional question was added for their year of birth, old
-                  people seemed to be less forgetful of their year of birth
-                  compared to their age or exact date of birth.
-                </Paragraph>
-              </>
-            ),
-          },
-        },
-        /* {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: <>Staff assistance</>,
-            h: 5,
-            text: (
-              <>
-                <Paragraph>
-                  ...
-                  <br />
-                  <strong>Action - </strong>...
-                </Paragraph>
-              </>
-            ),
-          },
-        }, */
       ],
     },
     {
@@ -373,21 +284,27 @@ export const CASE_5 = {
           data: {
             title: (
               <>
-                2 options, the easy way <strong>or the right way</strong>
+                2 approaches to the same problem,{" "}
+                <strong>no clear winner</strong>
               </>
             ),
             text: (
               <>
                 <Paragraph>
                   After researching the problem area, looking at other check-in
-                  systems in other cliincs, and talking to both staff and
-                  patients. We seem to reach a dead-end. Any solution that will
-                  involve manual input will be error prone, and will require
-                  staff involvement.
+                  systems in other clinics, and talking to both staff and
+                  patients. It became apparent that any manual solution would be
+                  insufficient. Any such solution would be error-prone and would
+                  require staff involvement.
                 </Paragraph>
                 <Paragraph>
-                  We presented our findings to the client and instead of showing
-                  a single solution we presented 2.{" "}
+                  On the other hand, creating an automated system would be very
+                  costly and potentially hard to implement due to the different
+                  hardware found in different clinics across the globe.
+                </Paragraph>
+                <Paragraph>
+                  I presented both options to the client and discussed the pros
+                  and cons of both approaches.
                 </Paragraph>
               </>
             ),
@@ -398,44 +315,46 @@ export const CASE_5 = {
           data: {
             items: [
               {
-                bgColor: "rgba(9, 93, 132, .28)",
-                imageUrl: "assets/case-5/sneakpeek-1.png",
+                imageUrl: "assets/case-5/side-by-side-1.png",
                 imageAlt: "Auto check-in",
                 title: "Auto check-in using facial recognition and OCR",
                 text: (
                   <>
                     <Paragraph>
-                      In the automated solution we proposed using facial
+                      In the automated solution, I suggested using facial
                       recognition and cameras for identifying the patients.
-                      Weight will be automatically registered by using an
-                      external camera pointed at the scales display. Hardware
-                      integration was complex. We simply couldnt guaruntee that
-                      all clinics will use a limited number of models.
+                      Weighing patients would be done using a “hack” where
+                      instead of using a hardware integration use an external
+                      camera pointed at the display of the scales and feed in
+                      the values automatically using OCR.
+                    </Paragraph>
+                    <Paragraph>
+                      Clinics simply used too many different scales to make any
+                      “real” integration possible so a clever walk-around was
+                      the only alternative.
                     </Paragraph>
                   </>
                 ),
               },
               {
-                bgColor: "rgba(9, 93, 132, .28)",
-                imageUrl: "assets/case-5/sneakpeek-2.png",
+                imageUrl: "assets/case-5/side-by-side-2.png",
                 imageAlt: "Manual check-in",
                 title: "Manual input of identify and weight",
                 text: (
                   <>
                     <Paragraph>
-                      The other solution was more "barebones", patients will
+                      The other solution was more “barebones”, patients will
                       have to identify themselves by selecting their name from a
-                      list of names on the screen. The names list was limited to
-                      only patients that are scheduled for that specific shift.
-                      In some countries it is very common that 2 paitents in the
-                      shift have the same name. We chose to account for that by
-                      adding a followup question asking for the year of birth.
+                      list of patients that are scheduled for that shift. In
+                      some countries, some names are very common (even in a
+                      small group of 20), and an additional identifier had to be
+                      used. I proposed using the year of birth as a follow-up
+                      question in those cases.
                     </Paragraph>
                     <Paragraph>
-                      Once the patient was identified they would have to
-                      manually enter their weight. As both steps were error
-                      prone we created a forgiving layout allowing to correct
-                      mistakes and call for help in any phase.
+                      Once the patient identified him/herself, they would
+                      manually enter their weight. At any step, patients can go
+                      back and correct their errors or ask for staff assistance.
                     </Paragraph>
                   </>
                 ),
@@ -451,7 +370,7 @@ export const CASE_5 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>If at first you dont succeed.</>,
+            title: <>If at first, you don’t succeed.</>,
             flip: true,
             imageUrl: "assets/case-5/design.jpg",
             imageAlt: "One of the patients during our interview",
@@ -459,26 +378,106 @@ export const CASE_5 = {
             text: (
               <>
                 <Paragraph>
-                  As the client opted for the manual version for their MVP it
-                  was important to make sure that users can identify themselves
-                  and register their weight without issues.
+                  Our initial design aimed to included colorful illustrations
+                  that were friendly and joyful. It followed the same design
+                  language used in other products for this client. The interface
+                  was forgiving, allowing users to correct mistakes, and a
+                  “help” button was added to all screens allowing patients to
+                  call for assistance when needed.
                 </Paragraph>
                 <Paragraph>
-                  We mapped out the flows for both the patients and their
-                  caregivers. Created scenarios and went on for testing in the
-                  actual use environment. Based on the input adjusted the
-                  design. We knew we struck gold when an elderly lady using a
-                  tablet for the first time was able to check herself in in
-                  under 3 minutes.
+                  All colors were tested for contrast ratios, hit areas were
+                  tested to be sufficiently large, but as testing later showed
+                  the design simply didn’t work. Patients could not distinguish
+                  clickable elements. The illustrations did not serve a purpose
+                  but were decorative and distracting and generally the system
+                  was too unfamiliar. Texts were too long and didn’t provide
+                  enough clarity.
                 </Paragraph>
                 <Paragraph>
-                  We chose colors that were soothing, accessible and text that
-                  is readable even for vision impared. All steps were reversible
-                  in order to allow potential errors to be corrected and “help”
-                  button was added for assistive mode.
+                  For the next version, I opted for a much simpler design
+                  removing all illustrations and aimed at a more familiar
+                  design. I removed all illustrations, increased the contrast,
+                  and text sizes, and provided additional signifiers to
+                  interactive elements.
                 </Paragraph>
               </>
             ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.IMAGE_GALLERY,
+          data: {
+            template: IMAGE_GALLERY_TEMPLATES.ONE_IMAGE_FULLSIZE,
+            images: [
+              {
+                imageUrl: "assets/case-5/wip.png",
+                imageAlt: "Workflow",
+                caption: "Some phases from my work in this project",
+              },
+            ],
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
+          data: {
+            items: [
+              {
+                imageUrl: "assets/case-5/sneakpeek-1.png",
+                imageAlt: "Patient Identification",
+                title: "Patient Identification",
+                text: (
+                  <>
+                    <Paragraph>Patient Identification</Paragraph>
+                    <Paragraph>
+                      Patients identify themselves by selecting the first letter
+                      of their name, then they are presented with a list of
+                      first names and the first letter of the last name. If
+                      muplitple patients share a name combination a followup
+                      question will be shown.
+                    </Paragraph>
+                    <Paragraph>
+                      <strong>Note: </strong> this is not an optimal solution.
+                      Names globally come in many different standards, so this
+                      might fail later, it was however decided to go with this
+                      solution as it existing patient records are stored. In
+                      hindsight, this is not a good solution.
+                    </Paragraph>
+                  </>
+                ),
+              },
+              {
+                imageUrl: "assets/case-5/sneakpeek-2.png",
+                imageAlt: "Multi-Language support",
+                title: "Multi-Language support",
+                text: (
+                  <>
+                    <Paragraph>
+                      This interface needs to be used by patients in more than
+                      20 differnent countries and would need to support even
+                      right-to-left languages. The interface language is
+                      customizable per clinic but in case patients are visiting
+                      from another country they will be able to change the
+                      interface language to any supported language.
+                    </Paragraph>
+                  </>
+                ),
+              },
+              {
+                imageUrl: "assets/case-5/sneakpeek-3.png",
+                imageAlt: "Registering patients’ weight",
+                title: "Registering patients’ weight",
+                text: (
+                  <>
+                    <Paragraph>
+                      Manually registering patients’ weight was designed as a
+                      fallback in case automatically registering the weight
+                      failed or was not available in a specific clinic.{" "}
+                    </Paragraph>
+                  </>
+                ),
+              },
+            ],
           },
         },
       ],
@@ -489,7 +488,7 @@ export const CASE_5 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>2 days, 20 tests and an overhall</>,
+            title: <>2 days, 20 tests, and an overhaul</>,
             imageUrl: "assets/case-5/validation.jpg",
             imageAlt:
               "Participant during usability testing, first time ever using a tablet",
@@ -497,21 +496,21 @@ export const CASE_5 = {
               "Participant during usability testing, first time ever using a tablet",
             text: (
               <>
-                <Paragraph large>
-                  Like most things Design is hard to get right the first time.
+                <Paragraph>
+                  Like most things, Design is hard to get right the first time.
                   We allowed for several days of intensive rounds of testing
-                  using REIT method. Using this method, the input from every
+                  using the REIT method. Using this method, the input from every
                   round of tests is the basis for changes for the following
-                  version. It allowes for quick iterations and reaching a better
+                  version. It allows for quick iterations and reaching a better
                   level of “maturity” in a far shorter time.
                 </Paragraph>
-                <Paragraph small>
-                  During those tests it became apparent that the hospital staff
+                <Paragraph>
+                  During those tests, it became apparent that the hospital staff
                   was quite accustomed to using tablets had no problems
                   assisting patients. Some patients however experienced problems
                   navigating their way and identifying buttons as clickable
                   elements. UI changes were introduced making the design more
-                  fermiliar and improving the overall experience.
+                  familiar and improving the overall experience.
                 </Paragraph>
               </>
             ),

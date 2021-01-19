@@ -20,6 +20,7 @@ const colors = {
   offwhiteHover: "#E2E2E2",
   darkgray: "#333333",
   darkgrayHover: "#2B2B2B",
+  black: "#000000",
 };
 
 export default colors;

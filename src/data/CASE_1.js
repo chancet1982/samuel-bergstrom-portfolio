@@ -351,7 +351,8 @@ export const CASE_1 = {
             images: [
               {
                 imageUrl: "assets/case-1/wip.png",
-                imageAlt: "Workfloe",
+                imageAlt: "Workflow",
+                caption: "Some phases from my work in this project",
               },
             ],
           },

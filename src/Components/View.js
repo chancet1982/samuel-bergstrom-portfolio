@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import LongScreenTransition from "./LongScreenTransition";
 import ShortScreenTransition from "./ShortScreenTransition";
 import padding from "../theme/padding";
 
-const StyledView = styled.main`
+const StyledView = styled(motion.main)`
   ${({ padded }) =>
     padded && {
       paddingTop: padding.vertical.quadruple,
@@ -36,10 +37,24 @@ const View = ({ children, padded, transition }) => {
     );
   };
 
+  const variants = {
+    initial: { opacity: 1 },
+    animate: { opacity: 1 },
+    exit: { opacity: 0 },
+  };
+
   return screenTransition ? (
     <ScreenTransition />
   ) : (
-    <StyledView padded={padded}>{children}</StyledView>
+    <StyledView
+      padded={padded}
+      initial="initial"
+      animate="animate"
+      exit="exit"
+      variants={variants}
+    >
+      {children}
+    </StyledView>
   );
 };
 
