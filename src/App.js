@@ -9,6 +9,7 @@ import Footer from "./Components/Footer";
 import ErrorBoundary from "./Components/ErrorBoundary";
 import ScrollToTop from "./utils/ScrollToTop";
 import theme from "./theme/theme";
+import LightContextProvider from "./Context/ColorContext";
 
 const ViewLandingPage = lazy(() =>
   import("./Components/Views/ViewLandingPage")
@@ -61,7 +62,9 @@ function App() {
                 </Switch>
               </AnimatePresence>
             </Suspense>
-            <Footer />
+            <LightContextProvider>
+              <Footer />
+            </LightContextProvider>
           </Router>
         </AppContextProvider>
       </ErrorBoundary>

@@ -13,7 +13,6 @@ const StyledView = styled(motion.main)`
     }}
 `;
 
-// TODO: fix fade out on exit and use animate presence.
 const View = ({ children, padded, transition }) => {
   const [screenTransition, setScreenTransition] = useState(transition);
   const isShort = sessionStorage.getItem("isShortLS");

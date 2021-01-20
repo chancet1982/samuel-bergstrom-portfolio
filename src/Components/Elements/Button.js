@@ -11,12 +11,16 @@ const { size } = typography;
 
 const StyledButton = styled.button`
   padding: ${padding.vertical.half} ${padding.horizontal.quadruple};
-  background-color: ${({ dark, light }) =>
-    dark ? colors.darkgray : light ? colors.offwhite : colors.primary};
-  color: ${({ dark, light }) =>
-    dark
+  background-color: ${({ secondaryDark, secondaryLight }) =>
+    secondaryDark
+      ? colors.darkgray
+      : secondaryLight
+      ? colors.offwhite
+      : colors.primary};
+  color: ${({ secondaryDark, secondaryLight }) =>
+    secondaryDark
       ? colors.text.light.high
-      : light
+      : secondaryLight
       ? colors.text.dark.high
       : colors.text.dark.high};
   border: none;
@@ -29,10 +33,10 @@ const StyledButton = styled.button`
   cursor: pointer;
 
   &:hover {
-    background-color: ${({ dark, light }) =>
-      dark
+    background-color: ${({ secondaryDark, secondaryLight }) =>
+      secondaryDark
         ? colors.darkgrayHover
-        : light
+        : secondaryLight
         ? colors.offwhiteHover
         : colors.primaryHover};
     ${shadows.soft}
@@ -46,8 +50,8 @@ const StyledButton = styled.button`
 const Button = ({
   onClick,
   children,
-  dark,
-  light,
+  secondaryDark,
+  secondaryLight,
   small,
   large,
   huge,
@@ -57,8 +61,8 @@ const Button = ({
 
   return (
     <StyledButton
-      dark={dark}
-      light={light}
+      secondaryDark={secondaryDark}
+      secondaryLight={secondaryLight}
       onClick={onClick}
       small={small}
       large={large}
@@ -73,8 +77,8 @@ const Button = ({
 Button.propTypes = {
   onClick: PropTypes.func,
   children: PropTypes.string,
-  dark: PropTypes.bool,
-  light: PropTypes.bool,
+  secondaryDark: PropTypes.bool,
+  secondaryLight: PropTypes.bool,
   disabled: PropTypes.bool,
   small: PropTypes.bool,
   large: PropTypes.bool,
@@ -84,8 +88,8 @@ Button.propTypes = {
 Button.defaultProps = {
   onClick: null,
   children: "Submit",
-  dark: false,
-  light: false,
+  secondaryDark: false,
+  secondaryLight: false,
   disabled: false,
   small: false,
   large: false,

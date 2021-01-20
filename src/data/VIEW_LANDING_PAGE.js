@@ -1,6 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import React from "react";
 import Paragraph from "../Components/Elements/Paragraph";
+import colors from "../theme/colors";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 
 export const VIEW_LANDING_PAGE = [
@@ -24,19 +25,18 @@ export const VIEW_LANDING_PAGE = [
   },
   {
     heaeder: "Cases",
-    bgColor: "black",
+    bgColor: colors.black,
     elements: [
       {
         template: SECTION_ELEMENTS.CASES,
         data: {
-          light: true,
           title: (
             <>
               Some of <mark>my work</mark>
             </>
           ),
           text: (
-            <Paragraph large light>
+            <Paragraph large>
               Just some of my work from the last couple of years.
             </Paragraph>
           ),

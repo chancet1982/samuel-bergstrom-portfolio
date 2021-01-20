@@ -1,7 +1,8 @@
 /* eslint-disable no-nested-ternary */
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { LightContext } from "../../Context/ColorContext";
 
 const styleParagraph = (small, large, huge, size, lh, margin, inc) => `
   font-size: ${
@@ -28,7 +29,9 @@ const StyledParagraph = styled.p`
   }) => styleParagraph(small, large, huge, size, lh, margin, inc)}
 `;
 
-const Paragraph = ({ small, large, huge, light, children }) => {
+const Paragraph = ({ small, large, huge, children }) => {
+  const [light] = useContext(LightContext);
+
   return (
     <StyledParagraph small={small} large={large} huge={huge} light={light}>
       {children}
@@ -40,7 +43,6 @@ Paragraph.propTypes = {
   small: PropTypes.bool,
   large: PropTypes.bool,
   huge: PropTypes.bool,
-  light: PropTypes.bool,
   children: PropTypes.node.isRequired,
 };
 
@@ -48,7 +50,6 @@ Paragraph.defaultProps = {
   small: false,
   large: false,
   huge: false,
-  light: false,
 };
 
 export default Paragraph;

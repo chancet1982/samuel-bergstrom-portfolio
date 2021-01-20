@@ -1,10 +1,11 @@
 /* eslint-disable no-nested-ternary */
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { useWindowSize } from "react-use";
 import breakpoints from "../../theme/breakpoints";
 import typography from "../../theme/typography";
+import { LightContext } from "../../Context/ColorContext";
 
 const magnify = (val, inc, times) => val * (1 + inc) ** Math.abs(times);
 
@@ -37,8 +38,10 @@ const StyledUnit = styled.span`
     styleUnit(h, size, lh, inc, getMod(width, minMod, maxMod))}
 `;
 
-const Unit = ({ light, h, children }) => {
+const Unit = ({ h, children }) => {
+  const [light] = useContext(LightContext);
   const { width } = useWindowSize();
+
   return (
     <StyledUnit light={light} h={h} width={width}>
       {children}
@@ -49,12 +52,10 @@ const Unit = ({ light, h, children }) => {
 Unit.propTypes = {
   h: PropTypes.number,
   children: PropTypes.node.isRequired,
-  light: PropTypes.bool,
 };
 
 Unit.defaultProps = {
   h: 3,
-  light: false,
 };
 
 export default Unit;

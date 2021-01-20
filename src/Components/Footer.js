@@ -17,7 +17,7 @@ const StyledFooter = styled.footer`
     margin: 0;
   }
 `;
-
+// TODO consider moving to section renderer
 const SectionFooter = () => {
   return (
     <StyledFooter>

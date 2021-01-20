@@ -1,10 +1,11 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { AppContext } from "../Context/AppContext";
 import Title from "./Elements/Title";
 import padding from "../theme/padding";
+import { LightContext } from "../Context/ColorContext";
 
 const StyledCardFace = styled(motion.div)`
   background: ${({
@@ -47,8 +48,16 @@ const StyledScreenTransition = styled(motion.div)`
   z-index: 1;
 `;
 
+// TODO: Change so text is always light during long screen transition.
+// TODO: Improve screen transition so it is snazzier.
+// TODO: Make screen transition take into account the URL?
 const LongScreenTransition = ({ animationFinished }) => {
   const [content] = useContext(AppContext);
+  const [, setLight] = useContext(LightContext);
+
+  useEffect(() => {
+    setLight(true);
+  }, [setLight]);
 
   const screenTransitionContentVariants = {
     initial: { opacity: 0 },
@@ -100,9 +109,7 @@ const LongScreenTransition = ({ animationFinished }) => {
           variants={screenTransitionContentVariants}
           onAnimationComplete={onComplete}
         >
-          <Title h={1} light>
-            {content}
-          </Title>
+          <Title h={1}>{content}</Title>
         </StyledScreenTransitionContent>
         <StyledScreenTransition
           initial="initial"

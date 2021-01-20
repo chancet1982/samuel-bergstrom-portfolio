@@ -18,13 +18,11 @@ import SocialMediaLinks from "./SocialMediaLinks";
 
 const SectionElementsRenderer = ({ elementKey, data, template }) => {
   if (!template) {
-    // console.error("CANNOT RENDER THIS!", elementKey, data, template);
     return null;
   }
 
   switch (template) {
     case SECTION_ELEMENTS.COVER:
-      /* DONE */
       return (
         <Cover
           key={elementKey}
@@ -38,7 +36,6 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
         />
       );
     case SECTION_ELEMENTS.OVERVIEW:
-      /* DONE */
       return (
         <Overview
           key={elementKey}
@@ -56,11 +53,11 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
           title={data.title}
           h={data.h}
           text={data.text}
-          light={data.light}
           imageUrl={data.imageUrl}
           imageAlt={data.imageAlt}
           caption={data.caption}
           flip={data.flip}
+          bgColor={data.bgColor}
         />
       );
     case SECTION_ELEMENTS.RESULT:
@@ -113,16 +110,11 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
     case SECTION_ELEMENTS.CLIENTS:
       return <Clients key={elementKey} />;
     case SECTION_ELEMENTS.QUOTE:
-      return <BlockQuote quote={data.quote} cite={data.cite} />;
-    case SECTION_ELEMENTS.CASES:
       return (
-        <Cases
-          key={elementKey}
-          title={data.title}
-          text={data.text}
-          light={data.light}
-        />
+        <BlockQuote key={elementKey} quote={data.quote} cite={data.cite} />
       );
+    case SECTION_ELEMENTS.CASES:
+      return <Cases key={elementKey} title={data.title} text={data.text} />;
     default:
       return null;
   }

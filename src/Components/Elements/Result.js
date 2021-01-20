@@ -11,18 +11,9 @@ const StyledResult = styled.div`
   padding-bottom: ${padding.vertical.half};
 `;
 
-const StyledDescription = styled(Paragraph)`
-  color: ${({
-    light,
-    theme: {
-      colors: { text },
-    },
-  }) => (light ? text.light.medium : text.dark.medium)};
-`;
-
-const Result = ({ value, unit, description, light }) => {
+const Result = ({ value, unit, description }) => {
   return (
-    <StyledResult light={light}>
+    <StyledResult>
       <div>
         {value && (
           <Value>
@@ -31,7 +22,7 @@ const Result = ({ value, unit, description, light }) => {
         )}
         {unit && <Unit> {unit}</Unit>}
       </div>
-      <StyledDescription>{description}</StyledDescription>
+      <Paragraph>{description}</Paragraph>
     </StyledResult>
   );
 };
@@ -40,14 +31,12 @@ Result.propTypes = {
   value: PropTypes.string,
   unit: PropTypes.string,
   description: PropTypes.string,
-  light: PropTypes.bool,
 };
 
 Result.defaultProps = {
   value: null,
   unit: null,
   description: null,
-  light: false,
 };
 
 export default Result;

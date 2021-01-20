@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -8,10 +8,16 @@ import ImageWithCaption from "./ImageWithCaption";
 import { variants } from "../animations/animations";
 import sizes from "../theme/sizes";
 import breakpoints from "../theme/breakpoints";
+import { LightContext } from "../Context/ColorContext";
+import colors from "../theme/colors";
 
 const StyledTextbox = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  ${({ bgColor }) =>
+    bgColor && {
+      backgroundColor: bgColor,
+    }};
 
   > div {
     grid-column: 1 / span 3;
@@ -36,11 +42,12 @@ const StyledTextbox = styled(motion.div)`
   }
 `;
 
+// TODO: Fix that content would be "light" when bgColor is provided on the textbox.
 const Textbox = ({
   title,
   h,
   text,
-  light,
+  bgColor,
   flip,
   imageUrl,
   imageAlt,
@@ -51,13 +58,19 @@ const Textbox = ({
   const intersection = useIntersection(intersectionRef, {
     threshold: 0,
   });
+  const [, setLight] = useContext(LightContext);
 
+  // eslint-disable-next-line consistent-return
   useEffect(() => {
     const inViewNow = intersection && intersection.intersectionRatio > 0;
     if (inViewNow) {
       return setInView(inViewNow);
     }
   }, [intersection]);
+
+  useEffect(() => {
+    setLight(bgColor !== null && bgColor !== colors.offwhite);
+  }, [setLight, bgColor]);
 
   return (
     <StyledTextbox
@@ -66,6 +79,7 @@ const Textbox = ({
       animate={inView ? "inView" : "hidden"}
       variants={variants}
       flip={flip}
+      bgColor={bgColor}
     >
       {flip && imageUrl && (
         <ImageWithCaption
@@ -77,7 +91,7 @@ const Textbox = ({
         />
       )}
 
-      <TitleAndText h={h} title={title} light={light} disableAnimations padded>
+      <TitleAndText h={h} title={title} disableAnimations padded>
         {text}
       </TitleAndText>
 
@@ -98,7 +112,7 @@ Textbox.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   h: PropTypes.number,
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
-  light: PropTypes.bool,
+  bgColor: PropTypes.string,
   flip: PropTypes.bool,
   imageUrl: PropTypes.string,
   imageAlt: PropTypes.string,
@@ -108,7 +122,7 @@ Textbox.propTypes = {
 Textbox.defaultProps = {
   title: null,
   h: 2,
-  light: false,
+  bgColor: null,
   flip: false,
   imageUrl: null,
   imageAlt: null,

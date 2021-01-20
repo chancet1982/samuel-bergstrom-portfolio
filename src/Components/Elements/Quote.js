@@ -1,21 +1,18 @@
-/* eslint-disable no-nested-ternary */
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { useWindowSize } from "react-use";
 import breakpoints from "../../theme/breakpoints";
 import typography from "../../theme/typography";
+import { LightContext } from "../../Context/ColorContext";
 
 const magnify = (val, inc, times) => val * (1 + inc) ** Math.abs(times);
-
-/* Maybe we need to support negatives */
 const multiply = (val, times) => val * times;
-
-/* Not sure how this will work */
 const decrease = (val, dec, times) => val - dec * times;
 const { desktop, mobile } = breakpoints;
 
 const getMod = (res, minMod, maxMod) =>
+  // eslint-disable-next-line no-nested-ternary
   res >= desktop
     ? maxMod
     : res < desktop && res >= mobile
@@ -73,7 +70,9 @@ const StyledQuote = styled.q`
   }
 `;
 
-const Quote = ({ light, h, children }) => {
+const Quote = ({ h, children }) => {
+  const [light] = useContext(LightContext);
+
   const { width } = useWindowSize();
   return (
     <StyledQuote light={light} h={h} width={width}>
@@ -85,12 +84,10 @@ const Quote = ({ light, h, children }) => {
 Quote.propTypes = {
   h: PropTypes.number,
   children: PropTypes.node.isRequired,
-  light: PropTypes.bool,
 };
 
 Quote.defaultProps = {
   h: 2,
-  light: false,
 };
 
 export default Quote;

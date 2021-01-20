@@ -21,12 +21,10 @@ const StyledTitleAndText = styled(motion.div)`
     }}
 `;
 
-// TODO: Fix that if "light" then child components will be "light" as well
 const TitleAndText = ({
   title,
   h,
   children,
-  light,
   disableAnimations,
   sticky,
   padded,
@@ -54,11 +52,7 @@ const TitleAndText = ({
       animate={disableAnimations || inView ? "inView" : "hidden"}
       padded={padded}
     >
-      {title && (
-        <Title h={h} light={light}>
-          {title}
-        </Title>
-      )}
+      {title && <Title h={h}>{title}</Title>}
       {children}
     </StyledTitleAndText>
   );
@@ -68,7 +62,6 @@ TitleAndText.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   h: PropTypes.number,
-  light: PropTypes.bool,
   disableAnimations: PropTypes.bool,
   sticky: PropTypes.bool,
   padded: PropTypes.bool,
@@ -78,7 +71,6 @@ TitleAndText.defaultProps = {
   title: null,
   children: null,
   h: 1,
-  light: false,
   disableAnimations: false,
   sticky: false,
   padded: false,

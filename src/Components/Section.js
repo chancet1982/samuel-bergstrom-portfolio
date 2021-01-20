@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -6,6 +6,8 @@ import { useWindowSize } from "react-use";
 import breakpoints from "../theme/breakpoints";
 import SectionHeader from "./SectionHeader";
 import padding from "../theme/padding";
+import { LightContext } from "../Context/ColorContext";
+import colors from "../theme/colors";
 
 const StyledSection = styled(motion.section)`
   height: fit-content;
@@ -33,7 +35,8 @@ const StyledSection = styled(motion.section)`
     }}
 `;
 
-const Section = (props) => {
+const Section = ({ header, children, bgColor, isSticky }) => {
+  const [, setLight] = useContext(LightContext);
   const { width } = useWindowSize();
   const [isMobile, setIsMobile] = useState(false);
 
@@ -41,11 +44,12 @@ const Section = (props) => {
     setIsMobile(width < breakpoints.tablet);
   }, [setIsMobile, width]);
 
-  const { header, children } = props;
+  useEffect(() => {
+    setLight(bgColor !== null && bgColor !== colors.offwhite);
+  }, [setLight, bgColor]);
 
   return (
-    // eslint-disable-next-line react/jsx-props-no-spreading
-    <StyledSection {...props}>
+    <StyledSection header={header} bgColor={bgColor} isSticky={isSticky}>
       {header && !isMobile && <SectionHeader>{header}</SectionHeader>}
       {children}
     </StyledSection>
@@ -55,17 +59,13 @@ const Section = (props) => {
 Section.propTypes = {
   header: PropTypes.string,
   children: PropTypes.node.isRequired,
-  fullWidth: PropTypes.bool,
   bgColor: PropTypes.string,
-  padding: PropTypes.bool,
   isSticky: PropTypes.bool,
 };
 
 Section.defaultProps = {
   header: null,
-  fullWidth: false,
   bgColor: null,
-  padding: true,
   isSticky: false,
 };
 

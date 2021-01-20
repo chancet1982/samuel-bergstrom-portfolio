@@ -1,10 +1,11 @@
 /* eslint-disable no-nested-ternary */
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { useWindowSize } from "react-use";
 import breakpoints from "../../theme/breakpoints";
 import typography from "../../theme/typography";
+import { LightContext } from "../../Context/ColorContext";
 
 const magnify = (val, inc, times) => val * (1 + inc) ** Math.abs(times);
 
@@ -74,8 +75,9 @@ export const StyledH5 = styled.h5`
     styleTitle(h, size, lh, margin, inc, getMod(width, minMod, maxMod))}
 `;
 
-const Title = ({ h, children, light, padding }) => {
+const Title = ({ h, children, padding }) => {
   const { width } = useWindowSize();
+  const [light] = useContext(LightContext);
 
   const renderTitle = () => {
     switch (h) {
@@ -120,13 +122,11 @@ const Title = ({ h, children, light, padding }) => {
 Title.propTypes = {
   h: PropTypes.number,
   children: PropTypes.node.isRequired,
-  light: PropTypes.bool,
   padding: PropTypes.bool,
 };
 
 Title.defaultProps = {
   h: 1,
-  light: false,
   padding: false,
 };
 

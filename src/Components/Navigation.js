@@ -14,6 +14,23 @@ import colors from "../theme/colors";
 import shadows from "../theme/shadows";
 import typography from "../theme/typography";
 
+const magnify = (val, inc, times) => val * (1 + inc) ** Math.abs(times);
+const { desktop, mobile } = breakpoints;
+
+const getMod = (res, minMod, maxMod) =>
+  // eslint-disable-next-line no-nested-ternary
+  res >= desktop
+    ? maxMod
+    : res < desktop && res >= mobile
+    ? minMod + ((res - mobile) * (maxMod - minMod)) / (desktop - mobile)
+    : minMod;
+
+const styleNavLink = (size, mod) => `
+  font-size: ${magnify(size, mod, 4)}rem;
+`;
+
+const { size, minMod, maxMod } = typography;
+
 const StyledNavigation = styled(motion.nav)`
   height: 5.5rem;
   position: fixed;
@@ -69,8 +86,6 @@ const StyledMenu = styled(motion.menu)`
   align-items: center;
 `;
 
-const { size } = typography;
-
 const StyledNavLink = styled(NavLink)`
   font-size: ${size}rem;
   text-decoration: none;
@@ -88,7 +103,7 @@ const StyledNavLink = styled(NavLink)`
       },
     }) => text.light.medium};
 
-    font-size: 3.4529765914192145rem;
+    ${({ width }) => styleNavLink(size, getMod(width, minMod, maxMod))}
     font-family: "Lora", serif;
     display: block;
     padding: 0 3vw;
@@ -116,6 +131,16 @@ const StyledNavLink = styled(NavLink)`
         colors: { text },
       },
     }) => text.dark.medium};
+
+    transition: all 0.5s !important;
+
+    &:hover {
+      color: ${({
+        theme: {
+          colors: { text },
+        },
+      }) => text.dark.high};
+    }
 
     &.active {
       color: ${({
@@ -217,8 +242,6 @@ const StyledMenuToggler = styled(motion.a)`
   }
 `;
 
-// TODO: Menu links on mobile dont have a connection to typography, should be the same size as H3s
-// TODO: menu links need hover on desktop
 const Navigation = () => {
   const { width } = useWindowSize();
   const isDesktop = width >= breakpoints.desktop;
@@ -307,30 +330,19 @@ const Navigation = () => {
         animate={expanded ? "expanded" : "collapsed"}
         variants={menuVariants}
       >
-        <StyledNavLink
-          exact
-          to="/"
-          onClick={() => changeLoaderContent("Samuel Bergström")}
-        >
+        <StyledNavLink width={width} exact to="/">
           Home
         </StyledNavLink>
-        <StyledNavLink
-          to="/about"
-          onClick={() => changeLoaderContent("About me")}
-        >
+        <StyledNavLink width={width} to="/about">
           About me
         </StyledNavLink>
-        <StyledNavLink to="/cases" onClick={() => changeLoaderContent("Cases")}>
+        <StyledNavLink width={width} to="/cases">
           Cases
         </StyledNavLink>
         {/* <StyledNavLink to="/test" onClick={() => changeLoaderContent("Test")}>
           Test
         </StyledNavLink> */}
-        <StyledNavLink
-          className="primary"
-          to="/contact"
-          onClick={() => changeLoaderContent("Get in touch")}
-        >
+        <StyledNavLink className="primary" width={width} to="/contact">
           Get in touch
         </StyledNavLink>
       </StyledMenu>

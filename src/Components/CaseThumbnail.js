@@ -10,8 +10,9 @@ import breakpoints from "../theme/breakpoints";
 import { AppContext } from "../Context/AppContext";
 import padding from "../theme/padding";
 import { CASE_STATUS } from "../data/dictionaries/CASE_STATUS";
+import Tag from "./Elements/Tag";
+import { LightContext } from "../Context/ColorContext";
 import Span from "./Elements/Span";
-import shadows from "../theme/shadows";
 
 const StyledCaseThumbnail = styled(motion.div)`
   flex: 1 1 150px;
@@ -50,11 +51,6 @@ const StyledCaseThumbnailCaption = styled(motion.div)`
   padding-left: ${padding.horizontal.quadruple};
   padding-right: ${padding.horizontal.quadruple};
   left: 0;
-  color: ${({
-    theme: {
-      colors: { text },
-    },
-  }) => text.light.high};
 `;
 
 const StyledCaseThumbnailImage = styled(motion.div)`
@@ -95,6 +91,12 @@ const StyledCaseIntro = styled(motion.div)`
 
 const CaseThumbnail = ({ data, caseKey, status }) => {
   const [, setContent] = useContext(AppContext);
+
+  const [, setLight] = useContext(LightContext);
+
+  useEffect(() => {
+    setLight(true);
+  }, [setLight]);
 
   const changeLoaderContent = (newContent) => {
     setContent(newContent);
@@ -175,29 +177,6 @@ const CaseThumbnail = ({ data, caseKey, status }) => {
     },
   };
 
-  const StyledTag = styled.div`
-    position: absolute;
-    top: -40px;
-    right: -96px;
-    transform: rotate(45deg);
-    transform-origin: 0;
-    padding: 0.5rem 4rem;
-    background: ${({
-      theme: {
-        colors: { primary },
-      },
-    }) => primary};
-    ${shadows.soft}
-  `;
-
-  const Tag = () => {
-    return (
-      <StyledTag>
-        <Span>Coming Soon!</Span>
-      </StyledTag>
-    );
-  };
-
   const renderCaseThumbnail = () => {
     return (
       <>
@@ -210,13 +189,13 @@ const CaseThumbnail = ({ data, caseKey, status }) => {
           initial="hidden"
           variants={thumbnailCaptionVariants}
         >
-          <Overline light>{overline}</Overline>
-          <Title h={3} light padding>
+          <Overline>{overline}</Overline>
+          <Title h={3} padding>
             {title}
           </Title>
         </StyledCaseThumbnailCaption>
         <StyledCaseIntro initial="hidden" variants={caseIntroVariants}>
-          {text}
+          <Span small>{text}</Span>
         </StyledCaseIntro>
         {status === CASE_STATUS.COMING_SOON && <Tag />}
       </>

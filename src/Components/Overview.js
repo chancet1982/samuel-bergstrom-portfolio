@@ -85,41 +85,32 @@ const Overview = ({
   duration,
   platforms,
   toolsAndMethods,
-  light,
   bgColor,
 }) => {
   return (
     <StyledOverviewWrapper>
       <StyledOverviewText bgColor={bgColor}>
-        {text && <TitleAndText light={light}>{text}</TitleAndText>}
+        {text && <TitleAndText>{text}</TitleAndText>}
       </StyledOverviewText>
       <StyledOverview>
         {myRole && (
-          <TitleAndText title="My role:" h={5} light={light}>
-            <Paragraph small light={light}>
-              {myRole}
-            </Paragraph>
+          <TitleAndText title="My role:" h={5}>
+            <Paragraph small>{myRole}</Paragraph>
           </TitleAndText>
         )}
         {duration && (
-          <TitleAndText title="Duration:" h={5} light={light}>
-            <Paragraph small light={light}>
-              {duration}
-            </Paragraph>
+          <TitleAndText title="Duration:" h={5}>
+            <Paragraph small>{duration}</Paragraph>
           </TitleAndText>
         )}
         {platforms.length ? (
-          <TitleAndText title="Platforms:" h={5} light={light}>
-            <Paragraph small light={light}>
-              {platforms.join(", ")}
-            </Paragraph>
+          <TitleAndText title="Platforms:" h={5}>
+            <Paragraph small>{platforms.join(", ")}</Paragraph>
           </TitleAndText>
         ) : null}
         {toolsAndMethods.length ? (
-          <TitleAndText title="Tools & Methods:" h={5} light={light}>
-            <Paragraph small light={light}>
-              {toolsAndMethods.join(", ")}
-            </Paragraph>
+          <TitleAndText title="Tools & Methods:" h={5}>
+            <Paragraph small>{toolsAndMethods.join(", ")}</Paragraph>
           </TitleAndText>
         ) : null}
       </StyledOverview>
@@ -135,7 +126,6 @@ Overview.propTypes = {
   duration: PropTypes.string,
   platforms: PropTypes.array,
   toolsAndMethods: PropTypes.array,
-  light: PropTypes.bool,
   bgColor: PropTypes.string,
 };
 
@@ -145,7 +135,6 @@ Overview.defaultProps = {
   duration: null,
   platforms: [],
   toolsAndMethods: [],
-  light: false,
   bgColor: null,
 };
 

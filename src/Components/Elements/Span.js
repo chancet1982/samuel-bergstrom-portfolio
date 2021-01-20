@@ -1,5 +1,8 @@
 /* eslint-disable no-nested-ternary */
+import React, { useContext } from "react";
+import PropTypes from "prop-types";
 import styled from "styled-components";
+import { LightContext } from "../../Context/ColorContext";
 
 const styleSpan = (small, large, huge, size, lh, inc) => `
   font-size: ${
@@ -8,7 +11,7 @@ const styleSpan = (small, large, huge, size, lh, inc) => `
   line-height: ${small ? lh + inc : large ? lh - inc : lh};
 `;
 
-const Span = styled.span`
+const StyledSpan = styled.span`
   color: ${({ light, theme: { colors } }) =>
     light ? colors.text.light.medium : colors.text.dark.medium};
 
@@ -21,5 +24,28 @@ const Span = styled.span`
     },
   }) => styleSpan(small, large, huge, size, lh, inc)}
 `;
+
+const Span = ({ small, large, huge, children }) => {
+  const [light] = useContext(LightContext);
+
+  return (
+    <StyledSpan small={small} large={large} huge={huge} light={light}>
+      {children}
+    </StyledSpan>
+  );
+};
+
+Span.propTypes = {
+  small: PropTypes.bool,
+  large: PropTypes.bool,
+  huge: PropTypes.bool,
+  children: PropTypes.node.isRequired,
+};
+
+Span.defaultProps = {
+  small: false,
+  large: false,
+  huge: false,
+};
 
 export default Span;

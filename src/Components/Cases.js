@@ -10,6 +10,7 @@ import breakpoints from "../theme/breakpoints";
 import padding from "../theme/padding";
 import Textbox from "./Textbox";
 import { CASE_STATUS } from "../data/dictionaries/CASE_STATUS";
+import LightContextProvider from "../Context/ColorContext";
 
 const StyledCases = styled(motion.div)`
   display: grid;
@@ -39,34 +40,24 @@ const StyledCases = styled(motion.div)`
         grid-area: span 1 / span 2;
       }
     }
-
-    /*&:nth-child(4n - 3) {
-      @media (min-width: ${breakpoints.desktop}px) {
-        grid-area: span 1 / span 2;
-      }
-    }
-
-    &:nth-child(4n - 2) {
-      @media (min-width: ${breakpoints.desktop}px) {
-        grid-area: span 1 / span 2;
-      }
-    }*/
   }
 `;
 
-const SectionCases = ({ title, text, light }) => {
+const SectionCases = ({ title, text }) => {
   return (
     <StyledCases>
-      <Textbox light={light} title={title} text={text} />
+      <Textbox title={title} text={text} />
       {CASES.filter(({ caseStatus }) => caseStatus !== CASE_STATUS.DRAFT).map(
         ({ thumbnail, caseStatus }, index) => {
           return (
-            <CaseThumbnail
-              data={thumbnail}
-              caseKey={index}
-              key={uuid()}
-              status={caseStatus}
-            />
+            <LightContextProvider>
+              <CaseThumbnail
+                data={thumbnail}
+                caseKey={index}
+                key={uuid()}
+                status={caseStatus}
+              />
+            </LightContextProvider>
           );
         }
       )}
@@ -76,13 +67,12 @@ const SectionCases = ({ title, text, light }) => {
 
 SectionCases.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
-  light: PropTypes.bool,
+  text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 };
 
 SectionCases.defaultProps = {
   title: null,
-  light: false,
+  text: null,
 };
 
 export default SectionCases;

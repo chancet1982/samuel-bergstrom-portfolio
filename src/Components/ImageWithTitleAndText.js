@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { useIntersection } from "react-use";
@@ -9,6 +9,8 @@ import ImageWithCaption from "./ImageWithCaption";
 import { IMAGE_WITH_CAPTION_SIZES } from "../data/dictionaries/IMAGE_WITH_CAPTION_SIZES";
 import { variants } from "../animations/animations";
 import padding from "../theme/padding";
+import { LightContext } from "../Context/ColorContext";
+import colors from "../theme/colors";
 
 const StyledImageWithTitleAndText = styled(motion.div)`
   display: flex;
@@ -38,13 +40,17 @@ const ImageWithTitleAndText = ({
   bgColor,
   horizontal,
   flip,
-  light,
 }) => {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
     threshold: 0,
   });
+  const [, setLight] = useContext(LightContext);
+
+  useEffect(() => {
+    setLight(bgColor !== null && bgColor !== colors.offwhite);
+  }, [setLight, bgColor]);
 
   // eslint-disable-next-line consistent-return
   useEffect(() => {
@@ -72,7 +78,7 @@ const ImageWithTitleAndText = ({
         size={IMAGE_WITH_CAPTION_SIZES.MEDIUM_DOUBLE}
         disableAnimations
       />
-      <TitleAndText h={3} title={title} padded disableAnimations light={light}>
+      <TitleAndText h={3} title={title} padded disableAnimations>
         {text}
       </TitleAndText>
     </StyledImageWithTitleAndText>
@@ -88,7 +94,6 @@ ImageWithTitleAndText.propTypes = {
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   horizontal: PropTypes.bool,
   flip: PropTypes.bool,
-  light: PropTypes.bool,
 };
 
 ImageWithTitleAndText.defaultProps = {
@@ -96,7 +101,6 @@ ImageWithTitleAndText.defaultProps = {
   bgColor: null,
   horizontal: false,
   flip: false,
-  light: false,
 };
 
 export default ImageWithTitleAndText;

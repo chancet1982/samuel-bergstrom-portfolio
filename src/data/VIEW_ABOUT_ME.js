@@ -6,7 +6,6 @@ import Paragraph from "../Components/Elements/Paragraph";
 import List from "../Components/Elements/List";
 import colors from "../theme/colors";
 
-// TODO: (later) fix screen transition content setting
 export const VIEW_ABOUT_ME = [
   {
     header: "About Me",

@@ -1,7 +1,9 @@
-import React from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import Title from "./Elements/Title";
+import { LightContext } from "../Context/ColorContext";
+import colors from "../theme/colors";
 
 const StyledSectionHeader = styled.header`
   position: absolute;
@@ -24,19 +26,14 @@ const StyledSectionHeader = styled.header`
     transform: rotateZ(180deg);
     font-family: "Fira Sans", sans-serif;
 
-    color: ${({
-      theme: {
-        colors: {
-          text: {
-            dark: { low },
-          },
-        },
-      },
-    }) => low};
+    color: ${({ light }) =>
+      light ? colors.text.light.low : colors.text.dark.low};
   }
 `;
 
-const SectionHeader = ({ children, light }) => {
+const SectionHeader = ({ children }) => {
+  const [light] = useContext(LightContext);
+
   return (
     <StyledSectionHeader light={light}>
       <Title h={1}>{children}</Title>
@@ -46,12 +43,10 @@ const SectionHeader = ({ children, light }) => {
 
 SectionHeader.propTypes = {
   children: PropTypes.node,
-  light: PropTypes.bool,
 };
 
 SectionHeader.defaultProps = {
   children: "overline",
-  light: false,
 };
 
 export default SectionHeader;

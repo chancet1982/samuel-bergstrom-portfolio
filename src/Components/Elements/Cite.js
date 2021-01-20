@@ -1,5 +1,7 @@
-/* eslint-disable no-nested-ternary */
 import styled from "styled-components";
+import React, { useContext } from "react";
+import PropTypes from "prop-types";
+import { LightContext } from "../../Context/ColorContext";
 
 const styleCite = (size, lh, margin) => `
   font-size: ${size}rem;
@@ -8,7 +10,7 @@ const styleCite = (size, lh, margin) => `
   line-height: ${lh};
 `;
 
-const Cite = styled.cite`
+const StyledCite = styled.cite`
   color: ${({
     light,
     theme: {
@@ -37,5 +39,15 @@ const Cite = styled.cite`
     }) => primary};
   }
 `;
+
+const Cite = ({ children }) => {
+  const [light] = useContext(LightContext);
+
+  return <StyledCite light={light}>{children}</StyledCite>;
+};
+
+Cite.propTypes = {
+  children: PropTypes.node.isRequired,
+};
 
 export default Cite;

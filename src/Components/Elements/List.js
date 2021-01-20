@@ -28,8 +28,6 @@ const StyledListItem = styled.li`
       }}
   }
 
-  color: ${({ light }) =>
-    light ? colors.text.light.medium : colors.text.dark.medium};
   max-width: 80ch;
 
   ${({
@@ -39,6 +37,7 @@ const StyledListItem = styled.li`
   }) => styleListItem(size, lh, margin)}
 `;
 
+// TODO: check what happened with the plan mode
 const List = ({ items, plain }) => {
   return (
     <StyledList>
