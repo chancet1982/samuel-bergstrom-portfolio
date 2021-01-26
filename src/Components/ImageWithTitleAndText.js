@@ -9,7 +9,7 @@ import ImageWithCaption from "./ImageWithCaption";
 import { IMAGE_WITH_CAPTION_SIZES } from "../data/dictionaries/IMAGE_WITH_CAPTION_SIZES";
 import { variants } from "../animations/animations";
 import padding from "../theme/padding";
-import { LightContext } from "../Context/ColorContext";
+import { ElementColorContext } from "../Context/ElementColorContext";
 import colors from "../theme/colors";
 
 const StyledImageWithTitleAndText = styled(motion.div)`
@@ -46,7 +46,9 @@ const ImageWithTitleAndText = ({
   const intersection = useIntersection(intersectionRef, {
     threshold: 0,
   });
-  const [, setLight] = useContext(LightContext);
+  const context = useContext(ElementColorContext);
+  // eslint-disable-next-line react/destructuring-assignment
+  const setLight = !context ? () => null : context[1];
 
   useEffect(() => {
     setLight(bgColor !== null && bgColor !== colors.offwhite);

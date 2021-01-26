@@ -14,4 +14,7 @@ export const SECTION_ELEMENTS = {
   RESULT: "result",
   TIMELINE: "timeline",
   SOCIAL_MEDIA_LINKS: "socialmedialinks",
+  CASE_FOOTER: "caseFooter",
+  ADDITIONAL_CASES: "additionalCases",
+  FOOTER: "footer",
 };

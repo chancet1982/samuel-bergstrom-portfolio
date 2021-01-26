@@ -17,6 +17,14 @@ export const VIEW_LANDING_PAGE = [
               A <mark>non-typical</mark> designer
             </>
           ),
+          text: (
+            <>
+              <Paragraph huge>
+                I help companies build the <strong>right things</strong> to
+                solve the <strong>right problems</strong>
+              </Paragraph>
+            </>
+          ),
           imageUrl: "assets/cover.svg",
           bgColor: "#ffffff",
         },
@@ -41,6 +49,16 @@ export const VIEW_LANDING_PAGE = [
             </Paragraph>
           ),
         },
+      },
+    ],
+  },
+  {
+    elements: [
+      {
+        template: SECTION_ELEMENTS.CASE_FOOTER,
+      },
+      {
+        template: SECTION_ELEMENTS.FOOTER,
       },
     ],
   },

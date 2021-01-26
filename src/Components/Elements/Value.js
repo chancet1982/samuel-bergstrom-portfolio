@@ -5,7 +5,9 @@ import styled from "styled-components";
 import { useWindowSize } from "react-use";
 import breakpoints from "../../theme/breakpoints";
 import typography from "../../theme/typography";
-import { LightContext } from "../../Context/ColorContext";
+import { ElementColorContext } from "../../Context/ElementColorContext";
+import { SectionColorContext } from "../../Context/SectionColorContext";
+import { ViewColorContext } from "../../Context/ViewColorContext";
 
 const magnify = (val, inc, times) => val * (1 + inc) ** Math.abs(times);
 
@@ -39,7 +41,14 @@ const StyledValue = styled.span`
 `;
 
 const Value = ({ h, children }) => {
-  const [light] = useContext(LightContext);
+  const [hasViewBgColor] = useContext(ViewColorContext);
+  const [hasSectionBgColor] = useContext(SectionColorContext);
+
+  const context = useContext(ElementColorContext);
+  // eslint-disable-next-line react/destructuring-assignment
+  const hasElementBgColor = !context ? false : context[0];
+
+  const light = hasViewBgColor || hasSectionBgColor || hasElementBgColor;
   const { width } = useWindowSize();
 
   return (

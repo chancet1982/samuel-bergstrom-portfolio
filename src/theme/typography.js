@@ -8,7 +8,7 @@
 }; */
 
 const typography = {
-  size: 1.2, // base size in rem for typography
+  size: 1.25, // base size in rem for typography
   lh: 1.5, // base line-height
   maxMod: 0.25, // modifier for large screens (was .333)
   minMod: 0.125, // modifier for small screens

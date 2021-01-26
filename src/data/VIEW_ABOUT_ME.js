@@ -1,10 +1,11 @@
 /* eslint-disable import/prefer-default-export */
 import React from "react";
-import { Link } from "react-router-dom";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import Paragraph from "../Components/Elements/Paragraph";
 import List from "../Components/Elements/List";
 import colors from "../theme/colors";
+import Span from "../Components/Elements/Span";
+import Link from "../Components/Elements/Link";
 
 export const VIEW_ABOUT_ME = [
   {
@@ -22,11 +23,11 @@ export const VIEW_ABOUT_ME = [
           text: (
             <>
               <Paragraph>
-                I&apos;m a digital product designer, Accessibility nerd, father,
+                I’m a digital product designer, Accessibility nerd, father,
                 husband, and quite a nice guy. Or at least a semi-decent human
-                being. During the last 13 years, I&apos;ve worked with many
-                companies operating in a wide array of domains. To name a few:
-                Finance, healthcare, and e-commerce.
+                being. During the last 13 years, I’ve worked with many companies
+                operating in a wide array of domains. To name a few: Finance,
+                healthcare, and e-commerce.
               </Paragraph>
               <Paragraph>
                 I believe in creating <strong>practical designs</strong>.
@@ -52,7 +53,7 @@ export const VIEW_ABOUT_ME = [
                 because it makes me a better designer.
               </Paragraph>
               <Paragraph>
-                When I’m not working I&apos;m most likely chasing down my kids,
+                When I’m not working I’m most likely chasing down my kids,
                 trying to prevent the next disaster from happening, from houses
                 on fire to cats in dishwashers that wonders of parenthood are
                 endless.
@@ -97,15 +98,21 @@ export const VIEW_ABOUT_ME = [
               <List
                 items={[
                   <>
-                    <strong>UXC Spec. UX Management</strong>, NNg (Nielson
-                    Norman Group)
+                    <Span>
+                      <strong>UXC Spec. UX Management</strong>, NNg (Nielson
+                      Norman Group)
+                    </Span>
                   </>,
                   <>
-                    <strong>BSc</strong> Eng. ICT, Ålborg university
+                    <Span>
+                      <strong>BSc</strong> Eng. ICT, Ålborg university
+                    </Span>
                   </>,
                   <>
-                    <strong>Assoc. Deg.</strong> Graphic Design, College of
-                    Management
+                    <Span>
+                      <strong>Assoc. Deg.</strong> Graphic Design, College of
+                      Management
+                    </Span>
                   </>,
                 ]}
               />
@@ -118,7 +125,10 @@ export const VIEW_ABOUT_ME = [
   {
     elements: [
       {
-        template: SECTION_ELEMENTS.SOCIAL_MEDIA_LINKS,
+        template: SECTION_ELEMENTS.CASE_FOOTER,
+      },
+      {
+        template: SECTION_ELEMENTS.FOOTER,
       },
     ],
   },

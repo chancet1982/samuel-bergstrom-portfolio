@@ -2,11 +2,11 @@ import { v4 as uuid } from "uuid";
 import React from "react";
 import Section from "./Section";
 import ElementsRenderer from "./ElementsRenderer";
-import LightContextProvider from "../Context/ColorContext";
+import SectionColorContextProvider from "../Context/SectionColorContext";
 
 const SectionsRenderer = ({ sections }) =>
   sections.map(({ elements, header, bgColor, isSticky }) => (
-    <LightContextProvider key={uuid()}>
+    <SectionColorContextProvider key={uuid()}>
       <Section header={header} bgColor={bgColor} isSticky={isSticky}>
         {elements.map(({ data, template }) => (
           <ElementsRenderer
@@ -17,7 +17,7 @@ const SectionsRenderer = ({ sections }) =>
           />
         ))}
       </Section>
-    </LightContextProvider>
+    </SectionColorContextProvider>
   ));
 
 export default SectionsRenderer;

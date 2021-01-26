@@ -15,6 +15,10 @@ import ListOfImagesWithTitleAndText from "./ListOfImagesWithTitleAndText";
 import ImageWithCaption from "./ImageWithCaption";
 import Timeline from "./Timeline";
 import SocialMediaLinks from "./SocialMediaLinks";
+import CaseFooter from "./CaseFooter";
+import AdditionalCases from "./AdditionalCases";
+import Footer from "./Footer";
+import ElementColorContextProvider from "../Context/ElementColorContext";
 
 const SectionElementsRenderer = ({ elementKey, data, template }) => {
   if (!template) {
@@ -48,17 +52,19 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
       );
     case SECTION_ELEMENTS.TEXTBOX:
       return (
-        <Textbox
-          key={elementKey}
-          title={data.title}
-          h={data.h}
-          text={data.text}
-          imageUrl={data.imageUrl}
-          imageAlt={data.imageAlt}
-          caption={data.caption}
-          flip={data.flip}
-          bgColor={data.bgColor}
-        />
+        <ElementColorContextProvider>
+          <Textbox
+            key={elementKey}
+            title={data.title}
+            h={data.h}
+            text={data.text}
+            imageUrl={data.imageUrl}
+            imageAlt={data.imageAlt}
+            caption={data.caption}
+            flip={data.flip}
+            bgColor={data.bgColor}
+          />
+        </ElementColorContextProvider>
       );
     case SECTION_ELEMENTS.RESULT:
       return (
@@ -109,6 +115,12 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
       );
     case SECTION_ELEMENTS.CLIENTS:
       return <Clients key={elementKey} />;
+    case SECTION_ELEMENTS.CASE_FOOTER:
+      return <CaseFooter key={elementKey} />;
+    case SECTION_ELEMENTS.ADDITIONAL_CASES:
+      return <AdditionalCases key={elementKey} />;
+    case SECTION_ELEMENTS.FOOTER:
+      return <Footer key={elementKey} />;
     case SECTION_ELEMENTS.QUOTE:
       return (
         <BlockQuote key={elementKey} quote={data.quote} cite={data.cite} />

@@ -395,11 +395,11 @@ export const CASE_3 = {
                 </Paragraph>
                 <Paragraph>
                   We then created a series of test based on typical scenarios
-                  we&apos;ve identified and tested internally using colleagues
-                  that were not members of the team and had no prior knowledge
-                  of the field. Properly testing the interface would have
-                  required testing in the use environment by lab-technicians but
-                  the project was cut short due to circumstances.
+                  we’ve identified and tested internally using colleagues that
+                  were not members of the team and had no prior knowledge of the
+                  field. Properly testing the interface would have required
+                  testing in the use environment by lab-technicians but the
+                  project was cut short due to circumstances.
                 </Paragraph>
                 <Paragraph>
                   Even so, my hypothesis was that if people without prior
@@ -439,6 +439,19 @@ export const CASE_3 = {
               </>
             ),
           },
+        },
+      ],
+    },
+    {
+      elements: [
+        {
+          template: SECTION_ELEMENTS.ADDITIONAL_CASES,
+        },
+        {
+          template: SECTION_ELEMENTS.CASE_FOOTER,
+        },
+        {
+          template: SECTION_ELEMENTS.FOOTER,
         },
       ],
     },

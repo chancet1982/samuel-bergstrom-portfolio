@@ -10,7 +10,7 @@ import typography from "../../theme/typography";
 const { size } = typography;
 
 const StyledButton = styled.button`
-  padding: ${padding.vertical.half} ${padding.horizontal.quadruple};
+  padding: ${padding.vertical.half} ${padding.horizontal.double};
   background-color: ${({ secondaryDark, secondaryLight }) =>
     secondaryDark
       ? colors.darkgray
@@ -47,6 +47,7 @@ const StyledButton = styled.button`
   }
 `;
 
+// TODO: fix "to" attribute
 const Button = ({
   onClick,
   children,

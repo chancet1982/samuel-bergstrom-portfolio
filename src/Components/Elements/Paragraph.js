@@ -2,7 +2,9 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { LightContext } from "../../Context/ColorContext";
+import { ElementColorContext } from "../../Context/ElementColorContext";
+import { SectionColorContext } from "../../Context/SectionColorContext";
+import { ViewColorContext } from "../../Context/ViewColorContext";
 
 const styleParagraph = (small, large, huge, size, lh, margin, inc) => `
   font-size: ${
@@ -30,7 +32,13 @@ const StyledParagraph = styled.p`
 `;
 
 const Paragraph = ({ small, large, huge, children }) => {
-  const [light] = useContext(LightContext);
+  const [hasViewBgColor] = useContext(ViewColorContext);
+  const [hasSectionBgColor] = useContext(SectionColorContext);
+  const context = useContext(ElementColorContext);
+  // eslint-disable-next-line react/destructuring-assignment
+  const hasElementBgColor = !context ? false : context[0];
+
+  const light = hasViewBgColor || hasSectionBgColor || hasElementBgColor;
 
   return (
     <StyledParagraph small={small} large={large} huge={huge} light={light}>

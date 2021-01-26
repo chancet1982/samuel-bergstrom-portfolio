@@ -10,7 +10,7 @@ import breakpoints from "../theme/breakpoints";
 import padding from "../theme/padding";
 import Textbox from "./Textbox";
 import { CASE_STATUS } from "../data/dictionaries/CASE_STATUS";
-import LightContextProvider from "../Context/ColorContext";
+import ElementColorContextProvider from "../Context/ElementColorContext";
 
 const StyledCases = styled(motion.div)`
   display: grid;
@@ -50,14 +50,14 @@ const SectionCases = ({ title, text }) => {
       {CASES.filter(({ caseStatus }) => caseStatus !== CASE_STATUS.DRAFT).map(
         ({ thumbnail, caseStatus }, index) => {
           return (
-            <LightContextProvider>
+            <ElementColorContextProvider>
               <CaseThumbnail
                 data={thumbnail}
                 caseKey={index}
                 key={uuid()}
                 status={caseStatus}
               />
-            </LightContextProvider>
+            </ElementColorContextProvider>
           );
         }
       )}

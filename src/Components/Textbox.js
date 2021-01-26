@@ -5,10 +5,11 @@ import { motion } from "framer-motion";
 import { useIntersection } from "react-use";
 import TitleAndText from "./TitleAndText";
 import ImageWithCaption from "./ImageWithCaption";
+import Image from "./Elements/Image";
 import { variants } from "../animations/animations";
 import sizes from "../theme/sizes";
 import breakpoints from "../theme/breakpoints";
-import { LightContext } from "../Context/ColorContext";
+import { ElementColorContext } from "../Context/ElementColorContext";
 import colors from "../theme/colors";
 
 const StyledTextbox = styled(motion.div)`
@@ -19,7 +20,7 @@ const StyledTextbox = styled(motion.div)`
       backgroundColor: bgColor,
     }};
 
-  > div {
+  > div:first-of-type {
     grid-column: 1 / span 3;
 
     @media (min-width: ${breakpoints.desktop}px) {
@@ -42,7 +43,21 @@ const StyledTextbox = styled(motion.div)`
   }
 `;
 
-// TODO: Fix that content would be "light" when bgColor is provided on the textbox.
+const StyledTextboxImage = styled.div`
+  grid-column: 1 / span 3;
+
+  @media (min-width: ${breakpoints.desktop}px) {
+    grid-column: ${({ flip }) => (flip ? "1 / span 2" : "3 / span 1")};
+  }
+  > img {
+    height: auto;
+  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+`;
+
 const Textbox = ({
   title,
   h,
@@ -58,7 +73,10 @@ const Textbox = ({
   const intersection = useIntersection(intersectionRef, {
     threshold: 0,
   });
-  const [, setLight] = useContext(LightContext);
+
+  const context = useContext(ElementColorContext);
+  // eslint-disable-next-line react/destructuring-assignment
+  const setLight = !context ? () => null : context[1];
 
   // eslint-disable-next-line consistent-return
   useEffect(() => {
@@ -69,7 +87,9 @@ const Textbox = ({
   }, [intersection]);
 
   useEffect(() => {
-    setLight(bgColor !== null && bgColor !== colors.offwhite);
+    // eslint-disable-next-line no-unused-expressions
+    setLight !== null &&
+      setLight(bgColor !== null && bgColor !== colors.offwhite);
   }, [setLight, bgColor]);
 
   return (
@@ -95,15 +115,21 @@ const Textbox = ({
         {text}
       </TitleAndText>
 
-      {!flip && imageUrl && (
-        <ImageWithCaption
-          imageUrl={imageUrl}
-          imageAlt={imageAlt}
-          caption={caption}
-          disableAnimations
-          inTextbox
-        />
-      )}
+      {!flip &&
+        imageUrl &&
+        (caption ? (
+          <ImageWithCaption
+            imageUrl={imageUrl}
+            imageAlt={imageAlt}
+            caption={caption}
+            disableAnimations
+            inTextbox
+          />
+        ) : (
+          <StyledTextboxImage>
+            <Image imageUrl={imageUrl} imageAlt={imageAlt} />
+          </StyledTextboxImage>
+        ))}
     </StyledTextbox>
   );
 };

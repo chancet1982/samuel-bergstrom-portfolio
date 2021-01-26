@@ -45,4 +45,14 @@ export const VIEW_TEST = [
       },
     ],
   },
+  {
+    elements: [
+      {
+        template: SECTION_ELEMENTS.CASE_FOOTER,
+      },
+      {
+        template: SECTION_ELEMENTS.FOOTER,
+      },
+    ],
+  },
 ];

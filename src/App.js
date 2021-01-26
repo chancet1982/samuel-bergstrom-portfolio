@@ -5,11 +5,10 @@ import { AnimatePresence } from "framer-motion";
 import AppContextProvider from "./Context/AppContext";
 import ViewLoading from "./Components/Views/ViewLoading";
 import Navigation from "./Components/Navigation";
-import Footer from "./Components/Footer";
 import ErrorBoundary from "./Components/ErrorBoundary";
 import ScrollToTop from "./utils/ScrollToTop";
 import theme from "./theme/theme";
-import LightContextProvider from "./Context/ColorContext";
+import ViewColorContextProvider from "./Context/ViewColorContext";
 
 const ViewLandingPage = lazy(() =>
   import("./Components/Views/ViewLandingPage")
@@ -37,35 +36,34 @@ function App() {
     <ThemeProvider theme={theme}>
       <ErrorBoundary>
         <AppContextProvider>
-          <Router>
-            <Navigation />
-            <Suspense fallback={<ViewLoading />}>
-              <ScrollToTop />
-              <AnimatePresence exitBeforeEnter>
-                <Switch
-                  location={window.location}
-                  key={window.location.pathname}
-                >
-                  <Route exact path="/" component={ViewLandingPage} />
-                  <Route exact path="/cases" component={ViewCases} />
-                  <Route exact path="/cases/:id" component={ViewCase} />
-                  <Route exact path="/about" component={ViewAboutMe} />
-                  <Route exact path="/contact" component={ViewContact} />
-                  {/* <Route exact path="/test" component={ViewTest} /> */}
-                  <Route
-                    exact
-                    path="/typography"
-                    component={ViewTestTypography}
-                  />
-                  <Route exact path="/loading" component={ViewLoading} />
-                  <Route exact path="*" component={ViewPageNotFound} />
-                </Switch>
-              </AnimatePresence>
-            </Suspense>
-            <LightContextProvider>
-              <Footer />
-            </LightContextProvider>
-          </Router>
+          <ViewColorContextProvider>
+            <Router>
+              <Navigation />
+              <Suspense fallback={<ViewLoading />}>
+                <ScrollToTop />
+                <AnimatePresence exitBeforeEnter>
+                  <Switch
+                    location={window.location}
+                    key={window.location.pathname}
+                  >
+                    <Route exact path="/" component={ViewLandingPage} />
+                    <Route exact path="/cases" component={ViewCases} />
+                    <Route exact path="/cases/:id" component={ViewCase} />
+                    <Route exact path="/about" component={ViewAboutMe} />
+                    <Route exact path="/contact" component={ViewContact} />
+                    {/* <Route exact path="/test" component={ViewTest} /> */}
+                    <Route
+                      exact
+                      path="/typography"
+                      component={ViewTestTypography}
+                    />
+                    <Route exact path="/loading" component={ViewLoading} />
+                    <Route exact path="*" component={ViewPageNotFound} />
+                  </Switch>
+                </AnimatePresence>
+              </Suspense>
+            </Router>
+          </ViewColorContextProvider>
         </AppContextProvider>
       </ErrorBoundary>
     </ThemeProvider>

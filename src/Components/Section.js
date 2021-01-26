@@ -6,7 +6,7 @@ import { useWindowSize } from "react-use";
 import breakpoints from "../theme/breakpoints";
 import SectionHeader from "./SectionHeader";
 import padding from "../theme/padding";
-import { LightContext } from "../Context/ColorContext";
+import { SectionColorContext } from "../Context/SectionColorContext";
 import colors from "../theme/colors";
 
 const StyledSection = styled(motion.section)`
@@ -36,7 +36,7 @@ const StyledSection = styled(motion.section)`
 `;
 
 const Section = ({ header, children, bgColor, isSticky }) => {
-  const [, setLight] = useContext(LightContext);
+  const [, setLight] = useContext(SectionColorContext);
   const { width } = useWindowSize();
   const [isMobile, setIsMobile] = useState(false);
 

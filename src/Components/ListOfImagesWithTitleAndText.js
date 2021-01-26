@@ -6,7 +6,7 @@ import ImageWithTitleAndText from "./ImageWithTitleAndText";
 import padding from "../theme/padding";
 import colors from "../theme/colors";
 import breakpoints from "../theme/breakpoints";
-import LightContextProvider from "../Context/ColorContext";
+import ElementContextProvider from "../Context/ElementColorContext";
 
 const StyledListOfImagesWithTitleAndText = styled(motion.div)`
   display: grid;
@@ -55,7 +55,7 @@ const ListOfImagesWithTitleAndText = ({ items }) => {
   return (
     <StyledListOfImagesWithTitleAndText>
       {items.map(({ imageUrl, imageAlt, title, text, bgColor }, index) => (
-        <LightContextProvider>
+        <ElementContextProvider>
           <ImageWithTitleAndText
             key={title}
             imageUrl={imageUrl}
@@ -66,7 +66,7 @@ const ListOfImagesWithTitleAndText = ({ items }) => {
             horizontal
             flip={index % 2 === 1}
           />
-        </LightContextProvider>
+        </ElementContextProvider>
       ))}
     </StyledListOfImagesWithTitleAndText>
   );

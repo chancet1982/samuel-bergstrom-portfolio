@@ -425,5 +425,18 @@ export const CASE_4 = {
         },
       ],
     },
+    {
+      elements: [
+        {
+          template: SECTION_ELEMENTS.ADDITIONAL_CASES,
+        },
+        {
+          template: SECTION_ELEMENTS.CASE_FOOTER,
+        },
+        {
+          template: SECTION_ELEMENTS.FOOTER,
+        },
+      ],
+    },
   ],
 };

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { AppContext } from "../Context/AppContext";
 import Title from "./Elements/Title";
 import padding from "../theme/padding";
-import { LightContext } from "../Context/ColorContext";
+import { ViewColorContext } from "../Context/ViewColorContext";
 
 const StyledCardFace = styled(motion.div)`
   background: ${({
@@ -53,7 +53,7 @@ const StyledScreenTransition = styled(motion.div)`
 // TODO: Make screen transition take into account the URL?
 const LongScreenTransition = ({ animationFinished }) => {
   const [content] = useContext(AppContext);
-  const [, setLight] = useContext(LightContext);
+  const [, setLight] = useContext(ViewColorContext);
 
   useEffect(() => {
     setLight(true);
@@ -101,27 +101,25 @@ const LongScreenTransition = ({ animationFinished }) => {
   };
 
   return (
-    <>
-      <div style={{ height: "100vh" }}>
-        <StyledScreenTransitionContent
-          initial="initial"
-          animate="animate"
-          variants={screenTransitionContentVariants}
-          onAnimationComplete={onComplete}
-        >
-          <Title h={1}>{content}</Title>
-        </StyledScreenTransitionContent>
-        <StyledScreenTransition
-          initial="initial"
-          animate="animate"
-          variants={screenTransitionVariants}
-        >
-          <StyledCardFace variants={variants} transition={transition} />
-          <StyledCardFace variants={variants} transition={transition} />
-          <StyledCardFace variants={variants} transition={transition} />
-        </StyledScreenTransition>
-      </div>
-    </>
+    <div style={{ height: "100vh" }}>
+      <StyledScreenTransitionContent
+        initial="initial"
+        animate="animate"
+        variants={screenTransitionContentVariants}
+        onAnimationComplete={onComplete}
+      >
+        <Title h={1}>{content}</Title>
+      </StyledScreenTransitionContent>
+      <StyledScreenTransition
+        initial="initial"
+        animate="animate"
+        variants={screenTransitionVariants}
+      >
+        <StyledCardFace variants={variants} transition={transition} />
+        <StyledCardFace variants={variants} transition={transition} />
+        <StyledCardFace variants={variants} transition={transition} />
+      </StyledScreenTransition>
+    </div>
   );
 };
 

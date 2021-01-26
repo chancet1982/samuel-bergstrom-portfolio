@@ -24,4 +24,14 @@ export const VIEW_CASES = [
       },
     ],
   },
+  {
+    elements: [
+      {
+        template: SECTION_ELEMENTS.CASE_FOOTER,
+      },
+      {
+        template: SECTION_ELEMENTS.FOOTER,
+      },
+    ],
+  },
 ];

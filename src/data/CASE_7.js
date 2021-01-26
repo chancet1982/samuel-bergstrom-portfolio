@@ -88,10 +88,12 @@ export const CASE_7 = {
             text: (
               <>
                 <Paragraph>
-                  Fitness24Seven operates houndreds of gyms in Sweden and
-                  globally. During the covid-19 oandemic they have been seeing
+                  Fitness24Seven operates hundreds of gyms in Sweden and
+                  globally. During the covid-19 pandemic, they have been seeing
                   shrinking membership numbers and experienced an increasing
-                  challange signing new members.
+                  challenge signing new members. As a response to that,
+                  Fitness24Seven decided to conduct a pre-study for replacing
+                  their existing eCom platform.
                 </Paragraph>
                 <Paragraph>
                   As a response to that, Fitness24Seven decided to conduct a
@@ -133,11 +135,11 @@ export const CASE_7 = {
             text: (
               <>
                 <Paragraph>
-                  eCom is a wide area, and the pre-study was timeboxed to 4
-                  weeks. The only way of reaching any result was narrowing down
-                  the scope and defining a goal for the pre-study. In
-                  collaboration with the client we have agreed that the goal and
-                  scope of the pre-study should include increasing online
+                  e-commerce is a wide area, and the pre-study was timeboxed to
+                  4 weeks. The only way of reaching any result was by narrowing
+                  down the scope and defining a goal for the pre-study. In
+                  collaboration with the client, we have agreed that the goal
+                  and scope of the pre-study should include increasing online
                   conversions and exploring additional revenue streams.
                 </Paragraph>
               </>
@@ -162,8 +164,8 @@ export const CASE_7 = {
                 </Paragraph>
                 <Paragraph>
                   The desired output for this pre-study would be a
-                  recommendation for possible improvements to the current UX, a
-                  recommendations for an eCommerece platform. This is a lot of
+                  recommendation for possible improvements to the current UX,
+                  recommendations for an e-commerce platform. This is a lot of
                   ground to cover, we needed to make every day count.
                 </Paragraph>
                 <List
@@ -174,7 +176,7 @@ export const CASE_7 = {
                     </>,
                     <>
                       <strong>Week 2:</strong> UX Research, in parallel to a
-                      technical evaluation of different ecom systems.
+                      technical evaluation of different e-commerce systems.
                     </>,
                     <>
                       <strong>Week 3:</strong> Present the findings internally,
@@ -209,7 +211,7 @@ export const CASE_7 = {
             h: 2,
             text: (
               <>
-                <Title h={3}>Internal stackholder workhsop</Title>
+                <Title h={3}>Internal stakeholder workshop</Title>
                 <Paragraph>
                   Our kickoff meeting was focused on aligning stakeholder
                   expectations. The red thread from these discussions was
@@ -217,8 +219,8 @@ export const CASE_7 = {
                 </Paragraph>
                 <Title h={3}>Meeting the onboarding customer service</Title>
                 <Paragraph>
-                  It's worrying when a company has an entire team dedicated for
-                  helping signing new members. On the other hand it really
+                  It’s worrying when a company has an entire team dedicated to
+                  helping signing new members. On the other hand, it really
                   provides a good overview of the most frequently encountered
                   issues people encounter. We decided to hold a meeting with
                   them to try and uncover the current user pains.
@@ -233,16 +235,15 @@ export const CASE_7 = {
                 </TitleAndText>
 
                 <TitleAndText
-                  title="20% of support calls, originate from users who cannot
-                  sign-in to My Pages."
+                  title="20% of support calls originate from users who cannot sign-in to My Pages."
                   h={5}
                 >
-                  Despite recieving a mail with login information for "my pages"
-                  users couldnt log-in
+                  Despite receiving a mail with login information for “my pages”
+                  users couldn’t log-in.
                 </TitleAndText>
 
                 <TitleAndText
-                  title="Not all offers and Campeigns were available online"
+                  title="Not all offers and Campaigns were available online"
                   h={5}
                 >
                   Some offers or services were only available when signing up
@@ -260,10 +261,10 @@ export const CASE_7 = {
             text: (
               <>
                 <Paragraph>
-                  Sensing that we uncovered some magor issues with the
+                  Sensing that we uncovered some major issues with the
                   onboarding I decided to look into their web-analytics. The
-                  signup had a success rate of 16% and general conversion rate
-                  was under 0.5%.
+                  signup had a success rate of 16% and the general conversion
+                  rate was under 0.5%.
                 </Paragraph>
               </>
             ),
@@ -277,22 +278,22 @@ export const CASE_7 = {
             text: (
               <>
                 <Paragraph>
-                  With that in mind I decided to signup myself for the service.
-                  I was rather shocked, prices didnt match, information was
+                  With that in mind, I decided to signup myself for the service.
+                  I was rather shocked, prices didn’t match, information was
                   confusing, some buttons were hardly discoverable, everything
-                  we've heard from customer support was true! To make sure it
-                  wasent "just me" I asked some of my collegues to try to sign
+                  we’ve heard from customer support was true! To make sure it
+                  wasn’t “just me,” I asked some of my colleagues to try to sign
                   up themselves, the results were the same.
                 </Paragraph>
                 <Paragraph>
                   <strong>Note:</strong> Given more time I would have loved to
                   conduct a better evaluation of the onboarding using a
-                  usability test/PURE evaluation in order uncover problems. This
-                  was not possible and was not required as it was already known
-                  that there are issues with the current onboarding.
+                  usability test/PURE evaluation in order to uncover problems.
+                  This was not possible and was not required as it was already
+                  known that there are issues with the current onboarding.
                 </Paragraph>
                 <Paragraph>
-                  I compared the onboarding experience to thier competitors and
+                  I compared the onboarding experience to their competitors and
                   it was evident that there is room for improvement.
                 </Paragraph>
               </>
@@ -302,17 +303,17 @@ export const CASE_7 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Surverys, Interviews, And field studies</>,
+            title: <>Surveys, Interviews, And field studies</>,
             h: 2,
             text: (
               <>
                 <Paragraph>
-                  This was a very hectic data gathering. our surveys recieved
+                  This was a very hectic data gathering. our surveys received
                   more than 160 responses and interviewed more than 30 people.
                   We visited 3 Gyms all in a period of several days.
                 </Paragraph>
                 <Paragraph>
-                  Now all of that raw data had to be analysed and presented back
+                  Now all of that raw data had to be analyzed and presented back
                   to the stakeholders so they could prioritize our efforts. XXX
                 </Paragraph>
               </>
@@ -334,8 +335,8 @@ export const CASE_7 = {
                 </Paragraph>
                 <Paragraph>
                   <strong>Note:</strong> The new onboarding still included
-                  "up-selling" which is known to reduce conversions. In a
-                  perfect world this would have been taken out but instead it
+                  “up-selling” which is known to reduce conversions. In a
+                  perfect world, this would have been taken out but instead, it
                   was simply limited to additional services that are logical to
                   offer during signup.
                 </Paragraph>
@@ -351,28 +352,28 @@ export const CASE_7 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Shifting the focus to eCommerece</>,
+            title: <>Shifting the focus to e-commerce</>,
             h: 2,
             text: (
               <>
                 <Paragraph>
                   At this point, the focus was shifted to covering potential
-                  eCommerece platform
+                  e-commerce platform.
                 </Paragraph>
                 <Paragraph>
-                  I was asked to investigate how desireable would a
+                  I was asked to investigate how desirable would a
                   Fitness24Seven webshop would be. In order to do that I sent
-                  out a 2 surveys and pushed it on social media. The first
+                  out 2 surveys and pushed them on social media. The first
                   survey focused on the current onboarding and expectations
-                  members have. The second survey was more "general" survey
-                  looking into eCommerece, explored different product offerings,
-                  and desireability.
+                  members have. The second survey was a more “general” survey
+                  looking into e-commerce, explored different product offerings,
+                  and desirability.
                 </Paragraph>
                 <Paragraph>
                   On top of the surveys, I conducted several field studies where
-                  I interviewed members and staff, and even conducted phone
+                  I interviewed members and staff and even conducted phone
                   interviews with several more members to complement the
-                  coantitative findings with qualitative data.
+                  quantitative findings with qualitative data.
                 </Paragraph>
               </>
             ),
@@ -391,14 +392,14 @@ export const CASE_7 = {
                 </Paragraph>
                 <Paragraph>
                   At this point we already had an improved prototype for
-                  onboarding, instead the Client asked if I could help visualize
-                  how we could create a 100% digital experience. At the moment
-                  users who sign-up for gym membership online, cannot complete
-                  their registration. Several things require physical precense.
-                  In order to complete the registration users need to go to a
-                  gym with some sort of ID and sign the membership agreement,
-                  then they need to have their picture taken finally, they need
-                  to provide a fingerprint.
+                  onboarding, instead, the Client asked if I could help
+                  visualize how we could create a 100% digital experience. At
+                  the moment users who sign-up for gym membership online, cannot
+                  complete their registration. Several things require physical
+                  presence. In order to complete the registration users need to
+                  go to a gym with some sort of ID and sign the membership
+                  agreement, then they need to have their picture taken finally,
+                  they need to provide a fingerprint.
                 </Paragraph>
               </>
             ),
@@ -423,7 +424,7 @@ export const CASE_7 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Taking member's pictures.</>,
+            title: <>Taking member’s pictures.</>,
             h: 2,
             text: (
               <>
@@ -472,6 +473,19 @@ export const CASE_7 = {
               </Paragraph>
             ),
           },
+        },
+      ],
+    },
+    {
+      elements: [
+        {
+          template: SECTION_ELEMENTS.ADDITIONAL_CASES,
+        },
+        {
+          template: SECTION_ELEMENTS.CASE_FOOTER,
+        },
+        {
+          template: SECTION_ELEMENTS.FOOTER,
         },
       ],
     },

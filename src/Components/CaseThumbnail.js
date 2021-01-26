@@ -11,7 +11,7 @@ import { AppContext } from "../Context/AppContext";
 import padding from "../theme/padding";
 import { CASE_STATUS } from "../data/dictionaries/CASE_STATUS";
 import Tag from "./Elements/Tag";
-import { LightContext } from "../Context/ColorContext";
+import { ElementColorContext } from "../Context/ElementColorContext";
 import Span from "./Elements/Span";
 
 const StyledCaseThumbnail = styled(motion.div)`
@@ -92,7 +92,9 @@ const StyledCaseIntro = styled(motion.div)`
 const CaseThumbnail = ({ data, caseKey, status }) => {
   const [, setContent] = useContext(AppContext);
 
-  const [, setLight] = useContext(LightContext);
+  const context = useContext(ElementColorContext);
+  // eslint-disable-next-line react/destructuring-assignment
+  const setLight = !context ? () => null : context[1];
 
   useEffect(() => {
     setLight(true);
