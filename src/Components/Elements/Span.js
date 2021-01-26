@@ -28,11 +28,17 @@ const StyledSpan = styled.span`
 `;
 
 const Span = ({ small, large, huge, children }) => {
-  const [hasViewBgColor] = useContext(ViewColorContext);
-  const [hasSectionBgColor] = useContext(SectionColorContext);
-  const context = useContext(ElementColorContext);
+  const viewContext = useContext(ViewColorContext);
   // eslint-disable-next-line react/destructuring-assignment
-  const hasElementBgColor = !context ? false : context[0];
+  const hasViewBgColor = !viewContext ? false : viewContext[0];
+
+  const sectionContext = useContext(SectionColorContext);
+  // eslint-disable-next-line react/destructuring-assignment
+  const hasSectionBgColor = !sectionContext ? false : sectionContext[0];
+
+  const elementContext = useContext(ElementColorContext);
+  // eslint-disable-next-line react/destructuring-assignment
+  const hasElementBgColor = !elementContext ? false : elementContext[0];
 
   const light = hasViewBgColor || hasSectionBgColor || hasElementBgColor;
 

@@ -49,6 +49,10 @@ const StyledNavigation = styled(motion.nav)`
       backgroundColor: "rgba(255, 255, 255, 1)",
       boxShadow: "0 1px 16px rgba(0,0,0,0.16)",
     }};
+
+  @media print {
+    display: none;
+  }
 `;
 
 const StyledLogo = styled.div`

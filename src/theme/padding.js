@@ -7,6 +7,8 @@ const padding = {
     octuple: "16vw",
   },
   vertical: {
+    eighth: ".25rem",
+    quarter: ".5rem",
     half: "1rem",
     single: "2rem",
     double: "4rem",

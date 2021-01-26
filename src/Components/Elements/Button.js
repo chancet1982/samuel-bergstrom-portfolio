@@ -47,7 +47,7 @@ const StyledButton = styled.button`
   }
 `;
 
-// TODO: fix "to" attribute
+// TODO: fix button router "to"
 const Button = ({
   onClick,
   children,

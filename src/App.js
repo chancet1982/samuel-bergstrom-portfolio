@@ -30,7 +30,7 @@ const ViewPageNotFound = lazy(() =>
   import("./Components/Views/ViewPageNotFound")
 );
 
-// TODO: animatePrecense not having an effect AFAIK
+// TODO: (later) animatePrecense not having an effect AFAIK
 function App() {
   return (
     <ThemeProvider theme={theme}>

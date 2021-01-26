@@ -9,15 +9,24 @@ import { CASE_STATUS } from "../data/dictionaries/CASE_STATUS";
 import ElementContextProvider from "../Context/ElementColorContext";
 import Paragraph from "./Elements/Paragraph";
 import padding from "../theme/padding";
+import breakpoints from "../theme/breakpoints";
 import TitleAndText from "./TitleAndText";
 
 const StyledAdditionalCases = styled(motion.div)`
-  padding: ${padding.vertical.double} ${padding.horizontal.double};
+  padding: ${padding.vertical.quadruple} ${padding.horizontal.double};
 `;
 
-const StyledCasesList = styled(motion.div)``;
+const StyledCasesList = styled(motion.div)`
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 0.25rem;
+  row-gap: 0.25rem;
 
-// TODO: style case thumbnails to look nice.
+  @media (min-width: ${breakpoints.desktop}px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+`;
+
 const AdditionalCases = () => {
   const { id } = useParams();
   const currentCaseTitle = CASES[id].thumbnail.title;

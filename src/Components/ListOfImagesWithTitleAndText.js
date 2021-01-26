@@ -55,9 +55,8 @@ const ListOfImagesWithTitleAndText = ({ items }) => {
   return (
     <StyledListOfImagesWithTitleAndText>
       {items.map(({ imageUrl, imageAlt, title, text, bgColor }, index) => (
-        <ElementContextProvider>
+        <ElementContextProvider key={title}>
           <ImageWithTitleAndText
-            key={title}
             imageUrl={imageUrl}
             imageAlt={imageAlt}
             title={title}
