@@ -17,6 +17,7 @@ const StyledAdditionalCases = styled(motion.div)`
 
 const StyledCasesList = styled(motion.div)``;
 
+// TODO: style case thumbnails to look nice.
 const AdditionalCases = () => {
   const { id } = useParams();
   const currentCaseTitle = CASES[id].thumbnail.title;

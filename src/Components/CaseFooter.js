@@ -38,6 +38,7 @@ const StyledLinksMenu = styled.div``;
 
 const StyledLink = styled.a``;
 
+// TODO: style the caseFooter to look nice.
 const CaseFooter = () => {
   return (
     <StyledCaseFooter>
