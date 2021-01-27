@@ -1,7 +1,16 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-export const ElementColorContext = React.createContext(false);
+const initialContext = [
+  false,
+  () => {
+    // eslint-disable-next-line no-console
+    console.error("No ElementContextProvider is wrapping this component");
+    return null;
+  },
+];
+
+export const ElementColorContext = React.createContext(initialContext);
 
 const ElementColorContextProvider = (props) => {
   const { children } = props;

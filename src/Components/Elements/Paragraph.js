@@ -1,10 +1,8 @@
 /* eslint-disable no-nested-ternary */
-import React, { useContext } from "react";
+import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import { ElementColorContext } from "../../Context/ElementColorContext";
-import { SectionColorContext } from "../../Context/SectionColorContext";
-import { ViewColorContext } from "../../Context/ViewColorContext";
+import useBgColor from "../../utils/useBgColor";
 
 const styleParagraph = (small, large, huge, size, lh, margin, inc) => `
   font-size: ${
@@ -32,19 +30,7 @@ const StyledParagraph = styled.p`
 `;
 
 const Paragraph = ({ small, large, huge, children }) => {
-  const viewContext = useContext(ViewColorContext);
-  // eslint-disable-next-line react/destructuring-assignment
-  const hasViewBgColor = !viewContext ? false : viewContext[0];
-
-  const sectionContext = useContext(SectionColorContext);
-  // eslint-disable-next-line react/destructuring-assignment
-  const hasSectionBgColor = !sectionContext ? false : sectionContext[0];
-
-  const elementContext = useContext(ElementColorContext);
-  // eslint-disable-next-line react/destructuring-assignment
-  const hasElementBgColor = !elementContext ? false : elementContext[0];
-
-  const light = hasViewBgColor || hasSectionBgColor || hasElementBgColor;
+  const light = useBgColor();
 
   return (
     <StyledParagraph small={small} large={large} huge={huge} light={light}>

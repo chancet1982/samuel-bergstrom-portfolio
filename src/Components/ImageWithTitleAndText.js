@@ -46,9 +46,8 @@ const ImageWithTitleAndText = ({
   const intersection = useIntersection(intersectionRef, {
     threshold: 0,
   });
-  const context = useContext(ElementColorContext);
-  // eslint-disable-next-line react/destructuring-assignment
-  const setLight = !context ? () => null : context[1];
+
+  const [, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
     setLight(bgColor !== null && bgColor !== colors.offwhite);

@@ -1,14 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable no-nested-ternary */
-import React, { useContext } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Link as RouterLink } from "react-router-dom";
-import { ElementColorContext } from "../../Context/ElementColorContext";
-import { SectionColorContext } from "../../Context/SectionColorContext";
-import { ViewColorContext } from "../../Context/ViewColorContext";
 import typography from "../../theme/typography";
 import colors from "../../theme/colors";
+import useBgColor from "../../utils/useBgColor";
 
 const { size, lh, inc } = typography;
 
@@ -38,13 +36,7 @@ const StyledAncorlLink = styled.a`
 
 // TODO: fix link "TO" attribute
 const Link = ({ small, large, huge, children, to, href }) => {
-  const [hasViewBgColor] = useContext(ViewColorContext);
-  const [hasSectionBgColor] = useContext(SectionColorContext);
-  const context = useContext(ElementColorContext);
-  // eslint-disable-next-line react/destructuring-assignment
-  const hasElementBgColor = !context ? false : context[0];
-
-  const light = hasViewBgColor || hasSectionBgColor || hasElementBgColor;
+  const light = useBgColor();
 
   return to ? (
     <StyledLink

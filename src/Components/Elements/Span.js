@@ -1,10 +1,8 @@
 /* eslint-disable no-nested-ternary */
-import React, { useContext } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { ElementColorContext } from "../../Context/ElementColorContext";
-import { SectionColorContext } from "../../Context/SectionColorContext";
-import { ViewColorContext } from "../../Context/ViewColorContext";
+import useBgColor from "../../utils/useBgColor";
 
 const styleSpan = (small, large, huge, size, lh, inc) => `
   font-size: ${
@@ -28,19 +26,7 @@ const StyledSpan = styled.span`
 `;
 
 const Span = ({ small, large, huge, children }) => {
-  const viewContext = useContext(ViewColorContext);
-  // eslint-disable-next-line react/destructuring-assignment
-  const hasViewBgColor = !viewContext ? false : viewContext[0];
-
-  const sectionContext = useContext(SectionColorContext);
-  // eslint-disable-next-line react/destructuring-assignment
-  const hasSectionBgColor = !sectionContext ? false : sectionContext[0];
-
-  const elementContext = useContext(ElementColorContext);
-  // eslint-disable-next-line react/destructuring-assignment
-  const hasElementBgColor = !elementContext ? false : elementContext[0];
-
-  const light = hasViewBgColor || hasSectionBgColor || hasElementBgColor;
+  const light = useBgColor();
 
   return (
     <StyledSpan small={small} large={large} huge={huge} light={light}>

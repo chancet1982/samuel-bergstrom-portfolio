@@ -92,9 +92,7 @@ const StyledCaseIntro = styled(motion.div)`
 const CaseThumbnail = ({ data, caseKey, status }) => {
   const [, setContent] = useContext(AppContext);
 
-  const context = useContext(ElementColorContext);
-  // eslint-disable-next-line react/destructuring-assignment
-  const setLight = !context ? () => null : context[1];
+  const [, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
     setLight(true);

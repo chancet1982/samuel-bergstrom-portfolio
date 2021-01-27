@@ -74,9 +74,7 @@ const Textbox = ({
     threshold: 0,
   });
 
-  const context = useContext(ElementColorContext);
-  // eslint-disable-next-line react/destructuring-assignment
-  const setLight = !context ? () => null : context[1];
+  const [, setLight] = useContext(ElementColorContext);
 
   // eslint-disable-next-line consistent-return
   useEffect(() => {

@@ -1,13 +1,11 @@
 /* eslint-disable no-nested-ternary */
-import React, { useContext } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { useWindowSize } from "react-use";
 import breakpoints from "../../theme/breakpoints";
 import typography from "../../theme/typography";
-import { ElementColorContext } from "../../Context/ElementColorContext";
-import { SectionColorContext } from "../../Context/SectionColorContext";
-import { ViewColorContext } from "../../Context/ViewColorContext";
+import useBgColor from "../../utils/useBgColor";
 
 const magnify = (val, inc, times) => val * (1 + inc) ** Math.abs(times);
 
@@ -79,20 +77,7 @@ export const StyledH5 = styled.h5`
 
 const Title = ({ h, children, padding }) => {
   const { width } = useWindowSize();
-
-  const viewContext = useContext(ViewColorContext);
-  // eslint-disable-next-line react/destructuring-assignment
-  const hasViewBgColor = !viewContext ? false : viewContext[0];
-
-  const sectionContext = useContext(SectionColorContext);
-  // eslint-disable-next-line react/destructuring-assignment
-  const hasSectionBgColor = !sectionContext ? false : sectionContext[0];
-
-  const elementContext = useContext(ElementColorContext);
-  // eslint-disable-next-line react/destructuring-assignment
-  const hasElementBgColor = !elementContext ? false : elementContext[0];
-
-  const light = hasViewBgColor || hasSectionBgColor || hasElementBgColor;
+  const light = useBgColor();
 
   const renderTitle = () => {
     switch (h) {

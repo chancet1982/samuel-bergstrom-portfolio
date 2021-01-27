@@ -1,7 +1,16 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-export const SectionColorContext = React.createContext(false);
+const initialContext = [
+  false,
+  () => {
+    // eslint-disable-next-line no-console
+    console.error("No SectionColorContextProvider is wrapping this component");
+    return null;
+  },
+];
+
+export const SectionColorContext = React.createContext(initialContext);
 
 const SectionColorContextProvider = (props) => {
   const { children } = props;
