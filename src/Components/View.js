@@ -9,13 +9,13 @@ import { ViewColorContext } from "../Context/ViewColorContext";
 import colors from "../theme/colors";
 
 const StyledView = styled(motion.main)`
-  ${({ padded }) =>
-    padded && {
+  ${({ isPadded }) =>
+    isPadded && {
       paddingTop: padding.vertical.quadruple,
     }}
 `;
 
-const View = ({ children, padded, transition, bgColor }) => {
+const View = ({ children, isPadded, transition, bgColor }) => {
   const [, setLight] = useContext(ViewColorContext);
   const [screenTransition, setScreenTransition] = useState(transition);
   const isShort = sessionStorage.getItem("isShortLS");
@@ -53,7 +53,7 @@ const View = ({ children, padded, transition, bgColor }) => {
     <ScreenTransition />
   ) : (
     <StyledView
-      padded={padded}
+      isPadded={isPadded}
       initial="initial"
       animate="animate"
       exit="exit"
@@ -67,14 +67,14 @@ const View = ({ children, padded, transition, bgColor }) => {
 
 View.propTypes = {
   children: PropTypes.node,
-  padded: PropTypes.bool,
+  isPadded: PropTypes.bool,
   bgColor: PropTypes.string,
   transition: PropTypes.bool,
 };
 
 View.defaultProps = {
   children: null,
-  padded: false,
+  isPadded: false,
   bgColor: null,
   transition: true,
 };

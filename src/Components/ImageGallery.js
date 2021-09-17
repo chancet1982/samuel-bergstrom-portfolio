@@ -11,11 +11,17 @@ const StyledImageGallery = styled.div`
   column-gap: 0.5rem;
   row-gap: 0.5rem;
   ${({ template }) => template};
+  ${({ limitMaxWidth }) =>
+    limitMaxWidth &&
+    `
+   max-width:1440px;
+   margin: 0 auto;
+  `};
 `;
 
-const ImageGallery = ({ images, template }) => {
+const ImageGallery = ({ images, template, limitMaxWidth }) => {
   return (
-    <StyledImageGallery template={template}>
+    <StyledImageGallery template={template} limitMaxWidth={limitMaxWidth}>
       {images.map(({ imageUrl, imageAlt, caption }, index) => (
         <ImageWithCaption
           imageUrl={imageUrl}
@@ -39,6 +45,11 @@ ImageGallery.propTypes = {
     })
   ).isRequired,
   template: PropTypes.string.isRequired,
+  limitMaxWidth: PropTypes.bool,
+};
+
+ImageGallery.defaultProps = {
+  limitMaxWidth: false,
 };
 
 export default ImageGallery;

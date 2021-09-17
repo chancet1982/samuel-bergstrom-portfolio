@@ -8,8 +8,8 @@ import { variants } from "../animations/animations";
 import padding from "../theme/padding";
 
 const StyledTitleAndText = styled(motion.div)`
-  ${({ padded }) =>
-    padded && {
+  ${({ isPadded }) =>
+    isPadded && {
       padding: `${padding.vertical.double} ${padding.horizontal.double}`,
     }}
 
@@ -27,7 +27,7 @@ const TitleAndText = ({
   children,
   disableAnimations,
   sticky,
-  padded,
+  isPadded,
 }) => {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
@@ -50,7 +50,7 @@ const TitleAndText = ({
       sticky={sticky}
       variants={variants}
       animate={disableAnimations || inView ? "inView" : "hidden"}
-      padded={padded}
+      isPadded={isPadded}
     >
       {title && <Title h={h}>{title}</Title>}
       {children}
@@ -64,7 +64,7 @@ TitleAndText.propTypes = {
   h: PropTypes.number,
   disableAnimations: PropTypes.bool,
   sticky: PropTypes.bool,
-  padded: PropTypes.bool,
+  isPadded: PropTypes.bool,
 };
 
 TitleAndText.defaultProps = {
@@ -73,7 +73,7 @@ TitleAndText.defaultProps = {
   h: 1,
   disableAnimations: false,
   sticky: false,
-  padded: false,
+  isPadded: false,
 };
 
 export default TitleAndText;

@@ -11,6 +11,7 @@ import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 export const CASE_6 = {
   caseStatus: CASE_STATUS.PUBLISHED,
   caseType: CASE_TYPES.DesignOps,
+  caseUrl: "/cases/6",
   thumbnail: {
     overline: "Euro Finans",
     title: "Design system",

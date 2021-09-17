@@ -42,7 +42,7 @@ const AdditionalCases = () => {
 
   return (
     <StyledAdditionalCases>
-      <TitleAndText h={2} title="Not what you were looking for?" padded>
+      <TitleAndText h={2} title="Not what you were looking for?" isPadded>
         <Paragraph>
           Perhaps one youll be interested in one of my other cases
         </Paragraph>

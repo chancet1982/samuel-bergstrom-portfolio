@@ -14,7 +14,7 @@ const StyledInput = styled.input`
   line-height: ${({ small, large }) =>
     small ? lh + inc : large ? lh - inc : lh};
   border: solid 0.125rem ${colors.darkgray};
-  font-family: "Fira Sans", sans-serif;
+  font-family: ${typography.bodyFont};
   font-size: ${({ small, large, huge }) =>
     small ? size / 1.2 : large ? size * 1.2 : huge ? size * 1.618 : size}rem;
   color: ${colors.text.dark.high};

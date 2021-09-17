@@ -11,15 +11,16 @@ import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 
 /* there is an IMAGE_WITH_CAPTION here that is wrong. */
-export const CASE_4 = {
+export const CASE_8 = {
   caseStatus: CASE_STATUS.COMING_SOON,
   caseType: CASE_TYPES.CONCEPT,
+  caseUrl: "/cases/8",
   thumbnail: {
     overline: "Mitsubishi Electric",
-    title: "e-commerce",
+    title: "e-commerce concept",
     imageUrl: "assets/case-8/thumbnail.png",
     imageAlt: "thumbnail",
-    text: "Delivery, unattended",
+    text: "Exploring direct sales B2C & B2B",
     bgColor: "rgba(99, 182, 187, .72)",
   },
   details: [
@@ -29,12 +30,12 @@ export const CASE_4 = {
         {
           template: SECTION_ELEMENTS.COVER,
           data: {
-            overline: "NoWaste",
-            title: "e-drop",
+            overline: "Mitsubishi Electric",
+            title: "e-commerce concept",
             imageUrl: "assets/case-8/cover.png",
             text: (
               <>
-                <Paragraph large>Delivery, unattended</Paragraph>
+                <Paragraph large>Exploring direct sales B2C & B2B</Paragraph>
               </>
             ),
           },
@@ -49,13 +50,15 @@ export const CASE_4 = {
             bgColor: "rgba(99, 182, 187, .72)",
             text: (
               <Paragraph huge>
-                NoWaste is a leading Global Logistics and transport company.
-                Their subsidiary e-drop was trying to solve some of the issues
-                with food deliveries. In Sweden, most supermarkets provide home
-                delivery services, but these services require that people will
-                be at home at a certain time. This is a challenge as most people
-                are home around the same time which means that deliveries are
-                limited to those hours.
+                Mitsubishi Electric is its subsidiary of Mitsubishi Global.
+                Mitsubishi Electric is responsible for the production,
+                distribution and sales of electronic devices. From home
+                appliances to components for space shuttles. As part of their
+                strategy Mitsubishi wanted to expand their sales and sell
+                directly to consumers. They wanted to explore how they can do
+                that without harming their relationships with current mitsubishi
+                distributers. I was asked to create a some concepts for creating
+                a B2B and B2C ecommerce platforms.
               </Paragraph>
             ),
             myRole: ROLES.LEAD,

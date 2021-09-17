@@ -7,7 +7,7 @@ const ViewAboutMe = () => {
   const sectionsData = VIEW_ABOUT_ME;
 
   return (
-    <View padded>
+    <View isPadded>
       <SectionsRenderer sections={sectionsData} />
     </View>
   );

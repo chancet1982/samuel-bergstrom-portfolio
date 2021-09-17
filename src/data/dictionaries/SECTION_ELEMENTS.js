@@ -1,6 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 export const SECTION_ELEMENTS = {
   COVER: "cover",
+  LANDING_PAGE_COVER: "landingPageCover",
   OVERVIEW: "overview",
   TEXTBOX: "textbox",
   QUOTE: "quote",
@@ -17,4 +18,5 @@ export const SECTION_ELEMENTS = {
   CASE_FOOTER: "caseFooter",
   ADDITIONAL_CASES: "additionalCases",
   FOOTER: "footer",
+  KEY_FIGURES: "keyFigures",
 };

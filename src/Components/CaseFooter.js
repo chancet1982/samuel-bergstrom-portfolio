@@ -11,6 +11,8 @@ import Link from "./Elements/Link";
 
 const StyledCaseFooter = styled(motion.div)`
   padding: ${padding.vertical.double} ${padding.horizontal.double};
+  max-width: 1440px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   ${({ bgColor }) =>
@@ -53,7 +55,7 @@ const StyledLinksMenu = styled.div`
 const CaseFooter = () => {
   return (
     <StyledCaseFooter>
-      <TitleAndText h={4} title="Let's get in touch" padded>
+      <TitleAndText h={4} title="Let's get in touch" isPadded>
         <Paragraph small>Found me interesting? Let’s talk</Paragraph>
         <Button to="/contact">Get in touch</Button>
       </TitleAndText>

@@ -11,11 +11,13 @@ const ViewCase = () => {
 
   const { id } = useParams();
 
-  const sectionsData = CASES[id].details;
+  const caseDetails = CASES.find(
+    (item) => item.caseUrl === `/cases/${id}`
+  ).details;
 
   return (
     <View>
-      <SectionsRenderer sections={sectionsData} />
+      <SectionsRenderer sections={caseDetails} />
     </View>
   );
 };

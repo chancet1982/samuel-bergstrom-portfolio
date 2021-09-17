@@ -22,6 +22,8 @@ const ViewAboutMe = lazy(() => import("./Components/Views/ViewAboutMe"));
 
 const ViewContact = lazy(() => import("./Components/Views/ViewContact"));
 
+const ViewTest = lazy(() => import("./Components/Views/ViewTest"));
+
 const ViewTestTypography = lazy(() =>
   import("./Components/Views/ViewTestTypography")
 );
@@ -51,7 +53,7 @@ function App() {
                     <Route exact path="/cases/:id" component={ViewCase} />
                     <Route exact path="/about" component={ViewAboutMe} />
                     <Route exact path="/contact" component={ViewContact} />
-                    {/* <Route exact path="/test" component={ViewTest} /> */}
+                    <Route exact path="/test" component={ViewTest} />
                     <Route
                       exact
                       path="/typography"

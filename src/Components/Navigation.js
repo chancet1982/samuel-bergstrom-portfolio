@@ -1,35 +1,17 @@
 /* eslint-disable no-nested-ternary */
-import React, { useContext, useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 /* import PropTypes from "prop-types"; */
 import styled from "styled-components";
 import { Link, NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useWindowScroll, useWindowSize } from "react-use";
-import { AppContext } from "../Context/AppContext";
 import { useScrollDirection } from "../utils/useScrollDirection";
 import breakpoints from "../theme/breakpoints";
 import padding from "../theme/padding";
 import { ReactComponent as Logo } from "../assets/logo.svg";
 import colors from "../theme/colors";
-import shadows from "../theme/shadows";
 import typography from "../theme/typography";
-
-const magnify = (val, inc, times) => val * (1 + inc) ** Math.abs(times);
-const { desktop, mobile } = breakpoints;
-
-const getMod = (res, minMod, maxMod) =>
-  // eslint-disable-next-line no-nested-ternary
-  res >= desktop
-    ? maxMod
-    : res < desktop && res >= mobile
-    ? minMod + ((res - mobile) * (maxMod - minMod)) / (desktop - mobile)
-    : minMod;
-
-const styleNavLink = (size, mod) => `
-  font-size: ${magnify(size, mod, 4)}rem;
-`;
-
-const { size, minMod, maxMod } = typography;
+import useFluidTypography from "../utils/useHeadlinesFluidTypography";
 
 const StyledNavigation = styled(motion.nav)`
   height: 5.5rem;
@@ -39,7 +21,7 @@ const StyledNavigation = styled(motion.nav)`
   width: 100%;
   padding-left: ${padding.horizontal.quadruple};
   padding-right: ${padding.horizontal.quadruple};
-  z-index: 1;
+  z-index: 2;
   box-sizing: border-box;
   display: flex;
   justify-content: space-between;
@@ -57,11 +39,7 @@ const StyledNavigation = styled(motion.nav)`
 
 const StyledLogo = styled.div`
   align-self: center;
-  color: ${({
-    theme: {
-      colors: { text },
-    },
-  }) => text.dark.high};
+  color: ${colors.text.dark.high};
   font-weight: 600;
   padding-right: ${padding.horizontal.half};
 `;
@@ -88,10 +66,13 @@ const StyledMenu = styled(motion.menu)`
   flex: 1;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
 `;
 
 const StyledNavLink = styled(NavLink)`
-  font-size: ${size}rem;
+  font-size: ${typography.size}rem;
+  font-family: ${typography.bodyFont};
+
   text-decoration: none;
   font-weight: 400;
   margin: 0;
@@ -101,14 +82,9 @@ const StyledNavLink = styled(NavLink)`
   }
 
   @media (max-width: ${breakpoints.desktop - 1}px) {
-    color: ${({
-      theme: {
-        colors: { text },
-      },
-    }) => text.light.medium};
-
-    ${({ width }) => styleNavLink(size, getMod(width, minMod, maxMod))}
-    font-family: "Lora", serif;
+    color: ${colors.text.light.medium};
+    ${({ mobileFluidType }) => mobileFluidType};
+    font-family: ${typography.headlineFont};
     display: block;
     padding: 0 3vw;
     flex: 1;
@@ -118,11 +94,7 @@ const StyledNavLink = styled(NavLink)`
     text-align: center;
 
     &.active {
-      color: ${({
-        theme: {
-          colors: { text },
-        },
-      }) => text.light.high};
+      color: ${colors.text.light.high};
 
       background-color: ${colors.primary};
     }
@@ -130,46 +102,16 @@ const StyledNavLink = styled(NavLink)`
 
   @media (min-width: ${breakpoints.desktop}px) {
     padding: 0.75rem 1.25rem;
-    color: ${({
-      theme: {
-        colors: { text },
-      },
-    }) => text.dark.medium};
+    color: ${colors.text.dark.medium};
 
     transition: all 0.5s !important;
 
     &:hover {
-      color: ${({
-        theme: {
-          colors: { text },
-        },
-      }) => text.dark.high};
+      color: ${colors.text.dark.high};
     }
 
     &.active {
-      color: ${({
-        theme: {
-          colors: { text },
-        },
-      }) => text.dark.high};
-    }
-
-    &.primary {
-      position: absolute;
-      right: 0;
-      background-color: ${({
-        theme: {
-          colors: { primary },
-        },
-      }) => primary};
-      border-radius: 0.25rem;
-      ${shadows.short};
-      color: ${({
-        theme: {
-          colors: { text },
-        },
-      }) => text.dark.high};
-      font-weight: 600;
+      color: ${colors.text.dark.high};
     }
   }
 `;
@@ -194,11 +136,7 @@ const StyledMenuToggler = styled(motion.a)`
     border-radius: 2px;
     width: 32px;
     margin: 0 auto;
-    background: ${({
-      theme: {
-        colors: { text },
-      },
-    }) => text.dark.high};
+    background: ${colors.text.dark.high};
     border-radius: 9px;
     opacity: 1;
     left: 0;
@@ -252,8 +190,6 @@ const Navigation = () => {
 
   const scrollDirection = useScrollDirection();
 
-  const [, setContent] = useContext(AppContext);
-
   const [expanded, setExpanded] = useState(false);
   const [navState, setNavState] = useState("transparent");
   const { y } = useWindowScroll();
@@ -272,15 +208,8 @@ const Navigation = () => {
     setExpanded(!!isDesktop);
   }, [isDesktop]);
 
-  const changeLoaderContent = (newContent) => {
-    setContent(newContent);
-    if (!isDesktop) {
-      setExpanded(!expanded);
-    }
-  };
-
   const menuTogglerClick = () => {
-    setExpanded(!expanded);
+    if (!isDesktop) setExpanded(!expanded);
   };
 
   const transition = {
@@ -303,6 +232,9 @@ const Navigation = () => {
     },
     hide: { y: "-100%", transition },
   };
+
+  const fluidType = useFluidTypography(4, false);
+
   return (
     <StyledNavigation
       opaque={navState === "opaque"}
@@ -315,7 +247,7 @@ const Navigation = () => {
       variants={navVariants}
     >
       <StyledLogo>
-        <Link to="/" onClick={() => changeLoaderContent("Samuel Bergström")}>
+        <Link to="/" onClick={menuTogglerClick}>
           <Logo />
         </Link>
       </StyledLogo>
@@ -334,19 +266,33 @@ const Navigation = () => {
         animate={expanded ? "expanded" : "collapsed"}
         variants={menuVariants}
       >
-        <StyledNavLink width={width} exact to="/">
+        <StyledNavLink
+          fluidType={fluidType}
+          exact
+          to="/"
+          onClick={menuTogglerClick}
+        >
           Home
         </StyledNavLink>
-        <StyledNavLink width={width} to="/about">
+        <StyledNavLink
+          fluidType={fluidType}
+          to="/about"
+          onClick={menuTogglerClick}
+        >
           About me
         </StyledNavLink>
-        <StyledNavLink width={width} to="/cases">
+        <StyledNavLink
+          fluidType={fluidType}
+          to="/cases"
+          onClick={menuTogglerClick}
+        >
           Cases
         </StyledNavLink>
-        {/* <StyledNavLink to="/test" onClick={() => changeLoaderContent("Test")}>
-          Test
-        </StyledNavLink> */}
-        <StyledNavLink className="primary" width={width} to="/contact">
+        <StyledNavLink
+          fluidType={fluidType}
+          to="/contact"
+          onClick={menuTogglerClick}
+        >
           Get in touch
         </StyledNavLink>
       </StyledMenu>

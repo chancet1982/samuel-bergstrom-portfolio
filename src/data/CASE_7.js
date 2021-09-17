@@ -4,6 +4,7 @@ import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import { TOOLS_AND_METHODS } from "./dictionaries/TOOLS_AND_METHODS";
 import { ROLES } from "./dictionaries/ROLES";
 import Paragraph from "../Components/Elements/Paragraph";
+import Span from "../Components/Elements/Span";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import Title from "../Components/Elements/Title";
@@ -14,6 +15,7 @@ import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 export const CASE_7 = {
   caseStatus: CASE_STATUS.COMING_SOON,
   caseType: CASE_TYPES.CONCEPT,
+  caseUrl: "/cases/7",
   thumbnail: {
     overline: "Fitness24Seven",
     title: "e-Commerce",
@@ -71,7 +73,6 @@ export const CASE_7 = {
               TOOLS_AND_METHODS.COMPETITOR_ANALYSIS,
               TOOLS_AND_METHODS.PROTOTYPING,
               TOOLS_AND_METHODS.USABILITY_TESTING,
-              TOOLS_AND_METHODS.SERVICE_DESIGN,
             ],
           },
         },
@@ -170,21 +171,21 @@ export const CASE_7 = {
                 </Paragraph>
                 <List
                   items={[
-                    <>
+                    <Span>
                       <strong>Week 1:</strong> Aligning stakeholder expectations
                       and current user needs.
-                    </>,
-                    <>
+                    </Span>,
+                    <Span>
                       <strong>Week 2:</strong> UX Research, in parallel to a
                       technical evaluation of different e-commerce systems.
-                    </>,
-                    <>
+                    </Span>,
+                    <Span>
                       <strong>Week 3:</strong> Present the findings internally,
                       prioritize and set focus area.
-                    </>,
-                    <>
+                    </Span>,
+                    <Span>
                       <strong>Week 4:</strong> Write a report.
-                    </>,
+                    </Span>,
                   ]}
                 />
               </>
@@ -230,24 +231,30 @@ export const CASE_7 = {
                   title="Many users fail to sign-up digitally."
                   h={5}
                 >
-                  A lot of users failed to find or were confused by the
-                  information they needed during sign-up
+                  <Paragraph>
+                    A lot of users failed to find or were confused by the
+                    information they needed during sign-up
+                  </Paragraph>
                 </TitleAndText>
 
                 <TitleAndText
                   title="20% of support calls originate from users who cannot sign-in to My Pages."
                   h={5}
                 >
-                  Despite receiving a mail with login information for “my pages”
-                  users couldn’t log-in.
+                  <Paragraph>
+                    Despite receiving a mail with login information for “my
+                    pages” users couldn’t log-in.
+                  </Paragraph>
                 </TitleAndText>
 
                 <TitleAndText
                   title="Not all offers and Campaigns were available online"
                   h={5}
                 >
-                  Some offers or services were only available when signing up
-                  physically
+                  <Paragraph>
+                    Some offers or services were only available when signing up
+                    physically
+                  </Paragraph>
                 </TitleAndText>
               </>
             ),
@@ -305,6 +312,21 @@ export const CASE_7 = {
           data: {
             title: <>Surveys, Interviews, And field studies</>,
             h: 2,
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.KEY_FIGURES,
+          data: {
+            items: [
+              { value: "160", description: "survey responses" },
+              { value: "30", description: "interviews" },
+              { value: "3", description: "gym visits" },
+            ],
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
             text: (
               <>
                 <Paragraph>
@@ -320,30 +342,6 @@ export const CASE_7 = {
             ),
           },
         },
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: <>Creating a better alternative</>,
-            h: 2,
-            text: (
-              <>
-                <Paragraph>
-                  Based on the input gathered and common best practices I
-                  created an alternative onboarding. The new onboarding was
-                  tested and tweaked using the REIT method in order to save
-                  time.
-                </Paragraph>
-                <Paragraph>
-                  <strong>Note:</strong> The new onboarding still included
-                  “up-selling” which is known to reduce conversions. In a
-                  perfect world, this would have been taken out but instead, it
-                  was simply limited to additional services that are logical to
-                  offer during signup.
-                </Paragraph>
-              </>
-            ),
-          },
-        },
       ],
     },
     {
@@ -352,7 +350,79 @@ export const CASE_7 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Shifting the focus to e-commerce</>,
+            title: <>State of onboarding new members.</>,
+            h: 2,
+            text: (
+              <>
+                <Paragraph>
+                  Based on the insights at this point it was clear that the
+                  onboarding needed to improve. Users were uncertain if they
+                  completed their application or not. Customer support and gym
+                  staff was dealing with constant support cases instead of
+                  helping gym members.
+                </Paragraph>
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.IMAGE_GALLERY,
+          data: {
+            template: IMAGE_GALLERY_TEMPLATES.ONE_IMAGE_FULLSIZE,
+            images: [
+              {
+                imageUrl: "assets/case-7/onboarding-before.png",
+                imageAlt: "Workflow",
+              },
+            ],
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Taking a small step in the right direction. </>,
+            h: 2,
+            text: (
+              <>
+                <Paragraph>
+                  At this point of time I was asked to visualize how the
+                  onboarding can be improved without affecting the organization.
+                  I removed/updated some steps where we saw large drop-off
+                  (Asking the user for their personal number at an early stage
+                  for example led to a huge dropoff) adding clarity to the
+                  expected the expected next steps.
+                </Paragraph>
+                <Paragraph>
+                  Several different versions of the design were created and
+                  tested, the winning version is presented below.
+                </Paragraph>
+                <Paragraph>
+                  <strong>Note:</strong> At this point, the scope and plan began
+                  expanding, in retrospect I am proud of what was accomplished
+                  but I would not like to repeat the process. I added upselling
+                  to the onboarding (upon request) even though ideally it should
+                  have been left out.
+                </Paragraph>
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.IMAGE_GALLERY,
+          data: {
+            template: IMAGE_GALLERY_TEMPLATES.ONE_IMAGE_FULLSIZE,
+            images: [
+              {
+                imageUrl: "assets/case-7/wip-1.png",
+                imageAlt: "Workflow",
+              },
+            ],
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Shifting the focus once more</>,
             h: 2,
             text: (
               <>
@@ -380,16 +450,24 @@ export const CASE_7 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.IMAGE_GALLERY,
+          data: {
+            template: IMAGE_GALLERY_TEMPLATES.ONE_IMAGE_FULLSIZE,
+            images: [
+              {
+                imageUrl: "assets/case-7/wip-2.png",
+                imageAlt: "Workflow",
+              },
+            ],
+          },
+        },
+        {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>Setting a vision for the future</>,
             h: 2,
             text: (
               <>
-                <Paragraph>
-                  Based on the data collected it was decided that the focus
-                  would be on improving the onboarding.
-                </Paragraph>
                 <Paragraph>
                   At this point we already had an improved prototype for
                   onboarding, instead, the Client asked if I could help
@@ -406,41 +484,131 @@ export const CASE_7 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.IMAGE_GALLERY,
+          data: {
+            template: IMAGE_GALLERY_TEMPLATES.ONE_IMAGE_FULLSIZE,
+            images: [
+              {
+                imageUrl: "assets/case-7/wip-3.png",
+                imageAlt: "Workflow",
+              },
+            ],
+          },
+        },
+        {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Identification & signing membership agreement</>,
+            title: <>Some key features</>,
             h: 2,
             text: (
               <>
                 <Paragraph>
-                  Identification at least in Sweden can be done using BankId,
-                  which also offers digitally signing legally binding
-                  agreements.
+                  In order to make this everything that was currently done
+                  manually at the gyms needed to be moved to the mobile app.
+                  This namely included: Identification and contract signing,
+                  taking a picture, and securing access to the gyms.
                 </Paragraph>
               </>
             ),
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
           data: {
-            title: <>Taking member’s pictures.</>,
-            h: 2,
-            text: (
-              <>
-                <Paragraph>XXX</Paragraph>
-              </>
-            ),
+            items: [
+              {
+                imageUrl: "assets/case-7/sneakpeek-1.png",
+                imageAlt: "Identification & signing membership agreement",
+                title: "Identification & signing membership agreement",
+                text: (
+                  <>
+                    <Paragraph>
+                      At the moment one after users complete their online
+                      application they need to physically go to the gym during
+                      manned hours. This is done in order to sign the membership
+                      agreement, take a picture, and handle the magnetic
+                      entrance card.
+                    </Paragraph>
+                    <Paragraph>
+                      <Span>Solution: </Span>Identification at least in Sweden
+                      can be done using BankId, which also offers digitally
+                      signing legally binding agreements.
+                    </Paragraph>
+                  </>
+                ),
+              },
+              {
+                imageUrl: "assets/case-7/sneakpeek-2.png",
+                imageAlt: "Snapping a selfi instead of going to the gym",
+                title: "Taking member’s pictures.",
+                text: (
+                  <>
+                    <Title h={3}>Taking member’s pictures.</Title>
+                    <Paragraph>
+                      At the moment after users finish signing up online, they
+                      are required to physically go to the gym to get their
+                      image taken. Sometimes, this information is disregarded as
+                      it comes in an email upon signup. At times this leads to
+                      potential members choosing to physically go to the gyms to
+                      complete the application.
+                    </Paragraph>
+                    <Paragraph>
+                      <span>Solution: </span> In the re-imagined onboarding we
+                      allow users to take a selfi instead. Much simpler, doesnt
+                      require any employee involvement, and reduces workload in
+                      gyms.
+                    </Paragraph>
+                  </>
+                ),
+              },
+              {
+                imageUrl: "assets/case-7/sneakpeek-3.png",
+                imageAlt: "QR codes and NFC to replace old magnetic cards",
+                title: "Physical access control at the gyms",
+                text: (
+                  <>
+                    <Paragraph>
+                      Gym goers today use magnetic cards to enter during
+                      unmanned hours. This however requires employees to assist
+                      in membership signups and makes the process more complex.
+                      Employees also reported that a lot of members eventually
+                      lose their cards leading to additional administration
+                      costs.
+                    </Paragraph>
+                    <Paragraph>
+                      <span>Solution: </span> Instead of the current entrance
+                      system we proposed to use QR locks on the doors or even
+                      exploring NFC chips instead in order to allow unassisted
+                      membership sign-up’s making the process much simpler and
+                      effective. This will however entail a cost and is
+                      currently being evaluated.
+                    </Paragraph>
+                  </>
+                ),
+              },
+            ],
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.IMAGE_GALLERY,
+          data: {
+            template: IMAGE_GALLERY_TEMPLATES.ONE_IMAGE_FULLSIZE,
+            images: [
+              {
+                imageUrl: "assets/case-7/onboarding-after.png",
+                imageAlt: "Workflow",
+              },
+            ],
           },
         },
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Physical access control at the gyms</>,
+            title: <>Oh, one last thing</>,
             h: 2,
             text: (
               <>
-                <Paragraph>XXX</Paragraph>
+                <Paragraph />
               </>
             ),
           },
@@ -454,23 +622,21 @@ export const CASE_7 = {
           data: {
             imageUrl: "assets/case-7/result.png",
             bgColor: "rgba(9, 93, 132, .72)",
-            results: [
-              {
-                value: "1.6+",
-                unit: "mil.",
-                description: "treatment station hours freed *",
-              },
-              {
-                value: "3.3+",
-                unit: "mil.",
-                description: "staff & patients hours saved *",
-              },
-            ],
             text: (
-              <Paragraph small>
-                * Estimate based on current number of patients and calculated
-                per anum.
-              </Paragraph>
+              <>
+                <Paragraph large>
+                  The results clearly incdicated that Dispite this being a
+                  prestudy, the scope expanded to include a lot of conceptual
+                  work in order to obtain organizational buy-in.
+                </Paragraph>
+                <Title h={2}>After thoughts:</Title>
+                <Paragraph large>
+                  Despite time constraints and focus on speedy delivery, a lot
+                  of the issues uncovered during the research phase were
+                  addressed. Given more time I would have loved to revisit this
+                  redesign to gather some concrete data about its impact.
+                </Paragraph>
+              </>
             ),
           },
         },

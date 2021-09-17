@@ -12,6 +12,7 @@ import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 export const CASE_5 = {
   caseStatus: CASE_STATUS.PUBLISHED,
   caseType: CASE_TYPES.DESIGN,
+  caseUrl: "/cases/5",
   thumbnail: {
     overline: "Diaverum",
     title: "TGS-WS",

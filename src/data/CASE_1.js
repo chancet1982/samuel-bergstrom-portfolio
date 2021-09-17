@@ -15,8 +15,9 @@ import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 export const CASE_1 = {
   caseStatus: CASE_STATUS.PUBLISHED,
   caseType: CASE_TYPES.REDESIGN,
+  caseUrl: "/cases/1",
   thumbnail: {
-    overline: "Loomis",
+    overline: "Loomis (CASE1)",
     title: "TMS Courier App",
     imageUrl: "assets/case-1/thumbnail.png",
     imageAlt: "thumbnail",

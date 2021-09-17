@@ -3,37 +3,43 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import useBgColor from "../../utils/useBgColor";
-
-const styleParagraph = (small, large, huge, size, lh, margin, inc) => `
-  font-size: ${
-    small ? size / 1.2 : large ? size * 1.2 : huge ? size * 1.618 : size
-  }rem;
-  margin-top: ${margin}rem;
-  margin-bottom: ${margin * 3}rem;
-  line-height: ${small ? lh + inc : large ? lh - inc : lh};
-`;
+import useFluidTypography from "../../utils/useBodyFluidTypography";
+import colors from "../../theme/colors";
+import typography from "../../theme/typography";
 
 const StyledParagraph = styled.p`
-  color: ${({ light, theme: { colors } }) =>
+  color: ${({ light }) =>
     light ? colors.text.light.medium : colors.text.dark.medium};
-
   max-width: 80ch;
+  ${({ fluidType }) => fluidType};
+  font-family: ${typography.bodyFont};
 
-  ${({
-    small,
-    large,
-    huge,
-    theme: {
-      typography: { size, lh, margin, inc },
-    },
-  }) => styleParagraph(small, large, huge, size, lh, margin, inc)}
+  strong {
+    color: ${({ light }) =>
+      light ? colors.text.light.high : colors.text.dark.high};
+  }
 `;
 
 const Paragraph = ({ small, large, huge, children }) => {
   const light = useBgColor();
 
+  const mapSizeToNumber = () => {
+    if (small) return 1;
+    if (large) return 3;
+    if (huge) return 4;
+    return 2;
+  };
+
+  const fluidType = useFluidTypography(mapSizeToNumber());
+
   return (
-    <StyledParagraph small={small} large={large} huge={huge} light={light}>
+    <StyledParagraph
+      small={small}
+      large={large}
+      huge={huge}
+      light={light}
+      fluidType={fluidType}
+    >
       {children}
     </StyledParagraph>
   );

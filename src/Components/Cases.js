@@ -8,60 +8,67 @@ import CaseThumbnail from "./CaseThumbnail";
 import { CASES } from "../data/dictionaries/CASES";
 import breakpoints from "../theme/breakpoints";
 import padding from "../theme/padding";
-import Textbox from "./Textbox";
 import { CASE_STATUS } from "../data/dictionaries/CASE_STATUS";
 import ElementColorContextProvider from "../Context/ElementColorContext";
+import TitleAndText from "./TitleAndText";
 
 const StyledCases = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  column-gap: 0.25rem;
-  row-gap: 0.25rem;
+  column-gap: ${padding.vertical.single};
+  row-gap: ${padding.vertical.single};
 
   padding-top: ${padding.vertical.quadruple};
   padding-bottom: ${padding.vertical.quadruple};
 
-  @media (min-width: ${breakpoints.tablet}px) and (max-width: ${breakpoints.desktop -
-    1}px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  max-width: 1440px;
+  margin: 0 auto;
 
   @media (min-width: ${breakpoints.desktop}px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
+`;
 
-  > div {
-    &:nth-child(1) {
-      padding-left: ${padding.horizontal.double};
-    }
+const StyledCenteredText = styled.div`
+  @media (min-width: ${breakpoints.desktop}px) {
+    background-color: transparent;
+    width: 60%;
+    justify-content: flex-start;
+    text-align: center;
+    padding-top: 12rem;
+    margin: 0 auto;
 
-    &:nth-child(2) {
-      @media (min-width: ${breakpoints.desktop}px) {
-        grid-area: span 1 / span 2;
-      }
+    p {
+      max-width: inherit;
     }
   }
 `;
 
 const SectionCases = ({ title, text }) => {
   return (
-    <StyledCases>
-      <Textbox title={title} text={text} />
-      {CASES.filter(({ caseStatus }) => caseStatus !== CASE_STATUS.DRAFT).map(
-        ({ thumbnail, caseStatus }, index) => {
-          return (
-            <ElementColorContextProvider>
-              <CaseThumbnail
-                data={thumbnail}
-                caseKey={index}
-                key={uuid()}
-                status={caseStatus}
-              />
-            </ElementColorContextProvider>
-          );
-        }
-      )}
-    </StyledCases>
+    <>
+      <StyledCenteredText>
+        <TitleAndText h={2} title={title}>
+          {text}
+        </TitleAndText>
+      </StyledCenteredText>
+      <StyledCases>
+        {CASES.reverse()
+          .filter(({ caseStatus }) => caseStatus !== CASE_STATUS.DRAFT)
+          .map(({ thumbnail, caseStatus, caseUrl }) => {
+            return (
+              <ElementColorContextProvider>
+                <CaseThumbnail
+                  data={thumbnail}
+                  caseUrl={caseUrl}
+                  key={uuid()}
+                  status={caseStatus}
+                />
+              </ElementColorContextProvider>
+            );
+          })}
+      </StyledCases>
+    </>
   );
 };
 

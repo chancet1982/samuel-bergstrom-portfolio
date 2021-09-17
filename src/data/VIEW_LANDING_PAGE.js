@@ -6,15 +6,13 @@ import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 
 export const VIEW_LANDING_PAGE = [
   {
-    isSticky: true,
     elements: [
       {
-        template: SECTION_ELEMENTS.COVER,
+        template: SECTION_ELEMENTS.LANDING_PAGE_COVER,
         data: {
-          overline: "Samuel Bergström",
           title: (
             <>
-              A <mark>non-typical</mark> designer
+              <mark>Not</mark> your typical designer
             </>
           ),
           text: (
@@ -25,15 +23,15 @@ export const VIEW_LANDING_PAGE = [
               </Paragraph>
             </>
           ),
-          imageUrl: "assets/cover.svg",
-          bgColor: "#ffffff",
+          bgImageUrl: "assets/cover-bg.svg",
+          imageUrl: "assets/cover-fg.png",
         },
       },
     ],
   },
   {
-    heaeder: "Cases",
-    bgColor: colors.black,
+    header: "Cases",
+    bgColor: colors.offwhite,
     elements: [
       {
         template: SECTION_ELEMENTS.CASES,

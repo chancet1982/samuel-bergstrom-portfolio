@@ -32,7 +32,7 @@ const ImageWithCaption = ({
   inGallery,
   inTextbox,
   disableAnimations,
-  padded,
+  isPadded,
   gridArea,
 }) => {
   const [inView, setInView] = useState(false);
@@ -57,7 +57,7 @@ const ImageWithCaption = ({
       initial="hidden"
       variants={variants}
       animate={disableAnimations || inView ? "inView" : "hidden"}
-      padded={padded}
+      isPadded={isPadded}
     >
       <Image
         imageUrl={`${process.env.PUBLIC_URL}/${imageUrl}`}
@@ -85,7 +85,7 @@ ImageWithCaption.propTypes = {
   inGallery: PropTypes.bool,
   inTextbox: PropTypes.bool,
   disableAnimations: PropTypes.bool,
-  padded: PropTypes.bool,
+  isPadded: PropTypes.bool,
   gridArea: PropTypes.string,
 };
 
@@ -95,7 +95,7 @@ ImageWithCaption.defaultProps = {
   inGallery: false,
   inTextbox: false,
   disableAnimations: false,
-  padded: false,
+  isPadded: false,
   gridArea: null,
 };
 

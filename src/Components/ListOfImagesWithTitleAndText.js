@@ -23,29 +23,43 @@ const StyledListOfImagesWithTitleAndText = styled(motion.div)`
     }
 
     @media (min-width: ${breakpoints.desktop}px) {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-areas: "a b c";
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+  }
 
+  > div:nth-of-type(2n + 1) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "a b b";
+    @media (min-width: ${breakpoints.desktop}px) {
+      > figure {
+        grid-area: a;
+      }
       > div {
         grid-area: b;
       }
     }
   }
 
-  > div:nth-of-type(2n + 1) {
-    @media (min-width: ${breakpoints.desktop}px) {
-      > figure {
-        grid-area: a;
-      }
-    }
-  }
-
   > div:nth-of-type(2n + 2) {
-    background: ${colors.offwhite};
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "a a b";
+
+    &:before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      background: ${colors.offwhite};
+    }
 
     @media (min-width: ${breakpoints.desktop}px) {
       > figure {
-        grid-area: c;
+        grid-area: b;
+      }
+      > div {
+        grid-area: a;
       }
     }
   }

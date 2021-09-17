@@ -2,15 +2,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 import padding from "../../theme/padding";
 import colors from "../../theme/colors";
 import shadows from "../../theme/shadows";
 import typography from "../../theme/typography";
+import Span from "./Span";
+import breakpoints from "../../theme/breakpoints";
 
 const { size } = typography;
 
 const StyledButton = styled.button`
-  padding: ${padding.vertical.half} ${padding.horizontal.double};
+  padding: ${padding.vertical.half} ${padding.horizontal.quadruple};
   background-color: ${({ secondaryDark, secondaryLight }) =>
     secondaryDark
       ? colors.darkgray
@@ -26,11 +29,14 @@ const StyledButton = styled.button`
   border: none;
   ${shadows.short};
   border-radius: ${padding.vertical.single};
-  font-family: "Fira Sans", sans-serif;
   font-size: ${({ small, large, huge }) =>
     small ? size / 1.2 : large ? size * 1.2 : huge ? size * 1.618 : size}rem;
   transition: all 0.3s;
   cursor: pointer;
+
+  @media (min-width: ${breakpoints.tablet}px) {
+    padding: ${padding.vertical.half} ${padding.horizontal.double};
+  }
 
   &:hover {
     background-color: ${({ secondaryDark, secondaryLight }) =>
@@ -45,6 +51,10 @@ const StyledButton = styled.button`
   &:active {
     box-shadow: none;
   }
+
+  > a {
+    text-decoration: none !important;
+  }
 `;
 
 // TODO: fix button router "to"
@@ -57,6 +67,7 @@ const Button = ({
   large,
   huge,
   disabled,
+  to,
 }) => {
   // const [loading, setLoading] = useState(false);
 
@@ -70,7 +81,13 @@ const Button = ({
       huge={huge}
       disabled={disabled}
     >
-      {children}
+      {to ? (
+        <Link to={to}>
+          <Span light> {children} </Span>
+        </Link>
+      ) : (
+        children
+      )}
     </StyledButton>
   );
 };
@@ -84,6 +101,7 @@ Button.propTypes = {
   small: PropTypes.bool,
   large: PropTypes.bool,
   huge: PropTypes.bool,
+  to: PropTypes.string,
 };
 
 Button.defaultProps = {
@@ -95,6 +113,7 @@ Button.defaultProps = {
   small: false,
   large: false,
   huge: false,
+  to: null,
 };
 
 export default Button;

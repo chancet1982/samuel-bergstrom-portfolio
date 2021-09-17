@@ -21,7 +21,7 @@ const StyledFooter = styled.footer`
 const SectionFooter = () => {
   return (
     <StyledFooter>
-      <Span small>2020, Making stuff happen</Span>
+      <Span small>2021, Samuel Bergström</Span>
     </StyledFooter>
   );
 };

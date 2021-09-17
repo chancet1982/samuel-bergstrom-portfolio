@@ -1,39 +1,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { useWindowSize } from "react-use";
-import breakpoints from "../../theme/breakpoints";
-import typography from "../../theme/typography";
 import useBgColor from "../../utils/useBgColor";
-
-const magnify = (val, inc, times) => val * (1 + inc) ** Math.abs(times);
-const multiply = (val, times) => val * times;
-const decrease = (val, dec, times) => val - dec * times;
-const { desktop, mobile } = breakpoints;
-
-const getMod = (res, minMod, maxMod) =>
-  // eslint-disable-next-line no-nested-ternary
-  res >= desktop
-    ? maxMod
-    : res < desktop && res >= mobile
-    ? minMod + ((res - mobile) * (maxMod - minMod)) / (desktop - mobile)
-    : minMod;
-
-const styleQuote = (h, size, lh, margin, inc, mod) => `
-  font-size: ${magnify(size, mod, 6 - h)}rem;
-  margin-top: ${multiply(margin, 6 - h)}rem;
-  margin-bottom: ${multiply(margin, 6 - h)}rem;
-  line-height: ${decrease(lh, inc, 6 - h)};
-`;
-
-const { size, lh, margin, inc, minMod, maxMod } = typography;
+import useFluidTypography from "../../utils/useHeadlinesFluidTypography";
+import colors from "../../theme/colors";
 
 const StyledQuote = styled.q`
-  color: ${({ light, theme: { colors } }) =>
+  color: ${({ light }) =>
     light ? colors.text.light.high : colors.text.dark.high};
 
-  ${({ h, width }) =>
-    styleQuote(h, size, lh, margin, inc, getMod(width, minMod, maxMod))}
+  ${({ fluidType }) => fluidType};
 
   position: relative;
   font-style: italic;
@@ -70,24 +46,18 @@ const StyledQuote = styled.q`
   }
 `;
 
-const Quote = ({ h, children }) => {
-  const { width } = useWindowSize();
+const Quote = ({ children }) => {
   const light = useBgColor();
-
+  const fluidType = useFluidTypography(2);
   return (
-    <StyledQuote light={light} h={h} width={width}>
+    <StyledQuote light={light} fluidType={fluidType}>
       {children}
     </StyledQuote>
   );
 };
 
 Quote.propTypes = {
-  h: PropTypes.number,
   children: PropTypes.node.isRequired,
-};
-
-Quote.defaultProps = {
-  h: 2,
 };
 
 export default Quote;

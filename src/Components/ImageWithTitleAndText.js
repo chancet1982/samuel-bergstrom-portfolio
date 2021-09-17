@@ -79,7 +79,7 @@ const ImageWithTitleAndText = ({
         size={IMAGE_WITH_CAPTION_SIZES.MEDIUM_DOUBLE}
         disableAnimations
       />
-      <TitleAndText h={3} title={title} padded disableAnimations>
+      <TitleAndText h={3} title={title} isPadded disableAnimations>
         {text}
       </TitleAndText>
     </StyledImageWithTitleAndText>

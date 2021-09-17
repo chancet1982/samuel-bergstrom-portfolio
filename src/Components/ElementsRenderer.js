@@ -3,6 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { SECTION_ELEMENTS } from "../data/dictionaries/SECTION_ELEMENTS";
 import Cover from "./Cover";
+import LandingPageCover from "./LandingPageCover";
 import Textbox from "./Textbox";
 import Overview from "./Overview";
 import Clients from "./Clients";
@@ -18,6 +19,7 @@ import SocialMediaLinks from "./SocialMediaLinks";
 import CaseFooter from "./CaseFooter";
 import AdditionalCases from "./AdditionalCases";
 import Footer from "./Footer";
+import KeyFigures from "./KeyFigures";
 import ElementColorContextProvider from "../Context/ElementColorContext";
 
 const SectionElementsRenderer = ({ elementKey, data, template }) => {
@@ -39,6 +41,22 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
           sticky={data.sticky}
         />
       );
+    case SECTION_ELEMENTS.LANDING_PAGE_COVER:
+      return (
+        <ElementColorContextProvider>
+          <LandingPageCover
+            key={elementKey}
+            overline={data.overline}
+            title={data.title}
+            text={data.text}
+            bgImageUrl={data.bgImageUrl}
+            imageUrl={data.imageUrl}
+            bgColor={data.bgColor}
+          />
+        </ElementColorContextProvider>
+      );
+    case SECTION_ELEMENTS.KEY_FIGURES:
+      return <KeyFigures key={elementKey} items={data.items} />;
     case SECTION_ELEMENTS.OVERVIEW:
       return (
         <Overview
@@ -83,6 +101,7 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
           key={elementKey}
           images={data.images}
           template={data.template}
+          limitMaxWidth={data.limitMaxWidth}
         />
       );
     case SECTION_ELEMENTS.TIMELINE:

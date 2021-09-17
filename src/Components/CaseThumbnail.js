@@ -89,7 +89,7 @@ const StyledCaseIntro = styled(motion.div)`
   box-sizing: border-box;
 `;
 
-const CaseThumbnail = ({ data, caseKey, status }) => {
+const CaseThumbnail = ({ data, status, caseUrl }) => {
   const [, setContent] = useContext(AppContext);
 
   const [, setLight] = useContext(ElementColorContext);
@@ -195,7 +195,7 @@ const CaseThumbnail = ({ data, caseKey, status }) => {
           </Title>
         </StyledCaseThumbnailCaption>
         <StyledCaseIntro initial="hidden" variants={caseIntroVariants}>
-          <Span small>{text}</Span>
+          <Span>{text}</Span>
         </StyledCaseIntro>
         {status === CASE_STATUS.COMING_SOON && <Tag />}
       </>
@@ -205,7 +205,7 @@ const CaseThumbnail = ({ data, caseKey, status }) => {
   const wrapWithLink = () => {
     return (
       <Link
-        to={`/cases/${caseKey}`}
+        to={caseUrl}
         onClick={() => changeLoaderContent(`${overline}, ${title}`)}
       >
         {renderCaseThumbnail()}
@@ -233,12 +233,11 @@ CaseThumbnail.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object,
   status: PropTypes.string.isRequired,
-  caseKey: PropTypes.number,
+  caseUrl: PropTypes.string.isRequired,
 };
 
 CaseThumbnail.defaultProps = {
   data: {},
-  caseKey: 0,
 };
 
 export default CaseThumbnail;

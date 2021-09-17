@@ -14,6 +14,7 @@ import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 export const CASE_4 = {
   caseStatus: CASE_STATUS.COMING_SOON,
   caseType: CASE_TYPES.REDESIGN,
+  caseUrl: "/cases/4",
   thumbnail: {
     overline: "NoWaste",
     title: "e-drop",

@@ -15,6 +15,13 @@ import colors from "../theme/colors";
 const StyledTextbox = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  max-width: 1440px;
+  margin: 0 auto;
+  ${(imageUrl) =>
+    !imageUrl && {
+      maxWidth: "60ch",
+    }};
+
   ${({ bgColor }) =>
     bgColor && {
       backgroundColor: bgColor,
@@ -98,6 +105,7 @@ const Textbox = ({
       variants={variants}
       flip={flip}
       bgColor={bgColor}
+      imageUrl={imageUrl}
     >
       {flip && imageUrl && (
         <ImageWithCaption
@@ -109,7 +117,7 @@ const Textbox = ({
         />
       )}
 
-      <TitleAndText h={h} title={title} disableAnimations padded>
+      <TitleAndText h={h} title={title} disableAnimations isPadded>
         {text}
       </TitleAndText>
 

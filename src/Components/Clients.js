@@ -11,8 +11,14 @@ import padding from "../theme/padding";
 import { variants } from "../animations/animations";
 
 const StyledClients = styled(motion.div)`
-  padding-left: ${padding.horizontal.quadruple};
-  padding-right: ${padding.horizontal.quadruple};
+  margin-left: ${padding.horizontal.quadruple};
+  margin-right: ${padding.horizontal.quadruple};
+  padding-left: ${padding.horizontal.double};
+  padding-right: ${padding.horizontal.double};
+  box-sizing: border-box;
+  max-width: 1440px;
+  margin: 0 auto;
+
   > div {
     display: grid;
     grid-gap: 1rem;

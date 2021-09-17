@@ -6,11 +6,26 @@ import List from "../Components/Elements/List";
 import colors from "../theme/colors";
 import Span from "../Components/Elements/Span";
 import Link from "../Components/Elements/Link";
+import Title from "../Components/Elements/Title";
+import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 
 export const VIEW_ABOUT_ME = [
   {
     header: "About Me",
     elements: [
+      {
+        template: SECTION_ELEMENTS.IMAGE_GALLERY,
+        data: {
+          template: IMAGE_GALLERY_TEMPLATES.ONE_IMAGE_FULLSIZE,
+          limitMaxWidth: true,
+          images: [
+            {
+              imageUrl: "assets/meet-sam.png",
+              imageAlt: "A wonderful picture of me being myself",
+            },
+          ],
+        },
+      },
       {
         template: SECTION_ELEMENTS.TEXTBOX,
         data: {
@@ -22,26 +37,44 @@ export const VIEW_ABOUT_ME = [
           h: 1,
           text: (
             <>
-              <Paragraph>
-                I’m a digital product designer, Accessibility nerd, father,
-                husband, and quite a nice guy. Or at least a semi-decent human
-                being. During the last 13 years, I’ve worked with many companies
-                operating in a wide array of domains. To name a few: Finance,
-                healthcare, and e-commerce.
+              <Paragraph huge>
+                A digital product designer, engineer, Speaker, Mentor,
+                Accessibility enthusiast, father, husband, and quite a nice guy.
               </Paragraph>
+              <Title h={2}>Why Sam?</Title>
               <Paragraph>
-                I believe in creating <strong>practical designs</strong>.
-                Designs that are fast to implement, easy to use, and are scaled
-                to fit. That requires more than having an “eye” for design. It
-                requires a deeper understanding of business and technology. I
-                believe that decisions need to be based on evidence, in lack of
+                Because good design always lives in on the intersection of
+                Business value, User value, and technical feasibility. Because
+                solving the right problem is often more important than solving
+                it the right way. of <strong>practical designs</strong>. Designs
+                that are fast to implement, easy to use, and are scaled to fit.
+                That requires more than having an “eye” for design. It requires
+                a deeper understanding of business and technology. I believe
+                that decisions need to be based on evidence, in lack of
                 evidence, decisions are based on gut-feeling, intuition, which
                 simply creates friction and mediocre results.
               </Paragraph>
+              <Title h={3}>User value</Title>
               <Paragraph>
-                I don’t know if designers should code or not, but believe that a
-                basic understanding of code can only make designers better at
-                creating designs that are feasible.
+                Every designer claims to be user centric, I am no different, I
+                honestly love what I do and really aim to make the world a
+                better place one pixel at a time. I believe in creating business
+                value via design.
+              </Paragraph>
+              <Title h={3}>Business value</Title>
+              <Paragraph>
+                It can be hard to convey the business value of design. I started
+                my career in the financial sector where worked with very complex
+                systems. I am no stranger to management meetings, OKRs KPIs and
+                communicating/projecting business value via design.
+              </Paragraph>
+              <Title h={3}>Techical feasibility</Title>
+              <Paragraph>
+                As designers, we need to know the understand our medium. As an
+                Engineer, I am far more likely to create technically feasable
+                designs. Because I know what it would take to implement a
+                design, I can often create designs that are far less (resource)
+                demanding
               </Paragraph>
               <Paragraph>
                 I personally am a semi-decent coder focusing on the front-end
@@ -52,6 +85,7 @@ export const VIEW_ABOUT_ME = [
                 impossible even using current prototyping tools. I simply do it
                 because it makes me a better designer.
               </Paragraph>
+              <Title h={2}>Free-time?</Title>
               <Paragraph>
                 When I’m not working I’m most likely chasing down my kids,
                 trying to prevent the next disaster from happening, from houses
@@ -66,8 +100,6 @@ export const VIEW_ABOUT_ME = [
               </Paragraph>
             </>
           ),
-          imageUrl: "assets/me.jpg",
-          imageAlt: "A wonderful picture of me being myself",
         },
       },
     ],
