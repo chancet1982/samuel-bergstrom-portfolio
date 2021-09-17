@@ -6,6 +6,7 @@ import { v4 as uuid } from "uuid";
 import colors from "../theme/colors";
 import Title from "./Elements/Title";
 import Paragraph from "./Elements/Paragraph";
+import breakpoints from "../theme/breakpoints";
 
 const StyledKeyFigures = styled(motion.div)`
   padding: 4rem 4vw;
@@ -14,20 +15,31 @@ const StyledKeyFigures = styled(motion.div)`
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+
+  @media (min-width: ${breakpoints.mobile_lg}px) {
+    flex-direction: row;
+    align-items: flex-start;
+  }
 `;
 
 const StyledKeyFigure = styled(motion.div)`
   align-items: center;
   justify-content: center;
-  width: 20%;
   display: flex;
   flex-direction: column;
+  text-align: center;
+  padding: 4vw;
+
+  @media (min-width: ${breakpoints.tablet}px) {
+    width: 20%;
+  }
 `;
 
 const StyledCircle = styled(motion.div)`
   border-radius: 50%;
-  height: 10ch;
-  width: 10ch;
+  height: 8vw;
+  width: 8vw;
   background-color: ${colors.offwhite};
   padding: 5ch;
 

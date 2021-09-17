@@ -10,4 +10,5 @@ export const TOOLS_AND_METHODS = {
   PROTOTYPING: "High fidelity prototyping",
   USABILITY_TESTING: "Usability testing",
   WEB_ANALYTICS: "Web Analytics",
+  FUNNEL_ANALYSIS: "Funnel Analysis",
 };

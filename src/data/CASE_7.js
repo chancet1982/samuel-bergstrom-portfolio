@@ -18,12 +18,12 @@ export const CASE_7 = {
   caseUrl: "/cases/7",
   thumbnail: {
     overline: "Fitness24Seven",
-    title: "e-Commerce",
+    title: "e-Commerce Prestudy & concept",
     imageUrl: "assets/case-7/thumbnail.png",
     coverImageUrl: "assets/case-7/cover.png",
     imageAlt: "assets/case-7/cover.png",
     text: "Exploring potential service and product offering",
-    bgColor: "rgba(0, 42, 78, .24)",
+    bgColor: "#2362CA",
   },
   details: [
     {

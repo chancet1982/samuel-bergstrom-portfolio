@@ -6,9 +6,9 @@ import { ROLES } from "./dictionaries/ROLES";
 import { PLATFORMS } from "./dictionaries/PLATFORMS";
 import Paragraph from "../Components/Elements/Paragraph";
 import List from "../Components/Elements/List";
-import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
+import Title from "../Components/Elements/Title";
 
 /* there is an IMAGE_WITH_CAPTION here that is wrong. */
 export const CASE_9 = {
@@ -21,7 +21,7 @@ export const CASE_9 = {
     imageUrl: "assets/case-9/thumbnail.png",
     imageAlt: "thumbnail",
     text: "Improving search experience",
-    bgColor: "rgba(99, 182, 187, .72)",
+    bgColor: "#00ADDB",
   },
   details: [
     {
@@ -31,11 +31,13 @@ export const CASE_9 = {
           template: SECTION_ELEMENTS.COVER,
           data: {
             overline: "Prisjakt",
-            title: "e-commerce",
+            title: "Improving search experience",
             imageUrl: "assets/case-9/cover.png",
             text: (
               <>
-                <Paragraph large>Improving search experience</Paragraph>
+                <Paragraph large>
+                  Or, how to make millions of without moving a PX
+                </Paragraph>
               </>
             ),
           },
@@ -47,26 +49,23 @@ export const CASE_9 = {
         {
           template: SECTION_ELEMENTS.OVERVIEW,
           data: {
-            bgColor: "rgba(99, 182, 187, .72)",
+            bgColor: "#00ADDB",
             text: (
               <Paragraph huge>
-                NoWaste is a leading Global Logistics and transport company.
-                Their subsidiary e-drop was trying to solve some of the issues
-                with food deliveries. In Sweden, most supermarkets provide home
-                delivery services, but these services require that people will
-                be at home at a certain time. This is a challenge as most people
-                are home around the same time which means that deliveries are
-                limited to those hours.
+                Prisjakt is a leading price comparison site operating in 6
+                different countries. Prisjakt was couldnt reach the growth they
+                expected. I was asked to assist and evaluate their search
+                experience and to come up with quick fixes to increase search
+                success.
               </Paragraph>
             ),
-            myRole: ROLES.LEAD,
+            myRole: ROLES.CONSULTANT,
             duration: "4 weeks",
             platforms: [PLATFORMS.MOBILE_ANDROID, PLATFORMS.MOBILE_IOS],
             toolsAndMethods: [
               TOOLS_AND_METHODS.SURVEYS,
-              TOOLS_AND_METHODS.COMPETITOR_ANALYSIS,
-              TOOLS_AND_METHODS.FLOW_MAPPING,
-              TOOLS_AND_METHODS.PROTOTYPING,
+              TOOLS_AND_METHODS.WEB_ANALYTICS,
+              TOOLS_AND_METHODS.FUNNEL_ANALYSIS,
               TOOLS_AND_METHODS.USABILITY_TESTING,
             ],
           },
@@ -79,61 +78,109 @@ export const CASE_9 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Deliveries, never a good time.</>,
+            title: (
+              <>Identifying strengths and weaknesses in data-collection.</>
+            ),
             text: (
               <>
                 <Paragraph>
-                  NoWaste is a leading Global Logistics and transport company.
-                  Their subsidiary e-drop was trying to solve some of the issues
-                  with food deliveries. In Sweden, most supermarkets provide
-                  home delivery services, but these services require that people
-                  will be at home at a certain time. This is a challenge as most
-                  people are home around the same time which means that
-                  deliveries are limited to those hours.
+                  Prisjakt has a solid data collection infrastructure. From
+                  Analytics, Usage statistics, support cases that are documented
+                  and tagged. This however provides an incomplete picture
+                  Analytics and usage statistics provide valueable insights for
+                  what users do but not to why(!) they do it. On top of that,
+                  the support cases (and various forums) are inherently biased
+                  as they only represent ’frustrated users’ or ’power users’. In
+                  order for me to get a better picture of the problem I
+                  suggested sending an open survey and promoting it on social
+                  media. The survey was designed to answer 3 main questions:
                 </Paragraph>
               </>
             ),
           },
         },
         {
-          template: SECTION_ELEMENTS.IMAGE_GALLERY,
+          template: SECTION_ELEMENTS.KEY_FIGURES,
           data: {
-            template: IMAGE_GALLERY_TEMPLATES.FOUR_IMAGES_TWO_COLUMNS,
-            images: [
-              {
-                imageUrl: "assets/case-9/mood-1.jpg",
-                imageAlt: "?",
-              },
-              {
-                imageUrl: "assets/case-9/mood-2.jpg",
-                imageAlt: "?",
-              },
-              {
-                imageUrl: "assets/case-9/mood-3.jpg",
-                imageAlt: "?",
-              },
-              {
-                imageUrl: "assets/case-9/mood-4.png",
-                imageAlt: "?",
-              },
+            items: [
+              { value: 1, description: "when do people compare prices" },
+              { value: 2, description: "what works well" },
+              { value: 3, description: "what needs to be improved" },
             ],
           },
         },
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>The goal:</>,
+            title: <>Sometimes jobs are more important than others</>,
+            text: (
+              <>
+                <Paragraph large>
+                  The survey was sent to 140000 people, out of which, we
+                  collected more than 2500 responses. Mapping the survey and
+                  cross referncing it with our jobs-to-be-done indicated that
+                  there are 2 jobs that are critical:
+                </Paragraph>
+                <List
+                  items={[
+                    <Paragraph>
+                      <strong>Find the right product: </strong>
+                      Users must be able to find product in order to convert.
+                    </Paragraph>,
+                    <Paragraph>
+                      <strong>Find the right shop: </strong>
+                      Once users know what products they are interested in they
+                      need to be able to find a shop that sells these products.
+                    </Paragraph>,
+                  ]}
+                />
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Problem areas</>,
             h: 2,
             text: (
               <>
                 <Paragraph>
-                  In order to solve this problem, NoWaste created a smart
-                  outdoor delivery unit intended to keep deliveries fresh and
-                  secure. We were contacted in order to help them improve the
-                  performance of their companion app.
+                  Looking at the survey results, I noticed that there are 2
+                  leading source of complaints:
                 </Paragraph>
+                <List
+                  items={[
+                    <>
+                      <Title h={5}>Bad actors</Title>
+                      <Paragraph>
+                        Shops that abuse the system, publishing fake prices,
+                        misleading stock and delivery terms.
+                      </Paragraph>
+                    </>,
+                    <>
+                      <Title h={5}>Search</Title>
+                      <Paragraph>
+                        Users cant seem to find what they are looking for on
+                        prisjakt.
+                      </Paragraph>
+                    </>,
+                  ]}
+                />
               </>
             ),
+            imageUrl: "assets/case-9/survey.png",
+            imageAlt: "Survey results, search indicated in green.",
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.KEY_FIGURES,
+          data: {
+            items: [
+              { value: "2 500+", description: "responses" },
+              { value: "2256", description: "mapped insights" },
+              { value: "178", description: "wanted to improve search" },
+            ],
           },
         },
       ],
@@ -173,7 +220,7 @@ export const CASE_9 = {
                 </Paragraph>
               </>
             ),
-            bgColor: "rgba(99, 182, 187, .72)",
+            bgColor: "#00ADDB",
           },
         },
       ],
@@ -220,7 +267,7 @@ export const CASE_9 = {
           data: {
             items: [
               {
-                bgColor: "rgba(9, 93, 132, .28)",
+                bgColor: "#00ADDB",
                 imageUrl: "assets/case-9/before.png",
                 imageAlt: "Flows before redesign",
                 title: "Flows before redesign",
@@ -233,7 +280,7 @@ export const CASE_9 = {
                 ),
               },
               {
-                bgColor: "rgba(9, 93, 132, .28)",
+                bgColor: "#00ADDB",
                 imageUrl: "assets/case-9/after.png",
                 imageAlt: "Flows before redesign",
                 title: "Flows before redesign",
@@ -409,7 +456,7 @@ export const CASE_9 = {
           template: SECTION_ELEMENTS.RESULT,
           data: {
             imageUrl: "assets/case-9/result.png",
-            bgColor: "rgba(99, 182, 187, .72)",
+            bgColor: "#00ADDB",
             results: [
               {
                 value: "120%",
