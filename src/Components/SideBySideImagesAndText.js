@@ -9,6 +9,8 @@ const StyledSideBySideImagesAndText = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 4rem;
+  max-width: 1440px;
+  margin: 0 auto;
 
   > div:nth-of-type(1) {
     box-sizing: border-box;

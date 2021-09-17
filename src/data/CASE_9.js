@@ -9,6 +9,7 @@ import List from "../Components/Elements/List";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Elements/Title";
+import ImageWithTitleAndText from "../Components/ImageWithTitleAndText";
 
 /* there is an IMAGE_WITH_CAPTION here that is wrong. */
 export const CASE_9 = {
@@ -67,13 +68,14 @@ export const CASE_9 = {
               TOOLS_AND_METHODS.WEB_ANALYTICS,
               TOOLS_AND_METHODS.FUNNEL_ANALYSIS,
               TOOLS_AND_METHODS.USABILITY_TESTING,
+              TOOLS_AND_METHODS.AB_TESTING,
             ],
           },
         },
       ],
     },
     {
-      header: "Background",
+      header: "Research",
       elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
@@ -123,15 +125,20 @@ export const CASE_9 = {
                 </Paragraph>
                 <List
                   items={[
-                    <Paragraph>
-                      <strong>Find the right product: </strong>
-                      Users must be able to find product in order to convert.
-                    </Paragraph>,
-                    <Paragraph>
-                      <strong>Find the right shop: </strong>
-                      Once users know what products they are interested in they
-                      need to be able to find a shop that sells these products.
-                    </Paragraph>,
+                    <>
+                      <Title h={5}>Find the right product:</Title>
+                      <Paragraph>
+                        Users must be able to find product in order to convert.
+                      </Paragraph>
+                    </>,
+                    <>
+                      <Title h={5}>Find the right shop:</Title>
+                      <Paragraph>
+                        Once users know what products they are interested in
+                        they need to be able to find a shop that sells these
+                        products.
+                      </Paragraph>
+                    </>,
                   ]}
                 />
               </>
@@ -169,8 +176,9 @@ export const CASE_9 = {
                 />
               </>
             ),
-            imageUrl: "assets/case-9/survey.png",
             imageAlt: "Survey results, search indicated in green.",
+            imageUrl: "assets/case-9/survey.png",
+            caption: "Survey results, search indicated in green.",
           },
         },
         {
@@ -186,60 +194,133 @@ export const CASE_9 = {
       ],
     },
     {
-      header: "Process",
+      header: "Ideation",
       elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: (
-              <>
-                Focus on the <strong>goal</strong>
-              </>
-            ),
+            title: <>How can we improve search?</>,
             text: (
               <>
                 <Paragraph>
-                  The premise for this project was redesigning an
-                  underpreforming app. The team developing the app didnt have a
-                  designer onboard, decisions were based on gut-feeling, and
-                  backend developers making design decisions. The outcome as
-                  expected, didnt impress.
+                  Understanding what the problem is, is a good first step. We
+                  had limited time and resources and needed find an idea that is
+                  easy to implement and that had the best potential.
                 </Paragraph>
-                <Paragraph>
-                  <strong>Important note:</strong> It was not intended to test
-                  if these apps are “the right way forward” but instead focused
-                  on improving the app to a state where it would allow users to
-                  interact with their fridges.
-                </Paragraph>
-                <Paragraph>
-                  For this reason, we did not look into if users will actually
-                  need an app but instead focused on what functionality will
-                  users be looking for, what are the common use cases for such
-                  an app, creating a benchmark for comparison of our redesigned
-                  app.
-                </Paragraph>
+                <Title h={3}>
+                  What has the most potential? Before, during, or after?
+                </Title>
+                <ImageWithTitleAndText
+                  imageUrl="assets/case-9/before-search.png"
+                  imageAlt="before searching"
+                  title="Before searching"
+                  text={
+                    <Paragraph>
+                      Before search we could make the search more prominant in
+                      the UI or show past searches to allow users to pick up
+                      where they left off. This would be the right move, if we
+                      had data to support a discoverability problem with the
+                      search functionality. Looking at Amplitude it was apparent
+                      that this isnt the problem. Most users on site prefer
+                      searching and 78% of the users on the landing page use the
+                      functionality.
+                    </Paragraph>
+                  }
+                />
+                <ImageWithTitleAndText
+                  imageUrl="assets/case-9/while-searching.png"
+                  imageAlt="while searching"
+                  title="During search"
+                  text={
+                    <Paragraph>
+                      During search we can show better suggestions and provide
+                      better guidance for users. This would be appropriate if we
+                      could see a long times spent before moving to the next
+                      page or if users ereased their query and retyped it.
+                      Looking at Amplitude it was evidant that most users
+                      actually only spend a very short time focused on the
+                      search field and that most end up in the search results
+                      page..
+                    </Paragraph>
+                  }
+                />
+                <ImageWithTitleAndText
+                  imageUrl="assets/case-9/search-results.png"
+                  imageAlt="after searching"
+                  title="After searching"
+                  text={
+                    <Paragraph>
+                      After searching users see the search results page. There
+                      we saw a huge dropoff of about 60%. Still, at this point
+                      we only know that the search results page is failing, not
+                      why. So i needed to look for some qualitative data to
+                      evaluate what seems to be the problem.
+                    </Paragraph>
+                  }
+                />
               </>
             ),
             bgColor: "#00ADDB",
           },
         },
-      ],
-    },
-    {
-      elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Gathering feedback and recruiting users.</>,
+            title: <>Adding some qualitative data to the mix</>,
             h: 2,
             text: (
               <>
                 <Paragraph>
-                  We needed to understand why the current app is failing. In
-                  order to do that we needed to get a better understanding of
-                  the target group, how often do they encounter issues with
-                  their food deliveries, what is important for them and how do
-                  they experience the current app.
+                  I decided to conduct usability tests to see how people search
+                  for products online, the premis was simple. “Your partner has
+                  a birthday and you want to buy him something up to 1500kr, can
+                  you choose something he likes (where you have limited
+                  knowledge) and show me how you would do that?”
+                </Paragraph>
+
+                <Paragraph>
+                  We recruited 9 participants and conducted the testing
+                  remotely.
+                </Paragraph>
+              </>
+            ),
+            imageUrl: "assets/case-9/usability-test.png",
+            imageAlt: "Picture from usability testing.",
+            caption: "Picture from usability testing.",
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Insights</>,
+            h: 2,
+            text: (
+              <>
+                <Paragraph>
+                  Most users started their search on Google. Most ended up
+                  looking at Prisjakt only after they had a clear idea of the
+                  product they want to buy. But for those that tried, it was an
+                  uphill battle.
+                </Paragraph>
+                <Paragraph>
+                  No one had trouble finding the search functionality. In
+                  general only one of the participants preferred using the
+                  on-site navigation.
+                </Paragraph>
+                <Paragraph>
+                  Search suggestions were no use either. Most participants just
+                  typed a query and pressed “enter” leading them to the search
+                  results page.
+                </Paragraph>
+                <Paragraph>
+                  There were obvious flaws with the search results page. Users
+                  couldnt proceed to looking at product categories. Product
+                  pictures were too small. Filtering the search options was
+                  buggy and most participants just gave up at this point.
+                </Paragraph>
+                <Paragraph>
+                  Of all the participants only one was able to find a present to
+                  their partner using Prisjakt
                 </Paragraph>
               </>
             ),
@@ -248,141 +329,72 @@ export const CASE_9 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Creating a benchmark for comparison</>,
+            title: <>A moment of inspiration</>,
             h: 2,
             text: (
               <>
                 <Paragraph>
-                  It was decided that a survey would be sent to the current test
-                  users and that based on its results we would use some of those
-                  people for usability testing on the current app for creating a
-                  benchmark for comparison.
+                  A logical place to start would be the search results page. But
+                  it was not technically feasible to fix all the issues there
+                  within a reasonable time. Instead we needed something to
+                  proove the potential in fixing the search. All seemed lost
+                  until something happened.
+                </Paragraph>
+                <Title h={3}>Finding a needle in a haystack</Title>
+                <Paragraph>
+                  I was looking through the search logs trying to identify
+                  themes. I soon realised it was an unrealistic mission as we
+                  are talking about over 2 million searches a month. But I
+                  decided to export the data and looked through the most popular
+                  searches. I noticed that 77.5% of the searches could be
+                  manually mapped to existing products. Then it hit me.
                 </Paragraph>
               </>
             ),
           },
         },
         {
-          template: SECTION_ELEMENTS.SIDE_BY_SIDE_IMAGES_AND_TEXT,
+          template: SECTION_ELEMENTS.QUOTE,
           data: {
-            items: [
-              {
-                bgColor: "#00ADDB",
-                imageUrl: "assets/case-9/before.png",
-                imageAlt: "Flows before redesign",
-                title: "Flows before redesign",
-                text: (
-                  <>
-                    <Paragraph>
-                      Something about how annoying it was to use before.
-                    </Paragraph>
-                  </>
-                ),
-              },
-              {
-                bgColor: "#00ADDB",
-                imageUrl: "assets/case-9/after.png",
-                imageAlt: "Flows before redesign",
-                title: "Flows before redesign",
-                text: (
-                  <>
-                    <Paragraph>
-                      Something about how wonderful it could have been
-                    </Paragraph>
-                  </>
-                ),
-              },
-            ],
+            quote:
+              "We cant fix the search results page, but what if we can bypass it?",
+            cite: "Me (being sneaky)",
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.IMAGE_WITH_CAPTION,
+          data: {
+            imageUrl: "assets/case-9/flow-illustation.png",
+            imageAlt: "?",
+            caption: "Original plan",
           },
         },
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Noteworthy findings and impact:</>,
-            h: 5,
+            title: <>Plan set in motion</>,
+            h: 2,
             text: (
               <>
-                <List
-                  items={[
-                    <>
-                      Login was cumbersome and required users to create an
-                      account by using a username then securing the account with
-                      a password only after which users needed to link their
-                      account with their phone and subscription code.
-                      <br />
-                      <strong>Adjustment - </strong>login was simplified and the
-                      concept was reduced to “connect a mobile device to one or
-                      more subscriptions”.
-                    </>,
-                    <>
-                      Another confusing concept was “key sharing”. Users could
-                      allow temporary access by “sharing” their access keys with
-                      other devices. None of our test users were able to
-                      understand the concept and non-expressed interest in
-                      sharing keys “temporarily”
-                      <br />
-                      <strong>Adjustment - </strong>The idea of shared access
-                      was simplified to its core. I.E. connecting multiple
-                      devices to the same delivery unit. Based on our testing
-                      this was a lot easier for people to understand and use
-                    </>,
-                    <>
-                      Security settings were too granular and were hard to
-                      understand. We saw that users that match their target
-                      audience were prioritizing convenience over security and
-                      were content with 2 settings, open for all or secured
-                      delivery.
-                      <br />
-                      <strong>Adjustment - </strong>We considered using
-                      proximity as a means of unlocking the delivery unit so it
-                      is secure if the owner is away but open when the owner is
-                      nearby. This was too costly to implement in an existing
-                      hardware device but the security settings were simplified
-                      to “open until delivered” and “open for all”
-                    </>,
-                    <>
-                      {" "}
-                      The cooling schedule was a feature in which users could
-                      control their device’s cooling schedule in order to save
-                      electricity. During testing, it became apparent that it
-                      was overly complex and was too flexible.
-                      <br />
-                      <strong>Adjustment - </strong>Instead of providing full
-                      flexibility it was decided that by default cooling will
-                      only be active during the workdays daytime. The
-                      “always-on” option was kept but not as default while the
-                      cooling schedule itself was simplified. Users selected a
-                      start, end, and in which days the cooling should be on.
-                    </>,
-                    <>
-                      {" "}
-                      The idea was that the same app used privately could also
-                      be used for opening multiple lockers in a corporate
-                      environment. This caused a cluttered and messy Landing
-                      screen UI.
-                      <br />
-                      <strong>Adjustment - </strong>Based on the common case
-                      (one user one delivery unit) we decided to move the locker
-                      view (where you control and adjust the locker) as the main
-                      view, swipe to the left to change the active locker, and
-                      to the right to add a locker.
-                    </>,
-                    <>
-                      {" "}
-                      Some users complained about not knowing if their locker is
-                      on or not and if it was ready to receive a delivery and
-                      that when a delivery is made it is hard to find the
-                      lock/unlock button.
-                      <br />
-                      <strong>Adjustment - </strong>The locker status and the
-                      temp was added to the main locker view. The most commonly
-                      used button “lock/unlock” was placed predominantly on that
-                      screen as well.
-                    </>,
-                  ]}
-                />
+                <Paragraph>
+                  If we could manually map popular search queries and make sure
+                  users are being transported directly to their destination?
+                  Kind of like Google‘s “Im feeling lucky” search. We would
+                  still need to of course avoid vague keywords but the potential
+                  was HUGE
+                </Paragraph>
+                <Paragraph>
+                  Based on a small calculation I made the potential increase in
+                  revenue would be massive
+                </Paragraph>
               </>
             ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.KEY_FIGURES,
+          data: {
+            items: [{ value: "2.8", description: "mil. kr. annually" }],
           },
         },
       ],
@@ -393,27 +405,53 @@ export const CASE_9 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Mapping, Slimming, and optimizing</>,
+            title: <>Is it feasable?</>,
             h: 2,
             text: (
               <>
                 <Paragraph>
-                  We started off by mapping out the current app. Doing this gave
-                  us a good understanding of how it works. With that in mind and
-                  the findings from the research, we knew what needed to be
-                  changed so where we approached the redesign we prioritized
-                  most commonly used or valuable features first while down
-                  removing some seldom-used functionality.
+                  Sharing this with the team. Everyone was excited. It was
+                  simple, elegant, and would show if nothing more what potential
+                  revenue we have for improving the search (which in turn means
+                  resources)
                 </Paragraph>
                 <Paragraph>
-                  We then created some high fidelity mockups which were
-                  ongoingly presented to the stakeholders and to the dev team.
-                  In collaboration with the dev team, we looked into the
-                  feasibility of the different design solutions and came up with
-                  a good balance of everyone’s needs.
+                  It only required a small change, namely adding an option in
+                  the search suggestions. Clicking that option would lead users
+                  to the “best match” we have. As most users press “ENTER” this
+                  should in theory worked fine.
                 </Paragraph>
               </>
             ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SIDE_BY_SIDE_IMAGES_AND_TEXT,
+          data: {
+            items: [
+              {
+                imageUrl: "assets/case-9/before.png",
+                imageAlt: "Search suggestions, before",
+                title: "Search suggestions, before",
+                text: (
+                  <>
+                    <Paragraph>Search suggestions before</Paragraph>
+                  </>
+                ),
+              },
+              {
+                imageUrl: "assets/case-9/after.png",
+                imageAlt: "Search suggestions after",
+                title: "Search suggestions after",
+                text: (
+                  <>
+                    <Paragraph>
+                      Search suggestions with the new option added.
+                    </Paragraph>
+                  </>
+                ),
+              },
+            ],
           },
         },
       ],
@@ -424,28 +462,26 @@ export const CASE_9 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Past vs Present</>,
+            title: <>AB testing and result</>,
             h: 2,
             text: (
               <>
                 <Paragraph>
-                  Initially, we identified all key functionality in
-                  collaboration with the product owner and users. Knowing this
-                  we were able to create test goals and ran an initial usability
-                  test using the app for creating a benchmark and identifying
-                  problem areas.
+                  We set up and A/B test using a 50/50 split on all searches. We
+                  collected data and the experiment ran for 23 days before
+                  shutting it down.
                 </Paragraph>
                 <Paragraph>
-                  We later were able to prioritize our efforts based on their
-                  value (how often, how bad) based on how important a certain
-                  feature. Once we had a design in place we created a prototype
-                  by stitching together all the different views and linked them
-                  together. We then recruited some participants and re-ran the
-                  same exact usability tests we did before the redesign in order
-                  to measure the impact of our changes.
+                  Eventually, 268 000 users were exposed to the experiment. Not
+                  surprising, manually mapping outpreformed the normal search
+                  behaviours and we’ve seen an increase of about 2% in general
+                  conversion.
                 </Paragraph>
               </>
             ),
+            imageUrl: "assets/case-9/ab-test.png",
+            imageAlt: "AB test in action",
+            caption: "AB test in action",
           },
         },
       ],
@@ -457,18 +493,15 @@ export const CASE_9 = {
           data: {
             imageUrl: "assets/case-9/result.png",
             bgColor: "#00ADDB",
-            results: [
-              {
-                value: "120%",
-                unit: "%",
-                description: "increase in overall success rate",
-              },
-              {
-                value: "64%",
-                unit: "%",
-                description: "decrease in time to completian",
-              },
-            ],
+            text: (
+              <>
+                <Paragraph>
+                  A 1% increase in conversion is worth about 2.8 mil. kr
+                  annually. A potential increase of 3% secured resources to
+                  shift the focus into improving the search on Prisjakt{" "}
+                </Paragraph>
+              </>
+            ),
           },
         },
       ],

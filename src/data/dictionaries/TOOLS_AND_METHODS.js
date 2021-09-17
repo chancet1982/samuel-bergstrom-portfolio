@@ -11,4 +11,5 @@ export const TOOLS_AND_METHODS = {
   USABILITY_TESTING: "Usability testing",
   WEB_ANALYTICS: "Web Analytics",
   FUNNEL_ANALYSIS: "Funnel Analysis",
+  AB_TESTING: "A/B testing",
 };
