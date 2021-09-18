@@ -145,7 +145,14 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
         <BlockQuote key={elementKey} quote={data.quote} cite={data.cite} />
       );
     case SECTION_ELEMENTS.CASES:
-      return <Cases key={elementKey} title={data.title} text={data.text} />;
+      return (
+        <Cases
+          key={elementKey}
+          title={data.title}
+          text={data.text}
+          preview={data.preview}
+        />
+      );
     default:
       return null;
   }

@@ -1,6 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import React from "react";
 import Paragraph from "../Components/Elements/Paragraph";
+import ReadMoreLink from "../Components/ReadMoreLink";
 import colors from "../theme/colors";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 
@@ -30,12 +31,47 @@ export const VIEW_LANDING_PAGE = [
     ],
   },
   {
-    header: "Cases",
+    header: "About Me",
     bgColor: colors.offwhite,
+    elements: [
+      {
+        template: SECTION_ELEMENTS.TEXTBOX,
+        data: {
+          title: (
+            <>
+              Meet <mark>Sam</mark>
+            </>
+          ),
+          h: 1,
+          text: (
+            <>
+              <Paragraph huge>
+                A digital product designer, engineer, Speaker, Mentor,
+                Accessibility enthusiast, father, husband, and quite a nice guy.
+              </Paragraph>
+              <ReadMoreLink to="about">Get to know me</ReadMoreLink>
+            </>
+          ),
+        },
+      },
+    ],
+  },
+  /* {
+    bgColor: colors.offwhite,
+    header: "clients",
+    elements: [
+      {
+        template: SECTION_ELEMENTS.CLIENTS,
+      },
+    ],
+  }, */
+  {
+    header: "Cases",
     elements: [
       {
         template: SECTION_ELEMENTS.CASES,
         data: {
+          preview: true,
           title: (
             <>
               Some of <mark>my work</mark>

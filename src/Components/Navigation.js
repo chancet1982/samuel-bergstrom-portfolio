@@ -83,12 +83,11 @@ const StyledNavLink = styled(NavLink)`
 
   @media (max-width: ${breakpoints.desktop - 1}px) {
     color: ${colors.text.light.medium};
-    ${({ mobileFluidType }) => mobileFluidType};
-    font-family: ${typography.headlineFont};
+    ${({ fluidType }) => fluidType};
     display: block;
     padding: 0 3vw;
     flex: 1;
-    height: calc(25vh - 11rem / 4);
+    /*height: calc(25vh - 11rem / 4);*/
     line-height: calc(25vh - 11rem / 4);
     width: 100%;
     text-align: center;

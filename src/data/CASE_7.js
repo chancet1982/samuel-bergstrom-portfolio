@@ -13,7 +13,7 @@ import TitleAndText from "../Components/TitleAndText";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 
 export const CASE_7 = {
-  caseStatus: CASE_STATUS.COMING_SOON,
+  caseStatus: CASE_STATUS.FEATURED,
   caseType: CASE_TYPES.CONCEPT,
   caseUrl: "/cases/7",
   thumbnail: {

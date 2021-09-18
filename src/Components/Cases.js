@@ -11,16 +11,14 @@ import padding from "../theme/padding";
 import { CASE_STATUS } from "../data/dictionaries/CASE_STATUS";
 import ElementColorContextProvider from "../Context/ElementColorContext";
 import TitleAndText from "./TitleAndText";
+import ReadMoreLink from "./ReadMoreLink";
 
 const StyledCases = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   column-gap: ${padding.vertical.single};
   row-gap: ${padding.vertical.single};
-
-  padding-top: ${padding.vertical.quadruple};
   padding-bottom: ${padding.vertical.quadruple};
-
   max-width: 1440px;
   margin: 0 auto;
 
@@ -30,6 +28,10 @@ const StyledCases = styled(motion.div)`
 `;
 
 const StyledCenteredText = styled.div`
+  padding-top: ${padding.vertical.quadruple};
+  padding-left: ${padding.horizontal.double};
+  padding-right: ${padding.horizontal.double};
+
   @media (min-width: ${breakpoints.desktop}px) {
     background-color: transparent;
     width: 60%;
@@ -43,8 +45,7 @@ const StyledCenteredText = styled.div`
     }
   }
 `;
-
-const SectionCases = ({ title, text }) => {
+const SectionCases = ({ title, text, preview }) => {
   return (
     <>
       <StyledCenteredText>
@@ -54,7 +55,11 @@ const SectionCases = ({ title, text }) => {
       </StyledCenteredText>
       <StyledCases>
         {CASES.reverse()
-          .filter(({ caseStatus }) => caseStatus !== CASE_STATUS.DRAFT)
+          .filter(({ caseStatus }) =>
+            preview
+              ? caseStatus === CASE_STATUS.FEATURED
+              : caseStatus !== CASE_STATUS.DRAFT
+          )
           .map(({ thumbnail, caseStatus, caseUrl }) => {
             return (
               <ElementColorContextProvider>
@@ -68,6 +73,7 @@ const SectionCases = ({ title, text }) => {
             );
           })}
       </StyledCases>
+      {preview && <ReadMoreLink to="cases">See all cases</ReadMoreLink>}
     </>
   );
 };
@@ -75,11 +81,13 @@ const SectionCases = ({ title, text }) => {
 SectionCases.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  preview: PropTypes.bool,
 };
 
 SectionCases.defaultProps = {
   title: null,
   text: null,
+  preview: false,
 };
 
 export default SectionCases;

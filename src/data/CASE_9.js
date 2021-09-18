@@ -13,7 +13,7 @@ import ImageWithTitleAndText from "../Components/ImageWithTitleAndText";
 
 /* there is an IMAGE_WITH_CAPTION here that is wrong. */
 export const CASE_9 = {
-  caseStatus: CASE_STATUS.COMING_SOON,
+  caseStatus: CASE_STATUS.FEATURED,
   caseType: CASE_TYPES.CONCEPT,
   caseUrl: "/cases/9",
   thumbnail: {

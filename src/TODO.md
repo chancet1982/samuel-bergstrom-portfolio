@@ -1,11 +1,12 @@
 TODO list (What's left before you're done)
-
 CASE_4: 2 Images missing from (NoWaste) showing before and after flows.
 CASE_4: add sneak peek images
 CASE_4 finish content review (stopped at "research")
 Add authentication
 
 /_ FIX ME_/
+Fix case thumbnails (nice to have)
+Clients fix appearWhenVisibleAnimations (once fixed preview can be added to the landing page)
 Vertical spacing between sections.
 
 --TESTING (mobile,tablet, desktop) AND LAYOUT FIXES:--

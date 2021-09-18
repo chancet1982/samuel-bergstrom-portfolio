@@ -11,7 +11,6 @@ import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES"
 
 export const VIEW_ABOUT_ME = [
   {
-    header: "About Me",
     elements: [
       {
         template: SECTION_ELEMENTS.IMAGE_GALLERY,
@@ -26,6 +25,11 @@ export const VIEW_ABOUT_ME = [
           ],
         },
       },
+    ],
+  },
+  {
+    header: "My story",
+    elements: [
       {
         template: SECTION_ELEMENTS.TEXTBOX,
         data: {
@@ -106,6 +110,7 @@ export const VIEW_ABOUT_ME = [
   },
   {
     bgColor: colors.offwhite,
+    header: "Clients",
     elements: [
       {
         template: SECTION_ELEMENTS.CLIENTS,

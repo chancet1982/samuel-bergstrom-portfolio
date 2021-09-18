@@ -71,6 +71,7 @@ const StyledCaption = styled(motion.div)`
   justify-content: flex-start;
   align-items: flex-start;
   box-sizing: border-box;
+  padding-top: ${padding.vertical.double};
   padding-left: ${padding.horizontal.quadruple};
   padding-right: ${padding.horizontal.quadruple};
   z-index: 1;
@@ -86,6 +87,9 @@ const StyledCaption = styled(motion.div)`
 
   @media (min-width: ${breakpoints.tablet}px) {
     justify-content: center;
+    padding-top: 0;
+    padding-left: ${padding.horizontal.double};
+    padding-right: ${padding.horizontal.double};
   }
 `;
 

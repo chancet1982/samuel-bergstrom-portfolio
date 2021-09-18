@@ -21,8 +21,8 @@ const StyledSection = styled(motion.section)`
       top: "0",
     }}
 
-  ${({ header }) =>
-    header && {
+  ${({ header, isPadded }) =>
+    (header || isPadded) && {
       paddingLeft: padding.horizontal.double,
       paddingRight: padding.horizontal.double,
     }}
@@ -35,7 +35,7 @@ const StyledSection = styled(motion.section)`
     }}
 `;
 
-const Section = ({ header, children, bgColor, isSticky }) => {
+const Section = ({ header, children, bgColor, isSticky, isPadded }) => {
   const [, setLight] = useContext(SectionColorContext);
   const { width } = useWindowSize();
   const [isMobile, setIsMobile] = useState(false);
@@ -49,7 +49,12 @@ const Section = ({ header, children, bgColor, isSticky }) => {
   }, [setLight, bgColor]);
 
   return (
-    <StyledSection header={header} bgColor={bgColor} isSticky={isSticky}>
+    <StyledSection
+      header={header}
+      bgColor={bgColor}
+      isSticky={isSticky}
+      isPadded={isPadded}
+    >
       {header && !isMobile && <SectionHeader>{header}</SectionHeader>}
       {children}
     </StyledSection>
@@ -61,12 +66,14 @@ Section.propTypes = {
   children: PropTypes.node.isRequired,
   bgColor: PropTypes.string,
   isSticky: PropTypes.bool,
+  isPadded: PropTypes.bool,
 };
 
 Section.defaultProps = {
   header: null,
   bgColor: null,
   isSticky: false,
+  isPadded: false,
 };
 
 export default Section;

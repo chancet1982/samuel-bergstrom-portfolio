@@ -5,9 +5,14 @@ import ElementsRenderer from "./ElementsRenderer";
 import SectionColorContextProvider from "../Context/SectionColorContext";
 
 const SectionsRenderer = ({ sections }) =>
-  sections.map(({ elements, header, bgColor, isSticky }) => (
+  sections.map(({ elements, header, bgColor, isSticky, isPadded }) => (
     <SectionColorContextProvider key={uuid()}>
-      <Section header={header} bgColor={bgColor} isSticky={isSticky}>
+      <Section
+        header={header}
+        bgColor={bgColor}
+        isSticky={isSticky}
+        isPadded={isPadded}
+      >
         {elements.map(({ data, template }) => (
           <ElementsRenderer
             key={uuid()}
