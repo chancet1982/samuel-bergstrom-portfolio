@@ -6,22 +6,22 @@ import { ROLES } from "./dictionaries/ROLES";
 import { PLATFORMS } from "./dictionaries/PLATFORMS";
 import Paragraph from "../Components/Elements/Paragraph";
 import List from "../Components/Elements/List";
-import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
+import Title from "../Components/Elements/Title";
 
 /* there is an IMAGE_WITH_CAPTION here that is wrong. */
 export const CASE_10 = {
-  caseStatus: CASE_STATUS.COMING_SOON,
+  caseStatus: CASE_STATUS.PUBLISHED,
   caseType: CASE_TYPES.CONCEPT,
   caseUrl: "/cases/10",
   thumbnail: {
-    overline: "Prisjakt",
-    title: "e-commerce",
+    overline: "Price Comparison Service",
+    title: "Increasing traffic to paying customers",
     imageUrl: "assets/case-10/thumbnail.png",
     imageAlt: "thumbnail",
-    text: "Improving search experience",
-    bgColor: "rgba(99, 182, 187, .72)",
+    text: "Small change, big impact",
+    bgColor: "#00ADDB",
   },
   details: [
     {
@@ -30,12 +30,14 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.COVER,
           data: {
-            overline: "Prisjakt",
-            title: "e-commerce",
-            imageUrl: "assets/case-8/cover.png",
+            overline: "Price Comparison Service",
+            title: "Increasing traffic to paying customers",
+            imageUrl: "assets/case-10/cover.png",
             text: (
               <>
-                <Paragraph large>Improving search experience</Paragraph>
+                <Paragraph large>
+                  How a small change made a big impact
+                </Paragraph>
               </>
             ),
           },
@@ -47,22 +49,22 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.OVERVIEW,
           data: {
-            bgColor: "rgba(99, 182, 187, .72)",
+            bgColor: "#00ADDB",
             text: (
               <Paragraph huge>
-                NoWaste is a leading Global Logistics and transport company.
-                Their subsidiary e-drop was trying to solve some of the issues
-                with food deliveries. In Sweden, most supermarkets provide home
-                delivery services, but these services require that people will
-                be at home at a certain time. This is a challenge as most people
-                are home around the same time which means that deliveries are
-                limited to those hours.
+                My client was a leading price comparison site operating in 6
+                different countries. They were a leader in their field, but
+                circumstances changed and their revenue stagnated. I was asked
+                to assist them to increase traffic to paying customers and help
+                encourage potential customers to sign-up. One small change
+                created a huge impact.
               </Paragraph>
             ),
-            myRole: ROLES.LEAD,
-            duration: "4 weeks",
-            platforms: [PLATFORMS.MOBILE_ANDROID, PLATFORMS.MOBILE_IOS],
+            myRole: ROLES.CONSULTANT,
+            duration: "2 months",
+            platforms: [PLATFORMS.DESKTOP, PLATFORMS.TABLET, PLATFORMS.MOBILE],
             toolsAndMethods: [
+              TOOLS_AND_METHODS.WORKSHOPS,
               TOOLS_AND_METHODS.SURVEYS,
               TOOLS_AND_METHODS.COMPETITOR_ANALYSIS,
               TOOLS_AND_METHODS.FLOW_MAPPING,
@@ -79,44 +81,23 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Deliveries, never a good time.</>,
+            title: <>Revenue model:</>,
             text: (
               <>
                 <Paragraph>
-                  NoWaste is a leading Global Logistics and transport company.
-                  Their subsidiary e-drop was trying to solve some of the issues
-                  with food deliveries. In Sweden, most supermarkets provide
-                  home delivery services, but these services require that people
-                  will be at home at a certain time. This is a challenge as most
-                  people are home around the same time which means that
-                  deliveries are limited to those hours.
+                  My client relies on 2 streams of revenue: Advertising, and
+                  Click-outs. A click-out is defined as “Whenever a user clicked
+                  to any of our customers’ offers”. After helping them with the
+                  search I was asked to find ways to help users find the right
+                  shop.
+                </Paragraph>
+                <Paragraph>
+                  It aims to present a complete picture of the market to help
+                  users find the cheapest price possible. In order to do that
+                  they collect data from both customers and non-customer sites.
                 </Paragraph>
               </>
             ),
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.IMAGE_GALLERY,
-          data: {
-            template: IMAGE_GALLERY_TEMPLATES.FOUR_IMAGES_TWO_COLUMNS,
-            images: [
-              {
-                imageUrl: "assets/case-8/mood-1.jpg",
-                imageAlt: "?",
-              },
-              {
-                imageUrl: "assets/case-8/mood-2.jpg",
-                imageAlt: "?",
-              },
-              {
-                imageUrl: "assets/case-8/mood-3.jpg",
-                imageAlt: "?",
-              },
-              {
-                imageUrl: "assets/case-8/mood-4.png",
-                imageAlt: "?",
-              },
-            ],
           },
         },
         {
@@ -127,10 +108,13 @@ export const CASE_10 = {
             text: (
               <>
                 <Paragraph>
-                  In order to solve this problem, NoWaste created a smart
-                  outdoor delivery unit intended to keep deliveries fresh and
-                  secure. We were contacted in order to help them improve the
-                  performance of their companion app.
+                  The goal of this was to increase traffic to paying customers
+                  and encourage potential customers to sign-up.
+                </Paragraph>
+                <Paragraph>
+                  We already knew at this point that some shops are “taking
+                  advantage of the system”: posting fake prices, or not keeping
+                  their stock status up-to-date.
                 </Paragraph>
               </>
             ),
@@ -139,60 +123,21 @@ export const CASE_10 = {
       ],
     },
     {
-      header: "Process",
+      header: "Research",
       elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: (
-              <>
-                Focus on the <strong>goal</strong>
-              </>
-            ),
-            text: (
-              <>
-                <Paragraph>
-                  The premise for this project was redesigning an
-                  underpreforming app. The team developing the app didnt have a
-                  designer onboard, decisions were based on gut-feeling, and
-                  backend developers making design decisions. The outcome as
-                  expected, didnt impress.
-                </Paragraph>
-                <Paragraph>
-                  <strong>Important note:</strong> It was not intended to test
-                  if these apps are “the right way forward” but instead focused
-                  on improving the app to a state where it would allow users to
-                  interact with their fridges.
-                </Paragraph>
-                <Paragraph>
-                  For this reason, we did not look into if users will actually
-                  need an app but instead focused on what functionality will
-                  users be looking for, what are the common use cases for such
-                  an app, creating a benchmark for comparison of our redesigned
-                  app.
-                </Paragraph>
-              </>
-            ),
-            bgColor: "rgba(99, 182, 187, .72)",
-          },
-        },
-      ],
-    },
-    {
-      elements: [
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: <>Gathering feedback and recruiting users.</>,
+            title: <>Kicking-off with internal interviews</>,
             h: 2,
             text: (
               <>
                 <Paragraph>
-                  We needed to understand why the current app is failing. In
-                  order to do that we needed to get a better understanding of
-                  the target group, how often do they encounter issues with
-                  their food deliveries, what is important for them and how do
-                  they experience the current app.
+                  At this point, I needed to collect as much information as
+                  possible. I interviewed more than 20 people in 6 different
+                  departments to help learn how we onboard new clients, manage
+                  our client relationships, what are their pain points and areas
+                  where we can improve.
                 </Paragraph>
               </>
             ),
@@ -201,136 +146,50 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Creating a benchmark for comparison</>,
+            title: <>Insights:</>,
             h: 2,
             text: (
               <>
                 <Paragraph>
-                  It was decided that a survey would be sent to the current test
-                  users and that based on its results we would use some of those
-                  people for usability testing on the current app for creating a
-                  benchmark for comparison.
+                  From the interviews, we learned a lot. There were a lot of
+                  issues that needed to be addressed. 3 different problem areas
+                  were identified:
                 </Paragraph>
-              </>
-            ),
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.SIDE_BY_SIDE_IMAGES_AND_TEXT,
-          data: {
-            items: [
-              {
-                bgColor: "rgba(9, 93, 132, .28)",
-                imageUrl: "assets/case-8/before.png",
-                imageAlt: "Flows before redesign",
-                title: "Flows before redesign",
-                text: (
-                  <>
-                    <Paragraph>
-                      Something about how annoying it was to use before.
-                    </Paragraph>
-                  </>
-                ),
-              },
-              {
-                bgColor: "rgba(9, 93, 132, .28)",
-                imageUrl: "assets/case-8/after.png",
-                imageAlt: "Flows before redesign",
-                title: "Flows before redesign",
-                text: (
-                  <>
-                    <Paragraph>
-                      Something about how wonderful it could have been
-                    </Paragraph>
-                  </>
-                ),
-              },
-            ],
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: <>Noteworthy findings and impact:</>,
-            h: 5,
-            text: (
-              <>
                 <List
                   items={[
                     <>
-                      Login was cumbersome and required users to create an
-                      account by using a username then securing the account with
-                      a password only after which users needed to link their
-                      account with their phone and subscription code.
-                      <br />
-                      <strong>Adjustment - </strong>login was simplified and the
-                      concept was reduced to “connect a mobile device to one or
-                      more subscriptions”.
+                      <Title h={5}>Onboarding new customers</Title>
+                      <Paragraph>
+                        Treating all markets equally, in some markets the client
+                        is a “well-established brand” but not always. On top of
+                        that, local industry-standard payment options are not
+                        available.
+                      </Paragraph>
+                      <Paragraph>
+                        Additionally, my client offered no cost-caps, no
+                        cherry-picking products, and no flexibility in
+                        data-ingestion.
+                      </Paragraph>
                     </>,
                     <>
-                      Another confusing concept was “key sharing”. Users could
-                      allow temporary access by “sharing” their access keys with
-                      other devices. None of our test users were able to
-                      understand the concept and non-expressed interest in
-                      sharing keys “temporarily”
-                      <br />
-                      <strong>Adjustment - </strong>The idea of shared access
-                      was simplified to its core. I.E. connecting multiple
-                      devices to the same delivery unit. Based on our testing
-                      this was a lot easier for people to understand and use
+                      <Title h={5}>Customer relationship</Title>
+                      <Paragraph>
+                        Customers are punished for non-compliance, no proactive
+                        communication exists, no follow-up on the impact, and
+                        even for happy customers there is no “next level”.
+                      </Paragraph>
                     </>,
                     <>
-                      Security settings were too granular and were hard to
-                      understand. We saw that users that match their target
-                      audience were prioritizing convenience over security and
-                      were content with 2 settings, open for all or secured
-                      delivery.
-                      <br />
-                      <strong>Adjustment - </strong>We considered using
-                      proximity as a means of unlocking the delivery unit so it
-                      is secure if the owner is away but open when the owner is
-                      nearby. This was too costly to implement in an existing
-                      hardware device but the security settings were simplified
-                      to “open until delivered” and “open for all”
-                    </>,
-                    <>
-                      {" "}
-                      The cooling schedule was a feature in which users could
-                      control their device’s cooling schedule in order to save
-                      electricity. During testing, it became apparent that it
-                      was overly complex and was too flexible.
-                      <br />
-                      <strong>Adjustment - </strong>Instead of providing full
-                      flexibility it was decided that by default cooling will
-                      only be active during the workdays daytime. The
-                      “always-on” option was kept but not as default while the
-                      cooling schedule itself was simplified. Users selected a
-                      start, end, and in which days the cooling should be on.
-                    </>,
-                    <>
-                      {" "}
-                      The idea was that the same app used privately could also
-                      be used for opening multiple lockers in a corporate
-                      environment. This caused a cluttered and messy Landing
-                      screen UI.
-                      <br />
-                      <strong>Adjustment - </strong>Based on the common case
-                      (one user one delivery unit) we decided to move the locker
-                      view (where you control and adjust the locker) as the main
-                      view, swipe to the left to change the active locker, and
-                      to the right to add a locker.
-                    </>,
-                    <>
-                      {" "}
-                      Some users complained about not knowing if their locker is
-                      on or not and if it was ready to receive a delivery and
-                      that when a delivery is made it is hard to find the
-                      lock/unlock button.
-                      <br />
-                      <strong>Adjustment - </strong>The locker status and the
-                      temp was added to the main locker view. The most commonly
-                      used button “lock/unlock” was placed predominantly on that
-                      screen as well.
+                      <Title h={5}>
+                        Insufficient incentives to becoming a customer.
+                      </Title>
+                      <Paragraph>
+                        Non-paying customers are getting too much for free. Sole
+                        focus on price means that non-paying customers can be
+                        not only competitive but destructive (for example by
+                        putting fake prices on products they don’t actually
+                        have) with no repercussions.
+                      </Paragraph>
                     </>,
                   ]}
                 />
@@ -341,32 +200,213 @@ export const CASE_10 = {
       ],
     },
     {
-      header: "Design",
+      header: "Ideation",
       elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Mapping, Slimming, and optimizing</>,
+            title: <>Looking for ideas</>,
             h: 2,
             text: (
               <>
                 <Paragraph>
-                  We started off by mapping out the current app. Doing this gave
-                  us a good understanding of how it works. With that in mind and
-                  the findings from the research, we knew what needed to be
-                  changed so where we approached the redesign we prioritized
-                  most commonly used or valuable features first while down
-                  removing some seldom-used functionality.
+                  We continued interviewing internal stakeholders and looked
+                  through the survey results to identify potential solutions.
                 </Paragraph>
+
                 <Paragraph>
-                  We then created some high fidelity mockups which were
-                  ongoingly presented to the stakeholders and to the dev team.
-                  In collaboration with the dev team, we looked into the
-                  feasibility of the different design solutions and came up with
-                  a good balance of everyone’s needs.
+                  We ideation workshops for identifying potential solutions and
+                  ended up with a list of over 60 different ideas.
                 </Paragraph>
               </>
             ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Prioritizing</>,
+            h: 2,
+            text: (
+              <>
+                <Paragraph>
+                  At this point, we needed to evaluate the ideas based on their
+                  business value, user value, and technical feasibility. I
+                  created a shared Google Spreadsheet with 3 separate sheets (in
+                  order to minimize bias). I evaluated potential user value
+                  based on the survey results and interviews that I conducted. A
+                  business representative evaluated their business potential,
+                  and a senior developer estimated their technical feasibility.
+                  Each idea was first discussed and then evaluated individually
+                  while the results of the evaluation aggregated to a combined
+                  score.
+                </Paragraph>
+
+                <Paragraph>
+                  We ended up with a shortlist of potential ideas and I created
+                  a roadmap for the transition.
+                </Paragraph>
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.QUOTE,
+          data: {
+            quote:
+              "Det verkar finnas en del “fejkaktörer” som ofta hamnar överst i listan och som sen inte har produkten. Det gör att man ofta inte chansar med företag som inte är kända sen innan.",
+            cite: "User, Survey reponse",
+          },
+        },
+      ],
+    },
+    {
+      header: "More research",
+      elements: [
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Back to the library</>,
+            text: (
+              <>
+                <Paragraph>
+                  When a user finds a shop it uses the service to search among
+                  different shops to find the cheapest price for a given item.
+                  This forces paying customers to compete with all shops. But it
+                  is never so simple, during interviews, I asked: “So how do you
+                  choose where to buy an item?” In most cases, users responded
+                  with “price” but digging deeper revealed a more complex set of
+                  criteria users use to evaluate a potential purchase.
+                </Paragraph>
+                <Paragraph>
+                  I was looking at 17 competitor sites. Some in direct
+                  competition and others that have similar challenges. On top of
+                  that, I was reading a lot of research about this topic, from
+                  from scholarly literature to white papers and research
+                  dossiers from big and respected companies.
+                </Paragraph>
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>User interviews</>,
+            text: (
+              <>
+                <Paragraph>
+                  I conducted 10 interviews asking them how they choose online
+                  shops to buy from. One of the participants summarized it
+                  really well:
+                </Paragraph>
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.QUOTE,
+          data: {
+            quote:
+              "I want to find a trustworthy shop that sells a product for a reasonable price",
+            cite: "User, during interview",
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Insights:</>,
+            text: (
+              <>
+                <Paragraph>
+                  So selecting where to buy products isn’t just about price.
+                </Paragraph>
+                <Paragraph>
+                  Of course, price plays a part in it, but also about trust (Do
+                  I know them? Did I buy there before? Was it a bad or good
+                  experience? Did I hear about them? Perhaps a friend bought
+                  from them?), delivery (When should I expect delivery? Is it in
+                  stock?), and payment options (I don’t like to share my credit
+                  card online, do they use Swish or Klarna?).
+                </Paragraph>
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>One small step in the right direction</>,
+            text: (
+              <>
+                <Paragraph>
+                  Based on the insights, an idea started to materialize.
+                </Paragraph>
+                <Paragraph>
+                  To start with I suggested reducing the amount of information
+                  that is visible for free. limiting the information to only the
+                  product name, store name, and its ratings. Stock status and
+                  all other information from non-paying customers should be
+                  removed. This should increase the attractiveness of becoming a
+                  paying customer.
+                </Paragraph>
+                <Paragraph>
+                  On top of that, I suggested we should a recommended sorting on
+                  top of the existing sorting which is based on price. Most
+                  users accept default sorting and will not change it unless
+                  they are unable to find what they are looking for. This will
+                  allow us to weigh in different factors and offer a better
+                  recommendation for our users.
+                </Paragraph>
+                <Paragraph>
+                  The algorithm should only consider products that are in stock,
+                  and rank the offer based on how cheap they are compared to the
+                  current lowest price and how good are the reviews. This should
+                  prevent any non-paying shop to be at the top of the list while
+                  showing more relevant offers for users.
+                </Paragraph>
+                <Paragraph>
+                  In order to keep transparency, I suggested we use a grouping
+                  mechanism where we show all the offers where information is
+                  missing. In simple terms: Non-paying shops were now
+                  second-class citizens.
+                </Paragraph>
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SIDE_BY_SIDE_IMAGES_AND_TEXT,
+          data: {
+            items: [
+              {
+                imageUrl: "assets/case-10/before.png",
+                imageAlt: "Prices list, before",
+                title: "Prices list, before",
+                text: (
+                  <>
+                    <Paragraph>
+                      Price-list before changes: A mixture of paying and
+                      non-paying customers. Sorting is based on price only.
+                    </Paragraph>
+                  </>
+                ),
+              },
+              {
+                imageUrl: "assets/case-10/after.png",
+                imageAlt: "Prices list, after",
+                title: "Prices list, after",
+                text: (
+                  <>
+                    <Paragraph>
+                      Price-list after: Recommended sorting in-place, non-paying
+                      shops grouped at the bottoms. Note: users that prefer the
+                      old sorting can still choose to do so.
+                    </Paragraph>
+                  </>
+                ),
+              },
+            ],
           },
         },
       ],
@@ -377,28 +417,16 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Past vs Present</>,
+            title: <>AB testing and result</>,
             h: 2,
             text: (
               <>
-                <Paragraph>
-                  Initially, we identified all key functionality in
-                  collaboration with the product owner and users. Knowing this
-                  we were able to create test goals and ran an initial usability
-                  test using the app for creating a benchmark and identifying
-                  problem areas.
-                </Paragraph>
-                <Paragraph>
-                  We later were able to prioritize our efforts based on their
-                  value (how often, how bad) based on how important a certain
-                  feature. Once we had a design in place we created a prototype
-                  by stitching together all the different views and linked them
-                  together. We then recruited some participants and re-ran the
-                  same exact usability tests we did before the redesign in order
-                  to measure the impact of our changes.
-                </Paragraph>
+                <Paragraph>...</Paragraph>
+                <Paragraph>...</Paragraph>
               </>
             ),
+            imageUrl: "assets/case-10/ab-test.png",
+            imageAlt: "AB test in action",
           },
         },
       ],
@@ -408,20 +436,13 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.RESULT,
           data: {
-            imageUrl: "assets/case-8/result.png",
-            bgColor: "rgba(99, 182, 187, .72)",
-            results: [
-              {
-                value: "120%",
-                unit: "%",
-                description: "increase in overall success rate",
-              },
-              {
-                value: "64%",
-                unit: "%",
-                description: "decrease in time to completian",
-              },
-            ],
+            imageUrl: "assets/case-10/result.png",
+            bgColor: "#00ADDB",
+            text: (
+              <>
+                <Paragraph>...</Paragraph>
+              </>
+            ),
           },
         },
       ],

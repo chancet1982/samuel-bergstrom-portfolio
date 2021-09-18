@@ -9,7 +9,7 @@ export const SECTION_ELEMENTS = {
   CASES: "cases",
   IMAGE_GALLERY: "imageGallery",
   IMAGE_WITH_CAPTION: "imageWithCaption",
-  TESTIMONIAL: "testimonial",
+  TESTIMONIALS: "testimonials",
   SIDE_BY_SIDE_IMAGES_AND_TEXT: "sideBySideImagesAndText",
   LIST_OF_IMAGES_WITH_TITLE_AND_TEXT: "listOfImagesWithTitleAndText",
   RESULT: "result",

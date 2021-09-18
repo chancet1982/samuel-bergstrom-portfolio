@@ -21,6 +21,7 @@ import AdditionalCases from "./AdditionalCases";
 import Footer from "./Footer";
 import KeyFigures from "./KeyFigures";
 import ElementColorContextProvider from "../Context/ElementColorContext";
+import Testimonials from "./Testimonials";
 
 const SectionElementsRenderer = ({ elementKey, data, template }) => {
   if (!template) {
@@ -157,6 +158,15 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
           title={data.title}
           text={data.text}
           preview={data.preview}
+        />
+      );
+    case SECTION_ELEMENTS.TESTIMONIALS:
+      return (
+        <Testimonials
+          key={elementKey}
+          title={data.title}
+          text={data.text}
+          items={data.items}
         />
       );
     default:

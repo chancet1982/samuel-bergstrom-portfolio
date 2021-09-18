@@ -5,4 +5,6 @@ export const PLATFORMS = {
   TABLET_ANDROID: "Android tablet",
   TABLET_IOS: "iPad",
   DESKTOP: "Desktop",
+  TABLET: "Tablet",
+  MOBILE: "Mobile",
 };
