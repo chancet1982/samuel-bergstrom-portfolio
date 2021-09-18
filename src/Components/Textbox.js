@@ -50,7 +50,7 @@ const StyledTextbox = styled(motion.div)`
   }
 `;
 
-const StyledTextboxImage = styled.div`
+const StyledTextboxImage = styled.figure`
   grid-column: 1 / span 3;
 
   @media (min-width: ${breakpoints.desktop}px) {
@@ -62,7 +62,7 @@ const StyledTextboxImage = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
 `;
 
 const Textbox = ({
@@ -97,6 +97,25 @@ const Textbox = ({
       setLight(bgColor !== null && bgColor !== colors.offwhite);
   }, [setLight, bgColor]);
 
+  const renderImage = () =>
+    caption ? (
+      <ImageWithCaption
+        imageUrl={imageUrl}
+        imageAlt={imageAlt}
+        caption={caption}
+        disableAnimations
+        inTextbox
+      />
+    ) : (
+      <StyledTextboxImage flip={flip}>
+        <Image
+          imageUrl={`${process.env.PUBLIC_URL}/${imageUrl}`}
+          imageAlt={imageAlt}
+          inTextbox
+        />
+      </StyledTextboxImage>
+    );
+
   return (
     <StyledTextbox
       ref={intersectionRef}
@@ -107,35 +126,13 @@ const Textbox = ({
       bgColor={bgColor}
       imageUrl={imageUrl}
     >
-      {flip && imageUrl && (
-        <ImageWithCaption
-          imageUrl={imageUrl}
-          imageAlt={imageAlt}
-          caption={caption}
-          disableAnimations
-          inTextbox
-        />
-      )}
+      {flip && imageUrl && renderImage()}
 
       <TitleAndText h={h} title={title} disableAnimations isPadded>
         {text}
       </TitleAndText>
 
-      {!flip &&
-        imageUrl &&
-        (caption ? (
-          <ImageWithCaption
-            imageUrl={imageUrl}
-            imageAlt={imageAlt}
-            caption={caption}
-            disableAnimations
-            inTextbox
-          />
-        ) : (
-          <StyledTextboxImage>
-            <Image imageUrl={imageUrl} imageAlt={imageAlt} />
-          </StyledTextboxImage>
-        ))}
+      {!flip && imageUrl && renderImage()}
     </StyledTextbox>
   );
 };

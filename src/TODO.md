@@ -7,7 +7,8 @@ Add authentication
 /_ FIX ME_/
 Fix case thumbnails (nice to have)
 Clients fix appearWhenVisibleAnimations (once fixed preview can be added to the landing page)
-Vertical spacing between sections.
+Quote styling needs to be revised
+Add testimonials
 
 --TESTING (mobile,tablet, desktop) AND LAYOUT FIXES:--
 ImageWithCaption

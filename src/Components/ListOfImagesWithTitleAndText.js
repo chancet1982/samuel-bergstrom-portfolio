@@ -4,15 +4,23 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import ImageWithTitleAndText from "./ImageWithTitleAndText";
 import padding from "../theme/padding";
-import colors from "../theme/colors";
 import breakpoints from "../theme/breakpoints";
 import ElementContextProvider from "../Context/ElementColorContext";
+import CenteredTitleAndText from "./StyledCenteredText";
 
 const StyledListOfImagesWithTitleAndText = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  padding-top: ${padding.vertical.double};
 
+  ${({ listTitle }) =>
+    !listTitle && `padding-top: ${padding.vertical.double};`};
+
+  ${({ listBgColor }) =>
+    listBgColor &&
+    ` background-color: ${listBgColor}; padding-bottom: ${padding.vertical.double};`};
+`;
+
+const StyledListContainer = styled(motion.div)`
   > div {
     overflow: hidden;
     display: grid;
@@ -45,15 +53,6 @@ const StyledListOfImagesWithTitleAndText = styled(motion.div)`
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "a a b";
 
-    &:before {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      background: ${colors.offwhite};
-    }
-
     @media (min-width: ${breakpoints.desktop}px) {
       > figure {
         grid-area: b;
@@ -65,27 +64,45 @@ const StyledListOfImagesWithTitleAndText = styled(motion.div)`
   }
 `;
 
-const ListOfImagesWithTitleAndText = ({ items }) => {
+const ListOfImagesWithTitleAndText = ({
+  listTitle,
+  listText,
+  items,
+  listBgColor,
+}) => {
   return (
-    <StyledListOfImagesWithTitleAndText>
-      {items.map(({ imageUrl, imageAlt, title, text, bgColor }, index) => (
-        <ElementContextProvider key={title}>
-          <ImageWithTitleAndText
-            imageUrl={imageUrl}
-            imageAlt={imageAlt}
-            title={title}
-            text={text}
-            bgColor={bgColor}
-            horizontal
-            flip={index % 2 === 1}
-          />
-        </ElementContextProvider>
-      ))}
-    </StyledListOfImagesWithTitleAndText>
+    <>
+      <StyledListOfImagesWithTitleAndText
+        listBgColor={listBgColor}
+        listTitle={listTitle}
+      >
+        {(listTitle || listText) && (
+          <CenteredTitleAndText title={listTitle} text={listText} />
+        )}
+        <StyledListContainer>
+          {items.map(({ imageUrl, imageAlt, title, text, bgColor }, index) => (
+            <ElementContextProvider key={title}>
+              <ImageWithTitleAndText
+                imageUrl={imageUrl}
+                imageAlt={imageAlt}
+                title={title}
+                text={text}
+                bgColor={bgColor}
+                horizontal
+                flip={index % 2 === 1}
+              />
+            </ElementContextProvider>
+          ))}
+        </StyledListContainer>
+      </StyledListOfImagesWithTitleAndText>
+    </>
   );
 };
 
 ListOfImagesWithTitleAndText.propTypes = {
+  listTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  listText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  listBgColor: PropTypes.string,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       imageUrl: PropTypes.string.isRequired,
@@ -95,6 +112,12 @@ ListOfImagesWithTitleAndText.propTypes = {
       bgColor: PropTypes.string,
     })
   ).isRequired,
+};
+
+ListOfImagesWithTitleAndText.defaultProps = {
+  listTitle: null,
+  listText: null,
+  listBgColor: null,
 };
 
 export default ListOfImagesWithTitleAndText;

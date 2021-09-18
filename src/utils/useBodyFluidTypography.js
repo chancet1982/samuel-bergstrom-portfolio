@@ -25,7 +25,7 @@ const useFluidTypography = (pSize = 2, withMargin = true) => {
       : minBMod;
 
   return `
-    font-size: ${size === 1 ? 0.8 : magnify(size, getMod(width), pSize - 2)}rem;
+    font-size: ${pSize === 1 ? 1 : magnify(size, getMod(width), pSize - 2)}rem;
     line-height: ${decrease(lh, inc, pSize - 2)};
     ${
       !!withMargin &&

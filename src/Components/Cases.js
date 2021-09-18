@@ -10,8 +10,8 @@ import breakpoints from "../theme/breakpoints";
 import padding from "../theme/padding";
 import { CASE_STATUS } from "../data/dictionaries/CASE_STATUS";
 import ElementColorContextProvider from "../Context/ElementColorContext";
-import TitleAndText from "./TitleAndText";
 import ReadMoreLink from "./ReadMoreLink";
+import CenteredTitleAndText from "./StyledCenteredText";
 
 const StyledCases = styled(motion.div)`
   display: grid;
@@ -27,32 +27,10 @@ const StyledCases = styled(motion.div)`
   }
 `;
 
-const StyledCenteredText = styled.div`
-  padding-top: ${padding.vertical.quadruple};
-  padding-left: ${padding.horizontal.double};
-  padding-right: ${padding.horizontal.double};
-
-  @media (min-width: ${breakpoints.desktop}px) {
-    background-color: transparent;
-    width: 60%;
-    justify-content: flex-start;
-    text-align: center;
-    padding-top: 12rem;
-    margin: 0 auto;
-
-    p {
-      max-width: inherit;
-    }
-  }
-`;
 const SectionCases = ({ title, text, preview }) => {
   return (
     <>
-      <StyledCenteredText>
-        <TitleAndText h={2} title={title}>
-          {text}
-        </TitleAndText>
-      </StyledCenteredText>
+      <CenteredTitleAndText title={title} text={text} />
       <StyledCases>
         {CASES.reverse()
           .filter(({ caseStatus }) =>

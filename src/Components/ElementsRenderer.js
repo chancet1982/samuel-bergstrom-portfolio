@@ -130,7 +130,13 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
       );
     case SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT:
       return (
-        <ListOfImagesWithTitleAndText key={elementKey} items={data.items} />
+        <ListOfImagesWithTitleAndText
+          key={elementKey}
+          items={data.items}
+          listTitle={data.listTitle}
+          listText={data.listText}
+          listBgColor={data.listBgColor}
+        />
       );
     case SECTION_ELEMENTS.CLIENTS:
       return <Clients key={elementKey} />;

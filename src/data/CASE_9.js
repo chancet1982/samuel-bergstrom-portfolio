@@ -9,7 +9,7 @@ import List from "../Components/Elements/List";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Elements/Title";
-import ImageWithTitleAndText from "../Components/ImageWithTitleAndText";
+import colors from "../theme/colors";
 
 /* there is an IMAGE_WITH_CAPTION here that is wrong. */
 export const CASE_9 = {
@@ -148,8 +148,10 @@ export const CASE_9 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
+            bgColor: "#00ADDB",
             title: <>Problem areas</>,
             h: 2,
+            flip: true,
             text: (
               <>
                 <Paragraph>
@@ -178,7 +180,6 @@ export const CASE_9 = {
             ),
             imageAlt: "Survey results, search indicated in green.",
             imageUrl: "assets/case-9/survey.png",
-            caption: "Survey results, search indicated in green.",
           },
         },
         {
@@ -207,14 +208,22 @@ export const CASE_9 = {
                   had limited time and resources and needed find an idea that is
                   easy to implement and that had the best potential.
                 </Paragraph>
-                <Title h={3}>
-                  What has the most potential? Before, during, or after?
-                </Title>
-                <ImageWithTitleAndText
-                  imageUrl="assets/case-9/before-search.png"
-                  imageAlt="before searching"
-                  title="Before searching"
-                  text={
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
+          data: {
+            listBgColor: colors.offwhite,
+            listTitle: "What has the most potential? Before, during, or after?",
+            items: [
+              {
+                imageUrl: "assets/case-9/before-search.png",
+                imageAlt: "before searching",
+                title: "Before searching",
+                text: (
+                  <>
                     <Paragraph>
                       Before search we could make the search more prominant in
                       the UI or show past searches to allow users to pick up
@@ -225,13 +234,15 @@ export const CASE_9 = {
                       searching and 78% of the users on the landing page use the
                       functionality.
                     </Paragraph>
-                  }
-                />
-                <ImageWithTitleAndText
-                  imageUrl="assets/case-9/while-searching.png"
-                  imageAlt="while searching"
-                  title="During search"
-                  text={
+                  </>
+                ),
+              },
+              {
+                imageUrl: "assets/case-9/while-searching.png",
+                imageAlt: "while searching",
+                title: "During search",
+                text: (
+                  <>
                     <Paragraph>
                       During search we can show better suggestions and provide
                       better guidance for users. This would be appropriate if we
@@ -242,13 +253,15 @@ export const CASE_9 = {
                       search field and that most end up in the search results
                       page..
                     </Paragraph>
-                  }
-                />
-                <ImageWithTitleAndText
-                  imageUrl="assets/case-9/search-results.png"
-                  imageAlt="after searching"
-                  title="After searching"
-                  text={
+                  </>
+                ),
+              },
+              {
+                imageUrl: "assets/case-9/search-results.png",
+                imageAlt: "after searching",
+                title: "After searching",
+                text: (
+                  <>
                     <Paragraph>
                       After searching users see the search results page. There
                       we saw a huge dropoff of about 60%. Still, at this point
@@ -256,11 +269,10 @@ export const CASE_9 = {
                       why. So i needed to look for some qualitative data to
                       evaluate what seems to be the problem.
                     </Paragraph>
-                  }
-                />
-              </>
-            ),
-            bgColor: "#00ADDB",
+                  </>
+                ),
+              },
+            ],
           },
         },
         {
@@ -286,7 +298,6 @@ export const CASE_9 = {
             ),
             imageUrl: "assets/case-9/usability-test.png",
             imageAlt: "Picture from usability testing.",
-            caption: "Picture from usability testing.",
           },
         },
         {
