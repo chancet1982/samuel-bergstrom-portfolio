@@ -5,10 +5,12 @@ CASE_4 finish content review (stopped at "research")
 Add authentication
 
 /_ FIX ME_/
+Review anonimize and pusblish more cases. (only case 9,10 were reviewed)
 Fix case thumbnails (nice to have)
-Clients fix appearWhenVisibleAnimations (once fixed preview can be added to the landing page)
 Quote styling needs to be revised
-Add testimonials
+Finish styling the testimonials
+Hide navigation while screen animation is playing.
+Finish developing the timeline and add it to about me page.
 
 --TESTING (mobile,tablet, desktop) AND LAYOUT FIXES:--
 ImageWithCaption

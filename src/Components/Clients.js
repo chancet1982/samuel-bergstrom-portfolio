@@ -1,14 +1,13 @@
 /* eslint-disable import/prefer-default-export */
-import React, { useState, useEffect } from "react";
+import React from "react";
 import styled from "styled-components";
 import { v4 as uuid } from "uuid";
-import { useIntersection } from "react-use";
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
 import Client from "./Client";
 import { CLIENTS } from "../data/dictionaries/CLIENTS";
-import Title from "./Elements/Title";
 import padding from "../theme/padding";
-import { variants } from "../animations/animations";
+import CenteredTitleAndText from "./StyledCenteredText";
 
 const StyledClients = styled(motion.div)`
   margin-left: ${padding.horizontal.quadruple};
@@ -31,21 +30,24 @@ const StyledClients = styled(motion.div)`
 `;
 
 // TODO: fix inView animation repeats itself...
-const Clients = () => {
-  const [inView, setInView] = useState(false);
-  const intersectionRef = React.useRef(null);
-  const intersection = useIntersection(intersectionRef, {
-    threshold: 0,
-  });
+const Clients = ({ preview }) => {
+  const pickRandom = (arr, count) => {
+    // eslint-disable-next-line no-underscore-dangle
+    const _arr = [...arr];
+    return [...Array(count)].map(
+      () => _arr.splice(Math.floor(Math.random() * _arr.length), 1)[0]
+    );
+  };
 
-  // eslint-disable-next-line consistent-return
-  useEffect(() => {
-    const inViewNow = intersection && intersection.intersectionRatio > 0;
-    if (inViewNow) {
-      return setInView(inViewNow);
-    }
-  }, [intersection]);
-
+  const render5RandomClients = pickRandom(CLIENTS, 5).map((item) => (
+    <Client
+      key={uuid()}
+      title={item.title}
+      url={item.url}
+      imageUrl={item.imageUrl}
+      description={item.description}
+    />
+  ));
   const renderClients = CLIENTS.map((item) => (
     <Client
       key={uuid()}
@@ -57,18 +59,27 @@ const Clients = () => {
   ));
 
   return (
-    <StyledClients
-      ref={intersectionRef}
-      initial="hidden"
-      animate={inView ? "inView" : "hidden"}
-      variants={variants}
-    >
-      <Title h={2}>
-        Some of the <mark>companies</mark> I worked with
-      </Title>
-      <div>{renderClients}</div>
+    <StyledClients>
+      {!preview && (
+        <CenteredTitleAndText
+          title={
+            <>
+              Some of the <mark>companies</mark> I worked with
+            </>
+          }
+        />
+      )}
+      <div>{preview ? render5RandomClients : renderClients}</div>
     </StyledClients>
   );
+};
+
+Clients.propTypes = {
+  preview: PropTypes.bool,
+};
+
+Clients.defaultProps = {
+  preview: false,
 };
 
 export default Clients;

@@ -140,7 +140,7 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
         />
       );
     case SECTION_ELEMENTS.CLIENTS:
-      return <Clients key={elementKey} />;
+      return <Clients key={elementKey} preview={data.preview} />;
     case SECTION_ELEMENTS.CASE_FOOTER:
       return <CaseFooter key={elementKey} />;
     case SECTION_ELEMENTS.ADDITIONAL_CASES:

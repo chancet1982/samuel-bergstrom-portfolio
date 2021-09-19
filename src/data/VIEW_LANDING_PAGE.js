@@ -32,7 +32,6 @@ export const VIEW_LANDING_PAGE = [
   },
   {
     header: "About Me",
-    bgColor: colors.offwhite,
     elements: [
       {
         template: SECTION_ELEMENTS.TEXTBOX,
@@ -56,15 +55,18 @@ export const VIEW_LANDING_PAGE = [
       },
     ],
   },
-  /* {
+  {
     bgColor: colors.offwhite,
-    header: "clients",
+    isPadded: true,
     elements: [
       {
         template: SECTION_ELEMENTS.CLIENTS,
+        data: {
+          preview: true,
+        },
       },
     ],
-  }, */
+  },
   {
     header: "Cases",
     elements: [

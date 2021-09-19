@@ -58,7 +58,23 @@ export const VIEW_ABOUT_ME = [
                 evidence, decisions are based on gut-feeling, intuition, which
                 simply creates friction and mediocre results.
               </Paragraph>
-              <Title h={3}>User value</Title>
+            </>
+          ),
+        },
+      },
+      {
+        template: SECTION_ELEMENTS.TESTIMONIALS,
+        data: {
+          title: "listen to these awesome people!",
+        },
+      },
+      {
+        template: SECTION_ELEMENTS.TEXTBOX,
+        data: {
+          title: "User value",
+          h: 3,
+          text: (
+            <>
               <Paragraph>
                 Every designer claims to be user centric, I am no different, I
                 honestly love what I do and really aim to make the world a
@@ -114,6 +130,7 @@ export const VIEW_ABOUT_ME = [
     elements: [
       {
         template: SECTION_ELEMENTS.CLIENTS,
+        data: {},
       },
     ],
   },
