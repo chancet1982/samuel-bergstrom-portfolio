@@ -28,7 +28,7 @@ export const CASE_6 = {
         {
           template: SECTION_ELEMENTS.COVER,
           data: {
-            overline: "Euro Finans",
+            overline: "Finance",
             title: "Design system",
             text: (
               <>
@@ -52,9 +52,9 @@ export const CASE_6 = {
             text: (
               <>
                 <Paragraph huge>
-                  Euro Finans is one of Sweden’s leading invoicing solutions.
-                  They are a subsidiary of Prioritet Finans They weren’t geared
-                  for scaling. Expanding their digital services platform was
+                  One of Sweden’s leading invoicing solutions provider. They are
+                  a subsidiary of Prioritet Finans They weren’t geared for
+                  scaling. Expanding their digital services platform was
                   impossible without making some drastic changes.
                 </Paragraph>
                 <Paragraph huge>
@@ -82,13 +82,13 @@ export const CASE_6 = {
             text: (
               <>
                 <Paragraph>
-                  Euro Finans and its parent company were sharing IT resources.
+                  My client and its parent company were sharing IT resources.
                   Both companies openly compete with each other offering the
                   same services in different geographic locations.
                 </Paragraph>
                 <Paragraph>
-                  Euro Finans was looking into expanding its digital services.
-                  By not only offering an invoicing platform but also a contract
+                  They were looking into expanding their digital services. By
+                  not only offering an invoicing platform but also a contract
                   generation, and accounting platform. They soon realized that
                   having developers implementing the same set of components
                   across systems isn’t a scaleable strategy.

@@ -8,7 +8,7 @@ import Paragraph from "../Components/Elements/Paragraph";
 import List from "../Components/Elements/List";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
-import Title from "../Components/Elements/Title";
+import TitleAndText from "../Components/TitleAndText";
 
 /* there is an IMAGE_WITH_CAPTION here that is wrong. */
 export const CASE_10 = {
@@ -158,38 +158,43 @@ export const CASE_10 = {
                 <List
                   items={[
                     <>
-                      <Title h={5}>Onboarding new customers</Title>
-                      <Paragraph>
-                        Treating all markets equally, in some markets the client
-                        is a “well-established brand” but not always. On top of
-                        that, local industry-standard payment options are not
-                        available.
-                      </Paragraph>
-                      <Paragraph>
-                        Additionally, my client offered no cost-caps, no
-                        cherry-picking products, and no flexibility in
-                        data-ingestion.
-                      </Paragraph>
+                      <TitleAndText title="Onboarding new customers" h={5}>
+                        <Paragraph>
+                          Treating all markets equally, in some markets the
+                          client is a “well-established brand” but not always.
+                          On top of that, local industry-standard payment
+                          options are not available.
+                        </Paragraph>
+                        <Paragraph>
+                          Additionally, my client offered no cost-caps, no
+                          cherry-picking products, and no flexibility in
+                          data-ingestion.
+                        </Paragraph>
+                      </TitleAndText>
                     </>,
                     <>
-                      <Title h={5}>Customer relationship</Title>
-                      <Paragraph>
-                        Customers are punished for non-compliance, no proactive
-                        communication exists, no follow-up on the impact, and
-                        even for happy customers there is no “next level”.
-                      </Paragraph>
+                      <TitleAndText title="Customer relationship" h={5}>
+                        <Paragraph>
+                          Customers are punished for non-compliance, no
+                          proactive communication exists, no follow-up on the
+                          impact, and even for happy customers there is no “next
+                          level”.
+                        </Paragraph>
+                      </TitleAndText>
                     </>,
                     <>
-                      <Title h={5}>
-                        Insufficient incentives to becoming a customer.
-                      </Title>
-                      <Paragraph>
-                        Non-paying customers are getting too much for free. Sole
-                        focus on price means that non-paying customers can be
-                        not only competitive but destructive (for example by
-                        putting fake prices on products they don’t actually
-                        have) with no repercussions.
-                      </Paragraph>
+                      <TitleAndText
+                        title="Insufficient incentives to becoming a customer."
+                        h={5}
+                      >
+                        <Paragraph>
+                          Non-paying customers are getting too much for free.
+                          Sole focus on price means that non-paying customers
+                          can be not only competitive but destructive (for
+                          example by putting fake prices on products they don’t
+                          actually have) with no repercussions.
+                        </Paragraph>
+                      </TitleAndText>
                     </>,
                   ]}
                 />

@@ -12,7 +12,7 @@ import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 
 /* there is an IMAGE_WITH_CAPTION here that is wrong. */
 export const CASE_11 = {
-  caseStatus: CASE_STATUS.COMING_SOON,
+  caseStatus: CASE_STATUS.DRAFT,
   caseType: CASE_TYPES.CONCEPT,
   caseUrl: "/cases/11",
   thumbnail: {

@@ -4,7 +4,6 @@ import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import { TOOLS_AND_METHODS } from "./dictionaries/TOOLS_AND_METHODS";
 import { ROLES } from "./dictionaries/ROLES";
 import Paragraph from "../Components/Elements/Paragraph";
-import Span from "../Components/Elements/Span";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import Title from "../Components/Elements/Title";
@@ -17,7 +16,7 @@ export const CASE_7 = {
   caseType: CASE_TYPES.CONCEPT,
   caseUrl: "/cases/7",
   thumbnail: {
-    overline: "Fitness24Seven",
+    overline: "Global fitness chain",
     title: "e-Commerce Prestudy & concept",
     imageUrl: "assets/case-7/thumbnail.png",
     coverImageUrl: "assets/case-7/cover.png",
@@ -32,7 +31,7 @@ export const CASE_7 = {
         {
           template: SECTION_ELEMENTS.COVER,
           data: {
-            overline: "Fitness24Seven",
+            overline: "Global fitness chain",
             title: "e-Commerce pre-study",
             text: (
               <>
@@ -56,15 +55,15 @@ export const CASE_7 = {
             text: (
               <>
                 <Paragraph huge>
-                  Fitness24Seven operates more than 250 gyms in 7 different
-                  countries, I was tasked to help them conduct a pre-study
-                  focusing on increasing digital conversions and increasing
-                  online sales.
+                  My client operates more than 250 gyms in 7 different
+                  countries. I was tasked to help them conduct a pre-study
+                  focusing on increasing sign-ups and cross-sales potential
+                  online.
                 </Paragraph>
               </>
             ),
             myRole: ROLES.UI_UX,
-            duration: "1 months",
+            duration: "1 month",
             toolsAndMethods: [
               TOOLS_AND_METHODS.FIELD_STUDIES,
               TOOLS_AND_METHODS.SURVEYS,
@@ -89,16 +88,12 @@ export const CASE_7 = {
             text: (
               <>
                 <Paragraph>
-                  Fitness24Seven operates hundreds of gyms in Sweden and
-                  globally. During the covid-19 pandemic, they have been seeing
-                  shrinking membership numbers and experienced an increasing
-                  challenge signing new members. As a response to that,
-                  Fitness24Seven decided to conduct a pre-study for replacing
-                  their existing eCom platform.
-                </Paragraph>
-                <Paragraph>
-                  As a response to that, Fitness24Seven decided to conduct a
-                  pre-study for replacing their existing eCom platform.
+                  A global fitness chain had trouble signing new members online.
+                  As a response to that, they decided to conduct a pre-study
+                  aimed at uncovering the issues with their current onboarding.
+                  On top of that, the client wanted to explore the potential of
+                  an affiliated eCommerce platform in order to increase their
+                  revenue.
                 </Paragraph>
               </>
             ),
@@ -136,68 +131,19 @@ export const CASE_7 = {
             text: (
               <>
                 <Paragraph>
-                  e-commerce is a wide area, and the pre-study was timeboxed to
-                  4 weeks. The only way of reaching any result was by narrowing
-                  down the scope and defining a goal for the pre-study. In
-                  collaboration with the client, we have agreed that the goal
-                  and scope of the pre-study should include increasing online
-                  conversions and exploring additional revenue streams.
+                  Initially, the goal for this pre-study was defined as “how can
+                  we onboard more members and sell more online?” These are 2
+                  topics that proved important for the client.
+                </Paragraph>
+                <Paragraph>
+                  They had trouble signing new members online and following
+                  COVID19 saw a risk of losing their market position. Secondly,
+                  due to the pandemic, gyms were closed and the cash flow
+                  dwindled. For that reason, they wanted to explore opening an
+                  affiliated webshop that would sell sports equipment online.
                 </Paragraph>
               </>
             ),
-          },
-        },
-      ],
-    },
-    {
-      header: "Planning",
-      elements: [
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: <>Original plan:</>,
-            text: (
-              <>
-                <Paragraph>
-                  With the goal defined it was still unclear if the focus should
-                  be on increasing conversions or rather exploring additional
-                  revenue streams.
-                </Paragraph>
-                <Paragraph>
-                  The desired output for this pre-study would be a
-                  recommendation for possible improvements to the current UX,
-                  recommendations for an e-commerce platform. This is a lot of
-                  ground to cover, we needed to make every day count.
-                </Paragraph>
-                <List
-                  items={[
-                    <Span>
-                      <strong>Week 1:</strong> Aligning stakeholder expectations
-                      and current user needs.
-                    </Span>,
-                    <Span>
-                      <strong>Week 2:</strong> UX Research, in parallel to a
-                      technical evaluation of different e-commerce systems.
-                    </Span>,
-                    <Span>
-                      <strong>Week 3:</strong> Present the findings internally,
-                      prioritize and set focus area.
-                    </Span>,
-                    <Span>
-                      <strong>Week 4:</strong> Write a report.
-                    </Span>,
-                  ]}
-                />
-              </>
-            ),
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.IMAGE_WITH_CAPTION,
-          data: {
-            imageUrl: "assets/case-7/original-plan.png",
-            imageAlt: "?",
-            caption: "Original plan",
           },
         },
       ],
@@ -208,70 +154,25 @@ export const CASE_7 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Aligning expectations, and gathering current pains</>,
-            h: 2,
-            text: (
-              <>
-                <Title h={3}>Internal stakeholder workshop</Title>
-                <Paragraph>
-                  Our kickoff meeting was focused on aligning stakeholder
-                  expectations. The red thread from these discussions was
-                  generating more revenue.
-                </Paragraph>
-                <Title h={3}>Meeting the onboarding customer service</Title>
-                <Paragraph>
-                  It’s worrying when a company has an entire team dedicated to
-                  helping signing new members. On the other hand, it really
-                  provides a good overview of the most frequently encountered
-                  issues people encounter. We decided to hold a meeting with
-                  them to try and uncover the current user pains.
-                </Paragraph>
-                <Title h={3}>Insights:</Title>
-                <TitleAndText
-                  title="Many users fail to sign-up digitally."
-                  h={5}
-                >
-                  <Paragraph>
-                    A lot of users failed to find or were confused by the
-                    information they needed during sign-up
-                  </Paragraph>
-                </TitleAndText>
-
-                <TitleAndText
-                  title="20% of support calls originate from users who cannot sign-in to My Pages."
-                  h={5}
-                >
-                  <Paragraph>
-                    Despite receiving a mail with login information for “my
-                    pages” users couldn’t log-in.
-                  </Paragraph>
-                </TitleAndText>
-
-                <TitleAndText
-                  title="Not all offers and Campaigns were available online"
-                  h={5}
-                >
-                  <Paragraph>
-                    Some offers or services were only available when signing up
-                    physically
-                  </Paragraph>
-                </TitleAndText>
-              </>
-            ),
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: <>Deep-dive into web analytics</>,
+            title: <>Aligning expectations.</>,
             h: 2,
             text: (
               <>
                 <Paragraph>
-                  Sensing that we uncovered some major issues with the
-                  onboarding I decided to look into their web-analytics. The
-                  signup had a success rate of 16% and the general conversion
-                  rate was under 0.5%.
+                  In order to kick off the process, I facilitated a workshop
+                  aimed at aligning the stakeholders regarding their
+                  expectations from the initiative. On top of that, I wanted to
+                  understand what are the challenges they currently face with
+                  their services online.
+                </Paragraph>
+                <Title h={3}>
+                  Kicking it off by making sure we are all on the same page.
+                </Title>
+                <Paragraph>
+                  We started the project by facilitating a workshop for all
+                  stakeholders. During this workshop, we tried to gather
+                  insights and align everyone’s expectations. The red thread
+                  throughout these discussions was “generating more revenue”.
                 </Paragraph>
               </>
             ),
@@ -280,86 +181,132 @@ export const CASE_7 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Looking at competitors</>,
+            title: (
+              <>
+                Meeting the onboarding support team and looking into the web
+                analytics
+              </>
+            ),
+            text: (
+              <Paragraph>
+                It’s rather unusual that a gym chain would have an entire team
+                dedicated to helping signing new members online. It indicates
+                that a lot of people have trouble signing up for memberships
+                online. So much so that a team is in place to support them. On
+                the other hand, this team already knew all the common pitfalls
+                and issues users frequently encountered. We decided to hold a
+                meeting with them to try and uncover the current user pains.
+              </Paragraph>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            bgColor: "#2161C9",
+            title: <>Insights:</>,
+            text: (
+              <>
+                <List
+                  items={[
+                    <>
+                      <TitleAndText
+                        title="Online conversions were shockingly low"
+                        h={5}
+                      >
+                        <Paragraph>
+                          The signup had a success rate of 16% and the general
+                          conversion rate was under 0.5%.
+                        </Paragraph>
+                      </TitleAndText>
+                    </>,
+                    <>
+                      <TitleAndText
+                        title="Users are arent getting the information they need"
+                        h={5}
+                      >
+                        <Paragraph>
+                          A lot of users failed to find or were confused by the
+                          information they needed during sign-up.
+                        </Paragraph>
+                      </TitleAndText>
+                    </>,
+                    <>
+                      <TitleAndText
+                        title="20% of support calls originate from users who cannot sign in to My Pages."
+                        h={5}
+                      >
+                        <Paragraph>
+                          “My pages” is where gym-goers book their training,
+                          find gyms, follow up on their membership so being able
+                          to log in is very important. Despite receiving a mail
+                          with login information for “My pages” users couldn’t
+                          log-in.
+                        </Paragraph>
+                      </TitleAndText>
+                    </>,
+                    <>
+                      <TitleAndText
+                        title="Not all offers and Campaigns were available online"
+                        h={5}
+                      >
+                        <Paragraph>
+                          Some offers are not available online. For example, its
+                          not possible to select a prepaid membership online and
+                          directed users to visit a gym in person so that they
+                          could do that.
+                        </Paragraph>
+                      </TitleAndText>
+                    </>,
+                  ]}
+                />
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Testing the current onboarding flow</>,
             h: 2,
             text: (
               <>
                 <Paragraph>
-                  With that in mind, I decided to signup myself for the service.
-                  I was rather shocked, prices didn’t match, information was
-                  confusing, some buttons were hardly discoverable, everything
-                  we’ve heard from customer support was true! To make sure it
-                  wasn’t “just me,” I asked some of my colleagues to try to sign
-                  up themselves, the results were the same.
+                  With everything I heard so far, I asked to test the signup
+                  myself. I was rather shocked, prices didn’t match, information
+                  was confusing, some buttons were hardly discoverable,
+                  everything we’ve heard from customer support was true! To make
+                  sure it wasn’t “just me,” I asked some of my colleagues to try
+                  to sign up themselves, the results were the same. It was easy
+                  to see why the onboarding failed:
                 </Paragraph>
+                <List
+                  items={[
+                    <Paragraph>
+                      One of the first things users need to do during sign-up is
+                      entering their personal number. It is a big ask when no
+                      reasoning is provided.
+                    </Paragraph>,
+                    <Paragraph>
+                      After paying, users assume that they can go train but that
+                      isn’t the case, the registration must be completed in
+                      person. That isn’t clearly indicated online but instead in
+                      a confirmation mail.
+                    </Paragraph>,
+                    <Paragraph>
+                      When users attempt to log in to their pages the first time
+                      they believe that they need to create an account but an
+                      account already gets created when they sign-up. Instead,
+                      users need to reset their password in order to log in to
+                      the system the first time.
+                    </Paragraph>,
+                  ]}
+                />
                 <Paragraph>
                   <strong>Note:</strong> Given more time I would have loved to
-                  conduct a better evaluation of the onboarding using a
-                  usability test/PURE evaluation in order to uncover problems.
-                  This was not possible and was not required as it was already
-                  known that there are issues with the current onboarding.
-                </Paragraph>
-                <Paragraph>
-                  I compared the onboarding experience to their competitors and
-                  it was evident that there is room for improvement.
-                </Paragraph>
-              </>
-            ),
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: <>Surveys, Interviews, And field studies</>,
-            h: 2,
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.KEY_FIGURES,
-          data: {
-            items: [
-              { value: "160", description: "survey responses" },
-              { value: "30", description: "interviews" },
-              { value: "3", description: "gym visits" },
-            ],
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            text: (
-              <>
-                <Paragraph>
-                  This was a very hectic data gathering. our surveys received
-                  more than 160 responses and interviewed more than 30 people.
-                  We visited 3 Gyms all in a period of several days.
-                </Paragraph>
-                <Paragraph>
-                  Now all of that raw data had to be analyzed and presented back
-                  to the stakeholders so they could prioritize our efforts. XXX
-                </Paragraph>
-              </>
-            ),
-          },
-        },
-      ],
-    },
-    {
-      header: "Restart",
-      elements: [
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: <>State of onboarding new members.</>,
-            h: 2,
-            text: (
-              <>
-                <Paragraph>
-                  Based on the insights at this point it was clear that the
-                  onboarding needed to improve. Users were uncertain if they
-                  completed their application or not. Customer support and gym
-                  staff was dealing with constant support cases instead of
-                  helping gym members.
+                  conduct a more structured evaluation of the onboarding
+                  usability. Due to time and budget constraints, this was not
+                  possible
                 </Paragraph>
               </>
             ),
@@ -380,28 +327,113 @@ export const CASE_7 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
+            title: <>Looking at competitors</>,
+            h: 2,
+            text: (
+              <>
+                <Paragraph>
+                  I compared the onboarding experience to some of the
+                  competitors. It was easy, my wife just signed up for a new
+                  gym. All I needed to do was to observe. Prices were clear,
+                  plans well explained, no gotchas or nasty surprises. just a
+                  smooth experience overall.
+                </Paragraph>
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: "Conducting a survey, gym membership preferences",
+            h: 2,
+            text: (
+              <>
+                <Paragraph>
+                  We needed to understand what was important for potential gym
+                  members. Do they prefer to signup online or at the gym? How do
+                  people choose gyms? What services might be relevant for them?
+                  etc. Part of the survey was dedicated to exploring the
+                  potential of cross-sales while onboarding. I created a survey
+                  and promoted it on social media.
+                </Paragraph>
+                <Title h={3}>Noteworthy Insights:</Title>
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.KEY_FIGURES,
+          data: {
+            items: [
+              {
+                value: "51.2%",
+                description: "Prefer signing up to gyms online.",
+              },
+              { value: "44%", description: "Interested in group training" },
+              {
+                value: "31.6%",
+                description: "Would consider a personal tainer.",
+              },
+            ],
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Visiting gyms and conducting interviews.</>,
+            h: 2,
+            text: (
+              <>
+                <Paragraph>
+                  With help of a colleague, we interviewed more than 30 gym
+                  members. We visited 3 Gyms all in a period of several days and
+                  spoke to both staff and trainers to uncover the challenges
+                  they have. We then shared our findings with the team and
+                  prioritized our efforts.
+                </Paragraph>
+                <Paragraph>
+                  It was clear that some of the issues weren’t solvable without
+                  additional costs. For example, the type of access control used
+                  in the gyms ended up dictating the signup process. You cannot
+                  signup unless you physically pick up a magnetic card. You
+                  cannot be a member without signing a contract. Interested or
+                  not, the project promised cross-sales, hence it will include
+                  them. This was discouraging...
+                </Paragraph>
+                <Paragraph>
+                  <strong>Note:</strong> This was far from ideal data
+                  collection. In a perfect world, I would have loved a larger
+                  sample size but due to time and budget limitations, this was
+                  not possible.
+                </Paragraph>
+              </>
+            ),
+          },
+        },
+      ],
+    },
+    {
+      header: "Redesign",
+      elements: [
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
             title: <>Taking a small step in the right direction. </>,
             h: 2,
             text: (
               <>
                 <Paragraph>
-                  At this point of time I was asked to visualize how the
-                  onboarding can be improved without affecting the organization.
-                  I removed/updated some steps where we saw large drop-off
-                  (Asking the user for their personal number at an early stage
-                  for example led to a huge dropoff) adding clarity to the
-                  expected the expected next steps.
+                  Given all the constraints, I was asked to redesign the
+                  onboarding. It must include cross-sales, must not require
+                  changes to the access control or ways of working in the
+                  organization but should aim at improving clarity, align
+                  expectations, and offer better guidance.
                 </Paragraph>
                 <Paragraph>
-                  Several different versions of the design were created and
-                  tested, the winning version is presented below.
-                </Paragraph>
-                <Paragraph>
-                  <strong>Note:</strong> At this point, the scope and plan began
-                  expanding, in retrospect I am proud of what was accomplished
-                  but I would not like to repeat the process. I added upselling
-                  to the onboarding (upon request) even though ideally it should
-                  have been left out.
+                  I created several different versions of the onboarding. These
+                  were tested against each other, tweaked and the one that
+                  performed best was then chosen.
                 </Paragraph>
               </>
             ),
@@ -419,31 +451,59 @@ export const CASE_7 = {
             ],
           },
         },
+      ],
+    },
+    {
+      header: "eCommerce",
+      elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Shifting the focus once more</>,
+            title: <>Shifting the focus to eCommerce</>,
             h: 2,
             text: (
               <>
                 <Paragraph>
-                  At this point, the focus was shifted to covering potential
-                  e-commerce platform.
+                  At this point, the focus was shifted to covering a potential
+                  e-commerce platform. One of the daughter companies in the
+                  organization specializes in selling gym equipment to
+                  businesses and they wanted to explore potential collaboration.
+                </Paragraph>
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: "A second survey, more interviews",
+            h: 2,
+            text: (
+              <>
+                <Paragraph>
+                  A second survey was sent. Focusing on product customer
+                  interest, desirability, and potential product offering.
                 </Paragraph>
                 <Paragraph>
-                  I was asked to investigate how desirable would a
-                  Fitness24Seven webshop would be. In order to do that I sent
-                  out 2 surveys and pushed them on social media. The first
-                  survey focused on the current onboarding and expectations
-                  members have. The second survey was a more “general” survey
-                  looking into e-commerce, explored different product offerings,
-                  and desirability.
+                  On top of the surveys, I conducted more interviewed via phone
+                  and in-person to complement the quantitative findings with
+                  qualitative data.
+                </Paragraph>
+                <Title h={3}>Learnings: </Title>
+                <Paragraph>
+                  We collected 37 responses. As the sheer competition in this
+                  segment could have indicated an interest in buying gym
+                  equipment and food supplements online exists. Despite that,
+                  most members preferred buying their equipment through
+                  dedicated stores and wouldn’t consider buying anything from
+                  the gym itself. This gym chain is known for its low prices and
+                  people assumed that their products will not be of sufficient
+                  quality.
                 </Paragraph>
                 <Paragraph>
-                  On top of the surveys, I conducted several field studies where
-                  I interviewed members and staff and even conducted phone
-                  interviews with several more members to complement the
-                  quantitative findings with qualitative data.
+                  Despite that, I was asked to design a storefront for an
+                  eCommerce platform in order to sway decision-makers and to be
+                  included in the report.
                 </Paragraph>
               </>
             ),
@@ -461,6 +521,11 @@ export const CASE_7 = {
             ],
           },
         },
+      ],
+    },
+    {
+      header: "Design",
+      elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
@@ -469,15 +534,19 @@ export const CASE_7 = {
             text: (
               <>
                 <Paragraph>
-                  At this point we already had an improved prototype for
-                  onboarding, instead, the Client asked if I could help
-                  visualize how we could create a 100% digital experience. At
-                  the moment users who sign-up for gym membership online, cannot
-                  complete their registration. Several things require physical
-                  presence. In order to complete the registration users need to
-                  go to a gym with some sort of ID and sign the membership
-                  agreement, then they need to have their picture taken finally,
-                  they need to provide a fingerprint.
+                  At this point, things change. It was like the chips finally
+                  fell and I was asked to visualize how the onboarding could be
+                  without the given constraints. How might we offer a 100%
+                  digital experience?
+                </Paragraph>
+                <Paragraph>
+                  <strong>
+                    This required adressing 3 of the steps that now require
+                    physical presence:{" "}
+                  </strong>
+                  <br />
+                  Signing an agreement, Getting their picture taken, and Picking
+                  up a magnetic card
                 </Paragraph>
               </>
             ),
@@ -503,7 +572,7 @@ export const CASE_7 = {
             text: (
               <>
                 <Paragraph>
-                  In order to make this everything that was currently done
+                  In order to make this, everything that was currently done
                   manually at the gyms needed to be moved to the mobile app.
                   This namely included: Identification and contract signing,
                   taking a picture, and securing access to the gyms.
@@ -523,16 +592,16 @@ export const CASE_7 = {
                 text: (
                   <>
                     <Paragraph>
-                      At the moment one after users complete their online
+                      At the moment one after users completes their online
                       application they need to physically go to the gym during
                       manned hours. This is done in order to sign the membership
                       agreement, take a picture, and handle the magnetic
                       entrance card.
                     </Paragraph>
                     <Paragraph>
-                      <Span>Solution: </Span>Identification at least in Sweden
-                      can be done using BankId, which also offers digitally
-                      signing legally binding agreements.
+                      <strong>Solution: </strong>Identification at least in
+                      Sweden can be done using BankId, which also offers
+                      digitally signing legally binding agreements.
                     </Paragraph>
                   </>
                 ),
@@ -543,7 +612,6 @@ export const CASE_7 = {
                 title: "Taking member’s pictures.",
                 text: (
                   <>
-                    <Title h={3}>Taking member’s pictures.</Title>
                     <Paragraph>
                       At the moment after users finish signing up online, they
                       are required to physically go to the gym to get their
@@ -553,10 +621,10 @@ export const CASE_7 = {
                       complete the application.
                     </Paragraph>
                     <Paragraph>
-                      <span>Solution: </span> In the re-imagined onboarding we
-                      allow users to take a selfi instead. Much simpler, doesnt
-                      require any employee involvement, and reduces workload in
-                      gyms.
+                      <strong>Solution: </strong> In the re-imagined onboarding
+                      we allow users to take a selfie instead. Much simpler,
+                      doesn’t require any employee involvement, and reduces
+                      workload in gyms.
                     </Paragraph>
                   </>
                 ),
@@ -576,12 +644,12 @@ export const CASE_7 = {
                       costs.
                     </Paragraph>
                     <Paragraph>
-                      <span>Solution: </span> Instead of the current entrance
-                      system we proposed to use QR locks on the doors or even
-                      exploring NFC chips instead in order to allow unassisted
-                      membership sign-up’s making the process much simpler and
-                      effective. This will however entail a cost and is
-                      currently being evaluated.
+                      <strong>Solution: </strong> Instead of the current
+                      entrance system we proposed to use QR locks on the doors
+                      or even exploring NFC chips instead in order to allow
+                      unassisted membership sign-up’s making the process much
+                      simpler and effective. This will however entail a cost and
+                      is currently being evaluated.
                     </Paragraph>
                   </>
                 ),
@@ -625,11 +693,12 @@ export const CASE_7 = {
             text: (
               <>
                 <Paragraph large>
-                  The results clearly incdicated that Dispite this being a
-                  prestudy, the scope expanded to include a lot of conceptual
-                  work in order to obtain organizational buy-in.
+                  The results were shared with the leadership and funding for
+                  the project was secured. The findings helped the organization
+                  focus on removing obsticles in order to onboard members in a
+                  better way.
                 </Paragraph>
-                <Title h={2}>After thoughts:</Title>
+                <Title h={3}>After thoughts:</Title>
                 <Paragraph large>
                   Despite time constraints and focus on speedy delivery, a lot
                   of the issues uncovered during the research phase were

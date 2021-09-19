@@ -2,32 +2,28 @@ TODO list (What's left before you're done)
 CASE_4: 2 Images missing from (NoWaste) showing before and after flows.
 CASE_4: add sneak peek images
 CASE_4 finish content review (stopped at "research")
-Add authentication
 
 /_ FIX ME_/
-Review anonimize and pusblish more cases. (only case 9,10 were reviewed)
+Quote styling needs to be revised.
+Finish styling the testimonials.
+Hide navigation while screen animation is playing. (nice to have)
 Fix case thumbnails (nice to have)
-Quote styling needs to be revised
-Finish styling the testimonials
-Hide navigation while screen animation is playing.
-Finish developing the timeline and add it to about me page.
+Hide whatever cases that arent finished.
 
---TESTING (mobile,tablet, desktop) AND LAYOUT FIXES:--
-ImageWithCaption
-SideBySideImagesAndText
-ImageGallery
-Result
-
---CONTENT REVIEW:--
-Landing page -> Update Text for cover caption & Update intro text for case list.
-case-3 -> Go (need to find a tablet with horizontal orientation)
+--CONTENT:--
+case-1 -> Go through and rewrite
+case-2 -> Go through and rewrite
+case-3 -> Go through and rewrite
 case-4 -> Go through and rewrite
 case-5 -> Go through and rewrite
-About me -> do a content review
+case-6 -> Go through and rewrite
+case-7 -> Add pictures of the report and perhaps if there is a picture of you in the gyms?
+About me -> Add sections "Speaker", "Facilitator", "Engineer", "Pizziolo" etc, perhaps a gallery in the bottom with pizza pictures.
 
 BACKLOG:
+FEATURE: Finish developing the timeline and add it to about me page.
 FEATURE: FinalResult -> Add animations.
 FEATURE: Consider variable text base size after 1440
 FEATURE: use Contentful for content.
 FEATURE: server side rendering using Next.js (?)
-FEAUTRE: TypographicElements: We need a Link element
+FEATURE: Add authentication

@@ -10,6 +10,7 @@ import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Elements/Title";
 import colors from "../theme/colors";
+import TitleAndText from "../Components/TitleAndText";
 
 /* there is an IMAGE_WITH_CAPTION here that is wrong. */
 export const CASE_9 = {
@@ -127,18 +128,21 @@ export const CASE_9 = {
                 <List
                   items={[
                     <>
-                      <Title h={5}>Find the right product:</Title>
-                      <Paragraph>
-                        Users must be able to find products in order to convert.
-                      </Paragraph>
+                      <TitleAndText title="Find the right product:" h={5}>
+                        <Paragraph>
+                          Users must be able to find products in order to
+                          convert.
+                        </Paragraph>
+                      </TitleAndText>
                     </>,
                     <>
-                      <Title h={5}>Find the right shop:</Title>
-                      <Paragraph>
-                        Once users know what products they are interested in
-                        they need to be able to find a shop that sells these
-                        products.
-                      </Paragraph>
+                      <TitleAndText title="Find the right shop:" h={5}>
+                        <Paragraph>
+                          Once users know what products they are interested in
+                          they need to be able to find a shop that sells these
+                          products.
+                        </Paragraph>
+                      </TitleAndText>
                     </>,
                   ]}
                 />
@@ -162,18 +166,20 @@ export const CASE_9 = {
                 <List
                   items={[
                     <>
-                      <Title h={5}>Bad actors</Title>
-                      <Paragraph>
-                        Shops that abuse the system, publishing fake prices,
-                        misleading stock, and delivery terms.
-                      </Paragraph>
+                      <TitleAndText title="Bad actors" h={5}>
+                        <Paragraph>
+                          Shops that abuse the system, publishing fake prices,
+                          misleading stock, and delivery terms.
+                        </Paragraph>
+                      </TitleAndText>
                     </>,
                     <>
-                      <Title h={5}>Search</Title>
-                      <Paragraph>
-                        Users can’t seem to find what they are looking for on
-                        the service.
-                      </Paragraph>
+                      <TitleAndText title="search" h={5}>
+                        <Paragraph>
+                          Users can’t seem to find what they are looking for on
+                          the service.
+                        </Paragraph>
+                      </TitleAndText>
                     </>,
                   ]}
                 />
