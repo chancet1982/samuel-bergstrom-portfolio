@@ -4,11 +4,8 @@ CASE_4: add sneak peek images
 CASE_4 finish content review (stopped at "research")
 
 /_ FIX ME_/
-Quote styling needs to be revised.
-Testimonials - fix author image and title (currently not showing)
 Hide navigation while screen animation is playing. (nice to have)
 Fix case thumbnails (nice to have)
-Write to Tina see if she has any pictures from your 2019 talk about inclusive design.
 
 --CONTENT:--
 case-1 -> Go through and rewrite
@@ -16,7 +13,9 @@ case-2 -> Go through and rewrite
 case-3 -> Go through and rewrite
 case-5 -> Go through and rewrite
 case-7 -> Add pictures of the report.
-About me -> Add sections "Speaker", "Facilitator", "Engineer", "Pizziolo" etc, perhaps a gallery in the bottom with pizza pictures.
+case-9 -> Add pictures of the report.
+case-10 -> Add pictures of the report.
+About me -> Improve the styling on the "Speaker", "Facilitator", "Engineer", "Pizziolo" section
 
 BACKLOG:
 case-4 -> Go through and rewrite
