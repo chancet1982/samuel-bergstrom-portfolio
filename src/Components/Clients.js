@@ -9,7 +9,7 @@ import { createBreakpoint } from "react-use";
 import Client from "./Client";
 import { CLIENTS } from "../data/dictionaries/CLIENTS";
 import padding from "../theme/padding";
-import CenteredTitleAndText from "./StyledCenteredText";
+import CenteredTitleAndText from "./CenteredTitleAndText";
 
 const StyledClients = styled(motion.div)`
   margin-left: ${padding.horizontal.quadruple};

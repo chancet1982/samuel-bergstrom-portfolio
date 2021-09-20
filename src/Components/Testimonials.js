@@ -9,71 +9,97 @@ import padding from "../theme/padding";
 import colors from "../theme/colors";
 
 const StyledTestimonials = styled(motion.div)`
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  padding-left: ${padding.horizontal.double};
-  padding-right: ${padding.horizontal.double};
+  padding: ${padding.vertical.double} ${padding.horizontal.double};
   box-sizing: border-box;
   max-width: 1440px;
   margin: 0 auto;
-
-  > div:not(:first-of-type) {
-    margin-bottom: ${padding.vertical.single};
-    padding: ${padding.vertical.single} ${padding.horizontal.double};
-    display: flex;
-  }
-
-  > div:nth-of-type(2n + 2) {
-    border-radius: 2rem 2rem 2rem 0;
-    flex-direction: row;
-  }
-
-  > div:nth-of-type(2n + 3) {
-    border-radius: 2rem 2rem 0 2rem;
-    flex-direction: row-reverse;
-  }
 `;
 
 const StyledTestimonial = styled(motion.div)`
-  background-color: ${colors.offwhite};
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  margin-bottom: ${padding.vertical.single};
+
+  :nth-of-type(2n + 1) {
+    grid-template-areas: "a b b b b";
+
+    > div {
+      border-radius: 2rem 2rem 2rem 0;
+      position: relative;
+
+      ::before {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        left: -2rem;
+        bottom: 0;
+        border: solid 1rem;
+        border-color: transparent ${colors.offwhite} ${colors.offwhite}
+          transparent;
+      }
+    }
+  }
+
+  :nth-of-type(2n + 2) {
+    grid-template-areas: "b b b b a";
+
+    > div {
+      border-radius: 2rem 2rem 0 2rem;
+      position: relative;
+
+      ::before {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        right: -2rem;
+        bottom: 0;
+        border: solid 1rem;
+        border-color: transparent transparent ${colors.offwhite}
+          ${colors.offwhite};
+      }
+    }
+  }
+
+  > figure {
+    grid-area: a;
+  }
+  > div {
+    grid-area: b;
+  }
 `;
 
-const StyledTestimonialAuthor = styled(motion.div)`
-  padding: ${padding.vertical.single} ${padding.horizontal.single};
-  align-self: center;
-  justify-self: center;
+const StyledTestimonialAuthor = styled(motion.figure)`
   display: flex;
   flex-direction: column;
   text-align: center;
-  flex-basis: 20vw;
-  flex: 0;
+  align-items: stretch;
+  justify-content: center;
+`;
+
+const StyledTestimonialContent = styled(motion.div)`
+  padding: ${padding.vertical.single} ${padding.horizontal.double};
+  background-color: ${colors.offwhite};
 `;
 
 const StyledAuthorImage = styled(motion.img)`
-  width: 4rem;
-  height: 4rem;
-  background-color: pink;
-  border-radius: 50%;
+  width: 6rem;
+  height: 6rem;
+  clip-path: circle(50%);
+  margin: 0 auto;
 `;
 
-const StyledAuthorName = styled(motion.div)`
-  position: relative;
-`;
-
-const StyledAuthorTitle = styled(motion.div)`
-  position: relative;
-`;
+const StyledAuthorName = styled(motion.figcaption)``;
 
 const TestimonialAuthor = ({ authorName, authorTitle, authorImageUrl }) => {
   return (
     <StyledTestimonialAuthor>
-      <StyledAuthorImage src={authorImageUrl} />
+      <StyledAuthorImage src={authorImageUrl} alt={authorTitle} />
       <StyledAuthorName>
-        <Span>{authorName}</Span>
-      </StyledAuthorName>
-      <StyledAuthorTitle>
+        <Span>{authorName}</Span> <br />
         <Span small>{authorTitle}</Span>
-      </StyledAuthorTitle>
+      </StyledAuthorName>
     </StyledTestimonialAuthor>
   );
 };
@@ -92,18 +118,16 @@ const Testimonials = ({ title, text }) => {
           {text}
         </TitleAndText>
       )}
-      {TESTIMONIALS.map(
-        ({ author: { authorName, authorTitle, authorImageUrl }, content }) => (
-          <StyledTestimonial>
-            <TestimonialAuthor
-              authorName={authorName}
-              title={authorTitle}
-              imageUrl={authorImageUrl}
-            />
-            {content}
-          </StyledTestimonial>
-        )
-      )}
+      {TESTIMONIALS.map(({ author, content }) => (
+        <StyledTestimonial>
+          <TestimonialAuthor
+            authorName={author.authorName}
+            authorTitle={author.authorTitle}
+            authorImageUrl={author.authorImageUrl}
+          />
+          <StyledTestimonialContent>{content}</StyledTestimonialContent>
+        </StyledTestimonial>
+      ))}
     </StyledTestimonials>
   );
 };

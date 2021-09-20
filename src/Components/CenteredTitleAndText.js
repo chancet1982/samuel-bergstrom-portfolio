@@ -10,7 +10,6 @@ import TitleAndText from "./TitleAndText";
 import { variants } from "../animations/animations";
 
 const StyledCenteredTitleAndText = styled(motion.div)`
-  padding-top: ${padding.vertical.quadruple};
   padding-left: ${padding.horizontal.double};
   padding-right: ${padding.horizontal.double};
 
@@ -19,7 +18,6 @@ const StyledCenteredTitleAndText = styled(motion.div)`
     width: 60%;
     justify-content: flex-start;
     text-align: center;
-    padding-top: 12rem;
     margin: 0 auto;
 
     p {

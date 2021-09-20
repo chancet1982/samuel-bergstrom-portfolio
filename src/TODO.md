@@ -5,7 +5,7 @@ CASE_4 finish content review (stopped at "research")
 
 /_ FIX ME_/
 Quote styling needs to be revised.
-Finish styling the testimonials.
+Testimonials - fix author image and title (currently not showing)
 Hide navigation while screen animation is playing. (nice to have)
 Fix case thumbnails (nice to have)
 Write to Tina see if she has any pictures from your 2019 talk about inclusive design.

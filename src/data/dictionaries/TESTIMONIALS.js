@@ -7,7 +7,7 @@ export const TESTIMONIALS = [
     author: {
       authorName: "Mikael Lundin",
       authorTitle: "Former CTO, Fitness24Seven",
-      authorImageUrl: "",
+      authorImageUrl: "assets/testimonials/mikael-lundin.jpeg",
     },
     content: (
       <>
@@ -35,7 +35,7 @@ export const TESTIMONIALS = [
     author: {
       authorName: "Einar Valgeirsson",
       authorTitle: "Development Team Lead, Diaverum",
-      authorImageUrl: "",
+      authorImageUrl: "assets/testimonials/einar-valgeirsson.jpeg",
     },
     content: (
       <>
@@ -57,7 +57,7 @@ export const TESTIMONIALS = [
     author: {
       authorName: "Nidzara Dellien",
       authorTitle: "Software Development Manager, Bejer Electronics",
-      authorImageUrl: "",
+      authorImageUrl: "assets/testimonials/nidzara-dellien.jpeg",
     },
     content: (
       <>
@@ -77,30 +77,25 @@ export const TESTIMONIALS = [
     author: {
       authorName: "Davor Tomic",
       authorTitle: "Lead Consultant & Design Domain Lead, tretton37",
-      authorImageUrl: "",
+      authorImageUrl: "assets/testimonials/davor-tomic.jpeg",
     },
     content: (
       <>
         <Paragraph>
           Sam is the kind of a person you need if you want to elevate the
           quality and impact of the work UX team is delivering in your
-          organisation.
-        </Paragraph>
-        <Paragraph>
-          One of his super powers is getting deep to the core of a problem and
-          helping clients realise the greater potential of their business
-          solution.
+          organisation. One of his super powers is getting deep to the core of a
+          problem and helping clients realise the greater potential of their
+          business solution.
         </Paragraph>
         <Paragraph>
           He pairs it with an uncanny ability to talk design in the language of
           business— a rarity in our line of work—which is a key that unlocks the
-          shortest path to success, with all stakeholders on board.
-        </Paragraph>
-        <Paragraph>
-          Sam’s can-do attitude and willingness to explore new venues, where so
-          often he takes all the risk for the investment, is contagious and
-          greatly appreciated. He is a passionate evangelist of the value of UX,
-          as well as a mentor and a coach to younger colleagues.
+          shortest path to success, with all stakeholders on board. Sam’s can-do
+          attitude and willingness to explore new venues, where so often he
+          takes all the risk for the investment, is contagious and greatly
+          appreciated. He is a passionate evangelist of the value of UX, as well
+          as a mentor and a coach to younger colleagues.
         </Paragraph>
         <Paragraph>
           All of this makes Sam a true leader and a team mate we couldn’t
@@ -114,7 +109,7 @@ export const TESTIMONIALS = [
     author: {
       authorName: "Fie Frederiksen",
       authorTitle: "Senior Analyst, Hjerteforeningen",
-      authorImageUrl: "",
+      authorImageUrl: "assets/testimonials/fie-frederiksen.jpeg",
     },
     content: (
       <>
@@ -133,7 +128,7 @@ export const TESTIMONIALS = [
     author: {
       authorName: "Mihai Nueleanu",
       authorTitle: "Former Team Lead, IBM Garage",
-      authorImageUrl: "",
+      authorImageUrl: "assets/testimonials/mihai-nueleanu.jpeg",
     },
     content: (
       <>
@@ -155,7 +150,7 @@ export const TESTIMONIALS = [
     author: {
       authorName: "Patrick Hiller",
       authorTitle: "CEO, Telescope Services AB",
-      authorImageUrl: "",
+      authorImageUrl: "assets/testimonials/patrick-hiller.jpeg",
     },
     content: (
       <>

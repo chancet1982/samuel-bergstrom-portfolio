@@ -11,7 +11,7 @@ import padding from "../theme/padding";
 import { CASE_STATUS } from "../data/dictionaries/CASE_STATUS";
 import ElementColorContextProvider from "../Context/ElementColorContext";
 import ReadMoreLink from "./ReadMoreLink";
-import CenteredTitleAndText from "./StyledCenteredText";
+import CenteredTitleAndText from "./CenteredTitleAndText";
 
 const StyledCases = styled(motion.div)`
   display: grid;

@@ -28,7 +28,7 @@ export const VIEW_ABOUT_ME = [
     ],
   },
   {
-    header: "My story",
+    header: "Why Sam?",
     elements: [
       {
         template: SECTION_ELEMENTS.TEXTBOX,
@@ -45,29 +45,101 @@ export const VIEW_ABOUT_ME = [
                 A digital product designer, engineer, Speaker, Mentor,
                 Accessibility enthusiast, father, husband, and quite a nice guy.
               </Paragraph>
-              <Title h={2}>Why Sam?</Title>
-              <Paragraph>
-                Because good design always lives in on the intersection of
-                Business value, User value, and technical feasibility. Because
-                solving the right problem is often more important than solving
-                it the right way. of <strong>practical designs</strong>. Designs
-                that are fast to implement, easy to use, and are scaled to fit.
-                That requires more than having an “eye” for design. It requires
-                a deeper understanding of business and technology. I believe
-                that decisions need to be based on evidence, in lack of
-                evidence, decisions are based on gut-feeling, intuition, which
-                simply creates friction and mediocre results.
-              </Paragraph>
             </>
           ),
         },
       },
       {
-        template: SECTION_ELEMENTS.TESTIMONIALS,
+        template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
         data: {
-          title: "listen to these awesome people!",
+          listTitle: "Why Sam?",
+          items: [
+            {
+              imageUrl: "assets/designer.png",
+              imageAlt: "Designer",
+              title: "Me looking all designery and stuff",
+              text: (
+                <>
+                  <Paragraph>
+                    15 years of industry experience. Awesome designer! come and
+                    buy!.
+                  </Paragraph>
+                </>
+              ),
+            },
+            {
+              imageUrl: "assets/speaker.png",
+              imageAlt: "Holding a lecture about accessibility",
+              title: "Speaker & Mentor",
+              text: (
+                <>
+                  <Paragraph>
+                    Public speaking? No problem. I held both internal and
+                    extanal talks sharing my experiences with hundrads of
+                    people.
+                  </Paragraph>
+                </>
+              ),
+            },
+            {
+              imageUrl: "assets/facilitator.png",
+              imageAlt: "Service blueprinting workshop I did",
+              title: "Facilitator",
+              text: (
+                <>
+                  <Paragraph>
+                    Experience in facilitating various workshops. In-person and
+                    virtual.
+                  </Paragraph>
+                </>
+              ),
+            },
+            {
+              imageUrl: "assets/engineer.png",
+              imageAlt: "Did I mention I am a unicorn?",
+              title: "Engineer",
+              text: (
+                <>
+                  <Paragraph>
+                    Experience in facilitating various workshops. In-person and
+                    virtual.
+                  </Paragraph>
+                </>
+              ),
+            },
+            {
+              imageUrl: "assets/father.png",
+              imageAlt: "2 adorable monsters",
+              title: "Father",
+              text: (
+                <>
+                  <Paragraph>
+                    Experience in facilitating various workshops. In-person and
+                    virtual.
+                  </Paragraph>
+                </>
+              ),
+            },
+          ],
         },
       },
+    ],
+  },
+  {
+    header: "Testimonials",
+    isPadded: true,
+    elements: [
+      {
+        template: SECTION_ELEMENTS.TESTIMONIALS,
+        data: {
+          title: "What others say about me",
+        },
+      },
+    ],
+  },
+  {
+    header: "My story",
+    elements: [
       {
         template: SECTION_ELEMENTS.TEXTBOX,
         data: {
@@ -172,6 +244,53 @@ export const VIEW_ABOUT_ME = [
               />
             </>
           ),
+        },
+      },
+    ],
+  },
+  {
+    header: "Pizza",
+    elements: [
+      {
+        template: SECTION_ELEMENTS.TEXTBOX,
+        data: {
+          title: "Ho, did I mention I make some kick-ass pizzas?",
+          h: 2,
+          text: (
+            <>
+              <Paragraph>
+                Some of the awesome pizzas I did last summer
+              </Paragraph>
+            </>
+          ),
+        },
+      },
+      {
+        template: SECTION_ELEMENTS.IMAGE_GALLERY,
+        data: {
+          template: IMAGE_GALLERY_TEMPLATES.FIVE_IMAGES_MIX_COLUMNS,
+          images: [
+            {
+              imageUrl: "assets/pizza-1.jpg",
+              imageAlt: "?",
+            },
+            {
+              imageUrl: "assets/pizza-2.jpg",
+              imageAlt: "Co-creating wireframes",
+            },
+            {
+              imageUrl: "assets/pizza-3.jpg",
+              imageAlt: "Co-creating wireframes",
+            },
+            {
+              imageUrl: "assets/pizza-4.jpg",
+              imageAlt: "Co-creating wireframes",
+            },
+            {
+              imageUrl: "assets/pizza-5.jpg",
+              imageAlt: "Co-creating wireframes",
+            },
+          ],
         },
       },
     ],

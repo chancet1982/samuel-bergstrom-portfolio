@@ -6,7 +6,7 @@ import ImageWithTitleAndText from "./ImageWithTitleAndText";
 import padding from "../theme/padding";
 import breakpoints from "../theme/breakpoints";
 import ElementContextProvider from "../Context/ElementColorContext";
-import CenteredTitleAndText from "./StyledCenteredText";
+import CenteredTitleAndText from "./CenteredTitleAndText";
 
 const StyledListOfImagesWithTitleAndText = styled(motion.div)`
   display: grid;
