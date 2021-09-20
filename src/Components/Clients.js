@@ -1,9 +1,11 @@
+/* eslint-disable no-nested-ternary */
 /* eslint-disable import/prefer-default-export */
 import React from "react";
 import styled from "styled-components";
 import { v4 as uuid } from "uuid";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
+import { createBreakpoint } from "react-use";
 import Client from "./Client";
 import { CLIENTS } from "../data/dictionaries/CLIENTS";
 import padding from "../theme/padding";
@@ -21,15 +23,15 @@ const StyledClients = styled(motion.div)`
   > div {
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
 
     div {
       text-align: center;
     }
   }
 `;
+const useBreakpoint = createBreakpoint({ XL: 1315, L: 1048, M: 781, S: 300 });
 
-// TODO: fix inView animation repeats itself...
 const Clients = ({ preview }) => {
   const pickRandom = (arr, count) => {
     // eslint-disable-next-line no-underscore-dangle
@@ -39,7 +41,20 @@ const Clients = ({ preview }) => {
     );
   };
 
-  const render5RandomClients = pickRandom(CLIENTS, 5).map((item) => (
+  const breakpoint = useBreakpoint();
+  const getNumberOfClientsBasedOnViewportWidth = () =>
+    breakpoint === "XL"
+      ? 5
+      : breakpoint === "L"
+      ? 4
+      : breakpoint === "M"
+      ? 3
+      : 4;
+
+  const render5RandomClients = pickRandom(
+    CLIENTS,
+    getNumberOfClientsBasedOnViewportWidth()
+  ).map((item) => (
     <Client
       key={uuid()}
       title={item.title}

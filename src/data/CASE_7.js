@@ -379,6 +379,26 @@ export const CASE_7 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.IMAGE_GALLERY,
+          data: {
+            template: IMAGE_GALLERY_TEMPLATES.THREE_IMAGES_TWO_COLUMNS,
+            images: [
+              {
+                imageUrl: "assets/case-7/gym-visit-1.png",
+                imageAlt: "?",
+              },
+              {
+                imageUrl: "assets/case-7/gym-visit-2.png",
+                imageAlt: "?",
+              },
+              {
+                imageUrl: "assets/case-7/gym-visit-3.png",
+                imageAlt: "?",
+              },
+            ],
+          },
+        },
+        {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>Visiting gyms and conducting interviews.</>,
