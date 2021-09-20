@@ -37,9 +37,10 @@ const StyledListContainer = styled(motion.div)`
   }
 
   > div:nth-of-type(2n + 1) {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "a b b";
     @media (min-width: ${breakpoints.desktop}px) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: "a b b";
+
       > figure {
         grid-area: a;
       }
@@ -50,10 +51,10 @@ const StyledListContainer = styled(motion.div)`
   }
 
   > div:nth-of-type(2n + 2) {
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-areas: "a a b";
-
     @media (min-width: ${breakpoints.desktop}px) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-areas: "a a b";
+
       > figure {
         grid-area: b;
       }

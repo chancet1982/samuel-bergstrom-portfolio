@@ -30,7 +30,7 @@ const StyledCases = styled(motion.div)`
 const SectionCases = ({ title, text, preview }) => {
   return (
     <>
-      <CenteredTitleAndText title={title} text={text} />
+      <CenteredTitleAndText title={title} text={text} isPadded />
       <StyledCases>
         {CASES.reverse()
           .filter(({ caseStatus }) =>

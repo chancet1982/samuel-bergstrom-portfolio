@@ -2,6 +2,7 @@ import styled from "styled-components";
 import React from "react";
 import PropTypes from "prop-types";
 import useBgColor from "../../utils/useBgColor";
+import Span from "./Span";
 
 const styleCite = (size, lh, margin) => `
   font-size: ${size}rem;
@@ -43,7 +44,11 @@ const StyledCite = styled.cite`
 const Cite = ({ children }) => {
   const light = useBgColor();
 
-  return <StyledCite light={light}>{children}</StyledCite>;
+  return (
+    <StyledCite light={light}>
+      <Span small>{children}</Span>
+    </StyledCite>
+  );
 };
 
 Cite.propTypes = {

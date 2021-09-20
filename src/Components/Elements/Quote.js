@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import useBgColor from "../../utils/useBgColor";
-import useFluidTypography from "../../utils/useHeadlinesFluidTypography";
 import colors from "../../theme/colors";
+import Span from "./Span";
 
 const StyledQuote = styled.q`
   color: ${({ light }) =>
@@ -48,10 +48,10 @@ const StyledQuote = styled.q`
 
 const Quote = ({ children }) => {
   const light = useBgColor();
-  const fluidType = useFluidTypography(2);
+
   return (
-    <StyledQuote light={light} fluidType={fluidType}>
-      {children}
+    <StyledQuote light={light}>
+      <Span huge>{children}</Span>
     </StyledQuote>
   );
 };

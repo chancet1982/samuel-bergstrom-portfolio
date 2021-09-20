@@ -10,6 +10,7 @@ import List from "../Components/Elements/List";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
+import TitleAndText from "../Components/TitleAndText";
 
 // TODO: image gallery "red" background showing through images.
 export const CASE_1 = {
@@ -17,12 +18,12 @@ export const CASE_1 = {
   caseType: CASE_TYPES.REDESIGN,
   caseUrl: "/cases/1",
   thumbnail: {
-    overline: "Loomis (CASE1)",
-    title: "TMS Courier App",
+    overline: "Cash Distribution",
+    title: "Courier App redesign",
     imageUrl: "assets/case-1/thumbnail.png",
     imageAlt: "thumbnail",
     text: "Enabling better cash distribution",
-    bgColor: "rgba(254, 38, 55, .72)",
+    bgColor: "#FE636F",
   },
   details: [
     {
@@ -31,8 +32,8 @@ export const CASE_1 = {
         {
           template: SECTION_ELEMENTS.COVER,
           data: {
-            overline: "Loomis",
-            title: "TMS Courier App",
+            overline: "Cash Distribution",
+            title: "Courier App redesign",
             text: (
               <>
                 <Paragraph large>
@@ -50,17 +51,17 @@ export const CASE_1 = {
         {
           template: SECTION_ELEMENTS.OVERVIEW,
           data: {
-            bgColor: "rgba(254, 38, 55, .72)",
+            bgColor: "#FE636F",
             text: (
               <>
                 <Paragraph huge>
-                  Loomis is a world-leading integrated cash distribution
-                  network. Their couriers were using Windows mobile devices for
+                  A world-leading integrated cash distribution network had a
+                  problem. Their couriers were using Windows mobile devices for
                   monitoring their daily routes. These devices were old, slow,
                   and increasingly hard to replace in case of failure.
                 </Paragraph>
                 <Paragraph huge>
-                  Loomis decided to move the application to a new device running
+                  They decided to move the application to a new device running
                   Android. I was tasked to migrate the UI from the existing app
                   to a new platform.
                 </Paragraph>
@@ -90,7 +91,7 @@ export const CASE_1 = {
             text: (
               <>
                 <Paragraph>
-                  Loomis’s mission statement is: “Managing Cash in Society”,
+                  My client’s mission statement is: “Managing Cash in Society”,
                   they do just that in more than 20 countries. Their couriers
                   and service technicians take daily routes where they
                   distributing, collecting, and servicing ATMs and small
@@ -145,13 +146,13 @@ export const CASE_1 = {
           template: SECTION_ELEMENTS.QUOTE,
           data: {
             quote: "Our app looks like its made in the 90s",
-            cite: "Mary, Currior, Loomis Norway",
+            cite: "Mary, Currior, Norway",
           },
         },
       ],
     },
     {
-      header: "Process",
+      header: "Research",
       elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
@@ -194,39 +195,101 @@ export const CASE_1 = {
                   group interviews with couriers, service technicians, and
                   internal stakeholders.
                 </Paragraph>
-                <Title h={5}>Some of the issues found during this phase:</Title>
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            bgColor: "#FE636F",
+            title: "Insights",
+            h: 2,
+            text: (
+              <>
                 <List
                   items={[
                     <>
-                      All users were using the “default” password as they were
-                      not aware they can change a password.
+                      <TitleAndText title="Security Concerns" h={5}>
+                        <Paragraph>
+                          All users were using the “default” password as they
+                          were not aware they can change a password.
+                        </Paragraph>
+                      </TitleAndText>
                     </>,
                     <>
-                      Long customer names and long addresses were not displayed
-                      properly. <br />
+                      <TitleAndText title="Long Customer Names" h={5}>
+                        <Paragraph>
+                          Long customer names and long addresses were not
+                          displayed properly.
+                        </Paragraph>
+                      </TitleAndText>
                     </>,
                     <>
-                      Messages are used to communicate vital information about
-                      customer stops but were only available before couriers
-                      accepted the route.
+                      <TitleAndText title="Route Messages" h={5}>
+                        <Paragraph>
+                          Messages are used to communicate vital information
+                          about customer stops but were only available before
+                          couriers accepted the route.
+                        </Paragraph>
+                      </TitleAndText>
                     </>,
                     <>
-                      Couriers had problems with incorrect back-office data.
-                      This often resulted in couriers trying to pick up/deliver
-                      to the wrong clients.
+                      <TitleAndText title="Bad data" h={5}>
+                        <Paragraph>
+                          Couriers had problems with incorrect back-office data.
+                          This often resulted in couriers trying to pick
+                          up/deliver to the wrong clients.
+                        </Paragraph>
+                      </TitleAndText>
                     </>,
                     <>
-                      When reporting discrepancies, couriers used 4 error codes
-                      80% of the time. Finding those was hard to do in a long
-                      list of error codes.
+                      <TitleAndText title="Discrepancies" h={5}>
+                        <Paragraph>
+                          When reporting discrepancies, couriers used 4 error
+                          codes 80% of the time. Finding those was hard to do in
+                          a long list of error codes.
+                        </Paragraph>
+                      </TitleAndText>
                     </>,
                     <>
-                      Customer addresses were incorrect 70% of the time.
-                      Couriers were unable to inform the dispatch of these
-                      errors.
+                      <TitleAndText title="Incorrect Addresses" h={5}>
+                        <Paragraph>
+                          Customer addresses were incorrect 70% of the time.
+                          Couriers were unable to inform the dispatch of these
+                          errors.
+                        </Paragraph>
+                      </TitleAndText>
                     </>,
                   ]}
                 />
+              </>
+            ),
+          },
+        },
+      ],
+    },
+    {
+      header: "Design",
+      elements: [
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: "Simple is key",
+            h: 2,
+            text: (
+              <>
+                <Paragraph>
+                  Sometimes, you dont need to reinvent the wheel. In this case
+                  designing based on an established base was the right thing to
+                  do. In collaboration with the developers we chose to use
+                  Material Design to expedite the development.
+                </Paragraph>
+                <Paragraph>
+                  I created a custom theme, shared it with the developers and
+                  worked my way up to a high fidelity prototype, making handover
+                  a breeze.
+                </Paragraph>
               </>
             ),
           },
@@ -331,7 +394,7 @@ export const CASE_1 = {
                   off-the-shelf implementation for Xamarin.
                 </Paragraph>
                 <Paragraph>
-                  I only tweaked the color scheme to match Loomis’s corporate
+                  I only tweaked the color scheme to match the corporate
                   identity and added making a collection of unique illustrations
                   for the project to give the design some “personality”.
                 </Paragraph>
@@ -358,11 +421,13 @@ export const CASE_1 = {
             ],
           },
         },
-      ],
-    },
-    {
-      header: "Feedback",
-      elements: [
+        {
+          template: SECTION_ELEMENTS.QUOTE,
+          data: {
+            quote: "Looks good. Clear, Clean, and modern.",
+            cite: "Krister, Regional manager, Norway",
+          },
+        },
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           h: 2,
@@ -392,13 +457,6 @@ export const CASE_1 = {
             ),
           },
         },
-        {
-          template: SECTION_ELEMENTS.QUOTE,
-          data: {
-            quote: "Looks good. Clear, Clean, and modern.",
-            cite: "Krister, Regional manager, Loomis Norway",
-          },
-        },
       ],
     },
     {
@@ -407,7 +465,7 @@ export const CASE_1 = {
           template: SECTION_ELEMENTS.RESULT,
           data: {
             imageUrl: "assets/case-1/result.png",
-            bgColor: "rgba(254, 38, 55, .72)",
+            bgColor: "#FE636F",
             text: (
               <>
                 <Paragraph large>

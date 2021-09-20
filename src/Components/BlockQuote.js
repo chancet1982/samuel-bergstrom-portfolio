@@ -9,22 +9,14 @@ import Cite from "./Elements/Cite";
 import padding from "../theme/padding";
 
 const StyledBlockQuote = styled(motion.blockquote)`
-  /*position: sticky;
-  bottom: 0;*/
   padding: ${padding.vertical.double} ${padding.horizontal.quadruple};
-  min-height: ${({
-    theme: {
-      sizes: { medium },
-    },
-  }) => medium};
   text-align: center;
-  min-height: 36vh;
   display: flex;
   text-align: center;
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  max-width: 1140px;
+  max-width: 60%;
   margin: 0 auto;
 `;
 
