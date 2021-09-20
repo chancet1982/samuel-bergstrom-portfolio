@@ -20,7 +20,7 @@ export const CASE_5 = {
     coverImageUrl: "assets/case-5/cover.png",
     imageAlt: "assets/case-5/cover.png",
     text: "Self-service with a twist",
-    bgColor: "rgba(9, 93, 132, .72)",
+    bgColor: "#158FC9",
   },
   details: [
     {
@@ -39,7 +39,7 @@ export const CASE_5 = {
               </>
             ),
             imageUrl: "assets/case-5/cover.png",
-            bgColor: "rgba(9, 93, 132, .72)",
+            bgColor: "#158FC9",
           },
         },
       ],
@@ -49,7 +49,7 @@ export const CASE_5 = {
         {
           template: SECTION_ELEMENTS.OVERVIEW,
           data: {
-            bgColor: "rgba(99, 182, 187, .72)",
+            bgColor: "#158FC9",
             text: (
               <>
                 <Paragraph huge>
@@ -224,7 +224,7 @@ export const CASE_5 = {
             imageUrl: "assets/case-5/personas.png",
             imageAlt:
               "Personas, 3 distincs user groups that have contact surface with the app",
-            bgColor: "rgba(9, 93, 132, .28)",
+            bgColor: "#158FC9",
             caption:
               "Personas, 3 distincs user groups that have contact surface with the app",
           },
@@ -525,7 +525,7 @@ export const CASE_5 = {
           template: SECTION_ELEMENTS.RESULT,
           data: {
             imageUrl: "assets/case-5/result.png",
-            bgColor: "rgba(9, 93, 132, .72)",
+            bgColor: "#158FC9",
             results: [
               {
                 value: "+1.6 mil.",

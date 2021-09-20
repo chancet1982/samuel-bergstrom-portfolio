@@ -33,7 +33,7 @@ const StyledCaseThumbnail = styled(motion.div)`
   }
 
   @media (min-width: ${breakpoints.desktop}px) {
-    height: 32.828vw;
+    height: 27.5vw;
   }
 
   a {
@@ -48,8 +48,8 @@ const StyledCaseThumbnail = styled(motion.div)`
 
 const StyledCaseThumbnailCaption = styled(motion.div)`
   position: absolute;
-  padding-left: ${padding.horizontal.quadruple};
-  padding-right: ${padding.horizontal.quadruple};
+  padding-left: ${padding.horizontal.double};
+  padding-right: ${padding.horizontal.double};
   left: 0;
 `;
 
@@ -82,7 +82,7 @@ const StyledCaseIntro = styled(motion.div)`
   bottom: 0;
   left: 0;
   width: 100%;
-  padding: ${padding.vertical.double} ${padding.horizontal.quadruple};
+  padding: ${padding.vertical.double} ${padding.horizontal.double};
   backdrop-filter: blur(8px);
   background: rgba(0, 0, 0, 0.1);
   color: white;
@@ -142,63 +142,66 @@ const CaseThumbnail = ({ data, status, caseUrl }) => {
     stiffness: 100,
   };
 
+  const test = {
+    inView: {},
+    hover: {},
+  };
+
   const thumbnailImageVariants = {
-    hover: {
-      scale: 1.2,
-      transition: spring,
-    },
     inView: {
       scale: 1,
+      transition: spring,
+    },
+    hover: {
+      scale: 1.2,
       transition: spring,
     },
   };
 
   const thumbnailCaptionVariants = {
-    hover: {
-      opacity: 0.3,
-      y: "-100%",
-      transition: spring,
-    },
     inView: {
       opacity: 1,
       y: "0%",
       transition: spring,
     },
+    hover: {
+      opacity: 0.2,
+      y: "-100%",
+      transition: spring,
+    },
   };
 
   const caseIntroVariants = {
-    hover: {
-      y: "0%",
-      transition: spring,
-    },
     inView: {
       y: "100%",
+      transition: spring,
+    },
+    hover: {
+      y: "0%",
       transition: spring,
     },
   };
 
   const renderCaseThumbnail = () => {
     return (
-      <>
+      <motion.div whileHover="hover" variants={test} initial="inView">
         <StyledCaseThumbnailImage
-          initial="hidden"
           variants={thumbnailImageVariants}
           imageUrl={`${process.env.PUBLIC_URL}/${imageUrl}`}
         />
-        <StyledCaseThumbnailCaption
-          initial="hidden"
-          variants={thumbnailCaptionVariants}
-        >
+
+        <StyledCaseThumbnailCaption variants={thumbnailCaptionVariants}>
           <Overline>{overline}</Overline>
           <Title h={3} padding>
             {title}
           </Title>
         </StyledCaseThumbnailCaption>
-        <StyledCaseIntro initial="hidden" variants={caseIntroVariants}>
+
+        <StyledCaseIntro variants={caseIntroVariants}>
           <Span>{text}</Span>
         </StyledCaseIntro>
         {status === CASE_STATUS.COMING_SOON && <Tag />}
-      </>
+      </motion.div>
     );
   };
 
@@ -216,7 +219,6 @@ const CaseThumbnail = ({ data, status, caseUrl }) => {
   return (
     <StyledCaseThumbnail
       ref={intersectionRef}
-      whileHover="hover"
       initial="hidden"
       variants={thumbnailVariants}
       animate={inView ? "inView" : "hidden"}
