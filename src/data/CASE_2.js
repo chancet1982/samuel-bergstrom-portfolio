@@ -15,7 +15,7 @@ export const CASE_2 = {
   caseType: CASE_TYPES.REDESIGN,
   caseUrl: "/cases/2",
   thumbnail: {
-    overline: "Diaverum",
+    overline: "Renal Care",
     title: "d. Care",
     imageUrl: "assets/case-2/thumbnail.png",
     imageAlt: "thumbnail",
@@ -34,7 +34,7 @@ export const CASE_2 = {
         {
           template: SECTION_ELEMENTS.COVER,
           data: {
-            overline: "Diaverum",
+            overline: "Renal Care",
             title: "d. Care",
             imageUrl: "assets/case-2/cover.png",
             text: (
@@ -57,7 +57,7 @@ export const CASE_2 = {
             bgColor: "rgba(233, 183, 114, .72)",
             text: (
               <Paragraph huge>
-                Diaverum is one of the largest private renal care providers in
+                My client is one of the largest private renal care providers in
                 the world. They treat more than 40 000 patients, operate over
                 400 clinics in 20 countries. Renal patients need to constantly
                 keep an eye on their intake, reporting it back as part of their
@@ -272,7 +272,7 @@ export const CASE_2 = {
                 text: (
                   <>
                     <Paragraph>
-                      Diaverum aims to encourage its patients to take an active
+                      My client aims to encourage its patients to take an active
                       role in their treatment. In order to do that, they added
                       test results and medical values in the old app. Based on
                       our research we learned that patients weren’t interested
@@ -337,8 +337,8 @@ export const CASE_2 = {
                   we made an app that was neither.
                 </Paragraph>
                 <Paragraph>
-                  It was meant to be purely Diaverum, playful, and colorful
-                  without reducing its accessibility.
+                  It was meant to be supportive, playful, and colorful without
+                  reducing its accessibility.
                 </Paragraph>
               </>
             ),

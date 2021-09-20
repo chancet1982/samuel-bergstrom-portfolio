@@ -14,7 +14,7 @@ export const CASE_5 = {
   caseType: CASE_TYPES.DESIGN,
   caseUrl: "/cases/5",
   thumbnail: {
-    overline: "Diaverum",
+    overline: "Renal Care",
     title: "TGS-WS",
     imageUrl: "assets/case-5/thumbnail.png",
     coverImageUrl: "assets/case-5/cover.png",
@@ -29,7 +29,7 @@ export const CASE_5 = {
         {
           template: SECTION_ELEMENTS.COVER,
           data: {
-            overline: "Diaverum",
+            overline: "Renal Care",
             title: "TGS-WS",
             text: (
               <>
@@ -53,7 +53,7 @@ export const CASE_5 = {
             text: (
               <>
                 <Paragraph huge>
-                  Diaverum is one of the largest private renal care providers in
+                  My client, one of the largest private renal care providers in
                   the world. It employs more than 11 000, treating over 40 000
                   patients suffering from kidney failure. They operate more than
                   400 clinics across 22 countries.
