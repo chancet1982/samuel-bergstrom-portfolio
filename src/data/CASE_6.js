@@ -9,7 +9,7 @@ import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 
 export const CASE_6 = {
-  caseStatus: CASE_STATUS.DEAFT,
+  caseStatus: CASE_STATUS.DRAFT,
   caseType: CASE_TYPES.DesignOps,
   caseUrl: "/cases/6",
   thumbnail: {
