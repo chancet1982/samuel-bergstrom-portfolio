@@ -49,13 +49,13 @@ const AdditionalCases = () => {
       </TitleAndText>
 
       <StyledCasesList>
-        {cases.map(({ thumbnail, caseStatus }, index) => {
+        {cases.map(({ thumbnail, caseUrl, caseStatus }, index) => {
           return (
             // eslint-disable-next-line react/no-array-index-key
             <ElementContextProvider key={index}>
               <CaseThumbnail
                 data={thumbnail}
-                caseKey={index}
+                caseUrl={caseUrl}
                 key={uuid()}
                 status={caseStatus}
               />

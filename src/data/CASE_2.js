@@ -9,6 +9,7 @@ import List from "../Components/Elements/List";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
+import TitleAndText from "../Components/TitleAndText";
 
 export const CASE_2 = {
   caseStatus: CASE_STATUS.PUBLISHED,
@@ -16,7 +17,7 @@ export const CASE_2 = {
   caseUrl: "/cases/2",
   thumbnail: {
     overline: "Renal Care",
-    title: "d. Care",
+    title: "Patient Companion App",
     imageUrl: "assets/case-2/thumbnail.png",
     imageAlt: "thumbnail",
     text: (
@@ -25,7 +26,7 @@ export const CASE_2 = {
         their health.
       </>
     ),
-    bgColor: "rgba(233, 183, 114, .72)",
+    bgColor: "#FF8D48",
   },
   details: [
     {
@@ -35,7 +36,7 @@ export const CASE_2 = {
           template: SECTION_ELEMENTS.COVER,
           data: {
             overline: "Renal Care",
-            title: "d. Care",
+            title: "Patient Companion App",
             imageUrl: "assets/case-2/cover.png",
             text: (
               <>
@@ -54,7 +55,7 @@ export const CASE_2 = {
         {
           template: SECTION_ELEMENTS.OVERVIEW,
           data: {
-            bgColor: "rgba(233, 183, 114, .72)",
+            bgColor: "#FF8D48",
             text: (
               <Paragraph huge>
                 My client is one of the largest private renal care providers in
@@ -160,7 +161,7 @@ export const CASE_2 = {
       ],
     },
     {
-      header: "Process",
+      header: "Research",
       elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
@@ -182,18 +183,142 @@ export const CASE_2 = {
                   research report on the matter, hoping to avoid common pitfalls
                   and known design issues.
                 </Paragraph>
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.KEY_FIGURES,
+          data: {
+            items: [
+              {
+                value: "102",
+                description: "Survey responses",
+              },
+              { value: "5", description: "clinics" },
+              {
+                value: "3",
+                description: "countries",
+              },
+            ],
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Survey and Interviews </>,
+            text: (
+              <>
                 <Paragraph>
-                  We later looked more specifically at Renal patients. We needed
-                  to understand their condition, treatment, abilities,
-                  motivations, ambitions. We conducted Surveys and collected
-                  results from different clinics across the globe to ensure we
-                  are limiting our sampling bias in order to understand what is
-                  essential for our users.
+                  We later looked more specifically at Renal patients. We
+                  conducted Surveys aimed to align the expectations and define
+                  the essential features for our users. The survey was sent to 5
+                  clinics in 3 different countries, 102 responses were
+                  collected.
+                </Paragraph>
+                <Paragraph>
+                  On top of the survey we conducted interviews with renal
+                  patients to better understand what challanges they were
+                  facing.
                 </Paragraph>
               </>
             ),
           },
         },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Insights</>,
+            bgColor: "#FF8D48",
+            h: 2,
+            text: (
+              <>
+                <Paragraph>
+                  Based on the surveys and interviews we could conclude that:
+                </Paragraph>
+                <List
+                  items={[
+                    <>
+                      <TitleAndText
+                        title="Most patients were interested in wellbeing and health tips."
+                        h={5}
+                      >
+                        <Paragraph>
+                          72% would like to get health tips and ways to improve
+                          their wellbeing (13/18)
+                        </Paragraph>
+                      </TitleAndText>
+                    </>,
+                    <>
+                      <TitleAndText
+                        title="Patients wanted to keep informed"
+                        h={5}
+                      >
+                        <Paragraph>
+                          52% would like to follow up on their treatments
+                        </Paragraph>
+                      </TitleAndText>
+                    </>,
+                    <>
+                      <TitleAndText
+                        title="Patients want to follow up on lab results"
+                        h={5}
+                      >
+                        <Paragraph>
+                          Patients were mostly interested in lab results (blood,
+                          levels)
+                        </Paragraph>
+                      </TitleAndText>
+                    </>,
+                    <>
+                      <TitleAndText
+                        title="Patients were interested in finding and booking treatment via app."
+                        h={5}
+                      >
+                        <Paragraph>
+                          64% of patients would want to be able to find and book
+                          a clinic via app.
+                        </Paragraph>
+                      </TitleAndText>
+                    </>,
+                    <>
+                      <TitleAndText
+                        title="Patients were not interested in medications, Reminders and intake"
+                        h={5}
+                      >
+                        <Paragraph>
+                          Most patients only care about side-affectss, very few
+                          wanted to learn about the medication itself. 66% of
+                          patients were not interested in medication reminders
+                          nor did they want to report medication intake.{" "}
+                        </Paragraph>
+                      </TitleAndText>
+                    </>,
+                  ]}
+                />
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>What did we do with the data?</>,
+            text: (
+              <>
+                <Paragraph>
+                  ...We shared the information with management and they didnt
+                  care
+                </Paragraph>
+              </>
+            ),
+          },
+        },
+      ],
+    },
+    {
+      header: "Ideation & prioritization",
+      elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
@@ -216,6 +341,11 @@ export const CASE_2 = {
             caption: "Kickoff meeting, dot-voting on features",
           },
         },
+      ],
+    },
+    {
+      header: "Design",
+      elements: [
         {
           template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
           data: {
@@ -348,7 +478,7 @@ export const CASE_2 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             flip: true,
-            title: <>A sidenote about accessibility:</>,
+            title: <>Accessibility in design:</>,
             h: 3,
             text: (
               <>
@@ -356,37 +486,30 @@ export const CASE_2 = {
                   plain
                   items={[
                     <>
-                      It is always important to have accessibility in mind,
-                      especially when designing for elderlies. We made sure All
-                      colors are WCAG 2.0 AA compatible. “Heavier” font weights
-                      were used and font sizes were tested to ensure legibility.
+                      <Paragraph>
+                        Loss of sensation around the fingertips and loss of
+                        motor control is quite common in renal care. This makes
+                        scrolling especially challenging. In order to mitigate
+                        that we laid out the content to minimize the need for
+                        scrolling. We made sure that we provided at least a 9mm
+                        target area for all links and buttons to avoid
+                        miss-clicks.
+                      </Paragraph>
                     </>,
                     <>
-                      In order to address cognitive impairments, we simplified
-                      the navigation structure and made it as shallow as
-                      possible.
-                    </>,
-                    <>
-                      We utilized micro-interactions in order to to reduce
-                      confusion when things just vanish or appear on the screen,
-                      these were subtle animations to avoid seizures.
-                    </>,
-                    <>
-                      Loss of sensation around the fingertips and loss of motor
-                      control is quite common in renal care. This makes
-                      scrolling especially challenging. In order to mitigate
-                      that we laid out the content to minimize the need for
-                      scrolling. We made sure that we provided at least a 9mm
-                      target area for all links and buttons to avoid
-                      miss-clicks.
+                      <Paragraph>
+                        We made sure all colors are WCAG 2.0 AA compatible.
+                        “Heavier” font weights were used and font sizes were
+                        tested to ensure legibility and a shallow nagivation was
+                        used in order to reduce the need for recollection.
+                      </Paragraph>
                     </>,
                   ]}
                 />
               </>
             ),
             imageUrl: "assets/case-2/accessibility.jpg",
-            imageAlt: "?",
-            caption: "?",
+            imageAlt: "Just some decoration",
           },
         },
         {
@@ -458,18 +581,8 @@ export const CASE_2 = {
           template: SECTION_ELEMENTS.RESULT,
           data: {
             imageUrl: "assets/case-2/result.png",
-            bgColor: "rgba(233, 183, 114, .72)",
+            bgColor: "#FF8D48",
             results: [
-              /* {
-                value: "+500",
-                unit: "%",
-                description: "Daily self-reporting",
-              },
-              {
-                value: "+300",
-                unit: "%",
-                description: "Active users",
-              }, */
               {
                 value: "+16",
                 description: "New countries",

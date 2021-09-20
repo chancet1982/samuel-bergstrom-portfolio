@@ -32,24 +32,22 @@ const SectionCases = ({ title, text, preview }) => {
     <>
       <CenteredTitleAndText title={title} text={text} isPadded />
       <StyledCases>
-        {CASES.reverse()
-          .filter(({ caseStatus }) =>
-            preview
-              ? caseStatus === CASE_STATUS.FEATURED
-              : caseStatus !== CASE_STATUS.DRAFT
-          )
-          .map(({ thumbnail, caseStatus, caseUrl }) => {
-            return (
-              <ElementColorContextProvider>
-                <CaseThumbnail
-                  data={thumbnail}
-                  caseUrl={caseUrl}
-                  key={uuid()}
-                  status={caseStatus}
-                />
-              </ElementColorContextProvider>
-            );
-          })}
+        {CASES.filter(({ caseStatus }) =>
+          preview
+            ? caseStatus === CASE_STATUS.FEATURED
+            : caseStatus !== CASE_STATUS.DRAFT
+        ).map(({ thumbnail, caseStatus, caseUrl }) => {
+          return (
+            <ElementColorContextProvider>
+              <CaseThumbnail
+                data={thumbnail}
+                caseUrl={caseUrl}
+                key={uuid()}
+                status={caseStatus}
+              />
+            </ElementColorContextProvider>
+          );
+        })}
       </StyledCases>
       {preview && <ReadMoreLink to="cases">See all cases</ReadMoreLink>}
     </>

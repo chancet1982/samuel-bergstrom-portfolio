@@ -407,12 +407,10 @@ export const CASE_4 = {
             results: [
               {
                 value: "120%",
-                unit: "%",
                 description: "increase in overall success rate",
               },
               {
                 value: "64%",
-                unit: "%",
                 description: "decrease in time to completian",
               },
             ],

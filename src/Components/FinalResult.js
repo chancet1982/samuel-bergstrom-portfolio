@@ -67,22 +67,19 @@ const FinalResult = ({ imageUrl, bgColor, title, text, results }) => {
       animate={inView ? "inView" : "hidden"}
     >
       {
-        /* flip && ( */
         <BackgroundWrapper bgColor={bgColor}>
           <Image imageUrl={`${process.env.PUBLIC_URL}/${imageUrl}`} />
         </BackgroundWrapper>
-        /* ) */
       }
 
       {(results.length > 0 || text) && (
         <StyledResultCaption>
           <TitleAndText h={2} title={title} sticky>
             {results.length > 0 &&
-              results.map(({ value, unit, description }) => (
+              results.map(({ value, description }) => (
                 <Result
                   key={description}
                   value={value}
-                  unit={unit}
                   description={description}
                 />
               ))}

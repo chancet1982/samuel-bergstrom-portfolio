@@ -47,40 +47,65 @@ export const StyledH5 = styled.h5`
   ${headlineFont}
 `;
 
-const Title = ({ h, children, padding }) => {
+const Title = ({ h, children, withMargin }) => {
   const light = useBgColor();
 
-  const fluidType = useFluidTypography(h);
+  const fluidType = useFluidTypography(h, withMargin);
 
   const renderTitle = () => {
     switch (h) {
       case 1:
         return (
-          <StyledH1 light={light} h={h} padding={padding} fluidType={fluidType}>
+          <StyledH1
+            light={light}
+            h={h}
+            withMargin={withMargin}
+            fluidType={fluidType}
+          >
             {children}
           </StyledH1>
         );
       case 2:
         return (
-          <StyledH2 light={light} h={h} padding={padding} fluidType={fluidType}>
+          <StyledH2
+            light={light}
+            h={h}
+            withMargin={withMargin}
+            fluidType={fluidType}
+          >
             {children}
           </StyledH2>
         );
       case 3:
         return (
-          <StyledH3 light={light} h={h} padding={padding} fluidType={fluidType}>
+          <StyledH3
+            light={light}
+            h={h}
+            withMargin={withMargin}
+            fluidType={fluidType}
+          >
             {children}
           </StyledH3>
         );
       case 4:
         return (
-          <StyledH4 light={light} h={h} padding={padding} fluidType={fluidType}>
+          <StyledH4
+            light={light}
+            h={h}
+            withMargin={withMargin}
+            fluidType={fluidType}
+          >
             {children}
           </StyledH4>
         );
       case 5:
         return (
-          <StyledH5 light={light} h={h} padding={padding} fluidType={fluidType}>
+          <StyledH5
+            light={light}
+            h={h}
+            withMargin={withMargin}
+            fluidType={fluidType}
+          >
             {children}
           </StyledH5>
         );
@@ -95,12 +120,12 @@ const Title = ({ h, children, padding }) => {
 Title.propTypes = {
   h: PropTypes.number,
   children: PropTypes.node.isRequired,
-  padding: PropTypes.bool,
+  withMargin: PropTypes.bool,
 };
 
 Title.defaultProps = {
   h: 1,
-  padding: false,
+  withMargin: true,
 };
 
 export default Title;

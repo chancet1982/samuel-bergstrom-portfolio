@@ -178,7 +178,6 @@ export const CASE_1 = {
             ),
             imageUrl: "assets/case-1/flow-mapping.jpg",
             imageAlt: "Flow mapping stock photography",
-            caption: "Flow mapping stock photography",
           },
         },
         {
@@ -380,10 +379,9 @@ export const CASE_1 = {
             text: (
               <>
                 <Paragraph>
-                  All design decisions were based on the principles of “fast to
-                  implement, simple to use” In order to accomplish this I set
-                  out to minimize the total number of components in order to
-                  minimize development time.
+                  One of the guiding principles for this this project was “fast
+                  to implement, simple to use” this in turn affected a lot of
+                  the design decisions for this project.
                 </Paragraph>
                 <Paragraph>
                   At this point both the tech-stack and platform were known
@@ -399,10 +397,15 @@ export const CASE_1 = {
                   for the project to give the design some “personality”.
                 </Paragraph>
                 <Paragraph>
-                  I started off by creating low fidelity mockup of the entire
-                  system. This went through several rounds of iteration based on
-                  stakeholder and user input, then a high fidelity mockup was
-                  created and converted into an interactive prototype.
+                  During the design I put extra emphasis on reusability and
+                  sharing components and patterns accross screens.
+                </Paragraph>
+                <Paragraph>
+                  I started off by creating low fidelity wireframe. This went
+                  through several rounds of iteration based on stakeholder and
+                  user input, then a high fidelity mockup was created and
+                  converted into an interactive prototype that was tested and
+                  tweaked based on user input.
                 </Paragraph>
               </>
             ),
@@ -440,12 +443,6 @@ export const CASE_1 = {
             text: (
               <>
                 <Paragraph>
-                  All artifacts were available and open to all stakeholders at
-                  all times. These artifacts were connected in order to mimic
-                  the developed product allowing for a smoother developer
-                  handover.
-                </Paragraph>
-                <Paragraph>
                   Validation goals were set in collaboration with the client.
                   These goals were expanded into scenarios that were later
                   covered by the prototype and covered via remote usability
@@ -473,12 +470,12 @@ export const CASE_1 = {
                   positive. The app is still in development and will be released
                   soon.
                 </Paragraph>
-                <Title h={2}>After thoughts:</Title>
-                <Paragraph large>
+                <Title h={3}>After thoughts:</Title>
+                <Paragraph>
                   Despite time constraints and focus on speedy delivery, a lot
-                  of the issues uncovered during the research phase were
-                  addressed. Given more time I would have loved to revisit this
-                  redesign to gather some concrete data about its impact.
+                  of the issues uncovered and addressed. Given more time I would
+                  have loved to revisit this redesign to gather some concrete
+                  data about its impact.
                 </Paragraph>
               </>
             ),

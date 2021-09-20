@@ -528,13 +528,11 @@ export const CASE_5 = {
             bgColor: "rgba(9, 93, 132, .72)",
             results: [
               {
-                value: "1.6+",
-                unit: "mil.",
+                value: "+1.6 mil.",
                 description: "treatment station hours freed *",
               },
               {
-                value: "3.3+",
-                unit: "mil.",
+                value: "+3.3 mil.",
                 description: "staff & patients hours saved *",
               },
             ],
