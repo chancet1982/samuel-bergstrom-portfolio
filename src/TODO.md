@@ -3,9 +3,12 @@ TODO list (What's left before you're done)
 NOW:
 case-9 -> Go through and rewrite.
 case-10 -> Go through and rewrite.
-About me -> Improve images on buzzwords list
+Image gallery images overflow the screen area on smaller screens.
+Change read more to be "button" instead of "link"
+ListOfImageWithTitleAndText -> add support for padding-bottom.
 
 LATER:
+Improve the design on KeyFigures.
 Generalize background colors on TEXTBOX, LISTOFIMAGES, KEYFIGURES, QUOTE with a wrapper component.
 case-7 -> Add pictures of the report?
 Add support for quote to have a background image.
