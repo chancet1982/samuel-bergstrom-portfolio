@@ -137,7 +137,7 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
           items={data.items}
           listTitle={data.listTitle}
           listText={data.listText}
-          listBgColor={data.listBgColor}
+          elementBgColor={data.elementBgColor}
         />
       );
     case SECTION_ELEMENTS.CLIENTS:

@@ -222,7 +222,7 @@ export const CASE_9 = {
         {
           template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
           data: {
-            listBgColor: colors.offwhite,
+            elementBgColor: colors.offwhite,
             listTitle: "What has the most potential? Before, during, or after?",
             items: [
               {
@@ -310,36 +310,74 @@ export const CASE_9 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
+            bgColor: "#00ADDB",
             title: <>Insights</>,
             h: 2,
             text: (
               <>
-                <Paragraph>
-                  Most users started their search on Google. Most ended up
-                  looking at on my client’s site only after they had a clear
-                  idea of the product they want to buy. But for those that
-                  tried, it was an uphill battle.
-                </Paragraph>
-                <Paragraph>
-                  No one had trouble finding the search functionality. In
-                  general, only one of the participants preferred using on-site
-                  navigation.
-                </Paragraph>
-                <Paragraph>
-                  Search suggestions were of no use either. Most participants
-                  just typed a query and pressed “enter” leading them to the
-                  search results page.
-                </Paragraph>
-                <Paragraph>
-                  There were obvious flaws with the search results page. Users
-                  couldn’t proceed to look at product categories. Product
-                  pictures were too small. Filtering the search options was
-                  buggy and most participants just gave up at this point.
-                </Paragraph>
-                <Paragraph>
-                  Of all the participants only one was able to find a present
-                  for their partner using my client’s site
-                </Paragraph>
+                <List
+                  items={[
+                    <>
+                      <TitleAndText
+                        h={5}
+                        title="Every search starts with Google"
+                      >
+                        <Paragraph>
+                          Most users started their search on Google. Most ended
+                          up looking at on my client’s site only after they had
+                          a clear idea of the product they want to buy. But for
+                          those that tried, it was an uphill battle.
+                        </Paragraph>
+                      </TitleAndText>
+                    </>,
+                    <>
+                      <TitleAndText
+                        h={5}
+                        title="Search over on-site navigation"
+                      >
+                        <Paragraph>
+                          No one had trouble finding the search functionality.
+                          In general, only one of the participants preferred
+                          using on-site navigation.
+                        </Paragraph>
+                      </TitleAndText>
+                    </>,
+                    <>
+                      <TitleAndText
+                        h={5}
+                        title="Search suggestions add little value"
+                      >
+                        <Paragraph>
+                          Search suggestions were of no use either. Most
+                          participants just typed a query and pressed “enter”
+                          leading them to the search results page.
+                        </Paragraph>
+                      </TitleAndText>
+                    </>,
+                    <>
+                      <TitleAndText
+                        h={5}
+                        title="Search results page needs an overhaul"
+                      >
+                        <Paragraph>
+                          There were obvious flaws with the search results page.
+                          Users couldn’t proceed to look at product categories.
+                          Product pictures were too small. Filtering the search
+                          options was buggy and most participants just gave up
+                          at this point.
+                        </Paragraph>
+                      </TitleAndText>
+                    </>,
+                    <>
+                      <TitleAndText h={5} title="Not many users succeed">
+                        <Paragraph>
+                          Of all the participants only one was able to find a
+                          present for their partner using my client’s site
+                        </Paragraph>
+                      </TitleAndText>
+                    </>,
+                  ]}
+                />
               </>
             ),
           },

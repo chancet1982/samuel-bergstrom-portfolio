@@ -15,9 +15,9 @@ const StyledListOfImagesWithTitleAndText = styled(motion.div)`
   ${({ listTitle }) =>
     !listTitle && `padding-top: ${padding.vertical.double};`};
 
-  ${({ listBgColor }) =>
-    listBgColor &&
-    ` background-color: ${listBgColor}; padding-bottom: ${padding.vertical.double};`};
+  ${({ elementBgColor }) =>
+    elementBgColor &&
+    ` background-color: ${elementBgColor}; padding-top: ${padding.vertical.double}; padding-bottom: ${padding.vertical.double};`};
 `;
 
 const StyledListContainer = styled(motion.div)`
@@ -69,12 +69,12 @@ const ListOfImagesWithTitleAndText = ({
   listTitle,
   listText,
   items,
-  listBgColor,
+  elementBgColor,
 }) => {
   return (
     <>
       <StyledListOfImagesWithTitleAndText
-        listBgColor={listBgColor}
+        elementBgColor={elementBgColor}
         listTitle={listTitle}
       >
         {(listTitle || listText) && (
@@ -103,7 +103,7 @@ const ListOfImagesWithTitleAndText = ({
 ListOfImagesWithTitleAndText.propTypes = {
   listTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   listText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  listBgColor: PropTypes.string,
+  elementBgColor: PropTypes.string,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       imageUrl: PropTypes.string.isRequired,
@@ -118,7 +118,7 @@ ListOfImagesWithTitleAndText.propTypes = {
 ListOfImagesWithTitleAndText.defaultProps = {
   listTitle: null,
   listText: null,
-  listBgColor: null,
+  elementBgColor: null,
 };
 
 export default ListOfImagesWithTitleAndText;

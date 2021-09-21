@@ -9,6 +9,7 @@ import List from "../Components/Elements/List";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import TitleAndText from "../Components/TitleAndText";
+import Title from "../Components/Elements/Title";
 
 /* there is an IMAGE_WITH_CAPTION here that is wrong. */
 export const CASE_10 = {
@@ -146,6 +147,7 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
+            bgColor: "#00ADDB",
             title: <>Insights:</>,
             h: 2,
             text: (
@@ -324,6 +326,7 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
+            bgColor: "#00ADDB",
             title: <>Insights:</>,
             text: (
               <>
@@ -430,8 +433,16 @@ export const CASE_10 = {
             h: 2,
             text: (
               <>
-                <Paragraph>...</Paragraph>
-                <Paragraph>...</Paragraph>
+                <Paragraph>
+                  We set up an A/B test using a 50/50 split on select
+                  categories. We collected data and the experiment was left to
+                  run for a total of 55 days during summer.
+                </Paragraph>
+                <Paragraph>
+                  In total 1,129,261 sessions were collected and the split list
+                  had a 69% chance to be better compared to the benchmark.
+                  Modeled improvment of -2% to 4% increase in conversions.
+                </Paragraph>
               </>
             ),
             imageUrl: "assets/case-10/ab-test.png",
@@ -449,6 +460,8 @@ export const CASE_10 = {
             bgColor: "#00ADDB",
             text: (
               <>
+                <Paragraph large>...</Paragraph>
+                <Title h={3}>After thoughts: </Title>
                 <Paragraph>...</Paragraph>
               </>
             ),

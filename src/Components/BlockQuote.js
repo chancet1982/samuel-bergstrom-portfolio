@@ -18,6 +18,10 @@ const StyledBlockQuote = styled(motion.blockquote)`
   justify-content: center;
   max-width: 60%;
   margin: 0 auto;
+
+  ${({ elementBgColor }) =>
+    elementBgColor &&
+    ` background-color: ${elementBgColor}; padding: ${padding.vertical.quadruple} ${padding.horizontal.quadruple};`};
 `;
 
 // TODO: (later) reveal on scroll (fixed under other content?)
