@@ -3,8 +3,7 @@ TODO list (What's left before you're done)
 NOW:
 case-9 -> Go through and rewrite.
 case-10 -> Go through and rewrite.
-About me -> Improve the styling on the "Speaker", "Facilitator", "Engineer", "Pizziolo" section or remove and just present as a list.
-Add my story, rewrite the list of buzzwords
+About me -> Improve images on buzzwords list
 
 LATER:
 Generalize background colors on TEXTBOX, LISTOFIMAGES, KEYFIGURES, QUOTE with a wrapper component.
