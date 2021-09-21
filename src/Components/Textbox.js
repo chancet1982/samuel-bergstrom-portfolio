@@ -15,7 +15,12 @@ import colors from "../theme/colors";
 const StyledTextbox = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  max-width: 1440px;
+
+  ${(limitMaxWidth) =>
+    limitMaxWidth && {
+      maxWidth: "1440px",
+    }};
+
   margin: 0 auto;
   ${(imageUrl) =>
     !imageUrl && {
@@ -47,6 +52,11 @@ const StyledTextbox = styled(motion.div)`
     @media (min-width: ${breakpoints.desktop}px) {
       grid-column: ${({ flip }) => (flip ? "1 / span 2" : "3 / span 1")};
     }
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
 `;
 
@@ -59,10 +69,6 @@ const StyledTextboxImage = styled.figure`
   > img {
     height: auto;
   }
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
 `;
 
 const Textbox = ({
@@ -74,6 +80,7 @@ const Textbox = ({
   imageUrl,
   imageAlt,
   caption,
+  limitMaxWidth,
 }) => {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
@@ -107,7 +114,7 @@ const Textbox = ({
         inTextbox
       />
     ) : (
-      <StyledTextboxImage flip={flip}>
+      <StyledTextboxImage>
         <Image
           imageUrl={`${process.env.PUBLIC_URL}/${imageUrl}`}
           imageAlt={imageAlt}
@@ -125,6 +132,7 @@ const Textbox = ({
       flip={flip}
       bgColor={bgColor}
       imageUrl={imageUrl}
+      limitMaxWidth={limitMaxWidth}
     >
       {flip && imageUrl && renderImage()}
 
@@ -146,6 +154,7 @@ Textbox.propTypes = {
   imageUrl: PropTypes.string,
   imageAlt: PropTypes.string,
   caption: PropTypes.string,
+  limitMaxWidth: PropTypes.bool,
 };
 
 Textbox.defaultProps = {
@@ -156,6 +165,7 @@ Textbox.defaultProps = {
   imageUrl: null,
   imageAlt: null,
   caption: null,
+  limitMaxWidth: true,
 };
 
 export default Textbox;

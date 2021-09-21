@@ -6,6 +6,7 @@ import { AppContext } from "../Context/AppContext";
 import Title from "./Elements/Title";
 import padding from "../theme/padding";
 import { ViewColorContext } from "../Context/ViewColorContext";
+import colors from "../theme/colors";
 
 const StyledCardFace = styled(motion.div)`
   background: ${({
@@ -33,11 +34,12 @@ const StyledScreenTransitionContent = styled(motion.div)`
 
   > h1 {
     text-align: center;
+    color: ${colors.text.light.high} !important;
   }
 `;
 
 const StyledScreenTransition = styled(motion.div)`
-  background: ${({ bgColor, theme: { colors } }) => bgColor || colors.darkgray};
+  background: ${({ bgColor }) => bgColor || colors.darkgray};
   position: fixed;
   top: 0;
   right: 0;

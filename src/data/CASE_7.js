@@ -18,10 +18,10 @@ export const CASE_7 = {
   thumbnail: {
     overline: "Global fitness chain",
     title: "e-Commerce Prestudy & concept",
+    text: <>Exploring potential service and product offering</>,
     imageUrl: "assets/case-7/thumbnail.png",
     coverImageUrl: "assets/case-7/cover.png",
     imageAlt: "assets/case-7/cover.png",
-    text: "Exploring potential service and product offering",
     bgColor: "#2362CA",
   },
   details: [
@@ -719,7 +719,7 @@ export const CASE_7 = {
                   better way.
                 </Paragraph>
                 <Title h={3}>After thoughts:</Title>
-                <Paragraph large>
+                <Paragraph>
                   Despite time constraints and focus on speedy delivery, a lot
                   of the issues uncovered during the research phase were
                   addressed. Given more time I would have loved to revisit this

@@ -7,6 +7,9 @@ import { ROLES } from "./dictionaries/ROLES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
+import List from "../Components/Elements/List";
+import TitleAndText from "../Components/TitleAndText";
+import Title from "../Components/Elements/Title";
 
 // eslint-disable-next-line import/prefer-default-export
 export const CASE_3 = {
@@ -14,12 +17,12 @@ export const CASE_3 = {
   caseType: CASE_TYPES.DESIGN,
   caseUrl: "/cases/3",
   thumbnail: {
-    overline: "Lumens",
-    title: "Lumito",
+    overline: "Healthcare",
+    title: "Disrupting tech. digital pathology",
+    text: <>Tissue scanner interface design</>,
     imageUrl: "assets/case-3/thumbnail.png",
-    bgColor: "rgba(0,178, 162, 0.72)",
+    bgColor: "#47C8BC",
     imageAlt: "thumbnail",
-    text: <>Revolutionizing digital pathology</>,
   },
   details: [
     {
@@ -28,10 +31,14 @@ export const CASE_3 = {
         {
           template: SECTION_ELEMENTS.COVER,
           data: {
-            overline: "Lumito",
-            title: "Lumens",
+            overline: "Healthcare",
+            title: "Disrupting tech. digital pathology",
+            text: (
+              <>
+                <Paragraph large>Tissue scanner interface design</Paragraph>
+              </>
+            ),
             imageUrl: "assets/case-3/cover.png",
-            /* bgColor: "rgba(0,178, 162, 0.72)", */
           },
         },
       ],
@@ -41,19 +48,19 @@ export const CASE_3 = {
         {
           template: SECTION_ELEMENTS.OVERVIEW,
           data: {
-            bgColor: "rgba(0,178, 162, 0.72)",
+            bgColor: "#47C8BC",
             text: (
               <>
                 <Paragraph huge>
-                  Lumito is a medical startup that developed a new technology
-                  that can revolutionize Cancer diagnosis. Their idea was to
-                  provide a view that will only show mutated cells, not healthy
-                  tissue. In order to do that they developed a new staining
-                  technology unsupported by current-day scanners.
+                  A medical startup that developed a new technology that can
+                  revolutionize Cancer diagnosis. Their idea was to provide a
+                  view that will only show mutated cells, not healthy tissue. In
+                  order to do that they developed a new staining technology
+                  unsupported by current-day scanners.
                 </Paragraph>
                 <Paragraph huge>
-                  Lumito asked for our help in creating the software for their
-                  new tissue scanner that will support their new staining type.
+                  They asked for our help in creating the software for their new
+                  tissue scanner that will support their new staining type.
                 </Paragraph>
               </>
             ),
@@ -90,7 +97,7 @@ export const CASE_3 = {
                   very long period.
                 </Paragraph>
                 <Paragraph>
-                  Lumito needed to show that their revolutionary new staining
+                  My client needed to show that their revolutionary new staining
                   technology works. They decided to create their own scanner to
                   help with pre-cancer diagnosis. I was tasked to create the
                   interface for the control unit for this new scanner.
@@ -123,11 +130,6 @@ export const CASE_3 = {
             ],
           },
         },
-      ],
-    },
-    {
-      header: "Process",
-      elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
@@ -137,7 +139,7 @@ export const CASE_3 = {
               <>
                 <Paragraph>
                   As the focus of this project was creating a scanner to support
-                  Lumito’s tech. Certain fundamental questions were left
+                  their tech. Certain fundamental questions were left
                   unanswered. For Example: do Pathologists even prefer their
                   imaging compared to conventional technology. Instead, the sole
                   focus was to create the “best” scanner for its intended
@@ -169,9 +171,14 @@ export const CASE_3 = {
               </>
             ),
             imageUrl: "assets/case-3/personas.png",
-            caption: "A picture of the personas defined for this device",
+            imageAlt: "The personas used for this project",
           },
         },
+      ],
+    },
+    {
+      header: "Research",
+      elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
@@ -216,33 +223,102 @@ export const CASE_3 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Research findings and application:</>,
+            title: "Digital pathology, crash course",
             h: 2,
             text: (
               <>
                 <Paragraph>
-                  After visiting the clinics and interviewing lab-technicians it
-                  was evident that technicians would rather have a solution that
-                  is fully automated. Digital pathology was already adding
-                  additional workload on lab personnel. In healthcare, it is a
-                  known fact that there is a shortage of pathologists. A
-                  lesser-known fact however is that the bottleneck for diagnosis
-                  isn’t pathologists but actually the process for producing
-                  digital tissue scans.
+                  We collaborated with 2 hospitals in Sweden and visited an
+                  external pathology lab where we spoke to both lab technicians
+                  and experts within pathology to gain knowledge of their work
+                  environment, needs, and challanges.
                 </Paragraph>
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.KEY_FIGURES,
+          data: {
+            items: [
+              {
+                value: "2",
+                description: "Hospitals visited",
+              },
+              { value: "13", description: "Lab & expert interviews" },
+            ],
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Research findings and application:</>,
+            h: 2,
+            bgColor: "#47C8BC",
+            text: (
+              <>
                 <Paragraph>
-                  Due to scanners being overly sensitive (slides are getting
-                  stuck if their labels are protruding) every slide needs to be
-                  sanded by hand. This creates dust that later sets inside the
-                  scanners, leads to unwanted artifacts, requires daily
-                  cleaning, and increases the scanner’s failure rate
-                  considerably.
+                  We learned a lot about the work environment. This was not a
+                  research lab, but an assembly line these technicians slicing,
+                  sanding, filing, and preparing tissue samples in hectic pase.
                 </Paragraph>
-                <Paragraph>
-                  In retrospect, a lot of lives would have been saved if only
-                  scanners were a little more tolerant towards protruding
-                  labels.
-                </Paragraph>
+                <List
+                  items={[
+                    <>
+                      <TitleAndText h={5} title="Production line, not a lab">
+                        <Paragraph>
+                          After visiting the clinics and interviewing
+                          lab-technicians it was evident that technicians would
+                          rather have a solution that is fully automated.
+                          Digital pathology was already adding additional
+                          workload on lab personnel. In healthcare, it is a
+                          known fact that there is a shortage of pathologists. A
+                          lesser-known fact however is that the bottleneck for
+                          diagnosis isn’t pathologists but actually the process
+                          for producing digital tissue scans.
+                        </Paragraph>
+                      </TitleAndText>
+                    </>,
+                    <>
+                      <TitleAndText h={5} title="Dust is the real enemy">
+                        <Paragraph>
+                          Due to scanners being overly sensitive (slides are
+                          getting stuck if their labels are protruding) every
+                          slide needs to be sanded by hand. This creates dust
+                          that later sets inside the scanners, leads to unwanted
+                          artifacts, requires daily cleaning, and increases the
+                          scanner’s failure rate considerably. It is safe to
+                          assume, a lot of lives would have been saved if only
+                          scanners were a little more tolerant towards
+                          protruding labels.
+                        </Paragraph>
+                      </TitleAndText>
+                    </>,
+                    <>
+                      <TitleAndText
+                        h={5}
+                        title="We’re solving the wrong problem"
+                      >
+                        <Paragraph>
+                          In retrospect, it was clear that the issue isnt
+                          providing better cancer diagnosis. Nor was it the lack
+                          of pathologists. If at all the product should be able
+                          to provide a pre-diagnosis evaluation in order to free
+                          up pathologists to deal with the increasing workload.
+                        </Paragraph>
+                        <Paragraph>
+                          Digital pathology in itself is a huge leap forward.
+                          Instead of sending physical tissue samples from one
+                          clinic to another, digital copies could be sent. The
+                          side-effect however was that it increased the workload
+                          on lab personal, reducing their role to manufacturing
+                          workers, and creating an environment where speed is
+                          all that matters.
+                        </Paragraph>
+                      </TitleAndText>
+                    </>,
+                  ]}
+                />
               </>
             ),
           },
@@ -419,11 +495,11 @@ export const CASE_3 = {
           template: SECTION_ELEMENTS.RESULT,
           data: {
             imageUrl: "assets/case-3/result.png",
-            bgColor: "rgba(0, 178, 162, 0.72)",
+            bgColor: "#47C8BC",
             title: <>Final thoughts:</>,
             text: (
               <>
-                <Paragraph>
+                <Paragraph large>
                   It is impossible to evaluate an ongoing project. Although
                   internal testing was conducted, it was insufficient to uncover
                   specific issues either due to the use environment, user group,
@@ -432,10 +508,14 @@ export const CASE_3 = {
                   is largely dependent on hardware, technology limitations,
                   scanning speed, and other factors.
                 </Paragraph>
+                <Title h={3}>After thoughts</Title>
                 <Paragraph>
-                  Looking at the narrow perspective of the interface, I am
-                  pleased with the result. Only time will tell if this device
-                  will gain traction in pathology clinics.
+                  This scanner is but a first step. It is meant as a proof of
+                  concept for the technology. In retrospect a better approach
+                  altogether might have been signing up partnerships with
+                  existing scanner manufacturers to include support for this new
+                  staining technology. Only time will tell if this device will
+                  gain traction in pathology clinics.
                 </Paragraph>
               </>
             ),

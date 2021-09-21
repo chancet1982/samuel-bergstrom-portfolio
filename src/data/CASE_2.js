@@ -18,14 +18,9 @@ export const CASE_2 = {
   thumbnail: {
     overline: "Renal Care",
     title: "Patient Companion App",
+    text: <>Redesigning a companion app for renal care patients.</>,
     imageUrl: "assets/case-2/thumbnail.png",
     imageAlt: "thumbnail",
-    text: (
-      <>
-        Redesigning a companion app to empower renal patients and take charge of
-        their health.
-      </>
-    ),
     bgColor: "#FF8D48",
   },
   details: [
@@ -106,10 +101,10 @@ export const CASE_2 = {
                   burden both on patients and staff.
                 </Paragraph>
                 <Paragraph>
-                  In its previous life, d. care started off as an initiative to
-                  empower patients but it never really took off. Reporting
-                  figures were low, rating on App Store and Google lay store
-                  negative, and generally, it didn’t really perform as expected.
+                  The app was originally designed as an initiative to empower
+                  patients but it never really took off. Reporting figures were
+                  low, rating on App Store and Google lay store negative, and
+                  generally, it didn’t really perform as expected.
                 </Paragraph>
               </>
             ),

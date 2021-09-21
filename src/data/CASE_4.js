@@ -12,16 +12,16 @@ import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 
 /* there is an IMAGE_WITH_CAPTION here that is wrong. */
 export const CASE_4 = {
-  caseStatus: CASE_STATUS.COMING_SOON,
+  caseStatus: CASE_STATUS.PUBLISHED,
   caseType: CASE_TYPES.REDESIGN,
   caseUrl: "/cases/4",
   thumbnail: {
-    overline: "NoWaste",
-    title: "e-drop",
+    overline: "Logistics",
+    title: "Delivery, unattended",
+    text: <>Home delivery box gets a companion app</>,
     imageUrl: "assets/case-4/thumbnail.png",
     imageAlt: "thumbnail",
-    text: "Delivery, unattended",
-    bgColor: "rgba(99, 182, 187, .72)",
+    bgColor: "#546368",
   },
   details: [
     {
@@ -30,12 +30,14 @@ export const CASE_4 = {
         {
           template: SECTION_ELEMENTS.COVER,
           data: {
-            overline: "NoWaste",
+            overline: "Logistics",
             title: "e-drop",
             imageUrl: "assets/case-4/cover.png",
             text: (
               <>
-                <Paragraph large>Delivery, unattended</Paragraph>
+                <Paragraph large>
+                  Home delivery box gets a companion app
+                </Paragraph>
               </>
             ),
           },
@@ -47,7 +49,7 @@ export const CASE_4 = {
         {
           template: SECTION_ELEMENTS.OVERVIEW,
           data: {
-            bgColor: "rgba(99, 182, 187, .72)",
+            bgColor: "#546368",
             text: (
               <Paragraph huge>
                 NoWaste is a leading Global Logistics and transport company.
@@ -214,7 +216,7 @@ export const CASE_4 = {
           data: {
             items: [
               {
-                bgColor: "rgba(9, 93, 132, .28)",
+                bgColor: "#546368",
                 imageUrl: "assets/case-4/before.png",
                 imageAlt: "Flows before redesign",
                 title: "Flows before redesign",
@@ -227,7 +229,7 @@ export const CASE_4 = {
                 ),
               },
               {
-                bgColor: "rgba(9, 93, 132, .28)",
+                bgColor: "#546368",
                 imageUrl: "assets/case-4/after.png",
                 imageAlt: "Flows before redesign",
                 title: "Flows before redesign",
@@ -403,7 +405,7 @@ export const CASE_4 = {
           template: SECTION_ELEMENTS.RESULT,
           data: {
             imageUrl: "assets/case-4/result.png",
-            bgColor: "rgba(99, 182, 187, .72)",
+            bgColor: "#546368",
             results: [
               {
                 value: "120%",

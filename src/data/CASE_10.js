@@ -12,15 +12,15 @@ import TitleAndText from "../Components/TitleAndText";
 
 /* there is an IMAGE_WITH_CAPTION here that is wrong. */
 export const CASE_10 = {
-  caseStatus: CASE_STATUS.FEATURED,
+  caseStatus: CASE_STATUS.PUBLISHED,
   caseType: CASE_TYPES.CONCEPT,
   caseUrl: "/cases/10",
   thumbnail: {
     overline: "Price Comparison Service",
     title: "Increasing traffic to paying customers",
+    text: <>Small change, big impact</>,
     imageUrl: "assets/case-10/thumbnail.png",
     imageAlt: "thumbnail",
-    text: "Small change, big impact",
     bgColor: "#00ADDB",
   },
   details: [
@@ -212,6 +212,9 @@ export const CASE_10 = {
           data: {
             title: <>Looking for ideas</>,
             h: 2,
+            imageUrl: "assets/case-10/ideation.png",
+            imageAlt: "",
+            caption: "Digital whiteboard from one of the workshops",
             text: (
               <>
                 <Paragraph>
@@ -220,8 +223,9 @@ export const CASE_10 = {
                 </Paragraph>
 
                 <Paragraph>
-                  We ideation workshops for identifying potential solutions and
-                  ended up with a list of over 60 different ideas.
+                  We conducted ideation workshops with different stakeholder
+                  grouped and combined all the suggestions into a list with a
+                  little over 60 improvement suggestions.
                 </Paragraph>
               </>
             ),

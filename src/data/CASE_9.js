@@ -20,9 +20,9 @@ export const CASE_9 = {
   thumbnail: {
     overline: "Price Comparison Service",
     title: "Improving search experience",
+    text: <>Genarating millions without moving a pixel</>,
     imageUrl: "assets/case-9/thumbnail.png",
     imageAlt: "thumbnail",
-    text: "Genarating millions without moving a pixel",
     bgColor: "#00ADDB",
   },
   details: [
@@ -504,10 +504,18 @@ export const CASE_9 = {
             bgColor: "#00ADDB",
             text: (
               <>
-                <Paragraph>
+                <Paragraph large>
                   A 1% increase in conversion is worth about 2.8 mil. kr
                   annually. A potential increase of 1% to 3% secured resources
                   to shift the focus into improving the search on the service.
+                </Paragraph>
+                <Title h={3}>After thoughts: </Title>
+                <Paragraph>
+                  This wasn’t about creating a sustainable/maintainable
+                  solution. It was about showing the potential of a good search
+                  on the bottom line. As such it worked perfectly but it is not
+                  a good solution, if not maintained it can become stale and
+                  eventually harm conversions.
                 </Paragraph>
               </>
             ),

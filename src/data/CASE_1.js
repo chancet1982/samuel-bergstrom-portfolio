@@ -20,9 +20,9 @@ export const CASE_1 = {
   thumbnail: {
     overline: "Cash Distribution",
     title: "Courier App redesign",
+    text: <>Redesign as an oppurtunity for change.</>,
     imageUrl: "assets/case-1/thumbnail.png",
     imageAlt: "thumbnail",
-    text: "Enabling better cash distribution",
     bgColor: "#FE636F",
   },
   details: [
@@ -145,7 +145,8 @@ export const CASE_1 = {
         {
           template: SECTION_ELEMENTS.QUOTE,
           data: {
-            quote: "Our app looks like its made in the 90s",
+            quote:
+              "Our app looks like its made in the 90s, its really annoying to work with",
             cite: "Mary, Currior, Norway",
           },
         },
@@ -163,12 +164,11 @@ export const CASE_1 = {
             text: (
               <>
                 <Paragraph>
-                  This wasn’t an easy starting point, I needed to get my
-                  bearings fast. I sat with all stakeholders and mapped the
-                  functionality included in the existing app.
+                  I sat with all stakeholders and mapped the functionality
+                  included in the existing app.
                 </Paragraph>
                 <Paragraph>
-                  I then sat with the developer to define our ways of working.
+                  I then sat with the developers to define our ways of working.
                   We agreed that we will collaborate and deliver the design
                   iteratively to reduce risks. Focusing first on the known
                   areas, I could ensure that the first pieces would be ready to

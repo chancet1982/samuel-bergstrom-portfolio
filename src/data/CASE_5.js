@@ -15,11 +15,11 @@ export const CASE_5 = {
   caseUrl: "/cases/5",
   thumbnail: {
     overline: "Renal Care",
-    title: "TGS-WS",
+    title: "Self service Kiost",
+    text: <>Speeding up adminisions and discharge in dialysis clinics.</>,
     imageUrl: "assets/case-5/thumbnail.png",
     coverImageUrl: "assets/case-5/cover.png",
     imageAlt: "assets/case-5/cover.png",
-    text: "Self-service with a twist",
     bgColor: "#158FC9",
   },
   details: [
@@ -30,7 +30,7 @@ export const CASE_5 = {
           template: SECTION_ELEMENTS.COVER,
           data: {
             overline: "Renal Care",
-            title: "TGS-WS",
+            title: "Self service Kiost",
             text: (
               <>
                 <Paragraph large>
@@ -372,10 +372,12 @@ export const CASE_5 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>If at first, you don’t succeed.</>,
+            h: 2,
             flip: true,
+            limitMaxWidth: false,
             imageUrl: "assets/case-5/design.jpg",
             imageAlt: "One of the patients during our interview",
-            caption: "One of the patients during our interview",
+            caption: "Patients during our interview",
             text: (
               <>
                 <Paragraph>
@@ -395,12 +397,28 @@ export const CASE_5 = {
                   was too unfamiliar. Texts were too long and didn’t provide
                   enough clarity.
                 </Paragraph>
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Simplicity wins every time.</>,
+            h: 2,
+            text: (
+              <>
                 <Paragraph>
-                  For the next version, I opted for a much simpler design
-                  removing all illustrations and aimed at a more familiar
-                  design. I removed all illustrations, increased the contrast,
-                  and text sizes, and provided additional signifiers to
-                  interactive elements.
+                  It was back to the drawingboard. Elderlies use kiosks
+                  regularly, ATMs for example, where utility, simplicity, and
+                  fermiliarity play a key role. The new design was stripped from
+                  all decorative elements, contrast ratios were increased, and
+                  signifiers added in order to make the design more usable.
+                </Paragraph>
+                <Paragraph>
+                  This was a deviation from their corporate identity and brand
+                  guidelines, I shared my idea with the PO and we agreed it was
+                  worth testing.
                 </Paragraph>
               </>
             ),

@@ -81,6 +81,7 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
             imageAlt={data.imageAlt}
             caption={data.caption}
             flip={data.flip}
+            limitMaxWidth={data.limitMaxWidth}
             bgColor={data.bgColor}
           />
         </ElementColorContextProvider>
