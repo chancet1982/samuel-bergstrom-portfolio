@@ -127,7 +127,7 @@ export const TESTIMONIALS = [
   {
     author: {
       authorName: "Mihai Nueleanu",
-      authorTitle: "Former Team Lead, IBM Garage",
+      authorTitle: "CTO & Co-founder, Literal",
       authorImageUrl: "assets/testimonials/mihai-nueleanu.jpeg",
     },
     content: (

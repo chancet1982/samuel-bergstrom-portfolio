@@ -285,7 +285,7 @@ export const CASE_2 = {
                           Most patients only care about side-affectss, very few
                           wanted to learn about the medication itself. 66% of
                           patients were not interested in medication reminders
-                          nor did they want to report medication intake.{" "}
+                          nor did they want to report medication intake.
                         </Paragraph>
                       </TitleAndText>
                     </>,
@@ -298,12 +298,14 @@ export const CASE_2 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>What did we do with the data?</>,
+            title: <>Sharing back the insights.</>,
             text: (
               <>
                 <Paragraph>
-                  ...We shared the information with management and they didnt
-                  care
+                  The insights were shared with the internal stakeholders and
+                  helped define priorities for the app. Some feaures presented
+                  high value for the business hence were included even if their
+                  user value was limited.
                 </Paragraph>
               </>
             ),

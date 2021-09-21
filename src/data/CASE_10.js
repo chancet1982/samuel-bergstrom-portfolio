@@ -458,11 +458,21 @@ export const CASE_10 = {
           data: {
             imageUrl: "assets/case-10/result.png",
             bgColor: "#00ADDB",
+            results: [{ value: 5.7, description: "mil. increse in revenue" }],
             text: (
               <>
-                <Paragraph large>...</Paragraph>
+                <Paragraph large>
+                  On top of the direct impact, this change should expected to{" "}
+                  <strong>help onboard new customers</strong>. This is
+                  especially true when expanding to new-markets and opens the
+                  door for exploring new service offerings.
+                </Paragraph>
                 <Title h={3}>After thoughts: </Title>
-                <Paragraph>...</Paragraph>
+                <Paragraph>
+                  As I see this, it is only a first step in a much larger
+                  journey. It is a great example of a minor tweak that really
+                  hits the nail on the head.
+                </Paragraph>
               </>
             ),
           },

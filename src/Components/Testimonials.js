@@ -7,6 +7,7 @@ import Span from "./Elements/Span";
 import { TESTIMONIALS } from "../data/dictionaries/TESTIMONIALS";
 import padding from "../theme/padding";
 import colors from "../theme/colors";
+import breakpoints from "../theme/breakpoints";
 
 const StyledTestimonials = styled(motion.div)`
   padding: ${padding.vertical.double} ${padding.horizontal.double};
@@ -16,48 +17,85 @@ const StyledTestimonials = styled(motion.div)`
 `;
 
 const StyledTestimonial = styled(motion.div)`
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  @media (min-width: ${breakpoints.tablet_sm}px) {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
   margin-bottom: ${padding.vertical.single};
 
+  > div {
+    position: relative;
+
+    :before {
+      content: "";
+      width: 0;
+      height: 0;
+      position: absolute;
+    }
+  }
+
   :nth-of-type(2n + 1) {
-    grid-template-areas: "a b b b b";
+    @media (max-width: ${breakpoints.tablet_sm - 1}px) {
+      > div {
+        border-radius: 0 2rem 2rem 2rem;
 
-    > div {
-      border-radius: 2rem 2rem 2rem 0;
-      position: relative;
+        ::before {
+          left: 0;
+          top: -2rem;
+          border: solid 1rem;
+          border-color: transparent transparent ${colors.offwhite}
+            ${colors.offwhite};
+        }
+      }
+    }
 
-      ::before {
-        content: "";
-        width: 0;
-        height: 0;
-        position: absolute;
-        left: -2rem;
-        bottom: 0;
-        border: solid 1rem;
-        border-color: transparent ${colors.offwhite} ${colors.offwhite}
-          transparent;
+    @media (min-width: ${breakpoints.tablet_sm}px) {
+      grid-template-areas: "a b b b b";
+
+      > div {
+        border-radius: 2rem 2rem 2rem 0;
+
+        ::before {
+          left: -2rem;
+          bottom: 0;
+          border: solid 1rem;
+          border-color: transparent ${colors.offwhite} ${colors.offwhite}
+            transparent;
+        }
       }
     }
   }
 
   :nth-of-type(2n + 2) {
-    grid-template-areas: "b b b b a";
+    @media (max-width: ${breakpoints.tablet_sm - 1}px) {
+      > div {
+        border-radius: 2rem 0 2rem 2rem;
 
-    > div {
-      border-radius: 2rem 2rem 0 2rem;
-      position: relative;
+        ::before {
+          right: 0;
+          top: -2rem;
+          border: solid 1rem;
+          border-color: transparent ${colors.offwhite} ${colors.offwhite}
+            transparent;
+        }
+      }
+    }
 
-      ::before {
-        content: "";
-        width: 0;
-        height: 0;
-        position: absolute;
-        right: -2rem;
-        bottom: 0;
-        border: solid 1rem;
-        border-color: transparent transparent ${colors.offwhite}
-          ${colors.offwhite};
+    @media (min-width: ${breakpoints.tablet_sm}px) {
+      grid-template-areas: "b b b b a";
+
+      > div {
+        border-radius: 2rem 2rem 0 2rem;
+        position: relative;
+
+        ::before {
+          right: -2rem;
+          bottom: 0;
+          border: solid 1rem;
+          border-color: transparent transparent ${colors.offwhite}
+            ${colors.offwhite};
+        }
       }
     }
   }
