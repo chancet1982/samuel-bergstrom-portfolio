@@ -88,6 +88,7 @@ const StyledAuthorImage = styled(motion.img)`
   height: 6rem;
   clip-path: circle(50%);
   margin: 0 auto;
+  filter: grayscale(100%);
 `;
 
 const StyledAuthorName = styled(motion.figcaption)``;

@@ -150,10 +150,12 @@ const CaseThumbnail = ({ data, status, caseUrl }) => {
   const thumbnailImageVariants = {
     inView: {
       scale: 1,
+      opacity: 1,
       transition: spring,
     },
     hover: {
       scale: 1.2,
+      opacity: 0.2,
       transition: spring,
     },
   };
@@ -165,7 +167,7 @@ const CaseThumbnail = ({ data, status, caseUrl }) => {
       transition: spring,
     },
     hover: {
-      opacity: 0.2,
+      opacity: 0.8,
       y: "-100%",
       transition: spring,
     },

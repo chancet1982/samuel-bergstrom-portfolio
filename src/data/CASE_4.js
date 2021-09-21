@@ -9,6 +9,7 @@ import List from "../Components/Elements/List";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
+import TitleAndText from "../Components/TitleAndText";
 
 /* there is an IMAGE_WITH_CAPTION here that is wrong. */
 export const CASE_4 = {
@@ -90,8 +91,8 @@ export const CASE_4 = {
                   fresh goods. Left unattended, milk can go sour, and fresh
                   vegetable shelf life is drastically reduced. NoWaste is set to
                   solve this problem by creating a refrigerated outdoor delivery
-                  box unlocked using an app. The existing was not received harsh
-                  criticism by all test users and needed to be redesigned.
+                  box unlocked using an app. The existing app was not well
+                  received and needed to be redesigned.
                 </Paragraph>
               </>
             ),
@@ -174,12 +175,31 @@ export const CASE_4 = {
                   their food deliveries, what is important for them and how do
                   they experience the current app.
                 </Paragraph>
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Survey, anyone?</>,
+            h: 2,
+            text: (
+              <>
                 <Paragraph>
                   We decided to send a feedback questionnaire to test users and
                   An open survey to users that match the products’ target
                   audience. We were hoping to get a better understanding of the
                   extent of the problems, desirable features, and even use for
                   of the responders to a future usability test.
+                </Paragraph>
+
+                <Paragraph>
+                  <strong>Note: </strong> Sadly, short after sending the survey
+                  we realised that the test group actually consisted of a
+                  handful users that got a locker for free. Far from what we
+                  needed. Despite that the input we got from them affirmed what
+                  we already suspected.
                 </Paragraph>
               </>
             ),
@@ -200,6 +220,17 @@ export const CASE_4 = {
                   flows in the current app and identify the most commonly used
                   flows.
                 </Paragraph>
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Usability test, round 1, establishing a benchmark</>,
+            h: 2,
+            text: (
+              <>
                 <Paragraph>
                   Based on that I could create scenarios to cover key
                   functionality and conducted usability testing to serve as a
@@ -212,121 +243,75 @@ export const CASE_4 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SIDE_BY_SIDE_IMAGES_AND_TEXT,
-          data: {
-            items: [
-              {
-                bgColor: "#546368",
-                imageUrl: "assets/case-4/before.png",
-                imageAlt: "Flows before redesign",
-                title: "Flows before redesign",
-                text: (
-                  <>
-                    <Paragraph>
-                      Something about how annoying it was to use before.
-                    </Paragraph>
-                  </>
-                ),
-              },
-              {
-                bgColor: "#546368",
-                imageUrl: "assets/case-4/after.png",
-                imageAlt: "Flows before redesign",
-                title: "Flows before redesign",
-                text: (
-                  <>
-                    <Paragraph>
-                      Something about how wonderful it could have been
-                    </Paragraph>
-                  </>
-                ),
-              },
-            ],
-          },
-        },
-        {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Noteworthy findings and impact:</>,
-            h: 5,
+            title: <>Insights:</>,
+            h: 2,
+            bgColor: "#546368",
             text: (
               <>
                 <List
                   items={[
                     <>
-                      Login was cumbersome and required users to create an
-                      account by using a username then securing the account with
-                      a password only after which users needed to link their
-                      account with their phone and subscription code.
-                      <br />
-                      <strong>Adjustment - </strong>login was simplified and the
-                      concept was reduced to “connect a mobile device to one or
-                      more subscriptions”.
+                      <TitleAndText h={5} title="Onboarding is cumbersome">
+                        <Paragraph>
+                          Login was cumbersome and required users to create an
+                          account by using a username then securing the account
+                          with a password only after which users needed to link
+                          their account with their phone and subscription code.
+                        </Paragraph>
+                      </TitleAndText>
                     </>,
                     <>
-                      Another confusing concept was “key sharing”. Users could
-                      allow temporary access by “sharing” their access keys with
-                      other devices. None of our test users were able to
-                      understand the concept and non-expressed interest in
-                      sharing keys “temporarily”
-                      <br />
-                      <strong>Adjustment - </strong>The idea of shared access
-                      was simplified to its core. I.E. connecting multiple
-                      devices to the same delivery unit. Based on our testing
-                      this was a lot easier for people to understand and use
+                      <TitleAndText h={5} title="Key Sharing is confusing">
+                        <Paragraph>
+                          Another confusing concept was “key sharing”. Users
+                          could allow temporary access by “sharing” their access
+                          keys with other devices. None of our test users were
+                          able to understand the concept and non-expressed
+                          interest in sharing keys “temporarily”
+                        </Paragraph>
+                      </TitleAndText>
                     </>,
                     <>
-                      Security settings were too granular and were hard to
-                      understand. We saw that users that match their target
-                      audience were prioritizing convenience over security and
-                      were content with 2 settings, open for all or secured
-                      delivery.
-                      <br />
-                      <strong>Adjustment - </strong>We considered using
-                      proximity as a means of unlocking the delivery unit so it
-                      is secure if the owner is away but open when the owner is
-                      nearby. This was too costly to implement in an existing
-                      hardware device but the security settings were simplified
-                      to “open until delivered” and “open for all”
+                      <TitleAndText h={5} title="Security">
+                        <Paragraph>
+                          Security settings were far too granular and confusing.
+                          We saw that users prioritize convenience over security
+                          and were content with 2 settings, Open for All or
+                          Secured Delivery.
+                        </Paragraph>
+                      </TitleAndText>
                     </>,
                     <>
-                      {" "}
-                      The cooling schedule was a feature in which users could
-                      control their device’s cooling schedule in order to save
-                      electricity. During testing, it became apparent that it
-                      was overly complex and was too flexible.
-                      <br />
-                      <strong>Adjustment - </strong>Instead of providing full
-                      flexibility it was decided that by default cooling will
-                      only be active during the workdays daytime. The
-                      “always-on” option was kept but not as default while the
-                      cooling schedule itself was simplified. Users selected a
-                      start, end, and in which days the cooling should be on.
+                      <TitleAndText h={5} title="Cooling schedule">
+                        <Paragraph>
+                          The cooling schedule was a feature in which users
+                          could control their device’s cooling schedule in order
+                          to save electricity. During testing, it became
+                          apparent that it was overly granular and hard to use.
+                        </Paragraph>
+                      </TitleAndText>
                     </>,
                     <>
-                      {" "}
-                      The idea was that the same app used privately could also
-                      be used for opening multiple lockers in a corporate
-                      environment. This caused a cluttered and messy Landing
-                      screen UI.
-                      <br />
-                      <strong>Adjustment - </strong>Based on the common case
-                      (one user one delivery unit) we decided to move the locker
-                      view (where you control and adjust the locker) as the main
-                      view, swipe to the left to change the active locker, and
-                      to the right to add a locker.
+                      <TitleAndText h={5} title="Unlocking the locker lockers">
+                        <Paragraph>
+                          The idea was that the same app used privately could
+                          also be used for opening multiple lockers in a
+                          corporate environment. This caused a cluttered and
+                          messy Landing screen UI.
+                        </Paragraph>
+                      </TitleAndText>
                     </>,
                     <>
-                      {" "}
-                      Some users complained about not knowing if their locker is
-                      on or not and if it was ready to receive a delivery and
-                      that when a delivery is made it is hard to find the
-                      lock/unlock button.
-                      <br />
-                      <strong>Adjustment - </strong>The locker status and the
-                      temp was added to the main locker view. The most commonly
-                      used button “lock/unlock” was placed predominantly on that
-                      screen as well.
+                      <TitleAndText h={5} title="Is it working?">
+                        <Paragraph>
+                          Some users complained about not knowing if their
+                          locker is on or not and if it was ready to receive a
+                          delivery and that when a delivery is made it is hard
+                          to find the lock/unlock button.
+                        </Paragraph>
+                      </TitleAndText>
                     </>,
                   ]}
                 />
@@ -342,7 +327,9 @@ export const CASE_4 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Mapping, Slimming, and optimizing</>,
+            title: (
+              <>Slimming, simplifying and optimizing common functionality</>
+            ),
             h: 2,
             text: (
               <>
@@ -365,6 +352,126 @@ export const CASE_4 = {
             ),
           },
         },
+        {
+          template: SECTION_ELEMENTS.SIDE_BY_SIDE_IMAGES_AND_TEXT,
+          data: {
+            items: [
+              {
+                imageUrl: "assets/case-4/before.png",
+                imageAlt: "Unlocking the locker before redesign",
+                title: "Unlock unit, before",
+                text: (
+                  <>
+                    <Paragraph>
+                      Before, lockers were not listed in the home screen. In
+                      order to unlock a locker (the most common use for the app)
+                      users had to go to the lockers page. select a locker.
+                      generate a barcode and then scan the barcode to unlock the
+                      locker. this meant that only the users themselves could
+                      use the locker and that the device could not be unlocked
+                      remotely (for example if a user was not home but wanted a
+                      deliver to take place)
+                    </Paragraph>
+                  </>
+                ),
+              },
+              {
+                imageUrl: "assets/case-4/after.png",
+                imageAlt: "Unlocking the locker before after",
+                title: "Unlock unit, after",
+                text: (
+                  <>
+                    <Paragraph>
+                      Considering that the most common scenraio is that a user
+                      will only have one locker it made sense to by default show
+                      the last used locker on the landing screen and Exposing
+                      the unlock function already there. On top of that it made
+                      sense to remove the need for barcode production and
+                      scanning and simply unlock on command from a trusted
+                      device. This in turn allows to accept deliveries even when
+                      users were away or accept deliveries by other trusted
+                      individuals.
+                    </Paragraph>
+                  </>
+                ),
+              },
+            ],
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
+          data: {
+            listTitle: <>Problem solving via design</>,
+            items: [
+              {
+                imageUrl: "assets/case-4/sneakpeek-1.png",
+                imageAlt: "Unlocking the locker",
+                title: "Unlocking the locker",
+                text: (
+                  <>
+                    <Paragraph>
+                      Unlocking the locker was not intuitive forcing users to
+                      first select a locker, then genarate a barcode then
+                      physically scan the barcode to unlock the locker. screen
+                      UI.
+                    </Paragraph>
+                    <Paragraph>
+                      <strong>Solution: </strong>Based on the common case (one
+                      user one delivery unit) we decided to surface the locker
+                      view as the main view. Locker status was surfced and
+                      Unlock button was added to the screen. The barcode
+                      functionality was scrapped by allowing remote unlock.
+                    </Paragraph>
+                  </>
+                ),
+              },
+              {
+                imageUrl: "assets/case-4/sneakpeek-2.png",
+                imageAlt: "Cooling schedule",
+                title: "Cooling schedule",
+                text: (
+                  <>
+                    <Paragraph>
+                      Cooling schedule was overly complex and hard to use.
+                    </Paragraph>
+                    <Paragraph>
+                      <strong>Solution: </strong>Like most schedules, it is easy
+                      for users to expect things based on previous experiences.
+                      One common schedule most users use is an alarm clock which
+                      inspired the design. On top of that, we chose to implement
+                      more sensible defaults. Most deliveries happen during the
+                      day and temp rise. Hence lockers could by default be set
+                      to only cool during workdays, daytime. The “always-on”
+                      option was kept but not as default while the cooling
+                      schedule itself was simplified. Users selected a start,
+                      end, and in which days the cooling should be on.
+                    </Paragraph>
+                  </>
+                ),
+              },
+              {
+                imageUrl: "assets/case-4/sneakpeek-3.png",
+                imageAlt: "Is it working?",
+                title: "Is it working?",
+                text: (
+                  <>
+                    <Paragraph>
+                      The locker itself didn’t have any physical status
+                      indicators and users complained about not knowing if their
+                      locker is on or not.
+                    </Paragraph>
+                    <Paragraph>
+                      <strong>Solution: </strong>The locker status and the temp
+                      was added to the main locker view. The most commonly used
+                      button “lock/unlock” was placed predominantly on that
+                      screen as well.
+                    </Paragraph>
+                  </>
+                ),
+              },
+            ],
+          },
+        },
       ],
     },
     {
@@ -373,7 +480,7 @@ export const CASE_4 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Past vs Present</>,
+            title: <>Current and redesigned app go head-to-head.</>,
             h: 2,
             text: (
               <>
@@ -408,12 +515,12 @@ export const CASE_4 = {
             bgColor: "#546368",
             results: [
               {
-                value: "120%",
-                description: "increase in overall success rate",
+                value: "+120%",
+                description: "Increase in overall success rate",
               },
               {
-                value: "64%",
-                description: "decrease in time to completian",
+                value: "-64%",
+                description: "Decrease in time to completian",
               },
             ],
           },

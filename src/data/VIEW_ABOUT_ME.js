@@ -6,7 +6,6 @@ import List from "../Components/Elements/List";
 import colors from "../theme/colors";
 import Span from "../Components/Elements/Span";
 import Link from "../Components/Elements/Link";
-import Title from "../Components/Elements/Title";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 
 export const VIEW_ABOUT_ME = [
@@ -42,8 +41,8 @@ export const VIEW_ABOUT_ME = [
           text: (
             <>
               <Paragraph huge>
-                A digital product designer, engineer, Speaker, Mentor,
-                Accessibility enthusiast, father, husband, and quite a nice guy.
+                A digital product designer, engineer, speaker, mentor,
+                accessibility enthusiast, father, husband, and quite a nice guy.
               </Paragraph>
             </>
           ),
@@ -57,12 +56,20 @@ export const VIEW_ABOUT_ME = [
             {
               imageUrl: "assets/designer.png",
               imageAlt: "Designer",
-              title: "Me looking all designery and stuff",
+              title: "Designer",
               text: (
                 <>
                   <Paragraph>
-                    15 years of industry experience. Awesome designer! come and
-                    buy!.
+                    15 years of industry experience as UX/UI Designer.
+                    Throughout the years I worked in both product companies and
+                    as an external consultant. Working with clients from all
+                    sizes from small companies to well-known brands with primary
+                    focus on eCommerce, Finance. and healthcare.
+                  </Paragraph>
+                  <Paragraph>
+                    Certified UXC, by NNg and an uber-nerd, I have a tendency to
+                    keep expanding my knowledge, lately I sparked an interest
+                    for Behavioural Design
                   </Paragraph>
                 </>
               ),
@@ -78,6 +85,18 @@ export const VIEW_ABOUT_ME = [
                     extanal talks sharing my experiences with hundrads of
                     people.
                   </Paragraph>
+                  <Paragraph>
+                    For me, speaking in-front of an audience is just another
+                    excuse to learn more about the a topic. Throughout the years
+                    I held talked for different audiences from C-level
+                    executives to Students.
+                  </Paragraph>
+                  <Paragraph>
+                    Some of the talks I did: “Inclusive design, beyond the 80%”,
+                    “UX Research Methods”, “Microcopy, how to make better
+                    products without writing a single line of code?”, and
+                    “Practical Design systems” to name a few.
+                  </Paragraph>
                 </>
               ),
             },
@@ -89,7 +108,8 @@ export const VIEW_ABOUT_ME = [
                 <>
                   <Paragraph>
                     Experience in facilitating various workshops. In-person and
-                    virtual.
+                    virtual. Ideation sessions, discovery workshops, User story
+                    mapping etc.
                   </Paragraph>
                 </>
               ),
@@ -101,8 +121,14 @@ export const VIEW_ABOUT_ME = [
               text: (
                 <>
                   <Paragraph>
-                    Experience in facilitating various workshops. In-person and
-                    virtual.
+                    One of 2 designers (that I actually know) that is an
+                    educated engineer. I will not pretend I am a great
+                    developer, At best, I am decent. I was good enough to get
+                    hired but never good enough to be great. I simply lacked the
+                    passion I have for design. Knowing how to code helps me
+                    communicate better with developers, helps me create designs
+                    that are implementable and I better understand the
+                    implications of my design choices.
                   </Paragraph>
                 </>
               ),
@@ -114,14 +140,25 @@ export const VIEW_ABOUT_ME = [
               text: (
                 <>
                   <Paragraph>
-                    Experience in facilitating various workshops. In-person and
-                    virtual.
+                    A father of 2 (plus a dog) means I am no stranger to stress.
+                    I deal with chaos (ah sorry a “dynamic environment”) on a
+                    dialy basis!.
                   </Paragraph>
                 </>
               ),
             },
           ],
         },
+      },
+    ],
+  },
+  {
+    bgColor: colors.offwhite,
+    header: "Clients",
+    elements: [
+      {
+        template: SECTION_ELEMENTS.CLIENTS,
+        data: {},
       },
     ],
   },
@@ -143,46 +180,40 @@ export const VIEW_ABOUT_ME = [
       {
         template: SECTION_ELEMENTS.TEXTBOX,
         data: {
-          title: "User value",
-          h: 3,
+          title: "My story",
+          h: 2,
           text: (
             <>
               <Paragraph>
-                Every designer claims to be user centric, I am no different, I
-                honestly love what I do and really aim to make the world a
-                better place one pixel at a time. I believe in creating business
-                value via design.
-              </Paragraph>
-              <Title h={3}>Business value</Title>
-              <Paragraph>
-                It can be hard to convey the business value of design. I started
-                my career in the financial sector where worked with very complex
-                systems. I am no stranger to management meetings, OKRs KPIs and
-                communicating/projecting business value via design.
-              </Paragraph>
-              <Title h={3}>Techical feasibility</Title>
-              <Paragraph>
-                As designers, we need to know the understand our medium. As an
-                Engineer, I am far more likely to create technically feasable
-                designs. Because I know what it would take to implement a
-                design, I can often create designs that are far less (resource)
-                demanding
+                I started off 15 years ago when I was hired as a graphic
+                designer for a company developing solutions for banks and
+                investment groups. There I grew and eventually led a team that
+                was responsible for all web-solutions used by 50-70 banks and
+                investment groups.
               </Paragraph>
               <Paragraph>
-                I personally am a semi-decent coder focusing on the front-end
-                (mostly React & Vue) I do this because it forces me to drink my
-                own soup. I know what is implementable and what is just Dribbble
-                material. It helps me communicate better with team members and
-                it allows me to test my ideas at a fidelity level that is
-                impossible even using current prototyping tools. I simply do it
-                because it makes me a better designer.
+                I then decided to deepen my knowledge and signed up to the
+                university where I studied It Communications and New Media
+                (while working full-time). This side-tracked my career for a
+                short while until I returned to my roots in designing usable
+                interfaces.
               </Paragraph>
-              <Title h={2}>Free-time?</Title>
               <Paragraph>
-                When I’m not working I’m most likely chasing down my kids,
-                trying to prevent the next disaster from happening, from houses
-                on fire to cats in dishwashers that wonders of parenthood are
-                endless.
+                I worked for a while with data visualizations for medical
+                studies before being hired as a consultant.
+              </Paragraph>
+              <Paragraph>
+                As a consultant, I was hired to work as part of an in-house
+                delivery organization where we worked with large organizations
+                helping them reach their goals. This included involvement in all
+                parts of the client communication, from pre-sales, discovery,
+                ideation, design, validation, to building, launching and
+                evaluting the impact of our efforts.
+              </Paragraph>
+              <Paragraph>
+                I now work as a UX consultant as part of a larger design team.
+                In this role I help the team establish their ways of working and
+                improve designs based on user input.
               </Paragraph>
               <Paragraph>
                 If any of this sounds interesting or if you just want to start a
@@ -193,16 +224,6 @@ export const VIEW_ABOUT_ME = [
             </>
           ),
         },
-      },
-    ],
-  },
-  {
-    bgColor: colors.offwhite,
-    header: "Clients",
-    elements: [
-      {
-        template: SECTION_ELEMENTS.CLIENTS,
-        data: {},
       },
     ],
   },
