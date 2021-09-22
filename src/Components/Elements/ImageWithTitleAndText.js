@@ -41,13 +41,13 @@ const ImageWithTitleAndText = ({
   horizontal,
   flip,
 }) => {
+  const [, setLight] = useContext(ElementColorContext);
+
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
     threshold: 0,
   });
-
-  const [, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
     setLight(bgColor !== null && bgColor !== colors.offwhite);

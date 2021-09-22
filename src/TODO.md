@@ -20,8 +20,6 @@ Social media links fix appear when inView animations
 ContactForm fix appear when inView animations
 Expand BackgroundWrapper to allow bgImageUrls, fullWidth,LimitedWidth and apply to TEXTBOX, LISTOFIMAGES, KEYFIGURES, QUOTE.
 Navlink -> fluidType console error.
-Case 3 -> ListOfImagesWithTitleAndText (duplicate key error)
-Case 4,5,9,10 -> SideBySideImagesAndText "No ElementContextProvider is wrapping this component"
 
 LATER:
 Improve the design on KeyFigures.

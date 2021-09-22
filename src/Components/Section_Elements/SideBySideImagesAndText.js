@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import ImageWithTitleAndText from "../Elements/ImageWithTitleAndText";
 import breakpoints from "../../theme/breakpoints";
+import ElementContextProvider from "../../Context/ElementColorContext";
 
 const StyledSideBySideImagesAndText = styled(motion.div)`
   display: grid;
@@ -36,14 +37,15 @@ const SideBySideImagesAndText = ({ items }) => {
   return (
     <StyledSideBySideImagesAndText>
       {items.map(({ imageUrl, imageAlt, title, text, bgColor }) => (
-        <ImageWithTitleAndText
-          imageUrl={imageUrl}
-          imageAlt={imageAlt}
-          title={title}
-          text={text}
-          bgColor={bgColor}
-          key={imageUrl}
-        />
+        <ElementContextProvider key={imageUrl}>
+          <ImageWithTitleAndText
+            imageUrl={imageUrl}
+            imageAlt={imageAlt}
+            title={title}
+            text={text}
+            bgColor={bgColor}
+          />
+        </ElementContextProvider>
       ))}
     </StyledSideBySideImagesAndText>
   );
