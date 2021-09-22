@@ -19,4 +19,5 @@ export const SECTION_ELEMENTS = {
   ADDITIONAL_CASES: "additionalCases",
   FOOTER: "footer",
   KEY_FIGURES: "keyFigures",
+  CONTACT_DETAILS: "contactDetails",
 };

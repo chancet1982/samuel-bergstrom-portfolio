@@ -9,7 +9,7 @@ const { size, lh, inc } = typography;
 
 const StyledTextarea = styled.textarea`
   display: block;
-  width: 100%;
+  width: fill-available;
   border-radius: 0.25rem;
   line-height: ${({ small, large }) =>
     small ? lh + inc : large ? lh - inc : lh};
@@ -20,6 +20,13 @@ const StyledTextarea = styled.textarea`
   color: ${colors.text.dark.high};
   padding: 0.5rem;
   resize: none;
+  box-sizing: border-box;
+
+  :focus {
+    box-shadow: 0 0 0.25rem ${colors.primary};
+    border: solid 0.125rem ${colors.primary};
+    outline: none;
+  }
 `;
 
 const Textarea = ({ name, rows, columns, required, small, large, huge }) => {

@@ -1,22 +1,21 @@
 TODO list (What's left before you're done)
 
 NOW:
-Link should get the same love as button :D
+Navlink -> fluidType console error.
+Testimonials fix appear when inView animations
+Expand BackgroundWrapper to allow bgImageUrls, fullWidth,LimitedWidth and apply to TEXTBOX, LISTOFIMAGES, KEYFIGURES, QUOTE.
+
+FIXES:
 ListOfImageWithTitleAndText -> add support for padding-bottom.
+Hide navigation while screen animation is playing. (nice to have)
 
 Mobile fixes:
-Testimonials fix appear when inView animations
-Contact form doesnt look good on mobile (normal)
 Navbar doesnt look good on pixel 2 landspace.
 Test alternating colors on list in about me?
 Horizontal content alignment on cases looks off.
 ImageWithCaption create a section element or replace it in case 5
 Social media links fix appear when inView animations
-ContactForm fix appear when inView animations
-Expand BackgroundWrapper to allow bgImageUrls, fullWidth,LimitedWidth and apply to TEXTBOX, LISTOFIMAGES, KEYFIGURES, QUOTE.
-Navlink -> fluidType console error.
 Image gallery images overflow the screen area on smaller screens.
-Hide navigation while screen animation is playing. (nice to have)
 
 LATER:
 Improve the design on KeyFigures.

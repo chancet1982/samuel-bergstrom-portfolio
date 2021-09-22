@@ -21,6 +21,7 @@ import Footer from "./Section_Elements/Footer";
 import KeyFigures from "./Section_Elements/KeyFigures";
 import Testimonials from "./Section_Elements/Testimonials";
 import ElementColorContextProvider from "../Context/ElementColorContext";
+import ContactDetails from "./Section_Elements/ContactDetails";
 
 const SectionElementsRenderer = ({ elementKey, data, template }) => {
   if (!template) {
@@ -107,6 +108,8 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
       );
     case SECTION_ELEMENTS.TIMELINE:
       return <Timeline key={elementKey} items={data.items} />;
+    case SECTION_ELEMENTS.CONTACT_DETAILS:
+      return <ContactDetails key={elementKey} />;
     case SECTION_ELEMENTS.IMAGE_WITH_CAPTION:
       return (
         <ImageWithCaption

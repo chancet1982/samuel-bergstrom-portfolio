@@ -9,7 +9,7 @@ const { size, lh, inc } = typography;
 
 const StyledInput = styled.input`
   display: block;
-  width: 100%;
+  width: fill-available;
   border-radius: 0.25rem;
   line-height: ${({ small, large }) =>
     small ? lh + inc : large ? lh - inc : lh};
@@ -19,6 +19,13 @@ const StyledInput = styled.input`
     small ? size / 1.2 : large ? size * 1.2 : huge ? size * 1.618 : size}rem;
   color: ${colors.text.dark.high};
   padding: 0.5rem;
+  box-sizing: border-box;
+
+  :focus {
+    box-shadow: 0 0 0.25rem ${colors.primary};
+    border: solid 0.125rem ${colors.primary};
+    outline: none;
+  }
 `;
 
 // TODO: (later) add input validation

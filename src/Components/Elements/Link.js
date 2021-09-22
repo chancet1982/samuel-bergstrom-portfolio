@@ -14,7 +14,7 @@ const StyledLink = styled(RouterLink)`
     light ? colors.text.light.high : colors.text.dark.high};
   ${({ fluidType }) => fluidType};
   font-family: ${typography.bodyFont};
-
+  transition: all 0.3s;
   :hover {
     color: ${({ light }) =>
       light ? colors.text.light.medium : colors.primary};
@@ -26,7 +26,7 @@ const StyledAnchorLink = styled.a`
     light ? colors.text.light.high : colors.text.dark.high};
   ${({ fluidType }) => fluidType};
   font-family: ${typography.bodyFont};
-
+  transition: all 0.3s;
   :hover {
     color: ${({ light }) =>
       light ? colors.text.light.medium : colors.primary};
