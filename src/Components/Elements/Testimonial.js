@@ -1,8 +1,7 @@
+import React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import React from "react";
 import PropTypes from "prop-types";
-import { v4 as uuid } from "uuid";
 import padding from "../../theme/padding";
 import colors from "../../theme/colors";
 import breakpoints from "../../theme/breakpoints";
@@ -107,7 +106,7 @@ const StyledTestimonialContent = styled(motion.div)`
 
 const Testimonial = ({ children, author }) => {
   return (
-    <StyledTestimonial key={uuid()}>
+    <StyledTestimonial>
       <TestimonialAuthor
         authorName={author.authorName}
         authorTitle={author.authorTitle}

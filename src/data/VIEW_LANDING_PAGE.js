@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import React from "react";
+import Link from "../Components/Elements/Link";
 import Paragraph from "../Components/Elements/Paragraph";
-import ReadMoreLink from "../Components/Elements/ReadMoreLink";
 import colors from "../theme/colors";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 
@@ -46,9 +46,10 @@ export const VIEW_LANDING_PAGE = [
             <>
               <Paragraph huge>
                 A digital product designer, engineer, Speaker, Mentor,
-                Accessibility enthusiast, father, husband, and quite a nice guy.
+                Accessibility enthusiast, father, husband, and quite a nice guy.{" "}
+                <br />
+                <Link to="about">Get to know me</Link>
               </Paragraph>
-              <ReadMoreLink to="about">Get to know me</ReadMoreLink>
             </>
           ),
         },

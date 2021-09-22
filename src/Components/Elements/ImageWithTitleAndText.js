@@ -43,15 +43,15 @@ const ImageWithTitleAndText = ({
 }) => {
   const [, setLight] = useContext(ElementColorContext);
 
+  useEffect(() => {
+    setLight(bgColor !== null && bgColor !== colors.offwhite);
+  }, [setLight, bgColor]);
+
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
     threshold: 0,
   });
-
-  useEffect(() => {
-    setLight(bgColor !== null && bgColor !== colors.offwhite);
-  }, [setLight, bgColor]);
 
   // eslint-disable-next-line consistent-return
   useEffect(() => {

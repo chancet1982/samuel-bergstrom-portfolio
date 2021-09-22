@@ -83,7 +83,9 @@ const Button = ({
     >
       {to ? (
         <Link to={to}>
-          <Span light> {children} </Span>
+          <Span light={!secondaryLight} highContrast>
+            {children}
+          </Span>
         </Link>
       ) : (
         children

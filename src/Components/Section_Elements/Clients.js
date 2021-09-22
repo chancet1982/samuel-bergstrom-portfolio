@@ -10,6 +10,7 @@ import Client from "./Clients/Client";
 import { CLIENTS } from "../../data/dictionaries/CLIENTS";
 import padding from "../../theme/padding";
 import CenteredTitleAndText from "../Elements/CenteredTitleAndText";
+import pickRandom from "../../utils/pickRandom";
 
 const StyledClients = styled(motion.div)`
   margin-left: ${padding.horizontal.quadruple};
@@ -33,14 +34,6 @@ const StyledClients = styled(motion.div)`
 const useBreakpoint = createBreakpoint({ XL: 1315, L: 1048, M: 781, S: 300 });
 
 const Clients = ({ preview }) => {
-  const pickRandom = (arr, count) => {
-    // eslint-disable-next-line no-underscore-dangle
-    const _arr = [...arr];
-    return [...Array(count)].map(
-      () => _arr.splice(Math.floor(Math.random() * _arr.length), 1)[0]
-    );
-  };
-
   const breakpoint = useBreakpoint();
   const getNumberOfClientsBasedOnViewportWidth = () =>
     breakpoint === "XL"

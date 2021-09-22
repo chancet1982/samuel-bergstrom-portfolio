@@ -3,10 +3,13 @@ import styled from "styled-components";
 import React from "react";
 import PropTypes from "prop-types";
 import { v4 as uuid } from "uuid";
+import { useWindowSize } from "react-use";
 import TitleAndText from "../Elements/TitleAndText";
 import { TESTIMONIALS } from "../../data/dictionaries/TESTIMONIALS";
 import padding from "../../theme/padding";
 import Testimonial from "../Elements/Testimonial";
+import breakpoints from "../../theme/breakpoints";
+import pickRandom from "../../utils/pickRandom";
 
 const StyledTestimonials = styled(motion.div)`
   padding: ${padding.vertical.double} ${padding.horizontal.double};
@@ -16,6 +19,9 @@ const StyledTestimonials = styled(motion.div)`
 `;
 
 const Testimonials = ({ title, text }) => {
+  const { width } = useWindowSize();
+  const isMobile = width < breakpoints.desktop;
+
   return (
     <StyledTestimonials>
       {(title || text) && (
@@ -23,11 +29,17 @@ const Testimonials = ({ title, text }) => {
           {text}
         </TitleAndText>
       )}
-      {TESTIMONIALS.map(({ author, content }) => (
-        <Testimonial key={uuid()} author={author}>
-          {content}
-        </Testimonial>
-      ))}
+      {isMobile
+        ? pickRandom(TESTIMONIALS, 3).map(({ author, content }) => (
+            <Testimonial key={uuid()} author={author}>
+              {content}
+            </Testimonial>
+          ))
+        : TESTIMONIALS.map(({ author, content }) => (
+            <Testimonial key={uuid()} author={author}>
+              {content}
+            </Testimonial>
+          ))}
     </StyledTestimonials>
   );
 };
