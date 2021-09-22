@@ -7,10 +7,10 @@ import { PLATFORMS } from "./dictionaries/PLATFORMS";
 import Paragraph from "../Components/Elements/Paragraph";
 import Title from "../Components/Elements/Title";
 import List from "../Components/Elements/List";
+import TitleAndText from "../Components/Elements/TitleAndText";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
-import TitleAndText from "../Components/TitleAndText";
 
 // TODO: image gallery "red" background showing through images.
 export const CASE_1 = {

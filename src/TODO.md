@@ -14,11 +14,17 @@ Contact form doesnt look good on mobile (normal)
 Navbar doesnt look good on pixel 2 landspace.
 Test alternating colors on list in about me?
 Horizontal content alignment on cases looks off.
+ImageWithCaption create a section element or replace it in case 5
+Testimonials fix appear when inView animations
+Social media links fix appear when inView animations
+ContactForm fix appear when inView animations
+Expand BackgroundWrapper to allow bgImageUrls, fullWidth,LimitedWidth and apply to TEXTBOX, LISTOFIMAGES, KEYFIGURES, QUOTE.
+Navlink -> fluidType console error.
+Case 3 -> ListOfImagesWithTitleAndText (duplicate key error)
+Case 4,5,9,10 -> SideBySideImagesAndText "No ElementContextProvider is wrapping this component"
 
 LATER:
 Improve the design on KeyFigures.
-Clean up the components and sort to ELEMENTS and SECTION_ELEMENTS (EVERYTHING THAT CANNOT BE RENDERED USING THE ELEMENTS RENDERER SHOULD BE IN ELEMENTS)
-Generalize background colors on TEXTBOX, LISTOFIMAGES, KEYFIGURES, QUOTE with a wrapper component.
 case-7 -> Add pictures of the report?
 case-6 -> Go through and rewrite
 case-8 -> Go through and rewrite

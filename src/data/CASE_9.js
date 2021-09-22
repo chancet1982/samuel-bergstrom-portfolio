@@ -5,12 +5,12 @@ import { TOOLS_AND_METHODS } from "./dictionaries/TOOLS_AND_METHODS";
 import { ROLES } from "./dictionaries/ROLES";
 import { PLATFORMS } from "./dictionaries/PLATFORMS";
 import Paragraph from "../Components/Elements/Paragraph";
+import TitleAndText from "../Components/Elements/TitleAndText";
 import List from "../Components/Elements/List";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Elements/Title";
 import colors from "../theme/colors";
-import TitleAndText from "../Components/TitleAndText";
 
 /* there is an IMAGE_WITH_CAPTION here that is wrong. */
 export const CASE_9 = {
@@ -107,9 +107,9 @@ export const CASE_9 = {
           template: SECTION_ELEMENTS.KEY_FIGURES,
           data: {
             items: [
-              { value: 1, description: "When do people compare prices?" },
-              { value: 2, description: "What works well?" },
-              { value: 3, description: "What needs to be improved?" },
+              { value: "1", description: "When do people compare prices?" },
+              { value: "2", description: "What works well?" },
+              { value: "3", description: "What needs to be improved?" },
             ],
           },
         },

@@ -1,7 +1,7 @@
 import { v4 as uuid } from "uuid";
 import React from "react";
-import Section from "./Section";
-import ElementsRenderer from "./ElementsRenderer";
+import Section from "./Section/Section";
+import SectionElementsRenderer from "./SectionElementsRenderer";
 import SectionColorContextProvider from "../Context/SectionColorContext";
 
 const SectionsRenderer = ({ sections }) =>
@@ -14,7 +14,7 @@ const SectionsRenderer = ({ sections }) =>
         isPadded={isPadded}
       >
         {elements.map(({ data, template }) => (
-          <ElementsRenderer
+          <SectionElementsRenderer
             key={uuid()}
             elementKey={uuid()}
             data={data}

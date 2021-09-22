@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import React from "react";
 import Paragraph from "../Components/Elements/Paragraph";
-import ReadMoreLink from "../Components/ReadMoreLink";
+import ReadMoreLink from "../Components/Elements/ReadMoreLink";
 import colors from "../theme/colors";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 

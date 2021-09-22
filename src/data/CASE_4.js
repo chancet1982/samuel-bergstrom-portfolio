@@ -6,10 +6,10 @@ import { ROLES } from "./dictionaries/ROLES";
 import { PLATFORMS } from "./dictionaries/PLATFORMS";
 import Paragraph from "../Components/Elements/Paragraph";
 import List from "../Components/Elements/List";
+import TitleAndText from "../Components/Elements/TitleAndText";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
-import TitleAndText from "../Components/TitleAndText";
 
 /* there is an IMAGE_WITH_CAPTION here that is wrong. */
 export const CASE_4 = {

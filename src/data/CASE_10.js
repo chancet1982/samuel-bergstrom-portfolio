@@ -6,9 +6,9 @@ import { ROLES } from "./dictionaries/ROLES";
 import { PLATFORMS } from "./dictionaries/PLATFORMS";
 import Paragraph from "../Components/Elements/Paragraph";
 import List from "../Components/Elements/List";
+import TitleAndText from "../Components/Elements/TitleAndText";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
-import TitleAndText from "../Components/TitleAndText";
 import Title from "../Components/Elements/Title";
 
 /* there is an IMAGE_WITH_CAPTION here that is wrong. */
@@ -458,7 +458,7 @@ export const CASE_10 = {
           data: {
             imageUrl: "assets/case-10/result.png",
             bgColor: "#00ADDB",
-            results: [{ value: 5.7, description: "mil. increse in revenue" }],
+            results: [{ value: "5.7", description: "mil. increse in revenue" }],
             text: (
               <>
                 <Paragraph large>

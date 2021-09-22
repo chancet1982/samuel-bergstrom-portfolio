@@ -3,13 +3,13 @@ import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import { TOOLS_AND_METHODS } from "./dictionaries/TOOLS_AND_METHODS";
 import { PLATFORMS } from "./dictionaries/PLATFORMS";
 import Paragraph from "../Components/Elements/Paragraph";
+import List from "../Components/Elements/List";
+import Title from "../Components/Elements/Title";
+import TitleAndText from "../Components/Elements/TitleAndText";
 import { ROLES } from "./dictionaries/ROLES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
-import List from "../Components/Elements/List";
-import TitleAndText from "../Components/TitleAndText";
-import Title from "../Components/Elements/Title";
 
 // eslint-disable-next-line import/prefer-default-export
 export const CASE_3 = {

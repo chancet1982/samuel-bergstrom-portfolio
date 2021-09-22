@@ -6,10 +6,10 @@ import { TOOLS_AND_METHODS } from "./dictionaries/TOOLS_AND_METHODS";
 import { PLATFORMS } from "./dictionaries/PLATFORMS";
 import Paragraph from "../Components/Elements/Paragraph";
 import List from "../Components/Elements/List";
+import TitleAndText from "../Components/Elements/TitleAndText";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
-import TitleAndText from "../Components/TitleAndText";
 
 export const CASE_2 = {
   caseStatus: CASE_STATUS.PUBLISHED,

@@ -4,11 +4,11 @@ import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import { TOOLS_AND_METHODS } from "./dictionaries/TOOLS_AND_METHODS";
 import { ROLES } from "./dictionaries/ROLES";
 import Paragraph from "../Components/Elements/Paragraph";
+import TitleAndText from "../Components/Elements/TitleAndText";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import Title from "../Components/Elements/Title";
 import List from "../Components/Elements/List";
-import TitleAndText from "../Components/TitleAndText";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 
 export const CASE_7 = {
@@ -696,7 +696,9 @@ export const CASE_7 = {
             h: 2,
             text: (
               <>
-                <Paragraph />
+                <Paragraph>
+                  Some additional mobile app screenshots anyone?
+                </Paragraph>
               </>
             ),
           },
