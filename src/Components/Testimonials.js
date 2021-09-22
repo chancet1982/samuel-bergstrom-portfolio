@@ -17,7 +17,7 @@ const StyledTestimonials = styled(motion.div)`
 `;
 
 const StyledTestimonial = styled(motion.div)`
-  @media (min-width: ${breakpoints.tablet_sm}px) {
+  @media (min-width: ${breakpoints.tablet}px) {
     display: grid;
     grid-template-columns: repeat(5, 1fr);
   }
@@ -36,7 +36,7 @@ const StyledTestimonial = styled(motion.div)`
   }
 
   :nth-of-type(2n + 1) {
-    @media (max-width: ${breakpoints.tablet_sm - 1}px) {
+    @media (max-width: ${breakpoints.tablet - 1}px) {
       > div {
         border-radius: 0 2rem 2rem 2rem;
 
@@ -50,7 +50,7 @@ const StyledTestimonial = styled(motion.div)`
       }
     }
 
-    @media (min-width: ${breakpoints.tablet_sm}px) {
+    @media (min-width: ${breakpoints.tablet}px) {
       grid-template-areas: "a b b b b";
 
       > div {
@@ -68,7 +68,7 @@ const StyledTestimonial = styled(motion.div)`
   }
 
   :nth-of-type(2n + 2) {
-    @media (max-width: ${breakpoints.tablet_sm - 1}px) {
+    @media (max-width: ${breakpoints.tablet - 1}px) {
       > div {
         border-radius: 2rem 0 2rem 2rem;
 
@@ -82,7 +82,7 @@ const StyledTestimonial = styled(motion.div)`
       }
     }
 
-    @media (min-width: ${breakpoints.tablet_sm}px) {
+    @media (min-width: ${breakpoints.tablet}px) {
       grid-template-areas: "b b b b a";
 
       > div {

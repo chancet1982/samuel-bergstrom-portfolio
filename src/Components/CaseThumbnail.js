@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useIntersection } from "react-use";
+import { useIntersection, useWindowSize } from "react-use";
 import Overline from "./Overline";
 import Title from "./Elements/Title";
 import breakpoints from "../theme/breakpoints";
@@ -91,12 +91,14 @@ const StyledCaseIntro = styled(motion.div)`
 
 const CaseThumbnail = ({ data, status, caseUrl }) => {
   const [, setContent] = useContext(AppContext);
-
   const [, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
     setLight(true);
   }, [setLight]);
+
+  const { width } = useWindowSize();
+  const isMobile = width < breakpoints.desktop;
 
   const changeLoaderContent = (newContent) => {
     setContent(newContent);
@@ -143,12 +145,12 @@ const CaseThumbnail = ({ data, status, caseUrl }) => {
   };
 
   const test = {
-    inView: {},
+    normal: {},
     hover: {},
   };
 
   const thumbnailImageVariants = {
-    inView: {
+    normal: {
       scale: 1,
       opacity: 1,
       transition: spring,
@@ -161,7 +163,7 @@ const CaseThumbnail = ({ data, status, caseUrl }) => {
   };
 
   const thumbnailCaptionVariants = {
-    inView: {
+    normal: {
       opacity: 1,
       y: "0%",
       transition: spring,
@@ -174,7 +176,7 @@ const CaseThumbnail = ({ data, status, caseUrl }) => {
   };
 
   const caseIntroVariants = {
-    inView: {
+    normal: {
       y: "100%",
       transition: spring,
     },
@@ -186,7 +188,12 @@ const CaseThumbnail = ({ data, status, caseUrl }) => {
 
   const renderCaseThumbnail = () => {
     return (
-      <motion.div whileHover="hover" variants={test} initial="inView">
+      <motion.div
+        whileHover="hover"
+        variants={test}
+        animate={isMobile ? "hover" : "normal"}
+        initial="normal"
+      >
         <StyledCaseThumbnailImage
           variants={thumbnailImageVariants}
           imageUrl={`${process.env.PUBLIC_URL}/${imageUrl}`}

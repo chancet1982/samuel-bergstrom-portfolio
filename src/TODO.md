@@ -6,11 +6,14 @@ ListOfImageWithTitleAndText -> add support for padding-bottom.
 
 Mobile fixes:
 Image gallery images overflow the screen area on smaller screens.
-Case thumbnails on mobile should start at their "hovered" state.
 Pick up only 3 testimonials instead of the entire list on mobile
 Add support for quote to have a background image.
 Hide navigation while screen animation is playing. (nice to have)
 Add secondary button and use that layout in the preview for landing page cases and about me text.
+Contact form doesnt look good on mobile (normal)
+Navbar doesnt look good on pixel 2 landspace.
+Test alternating colors on list in about me?
+Horizontal content alignment on cases looks off.
 
 LATER:
 Improve the design on KeyFigures.

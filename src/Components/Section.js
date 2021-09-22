@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -38,11 +38,7 @@ const StyledSection = styled(motion.section)`
 const Section = ({ header, children, bgColor, isSticky, isPadded }) => {
   const [, setLight] = useContext(SectionColorContext);
   const { width } = useWindowSize();
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    setIsMobile(width < breakpoints.tablet);
-  }, [setIsMobile, width]);
+  const isMobile = width < breakpoints.desktop;
 
   useEffect(() => {
     setLight(bgColor !== null && bgColor !== colors.offwhite);

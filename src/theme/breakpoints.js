@@ -1,9 +1,8 @@
 const breakpoints = {
   mobile: 320,
-  mobile_lg: 560,
-  tablet_sm: 768,
-  tablet: 960,
-  desktop: 1440,
+  mobile_lg: 578,
+  tablet: 992,
+  desktop: 1280,
 };
 
 export default breakpoints;
