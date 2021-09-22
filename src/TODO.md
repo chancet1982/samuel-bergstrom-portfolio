@@ -1,6 +1,7 @@
 TODO list (What's left before you're done)
 
 NOW:
+Link should get the same love as button :D
 ListOfImageWithTitleAndText -> add support for padding-bottom.
 
 Mobile fixes:

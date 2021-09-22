@@ -48,13 +48,7 @@ const ContactForm = () => {
         <Label>Message: </Label>
         <Textarea name="message" rows="4" cols="50" />
       </StyledDiv>
-      {status === "SUCCESS" ? (
-        <p>Thanks!</p>
-      ) : (
-        <Button dark large>
-          Submit
-        </Button>
-      )}
+      {status === "SUCCESS" ? <p>Thanks!</p> : <Button>Submit</Button>}
       {status === "ERROR" && <p>Ooops! There was an error.</p>}
     </form>
   );

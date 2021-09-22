@@ -27,30 +27,27 @@ const StyledAncorlLink = styled.a`
 const Link = ({ small, large, huge, children, to, href }) => {
   const light = useBgColor();
 
-  const fluidType = useFluidTypography(2, false);
+  const mapSizeToNumber = () => {
+    if (small) return 1;
+    if (large) return 3;
+    if (huge) return 4;
+    return 2;
+  };
+
+  const fluidType = useFluidTypography(mapSizeToNumber(), false);
 
   return to ? (
-    <StyledLink
-      small={small || undefined}
-      large={large || undefined}
-      huge={huge || undefined}
-      light={light || undefined}
-      to={to}
-      fluidType={fluidType}
-    >
+    <StyledLink to={to} fluidType={fluidType} light={light}>
       {children}
     </StyledLink>
   ) : (
     href && (
       <StyledAncorlLink
-        small={small || undefined}
-        large={large || undefined}
-        huge={huge || undefined}
-        light={light || undefined}
         href={href}
         target="_blank"
         rel="noopener noreferrer"
         fluidType={fluidType}
+        light={light}
       >
         {children}
       </StyledAncorlLink>

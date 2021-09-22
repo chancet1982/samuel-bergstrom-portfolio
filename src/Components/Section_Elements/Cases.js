@@ -58,7 +58,7 @@ const SectionCases = ({ title, text, preview }) => {
       </StyledCases>
       {preview && (
         <StyledPageLink>
-          <Button secondaryLight to="cases">
+          <Button secondary to="cases">
             See all cases
           </Button>
         </StyledPageLink>

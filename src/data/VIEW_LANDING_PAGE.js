@@ -48,7 +48,9 @@ export const VIEW_LANDING_PAGE = [
                 A digital product designer, engineer, Speaker, Mentor,
                 Accessibility enthusiast, father, husband, and quite a nice guy.{" "}
                 <br />
-                <Link to="about">Get to know me</Link>
+                <Link huge to="about">
+                  Get to know me
+                </Link>
               </Paragraph>
             </>
           ),

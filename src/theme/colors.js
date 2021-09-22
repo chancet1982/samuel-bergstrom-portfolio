@@ -15,12 +15,10 @@ const colors = {
     },
   },
   primary: "#E91D63",
-  primaryHover: "#E91D63",
-  primaryShade: "#E91D63",
+  primaryHover: "#ED417C",
+  primaryShade: "#FCE4EC",
   offwhite: "#F6F6F6",
-  offwhiteHover: "#E2E2E2",
   darkgray: "#424242",
-  darkgrayHover: "#2B2B2B",
   black: "#000000",
 };
 

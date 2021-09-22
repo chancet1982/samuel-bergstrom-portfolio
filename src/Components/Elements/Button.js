@@ -2,49 +2,39 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import padding from "../../theme/padding";
 import colors from "../../theme/colors";
 import shadows from "../../theme/shadows";
-import typography from "../../theme/typography";
-import Span from "./Span";
 import breakpoints from "../../theme/breakpoints";
-
-const { size } = typography;
+import useFluidTypography from "../../utils/useBodyFluidTypography";
 
 const StyledButton = styled.button`
   padding: ${padding.vertical.half} ${padding.horizontal.quadruple};
-  background-color: ${({ secondaryDark, secondaryLight }) =>
-    secondaryDark
-      ? colors.darkgray
-      : secondaryLight
-      ? colors.offwhite
-      : colors.primary};
-  color: ${({ secondaryDark, secondaryLight }) =>
-    secondaryDark
-      ? colors.text.light.high
-      : secondaryLight
-      ? colors.text.dark.high
-      : colors.text.dark.high};
-  border: none;
+  background-color: ${({ secondary }) =>
+    secondary ? "white" : colors.primary};
+  color: ${({ secondary }) =>
+    secondary ? colors.primary : colors.text.light.high};
+  border: ${({ secondary }) =>
+    secondary ? `solid 1px ${colors.primary}` : `solid 1px transparent`};
   ${shadows.short};
   border-radius: ${padding.vertical.single};
-  font-size: ${({ small, large, huge }) =>
-    small ? size / 1.2 : large ? size * 1.2 : huge ? size * 1.618 : size}rem;
+  ${({ fluidType }) => fluidType};
   transition: all 0.3s;
   cursor: pointer;
+  text-transform: uppercase;
 
   @media (min-width: ${breakpoints.tablet}px) {
     padding: ${padding.vertical.half} ${padding.horizontal.double};
   }
 
+  @media (min-width: ${breakpoints.desktop}px) {
+    padding: ${padding.vertical.half} ${padding.horizontal.single};
+  }
+
   &:hover {
-    background-color: ${({ secondaryDark, secondaryLight }) =>
-      secondaryDark
-        ? colors.darkgrayHover
-        : secondaryLight
-        ? colors.offwhiteHover
-        : colors.primaryHover};
+    background-color: ${({ secondary }) =>
+      secondary ? colors.primaryShade : colors.primaryHover};
     ${shadows.soft}
   }
 
@@ -57,39 +47,34 @@ const StyledButton = styled.button`
   }
 `;
 
-// TODO: fix button router "to"
 const Button = ({
   onClick,
   children,
-  secondaryDark,
-  secondaryLight,
+  secondary,
   small,
   large,
   huge,
   disabled,
   to,
 }) => {
-  // const [loading, setLoading] = useState(false);
+  const mapSizeToNumber = () => {
+    if (small) return 1;
+    if (large) return 3;
+    if (huge) return 4;
+    return 2;
+  };
+
+  const fluidType = useFluidTypography(mapSizeToNumber());
+  const history = useHistory();
 
   return (
     <StyledButton
-      secondaryDark={secondaryDark}
-      secondaryLight={secondaryLight}
-      onClick={onClick}
-      small={small}
-      large={large}
-      huge={huge}
+      fluidType={fluidType}
       disabled={disabled}
+      secondary={secondary}
+      onClick={to ? () => history.push(to) : onClick}
     >
-      {to ? (
-        <Link to={to}>
-          <Span light={!secondaryLight} highContrast>
-            {children}
-          </Span>
-        </Link>
-      ) : (
-        children
-      )}
+      {children}
     </StyledButton>
   );
 };
@@ -97,8 +82,7 @@ const Button = ({
 Button.propTypes = {
   onClick: PropTypes.func,
   children: PropTypes.string,
-  secondaryDark: PropTypes.bool,
-  secondaryLight: PropTypes.bool,
+  secondary: PropTypes.bool,
   disabled: PropTypes.bool,
   small: PropTypes.bool,
   large: PropTypes.bool,
@@ -109,8 +93,7 @@ Button.propTypes = {
 Button.defaultProps = {
   onClick: null,
   children: "Submit",
-  secondaryDark: false,
-  secondaryLight: false,
+  secondary: false,
   disabled: false,
   small: false,
   large: false,
