@@ -3,25 +3,17 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import useBgColor from "../../utils/useBgColor";
 import colors from "../../theme/colors";
+import padding from "../../theme/padding";
 import Span from "./Span";
 
 const StyledQuote = styled.q`
-  color: ${({ light }) =>
-    light ? colors.text.light.high : colors.text.dark.high};
-
-  ${({ fluidType }) => fluidType};
-
   position: relative;
   font-style: italic;
   font-weight: 500;
-
+  padding-bottom: ${padding.vertical.quarter};
   :before,
   :after {
-    color: ${({
-      theme: {
-        colors: { primary },
-      },
-    }) => primary};
+    color: ${({ light }) => (light ? colors.text.light.high : colors.primary)};
     position: absolute;
     font-size: 4rem;
   }
@@ -33,11 +25,6 @@ const StyledQuote = styled.q`
   }
 
   :after {
-    color: ${({
-      theme: {
-        colors: { primary },
-      },
-    }) => primary};
     content: close-quote;
     bottom: 0;
     right: 0;
@@ -51,7 +38,9 @@ const Quote = ({ children }) => {
 
   return (
     <StyledQuote light={light}>
-      <Span huge>{children}</Span>
+      <Span huge light={light} highContrast>
+        {children}
+      </Span>
     </StyledQuote>
   );
 };

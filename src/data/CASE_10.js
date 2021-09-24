@@ -319,7 +319,7 @@ export const CASE_10 = {
           template: SECTION_ELEMENTS.QUOTE,
           data: {
             quote:
-              "I want to find a trustworthy shop that sells a product for a reasonable price",
+              "I want to find a trustworthy shop that sells the product I want for a reasonable price",
             cite: "User, during interview",
           },
         },

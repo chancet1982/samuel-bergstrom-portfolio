@@ -150,7 +150,16 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
       return <Footer key={elementKey} />;
     case SECTION_ELEMENTS.QUOTE:
       return (
-        <BlockQuote key={elementKey} quote={data.quote} cite={data.cite} />
+        <ElementColorContextProvider>
+          <BlockQuote
+            key={elementKey}
+            quote={data.quote}
+            cite={data.cite}
+            bgColor={data.bgColor}
+            bgImageUrl={data.bgImageUrl}
+            limitMaxWidth={data.limitMaxWidth}
+          />
+        </ElementColorContextProvider>
       );
     case SECTION_ELEMENTS.CASES:
       return (

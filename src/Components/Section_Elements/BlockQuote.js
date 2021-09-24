@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -7,6 +7,9 @@ import { variants } from "../../animations/animations";
 import Quote from "../Elements/Quote";
 import Cite from "../Elements/Cite";
 import padding from "../../theme/padding";
+import BackgroundWrapper from "../BackgroundWrapper";
+import { ElementColorContext } from "../../Context/ElementColorContext";
+import colors from "../../theme/colors";
 
 const StyledBlockQuote = styled(motion.blockquote)`
   padding: ${padding.vertical.double} ${padding.horizontal.quadruple};
@@ -16,7 +19,7 @@ const StyledBlockQuote = styled(motion.blockquote)`
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  max-width: 60%;
+  max-width: calc(1440px * 0.72);
   margin: 0 auto;
 
   ${({ elementBgColor }) =>
@@ -25,7 +28,7 @@ const StyledBlockQuote = styled(motion.blockquote)`
 `;
 
 // TODO: (later) reveal on scroll (fixed under other content?)
-const BlockQuote = ({ cite, quote }) => {
+const BlockQuote = ({ cite, quote, bgColor, bgImageUrl, limitMaxWidth }) => {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
@@ -40,7 +43,17 @@ const BlockQuote = ({ cite, quote }) => {
     }
   }, [intersection]);
 
-  return (
+  const [, setLight] = useContext(ElementColorContext);
+
+  useEffect(() => {
+    // eslint-disable-next-line no-unused-expressions
+    setLight !== null &&
+      setLight(
+        (bgColor !== null && bgColor !== colors.offwhite) || bgImageUrl !== null
+      );
+  }, [setLight, bgColor, bgImageUrl]);
+
+  const renderBlockQuote = () => (
     <StyledBlockQuote
       ref={intersectionRef}
       initial="hidden"
@@ -51,15 +64,33 @@ const BlockQuote = ({ cite, quote }) => {
       <Cite>{cite}</Cite>
     </StyledBlockQuote>
   );
+
+  return bgColor || bgImageUrl ? (
+    <BackgroundWrapper
+      bgColor={bgColor}
+      bgImageUrl={bgImageUrl}
+      limitMaxWidth={limitMaxWidth}
+    >
+      {renderBlockQuote()}
+    </BackgroundWrapper>
+  ) : (
+    renderBlockQuote()
+  );
 };
 
 BlockQuote.propTypes = {
   cite: PropTypes.string,
   quote: PropTypes.node.isRequired,
+  bgColor: PropTypes.string,
+  bgImageUrl: PropTypes.string,
+  limitMaxWidth: PropTypes.bool,
 };
 
 BlockQuote.defaultProps = {
   cite: null,
+  bgColor: null,
+  bgImageUrl: null,
+  limitMaxWidth: false,
 };
 
 export default BlockQuote;

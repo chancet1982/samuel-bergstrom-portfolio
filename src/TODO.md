@@ -3,7 +3,8 @@ TODO list (What's left before you're done)
 NOW:
 Navlink -> fluidType console error.
 Testimonials fix appear when inView animations
-Expand BackgroundWrapper to allow bgImageUrls, fullWidth,LimitedWidth and apply to TEXTBOX, LISTOFIMAGES, KEYFIGURES, QUOTE.
+Replace current implementation of bgColor with BackgroundWrapper and apply to TEXTBOX, LISTOFIMAGES, KEYFIGURES, .
+Improve the design on KeyFigures.
 
 FIXES:
 ListOfImageWithTitleAndText -> add support for padding-bottom.
@@ -18,7 +19,7 @@ Social media links fix appear when inView animations
 Image gallery images overflow the screen area on smaller screens.
 
 LATER:
-Improve the design on KeyFigures.
+extract 1440px to a variable and store it in a the theme
 case-7 -> Add pictures of the report?
 case-6 -> Go through and rewrite
 case-8 -> Go through and rewrite
