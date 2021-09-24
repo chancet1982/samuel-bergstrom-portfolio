@@ -18,7 +18,7 @@ export const VIEW_ABOUT_ME = [
           limitMaxWidth: true,
           images: [
             {
-              imageUrl: "assets/meet-sam.png",
+              imageUrl: "assets/meet-sam.jpg",
               imageAlt: "A wonderful picture of me being myself",
             },
           ],
