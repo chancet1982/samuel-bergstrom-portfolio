@@ -13,6 +13,7 @@ import padding from "../../theme/padding";
 import { AppContext } from "../../Context/AppContext";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import { CASE_STATUS } from "../../data/dictionaries/CASE_STATUS";
+import colors from "../../theme/colors";
 
 const StyledCaseThumbnail = styled(motion.div)`
   flex: 1 1 150px;
@@ -73,7 +74,7 @@ const StyledCaseThumbnailImage = styled(motion.div)`
     bottom: 0;
     left: 0;
     right: 0;
-    background: rgba(0, 0, 0, 0.24);
+    background: ${colors.darker24};
   }
 `;
 
@@ -84,7 +85,7 @@ const StyledCaseIntro = styled(motion.div)`
   width: 100%;
   padding: ${padding.vertical.double} ${padding.horizontal.double};
   backdrop-filter: blur(8px);
-  background: rgba(0, 0, 0, 0.1);
+  background: ${colors.darker10};
   color: white;
   box-sizing: border-box;
 `;

@@ -3,8 +3,7 @@ TODO list (What's left before you're done)
 NOW:
 Navlink -> fluidType console error.
 Testimonials fix appear when inView animations
-Replace current implementation of bgColor with BackgroundWrapper and apply to TEXTBOX, LISTOFIMAGES, KEYFIGURES, .
-Improve the design on KeyFigures.
+Replace current implementation of bgColor with BackgroundWrapper and apply to TEXTBOX, LISTOFIMAGES.
 
 FIXES:
 ListOfImageWithTitleAndText -> add support for padding-bottom.

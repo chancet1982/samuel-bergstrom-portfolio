@@ -57,7 +57,17 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
         </ElementColorContextProvider>
       );
     case SECTION_ELEMENTS.KEY_FIGURES:
-      return <KeyFigures key={elementKey} items={data.items} />;
+      return (
+        <ElementColorContextProvider>
+          <KeyFigures
+            key={elementKey}
+            items={data.items}
+            bgColor={data.bgColor}
+            bgImageUrl={data.bgImageUrl}
+            limitMaxWidth={data.limitMaxWidth}
+          />
+        </ElementColorContextProvider>
+      );
     case SECTION_ELEMENTS.OVERVIEW:
       return (
         <Overview

@@ -20,6 +20,8 @@ const colors = {
   offwhite: "#F6F6F6",
   darkgray: "#424242",
   black: "#000000",
+  darker10: "rgba(0, 0, 0, 0.1)",
+  darker24: "rgba(0, 0, 0, 0.24)",
 };
 
 export default colors;

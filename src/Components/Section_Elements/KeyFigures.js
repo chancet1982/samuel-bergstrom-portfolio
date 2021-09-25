@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { v4 as uuid } from "uuid";
 import breakpoints from "../../theme/breakpoints";
 import KeyFigure from "../Elements/KeyFigure";
+import BackgroundWrapper from "../BackgroundWrapper";
+import { ElementColorContext } from "../../Context/ElementColorContext";
+import colors from "../../theme/colors";
 
 const StyledKeyFigures = styled(motion.div)`
   padding: 4rem 4vw;
@@ -21,13 +24,35 @@ const StyledKeyFigures = styled(motion.div)`
   }
 `;
 
-const KeyFigures = ({ items }) => {
-  return (
+const KeyFigures = ({ items, bgColor, bgImageUrl, limitMaxWidth }) => {
+  const [, setLight] = useContext(ElementColorContext);
+
+  useEffect(() => {
+    // eslint-disable-next-line no-unused-expressions
+    setLight !== null &&
+      setLight(
+        (bgColor !== null && bgColor !== colors.offwhite) || bgImageUrl !== null
+      );
+  }, [setLight, bgColor, bgImageUrl]);
+
+  const renderKeyFigures = () => (
     <StyledKeyFigures>
       {items.map(({ value, description }) => (
         <KeyFigure value={value} description={description} key={uuid()} />
       ))}
     </StyledKeyFigures>
+  );
+
+  return bgColor || bgImageUrl ? (
+    <BackgroundWrapper
+      bgColor={bgColor}
+      bgImageUrl={bgImageUrl}
+      limitMaxWidth={limitMaxWidth}
+    >
+      {renderKeyFigures()}
+    </BackgroundWrapper>
+  ) : (
+    renderKeyFigures()
   );
 };
 
@@ -38,6 +63,15 @@ KeyFigures.propTypes = {
       description: PropTypes.string.isRequired,
     })
   ).isRequired,
+  bgColor: PropTypes.string,
+  bgImageUrl: PropTypes.string,
+  limitMaxWidth: PropTypes.bool,
+};
+
+KeyFigures.defaultProps = {
+  bgColor: null,
+  bgImageUrl: null,
+  limitMaxWidth: false,
 };
 
 export default KeyFigures;

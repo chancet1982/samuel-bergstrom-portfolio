@@ -8,6 +8,7 @@ import Title from "./Title";
 import Paragraph from "./Paragraph";
 import breakpoints from "../../theme/breakpoints";
 import { variants } from "../../animations/animations";
+import padding from "../../theme/padding";
 
 const StyledKeyFigure = styled(motion.div)`
   align-items: center;
@@ -15,7 +16,7 @@ const StyledKeyFigure = styled(motion.div)`
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding: 4vw;
+  padding: ${padding.horizontal.double};
 
   @media (min-width: ${breakpoints.tablet}px) {
     width: 20%;
@@ -26,7 +27,7 @@ const StyledCircle = styled(motion.div)`
   border-radius: 50%;
   height: 8vw;
   width: 8vw;
-  background-color: ${colors.offwhite};
+  background-color: ${colors.darker10};
   padding: 5ch;
 
   > h3 {
