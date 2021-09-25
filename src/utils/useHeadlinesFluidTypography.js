@@ -11,17 +11,17 @@ const multiply = (val, times) => val * times;
 
 /* Not sure how this will work */
 const decrease = (val, dec, times) => val - dec * times;
-const { desktop, mobile } = breakpoints;
+const { ftMax, ftMin } = breakpoints;
 
 const useFluidTypography = (h = 1, withMargin = true) => {
   const { size, lh, margin, inc, minHMod, maxHMod } = typography;
   const { width } = useWindowSize();
 
   const getMod = (res) =>
-    res >= desktop
+    res >= ftMax
       ? maxHMod
-      : res < desktop && res >= mobile
-      ? minHMod + ((res - mobile) * (maxHMod - minHMod)) / (desktop - mobile)
+      : res < ftMax && res >= ftMin
+      ? minHMod + ((res - ftMin) * (maxHMod - minHMod)) / (ftMax - ftMin)
       : minHMod;
 
   return `

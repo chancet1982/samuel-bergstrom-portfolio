@@ -56,7 +56,7 @@ const StyledFgImage = styled(motion.img)`
   height: 80%;
   left: 20%;
 
-  @media (min-width: ${breakpoints.mobile_lg}px) {
+  @media (min-width: ${breakpoints.mobileLarge}px) {
     left: 50%;
   }
 `;

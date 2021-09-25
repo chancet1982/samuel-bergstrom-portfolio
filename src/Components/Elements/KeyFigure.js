@@ -19,7 +19,7 @@ const StyledKeyFigure = styled(motion.div)`
   padding: ${padding.horizontal.double};
 
   @media (min-width: ${breakpoints.tablet}px) {
-    width: 20%;
+    width: 12%;
   }
 `;
 

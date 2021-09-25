@@ -18,7 +18,7 @@ const StyledKeyFigures = styled(motion.div)`
   justify-content: center;
   flex-direction: column;
 
-  @media (min-width: ${breakpoints.mobile_lg}px) {
+  @media (min-width: ${breakpoints.mobileLarge}px) {
     flex-direction: row;
     align-items: flex-start;
   }
