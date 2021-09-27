@@ -19,15 +19,18 @@ const StyledScreenTransition = styled(motion.div)`
 
 const ShortScreenTransition = ({ animationFinished }) => {
   const screenTransitionVariants = {
-    initial: {
+    viewInitial: {
       opacity: 1,
     },
-    animate: {
+    viewAnimate: {
       opacity: 1,
       transition: {
         duration: 1.6,
         staggerChildren: 0.2,
       },
+    },
+    viewExit: {
+      opacity: 0,
     },
   };
 
@@ -37,8 +40,9 @@ const ShortScreenTransition = ({ animationFinished }) => {
 
   return (
     <StyledScreenTransition
-      initial="initial"
-      animate="animate"
+      initial="viewInitial"
+      animate="viewAnimate"
+      exit="viewExit"
       variants={screenTransitionVariants}
       onAnimationComplete={onComplete}
     >

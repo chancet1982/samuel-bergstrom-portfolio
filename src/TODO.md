@@ -1,7 +1,6 @@
 TODO list (What's left before you're done)
 
 NOW:
-FinalResult: fix layout on mobile (see case 9)
 
 FIXES:
 ListOfImageWithTitleAndText -> add support for padding-bottom.
@@ -12,13 +11,13 @@ Replace current implementation of bgColor with BackgroundWrapper and apply to TE
 
 Mobile fixes:
 Navbar doesnt look good on pixel 2 landspace.
-Test alternating colors on list in about me?
-Horizontal content alignment on cases looks off.
-ImageWithCaption create a section element or replace it in case 5
-Social media links fix appear when inView animations
 Image gallery images overflow the screen area on smaller screens.
 
 LATER:
+Fix vertical alignment - mobile
+Test alternating colors on list in about me?
+ImageWithCaption create a section element or replace it in case 5
+Social media links fix appear when inView animations
 extract 1440px to a variable and store it in a the theme
 case-7 -> Add pictures of the report?
 case-6 -> Go through and rewrite

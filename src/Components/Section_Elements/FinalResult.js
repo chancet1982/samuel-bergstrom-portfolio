@@ -17,7 +17,9 @@ const StyledResultCaption = styled.div`
   padding-top: ${padding.vertical.double};
   padding-right: ${padding.horizontal.quadruple};
   padding-bottom: ${padding.vertical.double};
-  padding-left: ${padding.horizontal.double};
+  padding-left: ${padding.horizontal.quadruple};
+  background-color: white;
+  box-sizing: border-box;
 `;
 
 const StyledFinalResult = styled(motion.div)`
@@ -66,11 +68,9 @@ const FinalResult = ({ imageUrl, bgColor, title, text, results }) => {
       variants={variants}
       animate={inView ? "inView" : "hidden"}
     >
-      {
-        <BackgroundWrapper bgColor={bgColor}>
-          <Image imageUrl={`${process.env.PUBLIC_URL}/${imageUrl}`} />
-        </BackgroundWrapper>
-      }
+      <BackgroundWrapper bgColor={bgColor}>
+        <Image imageUrl={`${process.env.PUBLIC_URL}/${imageUrl}`} />
+      </BackgroundWrapper>
 
       {(results.length > 0 || text) && (
         <StyledResultCaption>

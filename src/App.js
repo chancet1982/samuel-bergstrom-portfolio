@@ -1,7 +1,6 @@
 import React, { Suspense, lazy } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import { AnimatePresence } from "framer-motion";
 import AppContextProvider from "./Context/AppContext";
 import ViewLoading from "./Components/Views/ViewLoading";
 import Navigation from "./Components/Navigation";
@@ -24,47 +23,32 @@ const ViewContact = lazy(() => import("./Components/Views/ViewContact"));
 
 const ViewTest = lazy(() => import("./Components/Views/ViewTest"));
 
-const ViewTestTypography = lazy(() =>
-  import("./Components/Views/ViewTestTypography")
-);
-
 const ViewPageNotFound = lazy(() =>
   import("./Components/Views/ViewPageNotFound")
 );
 
 // TODO: (later) animatePrecense not having an effect AFAIK
 function App() {
+  const location = useLocation();
   return (
     <ThemeProvider theme={theme}>
       <ErrorBoundary>
         <AppContextProvider>
           <ViewColorContextProvider>
-            <Router>
-              <Navigation />
-              <Suspense fallback={<ViewLoading />}>
-                <ScrollToTop />
-                <AnimatePresence exitBeforeEnter>
-                  <Switch
-                    location={window.location}
-                    key={window.location.pathname}
-                  >
-                    <Route exact path="/" component={ViewLandingPage} />
-                    <Route exact path="/cases" component={ViewCases} />
-                    <Route exact path="/cases/:id" component={ViewCase} />
-                    <Route exact path="/about" component={ViewAboutMe} />
-                    <Route exact path="/contact" component={ViewContact} />
-                    <Route exact path="/test" component={ViewTest} />
-                    <Route
-                      exact
-                      path="/typography"
-                      component={ViewTestTypography}
-                    />
-                    <Route exact path="/loading" component={ViewLoading} />
-                    <Route exact path="*" component={ViewPageNotFound} />
-                  </Switch>
-                </AnimatePresence>
-              </Suspense>
-            </Router>
+            <Navigation />
+            <Suspense fallback={<ViewLoading />}>
+              <ScrollToTop />
+              <Switch location={location} key={location.pathname}>
+                <Route exact path="/" component={ViewLandingPage} />
+                <Route exact path="/cases" component={ViewCases} />
+                <Route exact path="/cases/:id" component={ViewCase} />
+                <Route exact path="/about" component={ViewAboutMe} />
+                <Route exact path="/contact" component={ViewContact} />
+                <Route exact path="/test" component={ViewTest} />
+                <Route exact path="/loading" component={ViewLoading} />
+                <Route exact path="*" component={ViewPageNotFound} />
+              </Switch>
+            </Suspense>
           </ViewColorContextProvider>
         </AppContextProvider>
       </ErrorBoundary>

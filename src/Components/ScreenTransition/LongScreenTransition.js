@@ -50,9 +50,7 @@ const StyledScreenTransition = styled(motion.div)`
   z-index: 1;
 `;
 
-// TODO: Change so text is always light during long screen transition.
 // TODO: Improve screen transition so it is snazzier.
-// TODO: Make screen transition take into account the URL?
 const LongScreenTransition = ({ animationFinished }) => {
   const [content] = useContext(AppContext);
   const [, setLight] = useContext(ViewColorContext);
@@ -62,8 +60,8 @@ const LongScreenTransition = ({ animationFinished }) => {
   }, [setLight]);
 
   const screenTransitionContentVariants = {
-    initial: { opacity: 0 },
-    animate: {
+    viewInitial: { opacity: 0 },
+    viewAnimate: {
       opacity: [0, 0, 1, 1, 0],
       y: ["0%", "0%", "0%", "0%", "-100%"],
       transition: {
@@ -72,11 +70,12 @@ const LongScreenTransition = ({ animationFinished }) => {
         easing: "anticipate",
       },
     },
+    viewExit: { opacity: 0 },
   };
 
   const screenTransitionVariants = {
-    initial: { scale: 0 },
-    animate: {
+    viewInitial: { scale: 0 },
+    viewAnimate: {
       scale: [0, 1, 1, 1],
       y: ["0%", "0%", "0%", "-100%"],
       transition: {
@@ -87,11 +86,13 @@ const LongScreenTransition = ({ animationFinished }) => {
         delayChildren: 3,
       },
     },
+    viewExit: { opacity: 0 },
   };
 
   const variants = {
-    initial: { y: "0%" },
-    animate: { y: "-100%" },
+    viewInitial: { y: "0%" },
+    viewAnimate: { y: "-100%" },
+    viewExit: { opacity: 0 },
   };
 
   const transition = {
@@ -105,16 +106,18 @@ const LongScreenTransition = ({ animationFinished }) => {
   return (
     <div style={{ height: "100vh" }}>
       <StyledScreenTransitionContent
-        initial="initial"
-        animate="animate"
+        initial="viewInitial"
+        animate="viewAnimate"
+        exit="viewExit"
         variants={screenTransitionContentVariants}
         onAnimationComplete={onComplete}
       >
         <Title h={1}>{content}</Title>
       </StyledScreenTransitionContent>
       <StyledScreenTransition
-        initial="initial"
-        animate="animate"
+        initial="viewInitial"
+        animate="viewAnimate"
+        exit="viewExit"
         variants={screenTransitionVariants}
       >
         <StyledCardFace variants={variants} transition={transition} />
