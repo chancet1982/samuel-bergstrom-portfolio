@@ -11,7 +11,7 @@ import Link from "../Elements/Link";
 
 const StyledCaseFooter = styled(motion.div)`
   padding: ${padding.vertical.double} ${padding.horizontal.double};
-  max-width: 1440px;
+  max-width: ${breakpoints.contentWidthLimit}px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);

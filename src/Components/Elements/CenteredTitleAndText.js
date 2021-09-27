@@ -20,7 +20,7 @@ const StyledCenteredTitleAndText = styled(motion.div)`
 
   @media (min-width: ${breakpoints.desktop}px) {
     background-color: transparent;
-    width: 60%;
+    max-width: calc(${breakpoints.contentWidthLimit}px * 0.64);
     justify-content: flex-start;
     text-align: center;
     margin: 0 auto;

@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { v4 as uuid } from "uuid";
 import ImageWithCaption from "../Elements/ImageWithCaption";
+import breakpoints from "../../theme/breakpoints";
 
 const StyledImageGallery = styled.div`
   padding-top: 4rem;
@@ -14,7 +15,7 @@ const StyledImageGallery = styled.div`
   ${({ limitMaxWidth }) =>
     limitMaxWidth &&
     `
-   max-width:1440px;
+   max-width:${breakpoints.contentWidthLimit}px;
    margin: 0 auto;
   `};
 `;

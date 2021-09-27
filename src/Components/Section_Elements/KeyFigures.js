@@ -11,7 +11,7 @@ import colors from "../../theme/colors";
 
 const StyledKeyFigures = styled(motion.div)`
   padding: 4rem 4vw;
-  max-width: 1440px;
+  max-width: ${breakpoints.contentWidthLimit}px;
   margin: 0 auto;
   display: flex;
   align-items: center;

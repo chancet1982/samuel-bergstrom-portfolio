@@ -14,7 +14,7 @@ import pickRandom from "../../utils/pickRandom";
 const StyledTestimonials = styled(motion.div)`
   padding: ${padding.vertical.double} ${padding.horizontal.double};
   box-sizing: border-box;
-  max-width: 1440px;
+  max-width: ${breakpoints.contentWidthLimit}px;
   margin: 0 auto;
 `;
 

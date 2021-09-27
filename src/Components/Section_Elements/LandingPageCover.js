@@ -63,7 +63,7 @@ const StyledFgImage = styled(motion.img)`
 
 const StyledCaption = styled(motion.div)`
   height: 100%;
-  max-width: 1440px;
+  max-width: ${breakpoints.contentWidthLimit}px;
   margin: 0 auto;
   overflow: hidden;
   display: flex;

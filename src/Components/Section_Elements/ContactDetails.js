@@ -7,10 +7,11 @@ import TitleAndText from "../Elements/TitleAndText";
 import ContactForm from "../ContactForm";
 import List from "../Elements/List";
 import padding from "../../theme/padding";
+import breakpoints from "../../theme/breakpoints";
 
 const StyledContactDetails = styled(motion.div)`
   padding: ${padding.vertical.double} ${padding.horizontal.double};
-  max-width: 1440px;
+  max-width: ${breakpoints.contentWidthLimit}px;
   margin: 0 auto;
   box-sizing: border-box;
 `;

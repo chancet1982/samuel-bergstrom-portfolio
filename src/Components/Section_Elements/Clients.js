@@ -11,6 +11,7 @@ import { CLIENTS } from "../../data/dictionaries/CLIENTS";
 import padding from "../../theme/padding";
 import CenteredTitleAndText from "../Elements/CenteredTitleAndText";
 import pickRandom from "../../utils/pickRandom";
+import breakpoints from "../../theme/breakpoints";
 
 const StyledClients = styled(motion.div)`
   margin-left: ${padding.horizontal.quadruple};
@@ -18,7 +19,7 @@ const StyledClients = styled(motion.div)`
   padding-left: ${padding.horizontal.double};
   padding-right: ${padding.horizontal.double};
   box-sizing: border-box;
-  max-width: 1440px;
+  max-width: ${breakpoints.contentWidthLimit}px;
   margin: 0 auto;
 
   > div {

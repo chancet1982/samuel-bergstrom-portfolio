@@ -10,6 +10,7 @@ import padding from "../../theme/padding";
 import BackgroundWrapper from "../BackgroundWrapper";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
+import breakpoints from "../../theme/breakpoints";
 
 const StyledBlockQuote = styled(motion.blockquote)`
   padding: ${padding.vertical.double} ${padding.horizontal.quadruple};
@@ -19,7 +20,7 @@ const StyledBlockQuote = styled(motion.blockquote)`
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  max-width: calc(1440px * 0.72);
+  max-width: calc(${breakpoints.contentWidthLimit}px * 0.72);
   margin: 0 auto;
 `;
 

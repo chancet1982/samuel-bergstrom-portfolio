@@ -14,7 +14,7 @@ import CenteredTitleAndText from "../Elements/CenteredTitleAndText";
 import Button from "../Elements/Button";
 
 const StyledPageLink = styled.div`
-  max-width: 1440px;
+  max-width: ${breakpoints.contentWidthLimit}px;
   margin: 0 auto;
   text-align: center;
   padding-bottom: ${padding.vertical.double};
@@ -27,7 +27,7 @@ const StyledCases = styled(motion.div)`
   row-gap: ${padding.vertical.single};
   padding-bottom: ${({ preview }) =>
     preview ? padding.vertical.single : padding.vertical.quadruple};
-  max-width: 1440px;
+  max-width: ${breakpoints.contentWidthLimit}px;
   margin: 0 auto;
 
   @media (min-width: ${breakpoints.desktop}px) {

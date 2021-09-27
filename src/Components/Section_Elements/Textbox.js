@@ -18,7 +18,7 @@ const StyledTextbox = styled(motion.div)`
 
   ${(limitMaxWidth) =>
     limitMaxWidth && {
-      maxWidth: "1440px",
+      maxWidth: `${breakpoints.contentWidthLimit}px`,
     }};
 
   margin: 0 auto;

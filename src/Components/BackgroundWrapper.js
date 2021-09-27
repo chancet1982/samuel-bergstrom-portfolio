@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import colors from "../theme/colors";
 import padding from "../theme/padding";
+import breakpoints from "../theme/breakpoints";
 
 const StyledBackground = styled.div`
   height: 100%;
@@ -26,7 +27,7 @@ ${({ bgImageUrl, bgColor }) =>
 
 ${({ limitMaxWidth }) =>
     limitMaxWidth && {
-      maxWidth: "1440px",
+      maxWidth: `${breakpoints.contentWidthLimit}px`,
       margin: "0 auto",
     }}
 `;

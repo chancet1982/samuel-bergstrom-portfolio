@@ -33,7 +33,7 @@ const StyledListContainer = styled(motion.div)`
     }
 
     @media (min-width: ${breakpoints.desktop}px) {
-      max-width: 1440px;
+      max-width: ${breakpoints.contentWidthLimit}px;
       margin: 0 auto;
     }
   }
