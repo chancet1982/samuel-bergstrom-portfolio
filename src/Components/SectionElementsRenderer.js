@@ -142,13 +142,16 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
       );
     case SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT:
       return (
-        <ListOfImagesWithTitleAndText
-          key={elementKey}
-          items={data.items}
-          listTitle={data.listTitle}
-          listText={data.listText}
-          elementBgColor={data.elementBgColor}
-        />
+        <ElementColorContextProvider>
+          <ListOfImagesWithTitleAndText
+            key={elementKey}
+            items={data.items}
+            listTitle={data.listTitle}
+            listText={data.listText}
+            bgColor={data.bgColor}
+            limitMaxWidth={data.limitMaxWidth}
+          />
+        </ElementColorContextProvider>
       );
     case SECTION_ELEMENTS.CLIENTS:
       return <Clients key={elementKey} preview={data.preview} />;

@@ -15,10 +15,6 @@ const StyledCaseFooter = styled(motion.div)`
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  ${({ bgColor }) =>
-    bgColor && {
-      backgroundColor: bgColor,
-    }};
 
   > div:first-of-type {
     grid-column: 1 / span 3;

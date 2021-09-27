@@ -88,8 +88,6 @@ const Textbox = ({
     threshold: 0,
   });
 
-  const [, setLight] = useContext(ElementColorContext);
-
   // eslint-disable-next-line consistent-return
   useEffect(() => {
     const inViewNow = intersection && intersection.intersectionRatio > 0;
@@ -98,10 +96,16 @@ const Textbox = ({
     }
   }, [intersection]);
 
+  const [, setLight] = useContext(ElementColorContext);
+
   useEffect(() => {
     // eslint-disable-next-line no-unused-expressions
     setLight !== null &&
-      setLight(bgColor !== null && bgColor !== colors.offwhite);
+      setLight(
+        bgColor !== null &&
+          bgColor !== colors.offwhite &&
+          bgColor !== colors.primaryShade
+      );
   }, [setLight, bgColor]);
 
   const renderImage = () =>

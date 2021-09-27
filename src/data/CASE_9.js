@@ -222,7 +222,8 @@ export const CASE_9 = {
         {
           template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
           data: {
-            elementBgColor: colors.offwhite,
+            bgColor: colors.offwhite,
+            limitMaxWidth: true,
             listTitle: "What has the most potential? Before, during, or after?",
             items: [
               {

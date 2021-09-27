@@ -27,7 +27,6 @@ export const VIEW_ABOUT_ME = [
     ],
   },
   {
-    header: "Why Sam?",
     elements: [
       {
         template: SECTION_ELEMENTS.TEXTBOX,
@@ -48,6 +47,12 @@ export const VIEW_ABOUT_ME = [
           ),
         },
       },
+    ],
+  },
+  {
+    bgColor: colors.primaryShade,
+    header: "Why Sam?",
+    elements: [
       {
         template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
         data: {

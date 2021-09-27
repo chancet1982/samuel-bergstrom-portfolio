@@ -3,11 +3,10 @@ TODO list (What's left before you're done)
 NOW:
 
 FIXES:
-ListOfImageWithTitleAndText -> add support for padding-bottom.
 Hide navigation while screen animation is playing. (nice to have)
 Navlink -> fluidType console error.
 Testimonials fix appear when inView animations
-Replace current implementation of bgColor with BackgroundWrapper and apply to TEXTBOX, LISTOFIMAGES.
+TEXTBOX Replace current implementation of bgColor with BackgroundWrapper.
 
 Mobile fixes:
 Navbar doesnt look good on pixel 2 landspace.

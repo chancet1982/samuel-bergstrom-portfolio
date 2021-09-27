@@ -1,12 +1,14 @@
-import React from "react";
+import React, { useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import ImageWithTitleAndText from "../Elements/ImageWithTitleAndText";
 import padding from "../../theme/padding";
 import breakpoints from "../../theme/breakpoints";
-import ElementContextProvider from "../../Context/ElementColorContext";
 import CenteredTitleAndText from "../Elements/CenteredTitleAndText";
+import BackgroundWrapper from "../BackgroundWrapper";
+import { ElementColorContext } from "../../Context/ElementColorContext";
+import colors from "../../theme/colors";
 
 const StyledListOfImagesWithTitleAndText = styled(motion.div)`
   display: grid;
@@ -14,10 +16,6 @@ const StyledListOfImagesWithTitleAndText = styled(motion.div)`
 
   ${({ listTitle }) =>
     !listTitle && `padding-top: ${padding.vertical.double};`};
-
-  ${({ elementBgColor }) =>
-    elementBgColor &&
-    ` background-color: ${elementBgColor}; padding-top: ${padding.vertical.double}; padding-bottom: ${padding.vertical.double};`};
 `;
 
 const StyledListContainer = styled(motion.div)`
@@ -28,6 +26,10 @@ const StyledListContainer = styled(motion.div)`
 
     > figure {
       max-height: 84vh;
+      @media (max-width: ${breakpoints.desktop - 1}px) {
+        padding-left: ${padding.horizontal.double};
+        padding-right: ${padding.horizontal.double};
+      }
     }
 
     @media (min-width: ${breakpoints.desktop}px) {
@@ -43,6 +45,7 @@ const StyledListContainer = styled(motion.div)`
 
       > figure {
         grid-area: a;
+        padding-left: ${padding.horizontal.double};
       }
       > div {
         grid-area: b;
@@ -57,6 +60,7 @@ const StyledListContainer = styled(motion.div)`
 
       > figure {
         grid-area: b;
+        padding-right: ${padding.horizontal.double};
       }
       > div {
         grid-area: a;
@@ -69,41 +73,54 @@ const ListOfImagesWithTitleAndText = ({
   listTitle,
   listText,
   items,
-  elementBgColor,
+  bgColor,
+  limitMaxWidth,
 }) => {
-  return (
-    <>
-      <StyledListOfImagesWithTitleAndText
-        elementBgColor={elementBgColor}
-        listTitle={listTitle}
-      >
-        {(listTitle || listText) && (
-          <CenteredTitleAndText title={listTitle} text={listText} />
-        )}
-        <StyledListContainer>
-          {items.map(({ imageUrl, imageAlt, title, text, bgColor }, index) => (
-            <ElementContextProvider key={imageUrl}>
-              <ImageWithTitleAndText
-                imageUrl={imageUrl}
-                imageAlt={imageAlt}
-                title={title}
-                text={text}
-                bgColor={bgColor}
-                horizontal
-                flip={index % 2 === 1}
-              />
-            </ElementContextProvider>
-          ))}
-        </StyledListContainer>
-      </StyledListOfImagesWithTitleAndText>
-    </>
+  const [, setLight] = useContext(ElementColorContext);
+
+  useEffect(() => {
+    // eslint-disable-next-line no-unused-expressions
+    setLight !== null &&
+      setLight(
+        bgColor !== null &&
+          bgColor !== colors.offwhite &&
+          bgColor !== colors.primaryShade
+      );
+  }, [setLight, bgColor]);
+
+  const renderListOfImagesWithTitleAndText = () => (
+    <StyledListOfImagesWithTitleAndText listTitle={listTitle}>
+      {(listTitle || listText) && (
+        <CenteredTitleAndText title={listTitle} text={listText} />
+      )}
+      <StyledListContainer>
+        {items.map(({ imageUrl, imageAlt, title, text }, index) => (
+          <ImageWithTitleAndText
+            imageUrl={imageUrl}
+            imageAlt={imageAlt}
+            title={title}
+            text={text}
+            horizontal
+            flip={index % 2 === 1}
+            key={imageUrl}
+          />
+        ))}
+      </StyledListContainer>
+    </StyledListOfImagesWithTitleAndText>
+  );
+
+  return bgColor ? (
+    <BackgroundWrapper bgColor={bgColor} limitMaxWidth={limitMaxWidth}>
+      {renderListOfImagesWithTitleAndText()}
+    </BackgroundWrapper>
+  ) : (
+    renderListOfImagesWithTitleAndText()
   );
 };
 
 ListOfImagesWithTitleAndText.propTypes = {
   listTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   listText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  elementBgColor: PropTypes.string,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       imageUrl: PropTypes.string.isRequired,
@@ -113,12 +130,15 @@ ListOfImagesWithTitleAndText.propTypes = {
       bgColor: PropTypes.string,
     })
   ).isRequired,
+  bgColor: PropTypes.string,
+  limitMaxWidth: PropTypes.bool,
 };
 
 ListOfImagesWithTitleAndText.defaultProps = {
   listTitle: null,
   listText: null,
-  elementBgColor: null,
+  bgColor: null,
+  limitMaxWidth: false,
 };
 
 export default ListOfImagesWithTitleAndText;

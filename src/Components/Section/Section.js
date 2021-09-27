@@ -41,7 +41,11 @@ const Section = ({ header, children, bgColor, isSticky, isPadded }) => {
   const isMobile = width < breakpoints.desktop;
 
   useEffect(() => {
-    setLight(bgColor !== null && bgColor !== colors.offwhite);
+    setLight(
+      bgColor !== null &&
+        bgColor !== colors.offwhite &&
+        bgColor !== colors.primaryShade
+    );
   }, [setLight, bgColor]);
 
   return (

@@ -21,7 +21,11 @@ const View = ({ children, isPadded, transition, bgColor }) => {
   const isShort = sessionStorage.getItem("isShortLS");
 
   useEffect(() => {
-    setLight(bgColor !== null && bgColor !== colors.offwhite);
+    setLight(
+      bgColor !== null &&
+        bgColor !== colors.offwhite &&
+        bgColor !== colors.primaryShade
+    );
   }, [setLight, bgColor]);
 
   const removeTransition = () => {

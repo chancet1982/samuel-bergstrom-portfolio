@@ -44,7 +44,11 @@ const ImageWithTitleAndText = ({
   const [, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
-    setLight(bgColor !== null && bgColor !== colors.offwhite);
+    setLight(
+      bgColor !== null &&
+        bgColor !== colors.offwhite &&
+        bgColor !== colors.primaryShade
+    );
   }, [setLight, bgColor]);
 
   const [inView, setInView] = useState(false);
