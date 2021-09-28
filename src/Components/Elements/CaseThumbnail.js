@@ -88,6 +88,10 @@ const StyledCaseIntro = styled(motion.div)`
   background: ${colors.darker10};
   color: white;
   box-sizing: border-box;
+
+  @media (max-width: ${breakpoints.mobileLarge}px) {
+    padding: ${padding.vertical.single} ${padding.horizontal.double};
+  }
 `;
 
 const CaseThumbnail = ({ data, status, caseUrl }) => {

@@ -82,7 +82,18 @@ const StyledCaption = styled(motion.div)`
   }
 
   p {
-    max-width: 30ch;
+    @media (max-width: ${breakpoints.mobileLarge - 1}px) {
+      max-width: 15ch;
+    }
+
+    @media (min-width: ${breakpoints.mobileLarge}px) and (max-width: ${breakpoints.tablet -
+      1}px) {
+      max-width: 20ch;
+    }
+
+    @media (min-width: ${breakpoints.tablet}px) {
+      max-width: 30ch;
+    }
   }
 
   @media (min-width: ${breakpoints.tablet}px) {

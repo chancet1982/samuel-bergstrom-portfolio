@@ -413,6 +413,7 @@ export const CASE_9 = {
         {
           template: SECTION_ELEMENTS.QUOTE,
           data: {
+            bgImageUrl: "assets/case-10/quote-bg.jpg",
             quote:
               "We cant fix the search results page, but what if we can bypass it?",
             cite: "Me (being sneaky)",

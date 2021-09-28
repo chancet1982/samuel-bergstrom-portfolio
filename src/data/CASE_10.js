@@ -10,6 +10,7 @@ import TitleAndText from "../Components/Elements/TitleAndText";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Elements/Title";
+import colors from "../theme/colors";
 
 /* there is an IMAGE_WITH_CAPTION here that is wrong. */
 export const CASE_10 = {
@@ -264,6 +265,7 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.QUOTE,
           data: {
+            bgImageUrl: "assets/case-10/quote-bg.jpg",
             quote:
               "Det verkar finnas en del “fejkaktörer” som ofta hamnar överst i listan och som sen inte har produkten. Det gör att man ofta inte chansar med företag som inte är kända sen innan.",
             cite: "User, Survey reponse",
@@ -326,7 +328,7 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            bgColor: "#00ADDB",
+            bgColor: colors.offwhite,
             title: <>Insights:</>,
             text: (
               <>
