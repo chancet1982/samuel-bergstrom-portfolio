@@ -2,11 +2,13 @@ import React, { useContext, useEffect } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { useWindowSize } from "react-use";
 import { AppContext } from "../../Context/AppContext";
 import Title from "../Elements/Title";
 import padding from "../../theme/padding";
 import { ViewColorContext } from "../../Context/ViewColorContext";
 import colors from "../../theme/colors";
+import breakpoints from "../../theme/breakpoints";
 
 const StyledCardFace = styled(motion.div)`
   background: ${({
@@ -54,6 +56,11 @@ const StyledScreenTransition = styled(motion.div)`
 const LongScreenTransition = ({ animationFinished }) => {
   const [content] = useContext(AppContext);
   const [, setLight] = useContext(ViewColorContext);
+  const { width } = useWindowSize();
+  const isMobile = width < breakpoints.desktop;
+
+  const amountOfCardfaces = isMobile ? 1 : 3;
+  const delayPerCardface = 0.2;
 
   useEffect(() => {
     setLight(true);
@@ -65,7 +72,7 @@ const LongScreenTransition = ({ animationFinished }) => {
       opacity: [0, 0, 1, 1, 0],
       y: ["0%", "0%", "0%", "0%", "-100%"],
       transition: {
-        duration: 6,
+        duration: 5.4 + amountOfCardfaces * delayPerCardface,
         times: [0, 0.2, 0.3, 0.9, 0.95],
         easing: "anticipate",
       },
@@ -79,11 +86,11 @@ const LongScreenTransition = ({ animationFinished }) => {
       scale: [0, 1, 1, 1],
       y: ["0%", "0%", "0%", "-100%"],
       transition: {
-        duration: 6,
+        duration: 5.4 + amountOfCardfaces * delayPerCardface,
         times: [0, 0.05, 0.95, 1],
         easing: "anticipate",
-        staggerChildren: 0.2,
-        delayChildren: 3,
+        staggerChildren: delayPerCardface,
+        delayChildren: 2.4 + amountOfCardfaces * delayPerCardface,
       },
     },
     viewExit: { opacity: 0 },
@@ -120,9 +127,9 @@ const LongScreenTransition = ({ animationFinished }) => {
         exit="viewExit"
         variants={screenTransitionVariants}
       >
-        <StyledCardFace variants={variants} transition={transition} />
-        <StyledCardFace variants={variants} transition={transition} />
-        <StyledCardFace variants={variants} transition={transition} />
+        {Array.from({ length: amountOfCardfaces }, () => (
+          <StyledCardFace variants={variants} transition={transition} />
+        ))}
       </StyledScreenTransition>
     </div>
   );

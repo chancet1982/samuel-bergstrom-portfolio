@@ -106,6 +106,10 @@ const LandingPageCover = ({
   const coverHeight = (height / 100) * 92;
   const imageOffset = (height / 100) * 20; // -20vh
   const [, setLight] = useContext(ElementColorContext);
+  const { width } = useWindowSize();
+  const isMobile = width < breakpoints.desktop;
+  const amountOfBlinds = isMobile ? 1 : 3;
+  const delayPerBlind = 0.2;
 
   useEffect(() => {
     // eslint-disable-next-line no-unused-expressions
@@ -129,16 +133,6 @@ const LandingPageCover = ({
     [0, -coverHeight]
   );
 
-  /* const smoothImageParallax = useSpring(imageParallax, {
-    stiffness: 100,
-    damping: 25,
-  });
-
-  const smoothCaptionParallax = useSpring(captionParallax, {
-    stiffness: 100,
-    damping: 25,
-  }); */
-
   const coverVariants = {
     initial: {
       opacity: 0,
@@ -157,7 +151,7 @@ const LandingPageCover = ({
       opacity: 1,
       y: 0,
       transition: {
-        delay: 2.3,
+        delay: 1.7 + amountOfBlinds * delayPerBlind,
         duration: 0.6,
       },
     },
@@ -169,7 +163,7 @@ const LandingPageCover = ({
       opacity: 1,
       y: 0,
       transition: {
-        delay: 2.6,
+        delay: 2 + amountOfBlinds * delayPerBlind,
         duration: 0.6,
       },
     },
@@ -199,7 +193,7 @@ const LandingPageCover = ({
         </TitleAndText>
       </StyledCaption>
 
-      <Blinds />
+      <Blinds amountOfBlinds={amountOfBlinds} />
     </StyledCover>
   );
 };
