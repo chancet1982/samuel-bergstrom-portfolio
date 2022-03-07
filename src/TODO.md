@@ -1,6 +1,9 @@
 TODO list (What's left before you're done)
 
 FIXES:
+Fine-tune short screen transition.
+Fine tune the typography
+Fine-tune case thumbnail
 Hide navigation while screen animation is playing. (nice to have)
 Navlink -> fluidType console error.
 TEXTBOX Replace current implementation of bgColor with BackgroundWrapper.

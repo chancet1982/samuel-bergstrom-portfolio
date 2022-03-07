@@ -31,7 +31,7 @@ export const VIEW_LANDING_PAGE = [
     ],
   },
   {
-    header: "About Me",
+    /* header: "About Me", */
     elements: [
       {
         template: SECTION_ELEMENTS.TEXTBOX,
@@ -71,7 +71,7 @@ export const VIEW_LANDING_PAGE = [
     ],
   },
   {
-    header: "Cases",
+    /* header: "Cases", */
     elements: [
       {
         template: SECTION_ELEMENTS.CASES,

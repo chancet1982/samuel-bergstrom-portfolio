@@ -14,8 +14,8 @@ import CenteredTitleAndText from "../Elements/CenteredTitleAndText";
 import Button from "../Elements/Button";
 
 const StyledPageLink = styled.div`
-  max-width: ${breakpoints.contentWidthLimit}px;
-  margin: 0 auto;
+  /*max-width: ${breakpoints.contentWidthLimit}px;
+  margin: 0 auto;*/
   text-align: center;
   padding-bottom: ${padding.vertical.double};
 `;
@@ -23,12 +23,12 @@ const StyledPageLink = styled.div`
 const StyledCases = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  column-gap: ${padding.vertical.single};
-  row-gap: ${padding.vertical.single};
+  column-gap: ${padding.vertical.half};
+  row-gap: ${padding.vertical.half};
   padding-bottom: ${({ preview }) =>
     preview ? padding.vertical.single : padding.vertical.quadruple};
-  max-width: ${breakpoints.contentWidthLimit}px;
-  margin: 0 auto;
+  /*max-width: ${breakpoints.contentWidthLimit}px;
+  margin: 0 auto;*/
 
   @media (min-width: ${breakpoints.desktop}px) {
     grid-template-columns: repeat(2, 1fr);

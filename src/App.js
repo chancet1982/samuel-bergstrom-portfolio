@@ -1,6 +1,7 @@
 import React, { Suspense, lazy } from "react";
 import { Switch, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
+import { AnimatePresence } from "framer-motion";
 import AppContextProvider from "./Context/AppContext";
 import ViewLoading from "./Components/Views/ViewLoading";
 import Navigation from "./Components/Navigation";
@@ -38,16 +39,18 @@ function App() {
             <Navigation />
             <Suspense fallback={<ViewLoading />}>
               <ScrollToTop />
-              <Switch location={location} key={location.pathname}>
-                <Route exact path="/" component={ViewLandingPage} />
-                <Route exact path="/cases" component={ViewCases} />
-                <Route exact path="/cases/:id" component={ViewCase} />
-                <Route exact path="/about" component={ViewAboutMe} />
-                <Route exact path="/contact" component={ViewContact} />
-                <Route exact path="/test" component={ViewTest} />
-                <Route exact path="/loading" component={ViewLoading} />
-                <Route exact path="*" component={ViewPageNotFound} />
-              </Switch>
+              <AnimatePresence exitBeforeEnter>
+                <Switch location={location} key={location.pathname}>
+                  <Route exact path="/" component={ViewLandingPage} />
+                  <Route exact path="/cases" component={ViewCases} />
+                  <Route exact path="/cases/:id" component={ViewCase} />
+                  <Route exact path="/about" component={ViewAboutMe} />
+                  <Route exact path="/contact" component={ViewContact} />
+                  <Route exact path="/test" component={ViewTest} />
+                  <Route exact path="/loading" component={ViewLoading} />
+                  <Route exact path="*" component={ViewPageNotFound} />
+                </Switch>
+              </AnimatePresence>
             </Suspense>
           </ViewColorContextProvider>
         </AppContextProvider>

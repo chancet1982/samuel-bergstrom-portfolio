@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 import LongScreenTransition from "./ScreenTransition/LongScreenTransition";
 import ShortScreenTransition from "./ScreenTransition/ShortScreenTransition";
 import padding from "../theme/padding";
@@ -53,23 +53,19 @@ const View = ({ children, isPadded, transition, bgColor }) => {
     viewExit: { opacity: 0 },
   };
 
-  return (
-    <AnimatePresence exitBeforeEnter>
-      {screenTransition ? (
-        <ScreenTransition />
-      ) : (
-        <StyledView
-          isPadded={isPadded}
-          initial="viewInitial"
-          animate="viewAnimate"
-          exit="viewExit"
-          variants={variants}
-          bgColor={bgColor}
-        >
-          {children}
-        </StyledView>
-      )}
-    </AnimatePresence>
+  return screenTransition ? (
+    <ScreenTransition />
+  ) : (
+    <StyledView
+      isPadded={isPadded}
+      initial="viewInitial"
+      animate="viewAnimate"
+      exit="viewExit"
+      variants={variants}
+      bgColor={bgColor}
+    >
+      {children}
+    </StyledView>
   );
 };
 
