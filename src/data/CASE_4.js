@@ -11,7 +11,6 @@ import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES"
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 
-/* there is an IMAGE_WITH_CAPTION here that is wrong. */
 export const CASE_4 = {
   caseStatus: CASE_STATUS.PUBLISHED,
   caseType: CASE_TYPES.REDESIGN,
@@ -26,7 +25,6 @@ export const CASE_4 = {
   },
   details: [
     {
-      isSticky: true,
       elements: [
         {
           template: SECTION_ELEMENTS.COVER,
@@ -34,6 +32,7 @@ export const CASE_4 = {
             overline: "Logistics",
             title: "e-drop",
             imageUrl: "assets/case-4/cover.png",
+            bgColor: "#546368",
             text: (
               <>
                 <Paragraph large>

@@ -19,8 +19,8 @@ const StyledBackground = styled.div`
       backgroundColor: bgColor || colors.offwhite,
     }}
 
-${({ bgImageUrl, bgColor }) =>
-    (bgImageUrl || bgColor) && {
+${({ bgImageUrl, bgColor, isPadded }) =>
+    ((bgImageUrl && isPadded) || (bgColor && isPadded)) && {
       paddingTop: padding.vertical.double,
       paddingBottom: padding.vertical.double,
     }}
@@ -37,12 +37,14 @@ const BackgroundWrapper = ({
   bgImageUrl,
   limitMaxWidth,
   children,
+  isPadded,
 }) => {
   return bgColor || bgImageUrl ? (
     <StyledBackground
       bgColor={bgColor}
       bgImageUrl={bgImageUrl}
       limitMaxWidth={limitMaxWidth}
+      isPadded={isPadded}
     >
       {children}
     </StyledBackground>
@@ -56,12 +58,14 @@ BackgroundWrapper.propTypes = {
   bgImageUrl: PropTypes.string,
   children: PropTypes.node.isRequired,
   limitMaxWidth: PropTypes.bool,
+  isPadded: PropTypes.bool,
 };
 
 BackgroundWrapper.defaultProps = {
   bgColor: null,
   bgImageUrl: null,
   limitMaxWidth: false,
+  isPadded: true,
 };
 
 export default BackgroundWrapper;

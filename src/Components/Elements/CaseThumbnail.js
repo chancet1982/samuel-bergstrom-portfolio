@@ -25,16 +25,16 @@ const StyledCaseThumbnail = styled(motion.div)`
   position: relative;
 
   @media (max-width: ${breakpoints.tablet}px) {
-    height: 83.96vw;
+    height: 92vw;
   }
 
   @media (min-width: ${breakpoints.tablet}px) and (max-width: ${breakpoints.desktop -
     1}px) {
-    height: 49.25vw;
+    height: calc(92vw / 2 - ${padding.vertical.eighth});
   }
 
   @media (min-width: ${breakpoints.desktop}px) {
-    height: 27.5vw;
+    height: calc(92vw / 2 - ${padding.vertical.eighth});
   }
 
   a {

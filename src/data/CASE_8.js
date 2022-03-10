@@ -8,7 +8,6 @@ import Paragraph from "../Components/Elements/Paragraph";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 
-/* there is an IMAGE_WITH_CAPTION here that is wrong. */
 export const CASE_8 = {
   caseStatus: CASE_STATUS.DRAFT,
   caseType: CASE_TYPES.CONCEPT,

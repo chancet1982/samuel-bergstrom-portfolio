@@ -12,7 +12,6 @@ import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Elements/Title";
 import colors from "../theme/colors";
 
-/* there is an IMAGE_WITH_CAPTION here that is wrong. */
 export const CASE_9 = {
   caseStatus: CASE_STATUS.FEATURED,
   caseType: CASE_TYPES.CONCEPT,
@@ -27,7 +26,6 @@ export const CASE_9 = {
   },
   details: [
     {
-      isSticky: true,
       elements: [
         {
           template: SECTION_ELEMENTS.COVER,
@@ -35,6 +33,7 @@ export const CASE_9 = {
             overline: "Price Comparison Service",
             title: "Improving search experience",
             imageUrl: "assets/case-9/cover.png",
+            bgColor: "#00ADDB",
             text: (
               <>
                 <Paragraph large>

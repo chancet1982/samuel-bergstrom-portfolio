@@ -13,7 +13,6 @@ const StyledSection = styled(motion.section)`
   height: fit-content;
   margin: 0 auto;
   position: relative;
-  background-color: white;
 
   ${({ isSticky }) =>
     isSticky && {

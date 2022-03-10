@@ -24,7 +24,6 @@ export const CASE_5 = {
   },
   details: [
     {
-      isSticky: true,
       elements: [
         {
           template: SECTION_ELEMENTS.COVER,
@@ -219,12 +218,11 @@ export const CASE_5 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.IMAGE_WITH_CAPTION,
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
             imageUrl: "assets/case-5/personas.png",
             imageAlt:
               "Personas, 3 distincs user groups that have contact surface with the app",
-            bgColor: "#158FC9",
             caption:
               "Personas, 3 distincs user groups that have contact surface with the app",
           },

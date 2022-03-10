@@ -12,16 +12,11 @@ export const VIEW_ABOUT_ME = [
   {
     elements: [
       {
-        template: SECTION_ELEMENTS.IMAGE_GALLERY,
+        template: SECTION_ELEMENTS.SECTION_IMAGE,
         data: {
-          template: IMAGE_GALLERY_TEMPLATES.ONE_IMAGE_FULLSIZE,
           limitMaxWidth: true,
-          images: [
-            {
-              imageUrl: "assets/meet-sam.jpg",
-              imageAlt: "A wonderful picture of me being myself",
-            },
-          ],
+          imageUrl: "assets/meet-sam.jpg",
+          imageAlt: "A wonderful picture of me being myself",
         },
       },
     ],

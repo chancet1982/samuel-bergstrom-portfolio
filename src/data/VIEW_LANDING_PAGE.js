@@ -11,6 +11,7 @@ export const VIEW_LANDING_PAGE = [
       {
         template: SECTION_ELEMENTS.LANDING_PAGE_COVER,
         data: {
+          bgColor: colors.primaryShade,
           title: (
             <>
               <mark>Not</mark> your typical designer
@@ -31,7 +32,6 @@ export const VIEW_LANDING_PAGE = [
     ],
   },
   {
-    /* header: "About Me", */
     elements: [
       {
         template: SECTION_ELEMENTS.TEXTBOX,
@@ -71,7 +71,7 @@ export const VIEW_LANDING_PAGE = [
     ],
   },
   {
-    /* header: "Cases", */
+    isPadded: true,
     elements: [
       {
         template: SECTION_ELEMENTS.CASES,

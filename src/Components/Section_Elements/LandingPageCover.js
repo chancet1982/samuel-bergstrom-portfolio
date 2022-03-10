@@ -12,7 +12,6 @@ import TitleAndText from "../Elements/TitleAndText";
 import Overline from "../Elements/Overline";
 import breakpoints from "../../theme/breakpoints";
 import padding from "../../theme/padding";
-import Image from "../Elements/Image";
 import Blinds from "../ScreenTransition/Blinds";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
@@ -27,37 +26,52 @@ const StyledCover = styled(motion.div)`
   display: flex;
   overflow: hidden;
 
-  ${({ bgColor }) =>
-    bgColor && {
-      backgroundColor: bgColor,
-    }};
+  :before {
+    content: "";
+    clip-path: circle(52% at 0% 4%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    ${({ bgColor }) =>
+      bgColor && {
+        backgroundColor: bgColor,
+      }};
+  }
 `;
 
-const StyledCoverImage = styled(motion.div)`
+const StyledCoverImage = styled(motion.img)`
   position: absolute;
-  overflow: hidden;
-  top: 0;
+  right: 0;
   bottom: 0;
-  left: 0;
-  right: 0;
+  height: 104vw;
+  left: 40vw;
 
-  ${({ imageUrl }) =>
-    imageUrl && {
-      backgroundImage: `url(${imageUrl})`,
-      backgroundSize: "",
-      backgroundPosition: "center",
-    }}
-`;
+  @media (min-width: ${breakpoints.mobileMedium}px) and (max-width: ${breakpoints.mobileLarge -
+    1}px) {
+    height: 128vw;
+    left: 32vw;
+  }
 
-const StyledFgImage = styled(motion.img)`
-  position: absolute;
-  right: 0;
-  bottom: -10%;
-  height: 80%;
-  left: 20%;
+  @media (min-width: ${breakpoints.mobileLarge}px) and (max-width: ${breakpoints.tablet -
+    1}px) {
+    height: 104vw;
+    max-height: 900px;
+    left: 32vw;
+  }
 
-  @media (min-width: ${breakpoints.mobileLarge}px) {
-    left: 50%;
+  @media (min-width: ${breakpoints.tablet}px) and (max-width: ${breakpoints.desktop -
+    1}px) {
+    height: 88vw;
+    max-height: 900px;
+    left: 40vw;
+  }
+
+  @media (min-width: ${breakpoints.desktop}px) {
+    height: 64vw;
+    max-height: 1024px;
+    left: 48vw;
   }
 `;
 
@@ -108,14 +122,14 @@ const LandingPageCover = ({
   overline,
   title,
   text,
-  bgImageUrl,
+
   imageUrl,
   bgColor,
 }) => {
   const { scrollY } = useViewportScroll();
   const { height } = useWindowSize();
   const coverHeight = (height / 100) * 92;
-  const imageOffset = (height / 100) * 20; // -20vh
+  const imageOffset = (height / 100) * 56; // -56vh
   const [, setLight] = useContext(ElementColorContext);
   const { width } = useWindowSize();
   const isMobile = width < breakpoints.desktop;
@@ -187,15 +201,12 @@ const LandingPageCover = ({
       initial="hidden"
       animate="animate"
     >
-      <StyledCoverImage variants={imageVariants}>
-        <Image imageUrl={`${process.env.PUBLIC_URL}/${bgImageUrl}`} />
-        <StyledFgImage
-          variants={imageVariants}
-          src={`${process.env.PUBLIC_URL}/${imageUrl}`}
-          alt="Just a picture of me looking inteligent"
-          style={{ y: imageParallax }}
-        />
-      </StyledCoverImage>
+      <StyledCoverImage
+        variants={imageVariants}
+        src={`${process.env.PUBLIC_URL}/${imageUrl}`}
+        alt="Just a picture of me looking inteligent"
+        style={{ y: imageParallax }}
+      />
 
       <StyledCaption variants={captionVariants} style={{ y: captionParallax }}>
         {overline && <Overline disableAnimations>{overline}</Overline>}
@@ -213,7 +224,7 @@ LandingPageCover.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   imageUrl: PropTypes.string,
-  bgImageUrl: PropTypes.string,
+
   bgColor: PropTypes.string,
   overline: PropTypes.string,
 };
@@ -223,7 +234,7 @@ LandingPageCover.defaultProps = {
   title: null,
   text: null,
   imageUrl: null,
-  bgImageUrl: null,
+
   bgColor: null,
 };
 

@@ -19,20 +19,16 @@ const StyledCover = styled(motion.div)`
   position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  overflow: hidden;
+  /*overflow: hidden;*/
 `;
 
 const StyledCoverImage = styled(motion.div)`
   grid-column: 2 / span 2;
-  overflow: hidden;
+  /*overflow: hidden;*/
+
   @media (max-width: ${breakpoints.desktop}px) {
     grid-column: 1 / span 3;
   }
-
-  ${({ bgColor }) =>
-    bgColor && {
-      backgroundColor: bgColor,
-    }};
 
   ${({ imageUrl }) =>
     imageUrl && {
@@ -40,6 +36,22 @@ const StyledCoverImage = styled(motion.div)`
       backgroundSize: "cover",
       backgroundPosition: "center",
     }}
+
+  :before {
+    content: "";
+    clip-path: circle(32vw at 72% 32%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1;
+
+    ${({ bgColor }) =>
+      bgColor && {
+        backgroundColor: bgColor,
+      }};
+  }
 `;
 
 const StyledCaption = styled(motion.div)`
@@ -61,7 +73,6 @@ const StyledCaption = styled(motion.div)`
   box-sizing: border-box;
   padding-left: ${padding.horizontal.quadruple};
   padding-right: ${padding.horizontal.quadruple};
-  background-color: white;
 `;
 
 // TODO: parallax effect on the cover in the landing page  needs some fine-tuning
@@ -133,12 +144,7 @@ const Cover = ({
   };
 
   return (
-    <StyledCover
-      bgColor={bgColor}
-      variants={coverVariants}
-      initial="hidden"
-      animate="animate"
-    >
+    <StyledCover variants={coverVariants} initial="hidden" animate="animate">
       <StyledCaption variants={captionVariants}>
         <Overline disableAnimations>{overline}</Overline>
         <TitleAndText h={1} title={title} disableAnimations>

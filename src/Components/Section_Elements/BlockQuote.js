@@ -44,10 +44,13 @@ const BlockQuote = ({ cite, quote, bgColor, bgImageUrl, limitMaxWidth }) => {
 
   useEffect(() => {
     // eslint-disable-next-line no-unused-expressions
-    setLight !== null &&
+    (setLight !== null &&
       setLight(
-        (bgColor !== null && bgColor !== colors.offwhite) || bgImageUrl !== null
-      );
+        bgColor !== null &&
+          bgColor !== colors.offwhite &&
+          bgColor !== colors.primaryShade
+      )) ||
+      bgImageUrl !== null;
   }, [setLight, bgColor, bgImageUrl]);
 
   const renderBlockQuote = () => (

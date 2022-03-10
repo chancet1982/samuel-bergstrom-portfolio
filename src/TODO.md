@@ -1,5 +1,14 @@
 TODO list (What's left before you're done)
 
+MAKING THINGS PRETTY:
+COVER: text with rest of the page?
+OVERVIEW: Align text with the rest of the page?
+Change screen transitions to use circles instead.
+COVER: update scroll animation (not sure what it should be)
+LANDINGPAGE_COVER: update scroll animation (not sure what it should be)
+ABOUT ME: Fix smaller images to use circular image and cliping path instead.
+ABOUT ME: TESTIMONIALS: Fix inView animations, Looks rather bland. perhaps needs some love.
+
 FIXES:
 Fine-tune short screen transition.
 Fine tune the typography
@@ -7,7 +16,6 @@ Fine-tune case thumbnail
 Hide navigation while screen animation is playing. (nice to have)
 Navlink -> fluidType console error.
 TEXTBOX Replace current implementation of bgColor with BackgroundWrapper.
-ImageWithCaption create a section element or replace it in case 5
 
 MOBILE:
 Image gallery images overflow the screen area on smaller screens.

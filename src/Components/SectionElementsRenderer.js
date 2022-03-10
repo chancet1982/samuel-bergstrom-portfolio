@@ -13,7 +13,7 @@ import FinalResult from "./Section_Elements/FinalResult";
 import BlockQuote from "./Section_Elements/BlockQuote";
 import SideBySideImagesAndText from "./Section_Elements/SideBySideImagesAndText";
 import ListOfImagesWithTitleAndText from "./Section_Elements/ListOfImagesWithTitleAndText";
-import ImageWithCaption from "./Elements/ImageWithCaption"; /* SHOULDNT BE POSSIBLE - Case 5 is the only one using this. */
+import SectionImage from "./Section_Elements/SectionImage";
 import Timeline from "./Section_Elements/Timeline";
 import CaseFooter from "./Section_Elements/CaseFooter";
 import AdditionalCases from "./Section_Elements/AdditionalCases";
@@ -120,16 +120,14 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
       return <Timeline key={elementKey} items={data.items} />;
     case SECTION_ELEMENTS.CONTACT_DETAILS:
       return <ContactDetails key={elementKey} />;
-    case SECTION_ELEMENTS.IMAGE_WITH_CAPTION:
+    case SECTION_ELEMENTS.SECTION_IMAGE:
       return (
-        <ImageWithCaption
+        <SectionImage
           key={elementKey}
           imageUrl={data.imageUrl}
           imageAlt={data.imageAlt}
           caption={data.caption}
-          bgColor={data.bgColor}
-          size={data.size}
-          padding
+          limitMaxWidth={data.limitMaxWidth}
         />
       );
     case SECTION_ELEMENTS.SIDE_BY_SIDE_IMAGES_AND_TEXT:

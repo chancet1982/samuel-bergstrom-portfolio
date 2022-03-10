@@ -17,7 +17,7 @@ const typography = {
   margin: 0.45, // base margin in rem
   inc: 0.1, // line height modifier
   bodyFont: `"Fira Sans", sans-serif`,
-  headlineFont: `"Lora", serif`,
+  headlineFont: `"IBM Plex Sans", sans-serif`,
 };
 
 export default typography;

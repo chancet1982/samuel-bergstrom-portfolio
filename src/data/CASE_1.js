@@ -27,7 +27,6 @@ export const CASE_1 = {
   },
   details: [
     {
-      isSticky: true,
       elements: [
         {
           template: SECTION_ELEMENTS.COVER,
@@ -42,6 +41,7 @@ export const CASE_1 = {
               </>
             ),
             imageUrl: "assets/case-1/cover.png",
+            bgColor: "#FE636F",
           },
         },
       ],

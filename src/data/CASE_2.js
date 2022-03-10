@@ -25,7 +25,6 @@ export const CASE_2 = {
   },
   details: [
     {
-      isSticky: true,
       elements: [
         {
           template: SECTION_ELEMENTS.COVER,
@@ -33,6 +32,7 @@ export const CASE_2 = {
             overline: "Renal Care",
             title: "Patient Companion App",
             imageUrl: "assets/case-2/cover.png",
+            bgColor: "#FF8D48",
             text: (
               <>
                 <Paragraph large>
@@ -537,6 +537,16 @@ export const CASE_2 = {
       header: "Validation",
       elements: [
         {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: "assets/case-2/validation.jpg",
+            imageAlt:
+              "Guerilla usability testing in Skånes universitetssjukhus Malmö cafeteria",
+            caption:
+              "Guerilla usability testing in Skånes universitetssjukhus Malmö cafeteria",
+          },
+        },
+        {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>2 hours, and 500 SEK later…</>,
@@ -563,11 +573,6 @@ export const CASE_2 = {
                 </Paragraph>
               </>
             ),
-            imageUrl: "assets/case-2/validation.jpg",
-            imageAlt:
-              "Guerilla usability testing in Skånes universitetssjukhus Malmö cafeteria",
-            caption:
-              "Guerilla usability testing in Skånes universitetssjukhus Malmö cafeteria",
           },
         },
       ],

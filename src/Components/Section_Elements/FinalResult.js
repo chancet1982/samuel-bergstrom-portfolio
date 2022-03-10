@@ -68,7 +68,7 @@ const FinalResult = ({ imageUrl, bgColor, title, text, results }) => {
       variants={variants}
       animate={inView ? "inView" : "hidden"}
     >
-      <BackgroundWrapper bgColor={bgColor}>
+      <BackgroundWrapper bgColor={bgColor} isPadded={false}>
         <Image imageUrl={`${process.env.PUBLIC_URL}/${imageUrl}`} />
       </BackgroundWrapper>
 
