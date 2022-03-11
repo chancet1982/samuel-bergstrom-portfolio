@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import View from "../View";
-import FullScreenCenteredFlexContainer from "../FullScreenCenteredFlexContainer";
+import FullScreenCenteredFlexContainer from "../Shared/FullScreenCenteredFlexContainer";
 import { ReactComponent as Image } from "../../assets/404(2).svg";
 import Title from "../Shared/Title";
 

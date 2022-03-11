@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import FullScreenCenteredFlexContainer from "../FullScreenCenteredFlexContainer";
+import FullScreenCenteredFlexContainer from "../Shared/FullScreenCenteredFlexContainer";
 import colors from "../../theme/colors";
 
 const ViewLoading = () => {

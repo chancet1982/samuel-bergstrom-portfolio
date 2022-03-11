@@ -6,7 +6,7 @@ import ImageWithTitleAndText from "../Shared/ImageWithTitleAndText";
 import padding from "../../theme/padding";
 import breakpoints from "../../theme/breakpoints";
 import CenteredTitleAndText from "../Shared/CenteredTitleAndText";
-import BackgroundWrapper from "../BackgroundWrapper";
+import BackgroundWrapper from "../Shared/BackgroundWrapper";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
 

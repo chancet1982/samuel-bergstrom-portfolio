@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import padding from "../theme/padding";
+import padding from "../../theme/padding";
 
 const FullScreenCenteredFlexContainer = styled(motion.div)`
   display: flex;

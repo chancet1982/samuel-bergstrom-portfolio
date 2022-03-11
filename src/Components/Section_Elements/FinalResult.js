@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useIntersection } from "react-use";
-import BackgroundWrapper from "../BackgroundWrapper";
+import BackgroundWrapper from "../Shared/BackgroundWrapper";
 import Result from "./FinalResult/Result";
 import Image from "../Shared/Image";
 import TitleAndText from "../Shared/TitleAndText";

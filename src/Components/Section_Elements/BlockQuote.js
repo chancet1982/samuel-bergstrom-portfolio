@@ -7,7 +7,7 @@ import { variants } from "../../animations/animations";
 import Quote from "./BlockQuote/Quote";
 import Cite from "./BlockQuote/Cite";
 import padding from "../../theme/padding";
-import BackgroundWrapper from "../BackgroundWrapper";
+import BackgroundWrapper from "../Shared/BackgroundWrapper";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
 import breakpoints from "../../theme/breakpoints";
