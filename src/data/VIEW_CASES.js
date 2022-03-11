@@ -5,7 +5,6 @@ import Paragraph from "../Components/Shared/Paragraph";
 
 export const VIEW_CASES = [
   {
-    isPadded: true,
     elements: [
       {
         template: SECTION_ELEMENTS.CASES,

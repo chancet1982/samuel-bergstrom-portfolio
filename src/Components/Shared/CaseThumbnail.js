@@ -53,6 +53,8 @@ const StyledCaseThumbnailCaption = styled(motion.div)`
   padding-right: ${padding.horizontal.double};
   max-width: ${breakpoints.contentWidthLimit}px;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 `;
 
 const StyledCaseThumbnailImage = styled(motion.div)`
@@ -157,12 +159,12 @@ const CaseThumbnail = ({ data, status, caseUrl }) => {
 
   const thumbnailImageVariants = {
     normal: {
-      scale: 1,
+      scale: 1.2,
       opacity: 1,
       transition: spring,
     },
     hover: {
-      scale: 1.2,
+      scale: 1,
       opacity: 0.2,
       transition: spring,
     },
