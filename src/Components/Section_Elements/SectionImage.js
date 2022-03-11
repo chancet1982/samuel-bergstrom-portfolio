@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import ImageWithCaption from "../Elements/ImageWithCaption";
+import ImageWithCaption from "../Shared/ImageWithCaption";
 import breakpoints from "../../theme/breakpoints";
 
 const StyledSectionImage = styled.div`

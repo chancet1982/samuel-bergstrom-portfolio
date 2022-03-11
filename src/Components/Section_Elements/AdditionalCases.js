@@ -3,12 +3,12 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { v4 as uuid } from "uuid";
 import { useParams } from "react-router-dom";
-import CaseThumbnail from "../Elements/CaseThumbnail";
+import CaseThumbnail from "../Shared/CaseThumbnail";
 import { CASES } from "../../data/dictionaries/CASES";
 import { CASE_STATUS } from "../../data/dictionaries/CASE_STATUS";
 import ElementContextProvider from "../../Context/ElementColorContext";
-import Paragraph from "../Elements/Paragraph";
-import TitleAndText from "../Elements/TitleAndText";
+import Paragraph from "../Shared/Paragraph";
+import TitleAndText from "../Shared/TitleAndText";
 import padding from "../../theme/padding";
 import breakpoints from "../../theme/breakpoints";
 

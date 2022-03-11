@@ -1,6 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import React from "react";
-import Paragraph from "../../Components/Elements/Paragraph";
+import Paragraph from "../../Components/Shared/Paragraph";
 
 export const TESTIMONIALS = [
   {

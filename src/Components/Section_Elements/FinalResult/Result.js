@@ -1,9 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import Span from "./Span";
-import Title from "./Title";
-import padding from "../../theme/padding";
+import Span from "../../Shared/Span";
+import Title from "../../Shared/Title";
+import padding from "../../../theme/padding";
 
 const StyledResult = styled.div`
   margin-bottom: ${padding.vertical.half};

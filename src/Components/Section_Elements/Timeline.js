@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import Span from "../Elements/Span";
-import TitleAndText from "../Elements/TitleAndText";
+import Span from "../Shared/Span";
+import TitleAndText from "../Shared/TitleAndText";
 
 const StyledTimeline = styled.dl`
   display: grid;

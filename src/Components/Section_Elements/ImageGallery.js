@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { v4 as uuid } from "uuid";
-import ImageWithCaption from "../Elements/ImageWithCaption";
+import ImageWithCaption from "../Shared/ImageWithCaption";
 import breakpoints from "../../theme/breakpoints";
 
 const StyledImageGallery = styled.div`

@@ -8,11 +8,11 @@ import {
 } from "framer-motion";
 import PropTypes from "prop-types";
 import { useWindowSize } from "react-use";
-import TitleAndText from "../Elements/TitleAndText";
-import Overline from "../Elements/Overline";
+import TitleAndText from "../Shared/TitleAndText";
+import Overline from "../Shared/Overline";
 import breakpoints from "../../theme/breakpoints";
 import padding from "../../theme/padding";
-import Blinds from "../ScreenTransition/Blinds";
+import Blinds from "../ScreenTransitions/Blinds";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
 

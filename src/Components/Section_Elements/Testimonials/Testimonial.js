@@ -2,9 +2,9 @@ import React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import padding from "../../theme/padding";
-import colors from "../../theme/colors";
-import breakpoints from "../../theme/breakpoints";
+import padding from "../../../theme/padding";
+import colors from "../../../theme/colors";
+import breakpoints from "../../../theme/breakpoints";
 import TestimonialAuthor from "./TestimonialAuthor";
 
 const StyledTestimonial = styled(motion.div)`

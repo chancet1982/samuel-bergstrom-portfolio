@@ -1,10 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import useBgColor from "../../utils/useBgColor";
-import colors from "../../theme/colors";
-import padding from "../../theme/padding";
-import Span from "./Span";
+import useBgColor from "../../../utils/useBgColor";
+import colors from "../../../theme/colors";
+import padding from "../../../theme/padding";
+import Span from "../../Shared/Span";
 
 const StyledQuote = styled.q`
   position: relative;

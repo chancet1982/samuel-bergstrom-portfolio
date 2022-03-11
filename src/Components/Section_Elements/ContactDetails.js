@@ -1,11 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import Paragraph from "../Elements/Paragraph";
-import Span from "../Elements/Span";
-import TitleAndText from "../Elements/TitleAndText";
+import Paragraph from "../Shared/Paragraph";
+import Span from "../Shared/Span";
+import TitleAndText from "../Shared/TitleAndText";
 import ContactForm from "../ContactForm";
-import List from "../Elements/List";
+import List from "../Shared/List";
 import padding from "../../theme/padding";
 import breakpoints from "../../theme/breakpoints";
 

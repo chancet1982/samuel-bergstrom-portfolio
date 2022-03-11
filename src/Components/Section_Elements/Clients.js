@@ -9,7 +9,7 @@ import { createBreakpoint } from "react-use";
 import Client from "./Clients/Client";
 import { CLIENTS } from "../../data/dictionaries/CLIENTS";
 import padding from "../../theme/padding";
-import CenteredTitleAndText from "../Elements/CenteredTitleAndText";
+import CenteredTitleAndText from "../Shared/CenteredTitleAndText";
 import pickRandom from "../../utils/pickRandom";
 import breakpoints from "../../theme/breakpoints";
 

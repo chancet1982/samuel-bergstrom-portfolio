@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import ImageWithTitleAndText from "../Elements/ImageWithTitleAndText";
+import ImageWithTitleAndText from "../Shared/ImageWithTitleAndText";
 import breakpoints from "../../theme/breakpoints";
 import ElementContextProvider from "../../Context/ElementColorContext";
 

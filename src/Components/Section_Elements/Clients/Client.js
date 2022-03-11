@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useIntersection } from "react-use";
-import Image from "../../Elements/Image";
+import Image from "../../Shared/Image";
 import { variants } from "../../../animations/animations";
 
 const StyledClient = styled(motion.div)``;

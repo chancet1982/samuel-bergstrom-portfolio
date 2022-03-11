@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import React from "react";
-import Link from "../Components/Elements/Link";
-import Paragraph from "../Components/Elements/Paragraph";
+import Link from "../Components/Shared/Link";
+import Paragraph from "../Components/Shared/Paragraph";
 import colors from "../theme/colors";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 
@@ -71,7 +71,6 @@ export const VIEW_LANDING_PAGE = [
     ],
   },
   {
-    isPadded: true,
     elements: [
       {
         template: SECTION_ELEMENTS.CASES,

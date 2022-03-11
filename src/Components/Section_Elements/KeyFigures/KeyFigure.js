@@ -3,12 +3,12 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { useIntersection } from "react-use";
-import colors from "../../theme/colors";
-import Title from "./Title";
-import Paragraph from "./Paragraph";
-import breakpoints from "../../theme/breakpoints";
-import { variants } from "../../animations/animations";
-import padding from "../../theme/padding";
+import colors from "../../../theme/colors";
+import Title from "../../Shared/Title";
+import Paragraph from "../../Shared/Paragraph";
+import breakpoints from "../../../theme/breakpoints";
+import { variants } from "../../../animations/animations";
+import padding from "../../../theme/padding";
 
 const StyledKeyFigure = styled(motion.div)`
   align-items: center;

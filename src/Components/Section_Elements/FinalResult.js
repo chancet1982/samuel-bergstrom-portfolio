@@ -1,28 +1,23 @@
 /* eslint-disable react/forbid-prop-types */
 /* eslint-disable no-nested-ternary */
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useIntersection } from "react-use";
 import BackgroundWrapper from "../BackgroundWrapper";
-import Result from "../Elements/Result";
-import Image from "../Elements/Image";
-import TitleAndText from "../Elements/TitleAndText";
+import Result from "./FinalResult/Result";
+import Image from "../Shared/Image";
+import TitleAndText from "../Shared/TitleAndText";
 import { variants } from "../../animations/animations";
 import padding from "../../theme/padding";
 import breakpoints from "../../theme/breakpoints";
+import { ElementColorContext } from "../../Context/ElementColorContext";
+import colors from "../../theme/colors";
 
-const StyledResultCaption = styled.div`
-  padding-top: ${padding.vertical.double};
-  padding-right: ${padding.horizontal.quadruple};
-  padding-bottom: ${padding.vertical.double};
-  padding-left: ${padding.horizontal.quadruple};
-  background-color: white;
-  box-sizing: border-box;
-`;
-
-const StyledFinalResult = styled(motion.div)`
+const StyledFinalResultContent = styled(motion.div)`
+  max-width: ${breakpoints.contentWidthLimit}px;
+  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
@@ -33,16 +28,23 @@ const StyledFinalResult = styled(motion.div)`
   }
 
   @media (min-width: ${breakpoints.desktop}px) {
-    > div:first-of-type {
+    > img {
       grid-column: 1 / span 2;
     }
 
-    > div:last-of-type {
+    > div {
       grid-column: 3 / span 1;
     }
   }
 
   height: fit-content;
+`;
+
+const StyledFinalResult = styled(motion.div)``;
+
+const StyledResultCaption = styled(motion.div)`
+  padding: ${padding.vertical.quadruple} ${padding.horizontal.double};
+  box-sizing: border-box;
 `;
 
 // TODO: fix results display on mobile.
@@ -61,6 +63,18 @@ const FinalResult = ({ imageUrl, bgColor, title, text, results }) => {
     }
   }, [intersection]);
 
+  const [, setLight] = useContext(ElementColorContext);
+
+  useEffect(() => {
+    // eslint-disable-next-line no-unused-expressions
+    setLight !== null &&
+      setLight(
+        bgColor !== null &&
+          bgColor !== colors.offwhite &&
+          bgColor !== colors.primaryShade
+      );
+  }, [setLight, bgColor]);
+
   return (
     <StyledFinalResult
       ref={intersectionRef}
@@ -69,24 +83,25 @@ const FinalResult = ({ imageUrl, bgColor, title, text, results }) => {
       animate={inView ? "inView" : "hidden"}
     >
       <BackgroundWrapper bgColor={bgColor} isPadded={false}>
-        <Image imageUrl={`${process.env.PUBLIC_URL}/${imageUrl}`} />
+        <StyledFinalResultContent>
+          <Image imageUrl={`${process.env.PUBLIC_URL}/${imageUrl}`} />
+          {(results.length > 0 || text) && (
+            <StyledResultCaption>
+              <TitleAndText h={2} title={title} sticky>
+                {results.length > 0 &&
+                  results.map(({ value, description }) => (
+                    <Result
+                      key={description}
+                      value={value}
+                      description={description}
+                    />
+                  ))}
+                {text && text}
+              </TitleAndText>
+            </StyledResultCaption>
+          )}
+        </StyledFinalResultContent>
       </BackgroundWrapper>
-
-      {(results.length > 0 || text) && (
-        <StyledResultCaption>
-          <TitleAndText h={2} title={title} sticky>
-            {results.length > 0 &&
-              results.map(({ value, description }) => (
-                <Result
-                  key={description}
-                  value={value}
-                  description={description}
-                />
-              ))}
-            {text && text}
-          </TitleAndText>
-        </StyledResultCaption>
-      )}
     </StyledFinalResult>
   );
 };

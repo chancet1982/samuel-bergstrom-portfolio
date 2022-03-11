@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useWindowSize } from "react-use";
 import { AppContext } from "../../Context/AppContext";
-import Title from "../Elements/Title";
+import Title from "../Shared/Title";
 import padding from "../../theme/padding";
 import { ViewColorContext } from "../../Context/ViewColorContext";
 import colors from "../../theme/colors";

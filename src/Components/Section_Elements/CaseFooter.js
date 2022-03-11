@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import TitleAndText from "../Elements/TitleAndText";
-import Paragraph from "../Elements/Paragraph";
+import TitleAndText from "../Shared/TitleAndText";
+import Paragraph from "../Shared/Paragraph";
 import breakpoints from "../../theme/breakpoints";
 import padding from "../../theme/padding";
-import Button from "../Elements/Button";
+import Button from "../Shared/Button";
 import colors from "../../theme/colors";
-import Link from "../Elements/Link";
+import Link from "../Shared/Link";
 
 const StyledCaseFooter = styled(motion.div)`
   padding: ${padding.vertical.double} ${padding.horizontal.double};

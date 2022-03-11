@@ -4,14 +4,14 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { v4 as uuid } from "uuid";
 import PropTypes from "prop-types";
-import CaseThumbnail from "../Elements/CaseThumbnail";
+import CaseThumbnail from "../Shared/CaseThumbnail";
 import { CASES } from "../../data/dictionaries/CASES";
 import breakpoints from "../../theme/breakpoints";
 import padding from "../../theme/padding";
 import { CASE_STATUS } from "../../data/dictionaries/CASE_STATUS";
 import ElementColorContextProvider from "../../Context/ElementColorContext";
-import CenteredTitleAndText from "../Elements/CenteredTitleAndText";
-import Button from "../Elements/Button";
+import CenteredTitleAndText from "../Shared/CenteredTitleAndText";
+import Button from "../Shared/Button";
 
 const StyledPageLink = styled.div`
   text-align: center;
@@ -21,14 +21,14 @@ const StyledPageLink = styled.div`
 const StyledCases = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  column-gap: ${padding.vertical.eighth};
-  row-gap: ${padding.vertical.eighth};
+  /*column-gap: ${padding.vertical.eighth};
+  row-gap: ${padding.vertical.eighth};*/
   padding-bottom: ${({ preview }) =>
     preview ? padding.vertical.single : padding.vertical.quadruple};
 
-  @media (min-width: ${breakpoints.desktop}px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  /*@media (min-width: ${breakpoints.desktop}px) {
+    grid-template-columns: repeat(1, 1fr);
+  }*/
 `;
 
 const SectionCases = ({ title, text, preview }) => {

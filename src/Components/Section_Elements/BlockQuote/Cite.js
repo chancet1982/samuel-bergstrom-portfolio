@@ -1,9 +1,9 @@
 import styled from "styled-components";
 import React from "react";
 import PropTypes from "prop-types";
-import useBgColor from "../../utils/useBgColor";
-import Span from "./Span";
-import colors from "../../theme/colors";
+import useBgColor from "../../../utils/useBgColor";
+import Span from "../../Shared/Span";
+import colors from "../../../theme/colors";
 
 /* TODO: check if this style is redaundant (one day) */
 

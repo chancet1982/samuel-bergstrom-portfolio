@@ -3,12 +3,12 @@ import styled from "styled-components";
 import { motion, useViewportScroll, useTransform } from "framer-motion";
 import PropTypes from "prop-types";
 import { useWindowSize } from "react-use";
-import TitleAndText from "../Elements/TitleAndText";
-import Overline from "../Elements/Overline";
-import Blinds from "../ScreenTransition/Blinds";
+import TitleAndText from "../Shared/TitleAndText";
+import Overline from "../Shared/Overline";
+import Blinds from "../ScreenTransitions/Blinds";
 import breakpoints from "../../theme/breakpoints";
 import padding from "../../theme/padding";
-import Image from "../Elements/Image";
+import Image from "../Shared/Image";
 
 const StyledCover = styled(motion.div)`
   height: ${({

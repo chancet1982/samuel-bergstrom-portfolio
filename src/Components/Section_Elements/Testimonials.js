@@ -4,10 +4,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { v4 as uuid } from "uuid";
 import { useWindowSize } from "react-use";
-import TitleAndText from "../Elements/TitleAndText";
+import TitleAndText from "../Shared/TitleAndText";
 import { TESTIMONIALS } from "../../data/dictionaries/TESTIMONIALS";
 import padding from "../../theme/padding";
-import Testimonial from "../Elements/Testimonial";
+import Testimonial from "./Testimonials/Testimonial";
 import breakpoints from "../../theme/breakpoints";
 import pickRandom from "../../utils/pickRandom";
 

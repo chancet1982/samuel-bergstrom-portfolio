@@ -98,14 +98,16 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
       );
     case SECTION_ELEMENTS.RESULT:
       return (
-        <FinalResult
-          key={elementKey}
-          imageUrl={data.imageUrl}
-          bgColor={data.bgColor}
-          results={data.results}
-          text={data.text}
-          flip={data.flip}
-        />
+        <ElementColorContextProvider>
+          <FinalResult
+            key={elementKey}
+            imageUrl={data.imageUrl}
+            bgColor={data.bgColor}
+            results={data.results}
+            text={data.text}
+            flip={data.flip}
+          />
+        </ElementColorContextProvider>
       );
     case SECTION_ELEMENTS.IMAGE_GALLERY:
       return (

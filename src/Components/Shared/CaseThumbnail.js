@@ -4,16 +4,16 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useIntersection, useWindowSize } from "react-use";
-import Overline from "./Overline";
-import Title from "./Title";
+/* import Overline from "./Overline"; */
 import Tag from "./Tag";
-import Span from "./Span";
 import breakpoints from "../../theme/breakpoints";
 import padding from "../../theme/padding";
 import { AppContext } from "../../Context/AppContext";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import { CASE_STATUS } from "../../data/dictionaries/CASE_STATUS";
 import colors from "../../theme/colors";
+import CenteredTitleAndText from "./CenteredTitleAndText";
+import Paragraph from "./Paragraph";
 
 const StyledCaseThumbnail = styled(motion.div)`
   flex: 1 1 150px;
@@ -24,18 +24,19 @@ const StyledCaseThumbnail = styled(motion.div)`
   overflow: hidden;
   position: relative;
 
-  @media (max-width: ${breakpoints.tablet}px) {
-    height: 92vw;
+  height: 72vh;
+  /*@media (max-width: ${breakpoints.tablet}px) {
+
   }
 
   @media (min-width: ${breakpoints.tablet}px) and (max-width: ${breakpoints.desktop -
-    1}px) {
+  1}px) {
     height: calc(92vw / 2 - ${padding.vertical.eighth});
   }
 
   @media (min-width: ${breakpoints.desktop}px) {
     height: calc(92vw / 2 - ${padding.vertical.eighth});
-  }
+  }*/
 
   a {
     text-decoration: none;
@@ -48,10 +49,10 @@ const StyledCaseThumbnail = styled(motion.div)`
 `;
 
 const StyledCaseThumbnailCaption = styled(motion.div)`
-  position: absolute;
   padding-left: ${padding.horizontal.double};
   padding-right: ${padding.horizontal.double};
-  left: 0;
+  max-width: ${breakpoints.contentWidthLimit}px;
+  margin: 0 auto;
 `;
 
 const StyledCaseThumbnailImage = styled(motion.div)`
@@ -78,7 +79,7 @@ const StyledCaseThumbnailImage = styled(motion.div)`
   }
 `;
 
-const StyledCaseIntro = styled(motion.div)`
+/* const StyledCaseIntro = styled(motion.div)`
   position: absolute;
   bottom: 0;
   left: 0;
@@ -92,7 +93,7 @@ const StyledCaseIntro = styled(motion.div)`
   @media (max-width: ${breakpoints.mobileLarge}px) {
     padding: ${padding.vertical.single} ${padding.horizontal.double};
   }
-`;
+`; */
 
 const CaseThumbnail = ({ data, status, caseUrl }) => {
   const [, setContent] = useContext(AppContext);
@@ -169,18 +170,16 @@ const CaseThumbnail = ({ data, status, caseUrl }) => {
 
   const thumbnailCaptionVariants = {
     normal: {
-      opacity: 1,
-      y: "0%",
+      scale: 1,
       transition: spring,
     },
     hover: {
-      opacity: 0.8,
-      y: "-100%",
+      scale: 1.2,
       transition: spring,
     },
   };
 
-  const caseIntroVariants = {
+  /* const caseIntroVariants = {
     normal: {
       y: "100%",
       transition: spring,
@@ -189,9 +188,10 @@ const CaseThumbnail = ({ data, status, caseUrl }) => {
       y: "0%",
       transition: spring,
     },
-  };
+  }; */
 
   const renderCaseThumbnail = () => {
+    const wrappedText = <Paragraph>{text}</Paragraph>;
     return (
       <motion.div
         whileHover="hover"
@@ -205,15 +205,15 @@ const CaseThumbnail = ({ data, status, caseUrl }) => {
         />
 
         <StyledCaseThumbnailCaption variants={thumbnailCaptionVariants}>
-          <Overline>{overline}</Overline>
-          <Title h={3} padding>
-            {title}
-          </Title>
+          {/* <Overline>{overline}</Overline> */}
+          <CenteredTitleAndText
+            title={title}
+            h={3}
+            text={wrappedText}
+            disableAnimations
+          />
         </StyledCaseThumbnailCaption>
 
-        <StyledCaseIntro variants={caseIntroVariants}>
-          <Span>{text}</Span>
-        </StyledCaseIntro>
         {status === CASE_STATUS.COMING_SOON && <Tag />}
       </motion.div>
     );

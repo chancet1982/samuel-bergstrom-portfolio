@@ -31,7 +31,13 @@ const StyledCenteredTitleAndText = styled(motion.div)`
   }
 `;
 
-const CenteredTitleAndText = ({ title, text, isPadded }) => {
+const CenteredTitleAndText = ({
+  title,
+  text,
+  isPadded,
+  disableAnimations,
+  h,
+}) => {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
@@ -49,12 +55,12 @@ const CenteredTitleAndText = ({ title, text, isPadded }) => {
   return (
     <StyledCenteredTitleAndText
       ref={intersectionRef}
-      initial="hidden"
-      animate={inView ? "inView" : "hidden"}
+      initial={disableAnimations ? "inView" : "hidden"}
+      animate={disableAnimations || inView ? "inView" : "hidden"}
       variants={variants}
       isPadded={isPadded}
     >
-      <TitleAndText h={2} title={title}>
+      <TitleAndText h={h} title={title}>
         {text}
       </TitleAndText>
     </StyledCenteredTitleAndText>
@@ -65,12 +71,16 @@ CenteredTitleAndText.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   isPadded: PropTypes.bool,
+  disableAnimations: PropTypes.bool,
+  h: PropTypes.number,
 };
 
 CenteredTitleAndText.defaultProps = {
   title: null,
   text: null,
   isPadded: false,
+  disableAnimations: false,
+  h: 2,
 };
 
 export default CenteredTitleAndText;

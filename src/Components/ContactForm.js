@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import padding from "../theme/padding";
-import Button from "./Elements/Button";
-import Input from "./Elements/Input";
-import Label from "./Elements/Label";
-import Textarea from "./Elements/Textarea";
+import Button from "./Shared/Button";
+import Input from "./Shared/Input";
+import Label from "./Shared/Label";
+import Textarea from "./Shared/Textarea";
 
 const StyledDiv = styled.div`
   padding-bottom: ${padding.vertical.half};

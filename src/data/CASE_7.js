@@ -3,12 +3,12 @@ import React from "react";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import { TOOLS_AND_METHODS } from "./dictionaries/TOOLS_AND_METHODS";
 import { ROLES } from "./dictionaries/ROLES";
-import Paragraph from "../Components/Elements/Paragraph";
-import TitleAndText from "../Components/Elements/TitleAndText";
+import Paragraph from "../Components/Shared/Paragraph";
+import TitleAndText from "../Components/Shared/TitleAndText";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
-import Title from "../Components/Elements/Title";
-import List from "../Components/Elements/List";
+import Title from "../Components/Shared/Title";
+import List from "../Components/Shared/List";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 
 export const CASE_7 = {

@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import padding from "../../theme/padding";
-import Span from "../Elements/Span";
+import Span from "../Shared/Span";
 
 const StyledFooter = styled.footer`
   padding: ${padding.vertical.double} ${padding.horizontal.quadruple};

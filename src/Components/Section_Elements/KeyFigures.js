@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { v4 as uuid } from "uuid";
 import breakpoints from "../../theme/breakpoints";
-import KeyFigure from "../Elements/KeyFigure";
+import KeyFigure from "./KeyFigures/KeyFigure";
 import BackgroundWrapper from "../BackgroundWrapper";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";

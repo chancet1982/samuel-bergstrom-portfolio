@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import React from "react";
 import PropTypes from "prop-types";
-import Span from "./Span";
+import Span from "../../Shared/Span";
 
 const StyledTestimonialAuthor = styled(motion.figure)`
   display: flex;
