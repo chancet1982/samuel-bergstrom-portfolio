@@ -10,7 +10,6 @@ ABOUT ME: Fix smaller images to use circular image and cliping path instead.
 ABOUT ME: TESTIMONIALS: Fix inView animations, Looks rather bland. perhaps needs some love.
 
 FIXES:
-CASE THUMBNAIL: Fix caption (only showing on hover)
 ADDITIONAL_CASES: Fix case thumbnail height.
 ADDITIONAL_CASES: Fix max-width for the title.
 Hide navigation while screen animation is playing. (nice to have)
