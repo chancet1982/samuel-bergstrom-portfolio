@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import View from "../View";
 import FullScreenCenteredFlexContainer from "../FullScreenCenteredFlexContainer";
 import { ReactComponent as Image } from "../../assets/404(2).svg";
-import Title from "../Elements/Title";
+import Title from "../Shared/Title";
 
 const ViewPageNotFound = () => {
   return (
