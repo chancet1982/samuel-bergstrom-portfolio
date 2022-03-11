@@ -181,6 +181,7 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
           title={data.title}
           text={data.text}
           preview={data.preview}
+          h={data.h}
         />
       );
     case SECTION_ELEMENTS.TESTIMONIALS:

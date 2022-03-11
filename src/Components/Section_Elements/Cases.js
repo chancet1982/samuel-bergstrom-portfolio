@@ -31,10 +31,11 @@ const StyledCases = styled(motion.div)`
   }*/
 `;
 
-const SectionCases = ({ title, text, preview }) => {
+const SectionCases = ({ title, text, preview, h }) => {
+  console.log(h);
   return (
     <>
-      <CenteredTitleAndText title={title} text={text} isPadded />
+      <CenteredTitleAndText title={title} text={text} h={h} isPadded />
       <StyledCases preview={preview}>
         {CASES.filter(({ caseStatus }) =>
           preview
@@ -67,12 +68,14 @@ SectionCases.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   preview: PropTypes.bool,
+  h: PropTypes.number,
 };
 
 SectionCases.defaultProps = {
   title: null,
   text: null,
   preview: false,
+  h: 2,
 };
 
 export default SectionCases;

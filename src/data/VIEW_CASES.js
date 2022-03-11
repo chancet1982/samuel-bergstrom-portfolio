@@ -14,6 +14,7 @@ export const VIEW_CASES = [
               Some of <mark>my work</mark>
             </>
           ),
+          h: 1,
           text: (
             <Paragraph large>
               Just some of my work from the last couple of years.
