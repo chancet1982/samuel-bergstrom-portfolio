@@ -1,7 +1,7 @@
 import React from "react";
 import View from "../View";
 import FullScreenCenteredFlexContainer from "../FullScreenCenteredFlexContainer";
-import Title from "../Elements/Title";
+import Title from "../Shared/Title";
 
 const ViewErrorLoading = () => {
   return (

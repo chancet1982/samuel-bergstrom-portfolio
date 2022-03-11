@@ -1,11 +1,11 @@
 /* eslint-disable import/prefer-default-export */
 import React from "react";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
-import Paragraph from "../Components/Elements/Paragraph";
-import List from "../Components/Elements/List";
+import Paragraph from "../Components/Shared/Paragraph";
+import List from "../Components/Shared/List";
 import colors from "../theme/colors";
-import Span from "../Components/Elements/Span";
-import Link from "../Components/Elements/Link";
+import Span from "../Components/Shared/Span";
+import Link from "../Components/Shared/Link";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 
 export const VIEW_ABOUT_ME = [

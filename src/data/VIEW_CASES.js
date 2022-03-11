@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import React from "react";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
-import Paragraph from "../Components/Elements/Paragraph";
+import Paragraph from "../Components/Shared/Paragraph";
 
 export const VIEW_CASES = [
   {

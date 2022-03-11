@@ -1,8 +1,8 @@
 /* eslint-disable import/prefer-default-export */
 import React from "react";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
-import Paragraph from "../Components/Elements/Paragraph";
-import Title from "../Components/Elements/Title";
+import Paragraph from "../Components/Shared/Paragraph";
+import Title from "../Components/Shared/Title";
 
 export const VIEW_TEST = [
   {
