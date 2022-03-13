@@ -14,6 +14,13 @@ import breakpoints from "../../theme/breakpoints";
 
 const StyledAdditionalCases = styled(motion.div)`
   padding: ${padding.vertical.quadruple} ${padding.horizontal.double};
+
+  @media (min-width: ${breakpoints.desktop}px) {
+    > div:first-of-type {
+      max-width: ${breakpoints.contentWidthLimit}px;
+      margin: 0 auto;
+    }
+  }
 `;
 
 const StyledCasesList = styled(motion.div)`
@@ -58,6 +65,7 @@ const AdditionalCases = () => {
                 caseUrl={caseUrl}
                 key={uuid()}
                 status={caseStatus}
+                inAdditionalCases
               />
             </ElementContextProvider>
           );
