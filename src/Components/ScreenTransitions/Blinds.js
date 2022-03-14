@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
+import { v4 as uuid } from "uuid";
 import colors from "../../theme/colors";
 
 const StyledBlinds = styled(motion.div)`
@@ -67,7 +68,11 @@ const Blinds = ({ up, bgColor, amountOfBlinds, delayPerBlind }) => {
       amountOfBlinds={amountOfBlinds}
     >
       {Array.from({ length: amountOfBlinds }, () => (
-        <StyledBlind variants={up ? blindUp : blindDown} bgColor={bgColor} />
+        <StyledBlind
+          variants={up ? blindUp : blindDown}
+          bgColor={bgColor}
+          key={uuid()}
+        />
       ))}
     </StyledBlinds>
   );

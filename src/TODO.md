@@ -1,26 +1,21 @@
 TODO list (What's left before you're done)
 
-MAKING THINGS PRETTY:
-ABOUT ME -> Fix smaller images to use circular image and cliping path instead.
-TESTIMONIALS -> Looks rather bland. perhaps needs some love.
-
 FIXES:
 COVER: limitMaxWidth and text alignment?
 NAVIGATION -> wrong width when not transparent
 NAVIGATION -> add supprt for light text if desktop, nav doesnt have a background but the first item does (?)
 NAVIGATION -> Hide navigation while screen animation is playing. (nice to have)
 NAVIGATION -> Navlink (fluidType console error)
+RESULT -> fix mobile layout.
+IMAGE_GALLERY -> Images overflow the screen area on smaller screens.
+Fix vertical alignment - mobile
 
-FEATURES:
+FEATURES & IMPROVEMENTS:
 COVER_CAPTION: Add "back" button
-Timeline -> Finish developing the timeline and add it to about me page.
+ABOUT ME -> Fix smaller images to use circular image and cliping path instead.
+TESTIMONIALS -> Looks rather bland. perhaps needs some love.
 ListOfImagesWithTitleAndText -> add support for background color on items only. not entire list.
 ListOfImagesWithTitleAndText -> goes to single column too soon. should keep have columns on tablets too.
-
-MOBILE:
-Result -> fix mobile layout.
-Image gallery images overflow the screen area on smaller screens.
-Fix vertical alignment - mobile
 
 ANIMATIONS:
 Testimonials -> Add inView animations
@@ -40,3 +35,4 @@ TEXTBOX Replace current implementation of bgColor with BackgroundWrapper.
 Use Contentful for content.
 server side rendering using Next.js (?)
 Add authentication
+Timeline -> Finish developing the timeline and add it to about me page.

@@ -83,8 +83,9 @@ const Insights = ({
   }, [setLight, bgColor]);
 
   const convertRawInsightsToElements = () =>
-    items.map((item) => (
-      <TitleAndText title={item.title} h={5}>
+    items.map((item, index) => (
+      // eslint-disable-next-line react/no-array-index-key
+      <TitleAndText title={item.title} h={5} key={index}>
         <Paragraph>{item.text}</Paragraph>
       </TitleAndText>
     ));
