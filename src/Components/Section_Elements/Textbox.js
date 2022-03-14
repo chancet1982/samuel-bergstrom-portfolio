@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -36,7 +37,8 @@ const StyledTextbox = styled(motion.div)`
     grid-column: 1 / span 3;
 
     @media (min-width: ${breakpoints.desktop}px) {
-      grid-column: ${({ flip }) => (flip ? "3 / span 1" : "1 / span 2")};
+      grid-column: ${({ imageUrl, flip }) =>
+        imageUrl ? (flip ? "3 / span 1" : "1 / span 2") : "1 / span 3"};
     }
 
     p,
