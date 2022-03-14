@@ -28,7 +28,7 @@ const StyledInsights = styled(motion.div)`
 
   p,
   li {
-    max-width: 80ch;
+    max-width: 64ch;
   }
 `;
 
@@ -43,11 +43,19 @@ const StyledInsightsContent = styled(motion.div)`
   }
 
   @media (min-width: ${breakpoints.desktop}px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: ${({ isTwoColumnsOnDesktop }) =>
+      isTwoColumnsOnDesktop ? "repeat(2, 1fr)" : "repeat(3, 1fr)"};
   }
 `;
 
-const Insights = ({ title, h, items, bgColor }) => {
+const Insights = ({
+  title,
+  h,
+  items,
+  bgColor,
+  isTwoColumnsOnDesktop,
+  text,
+}) => {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
@@ -90,7 +98,8 @@ const Insights = ({ title, h, items, bgColor }) => {
       bgColor={bgColor}
     >
       <TitleAndText h={h} title={title} disableAnimations isPadded>
-        <StyledInsightsContent>
+        {text && text}
+        <StyledInsightsContent isTwoColumnsOnDesktop={isTwoColumnsOnDesktop}>
           {convertRawInsightsToElements()}
         </StyledInsightsContent>
       </TitleAndText>
@@ -108,12 +117,16 @@ Insights.propTypes = {
     })
   ).isRequired,
   bgColor: PropTypes.string,
+  isTwoColumnsOnDesktop: PropTypes.bool,
+  text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 };
 
 Insights.defaultProps = {
   title: null,
   h: 2,
   bgColor: null,
+  isTwoColumnsOnDesktop: false,
+  text: null,
 };
 
 export default Insights;

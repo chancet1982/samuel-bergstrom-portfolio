@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import ImageWithTitleAndText from "../Shared/ImageWithTitleAndText";
 import breakpoints from "../../theme/breakpoints";
 import ElementContextProvider from "../../Context/ElementColorContext";
+import padding from "../../theme/padding";
 
 const StyledSideBySideImagesAndText = styled(motion.div)`
   display: grid;
@@ -12,7 +13,9 @@ const StyledSideBySideImagesAndText = styled(motion.div)`
   column-gap: 4rem;
   max-width: ${breakpoints.contentWidthLimit}px;
   margin: 0 auto;
-
+  > div div {
+    padding-top: ${padding.vertical.single};
+  }
   > div:nth-of-type(1) {
     box-sizing: border-box;
 

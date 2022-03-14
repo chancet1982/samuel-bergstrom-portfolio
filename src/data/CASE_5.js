@@ -8,6 +8,7 @@ import Paragraph from "../Components/Shared/Paragraph";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
+import colors from "../theme/colors";
 
 export const CASE_5 = {
   caseStatus: CASE_STATUS.PUBLISHED,
@@ -232,7 +233,8 @@ export const CASE_5 = {
           data: {
             title: <>General research findings:</>,
             h: 2,
-            bgColor: "#158FC9",
+            bgColor: colors.offwhite,
+            isTwoColumnsOnDesktop: true,
             items: [
               {
                 title: "Manual input of information:",

@@ -10,7 +10,7 @@ import typography from "../../theme/typography";
 const StyledParagraph = styled.p`
   color: ${({ light }) =>
     light ? colors.text.light.medium : colors.text.dark.medium};
-  max-width: 80ch;
+  max-width: 64ch;
   ${({ fluidType }) => fluidType};
   font-family: ${typography.bodyFont};
 

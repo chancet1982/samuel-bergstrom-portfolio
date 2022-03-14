@@ -43,7 +43,7 @@ const StyledTextbox = styled(motion.div)`
 
     p,
     li {
-      max-width: 80ch;
+      max-width: 64ch;
     }
   }
 

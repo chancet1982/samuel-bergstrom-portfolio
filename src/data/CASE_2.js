@@ -225,6 +225,7 @@ export const CASE_2 = {
             title: <>Insights</>,
             bgColor: "#FF8D48",
             h: 2,
+            isTwoColumnsOnDesktop: true,
             text: (
               <>
                 <Paragraph>

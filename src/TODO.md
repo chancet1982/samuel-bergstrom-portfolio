@@ -6,18 +6,16 @@ TESTIMONIALS -> Looks rather bland. perhaps needs some love.
 
 FIXES:
 COVER: limitMaxWidth and text alignment?
-Hide navigation while screen animation is playing. (nice to have)
-Navlink -> fluidType console error.
-Insights -> need to support different column setups and intro texts.
-SideBySideImageWithTitleAndText -> tighten the spacing between images and text.
-BlockQuote -> lost support for light texts.
+NAVIGATION -> wrong width when not transparent
+NAVIGATION -> add supprt for light text if desktop, nav doesnt have a background but the first item does (?)
+NAVIGATION -> Hide navigation while screen animation is playing. (nice to have)
+NAVIGATION -> Navlink (fluidType console error)
 
 FEATURES:
 COVER_CAPTION: Add "back" button
 Timeline -> Finish developing the timeline and add it to about me page.
 ListOfImagesWithTitleAndText -> add support for background color on items only. not entire list.
 ListOfImagesWithTitleAndText -> goes to single column too soon. should keep have columns on tablets too.
-Navigation -> add supprt for light text if desktop, nav doesnt have a background but the first item does (?)
 
 MOBILE:
 Result -> fix mobile layout.

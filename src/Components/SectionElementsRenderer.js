@@ -106,6 +106,8 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
             h={data.h}
             items={data.items}
             bgColor={data.bgColor}
+            isTwoColumnsOnDesktop={data.isTwoColumnsOnDesktop}
+            text={data.text}
           />
         </ElementColorContextProvider>
       );
