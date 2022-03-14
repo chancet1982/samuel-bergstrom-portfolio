@@ -22,6 +22,7 @@ import KeyFigures from "./Section_Elements/KeyFigures";
 import Testimonials from "./Section_Elements/Testimonials";
 import ElementColorContextProvider from "../Context/ElementColorContext";
 import ContactDetails from "./Section_Elements/ContactDetails";
+import Insights from "./Section_Elements/Insights";
 
 const SectionElementsRenderer = ({ elementKey, data, template }) => {
   if (!template) {
@@ -92,6 +93,18 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
             caption={data.caption}
             flip={data.flip}
             limitMaxWidth={data.limitMaxWidth}
+            bgColor={data.bgColor}
+          />
+        </ElementColorContextProvider>
+      );
+    case SECTION_ELEMENTS.INSIGHTS:
+      return (
+        <ElementColorContextProvider>
+          <Insights
+            key={elementKey}
+            title={data.title}
+            h={data.h}
+            items={data.items}
             bgColor={data.bgColor}
           />
         </ElementColorContextProvider>

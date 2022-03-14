@@ -5,8 +5,6 @@ import { TOOLS_AND_METHODS } from "./dictionaries/TOOLS_AND_METHODS";
 import { ROLES } from "./dictionaries/ROLES";
 import { PLATFORMS } from "./dictionaries/PLATFORMS";
 import Paragraph from "../Components/Shared/Paragraph";
-import List from "../Components/Shared/List";
-import TitleAndText from "../Components/Shared/TitleAndText";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Shared/Title";
@@ -145,63 +143,35 @@ export const CASE_10 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.INSIGHTS,
           data: {
             bgColor: "#00ADDB",
             title: <>Insights:</>,
             h: 2,
             text: (
               <>
+                {" "}
                 <Paragraph>
                   From the interviews, we learned a lot. There were a lot of
                   issues that needed to be addressed. 3 different problem areas
                   were identified:
                 </Paragraph>
-                <List
-                  items={[
-                    <>
-                      <TitleAndText title="Onboarding new customers" h={5}>
-                        <Paragraph>
-                          Treating all markets equally, in some markets the
-                          client is a “well-established brand” but not always.
-                          On top of that, local industry-standard payment
-                          options are not available.
-                        </Paragraph>
-                        <Paragraph>
-                          Additionally, my client offered no cost-caps, no
-                          cherry-picking products, and no flexibility in
-                          data-ingestion.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                    <>
-                      <TitleAndText title="Customer relationship" h={5}>
-                        <Paragraph>
-                          Customers are punished for non-compliance, no
-                          proactive communication exists, no follow-up on the
-                          impact, and even for happy customers there is no “next
-                          level”.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                    <>
-                      <TitleAndText
-                        title="Insufficient incentives to becoming a customer."
-                        h={5}
-                      >
-                        <Paragraph>
-                          Non-paying customers are getting too much for free.
-                          Sole focus on price means that non-paying customers
-                          can be not only competitive but destructive (for
-                          example by putting fake prices on products they don’t
-                          actually have) with no repercussions.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                  ]}
-                />
               </>
             ),
+            items: [
+              {
+                title: "Onboarding new customers",
+                text: "Treating all markets equally, in some markets the client is a “well-established brand” but not always. On top of that, local industry-standard payment options are not available. Additionally, my client offered no cost-caps, no cherry-picking products, and no flexibility in data-ingestion.",
+              },
+              {
+                title: "Customer relationship",
+                text: "Customers are punished for non-compliance, no proactive communication exists, no follow-up on the impact, and even for happy customers there is no “next level”.",
+              },
+              {
+                title: "Insufficient incentives to becoming a customer.",
+                text: "Non-paying customers are getting too much for free. Sole focus on price means that non-paying customers can be not only competitive but destructive (for example by putting fake prices on products they don’t actually have) with no repercussions.",
+              },
+            ],
           },
         },
       ],

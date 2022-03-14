@@ -3,9 +3,7 @@ import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import { TOOLS_AND_METHODS } from "./dictionaries/TOOLS_AND_METHODS";
 import { PLATFORMS } from "./dictionaries/PLATFORMS";
 import Paragraph from "../Components/Shared/Paragraph";
-import List from "../Components/Shared/List";
 import Title from "../Components/Shared/Title";
-import TitleAndText from "../Components/Shared/TitleAndText";
 import { ROLES } from "./dictionaries/ROLES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
@@ -250,7 +248,7 @@ export const CASE_3 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.INSIGHTS,
           data: {
             title: <>Research findings and application:</>,
             h: 2,
@@ -262,65 +260,22 @@ export const CASE_3 = {
                   research lab, but an assembly line these technicians slicing,
                   sanding, filing, and preparing tissue samples in hectic pase.
                 </Paragraph>
-                <List
-                  items={[
-                    <>
-                      <TitleAndText h={5} title="Production line, not a lab">
-                        <Paragraph>
-                          After visiting the clinics and interviewing
-                          lab-technicians it was evident that technicians would
-                          rather have a solution that is fully automated.
-                          Digital pathology was already adding additional
-                          workload on lab personnel. In healthcare, it is a
-                          known fact that there is a shortage of pathologists. A
-                          lesser-known fact however is that the bottleneck for
-                          diagnosis isn’t pathologists but actually the process
-                          for producing digital tissue scans.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                    <>
-                      <TitleAndText h={5} title="Dust is the real enemy">
-                        <Paragraph>
-                          Due to scanners being overly sensitive (slides are
-                          getting stuck if their labels are protruding) every
-                          slide needs to be sanded by hand. This creates dust
-                          that later sets inside the scanners, leads to unwanted
-                          artifacts, requires daily cleaning, and increases the
-                          scanner’s failure rate considerably. It is safe to
-                          assume, a lot of lives would have been saved if only
-                          scanners were a little more tolerant towards
-                          protruding labels.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                    <>
-                      <TitleAndText
-                        h={5}
-                        title="We’re solving the wrong problem"
-                      >
-                        <Paragraph>
-                          In retrospect, it was clear that the issue isnt
-                          providing better cancer diagnosis. Nor was it the lack
-                          of pathologists. If at all the product should be able
-                          to provide a pre-diagnosis evaluation in order to free
-                          up pathologists to deal with the increasing workload.
-                        </Paragraph>
-                        <Paragraph>
-                          Digital pathology in itself is a huge leap forward.
-                          Instead of sending physical tissue samples from one
-                          clinic to another, digital copies could be sent. The
-                          side-effect however was that it increased the workload
-                          on lab personal, reducing their role to manufacturing
-                          workers, and creating an environment where speed is
-                          all that matters.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                  ]}
-                />
               </>
             ),
+            items: [
+              {
+                title: "Production line, not a lab",
+                text: "After visiting the clinics and interviewing lab-technicians it was evident that technicians would rather have a solution that is fully automated. Digital pathology was already adding additional workload on lab personnel. In healthcare, it is a known fact that there is a shortage of pathologists. A lesser-known fact however is that the bottleneck for diagnosis isn’t pathologists but actually the process for producing digital tissue scans.",
+              },
+              {
+                title: "Dust is the real enemy",
+                text: "Due to scanners being overly sensitive (slides are getting stuck if their labels are protruding) every slide needs to be sanded by hand. This creates dust that later sets inside the scanners, leads to unwanted artifacts, requires daily cleaning, and increases the scanner’s failure rate considerably. It is safe to assume, a lot of lives would have been saved if only scanners were a little more tolerant towards protruding labels. ",
+              },
+              {
+                title: "We’re solving the wrong problem",
+                text: "In retrospect, it was clear that the issue isnt providing better cancer diagnosis. Nor was it the lack of pathologists. If at all the product should be able to provide a pre-diagnosis evaluation in order to free up pathologists to deal with the increasing workload. Digital pathology in itself is a huge leap forward. Instead of sending physical tissue samples from one clinic to another, digital copies could be sent. The side-effect however was that it increased the workload on lab personal, reducing their role to manufacturing workers, and creating an environment where speed is all that matters.",
+              },
+            ],
           },
         },
         {

@@ -6,8 +6,6 @@ import { TOOLS_AND_METHODS } from "./dictionaries/TOOLS_AND_METHODS";
 import { PLATFORMS } from "./dictionaries/PLATFORMS";
 import Paragraph from "../Components/Shared/Paragraph";
 import Title from "../Components/Shared/Title";
-import List from "../Components/Shared/List";
-import TitleAndText from "../Components/Shared/TitleAndText";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
@@ -199,71 +197,37 @@ export const CASE_1 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.INSIGHTS,
           data: {
             bgColor: "#FE636F",
             title: "Insights",
             h: 2,
-            text: (
-              <>
-                <List
-                  items={[
-                    <>
-                      <TitleAndText title="Security Concerns" h={5}>
-                        <Paragraph>
-                          All users were using the “default” password as they
-                          were not aware they can change a password.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                    <>
-                      <TitleAndText title="Long Customer Names" h={5}>
-                        <Paragraph>
-                          Long customer names and long addresses were not
-                          displayed properly.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                    <>
-                      <TitleAndText title="Route Messages" h={5}>
-                        <Paragraph>
-                          Messages are used to communicate vital information
-                          about customer stops but were only available before
-                          couriers accepted the route.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                    <>
-                      <TitleAndText title="Bad data" h={5}>
-                        <Paragraph>
-                          Couriers had problems with incorrect back-office data.
-                          This often resulted in couriers trying to pick
-                          up/deliver to the wrong clients.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                    <>
-                      <TitleAndText title="Discrepancies" h={5}>
-                        <Paragraph>
-                          When reporting discrepancies, couriers used 4 error
-                          codes 80% of the time. Finding those was hard to do in
-                          a long list of error codes.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                    <>
-                      <TitleAndText title="Incorrect Addresses" h={5}>
-                        <Paragraph>
-                          Customer addresses were incorrect 70% of the time.
-                          Couriers were unable to inform the dispatch of these
-                          errors.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                  ]}
-                />
-              </>
-            ),
+            items: [
+              {
+                title: "Security Concerns",
+                text: " All users were using the “default” password as they were not aware they can change a password. ",
+              },
+              {
+                title: "Long Customer Names",
+                text: "Long customer names and long addresses were not displayed properly. ",
+              },
+              {
+                title: "Route Messages",
+                text: "Messages are used to communicate vital information about customer stops but were only available before couriers accepted the route.",
+              },
+              {
+                title: "Bad data",
+                text: "Couriers had problems with incorrect back-office data. This often resulted in couriers trying to pick up/deliver to the wrong clients.",
+              },
+              {
+                title: "Discrepancies",
+                text: "When reporting discrepancies, couriers used 4 error codes 80% of the time. Finding those was hard to do in a long list of error codes.",
+              },
+              {
+                title: "Incorrect Addresses",
+                text: "Customer addresses were incorrect 70% of the time. Couriers were unable to inform the dispatch of these errors.",
+              },
+            ],
           },
         },
       ],

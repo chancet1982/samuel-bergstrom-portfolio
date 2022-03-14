@@ -228,49 +228,29 @@ export const CASE_5 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.INSIGHTS,
           data: {
             title: <>General research findings:</>,
-            text: (
-              <>
-                <Paragraph>
-                  <strong>Manual input of information: </strong>Based on
-                  research elderly type more than 3 times slower compared to
-                  young adults For patients with NP this is even more
-                  challenging as they lose sensation in their fingertips so we
-                  should expect that manual input would be time-consuming and
-                  error prone. Any manual input should be limited to the minimum
-                  and errors are to be expected.
-                </Paragraph>
-
-                <Paragraph>
-                  <strong>Patient identification & GDPR concerns: </strong>
-                  Patients had no hard time selecting their names from a list.
-                  However, openly displaying a list of full names raised
-                  concerns about GDPR compliance. When showing only partial
-                  names, staff pointed out that in some countries, you had 6
-                  patients with the same name scheduled for the same shift.
-                </Paragraph>
-                <Paragraph>
-                  <strong>Weighing patients:</strong>I looked into different
-                  ways of registering patients’ weight. From nowadays shouting,
-                  through manually inputting values, to fully automated hardware
-                  integrations. Shouting is ineffective and error-prone.
-                  Hardware proved too costly and complex to implement. Manually
-                  inputting values were sub-optimal but much cheaper to
-                  implement.
-                </Paragraph>
-                <Paragraph>
-                  <strong>Accounting for wheelchairs:</strong>Accurately
-                  following the patient weight is crucial for dialysis. In the
-                  clinics, patients using a wheelchair suffer the most. Every
-                  wheelchair varies in weight so caregivers move patients to a
-                  “reference chair” with known weight, then manually calculate
-                  the weight of the patient (without the chair). A process that
-                  is far from ideal for both patients and staff.
-                </Paragraph>
-              </>
-            ),
+            h: 2,
+            bgColor: "#158FC9",
+            items: [
+              {
+                title: "Manual input of information:",
+                text: "Based on research elderly type more than 3 times slower compared to young adults For patients with NP this is even more challenging as they lose sensation in their fingertips so we should expect that manual input would be time-consuming and error prone. Any manual input should be limited to the minimum and errors are to be expected.",
+              },
+              {
+                title: "Patient identification & GDPR concerns:",
+                text: "Patients had no hard time selecting their names from a list. However, openly displaying a list of full names raised concerns about GDPR compliance. When showing only partial names, staff pointed out that in some countries, you had 6 patients with the same name scheduled for the same shift.",
+              },
+              {
+                title: "Weighing patients:",
+                text: "I looked into different ways of registering patients’ weight. From nowadays shouting, through manually inputting values, to fully automated hardware integrations. Shouting is ineffective and error-prone. Hardware proved too costly and complex to implement. Manually inputting values were sub-optimal but much cheaper to implement. ",
+              },
+              {
+                title: "Accounting for wheelchairs:",
+                text: "Accurately following the patient weight is crucial for dialysis. In the clinics, patients using a wheelchair suffer the most. Every wheelchair varies in weight so caregivers move patients to a “reference chair” with known weight, then manually calculate the weight of the patient (without the chair). A process that is far from ideal for both patients and staff. ",
+              },
+            ],
           },
         },
       ],

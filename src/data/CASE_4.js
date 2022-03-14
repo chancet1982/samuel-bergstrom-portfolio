@@ -5,8 +5,6 @@ import { TOOLS_AND_METHODS } from "./dictionaries/TOOLS_AND_METHODS";
 import { ROLES } from "./dictionaries/ROLES";
 import { PLATFORMS } from "./dictionaries/PLATFORMS";
 import Paragraph from "../Components/Shared/Paragraph";
-import List from "../Components/Shared/List";
-import TitleAndText from "../Components/Shared/TitleAndText";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
@@ -242,80 +240,37 @@ export const CASE_4 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.INSIGHTS,
           data: {
             title: <>Insights:</>,
             h: 2,
             bgColor: "#546368",
-            text: (
-              <>
-                <List
-                  items={[
-                    <>
-                      <TitleAndText h={5} title="Onboarding is cumbersome">
-                        <Paragraph>
-                          Login was cumbersome and required users to create an
-                          account by using a username then securing the account
-                          with a password only after which users needed to link
-                          their account with their phone and subscription code.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                    <>
-                      <TitleAndText h={5} title="Key Sharing is confusing">
-                        <Paragraph>
-                          Another confusing concept was “key sharing”. Users
-                          could allow temporary access by “sharing” their access
-                          keys with other devices. None of our test users were
-                          able to understand the concept and non-expressed
-                          interest in sharing keys “temporarily”
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                    <>
-                      <TitleAndText h={5} title="Security">
-                        <Paragraph>
-                          Security settings were far too granular and confusing.
-                          We saw that users prioritize convenience over security
-                          and were content with 2 settings, Open for All or
-                          Secured Delivery.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                    <>
-                      <TitleAndText h={5} title="Cooling schedule">
-                        <Paragraph>
-                          The cooling schedule was a feature in which users
-                          could control their device’s cooling schedule in order
-                          to save electricity. During testing, it became
-                          apparent that it was overly granular and hard to use.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                    <>
-                      <TitleAndText h={5} title="Unlocking the locker lockers">
-                        <Paragraph>
-                          The idea was that the same app used privately could
-                          also be used for opening multiple lockers in a
-                          corporate environment. This caused a cluttered and
-                          messy Landing screen UI.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                    <>
-                      <TitleAndText h={5} title="Is it working?">
-                        <Paragraph>
-                          Some users complained about not knowing if their
-                          locker is on or not and if it was ready to receive a
-                          delivery and that when a delivery is made it is hard
-                          to find the lock/unlock button.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                  ]}
-                />
-              </>
-            ),
+            items: [
+              {
+                title: "Onboarding is cumbersome",
+                text: "Login was cumbersome and required users to create an account by using a username then securing the account with a password only after which users needed to link their account with their phone and subscription code.",
+              },
+              {
+                title: "Key Sharing is confusing",
+                text: "Another confusing concept was “key sharing”. Users could allow temporary access by “sharing” their access keys with other devices. None of our test users were able to understand the concept and non-expressed interest in sharing keys “temporarily”",
+              },
+              {
+                title: "Security",
+                text: "Security settings were far too granular and confusing. We saw that users prioritize convenience over security and were content with 2 settings, Open for All or Secured Delivery.",
+              },
+              {
+                title: "Cooling schedule",
+                text: "The cooling schedule was a feature in which users could control their device’s cooling schedule in order to save electricity. During testing, it became apparent that it was overly granular and hard to use. ",
+              },
+              {
+                title: "Unlocking the locker lockers",
+                text: "The idea was that the same app used privately could also be used for opening multiple lockers in a corporate environment. This caused a cluttered and messy Landing screen UI.",
+              },
+              {
+                title: "Is it working?",
+                text: "Some users complained about not knowing if their locker is on or not and if it was ready to receive a delivery and that when a delivery is made it is hard to find the lock/unlock button. ",
+              },
+            ],
           },
         },
       ],

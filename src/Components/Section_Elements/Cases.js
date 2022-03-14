@@ -32,7 +32,6 @@ const StyledCases = styled(motion.div)`
 `;
 
 const SectionCases = ({ title, text, preview, h }) => {
-  console.log(h);
   return (
     <>
       <CenteredTitleAndText title={title} text={text} h={h} isPadded />

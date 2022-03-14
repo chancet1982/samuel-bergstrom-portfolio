@@ -6,7 +6,6 @@ import { TOOLS_AND_METHODS } from "./dictionaries/TOOLS_AND_METHODS";
 import { PLATFORMS } from "./dictionaries/PLATFORMS";
 import Paragraph from "../Components/Shared/Paragraph";
 import List from "../Components/Shared/List";
-import TitleAndText from "../Components/Shared/TitleAndText";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
@@ -221,7 +220,7 @@ export const CASE_2 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.INSIGHTS,
           data: {
             title: <>Insights</>,
             bgColor: "#FF8D48",
@@ -231,68 +230,33 @@ export const CASE_2 = {
                 <Paragraph>
                   Based on the surveys and interviews we could conclude that:
                 </Paragraph>
-                <List
-                  items={[
-                    <>
-                      <TitleAndText
-                        title="Most patients were interested in wellbeing and health tips."
-                        h={5}
-                      >
-                        <Paragraph>
-                          72% would like to get health tips and ways to improve
-                          their wellbeing (13/18)
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                    <>
-                      <TitleAndText
-                        title="Patients wanted to keep informed"
-                        h={5}
-                      >
-                        <Paragraph>
-                          52% would like to follow up on their treatments
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                    <>
-                      <TitleAndText
-                        title="Patients want to follow up on lab results"
-                        h={5}
-                      >
-                        <Paragraph>
-                          Patients were mostly interested in lab results (blood,
-                          levels)
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                    <>
-                      <TitleAndText
-                        title="Patients were interested in finding and booking treatment via app."
-                        h={5}
-                      >
-                        <Paragraph>
-                          64% of patients would want to be able to find and book
-                          a clinic via app.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                    <>
-                      <TitleAndText
-                        title="Patients were not interested in medications, Reminders and intake"
-                        h={5}
-                      >
-                        <Paragraph>
-                          Most patients only care about side-affectss, very few
-                          wanted to learn about the medication itself. 66% of
-                          patients were not interested in medication reminders
-                          nor did they want to report medication intake.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                  ]}
-                />
               </>
             ),
+            items: [
+              {
+                title:
+                  "Most patients were interested in wellbeing and health tips.",
+                text: "72% would like to get health tips and ways to improve their wellbeing (13/18)",
+              },
+              {
+                title: "Patients wanted to keep informed",
+                text: "52% would like to follow up on their treatments",
+              },
+              {
+                title: "Patients want to follow up on lab results",
+                text: "Patients were mostly interested in lab results (blood, levels)",
+              },
+              {
+                title:
+                  "Patients were interested in finding and booking treatment via app.",
+                text: " 64% of patients would want to be able to find and book a clinic via app.",
+              },
+              {
+                title:
+                  "Patients were not interested in medications, Reminders and intake",
+                text: "Most patients only care about side-affectss, very few wanted to learn about the medication itself. 66% of patients were not interested in medication reminders nor did they want to report medication intake.",
+              },
+            ],
           },
         },
         {

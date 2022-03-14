@@ -4,7 +4,6 @@ import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import { TOOLS_AND_METHODS } from "./dictionaries/TOOLS_AND_METHODS";
 import { ROLES } from "./dictionaries/ROLES";
 import Paragraph from "../Components/Shared/Paragraph";
-import TitleAndText from "../Components/Shared/TitleAndText";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import Title from "../Components/Shared/Title";
@@ -200,67 +199,29 @@ export const CASE_7 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.INSIGHTS,
           data: {
             bgColor: "#2161C9",
             title: <>Insights:</>,
-            text: (
-              <>
-                <List
-                  items={[
-                    <>
-                      <TitleAndText
-                        title="Online conversions were shockingly low"
-                        h={5}
-                      >
-                        <Paragraph>
-                          The signup had a success rate of 16% and the general
-                          conversion rate was under 0.5%.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                    <>
-                      <TitleAndText
-                        title="Users are arent getting the information they need"
-                        h={5}
-                      >
-                        <Paragraph>
-                          A lot of users failed to find or were confused by the
-                          information they needed during sign-up.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                    <>
-                      <TitleAndText
-                        title="20% of support calls originate from users who cannot sign in to My Pages."
-                        h={5}
-                      >
-                        <Paragraph>
-                          “My pages” is where gym-goers book their training,
-                          find gyms, follow up on their membership so being able
-                          to log in is very important. Despite receiving a mail
-                          with login information for “My pages” users couldn’t
-                          log-in.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                    <>
-                      <TitleAndText
-                        title="Not all offers and Campaigns were available online"
-                        h={5}
-                      >
-                        <Paragraph>
-                          Some offers are not available online. For example, its
-                          not possible to select a prepaid membership online and
-                          directed users to visit a gym in person so that they
-                          could do that.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                  ]}
-                />
-              </>
-            ),
+            items: [
+              {
+                title: "Online conversions were shockingly low",
+                text: "The signup had a success rate of 16% and the general conversion rate was under 0.5%.",
+              },
+              {
+                title: "Users are arent getting the information they need",
+                text: "A lot of users failed to find or were confused by the information they needed during sign-up. ",
+              },
+              {
+                title:
+                  "20% of support calls originate from users who cannot sign in to My Pages.",
+                text: "“My pages” is where gym-goers book their training, find gyms, follow up on their membership so being able to log in is very important. Despite receiving a mail with login information for “My pages” users couldn’t log-in.",
+              },
+              {
+                title: "Not all offers and Campaigns were available online",
+                text: "Some offers are not available online. For example, its not possible to select a prepaid membership online and directed users to visit a gym in person so that they could do that.",
+              },
+            ],
           },
         },
         {
@@ -710,7 +671,7 @@ export const CASE_7 = {
           template: SECTION_ELEMENTS.RESULT,
           data: {
             imageUrl: "assets/case-7/result.png",
-            bgColor: "rgba(9, 93, 132, .72)",
+            bgColor: "#2161C9",
             text: (
               <>
                 <Paragraph large>

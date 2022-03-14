@@ -4,6 +4,7 @@ export const SECTION_ELEMENTS = {
   LANDING_PAGE_COVER: "landingPageCover",
   OVERVIEW: "overview",
   TEXTBOX: "textbox",
+  INSIGHTS: "insights",
   QUOTE: "quote",
   CLIENTS: "clients",
   CASES: "cases",
