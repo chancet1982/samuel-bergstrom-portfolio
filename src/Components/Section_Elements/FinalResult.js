@@ -22,8 +22,18 @@ const StyledFinalResultContent = styled(motion.div)`
   grid-template-columns: repeat(3, 1fr);
 
   @media (max-width: ${breakpoints.desktop - 1}px) {
-    > div {
+    > div,
+    > img {
       grid-area: span 1 / span 3;
+    }
+
+    > div {
+      background: rgb(0, 0, 0);
+      background: linear-gradient(
+        160deg,
+        rgba(0, 0, 0, 0) 24%,
+        rgba(0, 0, 0, 0.48) 100%
+      );
     }
   }
 

@@ -1,14 +1,13 @@
 import React from "react";
 import styled from "styled-components";
-import { motion, useViewportScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import PropTypes from "prop-types";
-import { useWindowSize } from "react-use";
+import { useWindowSize, useOrientation } from "react-use";
 import TitleAndText from "../Shared/TitleAndText";
 import Overline from "../Shared/Overline";
 import Blinds from "../ScreenTransitions/Blinds";
 import breakpoints from "../../theme/breakpoints";
 import padding from "../../theme/padding";
-import Image from "../Shared/Image";
 
 const StyledCover = styled(motion.div)`
   height: ${({
@@ -17,35 +16,22 @@ const StyledCover = styled(motion.div)`
     },
   }) => large};
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  /*overflow: hidden;*/
-`;
-
-const StyledCoverImage = styled(motion.div)`
-  grid-column: 2 / span 2;
-  /*overflow: hidden;*/
-
-  @media (max-width: ${breakpoints.desktop}px) {
-    grid-column: 1 / span 3;
-  }
-
-  ${({ imageUrl }) =>
-    imageUrl && {
-      backgroundImage: `url(${imageUrl})`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
-    }}
+  display: flex;
+  overflow: hidden;
 
   :before {
     content: "";
-    clip-path: circle(32vw at 72% 32%);
+    clip-path: circle(32vw at 72% 20%);
     position: absolute;
     top: 0;
     right: 0;
-    width: 100vw;
-    height: 100vh;
-    z-index: -1;
+    bottom: 0;
+    left: 0;
+    clip-path: circle(40vw at 72% 20%);
+
+    @media (min-width: ${breakpoints.desktop}px) {
+      clip-path: circle(32vw at 72% 20%);
+    }
 
     ${({ bgColor }) =>
       bgColor && {
@@ -54,17 +40,22 @@ const StyledCoverImage = styled(motion.div)`
   }
 `;
 
-const StyledCaption = styled(motion.div)`
-  grid-column: 1 / span 3;
-  height: 100%;
-  padding-top: ${padding.vertical.quadruple};
-  padding-bottom: ${padding.vertical.double};
+const StyledCoverImage = styled(motion.img)`
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 92vh;
 
-  @media (min-width: ${breakpoints.desktop}px) {
-    grid-column: 1 / span 1;
-    padding-top: 0;
+  @media (max-width: ${breakpoints.tablet}px) and (orientation: landscape) {
+    height: 54vw;
   }
+`;
 
+const StyledCaption = styled(motion.div)`
+  padding-top: ${padding.vertical.double};
+  height: 100%;
+  max-width: ${breakpoints.contentWidthLimit}px;
+  margin: 0 auto;
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -73,6 +64,41 @@ const StyledCaption = styled(motion.div)`
   box-sizing: border-box;
   padding-left: ${padding.horizontal.quadruple};
   padding-right: ${padding.horizontal.quadruple};
+
+  @media (min-width: ${breakpoints.tablet}px) {
+    padding-left: ${padding.horizontal.double};
+    padding-right: ${padding.horizontal.double};
+  }
+
+  z-index: 1;
+  width: 100%;
+  padding-top: 0;
+
+  h1 {
+    max-width: 8ch;
+    margin-top: 2.25rem;
+
+    @media (min-width: ${breakpoints.tablet}px) {
+      max-width: 15ch;
+    }
+  }
+
+  p {
+    margin-bottom: 0;
+
+    @media (max-width: ${breakpoints.mobileLarge - 1}px) {
+      max-width: 15ch;
+    }
+
+    @media (min-width: ${breakpoints.mobileLarge}px) and (max-width: ${breakpoints.tablet -
+      1}px) {
+      max-width: 20ch;
+    }
+
+    @media (min-width: ${breakpoints.tablet}px) {
+      max-width: 30ch;
+    }
+  }
 `;
 
 // TODO: parallax effect on the cover in the landing page  needs some fine-tuning
@@ -81,32 +107,9 @@ const Cover = ({
   title,
   text,
   imageUrl,
+  mobileImageUrl,
   bgColor,
-  parallax,
-  sticky,
 }) => {
-  const { scrollY } = useViewportScroll();
-  const { height } = useWindowSize();
-
-  const coverHeight = (height / 100) * 92;
-  const scrollYrange = [0, coverHeight];
-
-  /* scale image on scroll */
-  const scale = 1.6; // Magic number
-  const scaleImageRange = [1, scale];
-  const scaleImage = useTransform(scrollY, scrollYrange, scaleImageRange);
-
-  /* move image on scroll */
-  const proximity = 2; // 1 - normal scroll speed, 2 - faster scrolling, < 1 further away objects
-  const yImageRange = sticky ? [0, coverHeight] : [0, -coverHeight * proximity];
-  const parallaxImage = useTransform(scrollY, scrollYrange, yImageRange);
-
-  const imageEffect = parallax ? parallaxImage : scaleImage;
-  /* const imageEffect = useSpring(parallax ? parallaxImage : scaleImage, {
-    stiffness: 400,
-    damping: 10,
-  }); */
-
   const coverVariants = {
     initial: {
       opacity: 0,
@@ -143,21 +146,33 @@ const Cover = ({
     },
   };
 
+  const { width } = useWindowSize();
+  const isMobile = width < breakpoints.tablet;
+  const deviceOrientation = useOrientation();
+  const isLandscape = deviceOrientation.type === "landscape-primary";
+
   return (
-    <StyledCover variants={coverVariants} initial="hidden" animate="animate">
+    <StyledCover
+      variants={coverVariants}
+      initial="hidden"
+      animate="animate"
+      bgColor={bgColor}
+    >
+      <StyledCoverImage
+        variants={imageVariants}
+        src={`${process.env.PUBLIC_URL}/${
+          // eslint-disable-next-line no-nested-ternary
+          isMobile ? (isLandscape ? imageUrl : mobileImageUrl) : imageUrl
+        }`}
+        alt="Just a picture of me looking inteligent"
+      />
+
       <StyledCaption variants={captionVariants}>
-        <Overline disableAnimations>{overline}</Overline>
+        {overline && <Overline disableAnimations>{overline}</Overline>}
         <TitleAndText h={1} title={title} disableAnimations>
           {text}
         </TitleAndText>
       </StyledCaption>
-
-      <StyledCoverImage bgColor={bgColor} variants={imageVariants}>
-        <Image
-          imageUrl={`${process.env.PUBLIC_URL}/${imageUrl}`}
-          style={parallax ? { y: imageEffect } : { scale: imageEffect }}
-        />
-      </StyledCoverImage>
 
       <Blinds />
     </StyledCover>
@@ -168,10 +183,9 @@ Cover.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   imageUrl: PropTypes.string,
+  mobileImageUrl: PropTypes.string,
   bgColor: PropTypes.string,
   overline: PropTypes.string,
-  parallax: PropTypes.bool,
-  sticky: PropTypes.bool, // requires parallax to be enabled but will make the object "resist" the scrolling
 };
 
 Cover.defaultProps = {
@@ -179,9 +193,8 @@ Cover.defaultProps = {
   title: null,
   text: null,
   imageUrl: null,
+  mobileImageUrl: null,
   bgColor: null,
-  parallax: false,
-  sticky: false,
 };
 
 export default Cover;

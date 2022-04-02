@@ -38,6 +38,7 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
           title={data.title}
           text={data.text}
           imageUrl={data.imageUrl}
+          mobileImageUrl={data.mobileImageUrl}
           bgColor={data.bgColor}
           parallax={data.parallax}
           sticky={data.sticky}

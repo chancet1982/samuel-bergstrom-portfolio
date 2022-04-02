@@ -201,6 +201,7 @@ export const CASE_7 = {
         {
           template: SECTION_ELEMENTS.INSIGHTS,
           data: {
+            isTwoColumnsOnDesktop: true,
             bgColor: "#2161C9",
             title: <>Insights:</>,
             items: [

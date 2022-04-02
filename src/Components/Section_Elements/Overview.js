@@ -70,12 +70,20 @@ const StyledOverview = styled.div`
 
   padding: 0 ${padding.horizontal.quadruple};
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
+
+  @media (min-width: ${breakpoints.mobileLarge}px) and (max-width: ${breakpoints.desktop -
+    1}px) {
+    > div {
+      width: 33.333%;
+    }
+  }
 
   @media (min-width: ${breakpoints.desktop}px) {
     grid-column: 3 / span 1;
     padding: ${padding.vertical.double} ${padding.horizontal.double};
+    flex-direction: column;
   }
 `;
 

@@ -1,12 +1,13 @@
 TODO list (What's left before you're done)
 
 FIXES:
-COVER: limitMaxWidth and text alignment?
+COVER -> Fix rectangular mobile and desktop images for all cases.
+SNEAKPEEK -> Fix better images so it works on mobile
+COVER -> Fix animations.
 NAVIGATION -> wrong width when not transparent
 NAVIGATION -> add supprt for light text if desktop, nav doesnt have a background but the first item does (?)
 NAVIGATION -> Hide navigation while screen animation is playing. (nice to have)
 NAVIGATION -> Navlink (fluidType console error)
-RESULT -> fix mobile layout.
 IMAGE_GALLERY -> Images overflow the screen area on smaller screens.
 Fix vertical alignment - mobile
 
@@ -22,7 +23,6 @@ Testimonials -> Add inView animations
 Social media links -> Add inView animations
 FinalResult -> Add inView animations
 SCREEN_TRANSITIONS -> Change screen transitions to use circles instead.
-COVER -> update scroll animation (not sure what it should be)
 LANDINGPAGE_COVER -> update scroll animation (not sure what it should be)
 
 CONTENT:
