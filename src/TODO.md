@@ -4,6 +4,7 @@ FIXES:
 COVER -> Fix rectangular mobile and desktop images for all cases.
 SNEAKPEEK -> Fix better images so it works on mobile
 COVER -> Fix animations.
+COVER -> Fix background circle to work in all resolutions.
 NAVIGATION -> wrong width when not transparent
 NAVIGATION -> add supprt for light text if desktop, nav doesnt have a background but the first item does (?)
 NAVIGATION -> Hide navigation while screen animation is playing. (nice to have)
