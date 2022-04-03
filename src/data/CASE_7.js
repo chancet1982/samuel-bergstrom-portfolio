@@ -38,7 +38,8 @@ export const CASE_7 = {
                 </Paragraph>
               </>
             ),
-            imageUrl: "assets/case-7/cover.png",
+            imageUrl: "assets/case-7/cover-desktop.png",
+            mobileImageUrl: "assets/case-7/cover-mobile.png",
             bgColor: "#2362CA",
           },
         },

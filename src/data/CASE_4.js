@@ -29,7 +29,8 @@ export const CASE_4 = {
           data: {
             overline: "Logistics",
             title: "e-drop",
-            imageUrl: "assets/case-4/cover.png",
+            imageUrl: "assets/case-4/cover-desktop.png",
+            mobileImageUrl: "assets/case-4/cover-mobile.png",
             bgColor: "#546368",
             text: (
               <>
@@ -200,6 +201,16 @@ export const CASE_4 = {
                 </Paragraph>
               </>
             ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: "assets/case-4/flows.png",
+            imageAlt:
+              "Flow map of old app, a lot of complex flows for red routes",
+            caption:
+              "Flow map of old app, a lot of complex flows for red routes",
           },
         },
         {

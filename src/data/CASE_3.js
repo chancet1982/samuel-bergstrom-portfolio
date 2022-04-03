@@ -35,7 +35,8 @@ export const CASE_3 = {
                 <Paragraph large>Tissue scanner interface design</Paragraph>
               </>
             ),
-            imageUrl: "assets/case-3/cover.png",
+            imageUrl: "assets/case-3/cover-desktop.png",
+            mobileImageUrl: "assets/case-3/cover-mobile.png",
             bgColor: "#47C8BC",
           },
         },

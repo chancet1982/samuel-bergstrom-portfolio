@@ -30,7 +30,8 @@ export const CASE_2 = {
           data: {
             overline: "Renal Care",
             title: "Patient Companion App",
-            imageUrl: "assets/case-2/cover.png",
+            imageUrl: "assets/case-2/cover-desktop.png",
+            mobileImageUrl: "assets/case-2/cover-mobile.png",
             bgColor: "#FF8D48",
             text: (
               <>
