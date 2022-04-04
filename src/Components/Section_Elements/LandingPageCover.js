@@ -12,7 +12,7 @@ import TitleAndText from "../Shared/TitleAndText";
 import Overline from "../Shared/Overline";
 import breakpoints from "../../theme/breakpoints";
 import padding from "../../theme/padding";
-import Blinds from "../ScreenTransitions/Blinds";
+
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
 
@@ -131,10 +131,6 @@ const LandingPageCover = ({
   const coverHeight = (height / 100) * 92;
   const imageOffset = (height / 100) * 56; // -56vh
   const [, setLight] = useContext(ElementColorContext);
-  const { width } = useWindowSize();
-  const isMobile = width < breakpoints.desktop;
-  const amountOfBlinds = isMobile ? 1 : 3;
-  const delayPerBlind = 0.2;
 
   useEffect(() => {
     // eslint-disable-next-line no-unused-expressions
@@ -176,7 +172,7 @@ const LandingPageCover = ({
       opacity: 1,
       y: 0,
       transition: {
-        delay: 1.7 + amountOfBlinds * delayPerBlind,
+        delay: 1.7,
         duration: 0.6,
       },
     },
@@ -188,7 +184,7 @@ const LandingPageCover = ({
       opacity: 1,
       y: 0,
       transition: {
-        delay: 2 + amountOfBlinds * delayPerBlind,
+        delay: 2,
         duration: 0.6,
       },
     },
@@ -214,8 +210,6 @@ const LandingPageCover = ({
           {text}
         </TitleAndText>
       </StyledCaption>
-
-      <Blinds amountOfBlinds={amountOfBlinds} />
     </StyledCover>
   );
 };

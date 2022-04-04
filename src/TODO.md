@@ -20,7 +20,7 @@ ANIMATIONS:
 Testimonials -> Add inView animations
 Social media links -> Add inView animations
 FinalResult -> Add inView animations
-SCREEN_TRANSITIONS -> Change screen transitions to use circles instead.
+LONG_SCREEN_TRANSITION -> Update to use circle instead.
 LANDINGPAGE_COVER -> update scroll animation (not sure what it should be)
 COVER -> Fix animations.
 

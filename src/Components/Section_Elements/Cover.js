@@ -5,7 +5,6 @@ import PropTypes from "prop-types";
 import { useWindowSize, useOrientation } from "react-use";
 import TitleAndText from "../Shared/TitleAndText";
 import Overline from "../Shared/Overline";
-import Blinds from "../ScreenTransitions/Blinds";
 import breakpoints from "../../theme/breakpoints";
 import padding from "../../theme/padding";
 
@@ -173,8 +172,6 @@ const Cover = ({
           {text}
         </TitleAndText>
       </StyledCaption>
-
-      <Blinds />
     </StyledCover>
   );
 };
