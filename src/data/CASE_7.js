@@ -672,7 +672,8 @@ export const CASE_7 = {
         {
           template: SECTION_ELEMENTS.RESULT,
           data: {
-            imageUrl: "assets/case-7/result.png",
+            imageUrl: "assets/case-7/result-desktop.png",
+            mobileImageUrl: "assets/case-7/result-mobile.png",
             bgColor: "#2161C9",
             text: (
               <>

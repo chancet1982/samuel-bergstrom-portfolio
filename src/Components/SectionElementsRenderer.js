@@ -118,6 +118,7 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
           <FinalResult
             key={elementKey}
             imageUrl={data.imageUrl}
+            mobileImageUrl={data.mobileImageUrl}
             bgColor={data.bgColor}
             results={data.results}
             text={data.text}

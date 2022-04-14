@@ -48,7 +48,7 @@ const StyledCoverImage = styled(motion.img)`
   height: 104vw;
   left: 40vw;
 
-  @media (min-width: ${breakpoints.mobileMedium}px) and (max-width: ${breakpoints.mobileLarge -
+  @media (min-width: ${breakpoints.mobile}px) and (max-width: ${breakpoints.mobileLarge -
     1}px) {
     height: 128vw;
     left: 32vw;

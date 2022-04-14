@@ -450,7 +450,8 @@ export const CASE_3 = {
         {
           template: SECTION_ELEMENTS.RESULT,
           data: {
-            imageUrl: "assets/case-3/result.png",
+            imageUrl: "assets/case-3/result-desktop.png",
+            mobileImageUrl: "assets/case-3/result-mobile.png",
             bgColor: "#47C8BC",
             title: <>Final thoughts:</>,
             text: (

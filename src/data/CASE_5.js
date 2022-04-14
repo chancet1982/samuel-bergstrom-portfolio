@@ -523,7 +523,8 @@ export const CASE_5 = {
         {
           template: SECTION_ELEMENTS.RESULT,
           data: {
-            imageUrl: "assets/case-5/result.png",
+            imageUrl: "assets/case-5/result-desktop.png",
+            mobileImageUrl: "assets/case-5/result-mobile.png",
             bgColor: "#158FC9",
             results: [
               {

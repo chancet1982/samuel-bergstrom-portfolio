@@ -1,11 +1,10 @@
 const breakpoints = {
-  mobile: 320,
-  mobileMedium: 380,
+  mobile: 380,
   mobileLarge: 578,
   tablet: 992,
   desktop: 1280,
-  contentWidthLimit: 1440,
-  ftMin: 1024,
+  contentWidthLimit: 1920,
+  ftMin: 992,
   ftMax: 1920,
 };
 
