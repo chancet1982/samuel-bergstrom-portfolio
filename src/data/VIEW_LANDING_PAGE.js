@@ -32,6 +32,7 @@ export const VIEW_LANDING_PAGE = [
     ],
   },
   {
+    isPadded: true,
     elements: [
       {
         template: SECTION_ELEMENTS.TEXTBOX,
@@ -71,6 +72,7 @@ export const VIEW_LANDING_PAGE = [
     ],
   },
   {
+    isPadded: true,
     elements: [
       {
         template: SECTION_ELEMENTS.CASES,

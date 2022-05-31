@@ -8,7 +8,8 @@ NAVIGATION -> Hide navigation while screen animation is playing. (nice to have)
 NAVIGATION -> Navlink (fluidType console error)
 IMAGE_GALLERY -> Images overflow the screen area on smaller screens.
 Fix vertical alignment - mobile
-ADDITIONAL_CASES (mobile) -> fix height
+ADDITIONAL_CASES (mobile) -> Fix height
+CASES (mobile) -> Fix text width
 Overview (mobile) -> fix columns
 FinalResult -> need better covers (case 9, 10)
 

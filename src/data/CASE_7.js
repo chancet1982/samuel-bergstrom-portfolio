@@ -153,7 +153,7 @@ export const CASE_7 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Aligning expectations.</>,
+            title: <>Kickoff and expectation alignment.</>,
             h: 2,
             text: (
               <>
@@ -164,9 +164,6 @@ export const CASE_7 = {
                   understand what are the challenges they currently face with
                   their services online.
                 </Paragraph>
-                <Title h={3}>
-                  Kicking it off by making sure we are all on the same page.
-                </Title>
                 <Paragraph>
                   We started the project by facilitating a workshop for all
                   stakeholders. During this workshop, we tried to gather
@@ -319,7 +316,6 @@ export const CASE_7 = {
                   potential of cross-sales while onboarding. I created a survey
                   and promoted it on social media.
                 </Paragraph>
-                <Title h={3}>Noteworthy Insights:</Title>
               </>
             ),
           },
@@ -327,6 +323,7 @@ export const CASE_7 = {
         {
           template: SECTION_ELEMENTS.KEY_FIGURES,
           data: {
+            title: "Noteworthy Insights:",
             items: [
               {
                 value: "51.2%",

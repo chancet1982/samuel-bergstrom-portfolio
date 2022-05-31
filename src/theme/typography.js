@@ -14,7 +14,6 @@ const typography = {
   minHMod: 0.125,
   maxBMod: 0.25,
   minBMod: 0.1,
-  margin: 0.45, // base margin in rem
   inc: 0.1, // line height modifier
   bodyFont: `"Fira Sans", sans-serif`,
   headlineFont: `"IBM Plex Sans", sans-serif`,

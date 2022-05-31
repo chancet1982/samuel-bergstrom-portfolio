@@ -10,7 +10,7 @@ import colors from "../../theme/colors";
 import Link from "../Shared/Link";
 
 const StyledCaseFooter = styled(motion.div)`
-  padding: ${padding.vertical.double} ${padding.horizontal.double};
+  padding: ${padding.vertical.double} 0;
   max-width: ${breakpoints.contentWidthLimit}px;
   margin: 0 auto;
   display: grid;
@@ -39,6 +39,14 @@ const StyledLinksMenu = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  padding-left: ${padding.horizontal.double};
+  padding-right: ${padding.horizontal.double};
+
+  @media (min-width: ${breakpoints.tablet}px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
 
   a {
     display: block;

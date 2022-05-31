@@ -110,7 +110,7 @@ const StyledCaption = styled(motion.div)`
     }
   }
 
-  @media (min-width: ${breakpoints.tablet}px) {
+  @media (min-width: ${breakpoints.mobileLarge}px) {
     justify-content: center;
     padding-top: 0;
     padding-left: ${padding.horizontal.double};

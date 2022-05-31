@@ -14,7 +14,7 @@ const decrease = (val, dec, times) => val - dec * times;
 const { ftMax, ftMin } = breakpoints;
 
 const useFluidTypography = (h = 1, withMargin = true) => {
-  const { size, lh, margin, inc, minHMod, maxHMod } = typography;
+  const { size, lh, inc, minHMod, maxHMod } = typography;
   const { width } = useWindowSize();
 
   const getMod = (res) =>
@@ -24,16 +24,17 @@ const useFluidTypography = (h = 1, withMargin = true) => {
       ? minHMod + ((res - ftMin) * (maxHMod - minHMod)) / (ftMax - ftMin)
       : minHMod;
 
+  const currentMod = getMod(width);
   return `
-    font-size: ${magnify(size, getMod(width), 6 - h)}rem;
+    font-size: ${magnify(size, currentMod, 6 - h)}rem;
     line-height: ${decrease(lh, inc, 6 - h)};
     ${
       withMargin
         ? `
     margin-top: ${
-      h === 1 ? 2 * multiply(margin, 6 - h) : multiply(margin, 6 - h)
+      h === 1 ? 2 * multiply(currentMod, 6 - h) : multiply(currentMod, 6 - h)
     }rem;
-    margin-bottom: ${multiply(margin, 6 - h)}rem;
+    margin-bottom: ${multiply(currentMod, 6 - h)}rem;
     `
         : ` margin-top: 0; margin-bottom: 0;
     `
