@@ -25,7 +25,8 @@ const StyledListContainer = styled(motion.div)`
     grid-template-columns: repeat(1, 1fr);
 
     > figure {
-      max-height: 84vh;
+      height: 48vh;
+      max-height: 48vh;
       @media (max-width: ${breakpoints.desktop - 1}px) {
         padding-left: ${padding.horizontal.double};
         padding-right: ${padding.horizontal.double};
@@ -40,8 +41,8 @@ const StyledListContainer = styled(motion.div)`
 
   > div:nth-of-type(2n + 1) {
     @media (min-width: ${breakpoints.desktop}px) {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-areas: "a b b";
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: "a b";
 
       > figure {
         grid-area: a;
@@ -55,8 +56,8 @@ const StyledListContainer = styled(motion.div)`
 
   > div:nth-of-type(2n + 2) {
     @media (min-width: ${breakpoints.desktop}px) {
-      grid-template-columns: repeat(3, 1fr);
-      grid-template-areas: "a a b";
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas: "a b";
 
       > figure {
         grid-area: b;

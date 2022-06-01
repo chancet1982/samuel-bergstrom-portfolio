@@ -2,6 +2,7 @@ TODO list (What's left before you're done)
 
 FIXES:
 COVER -> Fix background circle to work in all resolutions.
+COVER -> Fix not loading the correct image always (mobile detection issue?).
 NAVIGATION -> wrong width when not transparent
 NAVIGATION -> add supprt for light text if desktop, nav doesnt have a background but the first item does (?)
 NAVIGATION -> Hide navigation while screen animation is playing. (nice to have)

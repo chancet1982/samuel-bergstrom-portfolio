@@ -25,11 +25,6 @@ const StyledInsights = styled(motion.div)`
     bgColor && {
       backgroundColor: bgColor,
     }};
-
-  p,
-  li {
-    max-width: 64ch;
-  }
 `;
 
 const StyledInsightsContent = styled(motion.div)`

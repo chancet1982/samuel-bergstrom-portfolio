@@ -15,7 +15,7 @@ import colors from "../../theme/colors";
 
 const StyledTextbox = styled(motion.div)`
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
 
   ${(limitMaxWidth) =>
     limitMaxWidth && {
@@ -23,10 +23,6 @@ const StyledTextbox = styled(motion.div)`
     }};
 
   margin: 0 auto;
-  ${(imageUrl) =>
-    !imageUrl && {
-      maxWidth: "60ch",
-    }};
 
   ${({ bgColor }) =>
     bgColor && {
@@ -34,25 +30,20 @@ const StyledTextbox = styled(motion.div)`
     }};
 
   > div:first-of-type {
-    grid-column: 1 / span 3;
+    grid-column: 1 / span 2;
 
     @media (min-width: ${breakpoints.desktop}px) {
       grid-column: ${({ imageUrl, flip }) =>
-        imageUrl ? (flip ? "3 / span 1" : "1 / span 2") : "1 / span 3"};
-    }
-
-    p,
-    li {
-      max-width: 64ch;
+        imageUrl ? (flip ? "2 / span 1" : "1 / span 1") : "1 / span 2"};
     }
   }
 
   > figure {
     max-height: ${sizes.large};
-    grid-column: 1 / span 3;
+    grid-column: 1 / span 2;
 
     @media (min-width: ${breakpoints.desktop}px) {
-      grid-column: ${({ flip }) => (flip ? "1 / span 2" : "3 / span 1")};
+      grid-column: ${({ flip }) => (flip ? "1 / span 1" : "2 / span 1")};
     }
 
     display: flex;

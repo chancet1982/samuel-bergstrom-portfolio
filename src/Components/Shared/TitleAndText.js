@@ -19,10 +19,6 @@ const StyledTitleAndText = styled(motion.div)`
       top: "6vw",
       height: "fit-content",
     }}
-
-  h1, h2, h3, h4, h5 {
-    max-width: 32ch;
-  }
 `;
 
 const TitleAndText = ({

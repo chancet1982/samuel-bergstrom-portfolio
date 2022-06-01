@@ -18,8 +18,7 @@ const StyledOverviewWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 
-  padding-top: ${padding.vertical.double};
-  padding-bottom: ${padding.vertical.double};
+  padding: ${padding.vertical.double} ${padding.horizontal.double};
 
   @media (min-width: ${breakpoints.desktop}px) {
     max-width: ${breakpoints.contentWidthLimit}px;
@@ -43,7 +42,7 @@ const StyledOverviewText = styled.div`
     background-color: ${colors.offwhite};
   }
 
-  padding: 0 ${padding.horizontal.quadruple};
+  padding: 0 ${padding.horizontal.double};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -68,7 +67,7 @@ const StyledOverview = styled.div`
     background-color: ${colors.offwhite};
   }
 
-  padding: 0 ${padding.horizontal.quadruple};
+  padding: 0 ${padding.horizontal.double};
   display: flex;
   flex-direction: row;
   justify-content: center;

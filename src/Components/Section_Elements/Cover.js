@@ -63,40 +63,16 @@ const StyledCaption = styled(motion.div)`
   box-sizing: border-box;
   padding-left: ${padding.horizontal.quadruple};
   padding-right: ${padding.horizontal.quadruple};
-
-  @media (min-width: ${breakpoints.tablet}px) {
-    padding-left: ${padding.horizontal.double};
-    padding-right: ${padding.horizontal.double};
-  }
-
   z-index: 1;
   width: 100%;
   padding-top: 0;
 
-  h1 {
-    max-width: 8ch;
-    margin-top: 2.25rem;
-
-    @media (min-width: ${breakpoints.tablet}px) {
-      max-width: 15ch;
-    }
+  @media (max-width: ${breakpoints.tablet}px) and (orientation: portrait) {
+    justify-content: flex-end;
   }
 
   p {
-    margin-bottom: 0;
-
-    @media (max-width: ${breakpoints.mobileLarge - 1}px) {
-      max-width: 15ch;
-    }
-
-    @media (min-width: ${breakpoints.mobileLarge}px) and (max-width: ${breakpoints.tablet -
-      1}px) {
-      max-width: 20ch;
-    }
-
-    @media (min-width: ${breakpoints.tablet}px) {
-      max-width: 30ch;
-    }
+    max-width: 40ch;
   }
 `;
 
