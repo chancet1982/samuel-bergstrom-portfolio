@@ -33,7 +33,7 @@ const StyledListItem = styled.li`
       }}
   }
 
-  max-width: 96ch;
+  max-width: 80ch;
 
   ${({
     theme: {

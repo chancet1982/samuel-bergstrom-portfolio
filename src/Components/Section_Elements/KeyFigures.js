@@ -8,9 +8,13 @@ import KeyFigure from "./KeyFigures/KeyFigure";
 import BackgroundWrapper from "../Shared/BackgroundWrapper";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
+import padding from "../../theme/padding";
 
 const StyledKeyFigures = styled(motion.div)`
-  padding: 4rem 4vw;
+  padding: ${({ bgColor }) =>
+    bgColor
+      ? `${padding.vertical.double} ${padding.horizontal.double}`
+      : `0 ${padding.horizontal.double}`};
   max-width: ${breakpoints.contentWidthLimit}px;
   margin: 0 auto;
   display: flex;
