@@ -9,16 +9,20 @@ import breakpoints from "../../theme/breakpoints";
 import colors from "../../theme/colors";
 
 const StyledOverviewWrapper = styled.div`
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+
   min-height: ${({
     theme: {
       sizes: { small },
     },
   }) => small};
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
 
-  padding: ${padding.vertical.double} ${padding.horizontal.double};
+  padding: ${({ bgColor }) =>
+    bgColor
+      ? `${padding.vertical.double} ${padding.horizontal.double}`
+      : `0 ${padding.horizontal.double}`};
 
   @media (min-width: ${breakpoints.desktop}px) {
     max-width: ${breakpoints.contentWidthLimit}px;
@@ -53,9 +57,9 @@ const StyledOverviewText = styled.div`
   }
 `;
 
-const StyledOverview = styled.div`
+const StyledOverviewItems = styled.div`
   grid-column: 1 / span 3;
-  :after {
+  /*:after {
     content: "";
     clip-path: circle(4% at 74vw 72%);
     position: absolute;
@@ -65,24 +69,31 @@ const StyledOverview = styled.div`
     left: 0;
     z-index: -1;
     background-color: ${colors.offwhite};
-  }
+  }*/
 
   padding: 0 ${padding.horizontal.double};
   display: flex;
-  flex-direction: row;
-  justify-content: center;
-
+  flex-direction: column;
   @media (min-width: ${breakpoints.mobileLarge}px) and (max-width: ${breakpoints.desktop -
     1}px) {
-    > div {
+    /*> div {
       width: 33.333%;
+    }*/
+
+    > div {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+
+      > p {
+        align-self: center;
+        margin-bottom: 0;
+      }
     }
   }
 
   @media (min-width: ${breakpoints.desktop}px) {
     grid-column: 3 / span 1;
     padding: ${padding.vertical.double} ${padding.horizontal.double};
-    flex-direction: column;
   }
 `;
 
@@ -99,7 +110,7 @@ const Overview = ({
       <StyledOverviewText bgColor={bgColor}>
         {text && <TitleAndText>{text}</TitleAndText>}
       </StyledOverviewText>
-      <StyledOverview bgColor={bgColor}>
+      <StyledOverviewItems bgColor={bgColor}>
         {myRole && (
           <TitleAndText title="My role:" h={5}>
             <Paragraph small>{myRole}</Paragraph>
@@ -120,7 +131,7 @@ const Overview = ({
             <Paragraph small>{toolsAndMethods.join(", ")}</Paragraph>
           </TitleAndText>
         ) : null}
-      </StyledOverview>
+      </StyledOverviewItems>
     </StyledOverviewWrapper>
   );
 };

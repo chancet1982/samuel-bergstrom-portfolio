@@ -15,7 +15,8 @@ const StyledCite = styled.cite`
     content: "-";
     width: 1rem;
     margin-left: -1rem;
-    color: ${({ light }) => (light ? colors.text.light.high : colors.primary)};
+    color: ${({ light }) =>
+      light ? colors.text.light.low : colors.text.dark.low};
   }
 `;
 

@@ -14,14 +14,31 @@ import breakpoints from "../../theme/breakpoints";
 
 const StyledBlockQuote = styled(motion.blockquote)`
   padding: ${padding.vertical.double} ${padding.horizontal.quadruple};
-  text-align: center;
-  display: flex;
-  text-align: center;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-  max-width: calc(${breakpoints.contentWidthLimit}px * 0.72);
+  max-width: ${breakpoints.contentWidthLimit}px;
   margin: 0 auto;
+  position: relative;
+  border-left: solid 0.25rem
+    ${({ light }) => (light ? colors.text.light.low : colors.text.dark.low)};
+  margin-left: ${padding.horizontal.quadruple};
+  margin-bottom: ${padding.vertical.double};
+
+  :after {
+    content: open-quote;
+    position: absolute;
+    top: 50%;
+    left: -0.46em;
+    color: ${({ light }) =>
+      light ? colors.text.light.low : colors.text.dark.low};
+    font-style: normal;
+    line-height: 1.3em;
+    text-align: center;
+    width: 2.4rem;
+    height: 2.4rem;
+    margin-top: -0.5em;
+    font-size: 3rem;
+    background: white;
+    font-family: "IBM Plex Sans";
+  }
 `;
 
 // TODO: (later) reveal on scroll (fixed under other content?)
@@ -40,7 +57,7 @@ const BlockQuote = ({ cite, quote, bgColor, bgImageUrl, limitMaxWidth }) => {
     }
   }, [intersection]);
 
-  const [, setLight] = useContext(ElementColorContext);
+  const [light, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
     // eslint-disable-next-line no-unused-expressions
@@ -51,6 +68,7 @@ const BlockQuote = ({ cite, quote, bgColor, bgImageUrl, limitMaxWidth }) => {
           bgColor !== colors.primaryShade) ||
           bgImageUrl !== null
       );
+    console.log("LIGHT:", light);
   }, [setLight, bgColor, bgImageUrl]);
 
   const renderBlockQuote = () => (
@@ -59,6 +77,7 @@ const BlockQuote = ({ cite, quote, bgColor, bgImageUrl, limitMaxWidth }) => {
       initial="hidden"
       variants={variants}
       animate={inView ? "inView" : "hidden"}
+      light={light}
     >
       <Quote>{quote}</Quote>
       <Cite>{cite}</Cite>

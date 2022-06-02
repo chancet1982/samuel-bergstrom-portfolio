@@ -141,14 +141,6 @@ export const CASE_1 = {
             ),
           },
         },
-        {
-          template: SECTION_ELEMENTS.QUOTE,
-          data: {
-            quote:
-              "Our app looks like its made in the 90s, its really annoying to work with",
-            cite: "Mary, Currior, Norway",
-          },
-        },
       ],
     },
     {
@@ -195,6 +187,14 @@ export const CASE_1 = {
                 </Paragraph>
               </>
             ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.QUOTE,
+          data: {
+            quote:
+              "Our app looks like its made in the 90s, its really annoying to work with",
+            cite: "Mary, Currior, Norway",
           },
         },
         {
@@ -326,11 +326,6 @@ export const CASE_1 = {
             ],
           },
         },
-      ],
-    },
-    {
-      header: "Design",
-      elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           h: 2,
@@ -390,13 +385,6 @@ export const CASE_1 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.QUOTE,
-          data: {
-            quote: "Looks good. Clear, Clean, and modern.",
-            cite: "Krister, Regional manager, Norway",
-          },
-        },
-        {
           template: SECTION_ELEMENTS.TEXTBOX,
           h: 2,
           data: {
@@ -417,6 +405,13 @@ export const CASE_1 = {
                 </Paragraph>
               </>
             ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.QUOTE,
+          data: {
+            quote: "Looks good. Clear, Clean, and modern.",
+            cite: "Krister, Regional manager, Norway",
           },
         },
       ],

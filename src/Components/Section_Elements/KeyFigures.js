@@ -11,20 +11,23 @@ import colors from "../../theme/colors";
 import padding from "../../theme/padding";
 
 const StyledKeyFigures = styled(motion.div)`
-  padding: ${({ bgColor }) =>
-    bgColor
-      ? `${padding.vertical.double} ${padding.horizontal.double}`
-      : `0 ${padding.horizontal.double}`};
-  max-width: ${breakpoints.contentWidthLimit}px;
-  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  padding: ${({ bgColor }) =>
+    bgColor
+      ? `${padding.vertical.double} ${padding.horizontal.double}`
+      : `0 ${padding.horizontal.double}`};
 
   @media (min-width: ${breakpoints.mobileLarge}px) {
     flex-direction: row;
     align-items: flex-start;
+  }
+
+  @media (min-width: ${breakpoints.desktop}px) {
+    max-width: ${breakpoints.contentWidthLimit}px;
+    margin: 0 auto;
   }
 `;
 
