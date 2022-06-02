@@ -68,8 +68,7 @@ const BlockQuote = ({ cite, quote, bgColor, bgImageUrl, limitMaxWidth }) => {
           bgColor !== colors.primaryShade) ||
           bgImageUrl !== null
       );
-    console.log("LIGHT:", light);
-  }, [setLight, bgColor, bgImageUrl]);
+  }, [light, setLight, bgColor, bgImageUrl]);
 
   const renderBlockQuote = () => (
     <StyledBlockQuote
