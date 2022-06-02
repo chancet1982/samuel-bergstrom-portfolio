@@ -13,6 +13,9 @@ ADDITIONAL_CASES (mobile) -> Fix height
 CASES (mobile) -> Fix text width
 FinalResult -> need better covers (case 9, 10)
 QUOTE -> make sure it works with background color/image
+Landingpage cover -> alignment left is off.
+CenteredTitleAndText -> not aligned.
+Cases -> with or without padding?
 
 FEATURES & IMPROVEMENTS:
 COVER_CAPTION: Add "back" button

@@ -33,6 +33,13 @@ const StyledTextbox = styled(motion.div)`
     grid-column: 1 / span 2;
 
     @media (min-width: ${breakpoints.desktop}px) {
+      ${({ imageUrl }) =>
+        imageUrl && {
+          display: "flex",
+          flexDirection: "column",
+          alignSelf: "center",
+        }};
+
       grid-column: ${({ imageUrl, flip }) =>
         imageUrl ? (flip ? "2 / span 1" : "1 / span 1") : "1 / span 2"};
     }

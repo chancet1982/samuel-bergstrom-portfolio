@@ -285,7 +285,6 @@ export const CASE_2 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            flip: true,
             title: <>Planning the road ahead</>,
             h: 2,
             text: (
