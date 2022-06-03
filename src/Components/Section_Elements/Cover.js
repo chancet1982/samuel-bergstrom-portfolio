@@ -17,6 +17,7 @@ const StyledCover = styled(motion.div)`
   position: relative;
   display: flex;
   overflow: hidden;
+  padding: 0 ${padding.horizontal.double};
 
   :before {
     content: "";
@@ -51,7 +52,6 @@ const StyledCoverImage = styled(motion.img)`
 `;
 
 const StyledCaption = styled(motion.div)`
-  padding-top: ${padding.vertical.double};
   height: 100%;
   max-width: ${breakpoints.contentWidthLimit}px;
   margin: 0 auto;
@@ -61,18 +61,16 @@ const StyledCaption = styled(motion.div)`
   justify-content: center;
   align-items: flex-start;
   box-sizing: border-box;
-  padding-left: ${padding.horizontal.quadruple};
-  padding-right: ${padding.horizontal.quadruple};
+  padding: 0 ${padding.horizontal.double};
   z-index: 1;
   width: 100%;
-  padding-top: 0;
-
-  @media (max-width: ${breakpoints.tablet}px) and (orientation: portrait) {
-    justify-content: flex-end;
-  }
 
   p {
     max-width: 40ch;
+  }
+
+  @media (max-width: ${breakpoints.tablet}px) and (orientation: portrait) {
+    justify-content: flex-end;
   }
 `;
 
