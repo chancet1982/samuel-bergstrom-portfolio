@@ -14,14 +14,13 @@ export const VIEW_LANDING_PAGE = [
           bgColor: colors.primaryShade,
           title: (
             <>
-              <mark>Not</mark> your typical designer
+              Shaping <mark>results</mark>
             </>
           ),
           text: (
             <>
               <Paragraph huge>
-                I help companies build the <strong>right things</strong> to
-                solve the <strong>right problems</strong>
+                Creating <strong>business value</strong> using design.
               </Paragraph>
             </>
           ),
@@ -46,8 +45,8 @@ export const VIEW_LANDING_PAGE = [
           text: (
             <>
               <Paragraph huge>
-                A digital product designer, engineer, Speaker, Mentor,
-                Accessibility enthusiast, father, husband, and quite a nice guy.{" "}
+                Design lead, digital strategist, engineer, speaker, mentor,
+                accessibility nerd, father, husband, and quite a nice guy.{" "}
                 <br />
                 <Link huge to="about">
                   Get to know me

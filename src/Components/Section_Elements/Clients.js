@@ -25,7 +25,7 @@ const StyledClients = styled(motion.div)`
   > div {
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(208px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(144px, 1fr));
 
     div {
       text-align: center;
@@ -38,7 +38,7 @@ const Clients = ({ preview }) => {
   const breakpoint = useBreakpoint();
   const getNumberOfClientsBasedOnViewportWidth = () =>
     breakpoint === "XL"
-      ? 5
+      ? 10
       : breakpoint === "L"
       ? 4
       : breakpoint === "M"
