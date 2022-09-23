@@ -9,12 +9,20 @@ import colors from "../../theme/colors";
 import useBgColor from "../../utils/useBgColor";
 import useFluidTypography from "../../utils/useBodyFluidTypography";
 
+const linkStyle = `
+
+${({ fluidType }) => fluidType};
+font-family: ${typography.bodyFont};
+transition: all 0.3s;
+font-weight: 500;
+`;
+
 const StyledLink = styled(RouterLink)`
+  ${linkStyle}
+
   color: ${({ light }) =>
     light ? colors.text.light.high : colors.text.dark.high};
-  ${({ fluidType }) => fluidType};
-  font-family: ${typography.bodyFont};
-  transition: all 0.3s;
+
   :hover {
     color: ${({ light }) =>
       light ? colors.text.light.medium : colors.primary};
@@ -22,11 +30,11 @@ const StyledLink = styled(RouterLink)`
 `;
 
 const StyledAnchorLink = styled.a`
+  ${linkStyle}
+
   color: ${({ light }) =>
     light ? colors.text.light.high : colors.text.dark.high};
-  ${({ fluidType }) => fluidType};
-  font-family: ${typography.bodyFont};
-  transition: all 0.3s;
+
   :hover {
     color: ${({ light }) =>
       light ? colors.text.light.medium : colors.primary};

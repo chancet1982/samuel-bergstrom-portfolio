@@ -8,15 +8,15 @@
 }; */
 
 const typography = {
-  size: 1.25, // base size in rem for typography
+  size: 1, // base size in rem for typography
   lh: 1.6, // base line-height
   maxHMod: 0.333,
   minHMod: 0.125,
   maxBMod: 0.25,
   minBMod: 0.1,
   inc: 0.1, // line height modifier
-  bodyFont: `"Fira Sans", sans-serif`,
-  headlineFont: `"IBM Plex Sans", sans-serif`,
+  headlineFont: `'Poppins', sans-serif`,
+  bodyFont: `'DM Sans', sans-serif`,
 };
 
 export default typography;
