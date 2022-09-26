@@ -5,30 +5,27 @@ import Title from "../Shared/Title";
 import colors from "../../theme/colors";
 import useBgColor from "../../utils/useBgColor";
 import padding from "../../theme/padding";
-import typography from "../../theme/typography";
+import sizes from "../../theme/sizes";
 
 const StyledSectionHeader = styled.header`
-  position: absolute;
-  top: ${padding.vertical.quadruple};
+  position: sticky;
+  top: 8rem;
   left: 0;
   display: block;
-  width: 2vw;
-  height: calc(100% - (2 * ${padding.vertical.quadruple}));
+  width: calc(50% - 1280px / 2 - ${padding.horizontal.double});
+  text-align: right;
+  z-index: -1;
+  max-width: ${sizes.sectionHeaderWidthLimit};
 
-  h2 {
-    position: sticky;
-    top: 5.5rem;
+  h4 {
     margin: 0;
-    font-weight: 500;
-    writing-mode: vertical-lr;
-    width: fit-content;
-    display: inline-block;
     line-height: 1;
-    transform: rotateZ(180deg);
-    font-family: ${typography.bodyFont};
-
+    display: inline-block;
+    padding-bottom: ${padding.vertical.half};
+    margin-bottom: ${padding.vertical.half};
     color: ${({ light }) =>
       light ? colors.text.light.low : colors.text.dark.low};
+    box-shadow: inset 0px -0.125rem 0px 0rem ${({ light }) => (light ? colors.text.light.low : colors.text.dark.low)};
   }
 `;
 
@@ -37,7 +34,7 @@ const SectionHeader = ({ children }) => {
 
   return (
     <StyledSectionHeader light={light}>
-      <Title h={2}>{children}</Title>
+      <Title h={4}>{children}</Title>
     </StyledSectionHeader>
   );
 };

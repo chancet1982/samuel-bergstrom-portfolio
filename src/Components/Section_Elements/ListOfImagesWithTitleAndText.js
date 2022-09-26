@@ -9,6 +9,7 @@ import CenteredTitleAndText from "../Shared/CenteredTitleAndText";
 import BackgroundWrapper from "../Shared/BackgroundWrapper";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
+import sizes from "../../theme/sizes";
 
 const StyledListOfImagesWithTitleAndText = styled(motion.div)`
   display: grid;
@@ -34,7 +35,7 @@ const StyledListContainer = styled(motion.div)`
     }
 
     @media (min-width: ${breakpoints.desktop}px) {
-      max-width: ${breakpoints.contentWidthLimit}px;
+      max-width: ${sizes.contentWidthLimit}px;
       margin: 0 auto;
     }
   }

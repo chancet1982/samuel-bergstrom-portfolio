@@ -2,12 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import ImageWithCaption from "../Shared/ImageWithCaption";
-import breakpoints from "../../theme/breakpoints";
+import sizes from "../../theme/sizes";
 
 const StyledSectionImage = styled.div`
   ${({ limitMaxWidth }) =>
     limitMaxWidth && {
-      maxWidth: `${breakpoints.contentWidthLimit}px`,
+      maxWidth: `${sizes.contentWidthLimit}px`,
       margin: "0 auto",
     }}
 `;

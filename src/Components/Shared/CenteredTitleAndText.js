@@ -8,6 +8,7 @@ import breakpoints from "../../theme/breakpoints";
 import padding from "../../theme/padding";
 import TitleAndText from "./TitleAndText";
 import { variants } from "../../animations/animations";
+import sizes from "../../theme/sizes";
 
 const StyledCenteredTitleAndText = styled(motion.div)`
   padding-left: ${padding.horizontal.double};
@@ -20,7 +21,7 @@ const StyledCenteredTitleAndText = styled(motion.div)`
 
   @media (min-width: ${breakpoints.desktop}px) {
     background-color: transparent;
-    max-width: calc(${breakpoints.contentWidthLimit}px * 0.64);
+    max-width: calc(${sizes.contentWidthLimit}px * 0.64);
     justify-content: flex-start;
     text-align: center;
     margin: 0 auto;

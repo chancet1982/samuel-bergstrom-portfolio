@@ -11,13 +11,14 @@ import Paragraph from "../Shared/Paragraph";
 import TitleAndText from "../Shared/TitleAndText";
 import padding from "../../theme/padding";
 import breakpoints from "../../theme/breakpoints";
+import sizes from "../../theme/sizes";
 
 const StyledAdditionalCases = styled(motion.div)`
   padding: ${padding.vertical.quadruple} ${padding.horizontal.double};
 
   @media (min-width: ${breakpoints.desktop}px) {
     > div:first-of-type {
-      max-width: ${breakpoints.contentWidthLimit}px;
+      max-width: ${sizes.contentWidthLimit}px;
       margin: 0 auto;
     }
   }

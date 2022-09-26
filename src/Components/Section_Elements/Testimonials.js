@@ -10,11 +10,12 @@ import padding from "../../theme/padding";
 import Testimonial from "./Testimonials/Testimonial";
 import breakpoints from "../../theme/breakpoints";
 import pickRandom from "../../utils/pickRandom";
+import sizes from "../../theme/sizes";
 
 const StyledTestimonials = styled(motion.div)`
   padding: ${padding.vertical.double} ${padding.horizontal.double};
   box-sizing: border-box;
-  max-width: ${breakpoints.contentWidthLimit}px;
+  max-width: ${sizes.contentWidthLimit}px;
   margin: 0 auto;
 `;
 

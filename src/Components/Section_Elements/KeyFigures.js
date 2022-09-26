@@ -9,6 +9,7 @@ import BackgroundWrapper from "../Shared/BackgroundWrapper";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
 import padding from "../../theme/padding";
+import sizes from "../../theme/sizes";
 
 const StyledKeyFigures = styled(motion.div)`
   display: flex;
@@ -26,7 +27,7 @@ const StyledKeyFigures = styled(motion.div)`
   }
 
   @media (min-width: ${breakpoints.desktop}px) {
-    max-width: ${breakpoints.contentWidthLimit}px;
+    max-width: ${sizes.contentWidthLimit}px;
     margin: 0 auto;
   }
 `;

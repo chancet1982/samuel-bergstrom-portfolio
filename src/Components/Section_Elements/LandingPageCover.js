@@ -12,7 +12,7 @@ import TitleAndText from "../Shared/TitleAndText";
 import Overline from "../Shared/Overline";
 import breakpoints from "../../theme/breakpoints";
 import padding from "../../theme/padding";
-
+import sizes from "../../theme/sizes";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
 
@@ -77,7 +77,7 @@ const StyledCoverImage = styled(motion.img)`
 
 const StyledCaption = styled(motion.div)`
   height: 100%;
-  max-width: ${breakpoints.contentWidthLimit}px;
+  max-width: ${sizes.contentWidthLimit}px;
   margin: 0 auto;
   overflow: hidden;
   display: flex;

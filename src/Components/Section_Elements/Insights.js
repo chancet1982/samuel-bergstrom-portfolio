@@ -11,16 +11,19 @@ import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
 import Paragraph from "../Shared/Paragraph";
 import padding from "../../theme/padding";
+import sizes from "../../theme/sizes";
 
 const StyledInsights = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
 
-  @media (min-width: ${breakpoints.desktop}px) {
-    max-width: ${breakpoints.contentWidthLimit}px;
-    margin: 0 auto;
+  > div {
+    @media (min-width: ${breakpoints.desktop}px) {
+      max-width: ${sizes.contentWidthLimit}px;
+      margin: 0 auto;
+      box-sizing: border-box;
+    }
   }
-
   ${({ bgColor }) =>
     bgColor && {
       backgroundColor: bgColor,

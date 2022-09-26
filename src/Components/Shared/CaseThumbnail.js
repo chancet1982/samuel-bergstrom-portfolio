@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useIntersection, useWindowSize } from "react-use";
-/* import Overline from "./Overline"; */
+import sizes from "../../theme/sizes";
 import Tag from "./Tag";
 import breakpoints from "../../theme/breakpoints";
 import padding from "../../theme/padding";
@@ -29,19 +29,6 @@ const StyledCaseThumbnail = styled(motion.div)`
       ? `calc(92vw / 3 - 2 * ${padding.vertical.eighth})`
       : "72vh"};
 
-  /*@media (max-width: ${breakpoints.tablet}px) {
-
-  }
-
-  @media (min-width: ${breakpoints.tablet}px) and (max-width: ${breakpoints.desktop -
-  1}px) {
-    
-  }
-
-  @media (min-width: ${breakpoints.desktop}px) {
-    height: calc(92vw / 2 - ${padding.vertical.eighth});
-  }*/
-
   a {
     text-decoration: none;
   }
@@ -55,7 +42,7 @@ const StyledCaseThumbnail = styled(motion.div)`
 const StyledCaseThumbnailCaption = styled(motion.div)`
   padding-left: ${padding.horizontal.double};
   padding-right: ${padding.horizontal.double};
-  max-width: ${breakpoints.contentWidthLimit}px;
+  max-width: ${sizes.contentWidthLimit}px;
   margin: 0 auto;
   position: relative;
   z-index: 1;

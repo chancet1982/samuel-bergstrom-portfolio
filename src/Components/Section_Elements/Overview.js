@@ -7,6 +7,7 @@ import Paragraph from "../Shared/Paragraph";
 import padding from "../../theme/padding";
 import breakpoints from "../../theme/breakpoints";
 import colors from "../../theme/colors";
+import sizes from "../../theme/sizes";
 
 const StyledOverviewWrapper = styled.div`
   position: relative;
@@ -25,7 +26,7 @@ const StyledOverviewWrapper = styled.div`
       : `0 ${padding.horizontal.double}`};
 
   @media (min-width: ${breakpoints.desktop}px) {
-    max-width: ${breakpoints.contentWidthLimit}px;
+    max-width: ${sizes.contentWidthLimit}px;
     margin: 0 auto;
   }
 `;

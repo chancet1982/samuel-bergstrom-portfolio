@@ -267,6 +267,18 @@ export const VIEW_ABOUT_ME = [
           ),
         },
       },
+      {
+        template: SECTION_ELEMENTS.TIMELINE,
+        data: {
+          items: [
+            {
+              date: "2022",
+              title: "Did some Awesome shit!",
+              content: "For the following client",
+            },
+          ],
+        },
+      },
     ],
   },
   {

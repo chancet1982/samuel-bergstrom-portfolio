@@ -6,16 +6,19 @@ import ImageWithTitleAndText from "../Shared/ImageWithTitleAndText";
 import breakpoints from "../../theme/breakpoints";
 import ElementContextProvider from "../../Context/ElementColorContext";
 import padding from "../../theme/padding";
+import sizes from "../../theme/sizes";
 
 const StyledSideBySideImagesAndText = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   column-gap: 4rem;
-  max-width: ${breakpoints.contentWidthLimit}px;
+  max-width: ${sizes.contentWidthLimit}px;
   margin: 0 auto;
+
   > div div {
     padding-top: ${padding.vertical.single};
   }
+
   > div:nth-of-type(1) {
     box-sizing: border-box;
 

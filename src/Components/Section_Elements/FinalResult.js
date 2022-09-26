@@ -16,8 +16,6 @@ import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
 
 const StyledFinalResultContent = styled(motion.div)`
-  max-width: ${breakpoints.contentWidthLimit}px;
-  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 

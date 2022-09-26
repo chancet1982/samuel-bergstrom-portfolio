@@ -10,11 +10,11 @@ import padding from "../../theme/padding";
 import BackgroundWrapper from "../Shared/BackgroundWrapper";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
-import breakpoints from "../../theme/breakpoints";
+import sizes from "../../theme/sizes";
 
 const StyledBlockQuote = styled(motion.blockquote)`
   padding: ${padding.vertical.double} ${padding.horizontal.quadruple};
-  max-width: ${breakpoints.contentWidthLimit}px;
+  max-width: ${sizes.contentWidthLimit}px;
   margin: 0 auto;
   position: relative;
   border-left: solid 0.25rem

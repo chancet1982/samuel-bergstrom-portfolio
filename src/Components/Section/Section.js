@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useWindowSize } from "react-use";
-import breakpoints from "../../theme/breakpoints";
 import SectionHeader from "./SectionHeader";
 import padding from "../../theme/padding";
 import { SectionColorContext } from "../../Context/SectionColorContext";
 import colors from "../../theme/colors";
+import sizes from "../../theme/sizes";
 
 const StyledSection = styled(motion.section)`
   height: fit-content;
@@ -20,8 +20,8 @@ const StyledSection = styled(motion.section)`
       top: "0",
     }}
 
-  ${({ header, isPadded }) =>
-    (header || isPadded) && {
+  ${({ isPadded }) =>
+    isPadded && {
       paddingLeft: padding.horizontal.double,
       paddingRight: padding.horizontal.double,
     }}
@@ -37,7 +37,8 @@ const StyledSection = styled(motion.section)`
 const Section = ({ header, children, bgColor, isSticky, isPadded }) => {
   const [, setLight] = useContext(SectionColorContext);
   const { width } = useWindowSize();
-  const isMobile = width < breakpoints.desktop;
+  const isMobile =
+    width < sizes.contentWidthLimit + sizes.sectionHeaderWidthLimit;
 
   useEffect(() => {
     setLight(

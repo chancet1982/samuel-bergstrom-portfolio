@@ -53,8 +53,6 @@ const StyledCoverImage = styled(motion.img)`
 
 const StyledCaption = styled(motion.div)`
   height: 100%;
-  max-width: ${breakpoints.contentWidthLimit}px;
-  margin: 0 auto;
   overflow: hidden;
   display: flex;
   flex-direction: column;

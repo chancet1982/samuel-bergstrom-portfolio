@@ -8,10 +8,11 @@ import padding from "../../theme/padding";
 import Button from "../Shared/Button";
 import colors from "../../theme/colors";
 import Link from "../Shared/Link";
+import sizes from "../../theme/sizes";
 
 const StyledCaseFooter = styled(motion.div)`
   padding: ${padding.vertical.double} 0;
-  max-width: ${breakpoints.contentWidthLimit}px;
+  max-width: ${sizes.contentWidthLimit}px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
