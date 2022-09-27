@@ -5,17 +5,15 @@ import Title from "../Shared/Title";
 import colors from "../../theme/colors";
 import useBgColor from "../../utils/useBgColor";
 import padding from "../../theme/padding";
-import sizes from "../../theme/sizes";
 
 const StyledSectionHeader = styled.header`
   position: sticky;
   top: 8rem;
   left: 0;
   display: block;
-  width: calc(50% - 1280px / 2 - ${padding.horizontal.double});
+  width: calc(50% - 1280px / 2 - ${padding.horizontal.half});
   text-align: right;
   z-index: -1;
-  max-width: ${sizes.sectionHeaderWidthLimit};
 
   h4 {
     margin: 0;

@@ -9,6 +9,12 @@ export const VIEW_LANDING_PAGE = [
   {
     elements: [
       {
+        template: SECTION_ELEMENTS.VIDEO,
+        data: {
+          source: "assets/mood-1.mp4",
+        },
+      },
+      {
         template: SECTION_ELEMENTS.LANDING_PAGE_COVER,
         data: {
           bgColor: colors.primaryShade,

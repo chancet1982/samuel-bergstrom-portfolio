@@ -59,6 +59,17 @@ const Title = ({ h, children, withMargin }) => {
 
   const renderTitle = () => {
     switch (h) {
+      case 0:
+        return (
+          <StyledH1
+            light={light}
+            h={0}
+            withMargin={withMargin}
+            fluidType={fluidType}
+          >
+            {children}
+          </StyledH1>
+        );
       case 1:
         return (
           <StyledH1

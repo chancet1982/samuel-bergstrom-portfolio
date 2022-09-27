@@ -21,4 +21,5 @@ export const SECTION_ELEMENTS = {
   FOOTER: "footer",
   KEY_FIGURES: "keyFigures",
   CONTACT_DETAILS: "contactDetails",
+  VIDEO: "video",
 };

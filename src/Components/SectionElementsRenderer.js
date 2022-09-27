@@ -23,6 +23,7 @@ import Testimonials from "./Section_Elements/Testimonials";
 import ElementColorContextProvider from "../Context/ElementColorContext";
 import ContactDetails from "./Section_Elements/ContactDetails";
 import Insights from "./Section_Elements/Insights";
+import SectionVideo from "./Section_Elements/SectionVideo";
 
 const SectionElementsRenderer = ({ elementKey, data, template }) => {
   if (!template) {
@@ -169,6 +170,18 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
             limitMaxWidth={data.limitMaxWidth}
           />
         </ElementColorContextProvider>
+      );
+    case SECTION_ELEMENTS.VIDEO:
+      return (
+        <SectionVideo
+          key={elementKey}
+          controls={data.controls}
+          autoplay={data.autoplay}
+          loop={data.loop}
+          muted={data.muted}
+          source={data.source}
+          captions={data.captions}
+        />
       );
     case SECTION_ELEMENTS.CLIENTS:
       return <Clients key={elementKey} preview={data.preview} />;

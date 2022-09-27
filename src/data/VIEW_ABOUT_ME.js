@@ -164,7 +164,6 @@ export const VIEW_ABOUT_ME = [
   },
   {
     header: "Testimonials",
-    isPadded: true,
     elements: [
       {
         template: SECTION_ELEMENTS.TESTIMONIALS,
