@@ -28,10 +28,10 @@ export const VIEW_ABOUT_ME = [
         data: {
           title: (
             <>
-              Meet <mark>Sam</mark>
+              Creating <mark>business value</mark> using design.
             </>
           ),
-          h: 1,
+          h: 0,
           text: (
             <>
               <Paragraph huge>

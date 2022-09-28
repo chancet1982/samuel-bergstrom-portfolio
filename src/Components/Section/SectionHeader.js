@@ -15,7 +15,7 @@ const StyledSectionHeader = styled.header`
   text-align: right;
   z-index: -1;
 
-  h4 {
+  h5 {
     margin: 0;
     line-height: 1;
     display: inline-block;
@@ -24,6 +24,8 @@ const StyledSectionHeader = styled.header`
     color: ${({ light }) =>
       light ? colors.text.light.low : colors.text.dark.low};
     box-shadow: inset 0px -0.125rem 0px 0rem ${({ light }) => (light ? colors.text.light.low : colors.text.dark.low)};
+    position: relative;
+    top: 8rem;
   }
 `;
 
@@ -32,7 +34,7 @@ const SectionHeader = ({ children }) => {
 
   return (
     <StyledSectionHeader light={light}>
-      <Title h={4}>{children}</Title>
+      <Title h={5}>{children}</Title>
     </StyledSectionHeader>
   );
 };

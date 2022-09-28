@@ -11,7 +11,7 @@ body {
 mark {
   color: inherit;
   background: transparent;
-  box-shadow: inset 0px -10rem 0px 0rem #e91d63;
+  box-shadow: inset 0px -50rem 0px 0rem #e91d63;
   padding-left: 1rem;
   padding-right: 1rem;
   position: relative;

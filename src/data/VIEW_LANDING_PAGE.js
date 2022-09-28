@@ -8,46 +8,17 @@ import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 export const VIEW_LANDING_PAGE = [
   {
     elements: [
-      {
+      /* {
         template: SECTION_ELEMENTS.VIDEO,
         data: {
           source: "assets/mood-1.mp4",
         },
-      },
+      }, */
       {
         template: SECTION_ELEMENTS.LANDING_PAGE_COVER,
         data: {
           bgColor: colors.primaryShade,
-          title: (
-            <>
-              Shaping <mark>results</mark>
-            </>
-          ),
-          text: (
-            <>
-              <Paragraph huge>
-                Creating <strong>business value</strong> using design.
-              </Paragraph>
-            </>
-          ),
-          bgImageUrl: "assets/cover-bg.svg",
-          imageUrl: "assets/cover-fg.png",
-        },
-      },
-    ],
-  },
-  {
-    isPadded: true,
-    elements: [
-      {
-        template: SECTION_ELEMENTS.TEXTBOX,
-        data: {
-          title: (
-            <>
-              Meet <mark>Sam</mark>
-            </>
-          ),
-          h: 1,
+          title: <>Samuel Bergström</>,
           text: (
             <>
               <Paragraph huge>
@@ -60,13 +31,14 @@ export const VIEW_LANDING_PAGE = [
               </Paragraph>
             </>
           ),
+          bgImageUrl: "assets/cover-bg.svg",
+          imageUrl: "assets/cover-fg.png",
         },
       },
     ],
   },
   {
     bgColor: colors.offwhite,
-    isPadded: true,
     elements: [
       {
         template: SECTION_ELEMENTS.CLIENTS,
@@ -77,7 +49,6 @@ export const VIEW_LANDING_PAGE = [
     ],
   },
   {
-    isPadded: true,
     elements: [
       {
         template: SECTION_ELEMENTS.CASES,

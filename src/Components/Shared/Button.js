@@ -18,19 +18,21 @@ const StyledButton = styled.button`
   border: ${({ secondary }) =>
     secondary ? `solid 1px ${colors.primary}` : `solid 1px transparent`};
   ${shadows.short};
-  border-radius: ${padding.vertical.single};
+  border-radius: 0.25rem;
   ${({ fluidType }) => fluidType};
   transition: all 0.3s;
   cursor: pointer;
   text-transform: uppercase;
+  font-weight: 600;
+  padding: 1rem 1.5rem;
 
-  @media (min-width: ${breakpoints.tablet}px) {
+  /*@media (min-width: ${breakpoints.tablet}px) {
     padding: ${padding.vertical.half} ${padding.horizontal.double};
   }
 
   @media (min-width: ${breakpoints.desktop}px) {
-    padding: ${padding.vertical.half} ${padding.horizontal.single};
-  }
+    padding: ${padding.vertical.half} ${padding.vertical.single};
+  }*/
 
   &:hover {
     background-color: ${({ secondary }) =>

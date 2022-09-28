@@ -77,8 +77,8 @@ const StyledCoverImage = styled(motion.img)`
 
 const StyledCaption = styled(motion.div)`
   height: 100%;
-  max-width: ${sizes.contentWidthLimit}px;
-  margin: 0 auto;
+  /*max-width: ${sizes.contentWidthLimit}px;
+  margin: 0 auto;*/
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -88,11 +88,16 @@ const StyledCaption = styled(motion.div)`
   padding-top: ${padding.vertical.double};
   padding-left: ${padding.horizontal.quadruple};
   padding-right: ${padding.horizontal.quadruple};
+  margin-left: ${padding.horizontal.double};
+  margin-right: ${padding.horizontal.double};
   z-index: 1;
   width: 100%;
 
   h1 {
     max-width: 15ch;
+    font-weight: 900;
+    font-size: 15rem;
+    line-height: 0.8;
   }
 
   p {
@@ -206,7 +211,7 @@ const LandingPageCover = ({
 
       <StyledCaption variants={captionVariants} style={{ y: captionParallax }}>
         {overline && <Overline disableAnimations>{overline}</Overline>}
-        <TitleAndText h={1} title={title} disableAnimations>
+        <TitleAndText h={0} title={title} disableAnimations>
           {text}
         </TitleAndText>
       </StyledCaption>

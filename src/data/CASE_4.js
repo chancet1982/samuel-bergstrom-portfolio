@@ -482,11 +482,11 @@ export const CASE_4 = {
             results: [
               {
                 value: "+120%",
-                description: "Increase in overall success rate",
+                description: "Conversion Rate",
               },
               {
                 value: "-64%",
-                description: "Decrease in time to completian",
+                description: "Time On Task",
               },
             ],
           },

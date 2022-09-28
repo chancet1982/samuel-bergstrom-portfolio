@@ -21,14 +21,14 @@ const Video = ({
 }) => {
   return (
     <StyledVideo
+      poster={poster}
+      preload={preload}
       width={size || width}
       height={size || height}
       controls={controls}
       autoplay={autoplay}
-      loop={loop}
       muted={muted}
-      poster={poster}
-      preload={preload}
+      loop={loop}
     >
       <source src={`${process.env.PUBLIC_URL}/${source}`} type="video/webm" />
       <source src={`${process.env.PUBLIC_URL}/${source}`} type="video/mp4" />
@@ -44,7 +44,7 @@ Video.propTypes = {
   loop: PropTypes.bool,
   muted: PropTypes.bool,
   poster: PropTypes.string,
-  preload: PropTypes.bool,
+  preload: PropTypes.oneOf(["auto", "metadata", "none"]),
   size: PropTypes.string,
   width: PropTypes.string,
   height: PropTypes.string,
@@ -58,7 +58,7 @@ Video.defaultProps = {
   loop: true,
   muted: true,
   poster: null,
-  preload: true,
+  preload: "auto",
   width: "320px",
   height: "320px",
   size: "480px",

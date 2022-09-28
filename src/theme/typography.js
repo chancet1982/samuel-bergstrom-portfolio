@@ -9,7 +9,7 @@
 
 const typography = {
   size: 1, // base size in rem for typography
-  lh: 1.6, // base line-height
+  lh: 1.5, // base line-height
   maxHMod: 0.618,
   minHMod: 0.125,
   maxBMod: 0.25,

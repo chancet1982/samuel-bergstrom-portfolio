@@ -15,14 +15,17 @@ const SectionVideo = ({
   autoplay,
   loop,
   muted,
+  poster,
+  preload,
   source,
   captions,
   size,
 }) => {
-  console.log("SOURCE", source);
   return (
     <StyledSectionVideo>
       <Video
+        poster={poster}
+        preload={preload}
         width={size || width}
         height={size || height}
         controls={controls}
@@ -41,6 +44,8 @@ SectionVideo.propTypes = {
   autoplay: PropTypes.bool,
   loop: PropTypes.bool,
   muted: PropTypes.bool,
+  poster: PropTypes.string,
+  preload: PropTypes.oneOf(["auto", "metadata", "none"]),
   size: PropTypes.string,
   width: PropTypes.string,
   height: PropTypes.string,
@@ -53,6 +58,8 @@ SectionVideo.defaultProps = {
   autoplay: true,
   loop: true,
   muted: true,
+  poster: null,
+  preload: "auto",
   width: "320px",
   height: "320px",
   size: "480px",

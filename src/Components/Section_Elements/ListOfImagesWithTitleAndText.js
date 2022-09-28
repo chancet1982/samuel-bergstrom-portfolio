@@ -26,8 +26,8 @@ const StyledListContainer = styled(motion.div)`
     grid-template-columns: repeat(1, 1fr);
 
     > figure {
-      height: 48vh;
-      max-height: 48vh;
+      /*height: 48vh;
+      max-height: 48vh;*/
       @media (max-width: ${breakpoints.desktop - 1}px) {
         padding-left: ${padding.horizontal.double};
         padding-right: ${padding.horizontal.double};
