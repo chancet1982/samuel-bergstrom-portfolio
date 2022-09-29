@@ -1,6 +1,22 @@
 /* eslint-disable import/prefer-default-export */
 export const CLIENTS = [
   {
+    imageUrl: "assets/clients/client-26.svg",
+    imageAlt: "Clas Ohlson",
+  },
+  {
+    imageUrl: "assets/clients/client-25.svg",
+    imageAlt: "NetSet",
+  },
+  {
+    imageUrl: "assets/clients/client-24.svg",
+    imageAlt: "Euro Finans",
+  },
+  {
+    imageUrl: "assets/clients/client-23.svg",
+    imageAlt: "E-on",
+  },
+  {
     imageUrl: "assets/clients/client-22.svg",
     imageAlt: "Prisjakt",
   },

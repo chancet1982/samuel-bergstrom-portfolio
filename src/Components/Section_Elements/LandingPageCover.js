@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React, { useEffect, useContext } from "react";
 import styled from "styled-components";
 import {
@@ -7,7 +8,8 @@ import {
   /* useSpring, */
 } from "framer-motion";
 import PropTypes from "prop-types";
-import { useWindowSize } from "react-use";
+import { useWindowSize, createBreakpoint } from "react-use";
+import { v4 as uuid } from "uuid";
 import TitleAndText from "../Shared/TitleAndText";
 import Overline from "../Shared/Overline";
 import breakpoints from "../../theme/breakpoints";
@@ -15,6 +17,9 @@ import padding from "../../theme/padding";
 import sizes from "../../theme/sizes";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
+import pickRandom from "../../utils/pickRandom";
+import Client from "./Clients/Client";
+import { CLIENTS } from "../../data/dictionaries/CLIENTS";
 
 const StyledCover = styled(motion.div)`
   height: ${({
@@ -96,8 +101,9 @@ const StyledCaption = styled(motion.div)`
   h1 {
     max-width: 15ch;
     font-weight: 900;
-    font-size: 15rem;
+    /*font-size: 15rem;
     line-height: 0.8;
+    letter-spacing: -1vw;*/
   }
 
   p {
@@ -121,6 +127,11 @@ const StyledCaption = styled(motion.div)`
     padding-left: ${padding.horizontal.double};
     padding-right: ${padding.horizontal.double};
   }
+`;
+
+const StyledClientsPreview = styled.div`
+  display: flex;
+  flex-direction: row;
 `;
 
 const LandingPageCover = ({
@@ -194,6 +205,29 @@ const LandingPageCover = ({
       },
     },
   };
+  const useBreakpoint = createBreakpoint({ XL: 1315, L: 1048, M: 781, S: 300 });
+  const breakpoint = useBreakpoint();
+  const getNumberOfClientsBasedOnViewportWidth = () =>
+    breakpoint === "XL"
+      ? 10
+      : breakpoint === "L"
+      ? 4
+      : breakpoint === "M"
+      ? 3
+      : 4;
+
+  const render5RandomClients = pickRandom(
+    CLIENTS,
+    getNumberOfClientsBasedOnViewportWidth()
+  ).map((item) => (
+    <Client
+      key={uuid()}
+      title={item.title}
+      url={item.url}
+      imageUrl={item.imageUrl}
+      description={item.description}
+    />
+  ));
 
   return (
     <StyledCover
@@ -214,6 +248,7 @@ const LandingPageCover = ({
         <TitleAndText h={0} title={title} disableAnimations>
           {text}
         </TitleAndText>
+        <StyledClientsPreview>{render5RandomClients}</StyledClientsPreview>
       </StyledCaption>
     </StyledCover>
   );

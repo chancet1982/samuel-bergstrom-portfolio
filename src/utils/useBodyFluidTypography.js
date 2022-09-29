@@ -2,7 +2,6 @@
 /* eslint-disable no-unused-vars */
 import React from "react";
 import { useWindowSize } from "react-use";
-import sizes from "../theme/sizes";
 import typography from "../theme/typography";
 
 const magnify = (val, inc, times) => val * (1 + inc) ** Math.abs(times);
@@ -11,10 +10,9 @@ const multiply = (val, times) => val * times;
 
 /* Not sure how this will work */
 const decrease = (val, dec, times) => val - dec * times;
-const { ftMax, ftMin } = sizes;
 
 const useFluidTypography = (pSize = 2, withMargin = true) => {
-  const { size, lh, margin, inc, minBMod, maxBMod } = typography;
+  const { size, lh, inc, minBMod, maxBMod, ftMax, ftMin } = typography;
   const { width } = useWindowSize();
 
   const getMod = (res) =>

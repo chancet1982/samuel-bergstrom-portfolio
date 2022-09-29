@@ -10,11 +10,13 @@
 const typography = {
   size: 1, // base size in rem for typography
   lh: 1.5, // base line-height
-  maxHMod: 0.618,
-  minHMod: 0.125,
-  maxBMod: 0.25,
-  minBMod: 0.125,
+  maxHMod: 0.54,
+  minHMod: 0.24,
+  maxBMod: 0.24,
+  minBMod: 0.106,
   inc: 0.1, // line height modifier
+  ftMin: 420,
+  ftMax: 1440,
   headlineFont: `'Poppins', sans-serif`,
   bodyFont: `'DM Sans', sans-serif`,
 };

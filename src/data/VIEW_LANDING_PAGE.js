@@ -38,17 +38,6 @@ export const VIEW_LANDING_PAGE = [
     ],
   },
   {
-    bgColor: colors.offwhite,
-    elements: [
-      {
-        template: SECTION_ELEMENTS.CLIENTS,
-        data: {
-          preview: true,
-        },
-      },
-    ],
-  },
-  {
     elements: [
       {
         template: SECTION_ELEMENTS.CASES,
@@ -56,7 +45,7 @@ export const VIEW_LANDING_PAGE = [
           preview: true,
           title: (
             <>
-              Some of <mark>my work</mark>
+              Selected <mark>work</mark>
             </>
           ),
           text: (
