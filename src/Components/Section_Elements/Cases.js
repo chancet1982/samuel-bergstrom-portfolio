@@ -7,6 +7,7 @@ import PropTypes from "prop-types";
 import CaseThumbnail2 from "../Shared/CaseThumbnail2";
 import { CASES } from "../../data/dictionaries/CASES";
 import breakpoints from "../../theme/breakpoints";
+import sizes from "../../theme/sizes";
 import padding from "../../theme/padding";
 import { CASE_STATUS } from "../../data/dictionaries/CASE_STATUS";
 import ElementColorContextProvider from "../../Context/ElementColorContext";
@@ -26,9 +27,10 @@ const StyledCases = styled(motion.div)`
   padding-bottom: ${({ preview }) =>
     preview ? padding.vertical.single : padding.vertical.quadruple};
 
-  /*@media (min-width: ${breakpoints.desktop}px) {
-    grid-template-columns: repeat(1, 1fr);
-  }*/
+  @media (min-width: ${breakpoints.desktop}px) {
+    max-width: ${sizes.contentWidthLimit}px;
+    margin: 0 auto;
+  }
 `;
 
 const SectionCases = ({ title, text, preview, h }) => {

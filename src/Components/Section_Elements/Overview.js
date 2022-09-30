@@ -6,7 +6,6 @@ import TitleAndText from "../Shared/TitleAndText";
 import Paragraph from "../Shared/Paragraph";
 import padding from "../../theme/padding";
 import breakpoints from "../../theme/breakpoints";
-import colors from "../../theme/colors";
 import sizes from "../../theme/sizes";
 
 const StyledOverviewWrapper = styled.div`
@@ -35,18 +34,6 @@ const StyledOverviewText = styled.div`
   grid-column: 1 / span 3;
   position: relative;
 
-  :before {
-    content: "";
-    clip-path: circle(20% at 8% 40%);
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    background-color: ${colors.offwhite};
-  }
-
   padding: 0 ${padding.horizontal.double};
   display: flex;
   flex-direction: column;
@@ -60,27 +47,12 @@ const StyledOverviewText = styled.div`
 
 const StyledOverviewItems = styled.div`
   grid-column: 1 / span 3;
-  /*:after {
-    content: "";
-    clip-path: circle(4% at 74vw 72%);
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    background-color: ${colors.offwhite};
-  }*/
 
   padding: 0 ${padding.horizontal.double};
   display: flex;
   flex-direction: column;
   @media (min-width: ${breakpoints.mobileLarge}px) and (max-width: ${breakpoints.desktop -
     1}px) {
-    /*> div {
-      width: 33.333%;
-    }*/
-
     > div {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -98,35 +70,13 @@ const StyledOverviewItems = styled.div`
   }
 `;
 
-const Overview = ({
-  text,
-  myRole,
-  duration,
-  platforms,
-  toolsAndMethods,
-  bgColor,
-}) => {
+const Overview = ({ text, toolsAndMethods, bgColor }) => {
   return (
     <StyledOverviewWrapper>
       <StyledOverviewText bgColor={bgColor}>
         {text && <TitleAndText>{text}</TitleAndText>}
       </StyledOverviewText>
       <StyledOverviewItems bgColor={bgColor}>
-        {myRole && (
-          <TitleAndText title="My role:" h={5}>
-            <Paragraph small>{myRole}</Paragraph>
-          </TitleAndText>
-        )}
-        {duration && (
-          <TitleAndText title="Duration:" h={5}>
-            <Paragraph small>{duration}</Paragraph>
-          </TitleAndText>
-        )}
-        {platforms.length ? (
-          <TitleAndText title="Platforms:" h={5}>
-            <Paragraph small>{platforms.join(", ")}</Paragraph>
-          </TitleAndText>
-        ) : null}
         {toolsAndMethods.length ? (
           <TitleAndText title="Tools & Methods:" h={5}>
             <Paragraph small>{toolsAndMethods.join(", ")}</Paragraph>
@@ -139,20 +89,32 @@ const Overview = ({
 
 Overview.propTypes = {
   text: PropTypes.node,
-  myRole: PropTypes.string,
-  duration: PropTypes.string,
-  platforms: PropTypes.array,
+
   toolsAndMethods: PropTypes.array,
   bgColor: PropTypes.string,
 };
 
 Overview.defaultProps = {
   text: null,
-  myRole: null,
-  duration: null,
-  platforms: [],
   toolsAndMethods: [],
   bgColor: null,
 };
 
 export default Overview;
+
+/* TODO: Move Role Duration Platforms somewhere else   */
+/* {myRole && (
+  <TitleAndText title="My role:" h={5}>
+    <Paragraph small>{myRole}</Paragraph>
+  </TitleAndText>
+)}
+{duration && (
+  <TitleAndText title="Duration:" h={5}>
+    <Paragraph small>{duration}</Paragraph>
+  </TitleAndText>
+)}
+{platforms.length ? (
+  <TitleAndText title="Platforms:" h={5}>
+    <Paragraph small>{platforms.join(", ")}</Paragraph>
+  </TitleAndText>
+) : null} */

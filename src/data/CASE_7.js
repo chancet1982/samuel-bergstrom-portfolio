@@ -153,7 +153,7 @@ export const CASE_7 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Kickoff and expectation alignment.</>,
+            title: <>Kickoff & expectation alignment.</>,
             h: 2,
             text: (
               <>
@@ -177,12 +177,7 @@ export const CASE_7 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: (
-              <>
-                Meeting the onboarding support team and looking into the web
-                analytics
-              </>
-            ),
+            title: <>Analytics & Customer support</>,
             text: (
               <Paragraph>
                 It’s rather unusual that a gym chain would have an entire team

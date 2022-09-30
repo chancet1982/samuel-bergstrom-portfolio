@@ -21,44 +21,56 @@ const StyledTimeline = styled.dl`
   }
 `;
 
-/* const StyledTimelineItemSeparator = styled.div``;
-const StyledTimelineItemDot = styled.div``;
-const StyledTimelineItemConnector = styled.div``;
+const StyledTimelineItemYear = styled.div`
+  grid-column: 1 / span 1;
+  align-items: flex-end;
+  padding-right: ${padding.horizontal.single};
+  padding-left: ${padding.horizontal.double};
+  width: fit-content;
+  box-sizing: border-box;
 
- const TimelineItemSeparator = () => (
-  <StyledTimelineItemSeparator>
-    <StyledTimelineItemDot />
-    <StyledTimelineItemConnector />
-  </StyledTimelineItemSeparator>
-); */
-
-const StyledTimelineItemOppositeContent = styled.div`
   span {
-    font-size: 400%;
+    position: sticky;
+    top: 0;
   }
 `;
 
-const TimelineItemOppositeContent = ({ children }) => (
-  <StyledTimelineItemOppositeContent>
-    <Span huge>
+const StyledTimelineItemEvents = styled.div`
+  grid-column: 2 / span 1;
+  align-items: flex-start;
+  width: calc(1280px * 0.8);
+  padding-right: ${padding.horizontal.double};
+  box-sizing: border-box;
+
+  > div {
+    margin-top: ${padding.vertical.half};
+    margin-bottom: ${padding.vertical.half};
+
+    p {
+      margin: 0;
+    }
+  }
+`;
+
+const TimelineItemYear = ({ children }) => (
+  <StyledTimelineItemYear>
+    <Span xxl>
       <strong>{children}</strong>
     </Span>
-  </StyledTimelineItemOppositeContent>
+  </StyledTimelineItemYear>
 );
 
-TimelineItemOppositeContent.propTypes = {
+TimelineItemYear.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-const StyledTimelineItemContent = styled(TitleAndText)``;
-
-const TimelineItemContent = ({ title, children }) => (
-  <StyledTimelineItemContent h={5} title={title}>
+const TimelineItemEvent = ({ title, children }) => (
+  <TitleAndText h={5} title={title}>
     <Paragraph>{children}</Paragraph>
-  </StyledTimelineItemContent>
+  </TitleAndText>
 );
 
-TimelineItemContent.propTypes = {
+TimelineItemEvent.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.node.isRequired,
 };
@@ -66,8 +78,8 @@ TimelineItemContent.propTypes = {
 const StyledTimelineItem = styled.dt`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding-top: ${padding.vertical.half};
-  padding-bottom: ${padding.vertical.half};
+  padding-top: calc(${padding.vertical.double} - ${padding.vertical.half});
+  padding-bottom: calc(${padding.vertical.double} - ${padding.vertical.half});
 
   border-top: solid 1px
     ${({ light }) => (light ? colors.text.light.low : colors.text.dark.low)};
@@ -81,50 +93,39 @@ const StyledTimelineItem = styled.dt`
     justify-content: center;
     flex-direction: column;
   }
-
-  > div:first-of-type {
-    grid-column: 1 / span 1;
-    align-items: flex-end;
-    padding-right: ${padding.horizontal.single};
-    padding-left: ${padding.horizontal.double};
-    width: fit-content;
-    box-sizing: border-box;
-  }
-
-  > div:last-of-type {
-    grid-column: 2 / span 1;
-    align-items: flex-start;
-    width: calc(1280px * 0.8);
-    padding-right: ${padding.horizontal.double};
-    box-sizing: border-box;
-
-    p {
-      margin: 0;
-    }
-  }
 `;
 
-const TimelineItem = ({ date, title, content }) => (
+const TimelineItem = ({ year, events }) => (
   <StyledTimelineItem>
-    <TimelineItemOppositeContent>{date}</TimelineItemOppositeContent>
-
-    {/* <TimelineItemSeparator /> */}
-
-    <TimelineItemContent title={title}>{content}</TimelineItemContent>
+    <TimelineItemYear>{year}</TimelineItemYear>
+    <StyledTimelineItemEvents>
+      {events &&
+        events.length &&
+        events.map(({ title, content }) => (
+          <TimelineItemEvent key={title} title={title}>
+            {content}
+          </TimelineItemEvent>
+        ))}
+    </StyledTimelineItemEvents>
   </StyledTimelineItem>
 );
 
 TimelineItem.propTypes = {
-  date: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
+  year: PropTypes.string.isRequired,
+  events: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string.isRequired,
+      content: PropTypes.string.isRequired,
+    })
+  ).isRequired,
 };
 
+/* TODO: Collapse timeline based on number of items */
 const Timeline = ({ items }) => {
   return (
     <StyledTimeline alternate>
-      {items.map(({ date, title, content }) => (
-        <TimelineItem key={title} date={date} title={title} content={content} />
+      {items.map(({ year, events }) => (
+        <TimelineItem key={year} year={year} events={events} />
       ))}
     </StyledTimeline>
   );
@@ -133,9 +134,13 @@ const Timeline = ({ items }) => {
 Timeline.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
-      date: PropTypes.string.isRequired,
-      title: PropTypes.string.isRequired,
-      content: PropTypes.string.isRequired,
+      year: PropTypes.string.isRequired,
+      events: PropTypes.arrayOf(
+        PropTypes.shape({
+          title: PropTypes.string.isRequired,
+          content: PropTypes.string.isRequired,
+        })
+      ),
     })
   ).isRequired,
 };

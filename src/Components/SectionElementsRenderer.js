@@ -76,9 +76,7 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
         <Overview
           key={elementKey}
           text={data.text}
-          myRole={data.myRole}
           toolsAndMethods={data.toolsAndMethods}
-          duration={data.duration}
           bgColor={data.bgColor}
         />
       );

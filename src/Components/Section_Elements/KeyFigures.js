@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { v4 as uuid } from "uuid";
 import breakpoints from "../../theme/breakpoints";
-import KeyFigure from "./KeyFigures/KeyFigure";
+import KeyFigure2 from "./KeyFigures/KeyFigure2";
 import BackgroundWrapper from "../Shared/BackgroundWrapper";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
@@ -16,6 +16,10 @@ const StyledKeyFigures = styled(motion.div)`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  box-sizing: border-box;
+
   padding: ${({ bgColor }) =>
     bgColor
       ? `${padding.vertical.double} ${padding.horizontal.double}`
@@ -49,7 +53,7 @@ const KeyFigures = ({ items, bgColor, bgImageUrl, limitMaxWidth }) => {
   const renderKeyFigures = () => (
     <StyledKeyFigures>
       {items.map(({ value, description }) => (
-        <KeyFigure value={value} description={description} key={uuid()} />
+        <KeyFigure2 value={value} description={description} key={uuid()} />
       ))}
     </StyledKeyFigures>
   );

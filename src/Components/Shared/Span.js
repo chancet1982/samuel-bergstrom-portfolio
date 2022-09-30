@@ -26,12 +26,13 @@ const StyledSpan = styled.span`
   }
 `;
 
-const Span = ({ small, large, huge, children, light, highContrast }) => {
+const Span = ({ small, large, huge, xxl, children, light, highContrast }) => {
   const lightText = useBgColor() || light;
   const mapSizeToNumber = () => {
     if (small) return 1;
     if (large) return 3;
     if (huge) return 4;
+    if (xxl) return 8;
     return 2;
   };
 
@@ -42,6 +43,7 @@ const Span = ({ small, large, huge, children, light, highContrast }) => {
       small={small}
       large={large}
       huge={huge}
+      xxl={xxl}
       light={lightText}
       fluidType={fluidType}
       highContrast={highContrast}
@@ -55,6 +57,7 @@ Span.propTypes = {
   small: PropTypes.bool,
   large: PropTypes.bool,
   huge: PropTypes.bool,
+  xxl: PropTypes.bool,
   children: PropTypes.node.isRequired,
   light: PropTypes.bool,
   highContrast: PropTypes.bool,
@@ -64,6 +67,7 @@ Span.defaultProps = {
   small: false,
   large: false,
   huge: false,
+  xxl: false,
   light: false,
   highContrast: false,
 };

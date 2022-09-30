@@ -20,13 +20,14 @@ const StyledParagraph = styled.p`
   }
 `;
 
-const Paragraph = ({ small, large, huge, children }) => {
+const Paragraph = ({ small, large, huge, xxl, children }) => {
   const light = useBgColor();
 
   const mapSizeToNumber = () => {
     if (small) return 1;
     if (large) return 3;
     if (huge) return 4;
+    if (xxl) return 6;
     return 2;
   };
 
@@ -49,6 +50,7 @@ Paragraph.propTypes = {
   small: PropTypes.bool,
   large: PropTypes.bool,
   huge: PropTypes.bool,
+  xxl: PropTypes.bool,
   children: PropTypes.node.isRequired,
 };
 
@@ -56,6 +58,7 @@ Paragraph.defaultProps = {
   small: false,
   large: false,
   huge: false,
+  xxl: false,
 };
 
 export default Paragraph;

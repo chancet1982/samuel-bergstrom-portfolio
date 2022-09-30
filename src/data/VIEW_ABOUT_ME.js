@@ -271,9 +271,124 @@ export const VIEW_ABOUT_ME = [
         data: {
           items: [
             {
-              date: "2022",
-              title: "Did some Awesome shit!",
-              content: "For the following client",
+              year: "2022",
+              events: [
+                {
+                  title: "Head of Design, 1337",
+                  content:
+                    "Making sure design has a place in a tech consultancy",
+                },
+              ],
+            },
+            {
+              year: "2021",
+              events: [
+                {
+                  title: "UX Consultant, Prisjakt",
+                  content:
+                    "Making sure design has a place in a tech consultancy",
+                },
+                {
+                  title: "UX Consultant & Mentor, Alfa Laval",
+                  content:
+                    "Making sure design has a place in a tech consultancy",
+                },
+              ],
+            },
+            {
+              year: "2020",
+              events: [
+                {
+                  title: "UX Lead, Mitsubishi Electric",
+                  content:
+                    "Making sure design has a place in a tech consultancy",
+                },
+                {
+                  title: "UX Designer, Fitness 24 Seven",
+                  content:
+                    "Making sure design has a place in a tech consultancy",
+                },
+                {
+                  title: "Senior UX Designer, Loomis",
+                  content:
+                    "Making sure design has a place in a tech consultancy",
+                },
+              ],
+            },
+            {
+              year: "2019",
+              events: [
+                {
+                  title: "UX Designer, Lumito",
+                  content:
+                    "Making sure design has a place in a tech consultancy",
+                },
+                {
+                  title: "Head of design, Euro Finans",
+                  content:
+                    "Making sure design has a place in a tech consultancy",
+                },
+                {
+                  title: "Senior UX Designer, NoWaste Logistics",
+                  content:
+                    "Making sure design has a place in a tech consultancy",
+                },
+              ],
+            },
+            {
+              year: "2018",
+              events: [
+                {
+                  title: "UX Designer, Diaverum",
+                  content:
+                    "Making sure design has a place in a tech consultancy",
+                },
+                {
+                  title: "UX Designer, Modity",
+                  content:
+                    "Making sure design has a place in a tech consultancy",
+                },
+              ],
+            },
+            {
+              year: "2017",
+              events: [
+                {
+                  title: "UX Engineer, Capish",
+                  content:
+                    "Making sure design has a place in a tech consultancy",
+                },
+              ],
+            },
+            {
+              year: "2016",
+              events: [
+                {
+                  title: "Frontend Developer, NetSet",
+                  content:
+                    "Making sure design has a place in a tech consultancy",
+                },
+              ],
+            },
+            {
+              year: "2011",
+              events: [
+                {
+                  title: "Head of Web, FundConnect (Accuired by FEFundInfo)",
+                  content:
+                    "Making sure design has a place in a tech consultancy",
+                },
+              ],
+            },
+            {
+              year: "2006",
+              events: [
+                {
+                  title: "UI/UX Designer, (Accuired by FEFundInfo)",
+                  content:
+                    "Making sure design has a place in a tech consultancy",
+                },
+              ],
             },
           ],
         },
