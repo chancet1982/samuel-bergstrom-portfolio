@@ -8,7 +8,7 @@ import {
   /* useSpring, */
 } from "framer-motion";
 import PropTypes from "prop-types";
-import { useWindowSize, createBreakpoint } from "react-use";
+import { useWindowSize } from "react-use";
 import { v4 as uuid } from "uuid";
 import TitleAndText from "../Shared/TitleAndText";
 import Overline from "../Shared/Overline";
@@ -17,9 +17,9 @@ import padding from "../../theme/padding";
 import sizes from "../../theme/sizes";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
-import pickRandom from "../../utils/pickRandom";
 import Client from "./Clients/Client";
 import { CLIENTS } from "../../data/dictionaries/CLIENTS";
+import { useScrollDirection } from "../../utils/useScrollDirection";
 
 const StyledCover = styled(motion.div)`
   height: ${({
@@ -129,7 +129,20 @@ const StyledCaption = styled(motion.div)`
   }
 `;
 
-const StyledClientsPreview = styled.div`
+const StyledCoverBottom = styled(motion.div)`
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+`;
+
+/* TODO: make the clients overflow, start from the middle and react to mouse position on top of that hide client preview when scrolling down */
+const StyledClientsPreview = styled(motion.div)`
   display: flex;
   flex-direction: row;
 `;
@@ -205,21 +218,20 @@ const LandingPageCover = ({
       },
     },
   };
-  const useBreakpoint = createBreakpoint({ XL: 1315, L: 1048, M: 781, S: 300 });
-  const breakpoint = useBreakpoint();
-  const getNumberOfClientsBasedOnViewportWidth = () =>
-    breakpoint === "XL"
-      ? 10
-      : breakpoint === "L"
-      ? 4
-      : breakpoint === "M"
-      ? 3
-      : 4;
 
-  const render5RandomClients = pickRandom(
-    CLIENTS,
-    getNumberOfClientsBasedOnViewportWidth()
-  ).map((item) => (
+  const coverBottomVariants = {
+    hidden: { opacity: 0, y: "100%", transition: { duration: 0.6 } },
+    animate: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.6,
+        staggerChildren: 0.2,
+      },
+    },
+  };
+
+  const renderClientsPreview = CLIENTS.map((item) => (
     <Client
       key={uuid()}
       title={item.title}
@@ -229,6 +241,12 @@ const LandingPageCover = ({
     />
   ));
 
+  const { width } = useWindowSize();
+  const isDesktop = width >= breakpoints.desktop;
+
+  const scrollDirection = useScrollDirection();
+
+  /* TODO: Make clients overflow and be scrollable, make scrolling related to mouse position */
   return (
     <StyledCover
       bgColor={bgColor}
@@ -248,8 +266,18 @@ const LandingPageCover = ({
         <TitleAndText h={0} title={title} disableAnimations>
           {text}
         </TitleAndText>
-        <StyledClientsPreview>{render5RandomClients}</StyledClientsPreview>
       </StyledCaption>
+      <StyledCoverBottom>
+        <StyledClientsPreview
+          variants={coverBottomVariants}
+          initial="animate"
+          animate={
+            scrollDirection === "down" && isDesktop ? "hidden" : "animate"
+          }
+        >
+          {renderClientsPreview}
+        </StyledClientsPreview>
+      </StyledCoverBottom>
     </StyledCover>
   );
 };

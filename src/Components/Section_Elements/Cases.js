@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { v4 as uuid } from "uuid";
 import PropTypes from "prop-types";
-import CaseThumbnail from "../Shared/CaseThumbnail";
+import CaseThumbnail2 from "../Shared/CaseThumbnail2";
 import { CASES } from "../../data/dictionaries/CASES";
 import breakpoints from "../../theme/breakpoints";
 import padding from "../../theme/padding";
@@ -43,7 +43,7 @@ const SectionCases = ({ title, text, preview, h }) => {
         ).map(({ thumbnail, caseStatus, caseUrl }) => {
           return (
             <ElementColorContextProvider key={uuid()}>
-              <CaseThumbnail
+              <CaseThumbnail2
                 data={thumbnail}
                 caseUrl={caseUrl}
                 status={caseStatus}
