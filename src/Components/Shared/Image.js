@@ -7,7 +7,7 @@ import { motion } from "framer-motion";
 const StyledImage = styled(motion.img)`
   width: 100%;
   max-width: 100%;
-  height ${({ withCaption, inTextbox }) =>
+  height: ${({ withCaption, inTextbox }) =>
     !inTextbox ? (withCaption ? "calc(100% - 50px)" : "100%") : null};
   object-fit: ${({ cover }) => (cover ? "cover" : "contain")};
 
@@ -29,7 +29,7 @@ const StyledImage = styled(motion.img)`
   }
 `;
 
-const Image = ({
+function Image({
   imageUrl,
   imageAlt,
   grayscale,
@@ -38,18 +38,20 @@ const Image = ({
   withCaption,
   bgColor,
   inTextbox,
-}) => (
-  <StyledImage
-    grayscale={grayscale}
-    src={imageUrl}
-    alt={imageAlt}
-    style={style}
-    cover={cover}
-    withCaption={withCaption}
-    bgColor={bgColor}
-    inTextbox={inTextbox}
-  />
-);
+}) {
+  return (
+    <StyledImage
+      grayscale={grayscale}
+      src={imageUrl}
+      alt={imageAlt}
+      style={style}
+      cover={cover}
+      withCaption={withCaption}
+      bgColor={bgColor}
+      inTextbox={inTextbox}
+    />
+  );
+}
 
 Image.propTypes = {
   style: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),

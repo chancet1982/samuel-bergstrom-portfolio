@@ -4,7 +4,7 @@ import styled from "styled-components";
 import FullScreenCenteredFlexContainer from "../Shared/FullScreenCenteredFlexContainer";
 import colors from "../../theme/colors";
 
-const ViewLoading = () => {
+function ViewLoading() {
   const LoadingSlider = styled(motion.div)`
     position: absolute;
     top: 0;
@@ -65,6 +65,6 @@ const ViewLoading = () => {
       </LoadingSlider>
     </FullScreenCenteredFlexContainer>
   );
-};
+}
 
 export default ViewLoading;

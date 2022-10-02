@@ -3,7 +3,7 @@ import View from "../View";
 import SectionsRenderer from "../SectionsRenderer";
 import { VIEW_ABOUT_ME } from "../../data/VIEW_ABOUT_ME";
 
-const ViewAboutMe = () => {
+function ViewAboutMe() {
   const sectionsData = VIEW_ABOUT_ME;
 
   return (
@@ -11,6 +11,6 @@ const ViewAboutMe = () => {
       <SectionsRenderer sections={sectionsData} />
     </View>
   );
-};
+}
 
 export default ViewAboutMe;

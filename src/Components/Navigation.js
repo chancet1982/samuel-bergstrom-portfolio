@@ -183,7 +183,7 @@ const StyledMenuToggler = styled(motion.a)`
   }
 `;
 
-const Navigation = () => {
+function Navigation() {
   const { width } = useWindowSize();
   const isDesktop = width >= breakpoints.desktop;
 
@@ -265,12 +265,7 @@ const Navigation = () => {
         animate={expanded ? "expanded" : "collapsed"}
         variants={menuVariants}
       >
-        <StyledNavLink
-          fluidType={fluidType}
-          exact
-          to="/"
-          onClick={menuTogglerClick}
-        >
+        <StyledNavLink fluidType={fluidType} to="/" onClick={menuTogglerClick}>
           Home
         </StyledNavLink>
         <StyledNavLink
@@ -297,7 +292,7 @@ const Navigation = () => {
       </StyledMenu>
     </StyledNavigation>
   );
-};
+}
 
 Navigation.propTypes = {};
 

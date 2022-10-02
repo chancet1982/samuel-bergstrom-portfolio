@@ -3,7 +3,7 @@ import View from "../View";
 import FullScreenCenteredFlexContainer from "../Shared/FullScreenCenteredFlexContainer";
 import Title from "../Shared/Title";
 
-const ViewErrorLoading = () => {
+function ViewErrorLoading() {
   return (
     <View>
       <FullScreenCenteredFlexContainer>
@@ -11,6 +11,6 @@ const ViewErrorLoading = () => {
       </FullScreenCenteredFlexContainer>
     </View>
   );
-};
+}
 
 export default ViewErrorLoading;

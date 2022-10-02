@@ -5,14 +5,14 @@ import styled from "styled-components";
 const StyledDetails = styled.details``;
 const StyledSummary = styled.summary``;
 
-const Details = ({ open, summary, details }) => {
+function Details({ open, summary, details }) {
   return (
     <StyledDetails open={open}>
       <StyledSummary>{summary}</StyledSummary>
       {details}
     </StyledDetails>
   );
-};
+}
 
 Details.propTypes = {
   open: PropTypes.bool,

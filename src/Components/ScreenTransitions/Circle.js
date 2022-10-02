@@ -66,29 +66,13 @@ const StyledCircle = styled(motion.div)`
   }
 `;
 
-const Blinds = ({ bgColor }) => {
-  /* const circleGrow = {
-    initial: {
-      opacity: 0,
-      scale: 0,
-      maskSize: 0,
-    },
-    animate: {
-      opacity: [0, 1, 1, 0],
-      scale: [0, 2, 2, 2],
-      transition: {
-        times: [0, 0.3, 0.9, 1],
-        easing: "anticipate",
-      },
-    },
-  }; */
-
+function Blinds({ bgColor }) {
   return (
     <StyledCircleWrapper>
       <StyledCircle bgColor={bgColor} />
     </StyledCircleWrapper>
   );
-};
+}
 
 Blinds.propTypes = {
   bgColor: PropTypes.string,

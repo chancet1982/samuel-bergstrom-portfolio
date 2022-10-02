@@ -31,7 +31,7 @@ const StyledImageWithTitleAndText = styled(motion.div)`
   }
 `;
 
-const ImageWithTitleAndText = ({
+function ImageWithTitleAndText({
   imageUrl,
   imageAlt,
   caption,
@@ -40,7 +40,7 @@ const ImageWithTitleAndText = ({
   bgColor,
   horizontal,
   flip,
-}) => {
+}) {
   const [, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
@@ -88,7 +88,7 @@ const ImageWithTitleAndText = ({
       </TitleAndText>
     </StyledImageWithTitleAndText>
   );
-};
+}
 
 ImageWithTitleAndText.propTypes = {
   bgColor: PropTypes.string,

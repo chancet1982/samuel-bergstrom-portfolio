@@ -88,7 +88,7 @@ const StyledCaseThumbnailImage = styled(motion.div)`
   }
 `; */
 
-const CaseThumbnail = ({ data, status, caseUrl, inAdditionalCases }) => {
+function CaseThumbnail({ data, status, caseUrl, inAdditionalCases }) {
   const [, setContent] = useContext(AppContext);
   const [, setLight] = useContext(ElementColorContext);
 
@@ -212,16 +212,14 @@ const CaseThumbnail = ({ data, status, caseUrl, inAdditionalCases }) => {
     );
   };
 
-  const wrapWithLink = () => {
-    return (
-      <Link
-        to={caseUrl}
-        onClick={() => changeLoaderContent(`${overline}, ${title}`)}
-      >
-        {renderCaseThumbnail()}
-      </Link>
-    );
-  };
+  const wrapWithLink = () => (
+    <Link
+      to={caseUrl}
+      onClick={() => changeLoaderContent(`${overline}, ${title}`)}
+    >
+      {renderCaseThumbnail()}
+    </Link>
+  );
 
   return (
     <StyledCaseThumbnail
@@ -237,7 +235,7 @@ const CaseThumbnail = ({ data, status, caseUrl, inAdditionalCases }) => {
         : renderCaseThumbnail()}
     </StyledCaseThumbnail>
   );
-};
+}
 
 CaseThumbnail.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types

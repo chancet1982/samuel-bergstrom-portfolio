@@ -53,7 +53,7 @@ const StyledScreenTransition = styled(motion.div)`
 `;
 
 // TODO: Improve screen transition so it is snazzier.
-const LongScreenTransition = ({ animationFinished }) => {
+function LongScreenTransition({ animationFinished }) {
   const [content] = useContext(AppContext);
   const [, setLight] = useContext(ViewColorContext);
   const { width } = useWindowSize();
@@ -133,7 +133,7 @@ const LongScreenTransition = ({ animationFinished }) => {
       </StyledScreenTransition>
     </div>
   );
-};
+}
 
 LongScreenTransition.propTypes = {
   animationFinished: PropTypes.func.isRequired,

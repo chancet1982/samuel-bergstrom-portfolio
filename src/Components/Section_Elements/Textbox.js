@@ -71,7 +71,7 @@ const StyledTextboxImage = styled.figure`
   }
 `;
 
-const Textbox = ({
+function Textbox({
   title,
   h,
   text,
@@ -81,7 +81,7 @@ const Textbox = ({
   imageAlt,
   caption,
   limitMaxWidth,
-}) => {
+}) {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
@@ -147,7 +147,7 @@ const Textbox = ({
       {!flip && imageUrl && renderImage()}
     </StyledTextbox>
   );
-};
+}
 
 Textbox.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),

@@ -7,13 +7,13 @@ const StyledLabel = styled.label`
   display: block;
 `;
 
-const Label = ({ children }) => {
+function Label({ children }) {
   return (
     <StyledLabel>
       <Span>{children}</Span>
     </StyledLabel>
   );
-};
+}
 
 Label.propTypes = {
   children: PropTypes.node.isRequired,

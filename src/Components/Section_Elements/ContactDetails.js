@@ -16,7 +16,7 @@ const StyledContactDetails = styled(motion.div)`
   box-sizing: border-box;
 `;
 
-const ContactDetails = () => {
+function ContactDetails() {
   return (
     <StyledContactDetails>
       <TitleAndText title="Get in touch">
@@ -24,25 +24,19 @@ const ContactDetails = () => {
       </TitleAndText>
       <List
         items={[
-          <>
-            <TitleAndText title="Email:" h={5}>
-              <Span>chancet1982@gmail.com</Span>
-            </TitleAndText>
-          </>,
-          <>
-            <TitleAndText title="Phone:" h={5}>
-              <Span>072 545 1337</Span>
-            </TitleAndText>
-          </>,
-          <>
-            <TitleAndText title="Or the form below:" h={5}>
-              <ContactForm />
-            </TitleAndText>
-          </>,
+          <TitleAndText title="Email:" h={5}>
+            <Span>chancet1982@gmail.com</Span>
+          </TitleAndText>,
+          <TitleAndText title="Phone:" h={5}>
+            <Span>072 545 1337</Span>
+          </TitleAndText>,
+          <TitleAndText title="Or the form below:" h={5}>
+            <ContactForm />
+          </TitleAndText>,
         ]}
       />
     </StyledContactDetails>
   );
-};
+}
 
 export default ContactDetails;

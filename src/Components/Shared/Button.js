@@ -2,7 +2,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import padding from "../../theme/padding";
 import colors from "../../theme/colors";
 import shadows from "../../theme/shadows";
@@ -49,7 +49,7 @@ const StyledButton = styled.button`
   }
 `;
 
-const Button = ({
+function Button({
   onClick,
   children,
   secondary,
@@ -58,7 +58,7 @@ const Button = ({
   huge,
   disabled,
   to,
-}) => {
+}) {
   const mapSizeToNumber = () => {
     if (small) return 1;
     if (large) return 3;
@@ -67,19 +67,19 @@ const Button = ({
   };
 
   const fluidType = useFluidTypography(mapSizeToNumber());
-  const history = useHistory();
+  const navigate = useNavigate();
 
   return (
     <StyledButton
       fluidType={fluidType}
       disabled={disabled}
       secondary={secondary}
-      onClick={to ? () => history.push(to) : onClick}
+      onClick={to ? () => navigate.push(to) : onClick}
     >
       {children}
     </StyledButton>
   );
-};
+}
 
 Button.propTypes = {
   onClick: PropTypes.func,

@@ -42,7 +42,7 @@ const StyledBlockQuote = styled(motion.blockquote)`
 `;
 
 // TODO: (later) reveal on scroll (fixed under other content?)
-const BlockQuote = ({ cite, quote, bgColor, bgImageUrl, limitMaxWidth }) => {
+function BlockQuote({ cite, quote, bgColor, bgImageUrl, limitMaxWidth }) {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
@@ -94,7 +94,7 @@ const BlockQuote = ({ cite, quote, bgColor, bgImageUrl, limitMaxWidth }) => {
   ) : (
     renderBlockQuote()
   );
-};
+}
 
 BlockQuote.propTypes = {
   cite: PropTypes.string,

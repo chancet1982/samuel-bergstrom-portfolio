@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, { useContext } from "react";
+import { useContext } from "react";
 import { ElementColorContext } from "../Context/ElementColorContext";
 import { SectionColorContext } from "../Context/SectionColorContext";
 import { ViewColorContext } from "../Context/ViewColorContext";

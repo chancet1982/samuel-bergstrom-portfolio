@@ -3,7 +3,7 @@ import View from "../View";
 import { VIEW_CASES } from "../../data/VIEW_CASES";
 import SectionsRenderer from "../SectionsRenderer";
 
-const ViewCases = () => {
+function ViewCases() {
   const sectionsData = VIEW_CASES;
 
   return (
@@ -11,6 +11,6 @@ const ViewCases = () => {
       <SectionsRenderer sections={sectionsData} />
     </View>
   );
-};
+}
 
 export default ViewCases;

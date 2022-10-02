@@ -52,23 +52,27 @@ const StyledTimelineItemEvents = styled.div`
   }
 `;
 
-const TimelineItemYear = ({ children }) => (
-  <StyledTimelineItemYear>
-    <Span xxl>
-      <strong>{children}</strong>
-    </Span>
-  </StyledTimelineItemYear>
-);
+function TimelineItemYear({ children }) {
+  return (
+    <StyledTimelineItemYear>
+      <Span xxl>
+        <strong>{children}</strong>
+      </Span>
+    </StyledTimelineItemYear>
+  );
+}
 
 TimelineItemYear.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-const TimelineItemEvent = ({ title, children }) => (
-  <TitleAndText h={5} title={title}>
-    <Paragraph>{children}</Paragraph>
-  </TitleAndText>
-);
+function TimelineItemEvent({ title, children }) {
+  return (
+    <TitleAndText h={5} title={title}>
+      <Paragraph>{children}</Paragraph>
+    </TitleAndText>
+  );
+}
 
 TimelineItemEvent.propTypes = {
   title: PropTypes.string.isRequired,
@@ -95,20 +99,22 @@ const StyledTimelineItem = styled.dt`
   }
 `;
 
-const TimelineItem = ({ year, events }) => (
-  <StyledTimelineItem>
-    <TimelineItemYear>{year}</TimelineItemYear>
-    <StyledTimelineItemEvents>
-      {events &&
-        events.length &&
-        events.map(({ title, content }) => (
-          <TimelineItemEvent key={title} title={title}>
-            {content}
-          </TimelineItemEvent>
-        ))}
-    </StyledTimelineItemEvents>
-  </StyledTimelineItem>
-);
+function TimelineItem({ year, events }) {
+  return (
+    <StyledTimelineItem>
+      <TimelineItemYear>{year}</TimelineItemYear>
+      <StyledTimelineItemEvents>
+        {events &&
+          events.length &&
+          events.map(({ title, content }) => (
+            <TimelineItemEvent key={title} title={title}>
+              {content}
+            </TimelineItemEvent>
+          ))}
+      </StyledTimelineItemEvents>
+    </StyledTimelineItem>
+  );
+}
 
 TimelineItem.propTypes = {
   year: PropTypes.string.isRequired,
@@ -121,7 +127,7 @@ TimelineItem.propTypes = {
 };
 
 /* TODO: Collapse timeline based on number of items */
-const Timeline = ({ items }) => {
+function Timeline({ items }) {
   return (
     <StyledTimeline alternate>
       {items.map(({ year, events }) => (
@@ -129,7 +135,7 @@ const Timeline = ({ items }) => {
       ))}
     </StyledTimeline>
   );
-};
+}
 
 Timeline.propTypes = {
   items: PropTypes.arrayOf(

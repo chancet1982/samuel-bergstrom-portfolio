@@ -43,7 +43,7 @@ const StyledAnchorLink = styled.a`
 `;
 
 // TODO: fix link "TO" attribute
-const Link = ({ small, large, huge, children, to, href }) => {
+function Link({ small, large, huge, children, to, href }) {
   const light = useBgColor();
 
   const mapSizeToNumber = () => {
@@ -69,7 +69,7 @@ const Link = ({ small, large, huge, children, to, href }) => {
       {children}
     </StyledAnchorLink>
   );
-};
+}
 
 Link.propTypes = {
   small: PropTypes.bool,

@@ -3,7 +3,7 @@ import React, { useEffect, useContext } from "react";
 import styled from "styled-components";
 import {
   motion,
-  useViewportScroll,
+  useScroll,
   useTransform,
   /* useSpring, */
 } from "framer-motion";
@@ -147,15 +147,15 @@ const StyledClientsPreview = styled(motion.div)`
   flex-direction: row;
 `;
 
-const LandingPageCover = ({
+function LandingPageCover({
   overline,
   title,
   text,
 
   imageUrl,
   bgColor,
-}) => {
-  const { scrollY } = useViewportScroll();
+}) {
+  const { scrollY } = useScroll();
   const { height } = useWindowSize();
   const coverHeight = (height / 100) * 92;
   const imageOffset = (height / 100) * 56; // -56vh
@@ -280,7 +280,7 @@ const LandingPageCover = ({
       </StyledCoverBottom>
     </StyledCover>
   );
-};
+}
 
 LandingPageCover.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),

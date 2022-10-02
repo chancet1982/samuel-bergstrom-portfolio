@@ -25,7 +25,7 @@ import ContactDetails from "./Section_Elements/ContactDetails";
 import Insights from "./Section_Elements/Insights";
 import SectionVideo from "./Section_Elements/SectionVideo";
 
-const SectionElementsRenderer = ({ elementKey, data, template }) => {
+function SectionElementsRenderer({ elementKey, data, template }) {
   if (!template) {
     return null;
   }
@@ -224,7 +224,7 @@ const SectionElementsRenderer = ({ elementKey, data, template }) => {
     default:
       return null;
   }
-};
+}
 
 SectionElementsRenderer.propTypes = {
   elementKey: PropTypes.string.isRequired,

@@ -24,7 +24,7 @@ const StyledCaption = styled(motion.figcaption)`
   font-style: italic;
 `;
 
-const ImageWithCaption = ({
+function ImageWithCaption({
   imageUrl,
   caption,
   bgColor,
@@ -34,7 +34,7 @@ const ImageWithCaption = ({
   disableAnimations,
   isPadded,
   gridArea,
-}) => {
+}) {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
@@ -75,7 +75,7 @@ const ImageWithCaption = ({
       )}
     </StyledImageWithCaption>
   );
-};
+}
 
 ImageWithCaption.propTypes = {
   imageUrl: PropTypes.string.isRequired,

@@ -26,7 +26,7 @@ const StyledSpan = styled.span`
   }
 `;
 
-const Span = ({ small, large, huge, xxl, children, light, highContrast }) => {
+function Span({ small, large, huge, xxl, children, light, highContrast }) {
   const lightText = useBgColor() || light;
   const mapSizeToNumber = () => {
     if (small) return 1;
@@ -51,7 +51,7 @@ const Span = ({ small, large, huge, xxl, children, light, highContrast }) => {
       {children}
     </StyledSpan>
   );
-};
+}
 
 Span.propTypes = {
   small: PropTypes.bool,

@@ -30,7 +30,7 @@ const StyledClients = styled(motion.div)`
   }
 `;
 
-const Clients = () => {
+function Clients() {
   const renderClients = CLIENTS.map((item) => (
     <Client
       key={uuid()}
@@ -53,6 +53,6 @@ const Clients = () => {
       <div>{renderClients}</div>
     </StyledClients>
   );
-};
+}
 
 export default Clients;

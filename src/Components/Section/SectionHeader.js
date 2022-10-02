@@ -29,7 +29,7 @@ const StyledSectionHeader = styled.header`
   }
 `;
 
-const SectionHeader = ({ children }) => {
+function SectionHeader({ children }) {
   const light = useBgColor();
 
   return (
@@ -37,7 +37,7 @@ const SectionHeader = ({ children }) => {
       <Title h={5}>{children}</Title>
     </StyledSectionHeader>
   );
-};
+}
 
 SectionHeader.propTypes = {
   children: PropTypes.node,

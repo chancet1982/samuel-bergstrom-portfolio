@@ -4,7 +4,7 @@ import { VIEW_CONTACT } from "../../data/VIEW_CONTACT";
 import SectionsRenderer from "../SectionsRenderer";
 
 // TODO: Fix overflow
-const ViewContact = () => {
+function ViewContact() {
   const sectionsData = VIEW_CONTACT;
 
   return (
@@ -12,6 +12,6 @@ const ViewContact = () => {
       <SectionsRenderer sections={sectionsData} />
     </View>
   );
-};
+}
 
 export default ViewContact;

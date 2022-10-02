@@ -1,6 +1,9 @@
+/* eslint-disable react/jsx-no-constructed-context-values */
+// github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-constructed-context-values.md
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
+/* TODO: Something something with useMemo */
 const initialContext = [
   false,
   () => {
@@ -12,7 +15,7 @@ const initialContext = [
 
 export const ElementColorContext = React.createContext(initialContext);
 
-const ElementColorContextProvider = (props) => {
+function ElementColorContextProvider(props) {
   const { children } = props;
   const [light, setLight] = useState(false);
 
@@ -21,7 +24,7 @@ const ElementColorContextProvider = (props) => {
       {children}
     </ElementColorContext.Provider>
   );
-};
+}
 
 ElementColorContextProvider.propTypes = {
   children: PropTypes.node,

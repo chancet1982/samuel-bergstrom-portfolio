@@ -29,7 +29,7 @@ const StyledTextarea = styled.textarea`
   }
 `;
 
-const Textarea = ({ name, rows, columns, required, small, large, huge }) => {
+function Textarea({ name, rows, columns, required, small, large, huge }) {
   const handleChange = (event) => {
     event.target.checkValidity();
   };
@@ -46,7 +46,7 @@ const Textarea = ({ name, rows, columns, required, small, large, huge }) => {
       huge={huge}
     />
   );
-};
+}
 
 Textarea.propTypes = {
   name: PropTypes.string.isRequired,

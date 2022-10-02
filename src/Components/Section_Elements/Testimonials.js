@@ -19,7 +19,7 @@ const StyledTestimonials = styled(motion.div)`
   margin: 0 auto;
 `;
 
-const Testimonials = ({ title, text }) => {
+function Testimonials({ title, text }) {
   const { width } = useWindowSize();
   const isMobile = width < breakpoints.desktop;
 
@@ -43,7 +43,7 @@ const Testimonials = ({ title, text }) => {
           ))}
     </StyledTestimonials>
   );
-};
+}
 
 Testimonials.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),

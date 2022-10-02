@@ -46,14 +46,7 @@ const StyledInsightsContent = styled(motion.div)`
   }
 `;
 
-const Insights = ({
-  title,
-  h,
-  items,
-  bgColor,
-  isTwoColumnsOnDesktop,
-  text,
-}) => {
+function Insights({ title, h, items, bgColor, isTwoColumnsOnDesktop, text }) {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
@@ -104,7 +97,7 @@ const Insights = ({
       </TitleAndText>
     </StyledInsights>
   );
-};
+}
 
 Insights.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),

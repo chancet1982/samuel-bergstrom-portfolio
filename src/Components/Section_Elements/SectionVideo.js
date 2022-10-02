@@ -8,7 +8,7 @@ import Video from "../Shared/Video";
 
 const StyledSectionVideo = styled(motion.div)``;
 
-const SectionVideo = ({
+function SectionVideo({
   width,
   height,
   controls,
@@ -20,7 +20,7 @@ const SectionVideo = ({
   source,
   captions,
   size,
-}) => {
+}) {
   return (
     <StyledSectionVideo>
       <Video
@@ -37,7 +37,7 @@ const SectionVideo = ({
       />
     </StyledSectionVideo>
   );
-};
+}
 
 SectionVideo.propTypes = {
   controls: PropTypes.bool,

@@ -18,13 +18,13 @@ const StyledTag = styled.div`
   ${shadows.soft}
 `;
 
-const Tag = () => {
+function Tag() {
   return (
     <StyledTag>
       <Span>Coming Soon!</Span>
     </StyledTag>
   );
-};
+}
 
 Tag.propTypes = {};
 

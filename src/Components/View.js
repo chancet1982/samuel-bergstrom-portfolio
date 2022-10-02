@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -15,7 +16,7 @@ const StyledView = styled(motion.main)`
     }}
 `;
 
-const View = ({ children, isPadded, transition, bgColor }) => {
+function View({ children, isPadded, transition, bgColor }) {
   const [, setLight] = useContext(ViewColorContext);
   const [screenTransition, setScreenTransition] = useState(transition);
   const isShort = sessionStorage.getItem("isShortLS");
@@ -37,16 +38,6 @@ const View = ({ children, isPadded, transition, bgColor }) => {
     removeTransition();
   };
 
-  const ScreenTransition = () => {
-    return isShort ? (
-      <ShortScreenTransition animationFinished={() => removeTransition()} />
-    ) : (
-      <LongScreenTransition
-        animationFinished={() => switchToShortScreenTransition()}
-      />
-    );
-  };
-
   const variants = {
     viewInitial: { opacity: 0 },
     viewAnimate: { opacity: 1 },
@@ -54,7 +45,13 @@ const View = ({ children, isPadded, transition, bgColor }) => {
   };
 
   return screenTransition ? (
-    <ScreenTransition />
+    isShort ? (
+      <ShortScreenTransition animationFinished={() => removeTransition()} />
+    ) : (
+      <LongScreenTransition
+        animationFinished={() => switchToShortScreenTransition()}
+      />
+    )
   ) : (
     <StyledView
       isPadded={isPadded}
@@ -67,7 +64,7 @@ const View = ({ children, isPadded, transition, bgColor }) => {
       {children}
     </StyledView>
   );
-};
+}
 
 View.propTypes = {
   children: PropTypes.node,

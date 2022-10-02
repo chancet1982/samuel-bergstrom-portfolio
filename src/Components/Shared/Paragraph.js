@@ -20,7 +20,7 @@ const StyledParagraph = styled.p`
   }
 `;
 
-const Paragraph = ({ small, large, huge, xxl, children }) => {
+function Paragraph({ small, large, huge, xxl, children }) {
   const light = useBgColor();
 
   const mapSizeToNumber = () => {
@@ -44,7 +44,7 @@ const Paragraph = ({ small, large, huge, xxl, children }) => {
       {children}
     </StyledParagraph>
   );
-};
+}
 
 Paragraph.propTypes = {
   small: PropTypes.bool,

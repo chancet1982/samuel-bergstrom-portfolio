@@ -22,7 +22,7 @@ const StyledAuthorImage = styled(motion.img)`
 
 const StyledAuthorName = styled(motion.figcaption)``;
 
-const TestimonialAuthor = ({ authorName, authorTitle, authorImageUrl }) => {
+function TestimonialAuthor({ authorName, authorTitle, authorImageUrl }) {
   return (
     <StyledTestimonialAuthor>
       <StyledAuthorImage src={authorImageUrl} alt={authorTitle} />
@@ -32,7 +32,7 @@ const TestimonialAuthor = ({ authorName, authorTitle, authorImageUrl }) => {
       </StyledAuthorName>
     </StyledTestimonialAuthor>
   );
-};
+}
 
 TestimonialAuthor.propTypes = {
   authorName: PropTypes.string.isRequired,

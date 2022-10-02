@@ -18,7 +18,7 @@ const StyledBlind = styled(motion.div)`
   background-color: ${({ bgColor }) => bgColor || colors.offwhite};
 `;
 
-const Blinds = ({ up, bgColor, amountOfBlinds, delayPerBlind }) => {
+function Blinds({ up, bgColor, amountOfBlinds, delayPerBlind }) {
   const blindsVariants = {
     initial: {},
     animate: {
@@ -76,7 +76,7 @@ const Blinds = ({ up, bgColor, amountOfBlinds, delayPerBlind }) => {
       ))}
     </StyledBlinds>
   );
-};
+}
 
 Blinds.propTypes = {
   up: PropTypes.bool,

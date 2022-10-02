@@ -6,7 +6,7 @@ import styled from "styled-components";
 
 const StyledVideo = styled.video``;
 
-const Video = ({
+function Video({
   width,
   height,
   controls,
@@ -18,7 +18,7 @@ const Video = ({
   source,
   captions,
   size,
-}) => {
+}) {
   return (
     <StyledVideo
       poster={poster}
@@ -36,7 +36,7 @@ const Video = ({
       <track kind="captions" {...captions} />
     </StyledVideo>
   );
-};
+}
 
 Video.propTypes = {
   controls: PropTypes.bool,

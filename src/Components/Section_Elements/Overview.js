@@ -70,7 +70,7 @@ const StyledOverviewItems = styled.div`
   }
 `;
 
-const Overview = ({ text, toolsAndMethods, bgColor }) => {
+function Overview({ text, toolsAndMethods, bgColor }) {
   return (
     <StyledOverviewWrapper>
       <StyledOverviewText bgColor={bgColor}>
@@ -85,7 +85,7 @@ const Overview = ({ text, toolsAndMethods, bgColor }) => {
       </StyledOverviewItems>
     </StyledOverviewWrapper>
   );
-};
+}
 
 Overview.propTypes = {
   text: PropTypes.node,

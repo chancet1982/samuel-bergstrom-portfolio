@@ -71,13 +71,13 @@ const StyledListContainer = styled(motion.div)`
   }
 `;
 
-const ListOfImagesWithTitleAndText = ({
+function ListOfImagesWithTitleAndText({
   listTitle,
   listText,
   items,
   bgColor,
   limitMaxWidth,
-}) => {
+}) {
   const [, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
@@ -118,7 +118,7 @@ const ListOfImagesWithTitleAndText = ({
   ) : (
     renderListOfImagesWithTitleAndText()
   );
-};
+}
 
 ListOfImagesWithTitleAndText.propTypes = {
   listTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),

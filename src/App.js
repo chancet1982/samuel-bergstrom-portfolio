@@ -1,12 +1,12 @@
 import React, { Suspense, lazy } from "react";
-import { Switch, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { AnimatePresence } from "framer-motion";
 import AppContextProvider from "./Context/AppContext";
 import ViewLoading from "./Components/Views/ViewLoading";
 import Navigation from "./Components/Navigation";
 import ErrorBoundary from "./Components/ErrorBoundary";
-import ScrollToTop from "./utils/ScrollToTop";
+
 import theme from "./theme/theme";
 import ViewColorContextProvider from "./Context/ViewColorContext";
 
@@ -28,6 +28,7 @@ const ViewPageNotFound = lazy(() =>
   import("./Components/Views/ViewPageNotFound")
 );
 
+// TODO: Fix content not rendering (most likely react-router upgrate)
 // TODO: (later) animatePrecense not having an effect AFAIK
 function App() {
   const location = useLocation();
@@ -38,18 +39,17 @@ function App() {
           <ViewColorContextProvider>
             <Navigation />
             <Suspense fallback={<ViewLoading />}>
-              <ScrollToTop />
-              <AnimatePresence exitBeforeEnter>
-                <Switch location={location} key={location.pathname}>
-                  <Route exact path="/" component={ViewLandingPage} />
-                  <Route exact path="/cases" component={ViewCases} />
-                  <Route exact path="/cases/:id" component={ViewCase} />
-                  <Route exact path="/about" component={ViewAboutMe} />
-                  <Route exact path="/contact" component={ViewContact} />
-                  <Route exact path="/test" component={ViewTest} />
-                  <Route exact path="/loading" component={ViewLoading} />
-                  <Route exact path="*" component={ViewPageNotFound} />
-                </Switch>
+              <AnimatePresence mode="wait">
+                <Routes location={location} key={location.pathname}>
+                  <Route path="/" element={<ViewLandingPage />} />
+                  <Route path="/cases" element={<ViewCases />} />
+                  <Route path="/cases/:id" element={<ViewCase />} />
+                  <Route path="/about" element={<ViewAboutMe />} />
+                  <Route path="/contact" element={<ViewContact />} />
+                  <Route path="/test" element={<ViewTest />} />
+                  <Route path="/loading" element={<ViewLoading />} />
+                  <Route path="*" element={<ViewPageNotFound />} />
+                </Routes>
               </AnimatePresence>
             </Suspense>
           </ViewColorContextProvider>

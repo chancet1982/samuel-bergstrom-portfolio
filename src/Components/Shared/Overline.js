@@ -11,7 +11,7 @@ const StyledOverline = styled(motion.div)`
   position: relative;
 `;
 
-const Overline = ({ children, sectionOverline, disableAnimations }) => {
+function Overline({ children, sectionOverline, disableAnimations }) {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
@@ -50,7 +50,7 @@ const Overline = ({ children, sectionOverline, disableAnimations }) => {
       <Span small>{children}</Span>
     </StyledOverline>
   );
-};
+}
 
 Overline.propTypes = {
   children: PropTypes.node,

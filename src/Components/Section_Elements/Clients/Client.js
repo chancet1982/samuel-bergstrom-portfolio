@@ -5,7 +5,7 @@ import Image from "../../Shared/Image";
 
 const StyledClient = styled.div``;
 
-const Client = ({ imageUrl, imageAlt }) => {
+function Client({ imageUrl, imageAlt }) {
   return (
     <StyledClient>
       <Image
@@ -15,7 +15,7 @@ const Client = ({ imageUrl, imageAlt }) => {
       />
     </StyledClient>
   );
-};
+}
 
 Client.propTypes = {
   imageUrl: PropTypes.string,

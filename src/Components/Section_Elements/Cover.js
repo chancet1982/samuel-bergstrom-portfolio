@@ -73,14 +73,7 @@ const StyledCaption = styled(motion.div)`
 `;
 
 // TODO: parallax effect on the cover in the landing page  needs some fine-tuning
-const Cover = ({
-  overline,
-  title,
-  text,
-  imageUrl,
-  mobileImageUrl,
-  bgColor,
-}) => {
+function Cover({ overline, title, text, imageUrl, mobileImageUrl, bgColor }) {
   const coverVariants = {
     initial: {
       opacity: 0,
@@ -146,7 +139,7 @@ const Cover = ({
       </StyledCaption>
     </StyledCover>
   );
-};
+}
 
 Cover.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),

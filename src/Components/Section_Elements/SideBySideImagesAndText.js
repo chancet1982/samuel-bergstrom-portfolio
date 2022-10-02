@@ -39,7 +39,7 @@ const StyledSideBySideImagesAndText = styled(motion.div)`
   }
 `;
 
-const SideBySideImagesAndText = ({ items }) => {
+function SideBySideImagesAndText({ items }) {
   return (
     <StyledSideBySideImagesAndText>
       {items.map(({ imageUrl, imageAlt, title, text, bgColor }) => (
@@ -55,7 +55,7 @@ const SideBySideImagesAndText = ({ items }) => {
       ))}
     </StyledSideBySideImagesAndText>
   );
-};
+}
 
 SideBySideImagesAndText.propTypes = {
   items: PropTypes.arrayOf(

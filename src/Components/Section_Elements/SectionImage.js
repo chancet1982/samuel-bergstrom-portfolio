@@ -12,7 +12,7 @@ const StyledSectionImage = styled.div`
     }}
 `;
 
-const SectionImage = ({ imageUrl, imageAlt, caption, limitMaxWidth }) => {
+function SectionImage({ imageUrl, imageAlt, caption, limitMaxWidth }) {
   return (
     <StyledSectionImage limitMaxWidth={limitMaxWidth}>
       <ImageWithCaption
@@ -22,7 +22,7 @@ const SectionImage = ({ imageUrl, imageAlt, caption, limitMaxWidth }) => {
       />
     </StyledSectionImage>
   );
-};
+}
 
 SectionImage.propTypes = {
   imageUrl: PropTypes.string.isRequired,

@@ -2,7 +2,6 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { v4 as uuid } from "uuid";
 import PropTypes from "prop-types";
 import CaseThumbnail2 from "../Shared/CaseThumbnail2";
 import { CASES } from "../../data/dictionaries/CASES";
@@ -10,7 +9,7 @@ import breakpoints from "../../theme/breakpoints";
 import sizes from "../../theme/sizes";
 import padding from "../../theme/padding";
 import { CASE_STATUS } from "../../data/dictionaries/CASE_STATUS";
-import ElementColorContextProvider from "../../Context/ElementColorContext";
+
 import CenteredTitleAndText from "../Shared/CenteredTitleAndText";
 import Button from "../Shared/Button";
 
@@ -23,7 +22,7 @@ const StyledCases = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   column-gap: ${padding.vertical.eighth};
-  row-gap: ${padding.vertical.eighth};
+  row-gap: ${padding.vertical.quadruple};
   padding-bottom: ${({ preview }) =>
     preview ? padding.vertical.single : padding.vertical.quadruple};
 
@@ -33,7 +32,7 @@ const StyledCases = styled(motion.div)`
   }
 `;
 
-const SectionCases = ({ title, text, preview, h }) => {
+function SectionCases({ title, text, preview, h }) {
   return (
     <>
       <CenteredTitleAndText title={title} text={text} h={h} isPadded />
@@ -42,17 +41,14 @@ const SectionCases = ({ title, text, preview, h }) => {
           preview
             ? caseStatus === CASE_STATUS.FEATURED
             : caseStatus !== CASE_STATUS.DRAFT
-        ).map(({ thumbnail, caseStatus, caseUrl }) => {
-          return (
-            <ElementColorContextProvider key={uuid()}>
-              <CaseThumbnail2
-                data={thumbnail}
-                caseUrl={caseUrl}
-                status={caseStatus}
-              />
-            </ElementColorContextProvider>
-          );
-        })}
+        ).map(({ thumbnail, caseStatus, caseUrl }) => (
+          <CaseThumbnail2
+            key={caseUrl}
+            data={thumbnail}
+            caseUrl={caseUrl}
+            status={caseStatus}
+          />
+        ))}
       </StyledCases>
       {preview && (
         <StyledPageLink>
@@ -63,7 +59,7 @@ const SectionCases = ({ title, text, preview, h }) => {
       )}
     </>
   );
-};
+}
 
 SectionCases.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),

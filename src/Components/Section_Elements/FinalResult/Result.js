@@ -9,7 +9,7 @@ const StyledResult = styled.div`
   margin-bottom: ${padding.vertical.half};
 `;
 
-const Result = ({ value, description }) => {
+function Result({ value, description }) {
   return (
     <StyledResult>
       <Title h={3} withMargin={false}>
@@ -18,7 +18,7 @@ const Result = ({ value, description }) => {
       <Span>{description}</Span>
     </StyledResult>
   );
-};
+}
 
 Result.propTypes = {
   value: PropTypes.string.isRequired,

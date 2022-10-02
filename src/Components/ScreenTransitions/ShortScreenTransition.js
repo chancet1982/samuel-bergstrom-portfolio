@@ -17,7 +17,7 @@ const StyledScreenTransition = styled(motion.div)`
   z-index: 1;
 `;
 
-const ShortScreenTransition = ({ animationFinished }) => {
+function ShortScreenTransition({ animationFinished }) {
   const screenTransitionVariants = {
     viewInitial: {
       opacity: 1,
@@ -48,7 +48,7 @@ const ShortScreenTransition = ({ animationFinished }) => {
       <Circle bgColor={colors.primaryShade} />
     </StyledScreenTransition>
   );
-};
+}
 
 ShortScreenTransition.propTypes = {
   animationFinished: PropTypes.func.isRequired,

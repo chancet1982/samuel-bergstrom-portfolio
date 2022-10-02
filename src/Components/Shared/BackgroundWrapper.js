@@ -32,13 +32,13 @@ ${({ limitMaxWidth }) =>
     }}
 `;
 
-const BackgroundWrapper = ({
+function BackgroundWrapper({
   bgColor,
   bgImageUrl,
   limitMaxWidth,
   children,
   isPadded,
-}) => {
+}) {
   return bgColor || bgImageUrl ? (
     <StyledBackground
       bgColor={bgColor}
@@ -49,9 +49,9 @@ const BackgroundWrapper = ({
       {children}
     </StyledBackground>
   ) : (
-    <>{children}</>
+    { children }
   );
-};
+}
 
 BackgroundWrapper.propTypes = {
   bgColor: PropTypes.string,

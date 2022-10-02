@@ -29,7 +29,7 @@ const StyledInput = styled.input`
 `;
 
 // TODO: (later) add input validation
-const Input = ({ type, name, required, small, large, huge }) => {
+function Input({ type, name, required, small, large, huge }) {
   const handleChange = (event) => {
     event.target.checkValidity();
   };
@@ -45,7 +45,7 @@ const Input = ({ type, name, required, small, large, huge }) => {
       huge={huge}
     />
   );
-};
+}
 
 Input.propTypes = {
   type: PropTypes.oneOf([

@@ -18,12 +18,12 @@ const StyledFooter = styled.footer`
   }
 `;
 // TODO consider moving to section renderer
-const SectionFooter = () => {
+function SectionFooter() {
   return (
     <StyledFooter>
       <Span small>2021, Samuel Bergström</Span>
     </StyledFooter>
   );
-};
+}
 
 export default SectionFooter;

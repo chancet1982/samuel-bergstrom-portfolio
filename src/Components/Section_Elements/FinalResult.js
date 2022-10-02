@@ -64,14 +64,14 @@ const StyledResultCaption = styled(motion.div)`
 `;
 
 // TODO: fix results display on mobile.
-const FinalResult = ({
+function FinalResult({
   imageUrl,
   mobileImageUrl,
   bgColor,
   title,
   text,
   results,
-}) => {
+}) {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
@@ -136,7 +136,7 @@ const FinalResult = ({
       </BackgroundWrapper>
     </StyledFinalResult>
   );
-};
+}
 
 FinalResult.propTypes = {
   imageUrl: PropTypes.string,

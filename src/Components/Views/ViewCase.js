@@ -4,7 +4,7 @@ import View from "../View";
 import { CASES } from "../../data/dictionaries/CASES";
 import SectionsRenderer from "../SectionsRenderer";
 
-const ViewCase = () => {
+function ViewCase() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -20,6 +20,6 @@ const ViewCase = () => {
       <SectionsRenderer sections={caseDetails} />
     </View>
   );
-};
+}
 
 export default ViewCase;

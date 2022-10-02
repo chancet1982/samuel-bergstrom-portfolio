@@ -21,14 +21,14 @@ const StyledTitleAndText = styled(motion.div)`
     }}
 `;
 
-const TitleAndText = ({
+function TitleAndText({
   title,
   h,
   children,
   disableAnimations,
   sticky,
   isPadded,
-}) => {
+}) {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
@@ -56,7 +56,7 @@ const TitleAndText = ({
       {children}
     </StyledTitleAndText>
   );
-};
+}
 
 TitleAndText.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),

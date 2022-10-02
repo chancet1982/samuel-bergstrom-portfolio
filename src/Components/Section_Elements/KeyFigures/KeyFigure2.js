@@ -16,7 +16,7 @@ const StyledKeyFigure = styled(motion.div)`
   padding: ${padding.vertical.double} ${padding.horizontal.double};
 `;
 
-const KeyFigure2 = ({ value, description }) => {
+function KeyFigure2({ value, description }) {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
@@ -44,7 +44,7 @@ const KeyFigure2 = ({ value, description }) => {
       <Span>{description}</Span>
     </StyledKeyFigure>
   );
-};
+}
 
 KeyFigure2.propTypes = {
   value: PropTypes.string.isRequired,

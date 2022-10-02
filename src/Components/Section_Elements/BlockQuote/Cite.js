@@ -20,7 +20,7 @@ const StyledCite = styled.cite`
   }
 `;
 
-const Cite = ({ children }) => {
+function Cite({ children }) {
   const light = useBgColor();
 
   return (
@@ -30,7 +30,7 @@ const Cite = ({ children }) => {
       </Span>
     </StyledCite>
   );
-};
+}
 
 Cite.propTypes = {
   children: PropTypes.node.isRequired,

@@ -36,7 +36,7 @@ const StyledKeyFigures = styled(motion.div)`
   }
 `;
 
-const KeyFigures = ({ items, bgColor, bgImageUrl, limitMaxWidth }) => {
+function KeyFigures({ items, bgColor, bgImageUrl, limitMaxWidth }) {
   const [, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
@@ -69,7 +69,7 @@ const KeyFigures = ({ items, bgColor, bgImageUrl, limitMaxWidth }) => {
   ) : (
     renderKeyFigures()
   );
-};
+}
 
 KeyFigures.propTypes = {
   items: PropTypes.arrayOf(

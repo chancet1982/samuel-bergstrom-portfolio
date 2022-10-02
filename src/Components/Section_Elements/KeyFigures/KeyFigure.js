@@ -43,7 +43,7 @@ const StyledCircle = styled(motion.div)`
   }
 `;
 
-const KeyFigure = ({ value, description }) => {
+function KeyFigure({ value, description }) {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
@@ -71,7 +71,7 @@ const KeyFigure = ({ value, description }) => {
       <Paragraph>{description}</Paragraph>
     </StyledKeyFigure>
   );
-};
+}
 
 KeyFigure.propTypes = {
   value: PropTypes.string.isRequired,

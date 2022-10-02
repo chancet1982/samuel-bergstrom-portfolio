@@ -16,7 +16,7 @@ const StyledQuote = styled.q`
   }
 `;
 
-const Quote = ({ children }) => {
+function Quote({ children }) {
   const light = useBgColor();
 
   return (
@@ -26,7 +26,7 @@ const Quote = ({ children }) => {
       </Span>
     </StyledQuote>
   );
-};
+}
 
 Quote.propTypes = {
   children: PropTypes.node.isRequired,

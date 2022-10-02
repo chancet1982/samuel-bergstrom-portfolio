@@ -5,7 +5,7 @@ import FullScreenCenteredFlexContainer from "../Shared/FullScreenCenteredFlexCon
 import { ReactComponent as Image } from "../../assets/404(2).svg";
 import Title from "../Shared/Title";
 
-const ViewPageNotFound = () => {
+function ViewPageNotFound() {
   return (
     <View>
       <FullScreenCenteredFlexContainer>
@@ -15,6 +15,6 @@ const ViewPageNotFound = () => {
       </FullScreenCenteredFlexContainer>
     </View>
   );
-};
+}
 
 export default ViewPageNotFound;

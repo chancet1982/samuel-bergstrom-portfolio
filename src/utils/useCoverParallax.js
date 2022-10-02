@@ -2,10 +2,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { useWindowSize } from "react-use";
-import { useViewportScroll, useTransform } from "framer-motion";
+import { useScroll, useTransform } from "framer-motion";
 
 const useCoverParallax = ({ amount }) => {
-  const { scrollY } = useViewportScroll();
+  const { scrollY } = useScroll();
   const { height } = useWindowSize();
   const coverHeight = (height / 100) * 92;
   const scrollYrange = [0, coverHeight];

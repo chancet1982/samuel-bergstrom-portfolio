@@ -11,7 +11,7 @@ const StyledDiv = styled.div`
 `;
 
 // TODO: (later) provide better styling for the success/error messages
-const ContactForm = () => {
+function ContactForm() {
   const [status, setStatus] = useState("");
 
   const submitForm = (ev) => {
@@ -52,6 +52,6 @@ const ContactForm = () => {
       {status === "ERROR" && <p>Ooops! There was an error.</p>}
     </form>
   );
-};
+}
 
 export default ContactForm;

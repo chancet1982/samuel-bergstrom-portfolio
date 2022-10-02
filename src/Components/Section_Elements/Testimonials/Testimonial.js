@@ -104,7 +104,7 @@ const StyledTestimonialContent = styled(motion.div)`
   background-color: ${colors.offwhite};
 `;
 
-const Testimonial = ({ children, author }) => {
+function Testimonial({ children, author }) {
   return (
     <StyledTestimonial>
       <TestimonialAuthor
@@ -115,7 +115,7 @@ const Testimonial = ({ children, author }) => {
       <StyledTestimonialContent>{children}</StyledTestimonialContent>
     </StyledTestimonial>
   );
-};
+}
 
 Testimonial.propTypes = {
   author: PropTypes.shape({

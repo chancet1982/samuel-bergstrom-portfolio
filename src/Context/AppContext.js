@@ -1,9 +1,11 @@
+/* eslint-disable react/jsx-no-constructed-context-values */
+// github.com/jsx-eslint/eslint-plugin-react/blob/master/docs/rules/jsx-no-constructed-context-values.md
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 export const AppContext = React.createContext({ content: "Samuel Bergström" });
 
-const AppContextProvider = (props) => {
+function AppContextProvider(props) {
   const { children } = props;
   const [content, setContent] = useState("Samuel Bergström");
 
@@ -12,7 +14,7 @@ const AppContextProvider = (props) => {
       {children}
     </AppContext.Provider>
   );
-};
+}
 
 AppContextProvider.propTypes = {
   children: PropTypes.node,

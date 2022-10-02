@@ -35,7 +35,7 @@ const StyledCasesList = styled(motion.div)`
   }
 `;
 
-const AdditionalCases = () => {
+function AdditionalCases() {
   const { id } = useParams();
   const currentCaseTitle = CASES[id].thumbnail.title;
 
@@ -57,24 +57,22 @@ const AdditionalCases = () => {
       </TitleAndText>
 
       <StyledCasesList>
-        {cases.map(({ thumbnail, caseUrl, caseStatus }, index) => {
-          return (
-            // eslint-disable-next-line react/no-array-index-key
-            <ElementContextProvider key={index}>
-              <CaseThumbnail
-                data={thumbnail}
-                caseUrl={caseUrl}
-                key={uuid()}
-                status={caseStatus}
-                inAdditionalCases
-              />
-            </ElementContextProvider>
-          );
-        })}
+        {cases.map(({ thumbnail, caseUrl, caseStatus }, index) => (
+          // eslint-disable-next-line react/no-array-index-key
+          <ElementContextProvider key={index}>
+            <CaseThumbnail
+              data={thumbnail}
+              caseUrl={caseUrl}
+              key={uuid()}
+              status={caseStatus}
+              inAdditionalCases
+            />
+          </ElementContextProvider>
+        ))}
       </StyledCasesList>
     </StyledAdditionalCases>
   );
-};
+}
 
 AdditionalCases.propTypes = {};
 

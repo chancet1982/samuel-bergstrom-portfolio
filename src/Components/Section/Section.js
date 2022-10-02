@@ -34,7 +34,7 @@ const StyledSection = styled(motion.section)`
     }}
 `;
 
-const Section = ({ header, children, bgColor, isSticky, isPadded }) => {
+function Section({ header, children, bgColor, isSticky, isPadded }) {
   const [, setLight] = useContext(SectionColorContext);
   const { width } = useWindowSize();
   const isMobile =
@@ -59,7 +59,7 @@ const Section = ({ header, children, bgColor, isSticky, isPadded }) => {
       {children}
     </StyledSection>
   );
-};
+}
 
 Section.propTypes = {
   header: PropTypes.string,

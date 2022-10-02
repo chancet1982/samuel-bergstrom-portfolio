@@ -43,7 +43,7 @@ const StyledListItem = styled.li`
 `;
 
 // TODO: check what happened with the plan mode
-const List = ({ items, plain, columns }) => {
+function List({ items, plain, columns }) {
   return (
     <StyledList columns={columns}>
       {items.map((item) => (
@@ -53,7 +53,7 @@ const List = ({ items, plain, columns }) => {
       ))}
     </StyledList>
   );
-};
+}
 
 List.propTypes = {
   items: PropTypes.arrayOf(PropTypes.node),

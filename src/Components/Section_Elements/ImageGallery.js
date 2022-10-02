@@ -20,7 +20,7 @@ const StyledImageGallery = styled.div`
   `};
 `;
 
-const ImageGallery = ({ images, template, limitMaxWidth }) => {
+function ImageGallery({ images, template, limitMaxWidth }) {
   return (
     <StyledImageGallery template={template} limitMaxWidth={limitMaxWidth}>
       {images.map(({ imageUrl, imageAlt, caption }, index) => (
@@ -35,7 +35,7 @@ const ImageGallery = ({ images, template, limitMaxWidth }) => {
       ))}
     </StyledImageGallery>
   );
-};
+}
 
 ImageGallery.propTypes = {
   images: PropTypes.arrayOf(

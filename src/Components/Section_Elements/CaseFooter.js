@@ -57,7 +57,7 @@ const StyledLinksMenu = styled.div`
   }
 `;
 
-const CaseFooter = () => {
+function CaseFooter() {
   return (
     <StyledCaseFooter>
       <TitleAndText h={3} title="Let's get in touch" isPadded>
@@ -76,7 +76,7 @@ const CaseFooter = () => {
       </StyledLinksMenu>
     </StyledCaseFooter>
   );
-};
+}
 
 CaseFooter.propTypes = {};
 
