@@ -30,20 +30,6 @@ const StyledCover = styled(motion.div)`
   position: relative;
   display: flex;
   overflow: hidden;
-
-  :before {
-    content: "";
-    clip-path: circle(52% at 0% 4%);
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    ${({ bgColor }) =>
-      bgColor && {
-        backgroundColor: bgColor,
-      }};
-  }
 `;
 
 const StyledCoverImage = styled(motion.img)`
@@ -136,8 +122,8 @@ const StyledCoverBottom = styled(motion.div)`
   right: 0;
   background: linear-gradient(
     0deg,
-    rgba(255, 255, 255, 1) 0%,
-    rgba(255, 255, 255, 0) 100%
+    rgba(244, 244, 244, 1) 0%,
+    rgba(244, 244, 244, 0) 100%
   );
 `;
 
