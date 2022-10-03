@@ -45,3 +45,7 @@ Use Contentful for content.
 server side rendering using Next.js (?)
 Add authentication
 Timeline -> Finish developing the timeline and add it to about me page.
+
+react-scroll-section
+react-lazyload
+react-typical
