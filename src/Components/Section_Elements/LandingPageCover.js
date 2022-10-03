@@ -77,13 +77,19 @@ const StyledCaption = styled(motion.div)`
   align-items: flex-start;
   box-sizing: border-box;
   padding-top: ${padding.vertical.double};
-  padding-left: ${padding.horizontal.quadruple};
-  padding-right: ${padding.horizontal.quadruple};
-  margin-left: ${padding.horizontal.double};
-  margin-right: ${padding.horizontal.double};
+  padding-left: calc(
+    ${padding.horizontal.quadruple} + ${padding.horizontal.double}
+  );
+  padding-right: calc(
+    ${padding.horizontal.quadruple} + ${padding.horizontal.double}
+  );
   z-index: 1;
   width: 100%;
-
+  background: linear-gradient(
+    72deg,
+    rgba(244, 244, 244, 1) 0%,
+    rgba(244, 244, 244, 0) 100%
+  );
   h1 {
     max-width: 15ch;
     font-weight: 900;
@@ -110,8 +116,12 @@ const StyledCaption = styled(motion.div)`
   @media (min-width: ${breakpoints.mobileLarge}px) {
     justify-content: center;
     padding-top: 0;
-    padding-left: ${padding.horizontal.double};
-    padding-right: ${padding.horizontal.double};
+    padding-left: calc(
+      ${padding.horizontal.double} + ${padding.horizontal.double}
+    );
+    padding-right: calc(
+      ${padding.horizontal.double} + ${padding.horizontal.double}
+    );
   }
 `;
 
@@ -125,6 +135,7 @@ const StyledCoverBottom = styled(motion.div)`
     rgba(244, 244, 244, 1) 0%,
     rgba(244, 244, 244, 0) 100%
   );
+  z-index: 1;
 `;
 
 /* TODO: make the clients overflow, start from the middle and react to mouse position on top of that hide client preview when scrolling down */
