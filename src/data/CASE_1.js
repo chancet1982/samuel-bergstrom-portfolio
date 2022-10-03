@@ -32,11 +32,9 @@ export const CASE_1 = {
             overline: "Cash Distribution",
             title: "Courier App redesign",
             text: (
-              <>
-                <Paragraph large>
-                  Redesign as an oppurtunity for change.
-                </Paragraph>
-              </>
+              <Paragraph large>
+                Redesign as an oppurtunity for change.
+              </Paragraph>
             ),
             imageUrl: "assets/case-1/cover-desktop.png",
             mobileImageUrl: "assets/case-1/cover-mobile.png",
@@ -88,19 +86,16 @@ export const CASE_1 = {
             title: <>The problem</>,
             h: 2,
             text: (
-              <>
-                <Paragraph>
-                  My client’s mission statement is: “Managing Cash in Society”,
-                  they do just that in more than 20 countries. Their couriers
-                  and service technicians take daily routes where they
-                  distributing, collecting, and servicing ATMs and small
-                  businesses. In order to do that couriers and service
-                  technicians use PDAs that are slow, and increasingly hard to
-                  service and replace. The new devices chosen to replace the old
-                  hardware were using a different platform, and that required a
-                  redesign of the old interface.
-                </Paragraph>
-              </>
+              <Paragraph>
+                My client’s mission statement is: “Managing Cash in Society”,
+                they do just that in more than 20 countries. Their couriers and
+                service technicians take daily routes where they distributing,
+                collecting, and servicing ATMs and small businesses. In order to
+                do that couriers and service technicians use PDAs that are slow,
+                and increasingly hard to service and replace. The new devices
+                chosen to replace the old hardware were using a different
+                platform, and that required a redesign of the old interface.
+              </Paragraph>
             ),
           },
         },
@@ -130,14 +125,12 @@ export const CASE_1 = {
             title: <>The goal:</>,
             h: 2,
             text: (
-              <>
-                <Paragraph>
-                  The goal was creating a solution that would be “fast and
-                  simple” to implement, “familiar” to the users, including all
-                  functionality, and addresses some of the known issues that
-                  exists with the old design.
-                </Paragraph>
-              </>
+              <Paragraph>
+                The goal was creating a solution that would be “fast and simple”
+                to implement, “familiar” to the users, including all
+                functionality, and addresses some of the known issues that
+                exists with the old design.
+              </Paragraph>
             ),
           },
         },
@@ -177,15 +170,13 @@ export const CASE_1 = {
             title: "Meeting couriers and ATM service technicians",
             h: 2,
             text: (
-              <>
-                <Paragraph>
-                  Once the existing app was mapped, and the scope defined, it
-                  was time to shift the focus and uncover problems that could be
-                  addressed during the redesign. For that, I conducted virtual
-                  group interviews with couriers, service technicians, and
-                  internal stakeholders.
-                </Paragraph>
-              </>
+              <Paragraph>
+                Once the existing app was mapped, and the scope defined, it was
+                time to shift the focus and uncover problems that could be
+                addressed during the redesign. For that, I conducted virtual
+                group interviews with couriers, service technicians, and
+                internal stakeholders.
+              </Paragraph>
             ),
           },
         },
@@ -394,16 +385,13 @@ export const CASE_1 = {
               </>
             ),
             text: (
-              <>
-                <Paragraph>
-                  Validation goals were set in collaboration with the client.
-                  These goals were expanded into scenarios that were later
-                  covered by the prototype and covered via remote usability
-                  testing. This prototype was continuously expanded to
-                  incorporate all features and changes based on the feedback and
-                  test results.
-                </Paragraph>
-              </>
+              <Paragraph>
+                Validation goals were set in collaboration with the client.
+                These goals were expanded into scenarios that were later covered
+                by the prototype and covered via remote usability testing. This
+                prototype was continuously expanded to incorporate all features
+                and changes based on the feedback and test results.
+              </Paragraph>
             ),
           },
         },

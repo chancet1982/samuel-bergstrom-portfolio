@@ -30,11 +30,7 @@ export const CASE_11 = {
             overline: "Prisjakt",
             title: "e-commerce",
             imageUrl: "assets/case-11/cover.png",
-            text: (
-              <>
-                <Paragraph large>Improving search experience</Paragraph>
-              </>
-            ),
+            text: <Paragraph large>Improving search experience</Paragraph>,
           },
         },
       ],
@@ -77,11 +73,7 @@ export const CASE_11 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>...</>,
-            text: (
-              <>
-                <Paragraph>...</Paragraph>
-              </>
-            ),
+            text: <Paragraph>...</Paragraph>,
           },
         },
       ],

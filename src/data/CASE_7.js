@@ -32,11 +32,9 @@ export const CASE_7 = {
             overline: "Global fitness chain",
             title: "e-Commerce pre-study",
             text: (
-              <>
-                <Paragraph large>
-                  Exploring potential service and product offering
-                </Paragraph>
-              </>
+              <Paragraph large>
+                Exploring potential service and product offering
+              </Paragraph>
             ),
             imageUrl: "assets/case-7/cover-desktop.png",
             mobileImageUrl: "assets/case-7/cover-mobile.png",
@@ -52,14 +50,11 @@ export const CASE_7 = {
           data: {
             bgColor: "rgba(0, 42, 78, .24)",
             text: (
-              <>
-                <Paragraph huge>
-                  My client operates more than 250 gyms in 7 different
-                  countries. I was tasked to help them conduct a pre-study
-                  focusing on increasing sign-ups and cross-sales potential
-                  online.
-                </Paragraph>
-              </>
+              <Paragraph huge>
+                My client operates more than 250 gyms in 7 different countries.
+                I was tasked to help them conduct a pre-study focusing on
+                increasing sign-ups and cross-sales potential online.
+              </Paragraph>
             ),
             myRole: ROLES.UI_UX,
             duration: "1 month",
@@ -85,16 +80,14 @@ export const CASE_7 = {
             title: <>The problem</>,
             h: 2,
             text: (
-              <>
-                <Paragraph>
-                  A global fitness chain had trouble signing new members online.
-                  As a response to that, they decided to conduct a pre-study
-                  aimed at uncovering the issues with their current onboarding.
-                  On top of that, the client wanted to explore the potential of
-                  an affiliated eCommerce platform in order to increase their
-                  revenue.
-                </Paragraph>
-              </>
+              <Paragraph>
+                A global fitness chain had trouble signing new members online.
+                As a response to that, they decided to conduct a pre-study aimed
+                at uncovering the issues with their current onboarding. On top
+                of that, the client wanted to explore the potential of an
+                affiliated eCommerce platform in order to increase their
+                revenue.
+              </Paragraph>
             ),
           },
         },
@@ -284,15 +277,12 @@ export const CASE_7 = {
             title: <>Looking at competitors</>,
             h: 2,
             text: (
-              <>
-                <Paragraph>
-                  I compared the onboarding experience to some of the
-                  competitors. It was easy, my wife just signed up for a new
-                  gym. All I needed to do was to observe. Prices were clear,
-                  plans well explained, no gotchas or nasty surprises. just a
-                  smooth experience overall.
-                </Paragraph>
-              </>
+              <Paragraph>
+                I compared the onboarding experience to some of the competitors.
+                It was easy, my wife just signed up for a new gym. All I needed
+                to do was to observe. Prices were clear, plans well explained,
+                no gotchas or nasty surprises. just a smooth experience overall.
+              </Paragraph>
             ),
           },
         },
@@ -302,16 +292,14 @@ export const CASE_7 = {
             title: "Conducting a survey, gym membership preferences",
             h: 2,
             text: (
-              <>
-                <Paragraph>
-                  We needed to understand what was important for potential gym
-                  members. Do they prefer to signup online or at the gym? How do
-                  people choose gyms? What services might be relevant for them?
-                  etc. Part of the survey was dedicated to exploring the
-                  potential of cross-sales while onboarding. I created a survey
-                  and promoted it on social media.
-                </Paragraph>
-              </>
+              <Paragraph>
+                We needed to understand what was important for potential gym
+                members. Do they prefer to signup online or at the gym? How do
+                people choose gyms? What services might be relevant for them?
+                etc. Part of the survey was dedicated to exploring the potential
+                of cross-sales while onboarding. I created a survey and promoted
+                it on social media.
+              </Paragraph>
             ),
           },
         },
@@ -436,14 +424,12 @@ export const CASE_7 = {
             title: <>Shifting the focus to eCommerce</>,
             h: 2,
             text: (
-              <>
-                <Paragraph>
-                  At this point, the focus was shifted to covering a potential
-                  e-commerce platform. One of the daughter companies in the
-                  organization specializes in selling gym equipment to
-                  businesses and they wanted to explore potential collaboration.
-                </Paragraph>
-              </>
+              <Paragraph>
+                At this point, the focus was shifted to covering a potential
+                e-commerce platform. One of the daughter companies in the
+                organization specializes in selling gym equipment to businesses
+                and they wanted to explore potential collaboration.
+              </Paragraph>
             ),
           },
         },
@@ -544,14 +530,12 @@ export const CASE_7 = {
             title: <>Some key features</>,
             h: 2,
             text: (
-              <>
-                <Paragraph>
-                  In order to make this, everything that was currently done
-                  manually at the gyms needed to be moved to the mobile app.
-                  This namely included: Identification and contract signing,
-                  taking a picture, and securing access to the gyms.
-                </Paragraph>
-              </>
+              <Paragraph>
+                In order to make this, everything that was currently done
+                manually at the gyms needed to be moved to the mobile app. This
+                namely included: Identification and contract signing, taking a
+                picture, and securing access to the gyms.
+              </Paragraph>
             ),
           },
         },
@@ -649,11 +633,9 @@ export const CASE_7 = {
             title: <>Oh, one last thing</>,
             h: 2,
             text: (
-              <>
-                <Paragraph>
-                  Some additional mobile app screenshots anyone?
-                </Paragraph>
-              </>
+              <Paragraph>
+                Some additional mobile app screenshots anyone?
+              </Paragraph>
             ),
           },
         },

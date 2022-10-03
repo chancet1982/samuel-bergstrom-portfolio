@@ -35,11 +35,9 @@ export const CASE_9 = {
             imageUrl: "assets/case-9/cover.png",
             bgColor: "#00ADDB",
             text: (
-              <>
-                <Paragraph large>
-                  Or, how to make millions of without moving a PX
-                </Paragraph>
-              </>
+              <Paragraph large>
+                Or, how to make millions of without moving a PX
+              </Paragraph>
             ),
           },
         },
@@ -84,21 +82,18 @@ export const CASE_9 = {
               <>Identifying strengths and weaknesses in data collection.</>
             ),
             text: (
-              <>
-                <Paragraph>
-                  My client already had a solid data collection infrastructure.
-                  From Analytics, Usage statistics, support cases that are
-                  documented and tagged. This however provides an incomplete
-                  picture Analytics and usage statistics provide valuable
-                  insights for what users do but not to why(!) they do it. On
-                  top of that, the support cases (and various forums) are
-                  inherently biased as they only represent ’frustrated users’ or
-                  ’power users’. In order for me to get a better picture of the
-                  problem, I suggested sending an open survey and promoting it
-                  on social media. The survey was designed to answer 3 main
-                  questions:
-                </Paragraph>
-              </>
+              <Paragraph>
+                My client already had a solid data collection infrastructure.
+                From Analytics, Usage statistics, support cases that are
+                documented and tagged. This however provides an incomplete
+                picture Analytics and usage statistics provide valuable insights
+                for what users do but not to why(!) they do it. On top of that,
+                the support cases (and various forums) are inherently biased as
+                they only represent ’frustrated users’ or ’power users’. In
+                order for me to get a better picture of the problem, I suggested
+                sending an open survey and promoting it on social media. The
+                survey was designed to answer 3 main questions:
+              </Paragraph>
             ),
           },
         },
@@ -126,23 +121,18 @@ export const CASE_9 = {
                 </Paragraph>
                 <List
                   items={[
-                    <>
-                      <TitleAndText title="Find the right product:" h={5}>
-                        <Paragraph>
-                          Users must be able to find products in order to
-                          convert.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                    <>
-                      <TitleAndText title="Find the right shop:" h={5}>
-                        <Paragraph>
-                          Once users know what products they are interested in
-                          they need to be able to find a shop that sells these
-                          products.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
+                    <TitleAndText title="Find the right product:" h={5}>
+                      <Paragraph>
+                        Users must be able to find products in order to convert.
+                      </Paragraph>
+                    </TitleAndText>,
+                    <TitleAndText title="Find the right shop:" h={5}>
+                      <Paragraph>
+                        Once users know what products they are interested in
+                        they need to be able to find a shop that sells these
+                        products.
+                      </Paragraph>
+                    </TitleAndText>,
                   ]}
                 />
               </>
@@ -164,22 +154,18 @@ export const CASE_9 = {
                 </Paragraph>
                 <List
                   items={[
-                    <>
-                      <TitleAndText title="Bad actors" h={5}>
-                        <Paragraph>
-                          Shops that abuse the system, publishing fake prices,
-                          misleading stock, and delivery terms.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
-                    <>
-                      <TitleAndText title="search" h={5}>
-                        <Paragraph>
-                          Users can’t seem to find what they are looking for on
-                          the service.
-                        </Paragraph>
-                      </TitleAndText>
-                    </>,
+                    <TitleAndText title="Bad actors" h={5}>
+                      <Paragraph>
+                        Shops that abuse the system, publishing fake prices,
+                        misleading stock, and delivery terms.
+                      </Paragraph>
+                    </TitleAndText>,
+                    <TitleAndText title="search" h={5}>
+                      <Paragraph>
+                        Users can’t seem to find what they are looking for on
+                        the service.
+                      </Paragraph>
+                    </TitleAndText>,
                   ]}
                 />
               </>
@@ -208,13 +194,11 @@ export const CASE_9 = {
           data: {
             title: <>How can we improve search?</>,
             text: (
-              <>
-                <Paragraph>
-                  Understanding what the problem is, is a good first step. We
-                  had limited time and resources and needed to find an idea that
-                  is easy to implement and that had the best potential.
-                </Paragraph>
-              </>
+              <Paragraph>
+                Understanding what the problem is, is a good first step. We had
+                limited time and resources and needed to find an idea that is
+                easy to implement and that had the best potential.
+              </Paragraph>
             ),
           },
         },
@@ -230,18 +214,15 @@ export const CASE_9 = {
                 imageAlt: "before searching",
                 title: "Before searching",
                 text: (
-                  <>
-                    <Paragraph>
-                      We could make the search more prominent in the UI or show
-                      past searches to allow users to pick up where they left
-                      off. This would be the right move if we had data to
-                      support a discoverability problem with the search
-                      functionality. Looking at Amplitude it was apparent that
-                      this isn’t the problem. Most users on-site prefer
-                      searching and 78% of the users on the landing page use the
-                      functionality.
-                    </Paragraph>
-                  </>
+                  <Paragraph>
+                    We could make the search more prominent in the UI or show
+                    past searches to allow users to pick up where they left off.
+                    This would be the right move if we had data to support a
+                    discoverability problem with the search functionality.
+                    Looking at Amplitude it was apparent that this isn’t the
+                    problem. Most users on-site prefer searching and 78% of the
+                    users on the landing page use the functionality.
+                  </Paragraph>
                 ),
               },
               {
@@ -249,18 +230,16 @@ export const CASE_9 = {
                 imageAlt: "while searching",
                 title: "During search",
                 text: (
-                  <>
-                    <Paragraph>
-                      We could show better suggestions and provide better
-                      guidance for users. This would be appropriate if we could
-                      see a long time spent before moving to the next page or if
-                      users erased their query and retyped it. Looking at
-                      Amplitude it was evident that most users actually only
-                      spend a very short time focused on the search field. Most
-                      users dont even click on any of the suggestionss and most
-                      searches end on the search results page.
-                    </Paragraph>
-                  </>
+                  <Paragraph>
+                    We could show better suggestions and provide better guidance
+                    for users. This would be appropriate if we could see a long
+                    time spent before moving to the next page or if users erased
+                    their query and retyped it. Looking at Amplitude it was
+                    evident that most users actually only spend a very short
+                    time focused on the search field. Most users dont even click
+                    on any of the suggestionss and most searches end on the
+                    search results page.
+                  </Paragraph>
                 ),
               },
               {
@@ -268,15 +247,13 @@ export const CASE_9 = {
                 imageAlt: "after searching",
                 title: "After searching",
                 text: (
-                  <>
-                    <Paragraph>
-                      After searching users see the search results page. There
-                      we saw a huge dropoff of about 60%. Still, at this point,
-                      we only know that the search results page is failing, not
-                      why. So I needed to look for some qualitative data to
-                      evaluate what seems to be the problem.
-                    </Paragraph>
-                  </>
+                  <Paragraph>
+                    After searching users see the search results page. There we
+                    saw a huge dropoff of about 60%. Still, at this point, we
+                    only know that the search results page is failing, not why.
+                    So I needed to look for some qualitative data to evaluate
+                    what seems to be the problem.
+                  </Paragraph>
                 ),
               },
             ],
@@ -433,12 +410,10 @@ export const CASE_9 = {
                 imageAlt: "Search suggestions, before",
                 title: "Search suggestions, before",
                 text: (
-                  <>
-                    <Paragraph>
-                      Pressing “ENTER” would lead users to the search results
-                      page.
-                    </Paragraph>
-                  </>
+                  <Paragraph>
+                    Pressing “ENTER” would lead users to the search results
+                    page.
+                  </Paragraph>
                 ),
               },
               {
@@ -446,13 +421,11 @@ export const CASE_9 = {
                 imageAlt: "Search suggestions after",
                 title: "Search suggestions after",
                 text: (
-                  <>
-                    <Paragraph>
-                      Search suggestions with the new option added. Pressing
-                      “ENTER” (on specific popular keywords) would lead users
-                      directly to the product page.
-                    </Paragraph>
-                  </>
+                  <Paragraph>
+                    Search suggestions with the new option added. Pressing
+                    “ENTER” (on specific popular keywords) would lead users
+                    directly to the product page.
+                  </Paragraph>
                 ),
               },
             ],

@@ -30,11 +30,7 @@ export const CASE_8 = {
             overline: "Mitsubishi Electric",
             title: "e-commerce concept",
             imageUrl: "assets/case-8/cover.png",
-            text: (
-              <>
-                <Paragraph large>Exploring direct sales B2C & B2B</Paragraph>
-              </>
-            ),
+            text: <Paragraph large>Exploring direct sales B2C & B2B</Paragraph>,
           },
         },
       ],
@@ -79,11 +75,7 @@ export const CASE_8 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>...</>,
-            text: (
-              <>
-                <Paragraph>...</Paragraph>
-              </>
-            ),
+            text: <Paragraph>...</Paragraph>,
           },
         },
       ],

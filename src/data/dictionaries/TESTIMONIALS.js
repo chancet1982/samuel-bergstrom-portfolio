@@ -38,19 +38,16 @@ export const TESTIMONIALS = [
       authorImageUrl: "assets/testimonials/einar-valgeirsson.jpeg",
     },
     content: (
-      <>
-        <Paragraph>
-          When we wanted to create a mobile application focused on our patients
-          and their participation in their care we needed someone who could
-          guide us towards the best user experience for them. We got the help
-          from Samuel who made sure to put his heart and soul into understanding
-          our patients and how they might come to use this application. With our
-          patients in mind, Samuel took the lead as we created a rich and
-          engaging user experience together. Samuel is very thorough,
-          imaginative and easy to work with and we are very happy with the work
-          he did for us.
-        </Paragraph>
-      </>
+      <Paragraph>
+        When we wanted to create a mobile application focused on our patients
+        and their participation in their care we needed someone who could guide
+        us towards the best user experience for them. We got the help from
+        Samuel who made sure to put his heart and soul into understanding our
+        patients and how they might come to use this application. With our
+        patients in mind, Samuel took the lead as we created a rich and engaging
+        user experience together. Samuel is very thorough, imaginative and easy
+        to work with and we are very happy with the work he did for us.
+      </Paragraph>
     ),
   },
   {
@@ -60,17 +57,15 @@ export const TESTIMONIALS = [
       authorImageUrl: "assets/testimonials/nidzara-dellien.jpeg",
     },
     content: (
-      <>
-        <Paragraph>
-          I had a privilege to work together with Samuel in several SW projects
-          during a period of 2 years and also to be his manager for a part of
-          this time. Samuel is solution oriented, pragmatic UX designer with
-          fierce focus on end users. Samuel has many times impressed by finding
-          the creative ways to conduct UX research even when there was no budget
-          set aside for it in the project. He is fun to work with, and he brings
-          energy to any group he works with.
-        </Paragraph>
-      </>
+      <Paragraph>
+        I had a privilege to work together with Samuel in several SW projects
+        during a period of 2 years and also to be his manager for a part of this
+        time. Samuel is solution oriented, pragmatic UX designer with fierce
+        focus on end users. Samuel has many times impressed by finding the
+        creative ways to conduct UX research even when there was no budget set
+        aside for it in the project. He is fun to work with, and he brings
+        energy to any group he works with.
+      </Paragraph>
     ),
   },
   {
@@ -112,16 +107,14 @@ export const TESTIMONIALS = [
       authorImageUrl: "assets/testimonials/fie-frederiksen.jpeg",
     },
     content: (
-      <>
-        <Paragraph>
-          I had the pleasure of working with Sam at Fundconnect, collaborating
-          on several project teams. Sam consistently demonstrated his excellent
-          technical skills, great work ethic and his creative and efficient
-          designs. Sam is dedicated, very capable and very helpful to give ideas
-          and solutions. No matter how tense a meeting, Sam made sure everyone
-          left with a smile. Any employee would be lucky to have Sam.
-        </Paragraph>
-      </>
+      <Paragraph>
+        I had the pleasure of working with Sam at Fundconnect, collaborating on
+        several project teams. Sam consistently demonstrated his excellent
+        technical skills, great work ethic and his creative and efficient
+        designs. Sam is dedicated, very capable and very helpful to give ideas
+        and solutions. No matter how tense a meeting, Sam made sure everyone
+        left with a smile. Any employee would be lucky to have Sam.
+      </Paragraph>
     ),
   },
   {
@@ -131,19 +124,17 @@ export const TESTIMONIALS = [
       authorImageUrl: "assets/testimonials/mihai-nueleanu.jpeg",
     },
     content: (
-      <>
-        <Paragraph>
-          Sam has been my mentor for many years. During that time, Sam was
-          leading by example demonstrated excellent work ethics and pragmatic
-          approach in design while keeping users needs in focus. He is a very
-          skilled UX designer, and has unsurpassed analytical thinking, ability
-          to break down complex problems and is a great communicator with both
-          developers project managers and other stakeholders. During the time we
-          worked together, I’ve seen him succeed in tackling many complex
-          projects, for numerous clients, and across multiple product lines. His
-          sense of responsibility and duty are admirable.
-        </Paragraph>
-      </>
+      <Paragraph>
+        Sam has been my mentor for many years. During that time, Sam was leading
+        by example demonstrated excellent work ethics and pragmatic approach in
+        design while keeping users needs in focus. He is a very skilled UX
+        designer, and has unsurpassed analytical thinking, ability to break down
+        complex problems and is a great communicator with both developers
+        project managers and other stakeholders. During the time we worked
+        together, I’ve seen him succeed in tackling many complex projects, for
+        numerous clients, and across multiple product lines. His sense of
+        responsibility and duty are admirable.
+      </Paragraph>
     ),
   },
   {
@@ -153,17 +144,15 @@ export const TESTIMONIALS = [
       authorImageUrl: "assets/testimonials/patrick-hiller.jpeg",
     },
     content: (
-      <>
-        <Paragraph>
-          Samuel worked with Telescope as UX Designer for one of our customers.
-          Samuel was a much appreciated colleague and a good friend who always
-          showed up with a smile. During his time with Telescope he worked with
-          a customer within E-Commerce and was much appreciated for his
-          knowledge and determination to get the tasks done in time and to
-          perform 100% in the projects. With Samuels background and experience
-          he is will be the backbone in any project.
-        </Paragraph>
-      </>
+      <Paragraph>
+        Samuel worked with Telescope as UX Designer for one of our customers.
+        Samuel was a much appreciated colleague and a good friend who always
+        showed up with a smile. During his time with Telescope he worked with a
+        customer within E-Commerce and was much appreciated for his knowledge
+        and determination to get the tasks done in time and to perform 100% in
+        the projects. With Samuels background and experience he is will be the
+        backbone in any project.
+      </Paragraph>
     ),
   },
 ];

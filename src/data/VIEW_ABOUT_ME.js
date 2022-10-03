@@ -33,12 +33,10 @@ export const VIEW_ABOUT_ME = [
           ),
           h: 0,
           text: (
-            <>
-              <Paragraph huge>
-                A digital product designer, engineer, speaker, mentor,
-                accessibility enthusiast, father, husband, and quite a nice guy.
-              </Paragraph>
-            </>
+            <Paragraph huge>
+              A digital product designer, engineer, speaker, mentor,
+              accessibility enthusiast, father, husband, and quite a nice guy.
+            </Paragraph>
           ),
         },
       },
@@ -105,13 +103,11 @@ export const VIEW_ABOUT_ME = [
               imageAlt: "Service blueprinting workshop I did",
               title: "Facilitator",
               text: (
-                <>
-                  <Paragraph>
-                    Experience in facilitating various workshops. In-person and
-                    virtual. Ideation sessions, discovery workshops, User story
-                    mapping etc.
-                  </Paragraph>
-                </>
+                <Paragraph>
+                  Experience in facilitating various workshops. In-person and
+                  virtual. Ideation sessions, discovery workshops, User story
+                  mapping etc.
+                </Paragraph>
               ),
             },
             {
@@ -119,18 +115,15 @@ export const VIEW_ABOUT_ME = [
               imageAlt: "Did I mention I am a unicorn?",
               title: "Engineer",
               text: (
-                <>
-                  <Paragraph>
-                    One of 2 designers (that I actually know) that is an
-                    educated engineer. I will not pretend I am a great
-                    developer, At best, I am decent. I was good enough to get
-                    hired but never good enough to be great. I simply lacked the
-                    passion I have for design. Knowing how to code helps me
-                    communicate better with developers, helps me create designs
-                    that are implementable and I better understand the
-                    implications of my design choices.
-                  </Paragraph>
-                </>
+                <Paragraph>
+                  One of 2 designers (that I actually know) that is an educated
+                  engineer. I will not pretend I am a great developer, At best,
+                  I am decent. I was good enough to get hired but never good
+                  enough to be great. I simply lacked the passion I have for
+                  design. Knowing how to code helps me communicate better with
+                  developers, helps me create designs that are implementable and
+                  I better understand the implications of my design choices.
+                </Paragraph>
               ),
             },
             {
@@ -138,13 +131,11 @@ export const VIEW_ABOUT_ME = [
               imageAlt: "2 adorable monsters",
               title: "Father",
               text: (
-                <>
-                  <Paragraph>
-                    A father of 2 (plus a dog) means I am no stranger to stress.
-                    I deal with chaos (ah sorry a “dynamic environment”) on a
-                    dialy basis!.
-                  </Paragraph>
-                </>
+                <Paragraph>
+                  A father of 2 (plus a dog) means I am no stranger to stress. I
+                  deal with chaos (ah sorry a “dynamic environment”) on a dialy
+                  basis!.
+                </Paragraph>
               ),
             },
           ],
@@ -240,29 +231,21 @@ export const VIEW_ABOUT_ME = [
           ),
           h: 2,
           text: (
-            <>
-              <List
-                items={[
-                  <>
-                    <Span>
-                      <strong>UXC Spec. UX Management</strong>, NNg (Nielson
-                      Norman Group)
-                    </Span>
-                  </>,
-                  <>
-                    <Span>
-                      <strong>BSc</strong> Eng. ICT, Ålborg university
-                    </Span>
-                  </>,
-                  <>
-                    <Span>
-                      <strong>Assoc. Deg.</strong> Graphic Design, College of
-                      Management
-                    </Span>
-                  </>,
-                ]}
-              />
-            </>
+            <List
+              items={[
+                <Span>
+                  <strong>UXC Spec. UX Management</strong>, NNg (Nielson Norman
+                  Group)
+                </Span>,
+                <Span>
+                  <strong>BSc</strong> Eng. ICT, Ålborg university
+                </Span>,
+                <Span>
+                  <strong>Assoc. Deg.</strong> Graphic Design, College of
+                  Management
+                </Span>,
+              ]}
+            />
           ),
         },
       },
@@ -404,11 +387,7 @@ export const VIEW_ABOUT_ME = [
           title: "Ho, did I mention I make some kick-ass pizzas?",
           h: 2,
           text: (
-            <>
-              <Paragraph>
-                Some of the awesome pizzas I did last summer
-              </Paragraph>
-            </>
+            <Paragraph>Some of the awesome pizzas I did last summer</Paragraph>
           ),
         },
       },

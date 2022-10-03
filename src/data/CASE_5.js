@@ -32,11 +32,9 @@ export const CASE_5 = {
             overline: "Renal Care",
             title: "Self service Kiost",
             text: (
-              <>
-                <Paragraph large>
-                  Speeding up adminisions and discharge in dialysis clinics.
-                </Paragraph>
-              </>
+              <Paragraph large>
+                Speeding up adminisions and discharge in dialysis clinics.
+              </Paragraph>
             ),
             imageUrl: "assets/case-5/cover-desktop.png",
             mobileImageUrl: "assets/case-5/cover-mobile.png",
@@ -154,13 +152,11 @@ export const CASE_5 = {
             title: <>The goal:</>,
             h: 2,
             text: (
-              <>
-                <Paragraph>
-                  The client asked us to deliver a self-admission and discharge
-                  system to free their staff, shorten admission times, and free
-                  up treatment stations.
-                </Paragraph>
-              </>
+              <Paragraph>
+                The client asked us to deliver a self-admission and discharge
+                system to free their staff, shorten admission times, and free up
+                treatment stations.
+              </Paragraph>
             ),
           },
         },
@@ -451,16 +447,14 @@ export const CASE_5 = {
                 imageAlt: "Multi-Language support",
                 title: "Multi-Language support",
                 text: (
-                  <>
-                    <Paragraph>
-                      This interface needs to be used by patients in more than
-                      20 differnent countries and would need to support even
-                      right-to-left languages. The interface language is
-                      customizable per clinic but in case patients are visiting
-                      from another country they will be able to change the
-                      interface language to any supported language.
-                    </Paragraph>
-                  </>
+                  <Paragraph>
+                    This interface needs to be used by patients in more than 20
+                    differnent countries and would need to support even
+                    right-to-left languages. The interface language is
+                    customizable per clinic but in case patients are visiting
+                    from another country they will be able to change the
+                    interface language to any supported language.
+                  </Paragraph>
                 ),
               },
               {
@@ -468,13 +462,11 @@ export const CASE_5 = {
                 imageAlt: "Registering patients’ weight",
                 title: "Registering patients’ weight",
                 text: (
-                  <>
-                    <Paragraph>
-                      Manually registering patients’ weight was designed as a
-                      fallback in case automatically registering the weight
-                      failed or was not available in a specific clinic.{" "}
-                    </Paragraph>
-                  </>
+                  <Paragraph>
+                    Manually registering patients’ weight was designed as a
+                    fallback in case automatically registering the weight failed
+                    or was not available in a specific clinic.{" "}
+                  </Paragraph>
                 ),
               },
             ],

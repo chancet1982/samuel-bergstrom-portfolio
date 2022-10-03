@@ -30,11 +30,7 @@ export const CASE_3 = {
           data: {
             overline: "Healthcare",
             title: "Disrupting tech. digital pathology",
-            text: (
-              <>
-                <Paragraph large>Tissue scanner interface design</Paragraph>
-              </>
-            ),
+            text: <Paragraph large>Tissue scanner interface design</Paragraph>,
             imageUrl: "assets/case-3/cover-desktop.png",
             mobileImageUrl: "assets/case-3/cover-mobile.png",
             bgColor: "#47C8BC",
@@ -159,15 +155,13 @@ export const CASE_3 = {
             h: 2,
             flip: true,
             text: (
-              <>
-                <Paragraph>
-                  Originally, the scanner was intended to be used by lab
-                  technicians and researchers. Later we discovered that these 2
-                  groups have very little in common and decided to focus on Lab
-                  Technicians in Pathology labs because simply put, it is a much
-                  larger market compared to researchers.
-                </Paragraph>
-              </>
+              <Paragraph>
+                Originally, the scanner was intended to be used by lab
+                technicians and researchers. Later we discovered that these 2
+                groups have very little in common and decided to focus on Lab
+                Technicians in Pathology labs because simply put, it is a much
+                larger market compared to researchers.
+              </Paragraph>
             ),
             imageUrl: "assets/case-3/personas.png",
             imageAlt: "The personas used for this project",
@@ -184,18 +178,15 @@ export const CASE_3 = {
             title: "Field Studies & Interviews",
             h: 2,
             text: (
-              <>
-                <Paragraph>
-                  For me this was uncharted waters, I have no background in
-                  pathology and the team was operating under a lot of
-                  assumptions. We needed to understand when will the scanner be
-                  used, by whom, and for what purpose. We agreed on gathering
-                  this information via Field studies to pathology labs and
-                  expert interviews. We came in contact with several leading
-                  hospitals in the field of digital pathology and asked for a
-                  visit.
-                </Paragraph>
-              </>
+              <Paragraph>
+                For me this was uncharted waters, I have no background in
+                pathology and the team was operating under a lot of assumptions.
+                We needed to understand when will the scanner be used, by whom,
+                and for what purpose. We agreed on gathering this information
+                via Field studies to pathology labs and expert interviews. We
+                came in contact with several leading hospitals in the field of
+                digital pathology and asked for a visit.
+              </Paragraph>
             ),
           },
         },
@@ -225,14 +216,12 @@ export const CASE_3 = {
             title: "Digital pathology, crash course",
             h: 2,
             text: (
-              <>
-                <Paragraph>
-                  We collaborated with 2 hospitals in Sweden and visited an
-                  external pathology lab where we spoke to both lab technicians
-                  and experts within pathology to gain knowledge of their work
-                  environment, needs, and challanges.
-                </Paragraph>
-              </>
+              <Paragraph>
+                We collaborated with 2 hospitals in Sweden and visited an
+                external pathology lab where we spoke to both lab technicians
+                and experts within pathology to gain knowledge of their work
+                environment, needs, and challanges.
+              </Paragraph>
             ),
           },
         },
@@ -255,13 +244,11 @@ export const CASE_3 = {
             h: 2,
             bgColor: "#47C8BC",
             text: (
-              <>
-                <Paragraph>
-                  We learned a lot about the work environment. This was not a
-                  research lab, but an assembly line these technicians slicing,
-                  sanding, filing, and preparing tissue samples in hectic pase.
-                </Paragraph>
-              </>
+              <Paragraph>
+                We learned a lot about the work environment. This was not a
+                research lab, but an assembly line these technicians slicing,
+                sanding, filing, and preparing tissue samples in hectic pase.
+              </Paragraph>
             ),
             items: [
               {

@@ -33,11 +33,9 @@ export const CASE_4 = {
             mobileImageUrl: "assets/case-4/cover-mobile.png",
             bgColor: "#546368",
             text: (
-              <>
-                <Paragraph large>
-                  Home delivery box gets a companion app
-                </Paragraph>
-              </>
+              <Paragraph large>
+                Home delivery box gets a companion app
+              </Paragraph>
             ),
           },
         },
@@ -82,17 +80,15 @@ export const CASE_4 = {
           data: {
             title: <>Deliveries, never a good time.</>,
             text: (
-              <>
-                <Paragraph>
-                  It is never a good experience sitting at home waiting for a
-                  delivery. This is especially true when comes to delivering
-                  fresh goods. Left unattended, milk can go sour, and fresh
-                  vegetable shelf life is drastically reduced. NoWaste is set to
-                  solve this problem by creating a refrigerated outdoor delivery
-                  box unlocked using an app. The existing app was not well
-                  received and needed to be redesigned.
-                </Paragraph>
-              </>
+              <Paragraph>
+                It is never a good experience sitting at home waiting for a
+                delivery. This is especially true when comes to delivering fresh
+                goods. Left unattended, milk can go sour, and fresh vegetable
+                shelf life is drastically reduced. NoWaste is set to solve this
+                problem by creating a refrigerated outdoor delivery box unlocked
+                using an app. The existing app was not well received and needed
+                to be redesigned.
+              </Paragraph>
             ),
           },
         },
@@ -165,15 +161,13 @@ export const CASE_4 = {
             title: <>Gathering feedback and recruiting users.</>,
             h: 2,
             text: (
-              <>
-                <Paragraph>
-                  We needed to understand why the current app is failing. In
-                  order to do that we needed to get a better understanding of
-                  the target group, how often do they encounter issues with
-                  their food deliveries, what is important for them and how do
-                  they experience the current app.
-                </Paragraph>
-              </>
+              <Paragraph>
+                We needed to understand why the current app is failing. In order
+                to do that we needed to get a better understanding of the target
+                group, how often do they encounter issues with their food
+                deliveries, what is important for them and how do they
+                experience the current app.
+              </Paragraph>
             ),
           },
         },
@@ -219,16 +213,13 @@ export const CASE_4 = {
             title: <>Mapping out user-flows and identifying red routes</>,
             h: 2,
             text: (
-              <>
-                <Paragraph>
-                  While we were waiting for the survey results, I sat with the
-                  Product Owner and Tech lead to map out the current flows in
-                  the application. Afterward, based on feedback from test users
-                  and responses to our open survey we were able to map the user
-                  flows in the current app and identify the most commonly used
-                  flows.
-                </Paragraph>
-              </>
+              <Paragraph>
+                While we were waiting for the survey results, I sat with the
+                Product Owner and Tech lead to map out the current flows in the
+                application. Afterward, based on feedback from test users and
+                responses to our open survey we were able to map the user flows
+                in the current app and identify the most commonly used flows.
+              </Paragraph>
             ),
           },
         },
@@ -238,15 +229,13 @@ export const CASE_4 = {
             title: <>Usability test, round 1, establishing a benchmark</>,
             h: 2,
             text: (
-              <>
-                <Paragraph>
-                  Based on that I could create scenarios to cover key
-                  functionality and conducted usability testing to serve as a
-                  benchmark. After conducting an inIt was evident that some key
-                  features were not easily discoverable and often included
-                  obscure naming and overly complex interfaces.
-                </Paragraph>
-              </>
+              <Paragraph>
+                Based on that I could create scenarios to cover key
+                functionality and conducted usability testing to serve as a
+                benchmark. After conducting an inIt was evident that some key
+                features were not easily discoverable and often included obscure
+                naming and overly complex interfaces.
+              </Paragraph>
             ),
           },
         },
@@ -326,18 +315,16 @@ export const CASE_4 = {
                 imageAlt: "Unlocking the locker before redesign",
                 title: "Unlock unit, before",
                 text: (
-                  <>
-                    <Paragraph>
-                      Before, lockers were not listed in the home screen. In
-                      order to unlock a locker (the most common use for the app)
-                      users had to go to the lockers page. select a locker.
-                      generate a barcode and then scan the barcode to unlock the
-                      locker. this meant that only the users themselves could
-                      use the locker and that the device could not be unlocked
-                      remotely (for example if a user was not home but wanted a
-                      deliver to take place)
-                    </Paragraph>
-                  </>
+                  <Paragraph>
+                    Before, lockers were not listed in the home screen. In order
+                    to unlock a locker (the most common use for the app) users
+                    had to go to the lockers page. select a locker. generate a
+                    barcode and then scan the barcode to unlock the locker. this
+                    meant that only the users themselves could use the locker
+                    and that the device could not be unlocked remotely (for
+                    example if a user was not home but wanted a deliver to take
+                    place)
+                  </Paragraph>
                 ),
               },
               {
@@ -345,19 +332,16 @@ export const CASE_4 = {
                 imageAlt: "Unlocking the locker before after",
                 title: "Unlock unit, after",
                 text: (
-                  <>
-                    <Paragraph>
-                      Considering that the most common scenraio is that a user
-                      will only have one locker it made sense to by default show
-                      the last used locker on the landing screen and Exposing
-                      the unlock function already there. On top of that it made
-                      sense to remove the need for barcode production and
-                      scanning and simply unlock on command from a trusted
-                      device. This in turn allows to accept deliveries even when
-                      users were away or accept deliveries by other trusted
-                      individuals.
-                    </Paragraph>
-                  </>
+                  <Paragraph>
+                    Considering that the most common scenraio is that a user
+                    will only have one locker it made sense to by default show
+                    the last used locker on the landing screen and Exposing the
+                    unlock function already there. On top of that it made sense
+                    to remove the need for barcode production and scanning and
+                    simply unlock on command from a trusted device. This in turn
+                    allows to accept deliveries even when users were away or
+                    accept deliveries by other trusted individuals.
+                  </Paragraph>
                 ),
               },
             ],

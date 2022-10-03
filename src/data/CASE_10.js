@@ -33,11 +33,7 @@ export const CASE_10 = {
             imageUrl: "assets/case-10/cover.png",
             bgColor: "#00ADDB",
             text: (
-              <>
-                <Paragraph large>
-                  How a small change made a big impact
-                </Paragraph>
-              </>
+              <Paragraph large>How a small change made a big impact</Paragraph>
             ),
           },
         },
@@ -130,15 +126,13 @@ export const CASE_10 = {
             title: <>Kicking-off with internal interviews</>,
             h: 2,
             text: (
-              <>
-                <Paragraph>
-                  At this point, I needed to collect as much information as
-                  possible. I interviewed more than 20 people in 6 different
-                  departments to help learn how we onboard new clients, manage
-                  our client relationships, what are their pain points and areas
-                  where we can improve.
-                </Paragraph>
-              </>
+              <Paragraph>
+                At this point, I needed to collect as much information as
+                possible. I interviewed more than 20 people in 6 different
+                departments to help learn how we onboard new clients, manage our
+                client relationships, what are their pain points and areas where
+                we can improve.
+              </Paragraph>
             ),
           },
         },
@@ -276,13 +270,11 @@ export const CASE_10 = {
           data: {
             title: <>User interviews</>,
             text: (
-              <>
-                <Paragraph>
-                  I conducted 10 interviews asking them how they choose online
-                  shops to buy from. One of the participants summarized it
-                  really well:
-                </Paragraph>
-              </>
+              <Paragraph>
+                I conducted 10 interviews asking them how they choose online
+                shops to buy from. One of the participants summarized it really
+                well:
+              </Paragraph>
             ),
           },
         },
@@ -367,12 +359,10 @@ export const CASE_10 = {
                 imageAlt: "Prices list, before",
                 title: "Prices list, before",
                 text: (
-                  <>
-                    <Paragraph>
-                      Price-list before changes: A mixture of paying and
-                      non-paying customers. Sorting is based on price only.
-                    </Paragraph>
-                  </>
+                  <Paragraph>
+                    Price-list before changes: A mixture of paying and
+                    non-paying customers. Sorting is based on price only.
+                  </Paragraph>
                 ),
               },
               {
@@ -380,13 +370,11 @@ export const CASE_10 = {
                 imageAlt: "Prices list, after",
                 title: "Prices list, after",
                 text: (
-                  <>
-                    <Paragraph>
-                      Price-list after: Recommended sorting in-place, non-paying
-                      shops grouped at the bottoms. Note: users that prefer the
-                      old sorting can still choose to do so.
-                    </Paragraph>
-                  </>
+                  <Paragraph>
+                    Price-list after: Recommended sorting in-place, non-paying
+                    shops grouped at the bottoms. Note: users that prefer the
+                    old sorting can still choose to do so.
+                  </Paragraph>
                 ),
               },
             ],

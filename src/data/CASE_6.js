@@ -31,12 +31,10 @@ export const CASE_6 = {
             overline: "Finance",
             title: "Design system",
             text: (
-              <>
-                <Paragraph large>
-                  Creating a practical, simple, design system for developers and
-                  designers.
-                </Paragraph>
-              </>
+              <Paragraph large>
+                Creating a practical, simple, design system for developers and
+                designers.
+              </Paragraph>
             ),
             imageUrl: "assets/case-6/cover.png",
           },
@@ -128,14 +126,11 @@ export const CASE_6 = {
             title: <>The goal:</>,
             h: 2,
             text: (
-              <>
-                <Paragraph>
-                  My aim in this project was to unify the look and feel of all
-                  digital services. Reduce development time, and promote a more
-                  efficient work process that will save the client time and
-                  money.
-                </Paragraph>
-              </>
+              <Paragraph>
+                My aim in this project was to unify the look and feel of all
+                digital services. Reduce development time, and promote a more
+                efficient work process that will save the client time and money.
+              </Paragraph>
             ),
           },
         },
@@ -182,13 +177,11 @@ export const CASE_6 = {
             title: <>Start with the basics</>,
             h: 2,
             text: (
-              <>
-                <Paragraph>
-                  As with many other design systems, I needed to create a strong
-                  foundation of typography, buttons, and links so we could later
-                  expand on it. So this is exactly what I focused on initially.
-                </Paragraph>
-              </>
+              <Paragraph>
+                As with many other design systems, I needed to create a strong
+                foundation of typography, buttons, and links so we could later
+                expand on it. So this is exactly what I focused on initially.
+              </Paragraph>
             ),
           },
         },
@@ -267,18 +260,15 @@ export const CASE_6 = {
             title: <>Illustrations</>,
             h: 3,
             text: (
-              <>
-                <Paragraph>
-                  Both companies used illustrations made specifically for them
-                  but they didn’t share a common theme and needed an alignment.
-                  Our illustrator and marketing team was responsible for
-                  aligning all illustrations and ensuring consistency, while I
-                  made sure these were available as symbols and had the same
-                  dimensions. This ensured that all of the illustrations shared
-                  a graphical style and that we could use and reuse them in any
-                  design project.
-                </Paragraph>
-              </>
+              <Paragraph>
+                Both companies used illustrations made specifically for them but
+                they didn’t share a common theme and needed an alignment. Our
+                illustrator and marketing team was responsible for aligning all
+                illustrations and ensuring consistency, while I made sure these
+                were available as symbols and had the same dimensions. This
+                ensured that all of the illustrations shared a graphical style
+                and that we could use and reuse them in any design project.
+              </Paragraph>
             ),
             imageUrl: "assets/case-6/illustrations.png",
             imageAlt: "?",
@@ -528,21 +518,18 @@ export const CASE_6 = {
                 imageAlt: "ZeroHeight",
                 title: "ZeroHeight",
                 text: (
-                  <>
-                    <Paragraph>
-                      We initially explored using zero-height. It offered a
-                      Figma integration and allowed to extend the pattern
-                      library with documentation of color rules and even
-                      provided a connection to Storybook. We eventually decided
-                      to move away from it as the design system was still in its
-                      early stages and not mature enough. Every change to a
-                      component required manually updating ZeroHeight and the
-                      added value was simply not worth the effort. I believe
-                      that ZeroHeight would be of great value for more mature
-                      design systems but it isn’t that effective when introduced
-                      too early.
-                    </Paragraph>
-                  </>
+                  <Paragraph>
+                    We initially explored using zero-height. It offered a Figma
+                    integration and allowed to extend the pattern library with
+                    documentation of color rules and even provided a connection
+                    to Storybook. We eventually decided to move away from it as
+                    the design system was still in its early stages and not
+                    mature enough. Every change to a component required manually
+                    updating ZeroHeight and the added value was simply not worth
+                    the effort. I believe that ZeroHeight would be of great
+                    value for more mature design systems but it isn’t that
+                    effective when introduced too early.
+                  </Paragraph>
                 ),
               },
               {
@@ -550,18 +537,15 @@ export const CASE_6 = {
                 imageAlt: "Storybook",
                 title: "Storybook",
                 text: (
-                  <>
-                    <Paragraph>
-                      I chose to use Storybook for documenting code components.
-                      So that every new component implemented will be documented
-                      and available there. It was a new concept for the
-                      development team, one which they gladly adopted after
-                      realizing the headaches it prevents. With some tweaking,
-                      Storybook can accommodate for additional documentation,
-                      implementation guidelines, and can even be synced
-                      automatically with Figma.
-                    </Paragraph>
-                  </>
+                  <Paragraph>
+                    I chose to use Storybook for documenting code components. So
+                    that every new component implemented will be documented and
+                    available there. It was a new concept for the development
+                    team, one which they gladly adopted after realizing the
+                    headaches it prevents. With some tweaking, Storybook can
+                    accommodate for additional documentation, implementation
+                    guidelines, and can even be synced automatically with Figma.
+                  </Paragraph>
                 ),
               },
             ],

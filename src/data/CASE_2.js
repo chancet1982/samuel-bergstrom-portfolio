@@ -34,12 +34,10 @@ export const CASE_2 = {
             mobileImageUrl: "assets/case-2/cover-mobile.png",
             bgColor: "#FF8D48",
             text: (
-              <>
-                <Paragraph large>
-                  Redesigning a companion app to empower renal patients and take
-                  charge of their health.
-                </Paragraph>
-              </>
+              <Paragraph large>
+                Redesigning a companion app to empower renal patients and take
+                charge of their health.
+              </Paragraph>
             ),
           },
         },
@@ -140,16 +138,14 @@ export const CASE_2 = {
             title: <>The goal:</>,
             h: 2,
             text: (
-              <>
-                <Paragraph>
-                  The goal, in this case, was simply, “make a better app”. From
-                  an internal point of view, a better app would mean that more
-                  patients are reporting their vitals. But would users agree?
-                  Dialysis patients already spend 12-18 hours weekly in clinics.
-                  How could we provide enough value for patients to encourage
-                  daily use?
-                </Paragraph>
-              </>
+              <Paragraph>
+                The goal, in this case, was simply, “make a better app”. From an
+                internal point of view, a better app would mean that more
+                patients are reporting their vitals. But would users agree?
+                Dialysis patients already spend 12-18 hours weekly in clinics.
+                How could we provide enough value for patients to encourage
+                daily use?
+              </Paragraph>
             ),
           },
         },
@@ -228,11 +224,9 @@ export const CASE_2 = {
             h: 2,
             isTwoColumnsOnDesktop: true,
             text: (
-              <>
-                <Paragraph>
-                  Based on the surveys and interviews we could conclude that:
-                </Paragraph>
-              </>
+              <Paragraph>
+                Based on the surveys and interviews we could conclude that:
+              </Paragraph>
             ),
             items: [
               {
@@ -266,14 +260,12 @@ export const CASE_2 = {
           data: {
             title: <>Sharing back the insights.</>,
             text: (
-              <>
-                <Paragraph>
-                  The insights were shared with the internal stakeholders and
-                  helped define priorities for the app. Some feaures presented
-                  high value for the business hence were included even if their
-                  user value was limited.
-                </Paragraph>
-              </>
+              <Paragraph>
+                The insights were shared with the internal stakeholders and
+                helped define priorities for the app. Some feaures presented
+                high value for the business hence were included even if their
+                user value was limited.
+              </Paragraph>
             ),
           },
         },
@@ -288,15 +280,13 @@ export const CASE_2 = {
             title: <>Planning the road ahead</>,
             h: 2,
             text: (
-              <>
-                <Paragraph>
-                  With some initial data in place, we could prioritize features
-                  based on our proto persona (dialysis patient). We sat with all
-                  stakeholders and mapped the functionality, the capacity of the
-                  team, prioritized, and created a road-map that would balance
-                  user needs and business goals.
-                </Paragraph>
-              </>
+              <Paragraph>
+                With some initial data in place, we could prioritize features
+                based on our proto persona (dialysis patient). We sat with all
+                stakeholders and mapped the functionality, the capacity of the
+                team, prioritized, and created a road-map that would balance
+                user needs and business goals.
+              </Paragraph>
             ),
             imageUrl: "assets/case-2/design.jpg",
             imageAlt: "Kickoff meeting, dot-voting on features",
@@ -443,32 +433,25 @@ export const CASE_2 = {
             title: <>Accessibility in design:</>,
             h: 3,
             text: (
-              <>
-                <List
-                  plain
-                  items={[
-                    <>
-                      <Paragraph>
-                        Loss of sensation around the fingertips and loss of
-                        motor control is quite common in renal care. This makes
-                        scrolling especially challenging. In order to mitigate
-                        that we laid out the content to minimize the need for
-                        scrolling. We made sure that we provided at least a 9mm
-                        target area for all links and buttons to avoid
-                        miss-clicks.
-                      </Paragraph>
-                    </>,
-                    <>
-                      <Paragraph>
-                        We made sure all colors are WCAG 2.0 AA compatible.
-                        “Heavier” font weights were used and font sizes were
-                        tested to ensure legibility and a shallow nagivation was
-                        used in order to reduce the need for recollection.
-                      </Paragraph>
-                    </>,
-                  ]}
-                />
-              </>
+              <List
+                plain
+                items={[
+                  <Paragraph>
+                    Loss of sensation around the fingertips and loss of motor
+                    control is quite common in renal care. This makes scrolling
+                    especially challenging. In order to mitigate that we laid
+                    out the content to minimize the need for scrolling. We made
+                    sure that we provided at least a 9mm target area for all
+                    links and buttons to avoid miss-clicks.
+                  </Paragraph>,
+                  <Paragraph>
+                    We made sure all colors are WCAG 2.0 AA compatible.
+                    “Heavier” font weights were used and font sizes were tested
+                    to ensure legibility and a shallow nagivation was used in
+                    order to reduce the need for recollection.
+                  </Paragraph>,
+                ]}
+              />
             ),
             imageUrl: "assets/case-2/accessibility.jpg",
             imageAlt: "Just some decoration",
