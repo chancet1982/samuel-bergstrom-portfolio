@@ -26,6 +26,8 @@ const StyledNavigation = styled(motion.nav)`
   display: flex;
   justify-content: space-between;
 
+  /* TODO: when the navigation is NOT opaque all underlying NavLinks need to be "light"*/
+
   ${({ $opaque }) =>
     $opaque && {
       backgroundColor: "rgba(255, 255, 255, 1)",

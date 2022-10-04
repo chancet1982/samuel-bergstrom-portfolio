@@ -42,7 +42,6 @@ const StyledAnchorLink = styled.a`
   }
 `;
 
-// TODO: fix link "TO" attribute
 function Link({ small, large, huge, children, to, href }) {
   const light = useBgColor();
 

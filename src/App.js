@@ -28,7 +28,6 @@ const ViewPageNotFound = lazy(() =>
   import("./Components/Views/ViewPageNotFound")
 );
 
-// TODO: Fix content not rendering (most likely react-router upgrate)
 // TODO: (later) animatePrecense not having an effect AFAIK
 function App() {
   const location = useLocation();

@@ -262,7 +262,6 @@ function LandingPageCover({
     },
   };
 
-  /* TODO: Make clients overflow and be scrollable, make scrolling related to mouse position */
   return (
     <StyledCover
       bgColor={bgColor}

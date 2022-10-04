@@ -42,7 +42,6 @@ const StyledListItem = styled.li`
   }) => styleListItem(size, lh, margin)}
 `;
 
-// TODO: check what happened with the plan mode
 function List({ items, plain, columns }) {
   return (
     <StyledList columns={columns}>
