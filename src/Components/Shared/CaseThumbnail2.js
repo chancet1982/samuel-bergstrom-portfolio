@@ -15,9 +15,7 @@ import padding from "../../theme/padding";
 
 /* TODO: CaseThumbnail gets bgColor which isnt used. Make sure to clean up. */
 const StyledCaseThumbnail = styled(motion.div)`
-  a * {
-    text-decoration: none;
-  }
+  background: white;
 `;
 
 const StyledCaseThumbnailImage = styled(motion.div)`
@@ -42,11 +40,11 @@ const StyledCaseThumbnailImageAndCaption = styled.div`
     justify-content: center;
 
     h3 {
-      position: relative;
+      /*position: relative;
       left: 8rem;
       margin-right: -16rem;
       z-index: 1;
-      text-decoration: none;
+      text-decoration: none;*/
     }
   }
 `;
