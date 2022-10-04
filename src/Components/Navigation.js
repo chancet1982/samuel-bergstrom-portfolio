@@ -26,8 +26,8 @@ const StyledNavigation = styled(motion.nav)`
   display: flex;
   justify-content: space-between;
 
-  ${({ opaque }) =>
-    opaque && {
+  ${({ $opaque }) =>
+    $opaque && {
       backgroundColor: "rgba(255, 255, 255, 1)",
       boxShadow: "0 1px 16px rgba(0,0,0,0.16)",
     }};
@@ -83,7 +83,7 @@ const StyledNavLink = styled(NavLink)`
 
   @media (max-width: ${breakpoints.desktop - 1}px) {
     color: ${colors.text.light.medium};
-    ${({ fluidType }) => fluidType};
+    ${({ $fluidType }) => $fluidType};
     display: block;
     padding: 0 3vw;
     flex: 1;
@@ -236,7 +236,7 @@ function Navigation() {
 
   return (
     <StyledNavigation
-      opaque={navState === "opaque"}
+      $opaque={navState === "opaque"}
       initial="show"
       animate={
         scrollDirection === "down" && (isDesktop || (!expanded && !isDesktop))
@@ -265,25 +265,25 @@ function Navigation() {
         animate={expanded ? "expanded" : "collapsed"}
         variants={menuVariants}
       >
-        <StyledNavLink fluidType={fluidType} to="/" onClick={menuTogglerClick}>
+        <StyledNavLink $fluidType={fluidType} to="/" onClick={menuTogglerClick}>
           Home
         </StyledNavLink>
         <StyledNavLink
-          fluidType={fluidType}
+          $fluidType={fluidType}
           to="/about"
           onClick={menuTogglerClick}
         >
           About me
         </StyledNavLink>
         <StyledNavLink
-          fluidType={fluidType}
+          $fluidType={fluidType}
           to="/cases"
           onClick={menuTogglerClick}
         >
           Cases
         </StyledNavLink>
         <StyledNavLink
-          fluidType={fluidType}
+          $fluidType={fluidType}
           to="/contact"
           onClick={menuTogglerClick}
         >

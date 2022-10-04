@@ -23,8 +23,8 @@ const StyledCases = styled(motion.div)`
   grid-template-columns: repeat(1, 1fr);
   column-gap: ${padding.vertical.eighth};
   row-gap: ${padding.vertical.quadruple};
-  padding-bottom: ${({ preview }) =>
-    preview ? padding.vertical.single : padding.vertical.quadruple};
+  padding-bottom: ${({ $preview }) =>
+    $preview ? padding.vertical.single : padding.vertical.quadruple};
 
   @media (min-width: ${breakpoints.desktop}px) {
     max-width: ${sizes.contentWidthLimit}px;
@@ -36,7 +36,7 @@ function SectionCases({ title, text, preview, h }) {
   return (
     <>
       <CenteredTitleAndText title={title} text={text} h={h} isPadded />
-      <StyledCases preview={preview}>
+      <StyledCases $preview={preview}>
         {CASES.filter(({ caseStatus }) =>
           preview
             ? caseStatus === CASE_STATUS.FEATURED
