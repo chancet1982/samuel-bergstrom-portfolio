@@ -74,7 +74,7 @@ function Button({
       fluidType={fluidType}
       disabled={disabled}
       secondary={secondary}
-      onClick={to ? () => navigate.push(to) : onClick}
+      onClick={to ? () => navigate(to) : onClick}
     >
       {children}
     </StyledButton>

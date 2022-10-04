@@ -26,9 +26,9 @@ export const VIEW_LANDING_PAGE = [
           ),
           text: (
             <>
-              <Paragraph huge>
-                Design lead, digital strategist, engineer, speaker, mentor,
-                accessibility nerd, father, husband, and quite a nice guy.
+              <Paragraph xxl>
+                Design lead, speaker, mentor, father, husband, and quite a nice
+                guy.
               </Paragraph>
               <Button to="about">Get to know me</Button>
             </>

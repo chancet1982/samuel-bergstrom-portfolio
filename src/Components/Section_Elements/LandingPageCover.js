@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-nested-ternary */
 import React, { useEffect, useContext } from "react";
 import styled from "styled-components";
@@ -5,19 +6,18 @@ import {
   motion,
   useScroll,
   useTransform,
+  useMotionValue,
   /* useSpring, */
 } from "framer-motion";
 import PropTypes from "prop-types";
 import { useWindowSize } from "react-use";
-import { v4 as uuid } from "uuid";
 import TitleAndText from "../Shared/TitleAndText";
 import Overline from "../Shared/Overline";
 import breakpoints from "../../theme/breakpoints";
 import padding from "../../theme/padding";
-import sizes from "../../theme/sizes";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
-import Client from "./Clients/Client";
+import Image from "../Shared/Image";
 import { CLIENTS } from "../../data/dictionaries/CLIENTS";
 import { useScrollDirection } from "../../utils/useScrollDirection";
 
@@ -30,6 +30,8 @@ const StyledCover = styled(motion.div)`
   position: relative;
   display: flex;
   overflow: hidden;
+  background-image: url("/assets/coverBg.jpg");
+  background-size: cover;
 `;
 
 const StyledCoverImage = styled(motion.img)`
@@ -38,6 +40,7 @@ const StyledCoverImage = styled(motion.img)`
   bottom: 0;
   height: 104vw;
   left: 40vw;
+  display: none;
 
   @media (min-width: ${breakpoints.mobile}px) and (max-width: ${breakpoints.mobileLarge -
     1}px) {
@@ -68,37 +71,33 @@ const StyledCoverImage = styled(motion.img)`
 
 const StyledCaption = styled(motion.div)`
   height: 100%;
-  /*max-width: ${sizes.contentWidthLimit}px;
-  margin: 0 auto;*/
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
+  justify-content: center;
   box-sizing: border-box;
   padding-top: ${padding.vertical.double};
-  padding-left: calc(
-    ${padding.horizontal.quadruple} + ${padding.horizontal.double}
-  );
-  padding-right: calc(
-    ${padding.horizontal.quadruple} + ${padding.horizontal.double}
-  );
+  padding-left: ${padding.horizontal.quadruple};
+  padding-right: ${padding.horizontal.quadruple};
   z-index: 1;
   width: 100%;
-  background: linear-gradient(
+  /*background: linear-gradient(
     72deg,
     rgba(244, 244, 244, 1) 0%,
     rgba(244, 244, 244, 0) 100%
-  );
+  );*/
+
   h1 {
     max-width: 15ch;
     font-weight: 900;
-    /*font-size: 15rem;
-    line-height: 0.8;
-    letter-spacing: -1vw;*/
+    color: ${colors.text.light.high};
   }
 
   p {
+    color: ${colors.text.light.medium};
+
     @media (max-width: ${breakpoints.mobileLarge - 1}px) {
       max-width: 15ch;
     }
@@ -116,12 +115,6 @@ const StyledCaption = styled(motion.div)`
   @media (min-width: ${breakpoints.mobileLarge}px) {
     justify-content: center;
     padding-top: 0;
-    padding-left: calc(
-      ${padding.horizontal.double} + ${padding.horizontal.double}
-    );
-    padding-right: calc(
-      ${padding.horizontal.double} + ${padding.horizontal.double}
-    );
   }
 `;
 
@@ -133,15 +126,22 @@ const StyledCoverBottom = styled(motion.div)`
   background: linear-gradient(
     0deg,
     rgba(244, 244, 244, 1) 0%,
+    rgba(244, 244, 244, 0.3) 50%,
     rgba(244, 244, 244, 0) 100%
   );
   z-index: 1;
 `;
 
-/* TODO: make the clients overflow, start from the middle and react to mouse position on top of that hide client preview when scrolling down */
 const StyledClientsPreview = styled(motion.div)`
   display: flex;
   flex-direction: row;
+  width: max-content;
+  object-fit: fill;
+  object-position: 50% 50%;
+
+  > div {
+    width: 150px;
+  }
 `;
 
 function LandingPageCover({
@@ -153,7 +153,7 @@ function LandingPageCover({
   bgColor,
 }) {
   const { scrollY } = useScroll();
-  const { height } = useWindowSize();
+  const { width, height } = useWindowSize();
   const coverHeight = (height / 100) * 92;
   const imageOffset = (height / 100) * 56; // -56vh
   const [, setLight] = useContext(ElementColorContext);
@@ -178,6 +178,40 @@ function LandingPageCover({
     scrollY,
     [0, coverHeight],
     [0, -coverHeight]
+  );
+
+  const isDesktop = width >= breakpoints.desktop;
+
+  const scrollDirection = useScrollDirection();
+
+  const renderClientsPreview = CLIENTS.map((item) => (
+    <Image
+      key={item.imageUrl}
+      grayscale
+      imageUrl={`${process.env.PUBLIC_URL}/${item.imageUrl}`}
+      imageAlt={item.imageAlt}
+    />
+  ));
+
+  const x = useMotionValue(200);
+
+  useEffect(() => {
+    const mouseMove = (e) => {
+      x.set(e.clientX);
+    };
+
+    window.addEventListener("mousemove", mouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", mouseMove);
+    };
+  }, []);
+
+  /* TODO: Replace 5296 with clientPreviewWidth using useMeasure? https://github.com/streamich/react-use/blob/master/docs/useMeasure.md */
+  const clientPreviewParallax = useTransform(
+    x,
+    [0, width],
+    [0, -(5296 - width)]
   );
 
   const coverVariants = {
@@ -228,21 +262,6 @@ function LandingPageCover({
     },
   };
 
-  const renderClientsPreview = CLIENTS.map((item) => (
-    <Client
-      key={uuid()}
-      title={item.title}
-      url={item.url}
-      imageUrl={item.imageUrl}
-      description={item.description}
-    />
-  ));
-
-  const { width } = useWindowSize();
-  const isDesktop = width >= breakpoints.desktop;
-
-  const scrollDirection = useScrollDirection();
-
   /* TODO: Make clients overflow and be scrollable, make scrolling related to mouse position */
   return (
     <StyledCover
@@ -264,14 +283,12 @@ function LandingPageCover({
           {text}
         </TitleAndText>
       </StyledCaption>
-      <StyledCoverBottom>
-        <StyledClientsPreview
-          variants={coverBottomVariants}
-          initial="animate"
-          animate={
-            scrollDirection === "down" && isDesktop ? "hidden" : "animate"
-          }
-        >
+      <StyledCoverBottom
+        variants={coverBottomVariants}
+        initial="animate"
+        animate={scrollDirection === "down" && isDesktop ? "hidden" : "animate"}
+      >
+        <StyledClientsPreview style={{ x: clientPreviewParallax }}>
           {renderClientsPreview}
         </StyledClientsPreview>
       </StyledCoverBottom>
