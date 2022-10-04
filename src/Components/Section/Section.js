@@ -14,21 +14,21 @@ const StyledSection = styled(motion.section)`
   margin: 0 auto;
   position: relative;
 
-  ${({ isSticky }) =>
-    isSticky && {
+  ${({ $isSticky }) =>
+    $isSticky && {
       position: "sticky",
       top: "0",
     }}
 
-  ${({ isPadded }) =>
-    isPadded && {
+  ${({ $isPadded }) =>
+    $isPadded && {
       paddingLeft: padding.horizontal.double,
       paddingRight: padding.horizontal.double,
     }}
 
-  ${({ bgColor }) =>
-    bgColor && {
-      backgroundColor: bgColor,
+  ${({ $bgColor }) =>
+    $bgColor && {
+      backgroundColor: $bgColor,
       paddingTop: padding.vertical.quadruple,
       paddingBottom: padding.vertical.quadruple,
     }}
@@ -49,12 +49,7 @@ function Section({ header, children, bgColor, isSticky, isPadded }) {
   }, [setLight, bgColor]);
 
   return (
-    <StyledSection
-      header={header}
-      bgColor={bgColor}
-      isSticky={isSticky}
-      isPadded={isPadded}
-    >
+    <StyledSection $bgColor={bgColor} $isSticky={isSticky} $isPadded={isPadded}>
       {header && !isMobile && <SectionHeader>{header}</SectionHeader>}
       {children}
     </StyledSection>

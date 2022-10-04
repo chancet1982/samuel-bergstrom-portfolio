@@ -15,7 +15,7 @@ const StyledBlinds = styled(motion.div)`
 `;
 
 const StyledBlind = styled(motion.div)`
-  background-color: ${({ bgColor }) => bgColor || colors.offwhite};
+  background-color: ${({ $bgColor }) => $bgColor || colors.offwhite};
 `;
 
 function Blinds({ up, bgColor, amountOfBlinds, delayPerBlind }) {
@@ -70,7 +70,7 @@ function Blinds({ up, bgColor, amountOfBlinds, delayPerBlind }) {
       {Array.from({ length: amountOfBlinds }, () => (
         <StyledBlind
           variants={up ? blindUp : blindDown}
-          bgColor={bgColor}
+          $bgColor={bgColor}
           key={uuid()}
         />
       ))}

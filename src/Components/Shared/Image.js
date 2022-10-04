@@ -7,23 +7,23 @@ import { motion } from "framer-motion";
 const StyledImage = styled(motion.img)`
   width: 100%;
   max-width: 100%;
-  height: ${({ withCaption, inTextbox }) =>
-    !inTextbox ? (withCaption ? "calc(100% - 50px)" : "100%") : null};
-  object-fit: ${({ cover }) => (cover ? "cover" : "contain")};
+  height: ${({ $withCaption, $inTextbox }) =>
+    !$inTextbox ? ($withCaption ? "calc(100% - 50px)" : "100%") : null};
+  object-fit: ${({ $cover }) => ($cover ? "cover" : "contain")};
 
-  ${({ bgColor }) =>
-    bgColor && {
-      backgroundColor: bgColor,
+  ${({ $bgColor }) =>
+    $bgColor && {
+      backgroundColor: $bgColor,
     }}
 
-  ${({ grayscale }) =>
-    grayscale && {
+  ${({ $grayscale }) =>
+    $grayscale && {
       filter: "grayscale(100%)",
       cursor: "pointer",
       transition: "all 300ms ease",
     }} :hover {
-    ${({ grayscale }) =>
-      grayscale && {
+    ${({ $grayscale }) =>
+      $grayscale && {
         filter: "grayscale(0%)",
       }}
   }
@@ -41,14 +41,14 @@ function Image({
 }) {
   return (
     <StyledImage
-      grayscale={grayscale}
+      $grayscale={grayscale}
       src={imageUrl}
       alt={imageAlt}
       style={style}
-      cover={cover}
-      withCaption={withCaption}
-      bgColor={bgColor}
-      inTextbox={inTextbox}
+      $cover={cover}
+      $withCaption={withCaption}
+      $bgColor={bgColor}
+      $inTextbox={inTextbox}
     />
   );
 }
