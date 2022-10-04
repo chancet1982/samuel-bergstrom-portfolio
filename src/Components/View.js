@@ -10,8 +10,8 @@ import { ViewColorContext } from "../Context/ViewColorContext";
 import colors from "../theme/colors";
 
 const StyledView = styled(motion.main)`
-  ${({ isPadded }) =>
-    isPadded && {
+  ${({ $isPadded }) =>
+    $isPadded && {
       paddingTop: padding.vertical.quadruple,
     }}
 `;
@@ -54,7 +54,7 @@ function View({ children, isPadded, transition, bgColor }) {
     )
   ) : (
     <StyledView
-      isPadded={isPadded}
+      $isPadded={isPadded}
       initial="viewInitial"
       animate="viewAnimate"
       exit="viewExit"

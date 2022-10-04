@@ -8,13 +8,13 @@ import { variants } from "../../animations/animations";
 import padding from "../../theme/padding";
 
 const StyledTitleAndText = styled(motion.div)`
-  ${({ isPadded }) =>
-    isPadded && {
+  ${({ $isPadded }) =>
+    $isPadded && {
       padding: `${padding.vertical.double} ${padding.horizontal.double}`,
     }}
 
-  ${({ sticky }) =>
-    sticky && {
+  ${({ $sticky }) =>
+    $sticky && {
       position: "sticky",
       top: "6vw",
       height: "fit-content",
@@ -47,10 +47,10 @@ function TitleAndText({
     <StyledTitleAndText
       ref={intersectionRef}
       initial="hidden"
-      sticky={sticky}
+      $sticky={sticky}
       variants={variants}
       animate={disableAnimations || inView ? "inView" : "hidden"}
-      isPadded={isPadded}
+      $isPadded={isPadded}
     >
       {title && <Title h={h}>{title}</Title>}
       {children}

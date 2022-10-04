@@ -14,8 +14,8 @@ const StyledCenteredTitleAndText = styled(motion.div)`
   padding-left: ${padding.horizontal.double};
   padding-right: ${padding.horizontal.double};
 
-  ${({ isPadded }) =>
-    isPadded && {
+  ${({ $isPadded }) =>
+    $isPadded && {
       paddingTop: padding.vertical.quadruple,
     }}
 
@@ -53,7 +53,7 @@ function CenteredTitleAndText({ title, text, isPadded, disableAnimations, h }) {
       initial={disableAnimations ? "inView" : "hidden"}
       animate={disableAnimations || inView ? "inView" : "hidden"}
       variants={variants}
-      isPadded={isPadded}
+      $isPadded={isPadded}
     >
       <TitleAndText h={h} title={title}>
         {text}
