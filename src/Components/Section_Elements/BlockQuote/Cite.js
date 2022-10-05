@@ -15,8 +15,8 @@ const StyledCite = styled.cite`
     content: "-";
     width: 1rem;
     margin-left: -1rem;
-    color: ${({ light }) =>
-      light ? colors.text.light.low : colors.text.dark.low};
+    color: ${({ $light }) =>
+      $light ? colors.text.light.low : colors.text.dark.low};
   }
 `;
 
@@ -24,10 +24,8 @@ function Cite({ children }) {
   const light = useBgColor();
 
   return (
-    <StyledCite light={light}>
-      <Span small light={light}>
-        {children}
-      </Span>
+    <StyledCite $light={light}>
+      <Span small>{children}</Span>
     </StyledCite>
   );
 }

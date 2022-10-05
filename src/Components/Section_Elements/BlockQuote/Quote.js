@@ -1,7 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import useBgColor from "../../../utils/useBgColor";
 import Span from "../../Shared/Span";
 
 const StyledQuote = styled.q`
@@ -17,11 +16,9 @@ const StyledQuote = styled.q`
 `;
 
 function Quote({ children }) {
-  const light = useBgColor();
-
   return (
-    <StyledQuote light={light}>
-      <Span huge light={light} highContrast>
+    <StyledQuote>
+      <Span huge highContrast>
         {children}
       </Span>
     </StyledQuote>

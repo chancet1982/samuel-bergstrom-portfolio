@@ -8,12 +8,12 @@ import colors from "../../theme/colors";
 import typography from "../../theme/typography";
 
 const StyledSpan = styled.span`
-  color: ${({ light, highContrast }) =>
-    light
-      ? highContrast
+  color: ${({ $light, $highContrast }) =>
+    $light
+      ? $highContrast
         ? colors.text.light.high
         : colors.text.light.medium
-      : highContrast
+      : $highContrast
       ? colors.text.dark.high
       : colors.text.dark.medium};
 
@@ -26,8 +26,8 @@ const StyledSpan = styled.span`
   }
 `;
 
-function Span({ small, large, huge, xxl, children, light, highContrast }) {
-  const lightText = useBgColor() || light;
+function Span({ small, large, huge, xxl, children, highContrast }) {
+  const light = useBgColor();
   const mapSizeToNumber = () => {
     if (small) return 1;
     if (large) return 3;
@@ -40,9 +40,9 @@ function Span({ small, large, huge, xxl, children, light, highContrast }) {
 
   return (
     <StyledSpan
-      light={lightText}
+      $light={light}
       $fluidType={fluidType}
-      highContrast={highContrast}
+      $highContrast={highContrast}
     >
       {children}
     </StyledSpan>
@@ -55,7 +55,6 @@ Span.propTypes = {
   huge: PropTypes.bool,
   xxl: PropTypes.bool,
   children: PropTypes.node.isRequired,
-  light: PropTypes.bool,
   highContrast: PropTypes.bool,
 };
 
@@ -64,7 +63,6 @@ Span.defaultProps = {
   large: false,
   huge: false,
   xxl: false,
-  light: false,
   highContrast: false,
 };
 

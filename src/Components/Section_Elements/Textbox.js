@@ -17,31 +17,31 @@ const StyledTextbox = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
 
-  ${(limitMaxWidth) =>
-    limitMaxWidth && {
+  ${($limitMaxWidth) =>
+    $limitMaxWidth && {
       maxWidth: `${sizes.contentWidthLimit}px`,
     }};
 
   margin: 0 auto;
 
-  ${({ bgColor }) =>
-    bgColor && {
-      backgroundColor: bgColor,
+  ${({ $bgColor }) =>
+    $bgColor && {
+      backgroundColor: $bgColor,
     }};
 
   > div:first-of-type {
     grid-column: 1 / span 2;
 
     @media (min-width: ${breakpoints.desktop}px) {
-      ${({ imageUrl }) =>
-        imageUrl && {
+      ${({ $imageUrl }) =>
+        $imageUrl && {
           display: "flex",
           flexDirection: "column",
           alignSelf: "center",
         }};
 
-      grid-column: ${({ imageUrl, flip }) =>
-        imageUrl ? (flip ? "2 / span 1" : "1 / span 1") : "1 / span 2"};
+      grid-column: ${({ $imageUrl, $flip }) =>
+        $imageUrl ? ($flip ? "2 / span 1" : "1 / span 1") : "1 / span 2"};
     }
   }
 
@@ -50,7 +50,7 @@ const StyledTextbox = styled(motion.div)`
     grid-column: 1 / span 2;
 
     @media (min-width: ${breakpoints.desktop}px) {
-      grid-column: ${({ flip }) => (flip ? "1 / span 1" : "2 / span 1")};
+      grid-column: ${({ $flip }) => ($flip ? "1 / span 1" : "2 / span 1")};
     }
 
     display: flex;
@@ -133,10 +133,10 @@ function Textbox({
       initial="hidden"
       animate={inView ? "inView" : "hidden"}
       variants={variants}
-      flip={flip}
-      bgColor={bgColor}
-      imageUrl={imageUrl}
-      limitMaxWidth={limitMaxWidth}
+      $flip={flip}
+      $bgColor={bgColor}
+      $imageUrl={imageUrl}
+      $limitMaxWidth={limitMaxWidth}
     >
       {flip && imageUrl && renderImage()}
 

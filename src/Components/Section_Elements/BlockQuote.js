@@ -17,32 +17,23 @@ const StyledBlockQuote = styled(motion.blockquote)`
   max-width: ${sizes.contentWidthLimit}px;
   margin: 0 auto;
   position: relative;
-  border-left: solid 0.25rem
-    ${({ light }) => (light ? colors.text.light.low : colors.text.dark.low)};
-  margin-left: ${padding.horizontal.quadruple};
-  margin-bottom: ${padding.vertical.double};
+  box-sizing: border-box;
+  margin-bottom: ${({ $light }) => ($light ? 0 : padding.vertical.double)};
 
   :after {
-    content: open-quote;
+    content: "";
     position: absolute;
-    top: 50%;
-    left: -0.46em;
-    color: ${({ light }) =>
-      light ? colors.text.light.low : colors.text.dark.low};
-    font-style: normal;
-    line-height: 1.3em;
-    text-align: center;
-    width: 2.4rem;
-    height: 2.4rem;
-    margin-top: -0.5em;
-    font-size: 3rem;
-    background: white;
-    font-family: "IBM Plex Sans";
+    top: 0;
+    left: 6vw; /* TODO: replace magic number */
+    height: 100%;
+    width: 2px;
+    background-color: ${({ $light }) =>
+      $light ? colors.text.light.low : colors.text.dark.low};
   }
 `;
 
 // TODO: (later) reveal on scroll (fixed under other content?)
-function BlockQuote({ cite, quote, bgColor, bgImageUrl, limitMaxWidth }) {
+function BlockQuote({ cite, quote, bgColor, bgImageUrl }) {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
@@ -76,7 +67,7 @@ function BlockQuote({ cite, quote, bgColor, bgImageUrl, limitMaxWidth }) {
       initial="hidden"
       variants={variants}
       animate={inView ? "inView" : "hidden"}
-      light={light}
+      $light={light}
     >
       <Quote>{quote}</Quote>
       <Cite>{cite}</Cite>
@@ -84,11 +75,7 @@ function BlockQuote({ cite, quote, bgColor, bgImageUrl, limitMaxWidth }) {
   );
 
   return bgColor || bgImageUrl ? (
-    <BackgroundWrapper
-      bgColor={bgColor}
-      bgImageUrl={bgImageUrl}
-      limitMaxWidth={limitMaxWidth}
-    >
+    <BackgroundWrapper bgColor={bgColor} bgImageUrl={bgImageUrl}>
       {renderBlockQuote()}
     </BackgroundWrapper>
   ) : (
@@ -101,14 +88,12 @@ BlockQuote.propTypes = {
   quote: PropTypes.node.isRequired,
   bgColor: PropTypes.string,
   bgImageUrl: PropTypes.string,
-  limitMaxWidth: PropTypes.bool,
 };
 
 BlockQuote.defaultProps = {
   cite: null,
   bgColor: null,
   bgImageUrl: null,
-  limitMaxWidth: false,
 };
 
 export default BlockQuote;
