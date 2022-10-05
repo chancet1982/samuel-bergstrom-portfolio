@@ -17,7 +17,7 @@ const StyledSpan = styled.span`
       ? colors.text.dark.high
       : colors.text.dark.medium};
 
-  ${({ fluidType }) => fluidType};
+  ${({ $fluidType }) => $fluidType};
   font-family: ${typography.bodyFont};
 
   strong {
@@ -40,12 +40,8 @@ function Span({ small, large, huge, xxl, children, light, highContrast }) {
 
   return (
     <StyledSpan
-      small={small}
-      large={large}
-      huge={huge}
-      xxl={xxl}
       light={lightText}
-      fluidType={fluidType}
+      $fluidType={fluidType}
       highContrast={highContrast}
     >
       {children}

@@ -14,7 +14,9 @@ const StyledTestimonial = styled(motion.div)`
   }
 
   margin-bottom: ${padding.vertical.single};
-
+  background-color: ${colors.primaryShade};
+  border-radius: ${padding.vertical.single};
+  padding: 1px;
   > div {
     position: relative;
 
@@ -35,8 +37,7 @@ const StyledTestimonial = styled(motion.div)`
           left: 0;
           top: -2rem;
           border: solid 1rem;
-          border-color: transparent transparent ${colors.offwhite}
-            ${colors.offwhite};
+          border-color: transparent transparent white white;
         }
       }
     }
@@ -51,8 +52,7 @@ const StyledTestimonial = styled(motion.div)`
           left: -2rem;
           bottom: 0;
           border: solid 1rem;
-          border-color: transparent ${colors.offwhite} ${colors.offwhite}
-            transparent;
+          border-color: transparent white white transparent;
         }
       }
     }
@@ -67,8 +67,7 @@ const StyledTestimonial = styled(motion.div)`
           right: 0;
           top: -2rem;
           border: solid 1rem;
-          border-color: transparent ${colors.offwhite} ${colors.offwhite}
-            transparent;
+          border-color: transparent white white transparent;
         }
       }
     }
@@ -84,8 +83,7 @@ const StyledTestimonial = styled(motion.div)`
           right: -2rem;
           bottom: 0;
           border: solid 1rem;
-          border-color: transparent transparent ${colors.offwhite}
-            ${colors.offwhite};
+          border-color: transparent transparent white white;
         }
       }
     }
@@ -101,7 +99,9 @@ const StyledTestimonial = styled(motion.div)`
 
 const StyledTestimonialContent = styled(motion.div)`
   padding: ${padding.vertical.single} ${padding.horizontal.double};
-  background-color: ${colors.offwhite};
+  background-color: white;
+  display: flex;
+  align-items: center;
 `;
 
 function Testimonial({ children, author }) {

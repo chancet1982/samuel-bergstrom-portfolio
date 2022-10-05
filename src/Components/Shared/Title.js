@@ -16,7 +16,7 @@ export const StyledH1 = styled.h1`
   max-width: 16ch;
   color: ${({ light }) =>
     light ? colors.text.light.high : colors.text.dark.high};
-  ${({ fluidType }) => fluidType};
+  ${({ $fluidType }) => $fluidType};
   ${headlineFont}
 `;
 
@@ -24,7 +24,7 @@ export const StyledH2 = styled.h2`
   max-width: 40ch;
   color: ${({ light }) =>
     light ? colors.text.light.high : colors.text.dark.high};
-  ${({ fluidType }) => fluidType};
+  ${({ $fluidType }) => $fluidType};
   ${headlineFont}
 `;
 
@@ -32,7 +32,7 @@ export const StyledH3 = styled.h3`
   max-width: 40ch;
   color: ${({ light }) =>
     light ? colors.text.light.high : colors.text.dark.high};
-  ${({ fluidType }) => fluidType};
+  ${({ $fluidType }) => $fluidType};
   ${headlineFont}
 `;
 
@@ -40,7 +40,7 @@ export const StyledH4 = styled.h4`
   max-width: 48ch;
   color: ${({ light }) =>
     light ? colors.text.light.high : colors.text.dark.high};
-  ${({ fluidType }) => fluidType};
+  ${({ $fluidType }) => $fluidType};
   ${headlineFont}
 `;
 
@@ -48,7 +48,7 @@ export const StyledH5 = styled.h5`
   max-width: 48ch;
   color: ${({ light }) =>
     light ? colors.text.light.high : colors.text.dark.high};
-  ${({ fluidType }) => fluidType};
+  ${({ $fluidType }) => $fluidType};
   ${headlineFont}
 `;
 
@@ -65,7 +65,7 @@ const Title = ({ h, children, withMargin }) => {
             light={light}
             h={0}
             withMargin={withMargin}
-            fluidType={fluidType}
+            $fluidType={fluidType}
           >
             {children}
           </StyledH1>
@@ -76,7 +76,7 @@ const Title = ({ h, children, withMargin }) => {
             light={light}
             h={h}
             withMargin={withMargin}
-            fluidType={fluidType}
+            $fluidType={fluidType}
           >
             {children}
           </StyledH1>
@@ -87,7 +87,7 @@ const Title = ({ h, children, withMargin }) => {
             light={light}
             h={h}
             withMargin={withMargin}
-            fluidType={fluidType}
+            $fluidType={fluidType}
           >
             {children}
           </StyledH2>
@@ -98,7 +98,7 @@ const Title = ({ h, children, withMargin }) => {
             light={light}
             h={h}
             withMargin={withMargin}
-            fluidType={fluidType}
+            $fluidType={fluidType}
           >
             {children}
           </StyledH3>
@@ -109,7 +109,7 @@ const Title = ({ h, children, withMargin }) => {
             light={light}
             h={h}
             withMargin={withMargin}
-            fluidType={fluidType}
+            $fluidType={fluidType}
           >
             {children}
           </StyledH4>
@@ -120,7 +120,7 @@ const Title = ({ h, children, withMargin }) => {
             light={light}
             h={h}
             withMargin={withMargin}
-            fluidType={fluidType}
+            $fluidType={fluidType}
           >
             {children}
           </StyledH5>

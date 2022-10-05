@@ -11,7 +11,7 @@ const StyledParagraph = styled.p`
   color: ${({ light }) =>
     light ? colors.text.light.medium : colors.text.dark.medium};
   max-width: 80ch;
-  ${({ fluidType }) => fluidType};
+  ${({ $fluidType }) => $fluidType};
   font-family: ${typography.bodyFont};
 
   strong {
@@ -34,13 +34,7 @@ function Paragraph({ small, large, huge, xxl, children }) {
   const fluidType = useFluidTypography(mapSizeToNumber());
 
   return (
-    <StyledParagraph
-      small={small}
-      large={large}
-      huge={huge}
-      light={light}
-      fluidType={fluidType}
-    >
+    <StyledParagraph light={light} $fluidType={fluidType}>
       {children}
     </StyledParagraph>
   );

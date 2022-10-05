@@ -3,6 +3,7 @@ import styled from "styled-components";
 import React from "react";
 import PropTypes from "prop-types";
 import Span from "../../Shared/Span";
+import Title from "../../Shared/Title";
 
 const StyledTestimonialAuthor = styled(motion.figure)`
   display: flex;
@@ -27,8 +28,8 @@ function TestimonialAuthor({ authorName, authorTitle, authorImageUrl }) {
     <StyledTestimonialAuthor>
       <StyledAuthorImage src={authorImageUrl} alt={authorTitle} />
       <StyledAuthorName>
-        <Span>{authorName}</Span> <br />
-        <Span small>{authorTitle}</Span>
+        <Title h={5}>{authorName}</Title>
+        <Span>{authorTitle}</Span>
       </StyledAuthorName>
     </StyledTestimonialAuthor>
   );
