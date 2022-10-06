@@ -46,6 +46,7 @@ server side rendering using Next.js (?)
 Add authentication
 Timeline -> Finish developing the timeline and add it to about me page.
 
+Removed packages (not really used but maybe one day will be relevant)
 react-scroll-section
 react-lazyload
 react-typical
