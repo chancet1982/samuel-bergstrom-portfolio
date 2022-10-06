@@ -3,7 +3,9 @@ import React from "react";
 import Button from "../Components/Shared/Button";
 import Paragraph from "../Components/Shared/Paragraph";
 import colors from "../theme/colors";
+import { COVER_MEDIA_TYPES } from "./dictionaries/COVER_MEDIA_TYPES";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
+import ClientPreview from "../Components/Section_Elements/CoverElements/ClientsPreview";
 
 export const VIEW_LANDING_PAGE = [
   {
@@ -18,23 +20,28 @@ export const VIEW_LANDING_PAGE = [
         template: SECTION_ELEMENTS.LANDING_PAGE_COVER,
         data: {
           bgColor: colors.primaryShade,
-          title: (
-            <>
-              Samuel
-              <br /> Bergström
-            </>
-          ),
-          text: (
-            <>
-              <Paragraph xxl>
-                Design lead, speaker, mentor, father, husband, and quite a nice
-                guy.
-              </Paragraph>
-              <Button to="about">Get to know me</Button>
-            </>
-          ),
-          bgImageUrl: "assets/cover-bg.svg",
-          imageUrl: "assets/cover-fg.png",
+          caption: {
+            title: (
+              <>
+                Samuel
+                <br /> Bergström
+              </>
+            ),
+            text: (
+              <>
+                <Paragraph xxl>
+                  Design lead, speaker, mentor, father, husband, and quite a
+                  nice guy.
+                </Paragraph>
+                <Button to="about">Get to know me</Button>
+              </>
+            ),
+          },
+          bgMedia: {
+            type: COVER_MEDIA_TYPES.IMAGE,
+            mediaUrl: "assets/cover-bg.jpg",
+          },
+          footer: <ClientPreview />,
         },
       },
     ],

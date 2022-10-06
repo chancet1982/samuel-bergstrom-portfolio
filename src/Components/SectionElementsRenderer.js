@@ -2,8 +2,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { SECTION_ELEMENTS } from "../data/dictionaries/SECTION_ELEMENTS";
+import CoverOLD from "./Section_Elements/CoverOLD";
 import Cover from "./Section_Elements/Cover";
-import LandingPageCover from "./Section_Elements/LandingPageCover";
 import Overview from "./Section_Elements/Overview";
 import Textbox from "./Section_Elements/Textbox";
 import Clients from "./Section_Elements/Clients";
@@ -33,7 +33,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
   switch (template) {
     case SECTION_ELEMENTS.COVER:
       return (
-        <Cover
+        <CoverOLD
           key={elementKey}
           overline={data.overline}
           title={data.title}
@@ -48,14 +48,16 @@ function SectionElementsRenderer({ elementKey, data, template }) {
     case SECTION_ELEMENTS.LANDING_PAGE_COVER:
       return (
         <ElementColorContextProvider>
-          <LandingPageCover
+          <Cover
             key={elementKey}
             overline={data.overline}
             title={data.title}
             text={data.text}
-            bgImageUrl={data.bgImageUrl}
-            imageUrl={data.imageUrl}
+            bgMedia={data.bgMedia}
             bgColor={data.bgColor}
+            fgImage={data.fgImage}
+            caption={data.caption}
+            footer={data.footer}
           />
         </ElementColorContextProvider>
       );

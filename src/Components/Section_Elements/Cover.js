@@ -1,12 +1,17 @@
-import React from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-nested-ternary */
+import React, { useEffect, useContext } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
-import { useWindowSize, useOrientation } from "react-use";
-import TitleAndText from "../Shared/TitleAndText";
-import Overline from "../Shared/Overline";
+import { useWindowSize } from "react-use";
 import breakpoints from "../../theme/breakpoints";
-import padding from "../../theme/padding";
+import { ElementColorContext } from "../../Context/ElementColorContext";
+import colors from "../../theme/colors";
+import { useScrollDirection } from "../../utils/useScrollDirection";
+import BgMedia from "./CoverElements/BgMedia";
+import Caption from "./CoverElements/Caption";
+import FgImage from "./CoverElements/FgImage";
 
 const StyledCover = styled(motion.div)`
   height: ${({
@@ -17,63 +22,42 @@ const StyledCover = styled(motion.div)`
   position: relative;
   display: flex;
   overflow: hidden;
-  padding: 0 ${padding.horizontal.double};
-
-  :before {
-    content: "";
-    clip-path: circle(32vw at 72% 20%);
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    clip-path: circle(40vw at 72% 20%);
-
-    @media (min-width: ${breakpoints.desktop}px) {
-      clip-path: circle(32vw at 72% 20%);
-    }
-
-    ${({ bgColor }) =>
-      bgColor && {
-        backgroundColor: bgColor,
-      }};
-  }
+  background-image: url("/assets/coverBg.jpg");
+  background-size: cover;
 `;
 
-const StyledCoverImage = styled(motion.img)`
+const StyledCoverFooter = styled(motion.div)`
   position: absolute;
-  top: 0;
+  bottom: 0;
+  left: 0;
   right: 0;
-  height: 92vh;
-
-  @media (max-width: ${breakpoints.tablet}px) and (orientation: landscape) {
-    height: 54vw;
-  }
-`;
-
-const StyledCaption = styled(motion.div)`
-  height: 100%;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  box-sizing: border-box;
-  padding: 0 ${padding.horizontal.double};
+  background: linear-gradient(
+    0deg,
+    rgba(244, 244, 244, 1) 0%,
+    rgba(244, 244, 244, 0.3) 50%,
+    rgba(244, 244, 244, 0) 100%
+  );
   z-index: 1;
-  width: 100%;
-
-  p {
-    max-width: 40ch;
-  }
-
-  @media (max-width: ${breakpoints.tablet}px) and (orientation: portrait) {
-    justify-content: flex-end;
-  }
 `;
 
-// TODO: parallax effect on the cover in the landing page  needs some fine-tuning
-function Cover({ overline, title, text, imageUrl, mobileImageUrl, bgColor }) {
+function Cover({ bgColor, bgMedia, caption, fgImage, footer }) {
+  const { width } = useWindowSize();
+  const [, setLight] = useContext(ElementColorContext);
+
+  useEffect(() => {
+    // eslint-disable-next-line no-unused-expressions
+    setLight !== null &&
+      setLight(
+        bgColor !== null &&
+          bgColor !== colors.offwhite &&
+          bgColor !== colors.primaryShade
+      );
+  }, [setLight, bgColor]);
+
+  const isDesktop = width >= breakpoints.desktop;
+
+  const scrollDirection = useScrollDirection();
+
   const coverVariants = {
     initial: {
       opacity: 0,
@@ -86,77 +70,76 @@ function Cover({ overline, title, text, imageUrl, mobileImageUrl, bgColor }) {
     },
   };
 
-  const captionVariants = {
-    hidden: { opacity: 0, y: 10 },
+  const coverBottomVariants = {
+    hidden: { opacity: 0, y: "100%", transition: { duration: 0.6 } },
     animate: {
       opacity: 1,
       y: 0,
       transition: {
-        delay: 2.3,
         duration: 0.6,
+        staggerChildren: 0.2,
       },
     },
   };
-
-  const imageVariants = {
-    hidden: { opacity: 0, y: 10 },
-    animate: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        delay: 2.6,
-        duration: 0.6,
-      },
-    },
-  };
-
-  const { width } = useWindowSize();
-  const isMobile = width < breakpoints.tablet;
-  const deviceOrientation = useOrientation();
-  const isLandscape = deviceOrientation.type === "landscape-primary";
 
   return (
     <StyledCover
+      bgColor={bgColor}
       variants={coverVariants}
       initial="hidden"
       animate="animate"
-      bgColor={bgColor}
     >
-      <StyledCoverImage
-        variants={imageVariants}
-        src={`${process.env.PUBLIC_URL}/${
-          // eslint-disable-next-line no-nested-ternary
-          isMobile ? (isLandscape ? imageUrl : mobileImageUrl) : imageUrl
-        }`}
-        alt="Just a picture of me looking inteligent"
+      {bgMedia && <BgMedia type={bgMedia.type} mediaUrl={bgMedia.mediaUrl} />}
+
+      <Caption
+        overline={caption.overline}
+        title={caption.title}
+        text={caption.text}
       />
 
-      <StyledCaption variants={captionVariants}>
-        {overline && <Overline disableAnimations>{overline}</Overline>}
-        <TitleAndText h={1} title={title} disableAnimations>
-          {text}
-        </TitleAndText>
-      </StyledCaption>
+      {fgImage && (
+        <FgImage imageUrl={fgImage.imageUrl} imageAlt={fgImage.imageAlt} />
+      )}
+
+      {footer && (
+        <StyledCoverFooter
+          variants={coverBottomVariants}
+          initial="animate"
+          animate={
+            scrollDirection === "down" && isDesktop ? "hidden" : "animate"
+          }
+        >
+          {footer}
+        </StyledCoverFooter>
+      )}
     </StyledCover>
   );
 }
 
 Cover.propTypes = {
-  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  imageUrl: PropTypes.string,
-  mobileImageUrl: PropTypes.string,
+  bgMedia: PropTypes.shape({
+    type: PropTypes.oneOf(["image", "video"]),
+    mediaUrl: PropTypes.string,
+  }),
   bgColor: PropTypes.string,
-  overline: PropTypes.string,
+  fgImage: PropTypes.shape({
+    imageUrl: PropTypes.string,
+    imageAlt: PropTypes.string,
+  }),
+  caption: PropTypes.shape({
+    overline: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  }),
+  footer: PropTypes.node,
 };
 
 Cover.defaultProps = {
-  overline: null,
-  title: null,
-  text: null,
-  imageUrl: null,
-  mobileImageUrl: null,
+  bgMedia: null,
   bgColor: null,
+  fgImage: null,
+  caption: null,
+  footer: null,
 };
 
 export default Cover;
