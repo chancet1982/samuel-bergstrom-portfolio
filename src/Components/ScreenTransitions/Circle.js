@@ -16,7 +16,7 @@ const StyledCircleWrapper = styled(motion.div)`
 `;
 
 const StyledCircle = styled(motion.div)`
-  background-color: ${({ bgColor }) => bgColor || colors.primary};
+  background-color: ${({ $bgColor }) => $bgColor || colors.primary};
   width: 200vh;
   height: 200vh;
   border-radius: 100%;
@@ -69,7 +69,7 @@ const StyledCircle = styled(motion.div)`
 function Blinds({ bgColor }) {
   return (
     <StyledCircleWrapper>
-      <StyledCircle bgColor={bgColor} />
+      <StyledCircle $bgColor={bgColor} />
     </StyledCircleWrapper>
   );
 }

@@ -14,6 +14,11 @@ const StyledView = styled(motion.main)`
     $isPadded && {
       paddingTop: padding.vertical.quadruple,
     }}
+
+  ${({ $bgColor }) =>
+    $bgColor && {
+      backgroundColor: $bgColor,
+    }}
 `;
 
 function View({ children, isPadded, transition, bgColor }) {
@@ -59,7 +64,7 @@ function View({ children, isPadded, transition, bgColor }) {
       animate="viewAnimate"
       exit="viewExit"
       variants={variants}
-      bgColor={bgColor}
+      $bgColor={bgColor}
     >
       {children}
     </StyledView>

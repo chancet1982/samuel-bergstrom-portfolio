@@ -46,6 +46,8 @@ function SectionElementsRenderer({ elementKey, data, template }) {
         />
       );
     case SECTION_ELEMENTS.LANDING_PAGE_COVER:
+      console.log("SECTION_ELEMENTS_RENDERER, BGMEDIA: ", data.bgMedia);
+
       return (
         <ElementColorContextProvider>
           <Cover

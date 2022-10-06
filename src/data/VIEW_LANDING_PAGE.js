@@ -2,10 +2,9 @@
 import React from "react";
 import Button from "../Components/Shared/Button";
 import Paragraph from "../Components/Shared/Paragraph";
-import colors from "../theme/colors";
 import { COVER_MEDIA_TYPES } from "./dictionaries/COVER_MEDIA_TYPES";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
-import ClientPreview from "../Components/Section_Elements/CoverElements/ClientsPreview";
+import ClientPreview from "../Components/Section_Elements/Cover/ClientsPreview";
 
 export const VIEW_LANDING_PAGE = [
   {
@@ -19,7 +18,6 @@ export const VIEW_LANDING_PAGE = [
       {
         template: SECTION_ELEMENTS.LANDING_PAGE_COVER,
         data: {
-          bgColor: colors.primaryShade,
           caption: {
             title: (
               <>

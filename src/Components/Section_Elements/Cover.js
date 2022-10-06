@@ -9,9 +9,9 @@ import breakpoints from "../../theme/breakpoints";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
 import { useScrollDirection } from "../../utils/useScrollDirection";
-import BgMedia from "./CoverElements/BgMedia";
-import Caption from "./CoverElements/Caption";
-import FgImage from "./CoverElements/FgImage";
+import BgMedia from "./Cover/BgMedia";
+import Caption from "./Cover/Caption";
+import FgImage from "./Cover/FgImage";
 
 const StyledCover = styled(motion.div)`
   height: ${({
@@ -22,8 +22,11 @@ const StyledCover = styled(motion.div)`
   position: relative;
   display: flex;
   overflow: hidden;
-  background-image: url("/assets/coverBg.jpg");
-  background-size: cover;
+
+  ${({ $bgColor }) =>
+    $bgColor && {
+      backgroundColor: $bgColor,
+    }}
 `;
 
 const StyledCoverFooter = styled(motion.div)`
@@ -84,7 +87,7 @@ function Cover({ bgColor, bgMedia, caption, fgImage, footer }) {
 
   return (
     <StyledCover
-      bgColor={bgColor}
+      $bgColor={bgColor}
       variants={coverVariants}
       initial="hidden"
       animate="animate"

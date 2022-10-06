@@ -21,9 +21,9 @@ const StyledCaseThumbnail = styled(motion.div)`
 const StyledCaseThumbnailImage = styled(motion.div)`
   aspect-ratio: 1;
 
-  ${({ imageUrl }) =>
-    imageUrl && {
-      backgroundImage: `url(${imageUrl})`,
+  ${({ $imageUrl }) =>
+    $imageUrl && {
+      backgroundImage: `url(${$imageUrl})`,
       backgroundSize: "cover",
     }}
 `;
@@ -84,7 +84,7 @@ function CaseThumbnail({ data, status, caseUrl }) {
       </TitleAndText>
 
       <StyledCaseThumbnailImage
-        imageUrl={`${process.env.PUBLIC_URL}/${imageUrl}`}
+        $imageUrl={`${process.env.PUBLIC_URL}/${imageUrl}`}
       />
       {status === CASE_STATUS.COMING_SOON && <Tag />}
     </StyledCaseThumbnailImageAndCaption>

@@ -62,7 +62,7 @@ function BgMedia({ type, mediaUrl }) {
 }
 
 BgMedia.propTypes = {
-  type: PropTypes.oneOf(COVER_MEDIA_TYPES.IMAGE, COVER_MEDIA_TYPES.VIDEO)
+  type: PropTypes.oneOf([COVER_MEDIA_TYPES.IMAGE, COVER_MEDIA_TYPES.VIDEO])
     .isRequired,
   mediaUrl: PropTypes.string.isRequired,
 };
