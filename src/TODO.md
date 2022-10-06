@@ -1,5 +1,5 @@
 TODO list (What's left before you're done)
-
+Just updating todo
 FIXES:
 COVER -> Fix background circle to work in all resolutions.
 COVER -> Fix not loading the correct image always (mobile detection issue?).
