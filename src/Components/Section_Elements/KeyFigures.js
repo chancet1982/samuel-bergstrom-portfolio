@@ -36,6 +36,8 @@ const StyledKeyFigures = styled(motion.div)`
   }
 `;
 
+/* TODO: limitMaxWidth is most likely useless here */
+
 function KeyFigures({ items, bgColor, bgImageUrl, limitMaxWidth }) {
   const [, setLight] = useContext(ElementColorContext);
 
@@ -52,8 +54,8 @@ function KeyFigures({ items, bgColor, bgImageUrl, limitMaxWidth }) {
 
   const renderKeyFigures = () => (
     <StyledKeyFigures>
-      {items.map(({ value, description }) => (
-        <KeyFigure2 value={value} description={description} key={uuid()} />
+      {items.map(({ value, label }) => (
+        <KeyFigure2 value={value} label={label} key={uuid()} />
       ))}
     </StyledKeyFigures>
   );
@@ -75,7 +77,7 @@ KeyFigures.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
       value: PropTypes.string.isRequired,
-      description: PropTypes.string.isRequired,
+      label: PropTypes.string.isRequired,
     })
   ).isRequired,
   bgColor: PropTypes.string,

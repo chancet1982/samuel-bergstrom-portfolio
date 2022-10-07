@@ -184,12 +184,12 @@ export const CASE_2 = {
             items: [
               {
                 value: "102",
-                description: "Survey responses",
+                label: "Survey responses",
               },
-              { value: "5", description: "clinics" },
+              { value: "5", label: "clinics" },
               {
                 value: "3",
-                description: "countries",
+                label: "countries",
               },
             ],
           },

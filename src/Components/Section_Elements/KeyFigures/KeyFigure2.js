@@ -16,12 +16,29 @@ const StyledKeyFigure = styled(motion.div)`
   padding: ${padding.vertical.double} ${padding.horizontal.double};
 `;
 
-function KeyFigure2({ value, description }) {
+function KeyFigure2({ value, label, flip }) {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
     threshold: 0,
   });
+
+  const renderValueAndLabel = () =>
+    flip ? (
+      <>
+        <Span>{label}</Span>
+        <Span xxl>
+          <strong>{value}</strong>
+        </Span>
+      </>
+    ) : (
+      <>
+        <Span xxl>
+          <strong>{value}</strong>
+        </Span>
+        <Span>{label}</Span>
+      </>
+    );
 
   // eslint-disable-next-line consistent-return
   useEffect(() => {
@@ -38,17 +55,19 @@ function KeyFigure2({ value, description }) {
       variants={variants}
       animate={inView ? "inView" : "hidden"}
     >
-      <Span xxl>
-        <strong>{value}</strong>
-      </Span>
-      <Span>{description}</Span>
+      {renderValueAndLabel()}
     </StyledKeyFigure>
   );
 }
 
 KeyFigure2.propTypes = {
   value: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  flip: PropTypes.bool,
+};
+
+KeyFigure2.defaultProps = {
+  flip: false,
 };
 
 export default KeyFigure2;

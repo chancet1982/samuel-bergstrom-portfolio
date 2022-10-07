@@ -231,9 +231,9 @@ export const CASE_3 = {
             items: [
               {
                 value: "2",
-                description: "Hospitals visited",
+                label: "Hospitals visited",
               },
-              { value: "13", description: "Lab & expert interviews" },
+              { value: "13", label: "Lab & expert interviews" },
             ],
           },
         },
