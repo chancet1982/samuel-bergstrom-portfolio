@@ -40,6 +40,7 @@ export const VIEW_LANDING_PAGE = [
             mediaUrl: "assets/cover-bg.jpg",
           },
           footer: <ClientPreview />,
+          hideFooterOnScroll: true,
         },
       },
     ],

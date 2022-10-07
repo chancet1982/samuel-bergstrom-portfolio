@@ -7,4 +7,5 @@ export const PLATFORMS = {
   DESKTOP: "Desktop",
   TABLET: "Tablet",
   MOBILE: "Mobile",
+  LABEL: "Platforms: ",
 };

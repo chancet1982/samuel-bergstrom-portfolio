@@ -15,8 +15,8 @@ const StyledInput = styled.input`
     small ? lh + inc : large ? lh - inc : lh};
   border: solid 0.125rem ${colors.darkgray};
   font-family: ${typography.bodyFont};
-  font-size: ${({ small, large, huge }) =>
-    small ? size / 1.2 : large ? size * 1.2 : huge ? size * 1.618 : size}rem;
+  font-size: ${({ small, large, xl }) =>
+    small ? size / 1.2 : large ? size * 1.2 : xl ? size * 1.618 : size}rem;
   color: ${colors.text.dark.high};
   padding: 0.5rem;
   box-sizing: border-box;
@@ -29,7 +29,7 @@ const StyledInput = styled.input`
 `;
 
 // TODO: (later) add input validation
-function Input({ type, name, required, small, large, huge }) {
+function Input({ type, name, required, small, large, xl }) {
   const handleChange = (event) => {
     event.target.checkValidity();
   };
@@ -42,7 +42,7 @@ function Input({ type, name, required, small, large, huge }) {
       onChange={required ? handleChange : null}
       small={small}
       large={large}
-      huge={huge}
+      xl={xl}
     />
   );
 }
@@ -61,7 +61,7 @@ Input.propTypes = {
   required: PropTypes.bool,
   small: PropTypes.bool,
   large: PropTypes.bool,
-  huge: PropTypes.bool,
+  xl: PropTypes.bool,
 };
 
 Input.defaultProps = {
@@ -69,7 +69,7 @@ Input.defaultProps = {
   required: false,
   small: false,
   large: false,
-  huge: false,
+  xl: false,
 };
 
 export default Input;

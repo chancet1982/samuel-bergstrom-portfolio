@@ -50,7 +50,7 @@ export const CASE_7 = {
           data: {
             bgColor: "rgba(0, 42, 78, .24)",
             text: (
-              <Paragraph huge>
+              <Paragraph xl>
                 My client operates more than 250 gyms in 7 different countries.
                 I was tasked to help them conduct a pre-study focusing on
                 increasing sign-ups and cross-sales potential online.

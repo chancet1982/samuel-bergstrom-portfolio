@@ -48,7 +48,7 @@ export const CASE_4 = {
           data: {
             bgColor: "#546368",
             text: (
-              <Paragraph huge>
+              <Paragraph xl>
                 NoWaste is a leading Global Logistics and transport company.
                 Their subsidiary e-drop was trying to solve some of the issues
                 with food deliveries. In Sweden, most supermarkets provide home

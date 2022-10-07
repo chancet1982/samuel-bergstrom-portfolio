@@ -1,13 +1,11 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-nested-ternary */
-import React, { useEffect, useContext } from "react";
+import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { useWindowSize } from "react-use";
 import breakpoints from "../../theme/breakpoints";
-import { ElementColorContext } from "../../Context/ElementColorContext";
-import colors from "../../theme/colors";
 import { useScrollDirection } from "../../utils/useScrollDirection";
 import BgMedia from "./Cover/BgMedia";
 import Caption from "./Cover/Caption";
@@ -43,19 +41,15 @@ const StyledCoverFooter = styled(motion.div)`
   z-index: 1;
 `;
 
-function Cover({ bgColor, bgMedia, caption, fgImage, footer }) {
+function Cover({
+  bgColor,
+  bgMedia,
+  caption,
+  fgImage,
+  footer,
+  hideFooterOnScroll,
+}) {
   const { width } = useWindowSize();
-  const [, setLight] = useContext(ElementColorContext);
-
-  useEffect(() => {
-    // eslint-disable-next-line no-unused-expressions
-    setLight !== null &&
-      setLight(
-        bgColor !== null &&
-          bgColor !== colors.offwhite &&
-          bgColor !== colors.primaryShade
-      );
-  }, [setLight, bgColor]);
 
   const isDesktop = width >= breakpoints.desktop;
 
@@ -101,7 +95,11 @@ function Cover({ bgColor, bgMedia, caption, fgImage, footer }) {
       />
 
       {fgImage && (
-        <FgImage imageUrl={fgImage.imageUrl} imageAlt={fgImage.imageAlt} />
+        <FgImage
+          imageUrl={fgImage.imageUrl}
+          mobileImageUrl={fgImage.mobileImageUrl}
+          imageAlt={fgImage.imageAlt}
+        />
       )}
 
       {footer && (
@@ -109,7 +107,9 @@ function Cover({ bgColor, bgMedia, caption, fgImage, footer }) {
           variants={coverBottomVariants}
           initial="animate"
           animate={
-            scrollDirection === "down" && isDesktop ? "hidden" : "animate"
+            scrollDirection === "down" && isDesktop && hideFooterOnScroll
+              ? "hidden"
+              : "animate"
           }
         >
           {footer}
@@ -127,6 +127,7 @@ Cover.propTypes = {
   bgColor: PropTypes.string,
   fgImage: PropTypes.shape({
     imageUrl: PropTypes.string,
+    mobileImageUrl: PropTypes.string,
     imageAlt: PropTypes.string,
   }),
   caption: PropTypes.shape({
@@ -135,6 +136,7 @@ Cover.propTypes = {
     text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   }),
   footer: PropTypes.node,
+  hideFooterOnScroll: PropTypes.bool,
 };
 
 Cover.defaultProps = {
@@ -143,6 +145,7 @@ Cover.defaultProps = {
   fgImage: null,
   caption: null,
   footer: null,
+  hideFooterOnScroll: false,
 };
 
 export default Cover;

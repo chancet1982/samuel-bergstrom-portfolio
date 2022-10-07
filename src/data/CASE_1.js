@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 import React from "react";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
-import { ROLES } from "./dictionaries/ROLES";
+// import { ROLES } from "./dictionaries/ROLES";
 import { TOOLS_AND_METHODS } from "./dictionaries/TOOLS_AND_METHODS";
 import { PLATFORMS } from "./dictionaries/PLATFORMS";
 import Paragraph from "../Components/Shared/Paragraph";
@@ -9,8 +9,8 @@ import Title from "../Components/Shared/Title";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
+import Highlights from "../Components/Section_Elements/Cover/Highlights";
 
-// TODO: image gallery "red" background showing through images.
 export const CASE_1 = {
   caseStatus: CASE_STATUS.PUBLISHED,
   caseType: CASE_TYPES.REDESIGN,
@@ -27,18 +27,34 @@ export const CASE_1 = {
     {
       elements: [
         {
-          template: SECTION_ELEMENTS.COVER,
+          template: SECTION_ELEMENTS.LANDING_PAGE_COVER,
           data: {
-            overline: "Cash Distribution",
-            title: "Courier App redesign",
-            text: (
-              <Paragraph large>
-                Redesign as an oppurtunity for change.
-              </Paragraph>
-            ),
-            imageUrl: "assets/case-1/cover-desktop.png",
-            mobileImageUrl: "assets/case-1/cover-mobile.png",
+            caption: {
+              overline: "Cash Distribution",
+              title: "Courier App redesign",
+              text: (
+                <Paragraph xxl>
+                  Redesign as an oppurtunity for change.
+                </Paragraph>
+              ),
+            },
+            fgImage: {
+              imageUrl: "assets/case-1/cover-desktop.png",
+              mobileImageUrl: "assets/case-1/cover-mobile.png",
+            },
             bgColor: "#FE636F",
+            footer: (
+              <Highlights
+                flip
+                items={[
+                  { label: CASE_TYPES.LABEL, value: CASE_TYPES.REDESIGN },
+                  { label: "Year:", value: "2018" },
+                  { label: "Duration:", value: "4 weeks" },
+                  /* { label: ROLES.LABEL, value: ROLES.LEAD }, */
+                  { label: PLATFORMS.LABEL, value: [PLATFORMS.MOBILE_ANDROID] },
+                ]}
+              />
+            ),
           },
         },
       ],
@@ -51,22 +67,19 @@ export const CASE_1 = {
             bgColor: "#FE636F",
             text: (
               <>
-                <Paragraph huge>
+                <Paragraph xl>
                   A world-leading integrated cash distribution network had a
                   problem. Their couriers were using Windows mobile devices for
                   monitoring their daily routes. These devices were old, slow,
                   and increasingly hard to replace in case of failure.
                 </Paragraph>
-                <Paragraph huge>
+                <Paragraph xl>
                   They decided to move the application to a new device running
                   Android. I was tasked to migrate the UI from the existing app
                   to a new platform.
                 </Paragraph>
               </>
             ),
-            myRole: ROLES.LEAD,
-            duration: "4 weeks",
-            platforms: [PLATFORMS.MOBILE_ANDROID],
             toolsAndMethods: [
               TOOLS_AND_METHODS.INTERVIEWS,
               TOOLS_AND_METHODS.FLOW_MAPPING,

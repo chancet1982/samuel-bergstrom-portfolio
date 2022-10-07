@@ -18,7 +18,7 @@ const StyledQuote = styled.q`
 function Quote({ children }) {
   return (
     <StyledQuote>
-      <Span huge highContrast>
+      <Span xl highContrast>
         {children}
       </Span>
     </StyledQuote>

@@ -3,12 +3,10 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { useIntersection } from "react-use";
-import colors from "../../../theme/colors";
-import Title from "../../Shared/Title";
-import Paragraph from "../../Shared/Paragraph";
-import breakpoints from "../../../theme/breakpoints";
-import { variants } from "../../../animations/animations";
-import padding from "../../../theme/padding";
+import { variants } from "../../animations/animations";
+import padding from "../../theme/padding";
+import Span from "./Span";
+import Title from "./Title";
 
 const StyledKeyFigure = styled(motion.div)`
   align-items: center;
@@ -16,39 +14,31 @@ const StyledKeyFigure = styled(motion.div)`
   display: flex;
   flex-direction: column;
   text-align: center;
-  padding: ${padding.horizontal.double};
-
-  @media (min-width: ${breakpoints.tablet}px) {
-    width: 12%;
-  }
+  padding: ${padding.vertical.double} ${padding.horizontal.double};
 `;
 
-const StyledCircle = styled(motion.div)`
-  border-radius: 50%;
-  height: 8vw;
-  width: 8vw;
-  background-color: ${colors.darker10};
-  padding: 5ch;
-
-  > h3 {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 100%;
-    height: 100%;
-  }
-`;
-
-function KeyFigure({ value, description }) {
+/* TODO: Find a better name for it (Can already used in KeyFigures & Highlights, can potentially be used in Overview & Result) */
+function KeyFigure({ value, label, flip }) {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
     threshold: 0,
   });
+
+  const renderValueAndLabel = () =>
+    flip ? (
+      <>
+        <Span>{label}</Span>
+        <Title h={5}>{value}</Title>
+      </>
+    ) : (
+      <>
+        <Span xxl>
+          <strong>{value}</strong>
+        </Span>
+        <Span>{label}</Span>
+      </>
+    );
 
   // eslint-disable-next-line consistent-return
   useEffect(() => {
@@ -65,17 +55,19 @@ function KeyFigure({ value, description }) {
       variants={variants}
       animate={inView ? "inView" : "hidden"}
     >
-      <StyledCircle>
-        <Title h={3}>{value}</Title>
-      </StyledCircle>
-      <Paragraph>{description}</Paragraph>
+      {renderValueAndLabel()}
     </StyledKeyFigure>
   );
 }
 
 KeyFigure.propTypes = {
   value: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  flip: PropTypes.bool,
+};
+
+KeyFigure.defaultProps = {
+  flip: false,
 };
 
 export default KeyFigure;

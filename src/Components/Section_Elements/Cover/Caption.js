@@ -7,7 +7,6 @@ import TitleAndText from "../../Shared/TitleAndText";
 import Overline from "../../Shared/Overline";
 import breakpoints from "../../../theme/breakpoints";
 import padding from "../../../theme/padding";
-import colors from "../../../theme/colors";
 
 const StyledCaption = styled(motion.div)`
   height: 100%;
@@ -32,12 +31,9 @@ const StyledCaption = styled(motion.div)`
   h1 {
     max-width: 15ch;
     font-weight: 900;
-    /*color: ${colors.text.light.high};*/
   }
 
   p {
-    /*color: ${colors.text.light.medium};*/
-
     @media (max-width: ${breakpoints.mobileLarge - 1}px) {
       max-width: 15ch;
     }

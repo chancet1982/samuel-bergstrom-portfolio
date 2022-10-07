@@ -29,7 +29,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
   if (!template) {
     return null;
   }
-
+  /* TODO: Remove CoverOLD support and replace with LANDING_PAGE_COVER -> Rename LANDING_PAGE_COVER with COVER */
   switch (template) {
     case SECTION_ELEMENTS.COVER:
       return (
@@ -42,7 +42,6 @@ function SectionElementsRenderer({ elementKey, data, template }) {
           mobileImageUrl={data.mobileImageUrl}
           bgColor={data.bgColor}
           parallax={data.parallax}
-          sticky={data.sticky}
         />
       );
     case SECTION_ELEMENTS.LANDING_PAGE_COVER:
@@ -58,6 +57,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
             fgImage={data.fgImage}
             caption={data.caption}
             footer={data.footer}
+            hideFooterOnScroll={data.hideFooterOnScroll}
           />
         </ElementColorContextProvider>
       );

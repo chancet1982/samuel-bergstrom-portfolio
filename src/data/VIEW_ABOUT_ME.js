@@ -33,7 +33,7 @@ export const VIEW_ABOUT_ME = [
           ),
           h: 0,
           text: (
-            <Paragraph huge>
+            <Paragraph xl>
               A digital product designer, engineer, speaker, mentor,
               accessibility enthusiast, father, husband, and quite a nice guy.
             </Paragraph>

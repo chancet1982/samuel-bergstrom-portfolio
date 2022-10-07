@@ -50,7 +50,7 @@ export const CASE_2 = {
           data: {
             bgColor: "#FF8D48",
             text: (
-              <Paragraph huge>
+              <Paragraph xl>
                 My client is one of the largest private renal care providers in
                 the world. They treat more than 40 000 patients, operate over
                 400 clinics in 20 countries. Renal patients need to constantly

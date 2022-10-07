@@ -46,13 +46,13 @@ export const CASE_10 = {
           data: {
             bgColor: "#00ADDB",
             text: (
-              <Paragraph huge>
+              <Paragraph xl>
                 My client was a leading price comparison site operating in 6
                 different countries. They were a leader in their field, but
                 circumstances changed and their revenue stagnated. I was asked
                 to assist them to increase traffic to paying customers and help
                 encourage potential customers to sign-up. One small change
-                created a huge impact.
+                created a xl impact.
               </Paragraph>
             ),
             myRole: ROLES.CONSULTANT,

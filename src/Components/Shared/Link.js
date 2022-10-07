@@ -42,13 +42,13 @@ const StyledAnchorLink = styled.a`
   }
 `;
 
-function Link({ small, large, huge, children, to, href }) {
+function Link({ small, large, xl, children, to, href }) {
   const light = useBgColor();
 
   const mapSizeToNumber = () => {
     if (small) return 1;
     if (large) return 3;
-    if (huge) return 4;
+    if (xl) return 4;
     return 2;
   };
 
@@ -73,7 +73,7 @@ function Link({ small, large, huge, children, to, href }) {
 Link.propTypes = {
   small: PropTypes.bool,
   large: PropTypes.bool,
-  huge: PropTypes.bool,
+  xl: PropTypes.bool,
   children: PropTypes.node.isRequired,
   to: PropTypes.string,
   href: PropTypes.string,
@@ -82,7 +82,7 @@ Link.propTypes = {
 Link.defaultProps = {
   small: false,
   large: false,
-  huge: false,
+  xl: false,
   to: null,
   href: null,
 };

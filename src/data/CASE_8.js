@@ -42,7 +42,7 @@ export const CASE_8 = {
           data: {
             bgColor: "rgba(99, 182, 187, .72)",
             text: (
-              <Paragraph huge>
+              <Paragraph xl>
                 Mitsubishi Electric is its subsidiary of Mitsubishi Global.
                 Mitsubishi Electric is responsible for the production,
                 distribution and sales of electronic devices. From home

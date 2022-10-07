@@ -4,26 +4,22 @@ import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { v4 as uuid } from "uuid";
 import breakpoints from "../../../theme/breakpoints";
-import KeyFigure2 from "../KeyFigures/KeyFigure2";
+import KeyFigure from "../../Shared/KeyFigure";
+import colors from "../../../theme/colors";
 import sizes from "../../../theme/sizes";
 
 const StyledHighlights = styled(motion.div)`
   display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  border-top: 1px solid;
-  border-bottom: 1px solid;
-  box-sizing: border-box;
 
-  @media (min-width: ${breakpoints.mobileLarge}px) {
-    flex-direction: row;
+  > div {
+    flex: 1;
     align-items: flex-start;
   }
 
   @media (min-width: ${breakpoints.desktop}px) {
     max-width: ${sizes.contentWidthLimit}px;
     margin: 0 auto;
+    border-top: 1px solid ${colors.text.dark.low};
   }
 `;
 
@@ -31,7 +27,7 @@ function Highlights({ items }) {
   return (
     <StyledHighlights>
       {items.map(({ value, label }) => (
-        <KeyFigure2 value={value} label={label} key={uuid()} flip />
+        <KeyFigure value={value} label={label} key={uuid()} flip />
       ))}
     </StyledHighlights>
   );

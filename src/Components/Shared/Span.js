@@ -21,17 +21,18 @@ const StyledSpan = styled.span`
   font-family: ${typography.bodyFont};
 
   strong {
-    color: ${({ light }) =>
-      light ? colors.text.light.high : colors.text.dark.high};
+    color: ${({ $light }) =>
+      $light ? colors.text.light.high : colors.text.dark.high};
   }
 `;
 
-function Span({ small, large, huge, xxl, children, highContrast }) {
+function Span({ small, large, xl, xxl, children, highContrast }) {
   const light = useBgColor();
+
   const mapSizeToNumber = () => {
     if (small) return 1;
     if (large) return 3;
-    if (huge) return 4;
+    if (xl) return 4;
     if (xxl) return 8;
     return 2;
   };
@@ -52,7 +53,7 @@ function Span({ small, large, huge, xxl, children, highContrast }) {
 Span.propTypes = {
   small: PropTypes.bool,
   large: PropTypes.bool,
-  huge: PropTypes.bool,
+  xl: PropTypes.bool,
   xxl: PropTypes.bool,
   children: PropTypes.node.isRequired,
   highContrast: PropTypes.bool,
@@ -61,7 +62,7 @@ Span.propTypes = {
 Span.defaultProps = {
   small: false,
   large: false,
-  huge: false,
+  xl: false,
   xxl: false,
   highContrast: false,
 };

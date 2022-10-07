@@ -46,14 +46,14 @@ export const CASE_3 = {
             bgColor: "#47C8BC",
             text: (
               <>
-                <Paragraph huge>
+                <Paragraph xl>
                   A medical startup that developed a new technology that can
                   revolutionize Cancer diagnosis. Their idea was to provide a
                   view that will only show mutated cells, not healthy tissue. In
                   order to do that they developed a new staining technology
                   unsupported by current-day scanners.
                 </Paragraph>
-                <Paragraph huge>
+                <Paragraph xl>
                   They asked for our help in creating the software for their new
                   tissue scanner that will support their new staining type.
                 </Paragraph>
@@ -261,7 +261,7 @@ export const CASE_3 = {
               },
               {
                 title: "We’re solving the wrong problem",
-                text: "In retrospect, it was clear that the issue isnt providing better cancer diagnosis. Nor was it the lack of pathologists. If at all the product should be able to provide a pre-diagnosis evaluation in order to free up pathologists to deal with the increasing workload. Digital pathology in itself is a huge leap forward. Instead of sending physical tissue samples from one clinic to another, digital copies could be sent. The side-effect however was that it increased the workload on lab personal, reducing their role to manufacturing workers, and creating an environment where speed is all that matters.",
+                text: "In retrospect, it was clear that the issue isnt providing better cancer diagnosis. Nor was it the lack of pathologists. If at all the product should be able to provide a pre-diagnosis evaluation in order to free up pathologists to deal with the increasing workload. Digital pathology in itself is a xl leap forward. Instead of sending physical tissue samples from one clinic to another, digital copies could be sent. The side-effect however was that it increased the workload on lab personal, reducing their role to manufacturing workers, and creating an environment where speed is all that matters.",
               },
             ],
           },

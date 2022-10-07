@@ -6,4 +6,5 @@ export const ROLES = {
   UI_UX: "UI/UX Designer",
   UX: "UX Designer",
   UI: "UI Designer",
+  LABEL: "My role: ",
 };

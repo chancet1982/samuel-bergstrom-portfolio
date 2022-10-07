@@ -15,8 +15,8 @@ const StyledTextarea = styled.textarea`
     small ? lh + inc : large ? lh - inc : lh};
   border: solid 0.125rem ${colors.darkgray};
   font-family: ${typography.bodyFont};
-  font-size: ${({ small, large, huge }) =>
-    small ? size / 1.2 : large ? size * 1.2 : huge ? size * 1.618 : size}rem;
+  font-size: ${({ small, large, xl }) =>
+    small ? size / 1.2 : large ? size * 1.2 : xl ? size * 1.618 : size}rem;
   color: ${colors.text.dark.high};
   padding: 0.5rem;
   resize: none;
@@ -29,7 +29,7 @@ const StyledTextarea = styled.textarea`
   }
 `;
 
-function Textarea({ name, rows, columns, required, small, large, huge }) {
+function Textarea({ name, rows, columns, required, small, large, xl }) {
   const handleChange = (event) => {
     event.target.checkValidity();
   };
@@ -43,7 +43,7 @@ function Textarea({ name, rows, columns, required, small, large, huge }) {
       onChange={required ? handleChange : null}
       small={small}
       large={large}
-      huge={huge}
+      xl={xl}
     />
   );
 }
@@ -55,7 +55,7 @@ Textarea.propTypes = {
   required: PropTypes.bool,
   small: PropTypes.bool,
   large: PropTypes.bool,
-  huge: PropTypes.bool,
+  xl: PropTypes.bool,
 };
 
 Textarea.defaultProps = {
@@ -64,7 +64,7 @@ Textarea.defaultProps = {
   required: false,
   small: false,
   large: false,
-  huge: false,
+  xl: false,
 };
 
 export default Textarea;

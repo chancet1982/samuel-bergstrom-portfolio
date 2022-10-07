@@ -101,20 +101,3 @@ Overview.defaultProps = {
 };
 
 export default Overview;
-
-/* TODO: Move Role Duration Platforms somewhere else   */
-/* {myRole && (
-  <TitleAndText title="My role:" h={5}>
-    <Paragraph small>{myRole}</Paragraph>
-  </TitleAndText>
-)}
-{duration && (
-  <TitleAndText title="Duration:" h={5}>
-    <Paragraph small>{duration}</Paragraph>
-  </TitleAndText>
-)}
-{platforms.length ? (
-  <TitleAndText title="Platforms:" h={5}>
-    <Paragraph small>{platforms.join(", ")}</Paragraph>
-  </TitleAndText>
-) : null} */

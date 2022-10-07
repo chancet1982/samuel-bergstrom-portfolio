@@ -51,13 +51,13 @@ export const CASE_5 = {
             bgColor: "#158FC9",
             text: (
               <>
-                <Paragraph huge>
+                <Paragraph xl>
                   My client, one of the largest private renal care providers in
                   the world. It employs more than 11 000, treating over 40 000
                   patients suffering from kidney failure. They operate more than
                   400 clinics across 22 countries.
                 </Paragraph>
-                <Paragraph huge>
+                <Paragraph xl>
                   Admission and discharge blocked the treatment stations and
                   required staff intervention for every patient. I helped our
                   client create a self-service kiosk for patient admission and

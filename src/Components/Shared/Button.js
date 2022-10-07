@@ -55,14 +55,14 @@ function Button({
   secondary,
   small,
   large,
-  huge,
+  xl,
   disabled,
   to,
 }) {
   const mapSizeToNumber = () => {
     if (small) return 1;
     if (large) return 3;
-    if (huge) return 4;
+    if (xl) return 4;
     return 2;
   };
 
@@ -88,7 +88,7 @@ Button.propTypes = {
   disabled: PropTypes.bool,
   small: PropTypes.bool,
   large: PropTypes.bool,
-  huge: PropTypes.bool,
+  xl: PropTypes.bool,
   to: PropTypes.string,
 };
 
@@ -99,7 +99,7 @@ Button.defaultProps = {
   disabled: false,
   small: false,
   large: false,
-  huge: false,
+  xl: false,
   to: null,
 };
 

@@ -50,7 +50,7 @@ export const CASE_9 = {
           data: {
             bgColor: "#00ADDB",
             text: (
-              <Paragraph huge>
+              <Paragraph xl>
                 My client was a leading price comparison service operating in 6
                 different countries. It was couldn’t reach the growth they
                 expected. I was asked to assist and evaluate their search
@@ -249,10 +249,10 @@ export const CASE_9 = {
                 text: (
                   <Paragraph>
                     After searching users see the search results page. There we
-                    saw a huge dropoff of about 60%. Still, at this point, we
-                    only know that the search results page is failing, not why.
-                    So I needed to look for some qualitative data to evaluate
-                    what seems to be the problem.
+                    saw a xl dropoff of about 60%. Still, at this point, we only
+                    know that the search results page is failing, not why. So I
+                    needed to look for some qualitative data to evaluate what
+                    seems to be the problem.
                   </Paragraph>
                 ),
               },
@@ -362,7 +362,7 @@ export const CASE_9 = {
                   users are being transported directly to their destination?
                   Kind of like Google’s “I’m feeling lucky” search. We would
                   still need to of course avoid vague keywords but the potential
-                  was HUGE
+                  was xl
                 </Paragraph>
                 <Paragraph>
                   Based on a small calculation I made the potential increase in
