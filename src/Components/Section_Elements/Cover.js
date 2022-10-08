@@ -92,6 +92,7 @@ function Cover({
         overline={caption.overline}
         title={caption.title}
         text={caption.text}
+        h={caption.h}
       />
 
       {fgImage && (
@@ -133,6 +134,7 @@ Cover.propTypes = {
   caption: PropTypes.shape({
     overline: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
     title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+    h: PropTypes.number,
     text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   }),
   footer: PropTypes.node,

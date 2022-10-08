@@ -10,11 +10,22 @@ body {
 }
 
 mark {
-  color: inherit;
-  background: transparent;
-  box-shadow: inset 0px -50rem 0px 0rem #e91d63;
-  padding-left: 1rem;
-  padding-right: 1rem;
+  display: inline-block;
+  background-color: transparent;
   position: relative;
-  color: white;
+  z-index: 1;
+  color: currentcolor;
+}
+
+mark:before {
+  background-image: url("data:image/svg+xml,%3Csvg width='134' height='26' viewBox='0 0 134 26' xmlns='http://www.w3.org/2000/svg'%3E%3Cg style='mix-blend-mode:multiply'%3E%3Cpath d='M8.40808 2.24112L133.103 1.25566L133.101 1.52921L98.5007 1.85092L122.532 1.73623L133.099 1.80276L132.374 3.166L60.5223 3.11637L132.191 3.27949L131.266 4.51936L118.709 4.71385L131.086 4.79178L130.523 5.95584L124.041 11.8565L121.786 17.3893L6.34826 17.4926L126.582 16.0758L125.838 17.4941L122.393 22.389L121.485 24.398L105.882 24.2924L89.4047 24.1886L60.3883 24.4037L46.2518 24.0608L26.8935 24.3504L15.1 24.0227L1.39176 23.9334L2.82849 20.802L4.21478 16.4996L40.0277 16.8302L1.02818 19.2136L7.06347 7.18505L14.9956 6.88327L7.07599 6.89391L8.40808 2.24112Z' fill='%23FCE4EC' /%3E%3C/g%3E%3C/svg%3E%0A");
+  overflow: visible;
+  background-size: 100%;
+  background-position: 50% center;
+  background-repeat: no-repeat;
+  content: "";
+  position: absolute;
+  inset: 0px -0.125em;
+  z-index: -1;
+  transform: rotate(-2deg);
 }

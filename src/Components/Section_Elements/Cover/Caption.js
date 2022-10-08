@@ -56,7 +56,7 @@ const StyledCaption = styled(motion.div)`
 
 /* TODO: Implement better support for light texts and background in case the caption background is vibrant */
 /* TODO: Support Either h1 or h0 in title weight 900/600 */
-function Caption({ overline, title, text }) {
+function Caption({ overline, title, text, h }) {
   const captionVariants = {
     hidden: { opacity: 0, y: 10 },
     animate: {
@@ -83,7 +83,7 @@ function Caption({ overline, title, text }) {
     <StyledCaption variants={captionVariants}>
       {overline && <Overline disableAnimations>{overline}</Overline>}
       <TitleAndText
-        h={0}
+        h={h}
         title={title}
         disableAnimations
         style={{ y: captionParallax }}
@@ -98,12 +98,14 @@ Caption.propTypes = {
   overline: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  h: PropTypes.number,
 };
 
 Caption.defaultProps = {
   overline: null,
   title: null,
   text: null,
+  h: 1,
 };
 
 export default Caption;

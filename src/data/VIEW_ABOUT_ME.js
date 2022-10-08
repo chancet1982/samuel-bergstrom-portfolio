@@ -31,7 +31,7 @@ export const VIEW_ABOUT_ME = [
               Creating <mark>business value</mark> using design.
             </>
           ),
-          h: 0,
+          h: 1,
           text: (
             <Paragraph xl>
               A digital product designer, engineer, speaker, mentor,
