@@ -1,7 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 export const SECTION_ELEMENTS = {
   COVER: "cover",
-  LANDING_PAGE_COVER: "landingPageCover",
   OVERVIEW: "overview",
   TEXTBOX: "textbox",
   INSIGHTS: "insights",

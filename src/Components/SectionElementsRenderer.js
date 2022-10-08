@@ -2,7 +2,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { SECTION_ELEMENTS } from "../data/dictionaries/SECTION_ELEMENTS";
-import CoverOLD from "./Section_Elements/CoverOLD";
 import Cover from "./Section_Elements/Cover";
 import Overview from "./Section_Elements/Overview";
 import Textbox from "./Section_Elements/Textbox";
@@ -29,22 +28,9 @@ function SectionElementsRenderer({ elementKey, data, template }) {
   if (!template) {
     return null;
   }
-  /* TODO: Remove CoverOLD support and replace with LANDING_PAGE_COVER -> Rename LANDING_PAGE_COVER with COVER */
+
   switch (template) {
     case SECTION_ELEMENTS.COVER:
-      return (
-        <CoverOLD
-          key={elementKey}
-          overline={data.overline}
-          title={data.title}
-          text={data.text}
-          imageUrl={data.imageUrl}
-          mobileImageUrl={data.mobileImageUrl}
-          bgColor={data.bgColor}
-          parallax={data.parallax}
-        />
-      );
-    case SECTION_ELEMENTS.LANDING_PAGE_COVER:
       return (
         <ElementColorContextProvider>
           <Cover

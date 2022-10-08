@@ -41,7 +41,7 @@ export const CASE_4 = {
     {
       elements: [
         {
-          template: SECTION_ELEMENTS.LANDING_PAGE_COVER,
+          template: SECTION_ELEMENTS.COVER,
           data: {
             bgColor: SETTINGS.BG_COLOR,
             caption: {
