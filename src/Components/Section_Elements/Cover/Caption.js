@@ -30,7 +30,10 @@ const StyledCaption = styled(motion.div)`
 
   h1 {
     max-width: 15ch;
-    font-weight: 900;
+    ${({ $h }) =>
+      $h === 0 && {
+        fontWeight: 900,
+      }}
   }
 
   p {
@@ -55,7 +58,6 @@ const StyledCaption = styled(motion.div)`
 `;
 
 /* TODO: Implement better support for light texts and background in case the caption background is vibrant */
-/* TODO: Support Either h1 or h0 in title weight 900/600 */
 function Caption({ overline, title, text, h }) {
   const captionVariants = {
     hidden: { opacity: 0, y: 10 },
@@ -80,7 +82,7 @@ function Caption({ overline, title, text, h }) {
     [0, -coverHeight]
   );
   return (
-    <StyledCaption variants={captionVariants}>
+    <StyledCaption variants={captionVariants} $h={h}>
       {overline && <Overline disableAnimations>{overline}</Overline>}
       <TitleAndText
         h={h}
