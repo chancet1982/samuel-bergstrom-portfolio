@@ -4,6 +4,7 @@ import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 // import { ROLES } from "./dictionaries/ROLES";
 import { TOOLS_AND_METHODS } from "./dictionaries/TOOLS_AND_METHODS";
 import { PLATFORMS } from "./dictionaries/PLATFORMS";
+import { ROLES } from "./dictionaries/ROLES";
 import Paragraph from "../Components/Shared/Paragraph";
 import Title from "../Components/Shared/Title";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
@@ -11,17 +12,32 @@ import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Highlights from "../Components/Section_Elements/Cover/Highlights";
 
+const SETTINGS = {
+  BG_COLOR: "#FE636F",
+  URL: "/cases/1",
+  MEDIA_BASE_URL: "assets/case-1",
+  KEY_FIGURES: {
+    CASE_TYPE: { label: CASE_TYPES.LABEL, value: CASE_TYPES.REDESIGN },
+    MY_ROLE: { label: ROLES.LABEL, value: ROLES.UX },
+    CASE_PLATFORMS: {
+      label: PLATFORMS.LABEL,
+      value: [PLATFORMS.MOBILE_ANDROID],
+    },
+    CASE_YEAR: { label: "Year:", value: "2020" },
+    CASE_DURATION: { label: "Duration:", value: "4 weeks" },
+  },
+};
+
 export const CASE_1 = {
   caseStatus: CASE_STATUS.PUBLISHED,
-  caseType: CASE_TYPES.REDESIGN,
-  caseUrl: "/cases/1",
+  caseUrl: SETTINGS.URL,
   thumbnail: {
     overline: "Cash Distribution",
     title: "Courier App redesign",
     text: <>Redesign as an oppurtunity for change.</>,
-    imageUrl: "assets/case-1/thumbnail.png",
+    imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
     imageAlt: "thumbnail",
-    bgColor: "#FE636F",
+    bgColor: SETTINGS.BG_COLOR,
   },
   details: [
     {
@@ -29,6 +45,7 @@ export const CASE_1 = {
         {
           template: SECTION_ELEMENTS.LANDING_PAGE_COVER,
           data: {
+            bgColor: SETTINGS.BG_COLOR,
             caption: {
               overline: "Cash Distribution",
               title: "Courier App redesign",
@@ -39,19 +56,17 @@ export const CASE_1 = {
               ),
             },
             fgImage: {
-              imageUrl: "assets/case-1/cover-desktop.png",
-              mobileImageUrl: "assets/case-1/cover-mobile.png",
+              imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
+              mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
-            bgColor: "#FE636F",
             footer: (
               <Highlights
                 flip
                 items={[
-                  { label: CASE_TYPES.LABEL, value: CASE_TYPES.REDESIGN },
-                  { label: "Year:", value: "2018" },
-                  { label: "Duration:", value: "4 weeks" },
-                  /* { label: ROLES.LABEL, value: ROLES.LEAD }, */
-                  { label: PLATFORMS.LABEL, value: [PLATFORMS.MOBILE_ANDROID] },
+                  SETTINGS.KEY_FIGURES.CASE_TYPE,
+                  SETTINGS.KEY_FIGURES.CASE_YEAR,
+                  SETTINGS.KEY_FIGURES.CASE_DURATION,
+                  SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
                 ]}
               />
             ),
@@ -64,7 +79,6 @@ export const CASE_1 = {
         {
           template: SECTION_ELEMENTS.OVERVIEW,
           data: {
-            bgColor: "#FE636F",
             text: (
               <>
                 <Paragraph xl>
@@ -118,15 +132,15 @@ export const CASE_1 = {
             template: IMAGE_GALLERY_TEMPLATES.THREE_IMAGES_TWO_COLUMNS,
             images: [
               {
-                imageUrl: "assets/case-1/mood-0.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-0.jpg`,
                 imageAlt: "?",
               },
               {
-                imageUrl: "assets/case-1/mood-2.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-2.png`,
                 imageAlt: "Co-creating wireframes",
               },
               {
-                imageUrl: "assets/case-1/mood-3.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-3.png`,
                 imageAlt: "Co-creating wireframes",
               },
             ],
@@ -173,7 +187,7 @@ export const CASE_1 = {
                 </Paragraph>
               </>
             ),
-            imageUrl: "assets/case-1/flow-mapping.jpg",
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/flow-mapping.jpg`,
             imageAlt: "Flow mapping stock photography",
           },
         },
@@ -204,7 +218,7 @@ export const CASE_1 = {
         {
           template: SECTION_ELEMENTS.INSIGHTS,
           data: {
-            bgColor: "#FE636F",
+            bgColor: SETTINGS.BG_COLOR,
             title: "Insights",
             h: 2,
             items: [
@@ -267,7 +281,7 @@ export const CASE_1 = {
           data: {
             items: [
               {
-                imageUrl: "assets/case-1/sneakpeek-1.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-1.png`,
                 imageAlt: "Easy access to common discrepancies",
                 title: "Easy access to common discrepancies",
                 text: (
@@ -288,7 +302,7 @@ export const CASE_1 = {
                 ),
               },
               {
-                imageUrl: "assets/case-1/sneakpeek-2.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-2.png`,
                 imageAlt: "Making route messages prominent",
                 title: "Making route messages prominent",
                 text: (
@@ -309,7 +323,7 @@ export const CASE_1 = {
                 ),
               },
               {
-                imageUrl: "assets/case-1/sneakpeek-3.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-3.png`,
                 imageAlt: "Adding support for long customer names",
                 title: "Adding support for long customer names",
                 text: (
@@ -381,7 +395,7 @@ export const CASE_1 = {
             template: IMAGE_GALLERY_TEMPLATES.ONE_IMAGE_FULLSIZE,
             images: [
               {
-                imageUrl: "assets/case-1/wip.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/wip.png`,
                 imageAlt: "Workflow",
                 caption: "Some phases from my work in this project",
               },
@@ -422,9 +436,9 @@ export const CASE_1 = {
         {
           template: SECTION_ELEMENTS.RESULT,
           data: {
-            imageUrl: "assets/case-1/result-desktop.png",
-            mobileImageUrl: "assets/case-1/result-mobile.png",
-            bgColor: "#FE636F",
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/result-desktop.png`,
+            mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/result-mobile.png`,
+            bgColor: SETTINGS.BG_COLOR,
             text: (
               <>
                 <Paragraph large>

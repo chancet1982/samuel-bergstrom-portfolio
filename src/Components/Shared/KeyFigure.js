@@ -25,20 +25,23 @@ function KeyFigure({ value, label, flip }) {
     threshold: 0,
   });
 
-  const renderValueAndLabel = () =>
-    flip ? (
+  const renderValueAndLabel = () => {
+    const valueAsString = Array.isArray(value) ? value.join(", ") : value;
+
+    return flip ? (
       <>
         <Span>{label}</Span>
-        <Title h={5}>{value}</Title>
+        <Title h={5}>{valueAsString}</Title>
       </>
     ) : (
       <>
         <Span xxl>
-          <strong>{value}</strong>
+          <strong>{valueAsString}</strong>
         </Span>
         <Span>{label}</Span>
       </>
     );
+  };
 
   // eslint-disable-next-line consistent-return
   useEffect(() => {
@@ -61,7 +64,10 @@ function KeyFigure({ value, label, flip }) {
 }
 
 KeyFigure.propTypes = {
-  value: PropTypes.string.isRequired,
+  value: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.arrayOf(PropTypes.string),
+  ]).isRequired,
   label: PropTypes.string.isRequired,
   flip: PropTypes.bool,
 };

@@ -9,31 +9,71 @@ import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Shared/Title";
 import colors from "../theme/colors";
+import Highlights from "../Components/Section_Elements/Cover/Highlights";
+
+/* TODO: Final result looks like shit for desktop products (Perhaps use the Fitness24Seven solution) */
+/* TODO: cover fgImage is missing mobile image URL */
+
+const SETTINGS = {
+  BG_COLOR: "#00ADDB",
+  URL: "/cases/10",
+  MEDIA_BASE_URL: "assets/case-10",
+  KEY_FIGURES: {
+    CASE_TYPE: {
+      label: CASE_TYPES.LABEL,
+      value: CASE_TYPES.IMPROVING_EXISTING_SERVICE,
+    },
+    MY_ROLE: { label: ROLES.LABEL, value: ROLES.CONSULTANT },
+    CASE_PLATFORMS: {
+      label: PLATFORMS.LABEL,
+      value: [PLATFORMS.DESKTOP, PLATFORMS.TABLET, PLATFORMS.MOBILE],
+    },
+    CASE_YEAR: { label: "Year:", value: "2021" },
+    CASE_DURATION: { label: "Duration:", value: "2 months" },
+  },
+};
 
 export const CASE_10 = {
   caseStatus: CASE_STATUS.PUBLISHED,
   caseType: CASE_TYPES.CONCEPT,
-  caseUrl: "/cases/10",
+  caseUrl: SETTINGS.URL,
   thumbnail: {
     overline: "Price Comparison Service",
     title: "Increasing traffic to paying customers",
     text: <>Small change, big impact</>,
-    imageUrl: "assets/case-10/thumbnail.png",
+    imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
     imageAlt: "thumbnail",
-    bgColor: "#00ADDB",
+    bgColor: SETTINGS.BG_COLOR,
   },
   details: [
     {
       elements: [
         {
-          template: SECTION_ELEMENTS.COVER,
+          template: SECTION_ELEMENTS.LANDING_PAGE_COVER,
           data: {
-            overline: "Price Comparison Service",
-            title: "Increasing traffic to paying customers",
-            imageUrl: "assets/case-10/cover.png",
-            bgColor: "#00ADDB",
-            text: (
-              <Paragraph large>How a small change made a big impact</Paragraph>
+            bgColor: SETTINGS.BG_COLOR,
+            caption: {
+              overline: "Price Comparison Service",
+              title: "Increasing revenue",
+              text: (
+                <Paragraph xxl>
+                  Directing more traffic to paying customers
+                </Paragraph>
+              ),
+            },
+            fgImage: {
+              imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover.png`,
+            },
+            footer: (
+              <Highlights
+                flip
+                items={[
+                  SETTINGS.KEY_FIGURES.CASE_TYPE,
+                  SETTINGS.KEY_FIGURES.CASE_YEAR,
+                  SETTINGS.KEY_FIGURES.CASE_DURATION,
+                  SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+                ]}
+              />
             ),
           },
         },
@@ -44,7 +84,6 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.OVERVIEW,
           data: {
-            bgColor: "#00ADDB",
             text: (
               <Paragraph xl>
                 My client was a leading price comparison site operating in 6
@@ -55,9 +94,6 @@ export const CASE_10 = {
                 created a xl impact.
               </Paragraph>
             ),
-            myRole: ROLES.CONSULTANT,
-            duration: "2 months",
-            platforms: [PLATFORMS.DESKTOP, PLATFORMS.TABLET, PLATFORMS.MOBILE],
             toolsAndMethods: [
               TOOLS_AND_METHODS.WORKSHOPS,
               TOOLS_AND_METHODS.SURVEYS,
@@ -139,7 +175,7 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.INSIGHTS,
           data: {
-            bgColor: "#00ADDB",
+            bgColor: SETTINGS.BG_COLOR,
             title: <>Insights:</>,
             h: 2,
             text: (
@@ -178,7 +214,7 @@ export const CASE_10 = {
           data: {
             title: <>Looking for ideas</>,
             h: 2,
-            imageUrl: "assets/case-10/ideation.png",
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/ideation.png`,
             imageAlt: "",
             caption: "Digital whiteboard from one of the workshops",
             text: (
@@ -228,7 +264,7 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.QUOTE,
           data: {
-            bgImageUrl: "assets/case-10/quote-bg.jpg",
+            bgImageUrl: `${SETTINGS.MEDIA_BASE_URL}/quote-bg.jpg`,
             quote:
               "Det verkar finnas en del “fejkaktörer” som ofta hamnar överst i listan och som sen inte har produkten. Det gör att man ofta inte chansar med företag som inte är kända sen innan.",
             cite: "User, Survey reponse",
@@ -355,7 +391,7 @@ export const CASE_10 = {
           data: {
             items: [
               {
-                imageUrl: "assets/case-10/before.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/before.png`,
                 imageAlt: "Prices list, before",
                 title: "Prices list, before",
                 text: (
@@ -366,7 +402,7 @@ export const CASE_10 = {
                 ),
               },
               {
-                imageUrl: "assets/case-10/after.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/after.png`,
                 imageAlt: "Prices list, after",
                 title: "Prices list, after",
                 text: (
@@ -404,7 +440,7 @@ export const CASE_10 = {
                 </Paragraph>
               </>
             ),
-            imageUrl: "assets/case-10/ab-test.png",
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/ab-test.png`,
             imageAlt: "AB test in action",
           },
         },
@@ -415,8 +451,8 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.RESULT,
           data: {
-            imageUrl: "assets/case-10/result.png",
-            bgColor: "#00ADDB",
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/result.png`,
+            bgColor: SETTINGS.BG_COLOR,
             results: [{ value: "5.7", description: "mil. increse in revenue" }],
             text: (
               <>

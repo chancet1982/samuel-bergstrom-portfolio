@@ -55,6 +55,7 @@ const StyledCaption = styled(motion.div)`
 `;
 
 /* TODO: Implement better support for light texts and background in case the caption background is vibrant */
+/* TODO: Support Either h1 or h0 in title weight 900/600 */
 function Caption({ overline, title, text }) {
   const captionVariants = {
     hidden: { opacity: 0, y: 10 },

@@ -11,33 +11,71 @@ import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Shared/Title";
 import colors from "../theme/colors";
+import Highlights from "../Components/Section_Elements/Cover/Highlights";
+
+/* TODO: Final result looks like shit for desktop products (Perhaps use the Fitness24Seven solution) */
+/* TODO: cover fgImage is missing mobile image URL */
+/* TODO: Figure out why highlights arent working for this case */
+
+const SETTINGS = {
+  BG_COLOR: "#00ADDB",
+  URL: "/cases/9",
+  MEDIA_BASE_URL: "assets/case-9",
+  KEY_FIGURES: {
+    CASE_TYPE: {
+      label: CASE_TYPES.LABEL,
+      value: CASE_TYPES.IMPROVING_EXISTING_SERVICE,
+    },
+    MY_ROLE: { label: ROLES.LABEL, value: ROLES.CONSULTANT },
+    CASE_PLATFORMS: {
+      label: PLATFORMS.LABEL,
+      value: [PLATFORMS.DESKTOP, PLATFORMS.TABLET, PLATFORMS.MOBILE],
+    },
+    CASE_YEAR: { label: "Year:", value: "2021" },
+    CASE_DURATION: { label: "Duration:", value: "1 month" },
+  },
+};
 
 export const CASE_9 = {
   caseStatus: CASE_STATUS.FEATURED,
-  caseType: CASE_TYPES.CONCEPT,
-  caseUrl: "/cases/9",
+  caseUrl: SETTINGS.URL,
   thumbnail: {
     overline: "Price Comparison Service",
     title: "Improving search experience",
     text: <>Genarating millions without moving a pixel</>,
-    imageUrl: "assets/case-9/thumbnail.png",
+    imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
     imageAlt: "thumbnail",
-    bgColor: "#00ADDB",
+    bgColor: SETTINGS.BG_COLOR,
   },
   details: [
     {
       elements: [
         {
-          template: SECTION_ELEMENTS.COVER,
+          template: SECTION_ELEMENTS.LANDING_PAGE_COVER,
           data: {
-            overline: "Price Comparison Service",
-            title: "Improving search experience",
-            imageUrl: "assets/case-9/cover.png",
-            bgColor: "#00ADDB",
-            text: (
-              <Paragraph large>
-                Or, how to make millions of without moving a PX
-              </Paragraph>
+            bgColor: SETTINGS.BG_COLOR,
+            caption: {
+              overline: "Price Comparison Service",
+              title: "Improving search experience",
+              text: (
+                <Paragraph xxl>
+                  Or, how to make millions of without moving a PX
+                </Paragraph>
+              ),
+            },
+            fgImage: {
+              imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover.png`,
+            },
+            footer: (
+              <Highlights
+                flip
+                items={[
+                  SETTINGS.KEY_FIGURES.CASE_TYPE,
+                  SETTINGS.KEY_FIGURES.CASE_YEAR,
+                  SETTINGS.KEY_FIGURES.CASE_DURATION,
+                  SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+                ]}
+              />
             ),
           },
         },
@@ -48,7 +86,6 @@ export const CASE_9 = {
         {
           template: SECTION_ELEMENTS.OVERVIEW,
           data: {
-            bgColor: "#00ADDB",
             text: (
               <Paragraph xl>
                 My client was a leading price comparison service operating in 6
@@ -58,9 +95,6 @@ export const CASE_9 = {
                 success.
               </Paragraph>
             ),
-            myRole: ROLES.CONSULTANT,
-            duration: "4 weeks",
-            platforms: [PLATFORMS.DESKTOP, PLATFORMS.TABLET, PLATFORMS.MOBILE],
             toolsAndMethods: [
               TOOLS_AND_METHODS.SURVEYS,
               TOOLS_AND_METHODS.WEB_ANALYTICS,
@@ -142,7 +176,7 @@ export const CASE_9 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            bgColor: "#00ADDB",
+            bgColor: SETTINGS.BG_COLOR,
             title: <>Problem areas</>,
             h: 2,
             flip: true,
@@ -171,7 +205,7 @@ export const CASE_9 = {
               </>
             ),
             imageAlt: "Survey results, search indicated in green.",
-            imageUrl: "assets/case-9/survey.png",
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/survey.png`,
           },
         },
         {
@@ -210,7 +244,7 @@ export const CASE_9 = {
             listTitle: "What has the most potential? Before, during, or after?",
             items: [
               {
-                imageUrl: "assets/case-9/before-search.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/before-search.png`,
                 imageAlt: "before searching",
                 title: "Before searching",
                 text: (
@@ -226,7 +260,7 @@ export const CASE_9 = {
                 ),
               },
               {
-                imageUrl: "assets/case-9/while-searching.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/while-searching.png`,
                 imageAlt: "while searching",
                 title: "During search",
                 text: (
@@ -243,7 +277,7 @@ export const CASE_9 = {
                 ),
               },
               {
-                imageUrl: "assets/case-9/search-results.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/search-results.png`,
                 imageAlt: "after searching",
                 title: "After searching",
                 text: (
@@ -280,14 +314,14 @@ export const CASE_9 = {
                 </Paragraph>
               </>
             ),
-            imageUrl: "assets/case-9/usability-test.png",
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/usability-test.png`,
             imageAlt: "Picture from usability testing.",
           },
         },
         {
           template: SECTION_ELEMENTS.INSIGHTS,
           data: {
-            bgColor: "#00ADDB",
+            bgColor: SETTINGS.BG_COLOR,
             title: <>Insights</>,
             h: 2,
             items: [
@@ -406,7 +440,7 @@ export const CASE_9 = {
           data: {
             items: [
               {
-                imageUrl: "assets/case-9/before.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/before.png`,
                 imageAlt: "Search suggestions, before",
                 title: "Search suggestions, before",
                 text: (
@@ -417,7 +451,7 @@ export const CASE_9 = {
                 ),
               },
               {
-                imageUrl: "assets/case-9/after.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/after.png`,
                 imageAlt: "Search suggestions after",
                 title: "Search suggestions after",
                 text: (
@@ -456,7 +490,7 @@ export const CASE_9 = {
                 </Paragraph>
               </>
             ),
-            imageUrl: "assets/case-9/ab-test.png",
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/ab-test.png`,
             imageAlt: "AB test in action",
           },
         },
@@ -467,8 +501,8 @@ export const CASE_9 = {
         {
           template: SECTION_ELEMENTS.RESULT,
           data: {
-            imageUrl: "assets/case-9/result.png",
-            bgColor: "#00ADDB",
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/result.png`,
+            bgColor: SETTINGS.BG_COLOR,
             text: (
               <>
                 <Paragraph large>

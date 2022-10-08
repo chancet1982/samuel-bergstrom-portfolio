@@ -7,30 +7,66 @@ import { PLATFORMS } from "./dictionaries/PLATFORMS";
 import Paragraph from "../Components/Shared/Paragraph";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
+import Highlights from "../Components/Section_Elements/Cover/Highlights";
+
+/* TODO: This is empty example case */
+const SETTINGS = {
+  BG_COLOR: "#00ADDB",
+  URL: "/cases/11",
+  MEDIA_BASE_URL: "assets/case-11",
+  KEY_FIGURES: {
+    CASE_TYPE: {
+      label: CASE_TYPES.LABEL,
+      value: CASE_TYPES.IMPROVING_EXISTING_SERVICE,
+    },
+    MY_ROLE: { label: ROLES.LABEL, value: ROLES.CONSULTANT },
+    CASE_PLATFORMS: {
+      label: PLATFORMS.LABEL,
+      value: [PLATFORMS.DESKTOP, PLATFORMS.TABLET, PLATFORMS.MOBILE],
+    },
+    CASE_YEAR: { label: "Year:", value: "2021" },
+    CASE_DURATION: { label: "Duration:", value: "1 month" },
+  },
+};
 
 export const CASE_11 = {
   caseStatus: CASE_STATUS.DRAFT,
-  caseType: CASE_TYPES.CONCEPT,
-  caseUrl: "/cases/11",
+  caseUrl: SETTINGS.URL,
   thumbnail: {
-    overline: "Prisjakt",
-    title: "e-commerce",
-    imageUrl: "assets/case-11/thumbnail.png",
+    overline: "Overline is usually the industry",
+    title: "What did you do?",
+    text: <>Some catch phrase here</>,
+    imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
     imageAlt: "thumbnail",
-    text: "Improving search experience",
-    bgColor: "rgba(99, 182, 187, .72)",
+    bgColor: SETTINGS.BG_COLOR,
   },
   details: [
     {
-      isSticky: true,
       elements: [
         {
-          template: SECTION_ELEMENTS.COVER,
+          template: SECTION_ELEMENTS.LANDING_PAGE_COVER,
           data: {
-            overline: "Prisjakt",
-            title: "e-commerce",
-            imageUrl: "assets/case-11/cover.png",
-            text: <Paragraph large>Improving search experience</Paragraph>,
+            bgColor: SETTINGS.BG_COLOR,
+            caption: {
+              overline: "Overline is usually the industry",
+              title: "What did you do?",
+              text: <Paragraph xxl>Some catch phrase here</Paragraph>,
+            },
+            fgImage: {
+              imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
+              mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
+            },
+            footer: (
+              <Highlights
+                flip
+                items={[
+                  SETTINGS.KEY_FIGURES.CASE_TYPE,
+                  SETTINGS.KEY_FIGURES.CASE_YEAR,
+                  SETTINGS.KEY_FIGURES.CASE_DURATION,
+                  SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+                ]}
+              />
+            ),
           },
         },
       ],
@@ -40,40 +76,14 @@ export const CASE_11 = {
         {
           template: SECTION_ELEMENTS.OVERVIEW,
           data: {
-            bgColor: "rgba(99, 182, 187, .72)",
-            text: (
-              <Paragraph xl>
-                NoWaste is a leading Global Logistics and transport company.
-                Their subsidiary e-drop was trying to solve some of the issues
-                with food deliveries. In Sweden, most supermarkets provide home
-                delivery services, but these services require that people will
-                be at home at a certain time. This is a challenge as most people
-                are home around the same time which means that deliveries are
-                limited to those hours.
-              </Paragraph>
-            ),
-            myRole: ROLES.LEAD,
-            duration: "4 weeks",
-            platforms: [PLATFORMS.MOBILE_ANDROID, PLATFORMS.MOBILE_IOS],
+            text: <Paragraph xl>...</Paragraph>,
             toolsAndMethods: [
               TOOLS_AND_METHODS.SURVEYS,
-              TOOLS_AND_METHODS.COMPETITOR_ANALYSIS,
-              TOOLS_AND_METHODS.FLOW_MAPPING,
-              TOOLS_AND_METHODS.PROTOTYPING,
+              TOOLS_AND_METHODS.WEB_ANALYTICS,
+              TOOLS_AND_METHODS.FUNNEL_ANALYSIS,
               TOOLS_AND_METHODS.USABILITY_TESTING,
+              TOOLS_AND_METHODS.AB_TESTING,
             ],
-          },
-        },
-      ],
-    },
-    {
-      header: "Background",
-      elements: [
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: <>...</>,
-            text: <Paragraph>...</Paragraph>,
           },
         },
       ],
@@ -83,18 +93,10 @@ export const CASE_11 = {
         {
           template: SECTION_ELEMENTS.RESULT,
           data: {
-            imageUrl: "assets/case-11/result.png",
-            bgColor: "rgba(99, 182, 187, .72)",
-            results: [
-              {
-                value: "120%",
-                description: "increase in overall success rate",
-              },
-              {
-                value: "64%",
-                description: "decrease in time to completian",
-              },
-            ],
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/result-desktop.png`,
+            mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/result-mobile.png`,
+            bgColor: SETTINGS.BG_COLOR,
+            text: <Paragraph large>...</Paragraph>,
           },
         },
       ],

@@ -8,34 +8,65 @@ import Paragraph from "../Components/Shared/Paragraph";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
+import Highlights from "../Components/Section_Elements/Cover/Highlights";
+
+const SETTINGS = {
+  BG_COLOR: "#546368",
+  URL: "/cases/4",
+  MEDIA_BASE_URL: "assets/case-4",
+  KEY_FIGURES: {
+    CASE_TYPE: { label: CASE_TYPES.LABEL, value: CASE_TYPES.REDESIGN },
+    MY_ROLE: { label: ROLES.LABEL, value: ROLES.UX },
+    CASE_PLATFORMS: {
+      label: PLATFORMS.LABEL,
+      value: [PLATFORMS.MOBILE_ANDROID, PLATFORMS.MOBILE_IOS],
+    },
+    CASE_YEAR: { label: "Year:", value: "2019" },
+    CASE_DURATION: { label: "Duration:", value: "3 months" },
+  },
+};
 
 export const CASE_4 = {
   caseStatus: CASE_STATUS.PUBLISHED,
-  caseType: CASE_TYPES.REDESIGN,
-  caseUrl: "/cases/4",
+  caseUrl: SETTINGS.URL,
   thumbnail: {
     overline: "Logistics",
     title: "Delivery, unattended",
     text: <>Home delivery box gets a companion app</>,
-    imageUrl: "assets/case-4/thumbnail.png",
+    imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
     imageAlt: "thumbnail",
-    bgColor: "#546368",
+    bgColor: SETTINGS.BG_COLOR,
   },
   details: [
     {
       elements: [
         {
-          template: SECTION_ELEMENTS.COVER,
+          template: SECTION_ELEMENTS.LANDING_PAGE_COVER,
           data: {
-            overline: "Logistics",
-            title: "e-drop",
-            imageUrl: "assets/case-4/cover-desktop.png",
-            mobileImageUrl: "assets/case-4/cover-mobile.png",
-            bgColor: "#546368",
-            text: (
-              <Paragraph large>
-                Home delivery box gets a companion app
-              </Paragraph>
+            bgColor: SETTINGS.BG_COLOR,
+            caption: {
+              overline: "Logistics",
+              title: "Delivery, unattended",
+              text: (
+                <Paragraph xxl>
+                  Home delivery box gets a companion app
+                </Paragraph>
+              ),
+            },
+            fgImage: {
+              imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
+              mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
+            },
+            footer: (
+              <Highlights
+                flip
+                items={[
+                  SETTINGS.KEY_FIGURES.CASE_TYPE,
+                  SETTINGS.KEY_FIGURES.CASE_YEAR,
+                  SETTINGS.KEY_FIGURES.CASE_DURATION,
+                  SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+                ]}
+              />
             ),
           },
         },
@@ -46,7 +77,6 @@ export const CASE_4 = {
         {
           template: SECTION_ELEMENTS.OVERVIEW,
           data: {
-            bgColor: "#546368",
             text: (
               <Paragraph xl>
                 NoWaste is a leading Global Logistics and transport company.
@@ -58,9 +88,6 @@ export const CASE_4 = {
                 limited to those hours.
               </Paragraph>
             ),
-            myRole: ROLES.LEAD,
-            duration: "4 weeks",
-            platforms: [PLATFORMS.MOBILE_ANDROID, PLATFORMS.MOBILE_IOS],
             toolsAndMethods: [
               TOOLS_AND_METHODS.SURVEYS,
               TOOLS_AND_METHODS.COMPETITOR_ANALYSIS,
@@ -98,19 +125,19 @@ export const CASE_4 = {
             template: IMAGE_GALLERY_TEMPLATES.FOUR_IMAGES_TWO_COLUMNS,
             images: [
               {
-                imageUrl: "assets/case-4/mood-1.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-1.jpg`,
                 imageAlt: "?",
               },
               {
-                imageUrl: "assets/case-4/mood-2.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-2.jpg`,
                 imageAlt: "?",
               },
               {
-                imageUrl: "assets/case-4/mood-3.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-3.jpg`,
                 imageAlt: "?",
               },
               {
-                imageUrl: "assets/case-4/mood-4.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-4.png`,
                 imageAlt: "?",
               },
             ],
@@ -200,7 +227,7 @@ export const CASE_4 = {
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
-            imageUrl: "assets/case-4/flows.png",
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/flows.png`,
             imageAlt:
               "Flow map of old app, a lot of complex flows for red routes",
             caption:
@@ -244,7 +271,7 @@ export const CASE_4 = {
           data: {
             title: <>Insights:</>,
             h: 2,
-            bgColor: "#546368",
+            bgColor: SETTINGS.BG_COLOR,
             items: [
               {
                 title: "Onboarding is cumbersome",
@@ -311,7 +338,7 @@ export const CASE_4 = {
           data: {
             items: [
               {
-                imageUrl: "assets/case-4/before.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/before.png`,
                 imageAlt: "Unlocking the locker before redesign",
                 title: "Unlock unit, before",
                 text: (
@@ -328,7 +355,7 @@ export const CASE_4 = {
                 ),
               },
               {
-                imageUrl: "assets/case-4/after.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/after.png`,
                 imageAlt: "Unlocking the locker before after",
                 title: "Unlock unit, after",
                 text: (
@@ -353,7 +380,7 @@ export const CASE_4 = {
             listTitle: <>Problem solving via design</>,
             items: [
               {
-                imageUrl: "assets/case-4/sneakpeek-1.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-1.png`,
                 imageAlt: "Unlocking the locker",
                 title: "Unlocking the locker",
                 text: (
@@ -375,7 +402,7 @@ export const CASE_4 = {
                 ),
               },
               {
-                imageUrl: "assets/case-4/sneakpeek-2.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-2.png`,
                 imageAlt: "Cooling schedule",
                 title: "Cooling schedule",
                 text: (
@@ -399,7 +426,7 @@ export const CASE_4 = {
                 ),
               },
               {
-                imageUrl: "assets/case-4/sneakpeek-3.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-3.png`,
                 imageAlt: "Is it working?",
                 title: "Is it working?",
                 text: (
@@ -460,9 +487,9 @@ export const CASE_4 = {
         {
           template: SECTION_ELEMENTS.RESULT,
           data: {
-            imageUrl: "assets/case-4/result-desktop.png",
-            mobileImageUrl: "assets/case-4/result-mobile.png",
-            bgColor: "#546368",
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/result-desktop.png`,
+            mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/result-mobile.png`,
+            bgColor: SETTINGS.BG_COLOR,
             results: [
               {
                 value: "+120%",

@@ -9,36 +9,66 @@ import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES"
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import colors from "../theme/colors";
+import Highlights from "../Components/Section_Elements/Cover/Highlights";
+
+const SETTINGS = {
+  BG_COLOR: "#158FC9",
+  URL: "/cases/5",
+  MEDIA_BASE_URL: "assets/case-5",
+  KEY_FIGURES: {
+    CASE_TYPE: { label: CASE_TYPES.LABEL, value: CASE_TYPES.PRODUCT_DESIGN },
+    MY_ROLE: { label: ROLES.LABEL, value: ROLES.UI_UX },
+    CASE_PLATFORMS: {
+      label: PLATFORMS.LABEL,
+      value: [PLATFORMS.MOBILE_ANDROID],
+    },
+    CASE_YEAR: { label: "Year:", value: "2018" },
+    CASE_DURATION: { label: "Duration:", value: "2 months" },
+  },
+};
 
 export const CASE_5 = {
   caseStatus: CASE_STATUS.PUBLISHED,
-  caseType: CASE_TYPES.DESIGN,
-  caseUrl: "/cases/5",
+  caseUrl: SETTINGS.URL,
   thumbnail: {
     overline: "Renal Care",
     title: "Self service Kiost",
     text: <>Speeding up adminisions and discharge in dialysis clinics.</>,
-    imageUrl: "assets/case-5/thumbnail.png",
-    coverImageUrl: "assets/case-5/cover.png",
-    imageAlt: "assets/case-5/cover.png",
-    bgColor: "#158FC9",
+    imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
+    imageAlt: "thumbnail",
+    bgColor: SETTINGS.BG_COLOR,
   },
   details: [
     {
       elements: [
         {
-          template: SECTION_ELEMENTS.COVER,
+          template: SECTION_ELEMENTS.LANDING_PAGE_COVER,
           data: {
-            overline: "Renal Care",
-            title: "Self service Kiost",
-            text: (
-              <Paragraph large>
-                Speeding up adminisions and discharge in dialysis clinics.
-              </Paragraph>
+            bgColor: SETTINGS.BG_COLOR,
+            caption: {
+              overline: "Renal Care",
+              title: "Self service Kiost",
+              text: (
+                <Paragraph xxl>
+                  Speeding up adminisions and discharge in dialysis clinics.
+                </Paragraph>
+              ),
+            },
+            fgImage: {
+              imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
+              mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
+            },
+            footer: (
+              <Highlights
+                flip
+                items={[
+                  SETTINGS.KEY_FIGURES.CASE_TYPE,
+                  SETTINGS.KEY_FIGURES.CASE_YEAR,
+                  SETTINGS.KEY_FIGURES.CASE_DURATION,
+                  SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+                ]}
+              />
             ),
-            imageUrl: "assets/case-5/cover-desktop.png",
-            mobileImageUrl: "assets/case-5/cover-mobile.png",
-            bgColor: "#158FC9",
           },
         },
       ],
@@ -48,7 +78,6 @@ export const CASE_5 = {
         {
           template: SECTION_ELEMENTS.OVERVIEW,
           data: {
-            bgColor: "#158FC9",
             text: (
               <>
                 <Paragraph xl>
@@ -65,9 +94,6 @@ export const CASE_5 = {
                 </Paragraph>
               </>
             ),
-            myRole: ROLES.UI_UX,
-            duration: "2 months",
-            platforms: [PLATFORMS.MOBILE_ANDROID],
             toolsAndMethods: [
               TOOLS_AND_METHODS.FIELD_STUDIES,
               TOOLS_AND_METHODS.COMPETITOR_ANALYSIS,
@@ -132,15 +158,15 @@ export const CASE_5 = {
             template: IMAGE_GALLERY_TEMPLATES.THREE_IMAGES_TWO_COLUMNS,
             images: [
               {
-                imageUrl: "assets/case-5/mood-1.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-1.jpg`,
                 imageAlt: "?",
               },
               {
-                imageUrl: "assets/case-5/mood-2.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-2.jpg`,
                 imageAlt: "Co-creating wireframes",
               },
               {
-                imageUrl: "assets/case-5/mood-3.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-3.jpg`,
                 imageAlt: "Co-creating wireframes",
               },
             ],
@@ -218,7 +244,7 @@ export const CASE_5 = {
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
-            imageUrl: "assets/case-5/personas.png",
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/personas.png`,
             imageAlt:
               "Personas, 3 distincs user groups that have contact surface with the app",
             caption:
@@ -293,7 +319,7 @@ export const CASE_5 = {
           data: {
             items: [
               {
-                imageUrl: "assets/case-5/side-by-side-1.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/side-by-side-1.png`,
                 imageAlt: "Auto check-in",
                 title: "Auto check-in using facial recognition and OCR",
                 text: (
@@ -315,7 +341,7 @@ export const CASE_5 = {
                 ),
               },
               {
-                imageUrl: "assets/case-5/side-by-side-2.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/side-by-side-2.png`,
                 imageAlt: "Manual check-in",
                 title: "Manual input of identify and weight",
                 text: (
@@ -352,7 +378,7 @@ export const CASE_5 = {
             h: 2,
             flip: true,
             limitMaxWidth: false,
-            imageUrl: "assets/case-5/design.jpg",
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/design.jpg`,
             imageAlt: "One of the patients during our interview",
             caption: "Patients during our interview",
             text: (
@@ -407,7 +433,7 @@ export const CASE_5 = {
             template: IMAGE_GALLERY_TEMPLATES.ONE_IMAGE_FULLSIZE,
             images: [
               {
-                imageUrl: "assets/case-5/wip.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/wip.png`,
                 imageAlt: "Workflow",
                 caption: "Some phases from my work in this project",
               },
@@ -419,7 +445,7 @@ export const CASE_5 = {
           data: {
             items: [
               {
-                imageUrl: "assets/case-5/sneakpeek-1.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-1.png`,
                 imageAlt: "Patient Identification",
                 title: "Patient Identification",
                 text: (
@@ -443,7 +469,7 @@ export const CASE_5 = {
                 ),
               },
               {
-                imageUrl: "assets/case-5/sneakpeek-2.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-2.png`,
                 imageAlt: "Multi-Language support",
                 title: "Multi-Language support",
                 text: (
@@ -458,7 +484,7 @@ export const CASE_5 = {
                 ),
               },
               {
-                imageUrl: "assets/case-5/sneakpeek-3.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-3.png`,
                 imageAlt: "Registering patients’ weight",
                 title: "Registering patients’ weight",
                 text: (
@@ -481,7 +507,7 @@ export const CASE_5 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>2 days, 20 tests, and an overhaul</>,
-            imageUrl: "assets/case-5/validation.jpg",
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/validation.jpg`,
             imageAlt:
               "Participant during usability testing, first time ever using a tablet",
             caption:
@@ -515,9 +541,9 @@ export const CASE_5 = {
         {
           template: SECTION_ELEMENTS.RESULT,
           data: {
-            imageUrl: "assets/case-5/result-desktop.png",
-            mobileImageUrl: "assets/case-5/result-mobile.png",
-            bgColor: "#158FC9",
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/result-desktop.png`,
+            mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/result-mobile.png`,
+            bgColor: SETTINGS.BG_COLOR,
             results: [
               {
                 value: "+1.6 mil.",

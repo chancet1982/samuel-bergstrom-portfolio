@@ -52,6 +52,7 @@ export const StyledH5 = styled.h5`
   ${headlineFont}
 `;
 
+/* TODO: Headlines dont seem to support withMargins. It should be flipped and hasMargins */
 const Title = ({ h, children, withMargin }) => {
   const light = useBgColor();
 
@@ -61,67 +62,37 @@ const Title = ({ h, children, withMargin }) => {
     switch (h) {
       case 0:
         return (
-          <StyledH1
-            light={light}
-            h={0}
-            withMargin={withMargin}
-            $fluidType={fluidType}
-          >
+          <StyledH1 light={light} h={0} $fluidType={fluidType}>
             {children}
           </StyledH1>
         );
       case 1:
         return (
-          <StyledH1
-            light={light}
-            h={h}
-            withMargin={withMargin}
-            $fluidType={fluidType}
-          >
+          <StyledH1 light={light} h={h} $fluidType={fluidType}>
             {children}
           </StyledH1>
         );
       case 2:
         return (
-          <StyledH2
-            light={light}
-            h={h}
-            withMargin={withMargin}
-            $fluidType={fluidType}
-          >
+          <StyledH2 light={light} h={h} $fluidType={fluidType}>
             {children}
           </StyledH2>
         );
       case 3:
         return (
-          <StyledH3
-            light={light}
-            h={h}
-            withMargin={withMargin}
-            $fluidType={fluidType}
-          >
+          <StyledH3 light={light} h={h} $fluidType={fluidType}>
             {children}
           </StyledH3>
         );
       case 4:
         return (
-          <StyledH4
-            light={light}
-            h={h}
-            withMargin={withMargin}
-            $fluidType={fluidType}
-          >
+          <StyledH4 light={light} h={h} $fluidType={fluidType}>
             {children}
           </StyledH4>
         );
       case 5:
         return (
-          <StyledH5
-            light={light}
-            h={h}
-            withMargin={withMargin}
-            $fluidType={fluidType}
-          >
+          <StyledH5 light={light} h={h} $fluidType={fluidType}>
             {children}
           </StyledH5>
         );

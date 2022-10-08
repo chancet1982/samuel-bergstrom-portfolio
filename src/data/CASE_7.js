@@ -9,36 +9,70 @@ import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import Title from "../Components/Shared/Title";
 import List from "../Components/Shared/List";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
+import { PLATFORMS } from "./dictionaries/PLATFORMS";
+import Highlights from "../Components/Section_Elements/Cover/Highlights";
+
+const SETTINGS = {
+  BG_COLOR: "#2161C9",
+  URL: "/cases/7",
+  MEDIA_BASE_URL: "assets/case-7",
+  KEY_FIGURES: {
+    CASE_TYPE: {
+      label: CASE_TYPES.LABEL,
+      value: CASE_TYPES.PRE_STUDY,
+    },
+    MY_ROLE: { label: ROLES.LABEL, value: ROLES.UX },
+    CASE_PLATFORMS: {
+      label: PLATFORMS.LABEL,
+      value: [
+        PLATFORMS.DESKTOP,
+        PLATFORMS.MOBILE_ANDROID,
+        PLATFORMS.MOBILE_IOS,
+      ],
+    },
+    CASE_YEAR: { label: "Year:", value: "2020" },
+    CASE_DURATION: { label: "Duration:", value: "2 months" },
+  },
+};
 
 export const CASE_7 = {
   caseStatus: CASE_STATUS.FEATURED,
-  caseType: CASE_TYPES.CONCEPT,
-  caseUrl: "/cases/7",
+  caseUrl: SETTINGS.URL,
   thumbnail: {
     overline: "Global fitness chain",
     title: "e-Commerce Prestudy & concept",
     text: <>Exploring potential service and product offering</>,
-    imageUrl: "assets/case-7/thumbnail.png",
-    coverImageUrl: "assets/case-7/cover.png",
-    imageAlt: "assets/case-7/cover.png",
-    bgColor: "#2362CA",
+    imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
+    imageAlt: "thumbnail",
+    bgColor: SETTINGS.BG_COLOR,
   },
   details: [
     {
       elements: [
         {
-          template: SECTION_ELEMENTS.COVER,
+          template: SECTION_ELEMENTS.LANDING_PAGE_COVER,
           data: {
-            overline: "Global fitness chain",
-            title: "e-Commerce pre-study",
-            text: (
-              <Paragraph large>
-                Exploring potential service and product offering
-              </Paragraph>
+            bgColor: SETTINGS.BG_COLOR,
+            caption: {
+              overline: "Global fitness chain",
+              title: "pre-study",
+              text: <Paragraph xxl>Service and product offering</Paragraph>,
+            },
+            fgImage: {
+              imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
+              mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
+            },
+            footer: (
+              <Highlights
+                flip
+                items={[
+                  SETTINGS.KEY_FIGURES.CASE_TYPE,
+                  SETTINGS.KEY_FIGURES.CASE_YEAR,
+                  SETTINGS.KEY_FIGURES.CASE_DURATION,
+                  SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+                ]}
+              />
             ),
-            imageUrl: "assets/case-7/cover-desktop.png",
-            mobileImageUrl: "assets/case-7/cover-mobile.png",
-            bgColor: "#2362CA",
           },
         },
       ],
@@ -48,7 +82,6 @@ export const CASE_7 = {
         {
           template: SECTION_ELEMENTS.OVERVIEW,
           data: {
-            bgColor: "rgba(0, 42, 78, .24)",
             text: (
               <Paragraph xl>
                 My client operates more than 250 gyms in 7 different countries.
@@ -56,8 +89,6 @@ export const CASE_7 = {
                 increasing sign-ups and cross-sales potential online.
               </Paragraph>
             ),
-            myRole: ROLES.UI_UX,
-            duration: "1 month",
             toolsAndMethods: [
               TOOLS_AND_METHODS.FIELD_STUDIES,
               TOOLS_AND_METHODS.SURVEYS,
@@ -97,19 +128,19 @@ export const CASE_7 = {
             template: IMAGE_GALLERY_TEMPLATES.FOUR_IMAGES_TWO_COLUMNS,
             images: [
               {
-                imageUrl: "assets/case-7/mood-1.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-1.jpg`,
                 imageAlt: "?",
               },
               {
-                imageUrl: "assets/case-7/mood-2.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-2.jpg`,
                 imageAlt: "?",
               },
               {
-                imageUrl: "assets/case-7/mood-3.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-3.jpg`,
                 imageAlt: "?",
               },
               {
-                imageUrl: "assets/case-7/mood-4.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-4.jpg`,
                 imageAlt: "?",
               },
             ],
@@ -188,7 +219,7 @@ export const CASE_7 = {
           template: SECTION_ELEMENTS.INSIGHTS,
           data: {
             isTwoColumnsOnDesktop: true,
-            bgColor: "#2161C9",
+            bgColor: SETTINGS.BG_COLOR,
             title: <>Insights:</>,
             items: [
               {
@@ -265,7 +296,7 @@ export const CASE_7 = {
             template: IMAGE_GALLERY_TEMPLATES.ONE_IMAGE_FULLSIZE,
             images: [
               {
-                imageUrl: "assets/case-7/onboarding-before.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/onboarding-before.png`,
                 imageAlt: "Workflow",
               },
             ],
@@ -326,15 +357,15 @@ export const CASE_7 = {
             template: IMAGE_GALLERY_TEMPLATES.THREE_IMAGES_TWO_COLUMNS,
             images: [
               {
-                imageUrl: "assets/case-7/gym-visit-1.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/gym-visit-1.png`,
                 imageAlt: "?",
               },
               {
-                imageUrl: "assets/case-7/gym-visit-2.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/gym-visit-2.png`,
                 imageAlt: "?",
               },
               {
-                imageUrl: "assets/case-7/gym-visit-3.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/gym-visit-3.png`,
                 imageAlt: "?",
               },
             ],
@@ -407,7 +438,7 @@ export const CASE_7 = {
             template: IMAGE_GALLERY_TEMPLATES.ONE_IMAGE_FULLSIZE,
             images: [
               {
-                imageUrl: "assets/case-7/wip-1.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/wip-1.png`,
                 imageAlt: "Workflow",
               },
             ],
@@ -475,7 +506,7 @@ export const CASE_7 = {
             template: IMAGE_GALLERY_TEMPLATES.ONE_IMAGE_FULLSIZE,
             images: [
               {
-                imageUrl: "assets/case-7/wip-2.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/wip-2.png`,
                 imageAlt: "Workflow",
               },
             ],
@@ -518,7 +549,7 @@ export const CASE_7 = {
             template: IMAGE_GALLERY_TEMPLATES.ONE_IMAGE_FULLSIZE,
             images: [
               {
-                imageUrl: "assets/case-7/wip-3.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/wip-3.png`,
                 imageAlt: "Workflow",
               },
             ],
@@ -544,7 +575,7 @@ export const CASE_7 = {
           data: {
             items: [
               {
-                imageUrl: "assets/case-7/sneakpeek-1.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-1.png`,
                 imageAlt: "Identification & signing membership agreement",
                 title: "Identification & signing membership agreement",
                 text: (
@@ -565,7 +596,7 @@ export const CASE_7 = {
                 ),
               },
               {
-                imageUrl: "assets/case-7/sneakpeek-2.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-2.png`,
                 imageAlt: "Snapping a selfi instead of going to the gym",
                 title: "Taking member’s pictures.",
                 text: (
@@ -588,7 +619,7 @@ export const CASE_7 = {
                 ),
               },
               {
-                imageUrl: "assets/case-7/sneakpeek-3.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-3.png`,
                 imageAlt: "QR codes and NFC to replace old magnetic cards",
                 title: "Physical access control at the gyms",
                 text: (
@@ -621,7 +652,7 @@ export const CASE_7 = {
             template: IMAGE_GALLERY_TEMPLATES.ONE_IMAGE_FULLSIZE,
             images: [
               {
-                imageUrl: "assets/case-7/onboarding-after.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/onboarding-after.png`,
                 imageAlt: "Workflow",
               },
             ],
@@ -646,9 +677,9 @@ export const CASE_7 = {
         {
           template: SECTION_ELEMENTS.RESULT,
           data: {
-            imageUrl: "assets/case-7/result-desktop.png",
-            mobileImageUrl: "assets/case-7/result-mobile.png",
-            bgColor: "#2161C9",
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/result-desktop.png`,
+            mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/result-mobile.png`,
+            bgColor: SETTINGS.BG_COLOR,
             text: (
               <>
                 <Paragraph large>

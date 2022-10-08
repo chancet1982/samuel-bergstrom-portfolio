@@ -8,32 +8,63 @@ import { ROLES } from "./dictionaries/ROLES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
+import Highlights from "../Components/Section_Elements/Cover/Highlights";
+
+const SETTINGS = {
+  BG_COLOR: "#47C8BC",
+  URL: "/cases/3",
+  MEDIA_BASE_URL: "assets/case-3",
+  KEY_FIGURES: {
+    CASE_TYPE: { label: CASE_TYPES.LABEL, value: CASE_TYPES.PRODUCT_DESIGN },
+    MY_ROLE: { label: ROLES.LABEL, value: ROLES.UI_UX },
+    CASE_PLATFORMS: {
+      label: PLATFORMS.LABEL,
+      value: [PLATFORMS.DESKTOP, PLATFORMS.TABLET_ANDROID],
+    },
+    CASE_YEAR: { label: "Year:", value: "2019" },
+    CASE_DURATION: { label: "Duration:", value: "7 months" },
+  },
+};
 
 // eslint-disable-next-line import/prefer-default-export
 export const CASE_3 = {
   caseStatus: CASE_STATUS.PUBLISHED,
-  caseType: CASE_TYPES.DESIGN,
-  caseUrl: "/cases/3",
+  caseUrl: SETTINGS.URL,
   thumbnail: {
     overline: "Healthcare",
     title: "Disrupting tech. digital pathology",
     text: <>Tissue scanner interface design</>,
-    imageUrl: "assets/case-3/thumbnail.png",
-    bgColor: "#47C8BC",
+    imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
     imageAlt: "thumbnail",
+    bgColor: SETTINGS.BG_COLOR,
   },
   details: [
     {
       elements: [
         {
-          template: SECTION_ELEMENTS.COVER,
+          template: SECTION_ELEMENTS.LANDING_PAGE_COVER,
           data: {
-            overline: "Healthcare",
-            title: "Disrupting tech. digital pathology",
-            text: <Paragraph large>Tissue scanner interface design</Paragraph>,
-            imageUrl: "assets/case-3/cover-desktop.png",
-            mobileImageUrl: "assets/case-3/cover-mobile.png",
-            bgColor: "#47C8BC",
+            bgColor: SETTINGS.BG_COLOR,
+            caption: {
+              overline: "Healthcare",
+              title: "Digital pathology",
+              text: <Paragraph xxl>Tissue scanner interface design</Paragraph>,
+            },
+            fgImage: {
+              imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
+              mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
+            },
+            footer: (
+              <Highlights
+                flip
+                items={[
+                  SETTINGS.KEY_FIGURES.CASE_TYPE,
+                  SETTINGS.KEY_FIGURES.CASE_YEAR,
+                  SETTINGS.KEY_FIGURES.CASE_DURATION,
+                  SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+                ]}
+              />
+            ),
           },
         },
       ],
@@ -43,7 +74,6 @@ export const CASE_3 = {
         {
           template: SECTION_ELEMENTS.OVERVIEW,
           data: {
-            bgColor: "#47C8BC",
             text: (
               <>
                 <Paragraph xl>
@@ -59,9 +89,6 @@ export const CASE_3 = {
                 </Paragraph>
               </>
             ),
-            myRole: ROLES.UI_UX,
-            duration: "2 months",
-            platforms: [PLATFORMS.DESKTOP, PLATFORMS.TABLET_ANDROID],
             toolsAndMethods: [
               TOOLS_AND_METHODS.INTERVIEWS,
               TOOLS_AND_METHODS.COMPETITOR_ANALYSIS,
@@ -107,19 +134,19 @@ export const CASE_3 = {
             template: IMAGE_GALLERY_TEMPLATES.FOUR_IMAGES_TWO_COLUMNS,
             images: [
               {
-                imageUrl: "assets/case-3/mood-1.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-1.jpg`,
                 imageAlt: "?",
               },
               {
-                imageUrl: "assets/case-3/mood-2.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-2.jpg`,
                 imageAlt: "?",
               },
               {
-                imageUrl: "assets/case-3/mood-3.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-3.jpg`,
                 imageAlt: "?",
               },
               {
-                imageUrl: "assets/case-3/mood-4.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-4.jpg`,
                 imageAlt: "?",
               },
             ],
@@ -163,7 +190,7 @@ export const CASE_3 = {
                 larger market compared to researchers.
               </Paragraph>
             ),
-            imageUrl: "assets/case-3/personas.png",
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/personas.png`,
             imageAlt: "The personas used for this project",
           },
         },
@@ -196,15 +223,15 @@ export const CASE_3 = {
             template: IMAGE_GALLERY_TEMPLATES.THREE_IMAGES_TWO_COLUMNS,
             images: [
               {
-                imageUrl: "assets/case-3/research-1.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/research-1.jpg`,
                 imageAlt: "?",
               },
               {
-                imageUrl: "assets/case-3/research-2.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/research-2.jpg`,
                 imageAlt: "?",
               },
               {
-                imageUrl: "assets/case-3/research-3.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/research-3.jpg`,
                 imageAlt: "?",
               },
             ],
@@ -242,7 +269,7 @@ export const CASE_3 = {
           data: {
             title: <>Research findings and application:</>,
             h: 2,
-            bgColor: "#47C8BC",
+            bgColor: SETTINGS.BG_COLOR,
             text: (
               <Paragraph>
                 We learned a lot about the work environment. This was not a
@@ -271,7 +298,7 @@ export const CASE_3 = {
           data: {
             items: [
               {
-                imageUrl: "assets/case-3/sneakpeek-1.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-1.png`,
                 imageAlt: "?",
                 title: (
                   <>Auto-detection of area of interest, reducing manual labor</>
@@ -298,7 +325,7 @@ export const CASE_3 = {
                 ),
               },
               {
-                imageUrl: "assets/case-3/sneakpeek-2.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-2.png`,
                 imageAlt: "?",
                 title: <>Auto-focus, reducing the need for rescans.</>,
                 text: (
@@ -374,23 +401,23 @@ export const CASE_3 = {
             template: IMAGE_GALLERY_TEMPLATES.FIVE_IMAGES_MIX_COLUMNS,
             images: [
               {
-                imageUrl: "assets/case-3/design-1.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/design-1.jpg`,
                 imageAlt: "?",
               },
               {
-                imageUrl: "assets/case-3/design-2.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/design-2.jpg`,
                 imageAlt: "?",
               },
               {
-                imageUrl: "assets/case-3/design-3.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/design-3.jpg`,
                 imageAlt: "?",
               },
               {
-                imageUrl: "assets/case-3/design-4.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/design-4.jpg`,
                 imageAlt: "?",
               },
               {
-                imageUrl: "assets/case-3/design-5.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/design-5.jpg`,
                 imageAlt: "?",
               },
             ],
@@ -437,9 +464,9 @@ export const CASE_3 = {
         {
           template: SECTION_ELEMENTS.RESULT,
           data: {
-            imageUrl: "assets/case-3/result-desktop.png",
-            mobileImageUrl: "assets/case-3/result-mobile.png",
-            bgColor: "#47C8BC",
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/result-desktop.png`,
+            mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/result-mobile.png`,
+            bgColor: SETTINGS.BG_COLOR,
             title: <>Final thoughts:</>,
             text: (
               <>

@@ -9,35 +9,69 @@ import List from "../Components/Shared/List";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
+import Highlights from "../Components/Section_Elements/Cover/Highlights";
+
+const SETTINGS = {
+  BG_COLOR: "#FF8D48",
+  URL: "/cases/2",
+  MEDIA_BASE_URL: "assets/case-2",
+  KEY_FIGURES: {
+    CASE_TYPE: { label: CASE_TYPES.LABEL, value: CASE_TYPES.PRODUCT_DESIGN },
+    MY_ROLE: { label: ROLES.LABEL, value: ROLES.LEAD },
+    CASE_PLATFORMS: {
+      label: PLATFORMS.LABEL,
+      value: [
+        PLATFORMS.MOBILE_IOS,
+        PLATFORMS.MOBILE_ANDROID,
+        PLATFORMS.TABLET_IOS,
+      ],
+    },
+    CASE_YEAR: { label: "Year:", value: "2019" },
+    CASE_DURATION: { label: "Duration:", value: "3 months" },
+  },
+};
 
 export const CASE_2 = {
   caseStatus: CASE_STATUS.PUBLISHED,
-  caseType: CASE_TYPES.REDESIGN,
-  caseUrl: "/cases/2",
+  caseUrl: SETTINGS.URL,
   thumbnail: {
     overline: "Renal Care",
     title: "Patient Companion App",
     text: <>Redesigning a companion app for renal care patients.</>,
-    imageUrl: "assets/case-2/thumbnail.png",
+    imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
     imageAlt: "thumbnail",
-    bgColor: "#FF8D48",
+    bgColor: SETTINGS.BG_COLOR,
   },
   details: [
     {
       elements: [
         {
-          template: SECTION_ELEMENTS.COVER,
+          template: SECTION_ELEMENTS.LANDING_PAGE_COVER,
           data: {
-            overline: "Renal Care",
-            title: "Patient Companion App",
-            imageUrl: "assets/case-2/cover-desktop.png",
-            mobileImageUrl: "assets/case-2/cover-mobile.png",
-            bgColor: "#FF8D48",
-            text: (
-              <Paragraph large>
-                Redesigning a companion app to empower renal patients and take
-                charge of their health.
-              </Paragraph>
+            bgColor: SETTINGS.BG_COLOR,
+            caption: {
+              overline: "Renal Care",
+              title: "Companion App",
+              text: (
+                <Paragraph xxl>
+                  Empowering patients & improving treatment.
+                </Paragraph>
+              ),
+            },
+            fgImage: {
+              imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
+              mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
+            },
+            footer: (
+              <Highlights
+                flip
+                items={[
+                  SETTINGS.KEY_FIGURES.CASE_TYPE,
+                  SETTINGS.KEY_FIGURES.CASE_YEAR,
+                  SETTINGS.KEY_FIGURES.CASE_DURATION,
+                  SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+                ]}
+              />
             ),
           },
         },
@@ -48,7 +82,6 @@ export const CASE_2 = {
         {
           template: SECTION_ELEMENTS.OVERVIEW,
           data: {
-            bgColor: "#FF8D48",
             text: (
               <Paragraph xl>
                 My client is one of the largest private renal care providers in
@@ -60,13 +93,6 @@ export const CASE_2 = {
                 improve patients lives.
               </Paragraph>
             ),
-            myRole: ROLES.LEAD,
-            duration: "3 months",
-            platforms: [
-              PLATFORMS.MOBILE_IOS,
-              PLATFORMS.MOBILE_ANDROID,
-              PLATFORMS.TABLET_IOS,
-            ],
             toolsAndMethods: [
               TOOLS_AND_METHODS.COMPETITOR_ANALYSIS,
               TOOLS_AND_METHODS.FLOW_MAPPING,
@@ -114,19 +140,19 @@ export const CASE_2 = {
             template: IMAGE_GALLERY_TEMPLATES.FOUR_IMAGES_TWO_COLUMNS,
             images: [
               {
-                imageUrl: "assets/case-2/mood-1.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-1.jpg`,
                 imageAlt: "?",
               },
               {
-                imageUrl: "assets/case-2/mood-4.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-4.jpg`,
                 imageAlt: "Co-creating wireframes",
               },
               {
-                imageUrl: "assets/case-2/mood-2.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-2.jpg`,
                 imageAlt: "Co-creating wireframes",
               },
               {
-                imageUrl: "assets/case-2/mood-3.jpg",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-3.jpg`,
                 imageAlt: "Co-creating wireframes",
               },
             ],
@@ -220,7 +246,7 @@ export const CASE_2 = {
           template: SECTION_ELEMENTS.INSIGHTS,
           data: {
             title: <>Insights</>,
-            bgColor: "#FF8D48",
+            bgColor: SETTINGS.BG_COLOR,
             h: 2,
             isTwoColumnsOnDesktop: true,
             text: (
@@ -288,7 +314,7 @@ export const CASE_2 = {
                 user needs and business goals.
               </Paragraph>
             ),
-            imageUrl: "assets/case-2/design.jpg",
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/design.jpg`,
             imageAlt: "Kickoff meeting, dot-voting on features",
             caption: "Kickoff meeting, dot-voting on features",
           },
@@ -303,7 +329,7 @@ export const CASE_2 = {
           data: {
             items: [
               {
-                imageUrl: "assets/case-2/sneakpeek-1.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-1.png`,
                 imageAlt: "Reducing friction in self-reporting.",
                 title: "Reducing friction in self-reporting.",
                 text: (
@@ -330,7 +356,7 @@ export const CASE_2 = {
                 ),
               },
               {
-                imageUrl: "assets/case-2/sneakpeek-2.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-2.png`,
                 imageAlt: "Finding dialysis clinics abroad",
                 title: "Finding dialysis clinics abroad",
                 text: (
@@ -348,7 +374,7 @@ export const CASE_2 = {
                 ),
               },
               {
-                imageUrl: "assets/case-2/sneakpeek-3.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-3.png`,
                 imageAlt: "Health tips, not values",
                 title: "Health tips, not values",
                 text: (
@@ -374,7 +400,7 @@ export const CASE_2 = {
                 ),
               },
               {
-                imageUrl: "assets/case-2/sneakpeek-4.png",
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-4.png`,
                 imageAlt: "Medication reminders",
                 title: "Medication reminders",
                 text: (
@@ -453,7 +479,7 @@ export const CASE_2 = {
                 ]}
               />
             ),
-            imageUrl: "assets/case-2/accessibility.jpg",
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/accessibility.jpg`,
             imageAlt: "Just some decoration",
           },
         },
@@ -487,7 +513,7 @@ export const CASE_2 = {
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
-            imageUrl: "assets/case-2/validation.jpg",
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/validation.jpg`,
             imageAlt:
               "Guerilla usability testing in Skånes universitetssjukhus Malmö cafeteria",
             caption:
@@ -530,9 +556,9 @@ export const CASE_2 = {
         {
           template: SECTION_ELEMENTS.RESULT,
           data: {
-            imageUrl: "assets/case-2/result-desktop.png",
-            mobileImageUrl: "assets/case-2/result-mobile.png",
-            bgColor: "#FF8D48",
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/result-desktop.png`,
+            mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/result-mobile.png`,
+            bgColor: SETTINGS.BG_COLOR,
             results: [
               {
                 value: "+16",
