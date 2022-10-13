@@ -20,6 +20,22 @@ const StyledCaseThumbnail = styled(motion.div)`
     0 0.25rem 0.5rem rgba(0, 0, 0, 0.016), 0 0.5rem 0.75rem rgba(0, 0, 0, 0.02),
     0 1rem 1.25rem rgba(0, 0, 0, 0.024), 0 1.5rem 4rem rgba(0, 0, 0, 0.032),
     0 4rem 5rem rgba(0, 0, 0, 0.04);
+
+  a {
+    text-decoration: none !important ;
+  }
+
+  :nth-of-type(2n + 1) {
+    a > div > div:first-of-type {
+      grid-area: b;
+    }
+  }
+
+  :nth-of-type(2n + 2) {
+    a > div > div:first-of-type {
+      grid-area: a;
+    }
+  }
 `;
 
 const StyledCaseThumbnailImage = styled(motion.div)`
@@ -36,20 +52,13 @@ const StyledCaseThumbnailImageAndCaption = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   position: relative;
+  grid-template-areas: "a b";
 
   > div {
     padding: ${padding.vertical.double} ${padding.horizontal.double};
     display: flex;
     flex-direction: column;
     justify-content: center;
-
-    h3 {
-      /*position: relative;
-      left: 8rem;
-      margin-right: -16rem;
-      z-index: 1;
-      text-decoration: none;*/
-    }
   }
 `;
 

@@ -9,7 +9,11 @@ export const VIEW_CASES = [
       {
         template: SECTION_ELEMENTS.CASES,
         data: {
-          title: <>Selected cases</>,
+          title: (
+            <>
+              Selected <mark>cases</mark>
+            </>
+          ),
           h: 1,
           text: (
             <Paragraph large>
