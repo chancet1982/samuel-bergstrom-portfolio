@@ -5,6 +5,7 @@ import Paragraph from "../Components/Shared/Paragraph";
 import { COVER_MEDIA_TYPES } from "./dictionaries/COVER_MEDIA_TYPES";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import ClientPreview from "../Components/Section_Elements/Cover/ClientsPreview";
+import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 
 export const VIEW_LANDING_PAGE = [
   {
@@ -62,6 +63,30 @@ export const VIEW_LANDING_PAGE = [
               Just some of my work from the last couple of years.
             </Paragraph>
           ),
+        },
+      },
+    ],
+  },
+  {
+    elements: [
+      {
+        template: SECTION_ELEMENTS.IMAGE_GALLERY,
+        data: {
+          template: IMAGE_GALLERY_TEMPLATES.THREE_IMAGES_TWO_COLUMNS,
+          images: [
+            {
+              imageUrl: "assets/me-1.jpg",
+              imageAlt: "?",
+            },
+            {
+              imageUrl: "assets/me-2.jpg",
+              imageAlt: "?",
+            },
+            {
+              imageUrl: "assets/me-3.jpg",
+              imageAlt: "?",
+            },
+          ],
         },
       },
     ],

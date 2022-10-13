@@ -215,40 +215,6 @@ export const VIEW_ABOUT_ME = [
           ),
         },
       },
-    ],
-  },
-  {
-    header: "Education",
-    elements: [
-      {
-        template: SECTION_ELEMENTS.TEXTBOX,
-
-        data: {
-          title: (
-            <>
-              Just some of my <mark>credentials</mark>:
-            </>
-          ),
-          h: 2,
-          text: (
-            <List
-              items={[
-                <Span>
-                  <strong>UXC Spec. UX Management</strong>, NNg (Nielson Norman
-                  Group)
-                </Span>,
-                <Span>
-                  <strong>BSc</strong> Eng. ICT, Ålborg university
-                </Span>,
-                <Span>
-                  <strong>Assoc. Deg.</strong> Graphic Design, College of
-                  Management
-                </Span>,
-              ]}
-            />
-          ),
-        },
-      },
       {
         template: SECTION_ELEMENTS.TIMELINE,
         data: {
@@ -374,6 +340,40 @@ export const VIEW_ABOUT_ME = [
               ],
             },
           ],
+        },
+      },
+    ],
+  },
+  {
+    header: "Education",
+    elements: [
+      {
+        template: SECTION_ELEMENTS.TEXTBOX,
+
+        data: {
+          title: (
+            <>
+              Just some of my <mark>credentials</mark>:
+            </>
+          ),
+          h: 2,
+          text: (
+            <List
+              items={[
+                <Span>
+                  <strong>UXC Spec. UX Management</strong>, NNg (Nielson Norman
+                  Group)
+                </Span>,
+                <Span>
+                  <strong>BSc</strong> Eng. ICT, Ålborg university
+                </Span>,
+                <Span>
+                  <strong>Assoc. Deg.</strong> Graphic Design, College of
+                  Management
+                </Span>,
+              ]}
+            />
+          ),
         },
       },
     ],
