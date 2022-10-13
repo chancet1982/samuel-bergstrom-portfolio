@@ -3,8 +3,7 @@ import React, { useState, useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import LongScreenTransition from "./ScreenTransitions/LongScreenTransition";
-import ShortScreenTransition from "./ScreenTransitions/ShortScreenTransition";
+import ScreenTransition from "./ScreenTransitions/ScreenTransition";
 import padding from "../theme/padding";
 import { ViewColorContext } from "../Context/ViewColorContext";
 import colors from "../theme/colors";
@@ -51,11 +50,13 @@ function View({ children, isPadded, transition, bgColor }) {
 
   return screenTransition ? (
     isShort ? (
-      <ShortScreenTransition animationFinished={() => removeTransition()} />
+      <ScreenTransition animationFinished={() => removeTransition()} />
     ) : (
-      <LongScreenTransition
+      <ScreenTransition
         animationFinished={() => switchToShortScreenTransition()}
-      />
+      >
+        Samuel Bergström
+      </ScreenTransition>
     )
   ) : (
     <StyledView

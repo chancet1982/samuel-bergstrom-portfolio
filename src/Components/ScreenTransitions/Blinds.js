@@ -9,16 +9,23 @@ const StyledBlinds = styled(motion.div)`
   position: absolute;
   width: 100%;
   height: 100%;
-  display: grid;
-  grid-template-columns: repeat(${({ amountOfBlinds }) => amountOfBlinds}, 1fr);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
 `;
 
 const StyledBlind = styled(motion.div)`
   background-color: ${({ $bgColor }) => $bgColor || colors.offwhite};
+  height: ${({ amountOfBlinds }) =>
+    `calc(100vh / ${amountOfBlinds} - (${amountOfBlinds} - 1) / ${amountOfBlinds} * 1vh)`};
+  ${({ amountOfBlinds }) =>
+    amountOfBlinds > 1 && {
+      marginBottom: "1vh",
+    }};
 `;
 
-function Blinds({ up, bgColor, amountOfBlinds, delayPerBlind }) {
+function Blinds({ right, bgColor, amountOfBlinds, delayPerBlind }) {
   const blindsVariants = {
     initial: {},
     animate: {
@@ -28,14 +35,14 @@ function Blinds({ up, bgColor, amountOfBlinds, delayPerBlind }) {
     },
   };
 
-  const blindDown = {
+  const AnimateFromLeft = {
     initial: {
-      y: "-100%",
-      opacity: 0,
+      x: "-100%",
+      scaleX: "50%",
     },
     animate: {
-      y: ["-100%", "0%", "0%", "101%"],
-      opacity: [0, 1, 1, 0],
+      x: ["-100%", "0%", "0%", "101%"],
+      scaleX: ["50%", "100%", "100%", "0%"],
       transition: {
         duration: 1.2 + delayPerBlind * amountOfBlinds,
         times: [0, 0.2, 0.8, 1],
@@ -44,16 +51,16 @@ function Blinds({ up, bgColor, amountOfBlinds, delayPerBlind }) {
     },
   };
 
-  const blindUp = {
+  const AnimateFromRight = {
     initial: {
-      y: "100%",
-      opacity: 0,
+      x: "100%",
+      scaleX: "50%",
     },
     animate: {
-      y: ["100%", "0%", "0%", "-101%"],
-      opacity: [0, 1, 1, 0],
+      x: ["100%", "0%", "0%", "-101%"],
+      scaleX: ["50%", "100%", "100%", "0%"],
       transition: {
-        duration: 0.9 + delayPerBlind * amountOfBlinds,
+        duration: 1.2 + delayPerBlind * amountOfBlinds,
         times: [0, 0.2, 0.8, 1],
         easing: "anticipate",
       },
@@ -69,9 +76,10 @@ function Blinds({ up, bgColor, amountOfBlinds, delayPerBlind }) {
     >
       {Array.from({ length: amountOfBlinds }, () => (
         <StyledBlind
-          variants={up ? blindUp : blindDown}
+          variants={right ? AnimateFromRight : AnimateFromLeft}
           $bgColor={bgColor}
           key={uuid()}
+          amountOfBlinds={amountOfBlinds}
         />
       ))}
     </StyledBlinds>
@@ -79,14 +87,14 @@ function Blinds({ up, bgColor, amountOfBlinds, delayPerBlind }) {
 }
 
 Blinds.propTypes = {
-  up: PropTypes.bool,
+  right: PropTypes.bool,
   bgColor: PropTypes.string,
   amountOfBlinds: PropTypes.number,
   delayPerBlind: PropTypes.number,
 };
 
 Blinds.defaultProps = {
-  up: false,
+  right: false,
   bgColor: null,
   amountOfBlinds: 3,
   delayPerBlind: 0.2,
