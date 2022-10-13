@@ -28,6 +28,7 @@ function TitleAndText({
   disableAnimations,
   sticky,
   isPadded,
+  parentAnimationComplete,
 }) {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
@@ -49,7 +50,11 @@ function TitleAndText({
       initial="hidden"
       $sticky={sticky}
       variants={variants}
-      animate={disableAnimations || inView ? "inView" : "hidden"}
+      animate={
+        disableAnimations || (inView && parentAnimationComplete)
+          ? "inView"
+          : "hidden"
+      }
       $isPadded={isPadded}
     >
       {title && <Title h={h}>{title}</Title>}
@@ -65,6 +70,7 @@ TitleAndText.propTypes = {
   disableAnimations: PropTypes.bool,
   sticky: PropTypes.bool,
   isPadded: PropTypes.bool,
+  parentAnimationComplete: PropTypes.bool,
 };
 
 TitleAndText.defaultProps = {
@@ -74,6 +80,7 @@ TitleAndText.defaultProps = {
   disableAnimations: false,
   sticky: false,
   isPadded: false,
+  parentAnimationComplete: true,
 };
 
 export default TitleAndText;

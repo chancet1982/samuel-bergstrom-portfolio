@@ -87,7 +87,9 @@ function ScreenTransition({ animationFinished, children }) {
           variants={screenTransitionContentVariants}
           onAnimationComplete={onComplete}
         >
-          <Title h={1}>{children}</Title>
+          <Title h={1}>
+            <mark>{children}</mark>
+          </Title>
         </TransitionText>
       )}
     </StyledScreenTransition>
