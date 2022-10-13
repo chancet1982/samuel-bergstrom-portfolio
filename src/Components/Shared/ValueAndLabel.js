@@ -8,17 +8,17 @@ import padding from "../../theme/padding";
 import Span from "./Span";
 import Title from "./Title";
 
-const StyledKeyFigure = styled(motion.div)`
-  align-items: center;
-  justify-content: center;
+const StyledValueAndLabel = styled(motion.div)`
   display: flex;
+  justify-content: center;
   flex-direction: column;
+  align-items: center;
   text-align: center;
   padding: ${padding.vertical.double} ${padding.horizontal.double};
 `;
 
-/* TODO: Find a better name for it (Can already used in KeyFigures & Highlights, can potentially be used in Overview & Result) */
-function KeyFigure({ value, label, flip }) {
+/* TODO: Implement this in "FinalResult" as well, for that to happen youll need to control text alignment and padding as prop */
+function ValueAndLabel({ value, label, flip, h, withMargin }) {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
@@ -31,13 +31,15 @@ function KeyFigure({ value, label, flip }) {
     return flip ? (
       <>
         <Span>{label}</Span>
-        <Title h={5}>{valueAsString}</Title>
+        <Title h={h} withMargin={withMargin}>
+          {valueAsString}
+        </Title>
       </>
     ) : (
       <>
-        <Span xxl>
-          <strong>{valueAsString}</strong>
-        </Span>
+        <Title h={h} withMargin={withMargin}>
+          {valueAsString}
+        </Title>
         <Span>{label}</Span>
       </>
     );
@@ -52,28 +54,32 @@ function KeyFigure({ value, label, flip }) {
   }, [intersection]);
 
   return (
-    <StyledKeyFigure
+    <StyledValueAndLabel
       ref={intersectionRef}
       initial="hidden"
       variants={variants}
       animate={inView ? "inView" : "hidden"}
     >
       {renderValueAndLabel()}
-    </StyledKeyFigure>
+    </StyledValueAndLabel>
   );
 }
 
-KeyFigure.propTypes = {
+ValueAndLabel.propTypes = {
   value: PropTypes.oneOfType([
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.string),
   ]).isRequired,
   label: PropTypes.string.isRequired,
   flip: PropTypes.bool,
+  h: PropTypes.oneOf(3, 5),
+  withMargin: PropTypes.bool,
 };
 
-KeyFigure.defaultProps = {
+ValueAndLabel.defaultProps = {
   flip: false,
+  h: 5,
+  withMargin: false,
 };
 
-export default KeyFigure;
+export default ValueAndLabel;

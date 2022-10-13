@@ -53,6 +53,7 @@ const StyledCaseThumbnailImageAndCaption = styled.div`
   }
 `;
 
+/* TODO: Fix hover transitions, Fix inView animations (use blinds) */
 function CaseThumbnail({ data, status, caseUrl }) {
   const [, setContent] = useContext(AppContext);
   const [, setLight] = useContext(ElementColorContext);

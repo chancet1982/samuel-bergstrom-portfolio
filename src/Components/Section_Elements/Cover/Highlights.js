@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { v4 as uuid } from "uuid";
 import breakpoints from "../../../theme/breakpoints";
-import KeyFigure from "../../Shared/KeyFigure";
+import ValueAndLabel from "../../Shared/ValueAndLabel";
 import colors from "../../../theme/colors";
 import sizes from "../../../theme/sizes";
 
@@ -27,7 +27,7 @@ function Highlights({ items }) {
   return (
     <StyledHighlights>
       {items.map(({ value, label }) => (
-        <KeyFigure value={value} label={label} key={uuid()} flip />
+        <ValueAndLabel value={value} label={label} key={uuid()} flip />
       ))}
     </StyledHighlights>
   );

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { v4 as uuid } from "uuid";
 import breakpoints from "../../theme/breakpoints";
-import KeyFigure from "../Shared/KeyFigure";
+import ValueAndLabel from "../Shared/ValueAndLabel";
 import BackgroundWrapper from "../Shared/BackgroundWrapper";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
@@ -55,7 +55,7 @@ function KeyFigures({ items, bgColor, bgImageUrl, limitMaxWidth }) {
   const renderKeyFigures = () => (
     <StyledKeyFigures>
       {items.map(({ value, label }) => (
-        <KeyFigure value={value} label={label} key={uuid()} />
+        <ValueAndLabel value={value} label={label} key={uuid()} h={3} />
       ))}
     </StyledKeyFigures>
   );

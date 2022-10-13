@@ -35,6 +35,8 @@ const StyledCasesList = styled(motion.div)`
   }
 `;
 
+/* TODO: exclude current case from list of additional cases */
+
 function AdditionalCases() {
   const { id } = useParams();
   const currentCaseTitle = CASES[id].thumbnail.title;
