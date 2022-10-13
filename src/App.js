@@ -40,7 +40,7 @@ function App() {
             <Suspense fallback={<ViewLoading />}>
               <AnimatePresence mode="wait">
                 <Routes location={location} key={location.pathname}>
-                  <Route path="/" element={<ViewLandingPage />} />
+                  <Route exact path="/" element={<ViewLandingPage />} />
                   <Route path="/cases" element={<ViewCases />} />
                   <Route path="/cases/:id" element={<ViewCase />} />
                   <Route path="/about" element={<ViewAboutMe />} />

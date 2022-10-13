@@ -267,7 +267,12 @@ function Navigation() {
         animate={expanded ? "expanded" : "collapsed"}
         variants={menuVariants}
       >
-        <StyledNavLink $fluidType={fluidType} to="/" onClick={menuTogglerClick}>
+        <StyledNavLink
+          $fluidType={fluidType}
+          to="/"
+          onClick={menuTogglerClick}
+          end
+        >
           Home
         </StyledNavLink>
         <StyledNavLink
