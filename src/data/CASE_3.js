@@ -19,7 +19,7 @@ const SETTINGS = {
     MY_ROLE: { label: ROLES.LABEL, value: ROLES.UI_UX },
     CASE_PLATFORMS: {
       label: PLATFORMS.LABEL,
-      value: [PLATFORMS.DESKTOP, PLATFORMS.TABLET_ANDROID],
+      value: [PLATFORMS.TABLET_ANDROID],
     },
     CASE_YEAR: { label: "Year:", value: "2019" },
     CASE_DURATION: { label: "Duration:", value: "7 months" },
