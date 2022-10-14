@@ -36,7 +36,10 @@ function Highlights({ items }) {
 Highlights.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
-      value: PropTypes.string.isRequired,
+      value: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.arrayOf(PropTypes.string),
+      ]).isRequired,
       label: PropTypes.string.isRequired,
     })
   ).isRequired,

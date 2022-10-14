@@ -16,11 +16,11 @@ import colors from "../../theme/colors";
 
 /* TODO: CaseThumbnail gets bgColor which isnt used. Make sure to clean up. */
 const StyledCaseThumbnail = styled(motion.div)`
-  background: white;
   overflow: hidden;
   transition: box-shadow 600ms;
 
   :hover {
+    background: white;
     box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.08),
       0 0.25rem 0.5rem rgba(0, 0, 0, 0.016),
       0 0.5rem 0.75rem rgba(0, 0, 0, 0.02), 0 1rem 1.25rem rgba(0, 0, 0, 0.024),

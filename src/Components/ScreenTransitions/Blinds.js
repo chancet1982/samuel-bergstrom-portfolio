@@ -17,10 +17,10 @@ const StyledBlinds = styled(motion.div)`
 
 const StyledBlind = styled(motion.div)`
   background-color: ${({ $bgColor }) => $bgColor || colors.offwhite};
-  height: ${({ amountOfBlinds }) =>
-    `calc(100vh / ${amountOfBlinds} - (${amountOfBlinds} - 1) / ${amountOfBlinds} * 1vh)`};
-  ${({ amountOfBlinds }) =>
-    amountOfBlinds > 1 && {
+  height: ${({ $amountOfBlinds }) =>
+    `calc(100vh / ${$amountOfBlinds} - (${$amountOfBlinds} - 1) / ${$amountOfBlinds} * 1vh)`};
+  ${({ $amountOfBlinds }) =>
+    $amountOfBlinds > 1 && {
       marginBottom: "1vh",
     }};
 `;
@@ -68,18 +68,13 @@ function Blinds({ right, bgColor, amountOfBlinds, delayPerBlind }) {
   };
 
   return (
-    <StyledBlinds
-      initial="initial"
-      animate="animate"
-      variants={blindsVariants}
-      amountOfBlinds={amountOfBlinds}
-    >
+    <StyledBlinds initial="initial" animate="animate" variants={blindsVariants}>
       {Array.from({ length: amountOfBlinds }, () => (
         <StyledBlind
           variants={right ? AnimateFromRight : AnimateFromLeft}
           $bgColor={bgColor}
           key={uuid()}
-          amountOfBlinds={amountOfBlinds}
+          $amountOfBlinds={amountOfBlinds}
         />
       ))}
     </StyledBlinds>

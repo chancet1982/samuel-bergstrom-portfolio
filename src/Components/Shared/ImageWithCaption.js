@@ -9,7 +9,7 @@ import Span from "./Span";
 
 const StyledImageWithCaption = styled(motion.figure)`
   margin: 0;
-  grid-area: ${({ gridArea }) => gridArea};
+  grid-area: ${({ $gridArea }) => $gridArea};
   overflow: hidden;
 `;
 
@@ -32,7 +32,6 @@ function ImageWithCaption({
   inGallery,
   inTextbox,
   disableAnimations,
-  isPadded,
   gridArea,
 }) {
   const [inView, setInView] = useState(false);
@@ -52,19 +51,16 @@ function ImageWithCaption({
   return (
     <StyledImageWithCaption
       ref={intersectionRef}
-      inGallery={inGallery}
-      gridArea={gridArea}
+      $gridArea={gridArea}
       initial="hidden"
       variants={variants}
       animate={disableAnimations || inView ? "inView" : "hidden"}
-      isPadded={isPadded}
     >
       <Image
         imageUrl={`${process.env.PUBLIC_URL}/${imageUrl}`}
         imageAlt={imageAlt}
         bgColor={bgColor}
         cover={!!inGallery}
-        inGallery={inGallery}
         withCaption={!!caption}
         inTextbox={inTextbox}
       />
@@ -85,7 +81,6 @@ ImageWithCaption.propTypes = {
   inGallery: PropTypes.bool,
   inTextbox: PropTypes.bool,
   disableAnimations: PropTypes.bool,
-  isPadded: PropTypes.bool,
   gridArea: PropTypes.string,
 };
 
@@ -95,7 +90,6 @@ ImageWithCaption.defaultProps = {
   inGallery: false,
   inTextbox: false,
   disableAnimations: false,
-  isPadded: false,
   gridArea: null,
 };
 
