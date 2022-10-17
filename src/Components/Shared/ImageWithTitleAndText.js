@@ -14,13 +14,18 @@ import colors from "../../theme/colors";
 
 const StyledImageWithTitleAndText = styled(motion.div)`
   display: flex;
-  background-color: ${({ bgColor }) => bgColor && bgColor};
-  flex-direction: ${({ horizontal, flip }) =>
-    horizontal
-      ? flip
+
+  ${({ $bgColor }) =>
+    $bgColor && {
+      backgroundColor: $bgColor || colors.offwhite,
+    }}
+
+  flex-direction: ${({ $horizontal, $flip }) =>
+    $horizontal
+      ? $flip
         ? "row-reverse"
         : "row"
-      : flip
+      : $flip
       ? "column-reverse"
       : "column"};
   align-items: center;
@@ -71,9 +76,9 @@ function ImageWithTitleAndText({
       initial="hidden"
       variants={variants}
       animate={inView ? "inView" : "hidden"}
-      horizontal={horizontal}
-      flip={flip}
-      bgColor={bgColor}
+      $horizontal={horizontal}
+      $flip={flip}
+      $bgColor={bgColor}
     >
       <ImageWithCaption
         imageUrl={imageUrl}

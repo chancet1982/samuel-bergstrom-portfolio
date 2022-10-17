@@ -24,9 +24,9 @@ const StyledInsights = styled(motion.div)`
       box-sizing: border-box;
     }
   }
-  ${({ bgColor }) =>
-    bgColor && {
-      backgroundColor: bgColor,
+  ${({ $bgColor }) =>
+    $bgColor && {
+      backgroundColor: $bgColor,
     }};
 `;
 
@@ -41,8 +41,8 @@ const StyledInsightsContent = styled(motion.div)`
   }
 
   @media (min-width: ${breakpoints.desktop}px) {
-    grid-template-columns: ${({ isTwoColumnsOnDesktop }) =>
-      isTwoColumnsOnDesktop ? "repeat(2, 1fr)" : "repeat(3, 1fr)"};
+    grid-template-columns: ${({ $isTwoColumnsOnDesktop }) =>
+      $isTwoColumnsOnDesktop ? "repeat(2, 1fr)" : "repeat(3, 1fr)"};
   }
 `;
 
@@ -87,11 +87,11 @@ function Insights({ title, h, items, bgColor, isTwoColumnsOnDesktop, text }) {
       initial="hidden"
       animate={inView ? "inView" : "hidden"}
       variants={variants}
-      bgColor={bgColor}
+      $bgColor={bgColor}
     >
       <TitleAndText h={h} title={title} disableAnimations isPadded>
         {text && text}
-        <StyledInsightsContent isTwoColumnsOnDesktop={isTwoColumnsOnDesktop}>
+        <StyledInsightsContent $isTwoColumnsOnDesktop={isTwoColumnsOnDesktop}>
           {convertRawInsightsToElements()}
         </StyledInsightsContent>
       </TitleAndText>

@@ -24,8 +24,8 @@ const StyledCaseThumbnail = styled(motion.div)`
   overflow: hidden;
   position: relative;
 
-  height: ${({ inAdditionalCases }) =>
-    inAdditionalCases
+  height: ${({ $inAdditionalCases }) =>
+    $inAdditionalCases
       ? `calc(92vw / 3 - 2 * ${padding.vertical.eighth})`
       : "72vh"};
 
@@ -33,9 +33,9 @@ const StyledCaseThumbnail = styled(motion.div)`
     text-decoration: none;
   }
 
-  ${({ bgColor }) =>
-    bgColor && {
-      backgroundColor: bgColor,
+  ${({ $bgColor }) =>
+    $bgColor && {
+      backgroundColor: $bgColor,
     }}
 `;
 
@@ -55,9 +55,9 @@ const StyledCaseThumbnailImage = styled(motion.div)`
   left: 0;
   right: 0;
 
-  ${({ imageUrl }) =>
-    imageUrl && {
-      backgroundImage: `url(${imageUrl})`,
+  ${({ $imageUrl }) =>
+    $imageUrl && {
+      backgroundImage: `url(${$imageUrl})`,
       backgroundSize: "cover",
     }}
 
@@ -194,7 +194,7 @@ function CaseThumbnail({ data, status, caseUrl, inAdditionalCases }) {
       >
         <StyledCaseThumbnailImage
           variants={thumbnailImageVariants}
-          imageUrl={`${process.env.PUBLIC_URL}/${imageUrl}`}
+          $imageUrl={`${process.env.PUBLIC_URL}/${imageUrl}`}
         />
 
         <StyledCaseThumbnailCaption variants={thumbnailCaptionVariants}>
@@ -227,8 +227,8 @@ function CaseThumbnail({ data, status, caseUrl, inAdditionalCases }) {
       initial="hidden"
       variants={thumbnailVariants}
       animate={inView ? "inView" : "hidden"}
-      bgColor={bgColor}
-      inAdditionalCases={inAdditionalCases}
+      $bgColor={bgColor}
+      $inAdditionalCases={inAdditionalCases}
     >
       {status !== CASE_STATUS.COMING_SOON
         ? wrapWithLink(renderCaseThumbnail())

@@ -15,8 +15,8 @@ const StyledListOfImagesWithTitleAndText = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
 
-  ${({ listTitle }) =>
-    !listTitle && `padding-top: ${padding.vertical.double};`};
+  ${({ $listTitle }) =>
+    !$listTitle && `padding-top: ${padding.vertical.double};`};
 `;
 
 const StyledListContainer = styled(motion.div)`
@@ -91,7 +91,7 @@ function ListOfImagesWithTitleAndText({
   }, [setLight, bgColor]);
 
   const renderListOfImagesWithTitleAndText = () => (
-    <StyledListOfImagesWithTitleAndText listTitle={listTitle}>
+    <StyledListOfImagesWithTitleAndText $listTitle={listTitle}>
       {(listTitle || listText) && (
         <CenteredTitleAndText title={listTitle} text={listText} />
       )}

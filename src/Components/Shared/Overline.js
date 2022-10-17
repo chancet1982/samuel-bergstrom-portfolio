@@ -11,7 +11,7 @@ const StyledOverline = styled(motion.div)`
   position: relative;
 `;
 
-function Overline({ children, sectionOverline, disableAnimations }) {
+function Overline({ children, disableAnimations }) {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
@@ -26,26 +26,12 @@ function Overline({ children, sectionOverline, disableAnimations }) {
     }
   }, [intersection]);
 
-  const sectionOverlineVariants = {
-    inView: {
-      x: "0%",
-      opacity: 1,
-      transition: { delay: 0.6, type: "spring", damping: 20 },
-    },
-    hidden: {
-      x: "-100%",
-      opacity: 0,
-      transition: { type: "spring", damping: 20 },
-    },
-  };
-
   return (
     <StyledOverline
       ref={intersectionRef}
       initial="hidden"
       animate={disableAnimations || inView ? "inView" : "hidden"}
-      variants={sectionOverline ? sectionOverlineVariants : variants}
-      sectionOverline={sectionOverline}
+      variants={variants}
     >
       <Span small>{children}</Span>
     </StyledOverline>
@@ -54,13 +40,11 @@ function Overline({ children, sectionOverline, disableAnimations }) {
 
 Overline.propTypes = {
   children: PropTypes.node,
-  sectionOverline: PropTypes.bool,
   disableAnimations: PropTypes.bool,
 };
 
 Overline.defaultProps = {
   children: "overline",
-  sectionOverline: false,
   disableAnimations: false,
 };
 

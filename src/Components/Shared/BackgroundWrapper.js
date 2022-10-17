@@ -9,24 +9,24 @@ const StyledBackground = styled.div`
   height: 100%;
   width: 100%;
 
-  ${({ bgImageUrl }) =>
-    bgImageUrl && {
-      backgroundImage: `url(${process.env.PUBLIC_URL}/${bgImageUrl})`,
+  ${({ $bgImageUrl }) =>
+    $bgImageUrl && {
+      backgroundImage: `url(${process.env.PUBLIC_URL}/${$bgImageUrl})`,
       backgroundSize: "cover",
     }}
-  ${({ bgColor }) =>
-    bgColor && {
-      backgroundColor: bgColor || colors.offwhite,
+  ${({ $bgColor }) =>
+    $bgColor && {
+      backgroundColor: $bgColor || colors.offwhite,
     }}
 
-${({ bgImageUrl, bgColor, isPadded }) =>
-    ((bgImageUrl && isPadded) || (bgColor && isPadded)) && {
+${({ $bgImageUrl, $bgColor, $isPadded }) =>
+    (($bgImageUrl && $isPadded) || ($bgColor && $isPadded)) && {
       paddingTop: padding.vertical.double,
       paddingBottom: padding.vertical.double,
     }}
 
-${({ limitMaxWidth }) =>
-    limitMaxWidth && {
+${({ $limitMaxWidth }) =>
+    $limitMaxWidth && {
       maxWidth: `${sizes.contentWidthLimit}px`,
       margin: "0 auto",
     }}
@@ -41,10 +41,10 @@ function BackgroundWrapper({
 }) {
   return bgColor || bgImageUrl ? (
     <StyledBackground
-      bgColor={bgColor}
-      bgImageUrl={bgImageUrl}
-      limitMaxWidth={limitMaxWidth}
-      isPadded={isPadded}
+      $bgColor={bgColor}
+      $bgImageUrl={bgImageUrl}
+      $limitMaxWidth={limitMaxWidth}
+      $isPadded={isPadded}
     >
       {children}
     </StyledBackground>
