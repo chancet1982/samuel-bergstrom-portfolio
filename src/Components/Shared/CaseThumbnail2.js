@@ -99,14 +99,6 @@ function CaseThumbnail({ data, status, caseUrl }) {
   };
 
   const thumbnailVariants = {
-    hidden: {
-      scale: 1,
-    },
-    inView: {
-      scale: 1,
-      transition: { delay: 0.3, duration: 0.6 },
-      staggerChildren: 0.2,
-    },
     hover: {
       scale: 1.2,
       transition: spring,
@@ -120,11 +112,9 @@ function CaseThumbnail({ data, status, caseUrl }) {
     inView: {
       opacity: 1,
       transition: {
-        duration: 0.3,
         delay: 0.9,
       },
     },
-    hover: {},
   };
 
   const thumbnailImageOverlyVariants = {
@@ -137,19 +127,10 @@ function CaseThumbnail({ data, status, caseUrl }) {
       scaleY: ["50%", "100%", "100%", "0%"],
       transition: {
         duration: 0.9,
-        delay: 0.6,
         times: [0, 0.3, 0.6, 1],
         easing: "anticipate",
       },
     },
-  };
-
-  const thumbnailCaptionVariants = {
-    hidden: {},
-    inView: {
-      transition: {},
-    },
-    hover: {},
   };
 
   const [parentAnimationComplete, setParentAnimationComplete] = useState(false);
@@ -163,7 +144,7 @@ function CaseThumbnail({ data, status, caseUrl }) {
   };
 
   const renderCaseThumbnail = () => (
-    <StyledCaseThumbnailImageAndCaption variants={thumbnailCaptionVariants}>
+    <StyledCaseThumbnailImageAndCaption>
       <TitleAndText
         title={title}
         h={3}
@@ -201,8 +182,8 @@ function CaseThumbnail({ data, status, caseUrl }) {
       whileInView="inView"
       viewport={{ once: true, amount: 0.2 }}
       transition={{ staggerChildren: 0.2 }}
-      variants={thumbnailVariants}
       whileHover="hover"
+      variants={thumbnailVariants}
     >
       {status !== CASE_STATUS.COMING_SOON
         ? wrapWithLink(renderCaseThumbnail())
