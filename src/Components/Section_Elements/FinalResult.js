@@ -57,9 +57,10 @@ const StyledResultCaption = styled(motion.div)`
   }
 
   box-sizing: border-box;
-  ${({ bgColor }) =>
-    bgColor && {
-      backgroundColor: bgColor,
+
+  ${({ $bgColor }) =>
+    $bgColor && {
+      backgroundColor: $bgColor,
     }}
 `;
 
@@ -118,7 +119,7 @@ function FinalResult({
             }`}
           />
           {(results.length > 0 || text) && (
-            <StyledResultCaption bgColor={bgColor}>
+            <StyledResultCaption $bgColor={bgColor}>
               <TitleAndText h={2} title={title} sticky>
                 {results.length > 0 &&
                   results.map(({ value, description }) => (
