@@ -6,7 +6,6 @@ import padding from "../../../theme/padding";
 import colors from "../../../theme/colors";
 import breakpoints from "../../../theme/breakpoints";
 import TestimonialAuthor from "./TestimonialAuthor";
-import { imageVariants } from "../../../animations/animations";
 
 const StyledTestimonial = styled(motion.div)`
   @media (min-width: ${breakpoints.tablet}px) {
@@ -18,8 +17,11 @@ const StyledTestimonial = styled(motion.div)`
   background-color: ${colors.primaryShade};
   border-radius: ${padding.vertical.single};
   padding: 1px;
+
   > div {
     position: relative;
+    flex-direction: column;
+    justify-content: center;
 
     :before {
       content: "";
@@ -106,13 +108,31 @@ const StyledTestimonialContent = styled(motion.div)`
 `;
 
 function Testimonial({ children, author }) {
+  const testimonialVariants = {
+    hidden: {
+      opacity: 0,
+      scale: 0.5,
+      y: 10,
+    },
+    inView: {
+      opacity: 1,
+      scale: 1,
+      y: 0,
+    },
+  };
   return (
     <StyledTestimonial
       initial="hidden"
       whileInView="inView"
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ staggerChildren: 0.2 }}
-      variants={imageVariants}
+      viewport={{ once: true, amount: 0.7 }}
+      transition={{
+        when: "beforeChildren",
+        staggerChildren: 0.2,
+        duration: 0.6,
+        type: "spring",
+        bouce: 3,
+      }}
+      variants={testimonialVariants}
     >
       <TestimonialAuthor
         authorName={author.authorName}
