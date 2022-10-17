@@ -7,7 +7,6 @@ import { useIntersection } from "react-use";
 import Tag from "./Tag";
 
 import { AppContext } from "../../Context/AppContext";
-import { ElementColorContext } from "../../Context/ElementColorContext";
 import { CASE_STATUS } from "../../data/dictionaries/CASE_STATUS";
 import Paragraph from "./Paragraph";
 import TitleAndText from "./TitleAndText";
@@ -88,11 +87,6 @@ const StyledCaseThumbnailImageAndCaption = styled.div`
 
 function CaseThumbnail({ data, status, caseUrl }) {
   const [, setContent] = useContext(AppContext);
-  const [, setLight] = useContext(ElementColorContext);
-
-  useEffect(() => {
-    setLight(true);
-  }, [setLight]);
 
   const changeLoaderContent = (newContent) => {
     setContent(newContent);
@@ -101,7 +95,7 @@ function CaseThumbnail({ data, status, caseUrl }) {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
-    threshold: 0,
+    threshold: 0.1,
   });
 
   // eslint-disable-next-line consistent-return
