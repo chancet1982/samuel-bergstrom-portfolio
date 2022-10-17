@@ -61,7 +61,7 @@ const StyledCaption = styled(motion.div)`
 function Caption({ overline, title, text, h }) {
   const captionVariants = {
     hidden: { opacity: 0, y: 10 },
-    animate: {
+    inView: {
       opacity: 1,
       y: 0,
       transition: {
@@ -83,13 +83,8 @@ function Caption({ overline, title, text, h }) {
   );
   return (
     <StyledCaption variants={captionVariants} $h={h}>
-      {overline && <Overline disableAnimations>{overline}</Overline>}
-      <TitleAndText
-        h={h}
-        title={title}
-        disableAnimations
-        style={{ y: captionParallax }}
-      >
+      {overline && <Overline>{overline}</Overline>}
+      <TitleAndText h={h} title={title} style={{ y: captionParallax }}>
         {text}
       </TitleAndText>
     </StyledCaption>

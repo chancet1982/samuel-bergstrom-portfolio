@@ -1,11 +1,9 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { useIntersection } from "react-use";
 import Tag from "./Tag";
-
 import { AppContext } from "../../Context/AppContext";
 import { CASE_STATUS } from "../../data/dictionaries/CASE_STATUS";
 import Paragraph from "./Paragraph";
@@ -91,20 +89,6 @@ function CaseThumbnail({ data, status, caseUrl }) {
   const changeLoaderContent = (newContent) => {
     setContent(newContent);
   };
-
-  const [inView, setInView] = useState(false);
-  const intersectionRef = React.useRef(null);
-  const intersection = useIntersection(intersectionRef, {
-    threshold: 0.1,
-  });
-
-  // eslint-disable-next-line consistent-return
-  useEffect(() => {
-    const inViewNow = intersection && intersection.intersectionRatio > 0;
-    if (inViewNow) {
-      return setInView(inViewNow);
-    }
-  }, [intersection]);
 
   const { imageUrl, overline, title, text } = data;
 
@@ -213,10 +197,11 @@ function CaseThumbnail({ data, status, caseUrl }) {
 
   return (
     <StyledCaseThumbnail
-      ref={intersectionRef}
       initial="hidden"
+      whileInView="inView"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ staggerChildren: 0.2 }}
       variants={thumbnailVariants}
-      animate={inView ? "inView" : "hidden"}
       whileHover="hover"
     >
       {status !== CASE_STATUS.COMING_SOON

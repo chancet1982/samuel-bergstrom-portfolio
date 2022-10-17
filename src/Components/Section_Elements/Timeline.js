@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import Span from "../Shared/Span";
 import TitleAndText from "../Shared/TitleAndText";
 import breakpoints from "../../theme/breakpoints";
@@ -9,7 +10,7 @@ import padding from "../../theme/padding";
 import colors from "../../theme/colors";
 import sizes from "../../theme/sizes";
 
-const StyledTimeline = styled.dl`
+const StyledTimeline = styled(motion.dl)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   padding-top: ${padding.vertical.double};
@@ -21,7 +22,7 @@ const StyledTimeline = styled.dl`
   }
 `;
 
-const StyledTimelineItemYear = styled.div`
+const StyledTimelineItemYear = styled(motion.div)`
   grid-column: 1 / span 1;
   align-items: flex-end;
   padding-right: ${padding.horizontal.single};
@@ -35,7 +36,7 @@ const StyledTimelineItemYear = styled.div`
   }
 `;
 
-const StyledTimelineItemEvents = styled.div`
+const StyledTimelineItemEvents = styled(motion.div)`
   grid-column: 2 / span 1;
   align-items: flex-start;
   width: calc(1280px * 0.8);
@@ -79,7 +80,7 @@ TimelineItemEvent.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
-const StyledTimelineItem = styled.dt`
+const StyledTimelineItem = styled(motion.dt)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   padding-top: calc(${padding.vertical.double} - ${padding.vertical.half});
@@ -101,7 +102,12 @@ const StyledTimelineItem = styled.dt`
 
 function TimelineItem({ year, events }) {
   return (
-    <StyledTimelineItem>
+    <StyledTimelineItem
+      initial="hidden"
+      whileInView="inView"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ staggerChildren: 0.2 }}
+    >
       <TimelineItemYear>{year}</TimelineItemYear>
       <StyledTimelineItemEvents>
         {events &&
@@ -127,6 +133,7 @@ TimelineItem.propTypes = {
 };
 
 /* TODO: Collapse timeline based on number of items */
+/* TODO: Try and figure out the nested inView animations */
 function Timeline({ items }) {
   return (
     <StyledTimeline alternate>

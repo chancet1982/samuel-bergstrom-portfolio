@@ -1,33 +1,27 @@
 /* eslint-disable no-nested-ternary */
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { useIntersection } from "react-use";
 import TitleAndText from "../Shared/TitleAndText";
-import { variants } from "../../animations/animations";
 import breakpoints from "../../theme/breakpoints";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
 import Paragraph from "../Shared/Paragraph";
 import padding from "../../theme/padding";
 import sizes from "../../theme/sizes";
+import BackgroundWrapper from "../Shared/BackgroundWrapper";
 
 const StyledInsights = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
 
-  > div {
-    @media (min-width: ${breakpoints.desktop}px) {
-      max-width: ${sizes.contentWidthLimit}px;
-      margin: 0 auto;
-      box-sizing: border-box;
-    }
+  @media (min-width: ${breakpoints.desktop}px) {
+    max-width: ${sizes.contentWidthLimit}px;
+    margin: 0 auto;
+    padding: ${padding.vertical.double} ${padding.horizontal.double};
+    box-sizing: border-box;
   }
-  ${({ $bgColor }) =>
-    $bgColor && {
-      backgroundColor: $bgColor,
-    }};
 `;
 
 const StyledInsightsContent = styled(motion.div)`
@@ -47,20 +41,6 @@ const StyledInsightsContent = styled(motion.div)`
 `;
 
 function Insights({ title, h, items, bgColor, isTwoColumnsOnDesktop, text }) {
-  const [inView, setInView] = useState(false);
-  const intersectionRef = React.useRef(null);
-  const intersection = useIntersection(intersectionRef, {
-    threshold: 0,
-  });
-
-  // eslint-disable-next-line consistent-return
-  useEffect(() => {
-    const inViewNow = intersection && intersection.intersectionRatio > 0;
-    if (inViewNow) {
-      return setInView(inViewNow);
-    }
-  }, [intersection]);
-
   const [, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
@@ -81,21 +61,26 @@ function Insights({ title, h, items, bgColor, isTwoColumnsOnDesktop, text }) {
       </TitleAndText>
     ));
 
-  return (
+  const renderInsights = () => (
     <StyledInsights
-      ref={intersectionRef}
       initial="hidden"
-      animate={inView ? "inView" : "hidden"}
-      variants={variants}
-      $bgColor={bgColor}
+      whileInView="inView"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ staggerChildren: 0.2 }}
     >
-      <TitleAndText h={h} title={title} disableAnimations isPadded>
+      <TitleAndText h={h} title={title}>
         {text && text}
-        <StyledInsightsContent $isTwoColumnsOnDesktop={isTwoColumnsOnDesktop}>
-          {convertRawInsightsToElements()}
-        </StyledInsightsContent>
       </TitleAndText>
+      <StyledInsightsContent $isTwoColumnsOnDesktop={isTwoColumnsOnDesktop}>
+        {convertRawInsightsToElements()}
+      </StyledInsightsContent>
     </StyledInsights>
+  );
+
+  return bgColor ? (
+    <BackgroundWrapper bgColor={bgColor}>{renderInsights()}</BackgroundWrapper>
+  ) : (
+    renderInsights()
   );
 }
 

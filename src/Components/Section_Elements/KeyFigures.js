@@ -53,7 +53,12 @@ function KeyFigures({ items, bgColor, bgImageUrl, limitMaxWidth }) {
   }, [setLight, bgColor, bgImageUrl]);
 
   const renderKeyFigures = () => (
-    <StyledKeyFigures>
+    <StyledKeyFigures
+      initial="hidden"
+      whileInView="inView"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ staggerChildren: 0.2 }}
+    >
       {items.map(({ value, label }) => (
         <ValueAndLabel value={value} label={label} key={uuid()} h={3} />
       ))}

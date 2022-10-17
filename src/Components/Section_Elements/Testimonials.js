@@ -19,6 +19,7 @@ const StyledTestimonials = styled(motion.div)`
   margin: 0 auto;
 `;
 
+/* TODO: Try and figure out the nested inView animations */
 function Testimonials({ title, text }) {
   const { width } = useWindowSize();
   const isMobile = width < breakpoints.desktop;
@@ -26,7 +27,14 @@ function Testimonials({ title, text }) {
   return (
     <StyledTestimonials>
       {(title || text) && (
-        <TitleAndText title={title} h={2}>
+        <TitleAndText
+          title={title}
+          h={2}
+          initial="hidden"
+          whileInView="inView"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ staggerChildren: 0.2 }}
+        >
           {text}
         </TitleAndText>
       )}

@@ -1,18 +1,22 @@
 /* eslint-disable import/prefer-default-export */
-export const transition = {
-  type: "tween",
-  duration: 0.6,
-  ease: [0.44, 0, 0.56, 1],
-};
-
-export const variants = {
+export const textVariants = {
   inView: {
     opacity: 1,
     y: 0,
-    transition,
+    transition: { duration: 0.6 },
   },
   hidden: {
     opacity: 0,
     y: 10,
+  },
+};
+
+export const imageVariants = {
+  inView: {
+    opacity: 1,
+    transition: { delay: 0.9, duration: 0.9 },
+  },
+  hidden: {
+    opacity: 0,
   },
 };

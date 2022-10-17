@@ -2,52 +2,54 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import useBgColor from "../../utils/useBgColor";
 import colors from "../../theme/colors";
 import useFluidTypography from "../../utils/useHeadlinesFluidTypography";
 import typography from "../../theme/typography";
+import { textVariants } from "../../animations/animations";
 
 const headlineFont = `
 font-weight: 600;
 font-family: ${typography.headlineFont};
 `;
 
-export const StyledH1 = styled.h1`
+export const StyledH1 = styled(motion.h1)`
   max-width: 16ch;
-  color: ${({ light }) =>
-    light ? colors.text.light.high : colors.text.dark.high};
+  color: ${({ $light }) =>
+    $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
   ${headlineFont}
 `;
 
-export const StyledH2 = styled.h2`
+export const StyledH2 = styled(motion.h2)`
   max-width: 40ch;
-  color: ${({ light }) =>
-    light ? colors.text.light.high : colors.text.dark.high};
+  color: ${({ $light }) =>
+    $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
   ${headlineFont}
 `;
 
-export const StyledH3 = styled.h3`
+export const StyledH3 = styled(motion.h3)`
   max-width: 40ch;
-  color: ${({ light }) =>
-    light ? colors.text.light.high : colors.text.dark.high};
+  color: ${({ $light }) =>
+    $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
   ${headlineFont}
 `;
 
-export const StyledH4 = styled.h4`
+export const StyledH4 = styled(motion.h4)`
   max-width: 48ch;
-  color: ${({ light }) =>
-    light ? colors.text.light.high : colors.text.dark.high};
+  color: ${({ $light }) =>
+    $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
   ${headlineFont}
 `;
 
-export const StyledH5 = styled.h5`
+export const StyledH5 = styled(motion.h5)`
   max-width: 48ch;
-  color: ${({ light }) =>
-    light ? colors.text.light.high : colors.text.dark.high};
+  color: ${({ $light }) =>
+    $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
   ${headlineFont}
 `;
@@ -62,37 +64,67 @@ const Title = ({ h, children, withMargin }) => {
     switch (h) {
       case 0:
         return (
-          <StyledH1 light={light} h={0} $fluidType={fluidType}>
+          <StyledH1
+            $light={light}
+            h={0}
+            $fluidType={fluidType}
+            variants={textVariants}
+          >
             {children}
           </StyledH1>
         );
       case 1:
         return (
-          <StyledH1 light={light} h={h} $fluidType={fluidType}>
+          <StyledH1
+            $light={light}
+            h={h}
+            $fluidType={fluidType}
+            variants={textVariants}
+          >
             {children}
           </StyledH1>
         );
       case 2:
         return (
-          <StyledH2 light={light} h={h} $fluidType={fluidType}>
+          <StyledH2
+            $light={light}
+            h={h}
+            $fluidType={fluidType}
+            variants={textVariants}
+          >
             {children}
           </StyledH2>
         );
       case 3:
         return (
-          <StyledH3 light={light} h={h} $fluidType={fluidType}>
+          <StyledH3
+            $light={light}
+            h={h}
+            $fluidType={fluidType}
+            variants={textVariants}
+          >
             {children}
           </StyledH3>
         );
       case 4:
         return (
-          <StyledH4 light={light} h={h} $fluidType={fluidType}>
+          <StyledH4
+            $light={light}
+            h={h}
+            $fluidType={fluidType}
+            variants={textVariants}
+          >
             {children}
           </StyledH4>
         );
       case 5:
         return (
-          <StyledH5 light={light} h={h} $fluidType={fluidType}>
+          <StyledH5
+            $light={light}
+            h={h}
+            $fluidType={fluidType}
+            variants={textVariants}
+          >
             {children}
           </StyledH5>
         );

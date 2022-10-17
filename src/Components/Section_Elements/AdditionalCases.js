@@ -36,6 +36,7 @@ const StyledCasesList = styled(motion.div)`
 `;
 
 /* TODO: exclude current case from list of additional cases */
+/* TODO: fix inView animations for additional cases */
 
 function AdditionalCases() {
   const { id } = useParams();

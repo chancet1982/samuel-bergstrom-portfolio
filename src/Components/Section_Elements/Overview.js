@@ -2,13 +2,15 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { motion } from "framer-motion";
+
 import TitleAndText from "../Shared/TitleAndText";
 import ValueAndLabel from "../Shared/ValueAndLabel";
 import padding from "../../theme/padding";
 import breakpoints from "../../theme/breakpoints";
 import sizes from "../../theme/sizes";
 
-const StyledOverviewWrapper = styled.div`
+const StyledOverviewWrapper = styled(motion.div)`
   position: relative;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -30,7 +32,7 @@ const StyledOverviewWrapper = styled.div`
   }
 `;
 
-const StyledOverviewText = styled.div`
+const StyledOverviewText = styled(motion.div)`
   grid-column: 1 / span 3;
   position: relative;
 
@@ -45,7 +47,7 @@ const StyledOverviewText = styled.div`
   }
 `;
 
-const StyledOverviewItems = styled.div`
+const StyledOverviewItems = styled(motion.div)`
   grid-column: 1 / span 3;
   > div {
     align-items: flex-start;
@@ -58,7 +60,12 @@ const StyledOverviewItems = styled.div`
 
 function Overview({ text, toolsAndMethods, bgColor }) {
   return (
-    <StyledOverviewWrapper>
+    <StyledOverviewWrapper
+      initial="hidden"
+      whileInView="inView"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ staggerChildren: 0.2 }}
+    >
       <StyledOverviewText bgColor={bgColor}>
         {text && <TitleAndText>{text}</TitleAndText>}
       </StyledOverviewText>

@@ -1,15 +1,14 @@
 /* eslint-disable react/forbid-prop-types */
 /* eslint-disable no-nested-ternary */
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { useIntersection, useWindowSize, useOrientation } from "react-use";
+import { useWindowSize, useOrientation } from "react-use";
 import BackgroundWrapper from "../Shared/BackgroundWrapper";
 import Result from "./FinalResult/Result";
 import Image from "../Shared/Image";
 import TitleAndText from "../Shared/TitleAndText";
-import { variants } from "../../animations/animations";
 import padding from "../../theme/padding";
 import breakpoints from "../../theme/breakpoints";
 import { ElementColorContext } from "../../Context/ElementColorContext";
@@ -73,20 +72,6 @@ function FinalResult({
   text,
   results,
 }) {
-  const [inView, setInView] = useState(false);
-  const intersectionRef = React.useRef(null);
-  const intersection = useIntersection(intersectionRef, {
-    threshold: 0,
-  });
-
-  // eslint-disable-next-line consistent-return
-  useEffect(() => {
-    const inViewNow = intersection && intersection.intersectionRatio > 0;
-    if (inViewNow) {
-      return setInView(inViewNow);
-    }
-  }, [intersection]);
-
   const [, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
@@ -105,10 +90,10 @@ function FinalResult({
   const isLandscape = deviceOrientation.type === "landscape-primary";
   return (
     <StyledFinalResult
-      ref={intersectionRef}
       initial="hidden"
-      variants={variants}
-      animate={inView ? "inView" : "hidden"}
+      whileInView="inView"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ staggerChildren: 0.2 }}
     >
       <BackgroundWrapper bgColor={bgColor} isPadded={false}>
         <StyledFinalResultContent>

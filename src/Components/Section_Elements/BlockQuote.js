@@ -1,9 +1,7 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { useIntersection } from "react-use";
-import { variants } from "../../animations/animations";
 import Quote from "./BlockQuote/Quote";
 import Cite from "./BlockQuote/Cite";
 import padding from "../../theme/padding";
@@ -34,20 +32,6 @@ const StyledBlockQuote = styled(motion.blockquote)`
 
 // TODO: (later) reveal on scroll (fixed under other content?)
 function BlockQuote({ cite, quote, bgColor, bgImageUrl }) {
-  const [inView, setInView] = useState(false);
-  const intersectionRef = React.useRef(null);
-  const intersection = useIntersection(intersectionRef, {
-    threshold: 0,
-  });
-
-  // eslint-disable-next-line consistent-return
-  useEffect(() => {
-    const inViewNow = intersection && intersection.intersectionRatio > 0;
-    if (inViewNow) {
-      return setInView(inViewNow);
-    }
-  }, [intersection]);
-
   const [light, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
@@ -63,10 +47,10 @@ function BlockQuote({ cite, quote, bgColor, bgImageUrl }) {
 
   const renderBlockQuote = () => (
     <StyledBlockQuote
-      ref={intersectionRef}
       initial="hidden"
-      variants={variants}
-      animate={inView ? "inView" : "hidden"}
+      whileInView="inView"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ staggerChildren: 0.2 }}
       $light={light}
     >
       <Quote>{quote}</Quote>

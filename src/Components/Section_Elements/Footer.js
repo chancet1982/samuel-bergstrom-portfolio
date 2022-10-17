@@ -20,7 +20,12 @@ const StyledFooter = styled.footer`
 // TODO consider moving to section renderer
 function SectionFooter() {
   return (
-    <StyledFooter>
+    <StyledFooter
+      initial="hidden"
+      whileInView="inView"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ staggerChildren: 0.2 }}
+    >
       <Span small>2021, Samuel Bergström</Span>
     </StyledFooter>
   );

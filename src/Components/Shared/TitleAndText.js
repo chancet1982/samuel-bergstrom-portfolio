@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { useIntersection } from "react-use";
+
 import Title from "./Title";
-import { variants } from "../../animations/animations";
 import padding from "../../theme/padding";
 
 const StyledTitleAndText = styled(motion.div)`
@@ -25,38 +24,12 @@ function TitleAndText({
   title,
   h,
   children,
-  disableAnimations,
+
   sticky,
   isPadded,
-  parentAnimationComplete,
 }) {
-  const [inView, setInView] = useState(false);
-  const intersectionRef = React.useRef(null);
-  const intersection = useIntersection(intersectionRef, {
-    threshold: 0,
-  });
-
-  // eslint-disable-next-line consistent-return
-  useEffect(() => {
-    const inViewNow = intersection && intersection.intersectionRatio > 0;
-    if (inViewNow) {
-      return setInView(inViewNow);
-    }
-  }, [intersection]);
-
   return (
-    <StyledTitleAndText
-      ref={intersectionRef}
-      initial="hidden"
-      $sticky={sticky}
-      variants={variants}
-      animate={
-        disableAnimations || (inView && parentAnimationComplete)
-          ? "inView"
-          : "hidden"
-      }
-      $isPadded={isPadded}
-    >
+    <StyledTitleAndText $sticky={sticky} $isPadded={isPadded}>
       {title && <Title h={h}>{title}</Title>}
       {children}
     </StyledTitleAndText>
@@ -67,20 +40,18 @@ TitleAndText.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   h: PropTypes.number,
-  disableAnimations: PropTypes.bool,
+
   sticky: PropTypes.bool,
   isPadded: PropTypes.bool,
-  parentAnimationComplete: PropTypes.bool,
 };
 
 TitleAndText.defaultProps = {
   title: null,
   children: null,
   h: 1,
-  disableAnimations: false,
+
   sticky: false,
   isPadded: false,
-  parentAnimationComplete: true,
 };
 
 export default TitleAndText;

@@ -3,6 +3,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { imageVariants } from "../../animations/animations";
 
 const StyledImage = styled(motion.img)`
   width: 100%;
@@ -49,6 +50,7 @@ function Image({
       $withCaption={withCaption}
       $bgColor={bgColor}
       $inTextbox={inTextbox}
+      variants={imageVariants}
     />
   );
 }

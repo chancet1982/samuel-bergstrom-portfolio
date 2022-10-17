@@ -10,6 +10,8 @@ import { useScrollDirection } from "../../utils/useScrollDirection";
 import BgMedia from "./Cover/BgMedia";
 import Caption from "./Cover/Caption";
 import FgImage from "./Cover/FgImage";
+import Highlights from "./Cover/Highlights";
+import ClientPreview from "./Cover/ClientsPreview";
 
 const StyledCover = styled(motion.div)`
   height: ${({
@@ -46,7 +48,7 @@ function Cover({
   bgMedia,
   caption,
   fgImage,
-  footer,
+  highlights,
   hideFooterOnScroll,
 }) {
   const { width } = useWindowSize();
@@ -56,10 +58,10 @@ function Cover({
   const scrollDirection = useScrollDirection();
 
   const coverVariants = {
-    initial: {
+    hidden: {
       opacity: 0,
     },
-    animate: {
+    inView: {
       opacity: 1,
       transition: {
         staggerChildren: 0.2,
@@ -69,7 +71,7 @@ function Cover({
 
   const coverBottomVariants = {
     hidden: { opacity: 0, y: "100%", transition: { duration: 0.6 } },
-    animate: {
+    inView: {
       opacity: 1,
       y: 0,
       transition: {
@@ -79,12 +81,17 @@ function Cover({
     },
   };
 
+  const renderFooter = () =>
+    highlights ? <Highlights items={highlights} /> : <ClientPreview />;
+
   return (
     <StyledCover
       $bgColor={bgColor}
       variants={coverVariants}
       initial="hidden"
-      animate="animate"
+      whileInView="inView"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ staggerChildren: 0.2 }}
     >
       {bgMedia && <BgMedia type={bgMedia.type} mediaUrl={bgMedia.mediaUrl} />}
 
@@ -103,19 +110,17 @@ function Cover({
         />
       )}
 
-      {footer && (
-        <StyledCoverFooter
-          variants={coverBottomVariants}
-          initial="animate"
-          animate={
-            scrollDirection === "down" && isDesktop && hideFooterOnScroll
-              ? "hidden"
-              : "animate"
-          }
-        >
-          {footer}
-        </StyledCoverFooter>
-      )}
+      <StyledCoverFooter
+        variants={coverBottomVariants}
+        initial="hidden"
+        animate={
+          scrollDirection === "down" && isDesktop && hideFooterOnScroll
+            ? "hidden"
+            : "inView"
+        }
+      >
+        {renderFooter()}
+      </StyledCoverFooter>
     </StyledCover>
   );
 }
@@ -137,7 +142,15 @@ Cover.propTypes = {
     h: PropTypes.number,
     text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   }),
-  footer: PropTypes.node,
+  highlights: PropTypes.arrayOf(
+    PropTypes.shape({
+      value: PropTypes.oneOfType([
+        PropTypes.string,
+        PropTypes.arrayOf(PropTypes.string),
+      ]),
+      label: PropTypes.string,
+    })
+  ),
   hideFooterOnScroll: PropTypes.bool,
 };
 
@@ -146,7 +159,7 @@ Cover.defaultProps = {
   bgColor: null,
   fgImage: null,
   caption: null,
-  footer: null,
+  highlights: null,
   hideFooterOnScroll: false,
 };
 

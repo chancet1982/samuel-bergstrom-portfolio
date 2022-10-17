@@ -1,10 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { useIntersection } from "react-use";
+
 import Image from "./Image";
-import { variants } from "../../animations/animations";
 import Span from "./Span";
 
 const StyledImageWithCaption = styled(motion.figure)`
@@ -31,31 +30,10 @@ function ImageWithCaption({
   imageAlt,
   inGallery,
   inTextbox,
-  disableAnimations,
   gridArea,
 }) {
-  const [inView, setInView] = useState(false);
-  const intersectionRef = React.useRef(null);
-  const intersection = useIntersection(intersectionRef, {
-    threshold: 0,
-  });
-
-  // eslint-disable-next-line consistent-return
-  useEffect(() => {
-    const inViewNow = intersection && intersection.intersectionRatio > 0;
-    if (inViewNow) {
-      return setInView(inViewNow);
-    }
-  }, [intersection]);
-
   return (
-    <StyledImageWithCaption
-      ref={intersectionRef}
-      $gridArea={gridArea}
-      initial="hidden"
-      variants={variants}
-      animate={disableAnimations || inView ? "inView" : "hidden"}
-    >
+    <StyledImageWithCaption $gridArea={gridArea}>
       <Image
         imageUrl={`${process.env.PUBLIC_URL}/${imageUrl}`}
         imageAlt={imageAlt}
@@ -80,7 +58,7 @@ ImageWithCaption.propTypes = {
   bgColor: PropTypes.string,
   inGallery: PropTypes.bool,
   inTextbox: PropTypes.bool,
-  disableAnimations: PropTypes.bool,
+
   gridArea: PropTypes.string,
 };
 
@@ -89,7 +67,7 @@ ImageWithCaption.defaultProps = {
   bgColor: null,
   inGallery: false,
   inTextbox: false,
-  disableAnimations: false,
+
   gridArea: null,
 };
 

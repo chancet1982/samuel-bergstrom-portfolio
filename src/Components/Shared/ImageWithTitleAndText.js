@@ -1,13 +1,11 @@
 /* eslint-disable no-nested-ternary */
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { useIntersection } from "react-use";
 import { motion } from "framer-motion";
 import TitleAndText from "./TitleAndText";
 import ImageWithCaption from "./ImageWithCaption";
 import { IMAGE_WITH_CAPTION_SIZES } from "../../data/dictionaries/IMAGE_WITH_CAPTION_SIZES";
-import { variants } from "../../animations/animations";
 import padding from "../../theme/padding";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
@@ -56,29 +54,15 @@ function ImageWithTitleAndText({
     );
   }, [setLight, bgColor]);
 
-  const [inView, setInView] = useState(false);
-  const intersectionRef = React.useRef(null);
-  const intersection = useIntersection(intersectionRef, {
-    threshold: 0,
-  });
-
-  // eslint-disable-next-line consistent-return
-  useEffect(() => {
-    const inViewNow = intersection && intersection.intersectionRatio > 0;
-    if (inViewNow) {
-      return setInView(inViewNow);
-    }
-  }, [intersection]);
-
   return (
     <StyledImageWithTitleAndText
-      ref={intersectionRef}
-      initial="hidden"
-      variants={variants}
-      animate={inView ? "inView" : "hidden"}
       $horizontal={horizontal}
       $flip={flip}
       $bgColor={bgColor}
+      initial="hidden"
+      whileInView="inView"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ staggerChildren: 0.2 }}
     >
       <ImageWithCaption
         imageUrl={imageUrl}
@@ -88,7 +72,7 @@ function ImageWithTitleAndText({
         size={IMAGE_WITH_CAPTION_SIZES.MEDIUM_DOUBLE}
         disableAnimations
       />
-      <TitleAndText h={3} title={title} isPadded disableAnimations>
+      <TitleAndText h={3} title={title} isPadded>
         {text}
       </TitleAndText>
     </StyledImageWithTitleAndText>

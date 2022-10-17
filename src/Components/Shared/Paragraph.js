@@ -2,12 +2,14 @@
 import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 import useBgColor from "../../utils/useBgColor";
 import useFluidTypography from "../../utils/useBodyFluidTypography";
 import colors from "../../theme/colors";
 import typography from "../../theme/typography";
+import { textVariants } from "../../animations/animations";
 
-const StyledParagraph = styled.p`
+const StyledParagraph = styled(motion.p)`
   color: ${({ $light }) =>
     $light ? colors.text.light.medium : colors.text.dark.medium};
   max-width: 80ch;
@@ -34,7 +36,11 @@ function Paragraph({ small, large, xl, xxl, children }) {
   const fluidType = useFluidTypography(mapSizeToNumber());
 
   return (
-    <StyledParagraph $light={light} $fluidType={fluidType}>
+    <StyledParagraph
+      $light={light}
+      $fluidType={fluidType}
+      variants={textVariants}
+    >
       {children}
     </StyledParagraph>
   );

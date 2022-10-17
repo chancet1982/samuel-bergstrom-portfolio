@@ -8,37 +8,37 @@ import typography from "../../theme/typography";
 import colors from "../../theme/colors";
 import useBgColor from "../../utils/useBgColor";
 import useFluidTypography from "../../utils/useBodyFluidTypography";
+import { textVariants } from "../../animations/animations";
 
 const linkStyle = `
-
-${({ fluidType }) => fluidType};
-font-family: ${typography.bodyFont};
-transition: all 0.3s;
-font-weight: 500;
+  ${({ $fluidType }) => $fluidType};
+  font-family: ${typography.bodyFont};
+  transition: all 0.3s;
+  font-weight: 500;
 `;
 
 /* TODO: RouterLink styling isnt working with light and fluidtype */
 const StyledLink = styled(RouterLink)`
   ${linkStyle}
 
-  color: ${({ light }) =>
-    light ? colors.text.light.high : colors.text.dark.high};
+  color: ${({ $light }) =>
+    $light ? colors.text.light.high : colors.text.dark.high};
 
   :hover {
-    color: ${({ light }) =>
-      light ? colors.text.light.medium : colors.primary};
+    color: ${({ $light }) =>
+      $light ? colors.text.light.medium : colors.primary};
   }
 `;
 
 const StyledAnchorLink = styled.a`
   ${linkStyle}
 
-  color: ${({ light }) =>
-    light ? colors.text.light.high : colors.text.dark.high};
+  color: ${({ $light }) =>
+    $light ? colors.text.light.high : colors.text.dark.high};
 
   :hover {
-    color: ${({ light }) =>
-      light ? colors.text.light.medium : colors.primary};
+    color: ${({ $light }) =>
+      $light ? colors.text.light.medium : colors.primary};
   }
 `;
 
@@ -54,16 +54,22 @@ function Link({ small, large, xl, children, to, href }) {
 
   const fluidType = useFluidTypography(mapSizeToNumber(), false);
   return to ? (
-    <StyledLink to={to} fluidType={fluidType} light={light}>
+    <StyledLink
+      to={to}
+      $fluidType={fluidType}
+      $light={light}
+      variants={textVariants}
+    >
       {children}
     </StyledLink>
   ) : (
     <StyledAnchorLink
       href={href}
-      fluidType={fluidType}
+      $fluidType={fluidType}
       light={light}
       target="_blank"
       rel="noopener noreferrer"
+      variants={textVariants}
     >
       {children}
     </StyledAnchorLink>

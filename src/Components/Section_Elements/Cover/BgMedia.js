@@ -36,7 +36,7 @@ function BgMedia({ type, mediaUrl }) {
 
   const imageVariants = {
     hidden: { opacity: 0, y: 10 },
-    animate: {
+    inView: {
       opacity: 1,
       y: 0,
       transition: {

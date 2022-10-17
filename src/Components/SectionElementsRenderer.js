@@ -42,7 +42,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
             bgColor={data.bgColor}
             fgImage={data.fgImage}
             caption={data.caption}
-            footer={data.footer}
+            highlights={data.highlights}
             hideFooterOnScroll={data.hideFooterOnScroll}
           />
         </ElementColorContextProvider>

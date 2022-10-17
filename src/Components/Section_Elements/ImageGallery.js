@@ -31,6 +31,10 @@ function ImageGallery({ images, template, limitMaxWidth }) {
           gridArea={String.fromCharCode(index + 65).toLowerCase()} // Mother of all hacks
           key={uuid()}
           inGallery
+          initial="hidden"
+          whileInView="inView"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ staggerChildren: 0.2 }}
         />
       ))}
     </StyledImageGallery>

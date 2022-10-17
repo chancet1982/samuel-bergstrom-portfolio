@@ -4,7 +4,6 @@ import Button from "../Components/Shared/Button";
 import Paragraph from "../Components/Shared/Paragraph";
 import { COVER_MEDIA_TYPES } from "./dictionaries/COVER_MEDIA_TYPES";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
-import ClientPreview from "../Components/Section_Elements/Cover/ClientsPreview";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 
 export const VIEW_LANDING_PAGE = [
@@ -41,7 +40,6 @@ export const VIEW_LANDING_PAGE = [
             type: COVER_MEDIA_TYPES.IMAGE,
             mediaUrl: "assets/cover-bg.jpg",
           },
-          footer: <ClientPreview />,
           hideFooterOnScroll: true,
         },
       },

@@ -6,6 +6,7 @@ import padding from "../../../theme/padding";
 import colors from "../../../theme/colors";
 import breakpoints from "../../../theme/breakpoints";
 import TestimonialAuthor from "./TestimonialAuthor";
+import { imageVariants } from "../../../animations/animations";
 
 const StyledTestimonial = styled(motion.div)`
   @media (min-width: ${breakpoints.tablet}px) {
@@ -106,7 +107,13 @@ const StyledTestimonialContent = styled(motion.div)`
 
 function Testimonial({ children, author }) {
   return (
-    <StyledTestimonial>
+    <StyledTestimonial
+      initial="hidden"
+      whileInView="inView"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ staggerChildren: 0.2 }}
+      variants={imageVariants}
+    >
       <TestimonialAuthor
         authorName={author.authorName}
         authorTitle={author.authorTitle}

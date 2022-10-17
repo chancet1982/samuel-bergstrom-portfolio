@@ -4,11 +4,11 @@ import React from "react";
 import styled from "styled-components";
 import { v4 as uuid } from "uuid";
 import { motion } from "framer-motion";
-import Client from "./Clients/Client";
 import { CLIENTS } from "../../data/dictionaries/CLIENTS";
 import padding from "../../theme/padding";
 import CenteredTitleAndText from "../Shared/CenteredTitleAndText";
 import sizes from "../../theme/sizes";
+import Image from "../Shared/Image";
 
 const StyledClients = styled(motion.div)`
   margin-left: ${padding.horizontal.quadruple};
@@ -30,19 +30,24 @@ const StyledClients = styled(motion.div)`
   }
 `;
 
+/* TODO: all client logos appear at once and not staggered */
 function Clients() {
   const renderClients = CLIENTS.map((item) => (
-    <Client
+    <Image
       key={uuid()}
-      title={item.title}
-      url={item.url}
-      imageUrl={item.imageUrl}
-      description={item.description}
+      grayscale
+      imageUrl={`${process.env.PUBLIC_URL}/${item.imageUrl}`}
+      imageAlt={item.imageAlt}
     />
   ));
 
   return (
-    <StyledClients>
+    <StyledClients
+      initial="hidden"
+      whileInView="inView"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ staggerChildren: 0.2 }}
+    >
       <CenteredTitleAndText
         title={
           <>
@@ -50,7 +55,7 @@ function Clients() {
           </>
         }
       />
-      <div>{renderClients}</div>
+      <motion.div>{renderClients}</motion.div>
     </StyledClients>
   );
 }

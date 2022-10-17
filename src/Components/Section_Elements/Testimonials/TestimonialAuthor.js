@@ -4,6 +4,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import Span from "../../Shared/Span";
 import Title from "../../Shared/Title";
+import { imageVariants } from "../../../animations/animations";
 
 const StyledTestimonialAuthor = styled(motion.figure)`
   display: flex;
@@ -26,7 +27,11 @@ const StyledAuthorName = styled(motion.figcaption)``;
 function TestimonialAuthor({ authorName, authorTitle, authorImageUrl }) {
   return (
     <StyledTestimonialAuthor>
-      <StyledAuthorImage src={authorImageUrl} alt={authorTitle} />
+      <StyledAuthorImage
+        src={authorImageUrl}
+        alt={authorTitle}
+        variants={imageVariants}
+      />
       <StyledAuthorName>
         <Title h={5}>{authorName}</Title>
         <Span>{authorTitle}</Span>

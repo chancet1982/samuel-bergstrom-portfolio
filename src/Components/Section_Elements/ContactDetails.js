@@ -18,7 +18,12 @@ const StyledContactDetails = styled(motion.div)`
 
 function ContactDetails() {
   return (
-    <StyledContactDetails>
+    <StyledContactDetails
+      initial="hidden"
+      whileInView="inView"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ staggerChildren: 0.2 }}
+    >
       <TitleAndText title="Get in touch">
         <Paragraph>You can always reach out to me using</Paragraph>
       </TitleAndText>

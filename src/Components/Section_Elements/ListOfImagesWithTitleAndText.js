@@ -93,7 +93,14 @@ function ListOfImagesWithTitleAndText({
   const renderListOfImagesWithTitleAndText = () => (
     <StyledListOfImagesWithTitleAndText $listTitle={listTitle}>
       {(listTitle || listText) && (
-        <CenteredTitleAndText title={listTitle} text={listText} />
+        <CenteredTitleAndText
+          title={listTitle}
+          text={listText}
+          initial="hidden"
+          whileInView="inView"
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ staggerChildren: 0.2 }}
+        />
       )}
       <StyledListContainer>
         {items.map(({ imageUrl, imageAlt, title, text }, index) => (

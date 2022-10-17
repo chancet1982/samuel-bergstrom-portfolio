@@ -106,7 +106,7 @@ function CaseThumbnail({ data, status, caseUrl, inAdditionalCases }) {
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
   const intersection = useIntersection(intersectionRef, {
-    threshold: 0,
+    threshold: 0.1,
   });
 
   // eslint-disable-next-line consistent-return

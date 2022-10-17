@@ -14,7 +14,13 @@ const StyledSectionImage = styled.div`
 
 function SectionImage({ imageUrl, imageAlt, caption, limitMaxWidth }) {
   return (
-    <StyledSectionImage limitMaxWidth={limitMaxWidth}>
+    <StyledSectionImage
+      limitMaxWidth={limitMaxWidth}
+      initial="hidden"
+      whileInView="inView"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ staggerChildren: 0.2 }}
+    >
       <ImageWithCaption
         imageUrl={imageUrl}
         imageAlt={imageAlt}

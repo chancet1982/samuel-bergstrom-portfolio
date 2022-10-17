@@ -10,6 +10,7 @@ import colors from "../../theme/colors";
 import Link from "../Shared/Link";
 import sizes from "../../theme/sizes";
 
+/* TODO: inView animation doesnt have effect on links in case footer */
 const StyledCaseFooter = styled(motion.div)`
   padding: ${padding.vertical.double} 0;
   max-width: ${sizes.contentWidthLimit}px;
@@ -35,7 +36,7 @@ const StyledCaseFooter = styled(motion.div)`
   }
 `;
 
-const StyledLinksMenu = styled.div`
+const StyledLinksMenu = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -59,7 +60,12 @@ const StyledLinksMenu = styled.div`
 
 function CaseFooter() {
   return (
-    <StyledCaseFooter>
+    <StyledCaseFooter
+      initial="hidden"
+      whileInView="inView"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ staggerChildren: 0.2 }}
+    >
       <TitleAndText h={3} title="Let's get in touch" isPadded>
         <Paragraph>Found me interesting? Let’s talk</Paragraph>
         <Button to="/contact">Get in touch</Button>

@@ -9,7 +9,6 @@ import breakpoints from "../../theme/breakpoints";
 import sizes from "../../theme/sizes";
 import padding from "../../theme/padding";
 import { CASE_STATUS } from "../../data/dictionaries/CASE_STATUS";
-
 import CenteredTitleAndText from "../Shared/CenteredTitleAndText";
 import Button from "../Shared/Button";
 
@@ -34,8 +33,22 @@ const StyledCases = styled(motion.div)`
 
 function SectionCases({ title, text, preview, h }) {
   return (
-    <>
-      <CenteredTitleAndText title={title} text={text} h={h} isPadded />
+    <motion.div
+      initial="hidden"
+      whileInView="inView"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ staggerChildren: 0.2 }}
+    >
+      <CenteredTitleAndText
+        title={title}
+        text={text}
+        h={h}
+        isPadded
+        initial="hidden"
+        whileInView="inView"
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ staggerChildren: 0.2 }}
+      />
       <StyledCases $preview={preview}>
         {CASES.filter(({ caseStatus }) =>
           preview
@@ -57,7 +70,7 @@ function SectionCases({ title, text, preview, h }) {
           </Button>
         </StyledPageLink>
       )}
-    </>
+    </motion.div>
   );
 }
 
