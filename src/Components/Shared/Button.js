@@ -3,13 +3,14 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import padding from "../../theme/padding";
 import colors from "../../theme/colors";
 import shadows from "../../theme/shadows";
-import breakpoints from "../../theme/breakpoints";
 import useFluidTypography from "../../utils/useBodyFluidTypography";
+import { formElementsVariants } from "../../animations/animations";
 
-const StyledButton = styled.button`
+const StyledButton = styled(motion.button)`
   padding: ${padding.vertical.half} ${padding.horizontal.quadruple};
   background-color: ${({ secondary }) =>
     secondary ? "white" : colors.primary};
@@ -25,14 +26,6 @@ const StyledButton = styled.button`
   text-transform: uppercase;
   font-weight: 600;
   padding: 1rem 1.5rem;
-
-  /*@media (min-width: ${breakpoints.tablet}px) {
-    padding: ${padding.vertical.half} ${padding.horizontal.double};
-  }
-
-  @media (min-width: ${breakpoints.desktop}px) {
-    padding: ${padding.vertical.half} ${padding.vertical.single};
-  }*/
 
   &:hover {
     background-color: ${({ secondary }) =>
@@ -75,6 +68,7 @@ function Button({
       disabled={disabled}
       secondary={secondary}
       onClick={to ? () => navigate(to) : onClick}
+      variants={formElementsVariants}
     >
       {children}
     </StyledButton>

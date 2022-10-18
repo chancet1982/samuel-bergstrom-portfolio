@@ -2,12 +2,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import colors from "../../theme/colors";
 import typography from "../../theme/typography";
+import { formElementsVariants } from "../../animations/animations";
 
 const { size, lh, inc } = typography;
 
-const StyledTextarea = styled.textarea`
+const StyledTextarea = styled(motion.textarea)`
   display: block;
   width: fill-available;
   border-radius: 0.25rem;
@@ -44,6 +46,7 @@ function Textarea({ name, rows, columns, required, small, large, xl }) {
       small={small}
       large={large}
       xl={xl}
+      variants={formElementsVariants}
     />
   );
 }

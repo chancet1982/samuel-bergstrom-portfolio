@@ -2,12 +2,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import colors from "../../theme/colors";
 import typography from "../../theme/typography";
+import { formElementsVariants } from "../../animations/animations";
 
 const { size, lh, inc } = typography;
 
-const StyledInput = styled.input`
+const StyledInput = styled(motion.input)`
   display: block;
   width: fill-available;
   border-radius: 0.25rem;
@@ -43,6 +45,7 @@ function Input({ type, name, required, small, large, xl }) {
       small={small}
       large={large}
       xl={xl}
+      variants={formElementsVariants}
     />
   );
 }

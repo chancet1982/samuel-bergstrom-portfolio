@@ -31,3 +31,14 @@ export const authorImageVariants = {
     scale: 1,
   },
 };
+
+export const formElementsVariants = {
+  hidden: {
+    opacity: 0,
+    y: 10,
+  },
+  inView: {
+    opacity: 1,
+    y: 0,
+  },
+};
