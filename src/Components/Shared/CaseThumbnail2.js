@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
@@ -82,7 +82,7 @@ const StyledCaseThumbnailImageAndCaption = styled.div`
     justify-content: center;
   }
 `;
-
+/* Image rollup effect runs after hover, it shouldnt and should be fixed */
 function CaseThumbnail({ data, status, caseUrl }) {
   const [, setContent] = useContext(AppContext);
 
@@ -133,23 +133,9 @@ function CaseThumbnail({ data, status, caseUrl }) {
     },
   };
 
-  const [parentAnimationComplete, setParentAnimationComplete] = useState(false);
-
-  const handleAnimationComplete = (variant) => {
-    if (variant === "inView") {
-      setTimeout(() => {
-        setParentAnimationComplete(true);
-      }, 300);
-    }
-  };
-
   const renderCaseThumbnail = () => (
     <StyledCaseThumbnailImageAndCaption>
-      <TitleAndText
-        title={title}
-        h={3}
-        parentAnimationComplete={parentAnimationComplete}
-      >
+      <TitleAndText title={title} h={3}>
         <Paragraph>{text}</Paragraph>
       </TitleAndText>
 
@@ -157,12 +143,7 @@ function CaseThumbnail({ data, status, caseUrl }) {
         $imageUrl={`${process.env.PUBLIC_URL}/${imageUrl}`}
         variants={thumbnailImageVariants}
       />
-      <StyledCaseThumbnailImageOverly
-        variants={thumbnailImageOverlyVariants}
-        onAnimationComplete={(definition) =>
-          handleAnimationComplete(definition)
-        }
-      />
+      <StyledCaseThumbnailImageOverly variants={thumbnailImageOverlyVariants} />
       {status === CASE_STATUS.COMING_SOON && <Tag />}
     </StyledCaseThumbnailImageAndCaption>
   );
@@ -180,7 +161,7 @@ function CaseThumbnail({ data, status, caseUrl }) {
     <StyledCaseThumbnail
       initial="hidden"
       whileInView="inView"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.7 }}
       transition={{ staggerChildren: 0.2 }}
       whileHover="hover"
       variants={thumbnailVariants}

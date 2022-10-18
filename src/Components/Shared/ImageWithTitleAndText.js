@@ -70,7 +70,6 @@ function ImageWithTitleAndText({
         caption={caption}
         ignoreSize
         size={IMAGE_WITH_CAPTION_SIZES.MEDIUM_DOUBLE}
-        disableAnimations
       />
       <TitleAndText h={3} title={title} isPadded>
         {text}

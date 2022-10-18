@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { v4 as uuid } from "uuid";
 import { useParams } from "react-router-dom";
-import CaseThumbnail from "../Shared/CaseThumbnail";
+import AdditionalCasesCaseThumbnail from "./AdditionalCases/AdditionalCasesCaseThumbnail";
 import { CASES } from "../../data/dictionaries/CASES";
 import { CASE_STATUS } from "../../data/dictionaries/CASE_STATUS";
 import ElementContextProvider from "../../Context/ElementColorContext";
@@ -63,7 +63,7 @@ function AdditionalCases() {
         {cases.map(({ thumbnail, caseUrl, caseStatus }, index) => (
           // eslint-disable-next-line react/no-array-index-key
           <ElementContextProvider key={index}>
-            <CaseThumbnail
+            <AdditionalCasesCaseThumbnail
               data={thumbnail}
               caseUrl={caseUrl}
               key={uuid()}

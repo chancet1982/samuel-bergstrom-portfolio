@@ -4,18 +4,18 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useIntersection, useWindowSize } from "react-use";
-import sizes from "../../theme/sizes";
-import Tag from "./Tag";
-import breakpoints from "../../theme/breakpoints";
-import padding from "../../theme/padding";
-import { AppContext } from "../../Context/AppContext";
-import { ElementColorContext } from "../../Context/ElementColorContext";
-import { CASE_STATUS } from "../../data/dictionaries/CASE_STATUS";
-import colors from "../../theme/colors";
-import CenteredTitleAndText from "./CenteredTitleAndText";
-import Paragraph from "./Paragraph";
+import sizes from "../../../theme/sizes";
+import Tag from "../../Shared/Tag";
+import breakpoints from "../../../theme/breakpoints";
+import padding from "../../../theme/padding";
+import { AppContext } from "../../../Context/AppContext";
+import { ElementColorContext } from "../../../Context/ElementColorContext";
+import { CASE_STATUS } from "../../../data/dictionaries/CASE_STATUS";
+import colors from "../../../theme/colors";
+import CenteredTitleAndText from "../../Shared/CenteredTitleAndText";
+import Paragraph from "../../Shared/Paragraph";
 
-const StyledCaseThumbnail = styled(motion.div)`
+const StyledAdditionalCasesCaseThumbnail = styled(motion.div)`
   flex: 1 1 150px;
   display: flex;
   align-items: center;
@@ -39,7 +39,7 @@ const StyledCaseThumbnail = styled(motion.div)`
     }}
 `;
 
-const StyledCaseThumbnailCaption = styled(motion.div)`
+const StyledAdditionalCasesCaseThumbnailCaption = styled(motion.div)`
   padding-left: ${padding.horizontal.double};
   padding-right: ${padding.horizontal.double};
   max-width: ${sizes.contentWidthLimit}px;
@@ -48,7 +48,7 @@ const StyledCaseThumbnailCaption = styled(motion.div)`
   z-index: 1;
 `;
 
-const StyledCaseThumbnailImage = styled(motion.div)`
+const StyledAdditionalCasesCaseThumbnailImage = styled(motion.div)`
   position: absolute;
   top: 0;
   bottom: 0;
@@ -72,23 +72,13 @@ const StyledCaseThumbnailImage = styled(motion.div)`
   }
 `;
 
-/* const StyledCaseIntro = styled(motion.div)`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: ${padding.vertical.double} ${padding.horizontal.double};
-  backdrop-filter: blur(8px);
-  background: ${colors.darker10};
-  color: white;
-  box-sizing: border-box;
-
-  @media (max-width: ${breakpoints.mobileLarge}px) {
-    padding: ${padding.vertical.single} ${padding.horizontal.double};
-  }
-`; */
-
-function CaseThumbnail({ data, status, caseUrl, inAdditionalCases }) {
+/* TODO: cleanup all unused features as its only used in one place now */
+function AdditionalCasesCaseThumbnail({
+  data,
+  status,
+  caseUrl,
+  inAdditionalCases,
+}) {
   const [, setContent] = useContext(AppContext);
   const [, setLight] = useContext(ElementColorContext);
 
@@ -172,18 +162,7 @@ function CaseThumbnail({ data, status, caseUrl, inAdditionalCases }) {
     },
   };
 
-  /* const caseIntroVariants = {
-    normal: {
-      y: "100%",
-      transition: spring,
-    },
-    hover: {
-      y: "0%",
-      transition: spring,
-    },
-  }; */
-
-  const renderCaseThumbnail = () => {
+  const renderAdditionalCasesCaseThumbnail = () => {
     const wrappedText = <Paragraph>{text}</Paragraph>;
     return (
       <motion.div
@@ -192,20 +171,17 @@ function CaseThumbnail({ data, status, caseUrl, inAdditionalCases }) {
         animate={isMobile ? "hover" : "normal"}
         initial="normal"
       >
-        <StyledCaseThumbnailImage
+        <StyledAdditionalCasesCaseThumbnailImage
           variants={thumbnailImageVariants}
           $imageUrl={`${process.env.PUBLIC_URL}/${imageUrl}`}
         />
 
-        <StyledCaseThumbnailCaption variants={thumbnailCaptionVariants}>
+        <StyledAdditionalCasesCaseThumbnailCaption
+          variants={thumbnailCaptionVariants}
+        >
           {/* <Overline>{overline}</Overline> */}
-          <CenteredTitleAndText
-            title={title}
-            h={3}
-            text={wrappedText}
-            disableAnimations
-          />
-        </StyledCaseThumbnailCaption>
+          <CenteredTitleAndText title={title} h={3} text={wrappedText} />
+        </StyledAdditionalCasesCaseThumbnailCaption>
 
         {status === CASE_STATUS.COMING_SOON && <Tag />}
       </motion.div>
@@ -217,12 +193,12 @@ function CaseThumbnail({ data, status, caseUrl, inAdditionalCases }) {
       to={caseUrl}
       onClick={() => changeLoaderContent(`${overline}, ${title}`)}
     >
-      {renderCaseThumbnail()}
+      {renderAdditionalCasesCaseThumbnail()}
     </Link>
   );
 
   return (
-    <StyledCaseThumbnail
+    <StyledAdditionalCasesCaseThumbnail
       ref={intersectionRef}
       initial="hidden"
       variants={thumbnailVariants}
@@ -231,13 +207,13 @@ function CaseThumbnail({ data, status, caseUrl, inAdditionalCases }) {
       $inAdditionalCases={inAdditionalCases}
     >
       {status !== CASE_STATUS.COMING_SOON
-        ? wrapWithLink(renderCaseThumbnail())
-        : renderCaseThumbnail()}
-    </StyledCaseThumbnail>
+        ? wrapWithLink(renderAdditionalCasesCaseThumbnail())
+        : renderAdditionalCasesCaseThumbnail()}
+    </StyledAdditionalCasesCaseThumbnail>
   );
 }
 
-CaseThumbnail.propTypes = {
+AdditionalCasesCaseThumbnail.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object,
   status: PropTypes.string.isRequired,
@@ -245,9 +221,9 @@ CaseThumbnail.propTypes = {
   inAdditionalCases: PropTypes.bool,
 };
 
-CaseThumbnail.defaultProps = {
+AdditionalCasesCaseThumbnail.defaultProps = {
   data: {},
   inAdditionalCases: false,
 };
 
-export default CaseThumbnail;
+export default AdditionalCasesCaseThumbnail;

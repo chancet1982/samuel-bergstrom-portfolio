@@ -100,7 +100,6 @@ function Textbox({
         imageUrl={imageUrl}
         imageAlt={imageAlt}
         caption={caption}
-        disableAnimations
         inTextbox
       />
     ) : (

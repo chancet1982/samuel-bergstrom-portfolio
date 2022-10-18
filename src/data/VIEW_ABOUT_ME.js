@@ -15,7 +15,7 @@ export const VIEW_ABOUT_ME = [
         template: SECTION_ELEMENTS.SECTION_IMAGE,
         data: {
           limitMaxWidth: true,
-          imageUrl: "assets/meet-sam.jpg",
+          imageUrl: "assets/meet-sam.png",
           imageAlt: "A wonderful picture of me being myself",
         },
       },

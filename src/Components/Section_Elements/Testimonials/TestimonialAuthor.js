@@ -32,7 +32,7 @@ function TestimonialAuthor({ authorName, authorTitle, authorImageUrl }) {
         alt={authorTitle}
         variants={authorImageVariants}
       />
-      <StyledAuthorName transition={{ delay: 5 }}>
+      <StyledAuthorName>
         <Title h={5}>{authorName}</Title>
         <Span>{authorTitle}</Span>
       </StyledAuthorName>
