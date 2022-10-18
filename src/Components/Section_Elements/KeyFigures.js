@@ -36,9 +36,7 @@ const StyledKeyFigures = styled(motion.div)`
   }
 `;
 
-/* TODO: limitMaxWidth is most likely useless here */
-
-function KeyFigures({ items, bgColor, bgImageUrl, limitMaxWidth }) {
+function KeyFigures({ items, bgColor, bgImageUrl }) {
   const [, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
@@ -66,11 +64,7 @@ function KeyFigures({ items, bgColor, bgImageUrl, limitMaxWidth }) {
   );
 
   return bgColor || bgImageUrl ? (
-    <BackgroundWrapper
-      bgColor={bgColor}
-      bgImageUrl={bgImageUrl}
-      limitMaxWidth={limitMaxWidth}
-    >
+    <BackgroundWrapper bgColor={bgColor} bgImageUrl={bgImageUrl}>
       {renderKeyFigures()}
     </BackgroundWrapper>
   ) : (
@@ -87,13 +81,11 @@ KeyFigures.propTypes = {
   ).isRequired,
   bgColor: PropTypes.string,
   bgImageUrl: PropTypes.string,
-  limitMaxWidth: PropTypes.bool,
 };
 
 KeyFigures.defaultProps = {
   bgColor: null,
   bgImageUrl: null,
-  limitMaxWidth: false,
 };
 
 export default KeyFigures;

@@ -55,7 +55,6 @@ function SectionElementsRenderer({ elementKey, data, template }) {
             items={data.items}
             bgColor={data.bgColor}
             bgImageUrl={data.bgImageUrl}
-            limitMaxWidth={data.limitMaxWidth}
           />
         </ElementColorContextProvider>
       );
