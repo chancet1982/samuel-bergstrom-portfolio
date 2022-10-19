@@ -3,16 +3,10 @@ import React, { useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion, useIsPresent } from "framer-motion";
-import padding from "../theme/padding";
 import { ViewColorContext } from "../Context/ViewColorContext";
 import colors from "../theme/colors";
 
 const StyledView = styled(motion.main)`
-  ${({ $isPadded }) =>
-    $isPadded && {
-      paddingTop: padding.vertical.quadruple,
-    }}
-
   ${({ $bgColor }) =>
     $bgColor && {
       backgroundColor: $bgColor,
@@ -29,8 +23,8 @@ const StyledRollUp = styled(motion.div)`
   z-index: 2;
 `;
 
-/* TODO: Remove options for isPadded, add support for reverseTransition */
-function View({ children, isPadded, bgColor }) {
+/* TODO: add support for reverseTransition */
+function View({ children, bgColor }) {
   const isPresent = useIsPresent();
   const [, setLight] = useContext(ViewColorContext);
 
@@ -42,21 +36,13 @@ function View({ children, isPadded, bgColor }) {
     );
   }, [setLight, bgColor]);
 
-  const variants = {
-    viewInitial: { opacity: 0 },
-    viewAnimate: { opacity: 1 },
-    viewExit: { opacity: 0 },
-  };
-
   return (
     <>
       <StyledView
-        $isPadded={isPadded}
-        initial="viewInitial"
-        animate="viewAnimate"
-        exit="viewExit"
-        variants={variants}
         $bgColor={bgColor}
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
       >
         {children}
       </StyledView>
@@ -72,13 +58,11 @@ function View({ children, isPadded, bgColor }) {
 
 View.propTypes = {
   children: PropTypes.node,
-  isPadded: PropTypes.bool,
   bgColor: PropTypes.string,
 };
 
 View.defaultProps = {
   children: null,
-  isPadded: false,
   bgColor: null,
 };
 
