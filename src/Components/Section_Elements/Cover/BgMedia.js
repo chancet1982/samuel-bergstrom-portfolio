@@ -10,7 +10,7 @@ const StyledCoverImage = styled(motion.img)`
   top: 0;
   left: 0;
   width: 100vw;
-  height: auto;
+  height: 92vh;
   object-fit: cover;
   z-index: -1;
 `;
