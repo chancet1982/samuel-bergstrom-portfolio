@@ -21,10 +21,7 @@ const StyledOverviewWrapper = styled(motion.div)`
     },
   }) => small};
 
-  padding: ${({ bgColor }) =>
-    bgColor
-      ? `${padding.vertical.double} ${padding.horizontal.double}`
-      : `0 ${padding.horizontal.double}`};
+  padding: 0 ${padding.horizontal.double};
 
   @media (min-width: ${breakpoints.desktop}px) {
     max-width: ${sizes.contentWidthLimit}px;
@@ -59,7 +56,7 @@ const StyledOverviewItems = styled(motion.div)`
 `;
 
 /* TODO: Fix console error about bgColor */
-function Overview({ text, toolsAndMethods, bgColor }) {
+function Overview({ text, toolsAndMethods }) {
   return (
     <StyledOverviewWrapper
       initial="hidden"
@@ -67,10 +64,10 @@ function Overview({ text, toolsAndMethods, bgColor }) {
       viewport={{ once: true, amount: 0.2 }}
       transition={{ staggerChildren: 0.2 }}
     >
-      <StyledOverviewText bgColor={bgColor}>
+      <StyledOverviewText>
         {text && <TitleAndText>{text}</TitleAndText>}
       </StyledOverviewText>
-      <StyledOverviewItems bgColor={bgColor}>
+      <StyledOverviewItems>
         {toolsAndMethods.length ? (
           <ValueAndLabel
             value="Tools & Methods:"
@@ -85,15 +82,12 @@ function Overview({ text, toolsAndMethods, bgColor }) {
 
 Overview.propTypes = {
   text: PropTypes.node,
-
   toolsAndMethods: PropTypes.array,
-  bgColor: PropTypes.string,
 };
 
 Overview.defaultProps = {
   text: null,
   toolsAndMethods: [],
-  bgColor: null,
 };
 
 export default Overview;

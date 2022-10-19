@@ -12,24 +12,24 @@ import { formElementsVariants } from "../../animations/animations";
 
 const StyledButton = styled(motion.button)`
   padding: ${padding.vertical.half} ${padding.horizontal.quadruple};
-  background-color: ${({ secondary }) =>
-    secondary ? "white" : colors.primary};
-  color: ${({ secondary }) =>
-    secondary ? colors.primary : colors.text.light.high};
-  border: ${({ secondary }) =>
-    secondary ? `solid 1px ${colors.primary}` : `solid 1px transparent`};
+  background-color: ${({ $secondary }) =>
+    $secondary ? "white" : colors.primary};
+  color: ${({ $secondary }) =>
+    $secondary ? colors.primary : colors.text.light.high};
+  border: ${({ $secondary }) =>
+    $secondary ? `solid 1px ${colors.primary}` : `solid 1px transparent`};
   ${shadows.short};
   border-radius: 0.25rem;
-  ${({ fluidType }) => fluidType};
   transition: all 0.3s;
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 600;
   padding: 1rem 1.5rem;
+  ${({ $fluidType }) => $fluidType};
 
   &:hover {
-    background-color: ${({ secondary }) =>
-      secondary ? colors.primaryShade : colors.primaryHover};
+    background-color: ${({ $secondary }) =>
+      $secondary ? colors.primaryShade : colors.primaryHover};
     ${shadows.soft}
   }
 
@@ -64,9 +64,9 @@ function Button({
 
   return (
     <StyledButton
-      fluidType={fluidType}
+      $fluidType={fluidType}
       disabled={disabled}
-      secondary={secondary}
+      $secondary={secondary}
       onClick={to ? () => navigate(to) : onClick}
       variants={formElementsVariants}
     >

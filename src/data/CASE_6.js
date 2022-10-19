@@ -50,13 +50,13 @@ export const CASE_6 = {
             bgColor: "rgba(0, 98, 155, .72)",
             text: (
               <>
-                <Paragraph huge>
+                <Paragraph xl>
                   One of Sweden’s leading invoicing solutions provider. They are
                   a subsidiary of Prioritet Finans They weren’t geared for
                   scaling. Expanding their digital services platform was
                   impossible without making some drastic changes.
                 </Paragraph>
-                <Paragraph huge>
+                <Paragraph xl>
                   I was there as head of design, with 2 other designers giving
                   their organization a gentle nudge in the right direction.
                 </Paragraph>
