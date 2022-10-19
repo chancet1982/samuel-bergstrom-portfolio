@@ -43,14 +43,8 @@ const StyledCoverFooter = styled(motion.div)`
   z-index: 1;
 `;
 
-function Cover({
-  bgColor,
-  bgMedia,
-  caption,
-  fgImage,
-  highlights,
-  hideFooterOnScroll,
-}) {
+/* TODO: Highlights vanish on scroll (they shouldnt) */
+function Cover({ bgColor, bgMedia, caption, fgImage, highlights }) {
   const { width } = useWindowSize();
 
   const isDesktop = width >= breakpoints.desktop;
@@ -80,9 +74,6 @@ function Cover({
       },
     },
   };
-
-  const renderFooter = () =>
-    highlights ? <Highlights items={highlights} /> : <ClientPreview />;
 
   return (
     <StyledCover
@@ -114,12 +105,12 @@ function Cover({
         variants={coverBottomVariants}
         initial="hidden"
         animate={
-          scrollDirection === "down" && isDesktop && hideFooterOnScroll
+          scrollDirection === "down" && isDesktop && !highlights
             ? "hidden"
             : "inView"
         }
       >
-        {renderFooter()}
+        {highlights ? <Highlights items={highlights} /> : <ClientPreview />}
       </StyledCoverFooter>
     </StyledCover>
   );
@@ -151,7 +142,6 @@ Cover.propTypes = {
       label: PropTypes.string,
     })
   ),
-  hideFooterOnScroll: PropTypes.bool,
 };
 
 Cover.defaultProps = {
@@ -160,7 +150,6 @@ Cover.defaultProps = {
   fgImage: null,
   caption: null,
   highlights: null,
-  hideFooterOnScroll: false,
 };
 
 export default Cover;

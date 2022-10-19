@@ -10,7 +10,6 @@ import Title from "../Components/Shared/Title";
 import List from "../Components/Shared/List";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import { PLATFORMS } from "./dictionaries/PLATFORMS";
-import Highlights from "../Components/Section_Elements/Cover/Highlights";
 
 const SETTINGS = {
   BG_COLOR: "#2161C9",
@@ -62,17 +61,12 @@ export const CASE_7 = {
               imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
               mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
-            footer: (
-              <Highlights
-                flip
-                items={[
-                  SETTINGS.KEY_FIGURES.CASE_TYPE,
-                  SETTINGS.KEY_FIGURES.CASE_YEAR,
-                  SETTINGS.KEY_FIGURES.CASE_DURATION,
-                  SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
-                ]}
-              />
-            ),
+            highlights: [
+              SETTINGS.KEY_FIGURES.CASE_TYPE,
+              SETTINGS.KEY_FIGURES.CASE_YEAR,
+              SETTINGS.KEY_FIGURES.CASE_DURATION,
+              SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+            ],
           },
         },
       ],

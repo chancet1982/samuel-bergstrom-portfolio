@@ -43,7 +43,6 @@ function SectionElementsRenderer({ elementKey, data, template }) {
             fgImage={data.fgImage}
             caption={data.caption}
             highlights={data.highlights}
-            hideFooterOnScroll={data.hideFooterOnScroll}
           />
         </ElementColorContextProvider>
       );

@@ -9,7 +9,6 @@ import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Shared/Title";
 import colors from "../theme/colors";
-import Highlights from "../Components/Section_Elements/Cover/Highlights";
 
 /* TODO: Final result looks like shit for desktop products (Perhaps use the Fitness24Seven solution) */
 /* TODO: cover fgImage is missing mobile image URL */
@@ -64,17 +63,12 @@ export const CASE_10 = {
             fgImage: {
               imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover.png`,
             },
-            footer: (
-              <Highlights
-                flip
-                items={[
-                  SETTINGS.KEY_FIGURES.CASE_TYPE,
-                  SETTINGS.KEY_FIGURES.CASE_YEAR,
-                  SETTINGS.KEY_FIGURES.CASE_DURATION,
-                  SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
-                ]}
-              />
-            ),
+            highlights: [
+              SETTINGS.KEY_FIGURES.CASE_TYPE,
+              SETTINGS.KEY_FIGURES.CASE_YEAR,
+              SETTINGS.KEY_FIGURES.CASE_DURATION,
+              SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+            ],
           },
         },
       ],

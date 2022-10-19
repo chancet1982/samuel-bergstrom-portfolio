@@ -8,7 +8,6 @@ import { ROLES } from "./dictionaries/ROLES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
-import Highlights from "../Components/Section_Elements/Cover/Highlights";
 
 const SETTINGS = {
   BG_COLOR: "#47C8BC",
@@ -54,17 +53,12 @@ export const CASE_3 = {
               imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
               mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
-            footer: (
-              <Highlights
-                flip
-                items={[
-                  SETTINGS.KEY_FIGURES.CASE_TYPE,
-                  SETTINGS.KEY_FIGURES.CASE_YEAR,
-                  SETTINGS.KEY_FIGURES.CASE_DURATION,
-                  SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
-                ]}
-              />
-            ),
+            highlights: [
+              SETTINGS.KEY_FIGURES.CASE_TYPE,
+              SETTINGS.KEY_FIGURES.CASE_YEAR,
+              SETTINGS.KEY_FIGURES.CASE_DURATION,
+              SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+            ],
           },
         },
       ],

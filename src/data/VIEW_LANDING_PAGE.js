@@ -40,7 +40,6 @@ export const VIEW_LANDING_PAGE = [
             type: COVER_MEDIA_TYPES.IMAGE,
             mediaUrl: "assets/cover-bg.jpg",
           },
-          hideFooterOnScroll: true,
         },
       },
     ],
