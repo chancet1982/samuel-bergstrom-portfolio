@@ -58,6 +58,7 @@ const StyledOverviewItems = styled(motion.div)`
   }
 `;
 
+/* TODO: Fix console error about bgColor */
 function Overview({ text, toolsAndMethods, bgColor }) {
   return (
     <StyledOverviewWrapper

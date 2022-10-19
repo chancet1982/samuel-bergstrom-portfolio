@@ -7,7 +7,7 @@ function ViewTest() {
   const sectionsData = VIEW_TEST;
 
   return (
-    <View transition={false}>
+    <View>
       <SectionsRenderer sections={sectionsData} />
     </View>
   );
