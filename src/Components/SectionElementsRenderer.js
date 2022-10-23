@@ -78,7 +78,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
             imageAlt={data.imageAlt}
             caption={data.caption}
             flip={data.flip}
-            limitMaxWidth={data.limitMaxWidth}
+            isCentered={data.isCentered}
             bgColor={data.bgColor}
           />
         </ElementColorContextProvider>

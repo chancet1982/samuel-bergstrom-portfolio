@@ -15,12 +15,7 @@ import colors from "../../theme/colors";
 const StyledTextbox = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-
-  ${($limitMaxWidth) =>
-    $limitMaxWidth && {
-      maxWidth: `${sizes.contentWidthLimit}px`,
-    }};
-
+  max-width: ${sizes.contentWidthLimit}px;
   margin: 0 auto;
 
   ${({ $bgColor }) =>
@@ -80,7 +75,7 @@ function Textbox({
   imageUrl,
   imageAlt,
   caption,
-  limitMaxWidth,
+  isCentered,
 }) {
   const [, setLight] = useContext(ElementColorContext);
 
@@ -121,11 +116,10 @@ function Textbox({
       $flip={flip}
       $bgColor={bgColor}
       $imageUrl={imageUrl}
-      $limitMaxWidth={limitMaxWidth}
     >
       {flip && imageUrl && renderImage()}
 
-      <TitleAndText h={h} title={title} isPadded>
+      <TitleAndText h={h} title={title} isPadded isCentered={isCentered}>
         {text}
       </TitleAndText>
 
@@ -143,7 +137,7 @@ Textbox.propTypes = {
   imageUrl: PropTypes.string,
   imageAlt: PropTypes.string,
   caption: PropTypes.string,
-  limitMaxWidth: PropTypes.bool,
+  isCentered: PropTypes.bool,
 };
 
 Textbox.defaultProps = {
@@ -154,7 +148,7 @@ Textbox.defaultProps = {
   imageUrl: null,
   imageAlt: null,
   caption: null,
-  limitMaxWidth: true,
+  isCentered: false,
 };
 
 export default Textbox;

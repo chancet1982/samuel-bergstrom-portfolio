@@ -105,7 +105,7 @@ function FinalResult({
           />
           {(results.length > 0 || text) && (
             <StyledResultCaption $bgColor={bgColor}>
-              <TitleAndText h={2} title={title} sticky>
+              <TitleAndText h={2} title={title} isSticky>
                 {results.length > 0 &&
                   results.map(({ value, description }) => (
                     <Result
