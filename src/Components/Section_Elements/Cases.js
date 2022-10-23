@@ -9,7 +9,6 @@ import breakpoints from "../../theme/breakpoints";
 import sizes from "../../theme/sizes";
 import padding from "../../theme/padding";
 import { CASE_STATUS } from "../../data/dictionaries/CASE_STATUS";
-import CenteredTitleAndText from "../Shared/CenteredTitleAndText";
 import Button from "../Shared/Button";
 
 const StyledPageLink = styled.div`
@@ -32,19 +31,9 @@ const StyledCases = styled(motion.div)`
 `;
 
 /* Animation in cases is still fucked up. see if there is anything that can be fixed. */
-function SectionCases({ title, text, preview, h }) {
+function SectionCases({ preview }) {
   return (
     <motion.div>
-      <CenteredTitleAndText
-        title={title}
-        text={text}
-        h={h}
-        isPadded
-        initial="hidden"
-        whileInView="inView"
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ staggerChildren: 0.2 }}
-      />
       <StyledCases $preview={preview}>
         {CASES.filter(({ caseStatus }) =>
           preview
@@ -71,17 +60,11 @@ function SectionCases({ title, text, preview, h }) {
 }
 
 SectionCases.propTypes = {
-  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   preview: PropTypes.bool,
-  h: PropTypes.number,
 };
 
 SectionCases.defaultProps = {
-  title: null,
-  text: null,
   preview: false,
-  h: 2,
 };
 
 export default SectionCases;

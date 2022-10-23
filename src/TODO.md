@@ -11,9 +11,8 @@ Fix vertical alignment - mobile
 ADDITIONAL_CASES (mobile) -> Fix height
 CASES (mobile) -> Fix text width
 FinalResult -> need better covers (case 9, 10)
-CenteredTitleAndText -> not aligned.
-CenteredTitleAndText -> Break out to its own component?
 Cases -> with or without padding?
+Cases -> Padding under text shouldnt be there...
 
 FEATURES & IMPROVEMENTS:
 COVER_CAPTION: Add "back" button
@@ -21,6 +20,7 @@ ABOUT ME -> Fix smaller images to use circular image and cliping path instead.
 TESTIMONIALS -> Looks rather bland. perhaps needs some love.
 ListOfImagesWithTitleAndText -> add support for background color on items only. not entire list.
 ListOfImagesWithTitleAndText -> goes to single column too soon. should keep have columns on tablets too.
+
 Add password protection to cases
 cleanup limitMaxWidth & bgColor props to be used only where relevant
 

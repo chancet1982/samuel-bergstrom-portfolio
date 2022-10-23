@@ -47,9 +47,15 @@ export const VIEW_ABOUT_ME = [
     header: "Why Sam?",
     elements: [
       {
+        template: SECTION_ELEMENTS.TEXTBOX,
+        data: {
+          isCentered: true,
+          listTitle: "Why Sam?",
+        },
+      },
+      {
         template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
         data: {
-          listTitle: "Why Sam?",
           items: [
             {
               imageUrl: "assets/designer.png",
@@ -147,6 +153,17 @@ export const VIEW_ABOUT_ME = [
     bgColor: colors.offwhite,
     header: "Clients",
     elements: [
+      {
+        template: SECTION_ELEMENTS.TEXTBOX,
+        data: {
+          isCentered: true,
+          title: (
+            <>
+              Some of the <mark>companies</mark> I worked with
+            </>
+          ),
+        },
+      },
       {
         template: SECTION_ELEMENTS.CLIENTS,
         data: {},

@@ -47,9 +47,9 @@ export const VIEW_LANDING_PAGE = [
   {
     elements: [
       {
-        template: SECTION_ELEMENTS.CASES,
+        template: SECTION_ELEMENTS.TEXTBOX,
         data: {
-          preview: true,
+          isCentered: true,
           title: (
             <>
               Selected <mark>work</mark>
@@ -60,6 +60,12 @@ export const VIEW_LANDING_PAGE = [
               Just some of my work from the last couple of years.
             </Paragraph>
           ),
+        },
+      },
+      {
+        template: SECTION_ELEMENTS.CASES,
+        data: {
+          preview: true,
         },
       },
     ],

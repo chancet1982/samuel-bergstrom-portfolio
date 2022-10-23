@@ -12,8 +12,8 @@ import { AppContext } from "../../../Context/AppContext";
 import { ElementColorContext } from "../../../Context/ElementColorContext";
 import { CASE_STATUS } from "../../../data/dictionaries/CASE_STATUS";
 import colors from "../../../theme/colors";
-import CenteredTitleAndText from "../../Shared/CenteredTitleAndText";
 import Paragraph from "../../Shared/Paragraph";
+import TitleAndText from "../../Shared/TitleAndText";
 
 const StyledAdditionalCasesCaseThumbnail = styled(motion.div)`
   flex: 1 1 150px;
@@ -162,31 +162,30 @@ function AdditionalCasesCaseThumbnail({
     },
   };
 
-  const renderAdditionalCasesCaseThumbnail = () => {
-    const wrappedText = <Paragraph>{text}</Paragraph>;
-    return (
-      <motion.div
-        whileHover="hover"
-        variants={test}
-        animate={isMobile ? "hover" : "normal"}
-        initial="normal"
+  const renderAdditionalCasesCaseThumbnail = () => (
+    <motion.div
+      whileHover="hover"
+      variants={test}
+      animate={isMobile ? "hover" : "normal"}
+      initial="normal"
+    >
+      <StyledAdditionalCasesCaseThumbnailImage
+        variants={thumbnailImageVariants}
+        $imageUrl={`${process.env.PUBLIC_URL}/${imageUrl}`}
+      />
+
+      <StyledAdditionalCasesCaseThumbnailCaption
+        variants={thumbnailCaptionVariants}
       >
-        <StyledAdditionalCasesCaseThumbnailImage
-          variants={thumbnailImageVariants}
-          $imageUrl={`${process.env.PUBLIC_URL}/${imageUrl}`}
-        />
+        {/* <Overline>{overline}</Overline> */}
+        <TitleAndText title={title} h={3} isCentered>
+          <Paragraph>{text}</Paragraph>
+        </TitleAndText>
+      </StyledAdditionalCasesCaseThumbnailCaption>
 
-        <StyledAdditionalCasesCaseThumbnailCaption
-          variants={thumbnailCaptionVariants}
-        >
-          {/* <Overline>{overline}</Overline> */}
-          <CenteredTitleAndText title={title} h={3} text={wrappedText} />
-        </StyledAdditionalCasesCaseThumbnailCaption>
-
-        {status === CASE_STATUS.COMING_SOON && <Tag />}
-      </motion.div>
-    );
-  };
+      {status === CASE_STATUS.COMING_SOON && <Tag />}
+    </motion.div>
+  );
 
   const wrapWithLink = () => (
     <Link

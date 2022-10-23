@@ -6,7 +6,6 @@ import { v4 as uuid } from "uuid";
 import { motion } from "framer-motion";
 import { CLIENTS } from "../../data/dictionaries/CLIENTS";
 import padding from "../../theme/padding";
-import CenteredTitleAndText from "../Shared/CenteredTitleAndText";
 import sizes from "../../theme/sizes";
 import Image from "../Shared/Image";
 
@@ -18,16 +17,9 @@ const StyledClients = styled(motion.div)`
   box-sizing: border-box;
   max-width: ${sizes.contentWidthLimit}px;
   margin: 0 auto;
-
-  > div {
-    display: grid;
-    grid-gap: 1rem;
-    grid-template-columns: repeat(auto-fit, minmax(144px, 1fr));
-
-    div {
-      text-align: center;
-    }
-  }
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(144px, 1fr));
 `;
 
 /* TODO: all client logos appear at once and not staggered */
@@ -48,14 +40,7 @@ function Clients() {
       viewport={{ once: true, amount: 0.2 }}
       transition={{ staggerChildren: 0.2 }}
     >
-      <CenteredTitleAndText
-        title={
-          <>
-            Some of the <mark>companies</mark> I worked with
-          </>
-        }
-      />
-      <motion.div>{renderClients}</motion.div>
+      {renderClients}
     </StyledClients>
   );
 }

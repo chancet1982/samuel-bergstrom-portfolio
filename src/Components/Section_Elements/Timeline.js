@@ -136,7 +136,7 @@ TimelineItem.propTypes = {
 /* TODO: Try and figure out the nested inView animations */
 function Timeline({ items }) {
   return (
-    <StyledTimeline alternate>
+    <StyledTimeline>
       {items.map(({ year, events }) => (
         <TimelineItem key={year} year={year} events={events} />
       ))}

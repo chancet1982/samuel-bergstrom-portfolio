@@ -145,14 +145,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
     case SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT:
       return (
         <ElementColorContextProvider>
-          <ListOfImagesWithTitleAndText
-            key={elementKey}
-            items={data.items}
-            listTitle={data.listTitle}
-            listText={data.listText}
-            bgColor={data.bgColor}
-            limitMaxWidth={data.limitMaxWidth}
-          />
+          <ListOfImagesWithTitleAndText key={elementKey} items={data.items} />
         </ElementColorContextProvider>
       );
     case SECTION_ELEMENTS.VIDEO:
@@ -189,15 +182,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
         </ElementColorContextProvider>
       );
     case SECTION_ELEMENTS.CASES:
-      return (
-        <Cases
-          key={elementKey}
-          title={data.title}
-          text={data.text}
-          preview={data.preview}
-          h={data.h}
-        />
-      );
+      return <Cases key={elementKey} preview={data.preview} />;
     case SECTION_ELEMENTS.TESTIMONIALS:
       return (
         <Testimonials

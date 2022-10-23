@@ -2,9 +2,9 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-
 import Title from "./Title";
 import padding from "../../theme/padding";
+import sizes from "../../theme/sizes";
 
 const StyledTitleAndText = styled(motion.div)`
   ${({ $isPadded }) =>
@@ -26,6 +26,8 @@ const StyledTitleAndText = styled(motion.div)`
       justifyContent: "center",
       alignItems: "center",
       textAlign: "center",
+      maxWidth: `calc(${sizes.contentWidthLimit}px * 0.64)`,
+      margin: "0 auto",
     }}
 `;
 

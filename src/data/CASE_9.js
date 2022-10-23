@@ -10,7 +10,6 @@ import List from "../Components/Shared/List";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Shared/Title";
-import colors from "../theme/colors";
 
 /* TODO: Final result looks like shit for desktop products (Perhaps use the Fitness24Seven solution) */
 /* TODO: cover fgImage is missing mobile image URL */
@@ -231,11 +230,15 @@ export const CASE_9 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            isCentered: true,
+            listTitle: "What has the most potential? Before, during, or after?",
+          },
+        },
+        {
           template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
           data: {
-            bgColor: colors.offwhite,
-            limitMaxWidth: true,
-            listTitle: "What has the most potential? Before, during, or after?",
             items: [
               {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/before-search.png`,

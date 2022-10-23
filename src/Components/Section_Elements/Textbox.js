@@ -40,7 +40,7 @@ const StyledTextbox = styled(motion.div)`
   }
 
   > figure {
-    max-height: ${sizes.large};
+    max-height: ${sizes.xl};
     grid-column: 1 / span 2;
 
     @media (min-width: ${breakpoints.desktop}px) {

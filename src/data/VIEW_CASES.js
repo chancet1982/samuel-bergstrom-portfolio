@@ -7,8 +7,10 @@ export const VIEW_CASES = [
   {
     elements: [
       {
-        template: SECTION_ELEMENTS.CASES,
+        template: SECTION_ELEMENTS.TEXTBOX,
         data: {
+          isCentered: true,
+
           title: (
             <>
               Selected <mark>cases</mark>
@@ -20,6 +22,12 @@ export const VIEW_CASES = [
               Just some of my work from the last couple of years.
             </Paragraph>
           ),
+        },
+      },
+      {
+        template: SECTION_ELEMENTS.CASES,
+        data: {
+          preview: false,
         },
       },
     ],

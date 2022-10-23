@@ -369,9 +369,15 @@ export const CASE_4 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            isCentered: true,
+            title: "Problem solving via design",
+          },
+        },
+        {
           template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
           data: {
-            listTitle: <>Problem solving via design</>,
             items: [
               {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-1.png`,
