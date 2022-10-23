@@ -3,7 +3,7 @@ import React, { useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-
+import BackgroundWrapper from "../Shared/BackgroundWrapper";
 import TitleAndText from "../Shared/TitleAndText";
 import ImageWithCaption from "../Shared/ImageWithCaption";
 import Image from "../Shared/Image";
@@ -11,17 +11,13 @@ import sizes from "../../theme/sizes";
 import breakpoints from "../../theme/breakpoints";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
+import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
 
 const StyledTextbox = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   max-width: ${sizes.contentWidthLimit}px;
   margin: 0 auto;
-
-  ${({ $bgColor }) =>
-    $bgColor && {
-      backgroundColor: $bgColor,
-    }};
 
   > div:first-of-type {
     grid-column: 1 / span 2;
@@ -54,23 +50,14 @@ const StyledTextbox = styled(motion.div)`
   }
 `;
 
-const StyledTextboxImage = styled.figure`
-  grid-column: 1 / span 3;
+const StyledTextboxImage = styled.figure``;
 
-  @media (min-width: ${breakpoints.desktop}px) {
-    grid-column: ${({ flip }) => (flip ? "1 / span 2" : "3 / span 1")};
-  }
-  > img {
-    height: auto;
-  }
-`;
-
-/* TODO: Image is not fading in when in view */
 function Textbox({
   title,
   h,
   text,
   bgColor,
+  bgMedia,
   flip,
   imageUrl,
   imageAlt,
@@ -83,11 +70,12 @@ function Textbox({
     // eslint-disable-next-line no-unused-expressions
     setLight !== null &&
       setLight(
-        bgColor !== null &&
+        (bgColor !== null &&
           bgColor !== colors.offwhite &&
-          bgColor !== colors.primaryShade
+          bgColor !== colors.primaryShade) ||
+          bgMedia !== null
       );
-  }, [setLight, bgColor]);
+  }, [setLight, bgColor, bgMedia]);
 
   const renderImage = () =>
     caption ? (
@@ -107,14 +95,13 @@ function Textbox({
       </StyledTextboxImage>
     );
 
-  return (
+  const renderTextbox = () => (
     <StyledTextbox
       initial="hidden"
       whileInView="inView"
       viewport={{ once: true, amount: 0.2 }}
       transition={{ staggerChildren: 0.2 }}
       $flip={flip}
-      $bgColor={bgColor}
       $imageUrl={imageUrl}
     >
       {flip && imageUrl && renderImage()}
@@ -126,6 +113,14 @@ function Textbox({
       {!flip && imageUrl && renderImage()}
     </StyledTextbox>
   );
+
+  return bgColor || bgMedia ? (
+    <BackgroundWrapper bgColor={bgColor} bgMedia={bgMedia}>
+      {renderTextbox()}
+    </BackgroundWrapper>
+  ) : (
+    renderTextbox()
+  );
 }
 
 Textbox.propTypes = {
@@ -133,6 +128,10 @@ Textbox.propTypes = {
   h: PropTypes.number,
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   bgColor: PropTypes.string,
+  bgMedia: PropTypes.shape({
+    type: PropTypes.oneOf([BG_MEDIA_TYPES.IMAGE, BG_MEDIA_TYPES.VIDEO]),
+    mediaUrl: PropTypes.string,
+  }),
   flip: PropTypes.bool,
   imageUrl: PropTypes.string,
   imageAlt: PropTypes.string,
@@ -144,6 +143,7 @@ Textbox.defaultProps = {
   title: null,
   h: 2,
   bgColor: null,
+  bgMedia: null,
   flip: false,
   imageUrl: null,
   imageAlt: null,

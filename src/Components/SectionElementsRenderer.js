@@ -53,7 +53,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
             key={elementKey}
             items={data.items}
             bgColor={data.bgColor}
-            bgImageUrl={data.bgImageUrl}
+            bgMedia={data.bgMedia}
           />
         </ElementColorContextProvider>
       );
@@ -80,6 +80,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
             flip={data.flip}
             isCentered={data.isCentered}
             bgColor={data.bgColor}
+            bgMedia={data.bgMedia}
           />
         </ElementColorContextProvider>
       );
@@ -176,7 +177,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
             quote={data.quote}
             cite={data.cite}
             bgColor={data.bgColor}
-            bgImageUrl={data.bgImageUrl}
+            bgMedia={data.bgMedia}
             limitMaxWidth={data.limitMaxWidth}
           />
         </ElementColorContextProvider>

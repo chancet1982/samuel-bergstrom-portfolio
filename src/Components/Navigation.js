@@ -26,7 +26,7 @@ const StyledNavigation = styled(motion.nav)`
   display: flex;
   justify-content: space-between;
 
-  /* TODO: when the navigation is NOT opaque all underlying NavLinks need to be "light"*/
+  /* TODO: when the navigation is NOT opaque all underlying NavLinks need to be "light" */
 
   ${({ $opaque }) =>
     $opaque && {
@@ -159,8 +159,8 @@ const StyledMenuToggler = styled(motion.a)`
   span:nth-child(2) {
     top: 24px;
 
-    ${({ expanded }) =>
-      expanded && {
+    ${({ $expanded }) =>
+      $expanded && {
         transform: "rotate(45deg)",
       }}
   }
@@ -168,16 +168,16 @@ const StyledMenuToggler = styled(motion.a)`
   span:nth-child(3) {
     top: 24px;
 
-    ${({ expanded }) =>
-      expanded && {
+    ${({ $expanded }) =>
+      $expanded && {
         transform: "rotate(-45deg)",
       }}
   }
 
   span:nth-child(4) {
     top: 36px;
-    ${({ expanded }) =>
-      expanded && {
+    ${({ $expanded }) =>
+      $expanded && {
         top: "24px",
         width: "0%",
         left: "50%",
@@ -254,7 +254,7 @@ function Navigation() {
       </StyledLogo>
 
       {!isDesktop && (
-        <StyledMenuToggler onClick={menuTogglerClick} expanded={expanded}>
+        <StyledMenuToggler onClick={menuTogglerClick} $expanded={expanded}>
           <span />
           <span />
           <span />

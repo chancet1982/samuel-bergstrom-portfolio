@@ -9,6 +9,7 @@ import BackgroundWrapper from "../Shared/BackgroundWrapper";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
 import sizes from "../../theme/sizes";
+import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
 
 const StyledBlockQuote = styled(motion.blockquote)`
   padding: ${padding.vertical.double} ${padding.horizontal.quadruple};
@@ -30,8 +31,7 @@ const StyledBlockQuote = styled(motion.blockquote)`
   }
 `;
 
-// TODO: (later) reveal on scroll (fixed under other content?)
-function BlockQuote({ cite, quote, bgColor, bgImageUrl }) {
+function BlockQuote({ cite, quote, bgColor, bgMedia }) {
   const [light, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
@@ -41,9 +41,9 @@ function BlockQuote({ cite, quote, bgColor, bgImageUrl }) {
         (bgColor !== null &&
           bgColor !== colors.offwhite &&
           bgColor !== colors.primaryShade) ||
-          bgImageUrl !== null
+          bgMedia !== null
       );
-  }, [light, setLight, bgColor, bgImageUrl]);
+  }, [setLight, bgColor, bgMedia]);
 
   const renderBlockQuote = () => (
     <StyledBlockQuote
@@ -58,8 +58,8 @@ function BlockQuote({ cite, quote, bgColor, bgImageUrl }) {
     </StyledBlockQuote>
   );
 
-  return bgColor || bgImageUrl ? (
-    <BackgroundWrapper bgColor={bgColor} bgImageUrl={bgImageUrl}>
+  return bgColor || bgMedia ? (
+    <BackgroundWrapper bgColor={bgColor} bgMedia={bgMedia}>
       {renderBlockQuote()}
     </BackgroundWrapper>
   ) : (
@@ -71,13 +71,16 @@ BlockQuote.propTypes = {
   cite: PropTypes.string,
   quote: PropTypes.node.isRequired,
   bgColor: PropTypes.string,
-  bgImageUrl: PropTypes.string,
+  bgMedia: PropTypes.shape({
+    type: PropTypes.oneOf([BG_MEDIA_TYPES.IMAGE, BG_MEDIA_TYPES.VIDEO]),
+    mediaUrl: PropTypes.string,
+  }),
 };
 
 BlockQuote.defaultProps = {
   cite: null,
   bgColor: null,
-  bgImageUrl: null,
+  bgMedia: null,
 };
 
 export default BlockQuote;

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { motion, useScroll, useTransform } from "framer-motion";
 import PropTypes from "prop-types";
 import { useWindowSize } from "react-use";
-import { COVER_MEDIA_TYPES } from "../../../data/dictionaries/COVER_MEDIA_TYPES";
+import { BG_MEDIA_TYPES } from "../../../data/dictionaries/BG_MEDIA_TYPES";
 
 const StyledCoverImage = styled(motion.img)`
   position: absolute;
@@ -42,7 +42,7 @@ function BgMedia({ type, mediaUrl }) {
     },
   };
 
-  return type === COVER_MEDIA_TYPES.IMAGE ? (
+  return type === BG_MEDIA_TYPES.IMAGE ? (
     <StyledCoverImage
       variants={imageVariants}
       src={`${process.env.PUBLIC_URL}/${mediaUrl}`}
@@ -58,7 +58,7 @@ function BgMedia({ type, mediaUrl }) {
 }
 
 BgMedia.propTypes = {
-  type: PropTypes.oneOf([COVER_MEDIA_TYPES.IMAGE, COVER_MEDIA_TYPES.VIDEO])
+  type: PropTypes.oneOf([BG_MEDIA_TYPES.IMAGE, BG_MEDIA_TYPES.VIDEO])
     .isRequired,
   mediaUrl: PropTypes.string.isRequired,
 };

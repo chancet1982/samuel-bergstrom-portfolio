@@ -12,6 +12,7 @@ import Caption from "./Cover/Caption";
 import FgImage from "./Cover/FgImage";
 import Highlights from "./Cover/Highlights";
 import ClientPreview from "./Cover/ClientsPreview";
+import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
 
 const StyledCover = styled(motion.div)`
   height: ${({
@@ -118,7 +119,7 @@ function Cover({ bgColor, bgMedia, caption, fgImage, highlights }) {
 
 Cover.propTypes = {
   bgMedia: PropTypes.shape({
-    type: PropTypes.oneOf(["image", "video"]),
+    type: PropTypes.oneOf([BG_MEDIA_TYPES.IMAGE, BG_MEDIA_TYPES.VIDEO]),
     mediaUrl: PropTypes.string,
   }),
   bgColor: PropTypes.string,

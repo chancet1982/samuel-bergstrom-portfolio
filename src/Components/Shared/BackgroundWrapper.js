@@ -4,14 +4,15 @@ import styled from "styled-components";
 import colors from "../../theme/colors";
 import padding from "../../theme/padding";
 import sizes from "../../theme/sizes";
+import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
 
 const StyledBackground = styled.div`
   height: 100%;
   width: 100%;
 
-  ${({ $bgImageUrl }) =>
-    $bgImageUrl && {
-      backgroundImage: `url(${process.env.PUBLIC_URL}/${$bgImageUrl})`,
+  ${({ $bgMedia }) =>
+    $bgMedia && {
+      backgroundImage: `url(${process.env.PUBLIC_URL}/${$bgMedia})`,
       backgroundSize: "cover",
     }}
   ${({ $bgColor }) =>
@@ -19,8 +20,8 @@ const StyledBackground = styled.div`
       backgroundColor: $bgColor || colors.offwhite,
     }}
 
-${({ $bgImageUrl, $bgColor, $isPadded }) =>
-    (($bgImageUrl && $isPadded) || ($bgColor && $isPadded)) && {
+${({ $bgMedia, $bgColor, $isPadded }) =>
+    (($bgMedia && $isPadded) || ($bgColor && $isPadded)) && {
       paddingTop: padding.vertical.double,
       paddingBottom: padding.vertical.double,
     }}
@@ -34,15 +35,24 @@ ${({ $limitMaxWidth }) =>
 
 function BackgroundWrapper({
   bgColor,
-  bgImageUrl,
+  bgMedia,
   limitMaxWidth,
   children,
   isPadded,
 }) {
-  return bgColor || bgImageUrl ? (
+  /* TODO: Add support for video background */
+
+  /* <StyledCoverVideo autoPlay loop muted variants={imageVariants}>
+  <source src={`${process.env.PUBLIC_URL}/${mediaUrl}`} type="video/mp4" />
+  <source src={`${process.env.PUBLIC_URL}/${mediaUrl}`} type="video/webm" />
+  <source src={`${process.env.PUBLIC_URL}/${mediaUrl}`} type="video/ogg" />
+</StyledCoverVideo> */
+  const mediaUrl = bgMedia ? bgMedia.mediaUrl : null;
+
+  return bgColor || mediaUrl ? (
     <StyledBackground
       $bgColor={bgColor}
-      $bgImageUrl={bgImageUrl}
+      $bgMedia={mediaUrl}
       $limitMaxWidth={limitMaxWidth}
       $isPadded={isPadded}
     >
@@ -55,7 +65,10 @@ function BackgroundWrapper({
 
 BackgroundWrapper.propTypes = {
   bgColor: PropTypes.string,
-  bgImageUrl: PropTypes.string,
+  bgMedia: PropTypes.shape({
+    type: PropTypes.oneOf([BG_MEDIA_TYPES.IMAGE, BG_MEDIA_TYPES.VIDEO]),
+    mediaUrl: PropTypes.string,
+  }),
   children: PropTypes.node.isRequired,
   limitMaxWidth: PropTypes.bool,
   isPadded: PropTypes.bool,
@@ -63,7 +76,7 @@ BackgroundWrapper.propTypes = {
 
 BackgroundWrapper.defaultProps = {
   bgColor: null,
-  bgImageUrl: null,
+  bgMedia: null,
   limitMaxWidth: false,
   isPadded: true,
 };

@@ -10,6 +10,7 @@ import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
 import padding from "../../theme/padding";
 import sizes from "../../theme/sizes";
+import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
 
 const StyledKeyFigures = styled(motion.div)`
   display: flex;
@@ -36,7 +37,7 @@ const StyledKeyFigures = styled(motion.div)`
   }
 `;
 
-function KeyFigures({ items, bgColor, bgImageUrl }) {
+function KeyFigures({ items, bgColor, bgMedia }) {
   const [, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
@@ -46,9 +47,9 @@ function KeyFigures({ items, bgColor, bgImageUrl }) {
         (bgColor !== null &&
           bgColor !== colors.offwhite &&
           bgColor !== colors.primaryShade) ||
-          bgImageUrl !== null
+          bgMedia !== null
       );
-  }, [setLight, bgColor, bgImageUrl]);
+  }, [setLight, bgColor, bgMedia]);
 
   const renderKeyFigures = () => (
     <StyledKeyFigures
@@ -63,8 +64,8 @@ function KeyFigures({ items, bgColor, bgImageUrl }) {
     </StyledKeyFigures>
   );
 
-  return bgColor || bgImageUrl ? (
-    <BackgroundWrapper bgColor={bgColor} bgImageUrl={bgImageUrl}>
+  return bgColor || bgMedia ? (
+    <BackgroundWrapper bgColor={bgColor} bgMedia={bgMedia}>
       {renderKeyFigures()}
     </BackgroundWrapper>
   ) : (
@@ -80,12 +81,15 @@ KeyFigures.propTypes = {
     })
   ).isRequired,
   bgColor: PropTypes.string,
-  bgImageUrl: PropTypes.string,
+  bgMedia: PropTypes.shape({
+    type: PropTypes.oneOf([BG_MEDIA_TYPES.IMAGE, BG_MEDIA_TYPES.VIDEO]),
+    mediaUrl: PropTypes.string,
+  }),
 };
 
 KeyFigures.defaultProps = {
   bgColor: null,
-  bgImageUrl: null,
+  bgMedia: null,
 };
 
 export default KeyFigures;

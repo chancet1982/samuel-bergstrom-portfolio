@@ -258,7 +258,9 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.QUOTE,
           data: {
-            bgImageUrl: `${SETTINGS.MEDIA_BASE_URL}/quote-bg.jpg`,
+            bgMedia: {
+              mediaUrl: `${SETTINGS.MEDIA_BASE_URL}/quote-bg.jpg`,
+            },
             quote:
               "Det verkar finnas en del “fejkaktörer” som ofta hamnar överst i listan och som sen inte har produkten. Det gör att man ofta inte chansar med företag som inte är kända sen innan.",
             cite: "User, Survey reponse",

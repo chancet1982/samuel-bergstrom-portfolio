@@ -2,7 +2,7 @@
 import React from "react";
 import Button from "../Components/Shared/Button";
 import Paragraph from "../Components/Shared/Paragraph";
-import { COVER_MEDIA_TYPES } from "./dictionaries/COVER_MEDIA_TYPES";
+import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 
@@ -37,7 +37,7 @@ export const VIEW_LANDING_PAGE = [
             ),
           },
           bgMedia: {
-            type: COVER_MEDIA_TYPES.IMAGE,
+            type: BG_MEDIA_TYPES.IMAGE,
             mediaUrl: "assets/cover-bg.jpg",
           },
         },
