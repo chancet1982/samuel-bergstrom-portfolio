@@ -39,10 +39,6 @@ function BgMedia({ type, mediaUrl }) {
     inView: {
       opacity: 1,
       y: 0,
-      transition: {
-        delay: 2,
-        duration: 0.6,
-      },
     },
   };
 

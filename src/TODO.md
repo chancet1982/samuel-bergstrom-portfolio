@@ -12,6 +12,7 @@ ADDITIONAL_CASES (mobile) -> Fix height
 CASES (mobile) -> Fix text width
 FinalResult -> need better covers (case 9, 10)
 CenteredTitleAndText -> not aligned.
+CenteredTitleAndText -> Break out to its own component?
 Cases -> with or without padding?
 
 FEATURES & IMPROVEMENTS:

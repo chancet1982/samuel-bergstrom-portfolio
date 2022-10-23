@@ -23,7 +23,6 @@ export const CASE_8 = {
   },
   details: [
     {
-      isSticky: true,
       elements: [
         {
           template: SECTION_ELEMENTS.COVER,
