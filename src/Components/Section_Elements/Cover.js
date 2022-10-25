@@ -4,22 +4,17 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
-import { useWindowSize } from "react-use";
-import breakpoints from "../../theme/breakpoints";
-import { useScrollDirection } from "../../utils/useScrollDirection";
+
 import BgMedia from "./Cover/BgMedia";
 import Caption from "./Cover/Caption";
 import FgImage from "./Cover/FgImage";
 import Highlights from "./Cover/Highlights";
 import ClientPreview from "./Cover/ClientsPreview";
 import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
+import sizes from "../../theme/sizes";
 
 const StyledCover = styled(motion.div)`
-  height: ${({
-    theme: {
-      sizes: { large },
-    },
-  }) => large};
+  height: ${sizes.xl};
   position: relative;
   display: flex;
   overflow: hidden;
@@ -46,12 +41,6 @@ const StyledCoverFooter = styled(motion.div)`
 
 /* TODO: Highlights vanish on scroll (they shouldnt) */
 function Cover({ bgColor, bgMedia, caption, fgImage, highlights }) {
-  const { width } = useWindowSize();
-
-  const isDesktop = width >= breakpoints.desktop;
-
-  const scrollDirection = useScrollDirection();
-
   const coverVariants = {
     hidden: {
       opacity: 0,
@@ -102,15 +91,7 @@ function Cover({ bgColor, bgMedia, caption, fgImage, highlights }) {
         />
       )}
 
-      <StyledCoverFooter
-        variants={coverBottomVariants}
-        initial="hidden"
-        animate={
-          scrollDirection === "down" && isDesktop && !highlights
-            ? "hidden"
-            : "inView"
-        }
-      >
+      <StyledCoverFooter variants={coverBottomVariants}>
         {highlights ? <Highlights items={highlights} /> : <ClientPreview />}
       </StyledCoverFooter>
     </StyledCover>

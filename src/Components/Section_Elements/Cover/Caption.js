@@ -58,6 +58,16 @@ const StyledCaption = styled(motion.div)`
 `;
 
 /* TODO: Implement better support for light texts and background in case the caption background is vibrant */
+/* TODO: Fix scroll animation to work */
+/* const captionOpacity = useTransform(scrollY, [0, coverHeight], [1, 0]);
+
+const captionLetterSpacing = useTransform(
+  scrollY,
+  [0, coverHeight],
+  ["0rem", "1rem"]
+);
+
+const captionLineHeight = useTransform(scrollY, [0, coverHeight], [1, 1.2]); */
 function Caption({ overline, title, text, h }) {
   const captionVariants = {
     hidden: { opacity: 0, y: 10 },

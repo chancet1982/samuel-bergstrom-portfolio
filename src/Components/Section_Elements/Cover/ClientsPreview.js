@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, { useEffect } from "react";
 import styled from "styled-components";
-import { motion, useTransform, useMotionValue } from "framer-motion";
+import { motion, useTransform, useMotionValue, useScroll } from "framer-motion";
 import { useWindowSize } from "react-use";
 import Image from "../../Shared/Image";
 import { CLIENTS } from "../../../data/dictionaries/CLIENTS";
@@ -44,14 +44,31 @@ function ClientPreview() {
     />
   ));
   /* TODO: Replace 5296 with clientPreviewWidth using useMeasure? https://github.com/streamich/react-use/blob/master/docs/useMeasure.md */
-  const clientPreviewParallax = useTransform(
-    x,
-    [0, width],
-    [0, -(5296 - width)]
+  const horizontalScroll = useTransform(x, [0, width], [0, -(5296 - width)]);
+
+  const { scrollY } = useScroll();
+  const { height } = useWindowSize();
+  const coverHeight = (height / 100) * 92;
+
+  const clientPreviewPosition = useTransform(
+    scrollY,
+    [0, coverHeight / 2],
+    ["0%", "100%"]
+  );
+  const clientPreviewOpacity = useTransform(
+    scrollY,
+    [0, coverHeight / 2],
+    [1, 0]
   );
 
   return (
-    <StyledClientsPreview style={{ x: clientPreviewParallax }}>
+    <StyledClientsPreview
+      style={{
+        x: horizontalScroll,
+        y: clientPreviewPosition,
+        opacity: clientPreviewOpacity,
+      }}
+    >
       {renderClientsPreview}
     </StyledClientsPreview>
   );
