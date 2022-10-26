@@ -49,11 +49,6 @@ const StyledLinksMenu = styled(motion.div)`
   padding-left: ${padding.horizontal.double};
   padding-right: ${padding.horizontal.double};
 
-  @media (min-width: ${breakpoints.tablet}px) {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
   a {
     display: block;
     width: 100%;

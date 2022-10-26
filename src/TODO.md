@@ -39,7 +39,5 @@ TEXTBOX Replace current implementation of bgColor with BackgroundWrapper.
 Use Contentful for content.
 server side rendering using Next.js (?)
 
-TODO: implement custom cursor with effects:
-https://codesandbox.io/s/n6i55?file=/src/index.js:117-143
 TODO: implement smooth scrolling:
 https://www.npmjs.com/package/scroller-motion
