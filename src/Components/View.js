@@ -3,9 +3,11 @@ import React, { useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion, useIsPresent } from "framer-motion";
+import { useWindowSize } from "react-use";
 import { ViewColorContext } from "../Context/ViewColorContext";
 import colors from "../theme/colors";
 import CustomCursor from "./CustomCursor";
+import breakpoints from "../theme/breakpoints";
 
 const StyledView = styled(motion.main)`
   ${({ $bgColor }) =>
@@ -37,6 +39,9 @@ function View({ children, bgColor }) {
     );
   }, [setLight, bgColor]);
 
+  const { width } = useWindowSize();
+  const isDesktop = width >= breakpoints.desktop;
+
   return (
     <>
       <StyledView
@@ -45,7 +50,7 @@ function View({ children, bgColor }) {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
-        <CustomCursor />
+        {isDesktop && <CustomCursor />}
         {children}
       </StyledView>
       <StyledRollUp
