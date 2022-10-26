@@ -15,6 +15,7 @@ import BackgroundWrapper from "../Shared/BackgroundWrapper";
 const StyledInsights = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
+  padding: 0 ${padding.horizontal.double};
 
   @media (min-width: ${breakpoints.desktop}px) {
     max-width: ${sizes.contentWidthLimit}px;
@@ -28,6 +29,7 @@ const StyledInsightsContent = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   column-gap: ${padding.vertical.single};
+  padding: 0 ${padding.horizontal.double};
 
   @media (min-width: ${breakpoints.mobileLarge}px) and (max-width: ${breakpoints.desktop -
     1}px) {
@@ -68,10 +70,13 @@ function Insights({ title, h, items, bgColor, isTwoColumnsOnDesktop, text }) {
       viewport={{ once: true, amount: 0.2 }}
       transition={{ staggerChildren: 0.2 }}
     >
-      <TitleAndText h={h} title={title}>
+      <TitleAndText h={h} title={title} isPadded>
         {text && text}
       </TitleAndText>
-      <StyledInsightsContent $isTwoColumnsOnDesktop={isTwoColumnsOnDesktop}>
+      <StyledInsightsContent
+        $isTwoColumnsOnDesktop={isTwoColumnsOnDesktop}
+        isPadded
+      >
         {convertRawInsightsToElements()}
       </StyledInsightsContent>
     </StyledInsights>

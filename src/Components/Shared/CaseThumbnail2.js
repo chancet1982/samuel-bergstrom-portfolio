@@ -82,7 +82,9 @@ const StyledCaseThumbnailImageAndCaption = styled.div`
     justify-content: center;
   }
 `;
-/* Image rollup effect runs after hover, it shouldnt and should be fixed */
+
+/* TODO: Layout of Thumbnail on mobile is broken and needs to be fixed */
+/* TODO: Image rollup effect runs after hover, it shouldnt and should be fixed */
 function CaseThumbnail({ data, status, caseUrl }) {
   const [, setCursorText, , setCursorVariant] = useContext(CursorContext);
 

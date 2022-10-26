@@ -4,8 +4,13 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import Title from "./Title";
+import padding from "../../theme/padding";
 
 const StyledTitleAndText = styled(motion.div)`
+  ${({ $isPadded }) =>
+    $isPadded && {
+      padding: `${padding.vertical.double} ${padding.horizontal.double}`,
+    }}
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -51,14 +56,14 @@ function ImageWithTitleAndText({ imageUrl, title, text, flip }) {
       {flip ? (
         <>
           <StyledImage $imageUrl={imageUrl} $flip />
-          <StyledTitleAndText isPadded style={{ gridArea: "b" }}>
+          <StyledTitleAndText $isPadded style={{ gridArea: "b" }}>
             <Title h={3}>{title}</Title>
             {text}
           </StyledTitleAndText>
         </>
       ) : (
         <>
-          <StyledTitleAndText isPadded>
+          <StyledTitleAndText $isPadded>
             <Title h={3}>{title}</Title>
             {text}
           </StyledTitleAndText>

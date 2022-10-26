@@ -12,12 +12,17 @@ import breakpoints from "../../theme/breakpoints";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
 import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
+import padding from "../../theme/padding";
 
 const StyledTextbox = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  max-width: ${sizes.contentWidthLimit}px;
-  margin: 0 auto;
+  padding: 0 ${padding.horizontal.double};
+
+  @media (min-width: ${breakpoints.desktop}px) {
+    max-width: ${sizes.contentWidthLimit}px;
+    margin: 0 auto;
+  }
 
   > div:first-of-type {
     grid-column: 1 / span 2;

@@ -13,11 +13,14 @@ import { CursorContext } from "../../Context/CursorContext";
 
 /* TODO: inView animation doesnt have effect on links in case footer */
 const StyledCaseFooter = styled(motion.div)`
-  padding: ${padding.vertical.double} 0;
-  max-width: ${sizes.contentWidthLimit}px;
-  margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  padding: ${padding.vertical.double} ${padding.horizontal.double};
+
+  @media (min-width: ${breakpoints.desktop}px) {
+    max-width: ${sizes.contentWidthLimit}px;
+    margin: 0 auto;
+  }
 
   > div:first-of-type {
     grid-column: 1 / span 3;
@@ -54,7 +57,7 @@ const StyledLinksMenu = styled(motion.div)`
   a {
     display: block;
     width: 100%;
-    padding: ${padding.vertical.quarter} ${padding.horizontal.double};
+    padding: ${padding.vertical.quarter} 0;
     box-sizing: border-box;
   }
 `;

@@ -3,10 +3,12 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import ImageWithTitleAndText2 from "../Shared/ImageWithTitleAndText2";
+import padding from "../../theme/padding";
 
 const StyledListOfImagesWithTitleAndText = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
+  padding: 0 ${padding.horizontal.double};
 `;
 
 /* TODO: After changes to list of images with title and text we will need to change the sneakpeak images on all cases. */
