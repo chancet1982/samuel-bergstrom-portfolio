@@ -8,12 +8,12 @@ import sizes from "../../../theme/sizes";
 import Tag from "../../Shared/Tag";
 import breakpoints from "../../../theme/breakpoints";
 import padding from "../../../theme/padding";
-import { AppContext } from "../../../Context/AppContext";
 import { ElementColorContext } from "../../../Context/ElementColorContext";
 import { CASE_STATUS } from "../../../data/dictionaries/CASE_STATUS";
 import colors from "../../../theme/colors";
 import Paragraph from "../../Shared/Paragraph";
 import TitleAndText from "../../Shared/TitleAndText";
+import { CursorContext } from "../../../Context/CursorContext";
 
 const StyledAdditionalCasesCaseThumbnail = styled(motion.div)`
   flex: 1 1 150px;
@@ -79,7 +79,6 @@ function AdditionalCasesCaseThumbnail({
   caseUrl,
   inAdditionalCases,
 }) {
-  const [, setContent] = useContext(AppContext);
   const [, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
@@ -89,9 +88,17 @@ function AdditionalCasesCaseThumbnail({
   const { width } = useWindowSize();
   const isMobile = width < breakpoints.desktop;
 
-  const changeLoaderContent = (newContent) => {
-    setContent(newContent);
-  };
+  const [, setCursorText, , setCursorVariant] = useContext(CursorContext);
+
+  function caseThumbnailMouseEnter() {
+    setCursorText("View");
+    setCursorVariant("project");
+  }
+
+  function caseThumbnailMouseLeave() {
+    setCursorText("");
+    setCursorVariant("default");
+  }
 
   const [inView, setInView] = useState(false);
   const intersectionRef = React.useRef(null);
@@ -107,7 +114,7 @@ function AdditionalCasesCaseThumbnail({
     }
   }, [intersection]);
 
-  const { imageUrl, overline, title, text, bgColor } = data;
+  const { imageUrl, title, text, bgColor } = data;
 
   const transition = {
     type: "tween",
@@ -190,7 +197,8 @@ function AdditionalCasesCaseThumbnail({
   const wrapWithLink = () => (
     <Link
       to={caseUrl}
-      onClick={() => changeLoaderContent(`${overline}, ${title}`)}
+      onMouseEnter={() => caseThumbnailMouseEnter()}
+      onMouseLeave={() => caseThumbnailMouseLeave()}
     >
       {renderAdditionalCasesCaseThumbnail()}
     </Link>

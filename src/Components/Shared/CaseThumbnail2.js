@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import Tag from "./Tag";
-import { AppContext } from "../../Context/AppContext";
+import { CursorContext } from "../../Context/CursorContext";
 import { CASE_STATUS } from "../../data/dictionaries/CASE_STATUS";
 import Paragraph from "./Paragraph";
 import TitleAndText from "./TitleAndText";
@@ -84,13 +84,19 @@ const StyledCaseThumbnailImageAndCaption = styled.div`
 `;
 /* Image rollup effect runs after hover, it shouldnt and should be fixed */
 function CaseThumbnail({ data, status, caseUrl }) {
-  const [, setContent] = useContext(AppContext);
+  const [, setCursorText, , setCursorVariant] = useContext(CursorContext);
 
-  const changeLoaderContent = (newContent) => {
-    setContent(newContent);
-  };
+  function caseThumbnailMouseEnter() {
+    setCursorText("View");
+    setCursorVariant("project");
+  }
 
-  const { imageUrl, overline, title, text } = data;
+  function caseThumbnailMouseLeave() {
+    setCursorText("");
+    setCursorVariant("default");
+  }
+
+  const { imageUrl, title, text } = data;
 
   const spring = {
     type: "spring",
@@ -151,7 +157,9 @@ function CaseThumbnail({ data, status, caseUrl }) {
   const wrapWithLink = () => (
     <Link
       to={caseUrl}
-      onClick={() => changeLoaderContent(`${overline}, ${title}`)}
+      onMouseEnter={() => caseThumbnailMouseEnter()}
+      onMouseLeave={() => caseThumbnailMouseLeave()}
+      /* onClick={() => changeLoaderContent(`${overline}, ${title}`)} */
     >
       {renderCaseThumbnail()}
     </Link>

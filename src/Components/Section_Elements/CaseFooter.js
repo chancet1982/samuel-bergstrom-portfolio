@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import TitleAndText from "../Shared/TitleAndText";
@@ -9,6 +9,7 @@ import Button from "../Shared/Button";
 import colors from "../../theme/colors";
 import Link from "../Shared/Link";
 import sizes from "../../theme/sizes";
+import { CursorContext } from "../../Context/CursorContext";
 
 /* TODO: inView animation doesnt have effect on links in case footer */
 const StyledCaseFooter = styled(motion.div)`
@@ -59,6 +60,18 @@ const StyledLinksMenu = styled(motion.div)`
 `;
 
 function CaseFooter() {
+  const [, setCursorText, , setCursorVariant] = useContext(CursorContext);
+
+  function caseFooterButtonMouseEnter() {
+    setCursorText("👋");
+    setCursorVariant("contact");
+  }
+
+  function caseFooterButtonMouseLeave() {
+    setCursorText("");
+    setCursorVariant("default");
+  }
+
   return (
     <StyledCaseFooter
       initial="hidden"
@@ -68,7 +81,14 @@ function CaseFooter() {
     >
       <TitleAndText h={3} title="Let's get in touch" isPadded>
         <Paragraph>Found me interesting? Let’s talk</Paragraph>
-        <Button to="/contact">Get in touch</Button>
+
+        <Button
+          to="/contact"
+          onMouseEnter={() => caseFooterButtonMouseEnter()}
+          onMouseLeave={() => caseFooterButtonMouseLeave()}
+        >
+          Get in touch
+        </Button>
       </TitleAndText>
       <StyledLinksMenu>
         <Link href="https://www.linkedin.com/in/samuel-bergstr%C3%B6m-13bb8b1b/">

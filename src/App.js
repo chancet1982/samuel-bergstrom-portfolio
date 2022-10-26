@@ -2,7 +2,7 @@ import React, { Suspense, lazy } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { AnimatePresence } from "framer-motion";
-import AppContextProvider from "./Context/AppContext";
+import CursorContextProvider from "./Context/CursorContext";
 import ViewLoading from "./Components/Views/ViewLoading";
 import Navigation from "./Components/Navigation";
 import ErrorBoundary from "./Components/ErrorBoundary";
@@ -34,7 +34,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <ErrorBoundary>
-        <AppContextProvider>
+        <CursorContextProvider>
           <ViewColorContextProvider>
             <Navigation />
             <Suspense fallback={<ViewLoading />}>
@@ -52,7 +52,7 @@ function App() {
               </AnimatePresence>
             </Suspense>
           </ViewColorContextProvider>
-        </AppContextProvider>
+        </CursorContextProvider>
       </ErrorBoundary>
     </ThemeProvider>
   );

@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { motion, useIsPresent } from "framer-motion";
 import { ViewColorContext } from "../Context/ViewColorContext";
 import colors from "../theme/colors";
+import CustomCursor from "./CustomCursor";
 
 const StyledView = styled(motion.main)`
   ${({ $bgColor }) =>
@@ -44,6 +45,7 @@ function View({ children, bgColor }) {
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
       >
+        <CustomCursor />
         {children}
       </StyledView>
       <StyledRollUp

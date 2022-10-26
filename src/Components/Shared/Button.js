@@ -44,6 +44,8 @@ const StyledButton = styled(motion.button)`
 
 function Button({
   onClick,
+  onMouseEnter,
+  onMouseLeave,
   children,
   secondary,
   small,
@@ -67,7 +69,9 @@ function Button({
       $fluidType={fluidType}
       disabled={disabled}
       $secondary={secondary}
-      onClick={to ? () => navigate(to) : onClick}
+      onClick={to ? () => navigate(to) : onClick()}
+      onMouseEnter={() => onMouseEnter()}
+      onMouseLeave={() => onMouseLeave()}
       variants={formElementsVariants}
     >
       {children}
@@ -77,6 +81,8 @@ function Button({
 
 Button.propTypes = {
   onClick: PropTypes.func,
+  onMouseEnter: PropTypes.func,
+  onMouseLeave: PropTypes.func,
   children: PropTypes.string,
   secondary: PropTypes.bool,
   disabled: PropTypes.bool,
@@ -88,6 +94,8 @@ Button.propTypes = {
 
 Button.defaultProps = {
   onClick: null,
+  onMouseEnter: null,
+  onMouseLeave: null,
   children: "Submit",
   secondary: false,
   disabled: false,
