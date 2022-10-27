@@ -25,6 +25,7 @@ const StyledImageWithTitleAndText = styled(motion.div)`
   max-width: 1280px;
   margin: 0 auto;
   grid-template-areas: "a b";
+  padding: 0 ${padding.horizontal.double};
 `;
 
 const StyledImage = styled(motion.div)`

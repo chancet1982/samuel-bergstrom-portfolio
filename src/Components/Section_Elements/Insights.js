@@ -21,7 +21,6 @@ const StyledInsights = styled(motion.div)`
     max-width: ${sizes.contentWidthLimit}px;
     margin: 0 auto;
     padding: ${padding.vertical.double} ${padding.horizontal.double};
-    box-sizing: border-box;
   }
 `;
 

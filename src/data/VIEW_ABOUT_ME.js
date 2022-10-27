@@ -150,7 +150,6 @@ export const VIEW_ABOUT_ME = [
     ],
   },
   {
-    bgColor: colors.offwhite,
     header: "Clients",
     elements: [
       {

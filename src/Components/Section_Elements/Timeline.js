@@ -82,9 +82,13 @@ TimelineItemEvent.propTypes = {
 
 const StyledTimelineItem = styled(motion.dt)`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   padding-top: calc(${padding.vertical.double} - ${padding.vertical.half});
   padding-bottom: calc(${padding.vertical.double} - ${padding.vertical.half});
+
+  @media (min-width: ${breakpoints.mobileLarge}px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
 
   border-top: solid 1px
     ${({ light }) => (light ? colors.text.light.low : colors.text.dark.low)};
@@ -100,6 +104,7 @@ const StyledTimelineItem = styled(motion.dt)`
   }
 `;
 
+/* TODO: mobile styling for timeline isnt working */
 function TimelineItem({ year, events }) {
   return (
     <StyledTimelineItem

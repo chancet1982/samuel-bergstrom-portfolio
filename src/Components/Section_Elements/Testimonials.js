@@ -13,13 +13,16 @@ import pickRandom from "../../utils/pickRandom";
 import sizes from "../../theme/sizes";
 
 const StyledTestimonials = styled(motion.div)`
-  padding: ${padding.vertical.double} ${padding.horizontal.double};
-  box-sizing: border-box;
-  max-width: ${sizes.contentWidthLimit}px;
-  margin: 0 auto;
+  padding: 0 ${padding.horizontal.double};
+
+  @media (min-width: ${breakpoints.desktop}px) {
+    max-width: ${sizes.contentWidthLimit}px;
+    margin: 0 auto;
+    padding: ${padding.vertical.double} ${padding.horizontal.double};
+  }
 `;
 
-/* TODO: Try and figure out the nested inView animations */
+/* TODO: title and text need to be padding left and right */
 function Testimonials({ title, text }) {
   const { width } = useWindowSize();
   const isMobile = width < breakpoints.desktop;
