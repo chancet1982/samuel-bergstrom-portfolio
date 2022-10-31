@@ -31,12 +31,21 @@ const StyledTitleAndText = styled(motion.div)`
     }}
 `;
 
-function TitleAndText({ title, h, children, isSticky, isPadded, isCentered }) {
+function TitleAndText({
+  title,
+  h,
+  children,
+  isSticky,
+  isPadded,
+  isCentered,
+  style,
+}) {
   return (
     <StyledTitleAndText
       $isSticky={isSticky}
       $isPadded={isPadded}
       $isCentered={isCentered}
+      style={style}
     >
       {title && <Title h={h}>{title}</Title>}
       {children}
@@ -51,6 +60,7 @@ TitleAndText.propTypes = {
   isSticky: PropTypes.bool,
   isPadded: PropTypes.bool,
   isCentered: PropTypes.bool,
+  style: PropTypes.string,
 };
 
 TitleAndText.defaultProps = {
@@ -60,6 +70,7 @@ TitleAndText.defaultProps = {
   isSticky: false,
   isPadded: false,
   isCentered: false,
+  style: null,
 };
 
 export default TitleAndText;

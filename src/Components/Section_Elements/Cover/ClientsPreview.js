@@ -46,9 +46,9 @@ function ClientPreview() {
   /* TODO: Replace 5296 with clientPreviewWidth using useMeasure? https://github.com/streamich/react-use/blob/master/docs/useMeasure.md */
   const horizontalScroll = useTransform(x, [0, width], [0, -(5296 - width)]);
 
-  const { scrollY } = useScroll();
   const { height } = useWindowSize();
   const coverHeight = (height / 100) * 92;
+  const { scrollY } = useScroll();
 
   const clientPreviewPosition = useTransform(
     scrollY,

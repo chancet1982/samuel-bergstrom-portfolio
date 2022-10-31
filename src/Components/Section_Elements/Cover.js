@@ -4,7 +4,6 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
-
 import BgMedia from "./Cover/BgMedia";
 import Caption from "./Cover/Caption";
 import FgImage from "./Cover/FgImage";
@@ -12,6 +11,8 @@ import Highlights from "./Cover/Highlights";
 import ClientPreview from "./Cover/ClientsPreview";
 import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
 import sizes from "../../theme/sizes";
+import breakpoints from "../../theme/breakpoints";
+import padding from "../../theme/padding";
 
 const StyledCover = styled(motion.div)`
   height: ${sizes.xl};
@@ -23,6 +24,55 @@ const StyledCover = styled(motion.div)`
     $bgColor && {
       backgroundColor: $bgColor,
     }}
+`;
+
+const StyledCoverCaption = styled(motion.div)`
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  justify-content: center;
+  box-sizing: border-box;
+  padding-top: ${padding.vertical.double};
+  padding-left: ${padding.horizontal.quadruple};
+  padding-right: ${padding.horizontal.quadruple};
+  z-index: 1;
+  width: 100%;
+  background: linear-gradient(
+    72deg,
+    rgba(244, 244, 244, 0.8) 0%,
+    rgba(244, 244, 244, 0) 100%
+  );
+
+  h1 {
+    max-width: 15ch;
+    ${({ $h }) =>
+      $h === 0 && {
+        fontWeight: 900,
+      }}
+  }
+
+  p {
+    @media (max-width: ${breakpoints.mobileLarge - 1}px) {
+      max-width: 15ch;
+    }
+
+    @media (min-width: ${breakpoints.mobileLarge}px) and (max-width: ${breakpoints.tablet -
+      1}px) {
+      max-width: 20ch;
+    }
+
+    @media (min-width: ${breakpoints.tablet}px) {
+      max-width: 30ch;
+    }
+  }
+
+  @media (min-width: ${breakpoints.mobileLarge}px) {
+    justify-content: center;
+    padding-top: 0;
+  }
 `;
 
 const StyledCoverFooter = styled(motion.div)`
@@ -53,7 +103,19 @@ function Cover({ bgColor, bgMedia, caption, fgImage, highlights }) {
     },
   };
 
-  const coverBottomVariants = {
+  const coverCaptionVariants = {
+    hidden: { opacity: 0, y: 10 },
+    inView: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        delay: 1.7,
+        duration: 0.6,
+      },
+    },
+  };
+
+  const coverFooterVariants = {
     hidden: { opacity: 0, y: "100%", transition: { duration: 0.6 } },
     inView: {
       opacity: 1,
@@ -76,12 +138,14 @@ function Cover({ bgColor, bgMedia, caption, fgImage, highlights }) {
     >
       {bgMedia && <BgMedia type={bgMedia.type} mediaUrl={bgMedia.mediaUrl} />}
 
-      <Caption
-        overline={caption.overline}
-        title={caption.title}
-        text={caption.text}
-        h={caption.h}
-      />
+      <StyledCoverCaption variants={coverCaptionVariants}>
+        <Caption
+          overline={caption.overline}
+          title={caption.title}
+          text={caption.text}
+          h={caption.h}
+        />
+      </StyledCoverCaption>
 
       {fgImage && (
         <FgImage
@@ -91,7 +155,7 @@ function Cover({ bgColor, bgMedia, caption, fgImage, highlights }) {
         />
       )}
 
-      <StyledCoverFooter variants={coverBottomVariants}>
+      <StyledCoverFooter variants={coverFooterVariants}>
         {highlights ? <Highlights items={highlights} /> : <ClientPreview />}
       </StyledCoverFooter>
     </StyledCover>
