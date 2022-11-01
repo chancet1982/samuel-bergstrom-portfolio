@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable no-nested-ternary */
 import React from "react";
 import styled from "styled-components";
@@ -22,7 +23,8 @@ const StyledParagraph = styled(motion.p)`
   }
 `;
 
-function Paragraph({ small, large, xl, xxl, children }) {
+function Paragraph(props) {
+  const { small, large, xl, xxl, children } = props;
   const light = useBgColor();
 
   const mapSizeToNumber = () => {
@@ -40,6 +42,7 @@ function Paragraph({ small, large, xl, xxl, children }) {
       $light={light}
       $fluidType={fluidType}
       variants={textVariants}
+      {...props}
     >
       {children}
     </StyledParagraph>

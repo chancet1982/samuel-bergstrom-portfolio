@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -31,21 +32,14 @@ const StyledTitleAndText = styled(motion.div)`
     }}
 `;
 
-function TitleAndText({
-  title,
-  h,
-  children,
-  isSticky,
-  isPadded,
-  isCentered,
-  style,
-}) {
+function TitleAndText(props) {
+  const { title, h, children, isSticky, isPadded, isCentered } = props;
   return (
     <StyledTitleAndText
       $isSticky={isSticky}
       $isPadded={isPadded}
       $isCentered={isCentered}
-      style={style}
+      {...props}
     >
       {title && <Title h={h}>{title}</Title>}
       {children}
@@ -60,7 +54,6 @@ TitleAndText.propTypes = {
   isSticky: PropTypes.bool,
   isPadded: PropTypes.bool,
   isCentered: PropTypes.bool,
-  style: PropTypes.string,
 };
 
 TitleAndText.defaultProps = {
@@ -70,7 +63,6 @@ TitleAndText.defaultProps = {
   isSticky: false,
   isPadded: false,
   isCentered: false,
-  style: null,
 };
 
 export default TitleAndText;

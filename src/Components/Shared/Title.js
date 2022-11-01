@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable no-nested-ternary */
 import React from "react";
 import PropTypes from "prop-types";
@@ -55,7 +56,8 @@ export const StyledH5 = styled(motion.h5)`
 `;
 
 /* TODO: Headlines dont seem to support withMargins. It should be flipped and hasMargins */
-const Title = ({ h, children, withMargin }) => {
+const Title = (props) => {
+  const { h, children, withMargin } = props;
   const light = useBgColor();
 
   const fluidType = useFluidTypography(h, withMargin);
@@ -69,6 +71,7 @@ const Title = ({ h, children, withMargin }) => {
             h={0}
             $fluidType={fluidType}
             variants={textVariants}
+            {...props}
           >
             {children}
           </StyledH1>
@@ -80,6 +83,7 @@ const Title = ({ h, children, withMargin }) => {
             h={h}
             $fluidType={fluidType}
             variants={textVariants}
+            {...props}
           >
             {children}
           </StyledH1>
@@ -91,6 +95,7 @@ const Title = ({ h, children, withMargin }) => {
             h={h}
             $fluidType={fluidType}
             variants={textVariants}
+            {...props}
           >
             {children}
           </StyledH2>
@@ -102,6 +107,7 @@ const Title = ({ h, children, withMargin }) => {
             h={h}
             $fluidType={fluidType}
             variants={textVariants}
+            {...props}
           >
             {children}
           </StyledH3>
@@ -113,6 +119,7 @@ const Title = ({ h, children, withMargin }) => {
             h={h}
             $fluidType={fluidType}
             variants={textVariants}
+            {...props}
           >
             {children}
           </StyledH4>
@@ -124,6 +131,7 @@ const Title = ({ h, children, withMargin }) => {
             h={h}
             $fluidType={fluidType}
             variants={textVariants}
+            {...props}
           >
             {children}
           </StyledH5>

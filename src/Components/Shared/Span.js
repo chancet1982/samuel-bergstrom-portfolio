@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable no-nested-ternary */
 import React from "react";
 import PropTypes from "prop-types";
@@ -28,7 +29,8 @@ const StyledSpan = styled(motion.span)`
   }
 `;
 
-function Span({ small, large, xl, xxl, children, highContrast }) {
+function Span(props) {
+  const { small, large, xl, xxl, children, highContrast } = props;
   const light = useBgColor();
 
   const mapSizeToNumber = () => {
@@ -47,6 +49,7 @@ function Span({ small, large, xl, xxl, children, highContrast }) {
       $fluidType={fluidType}
       $highContrast={highContrast}
       variants={textVariants}
+      {...props}
     >
       {children}
     </StyledSpan>
