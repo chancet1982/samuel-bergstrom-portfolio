@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -7,10 +8,12 @@ const StyledLabel = styled.label`
   display: block;
 `;
 
-function Label({ children }) {
+function Label(props) {
+  const { children } = props;
+
   return (
     <StyledLabel>
-      <Span>{children}</Span>
+      <Span {...props}>{children}</Span>
     </StyledLabel>
   );
 }

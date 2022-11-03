@@ -30,8 +30,8 @@ const StyledSpan = styled(motion.span)`
 `;
 
 function Span(props) {
-  const { small, large, xl, xxl, children, highContrast } = props;
-  const light = useBgColor();
+  const { small, large, xl, xxl, children, highContrast, isLight } = props;
+  const light = useBgColor() || isLight;
 
   const mapSizeToNumber = () => {
     if (small) return 1;
@@ -63,6 +63,7 @@ Span.propTypes = {
   xxl: PropTypes.bool,
   children: PropTypes.node.isRequired,
   highContrast: PropTypes.bool,
+  isLight: PropTypes.bool,
 };
 
 Span.defaultProps = {
@@ -71,6 +72,7 @@ Span.defaultProps = {
   xl: false,
   xxl: false,
   highContrast: false,
+  isLight: false,
 };
 
 export default Span;

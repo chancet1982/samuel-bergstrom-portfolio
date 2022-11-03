@@ -1,8 +1,11 @@
 TODO list (What's left before you're done)
 Just updating todo
 FIXES:
-COVER -> Fix background circle to work in all resolutions.
-COVER -> Fix not loading the correct image always (mobile detection issue?).
+Fix Casethumbnail animation.
+Fix splash screen animation.
+Fix landing page cover animation.
+fIX CASE THUMBNAIL ANIMATION
+
 NAVIGATION -> wrong width when not transparent
 NAVIGATION -> add supprt for light text if desktop, nav doesnt have a background but the first item does (?)
 NAVIGATION -> Hide navigation while screen animation is playing. (nice to have)
@@ -35,7 +38,6 @@ CASE-4 -> Make a better flow image (flows.png)
 CASE-1 -> Fix better images so it works on mobile
 
 One day...
-TEXTBOX Replace current implementation of bgColor with BackgroundWrapper.
 Use Contentful for content.
 server side rendering using Next.js (?)
 

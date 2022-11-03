@@ -57,8 +57,8 @@ export const StyledH5 = styled(motion.h5)`
 
 /* TODO: Headlines dont seem to support withMargins. It should be flipped and hasMargins */
 const Title = (props) => {
-  const { h, children, withMargin } = props;
-  const light = useBgColor();
+  const { h, children, withMargin, isLight } = props;
+  const light = useBgColor() || isLight;
 
   const fluidType = useFluidTypography(h, withMargin);
 
@@ -148,11 +148,13 @@ Title.propTypes = {
   h: PropTypes.number,
   children: PropTypes.node.isRequired,
   withMargin: PropTypes.bool,
+  isLight: PropTypes.bool,
 };
 
 Title.defaultProps = {
   h: 1,
   withMargin: true,
+  isLight: false,
 };
 
 export default Title;

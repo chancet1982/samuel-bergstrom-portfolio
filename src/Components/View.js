@@ -8,6 +8,8 @@ import { ViewColorContext } from "../Context/ViewColorContext";
 import colors from "../theme/colors";
 import CustomCursor from "./CustomCursor";
 import breakpoints from "../theme/breakpoints";
+import SplashScreen from "./SplashScreen";
+import { SplashAnimationFinishedContext } from "../Context/SplashAnimationFinishedContext";
 
 const StyledView = styled(motion.main)`
   ${({ $bgColor }) =>
@@ -42,7 +44,11 @@ function View({ children, bgColor }) {
   const { width } = useWindowSize();
   const isDesktop = width >= breakpoints.desktop;
 
-  return (
+  const [animationFinished] = useContext(SplashAnimationFinishedContext);
+
+  return !animationFinished ? (
+    <SplashScreen />
+  ) : (
     <>
       <StyledView
         $bgColor={bgColor}
@@ -54,10 +60,10 @@ function View({ children, bgColor }) {
         {children}
       </StyledView>
       <StyledRollUp
-        initial={{ scaleX: 1 }}
-        animate={{ scaleX: 0, transition: { duration: 0.6, ease: "circOut" } }}
-        exit={{ scaleX: 1, transition: { duration: 0.6, ease: "circIn" } }}
-        style={{ originX: isPresent ? 0 : 1 }}
+        initial={{ scaleY: 1 }}
+        animate={{ scaleY: 0, transition: { duration: 0.6, ease: "circOut" } }}
+        exit={{ scaleY: 1, transition: { duration: 0.6, ease: "circIn" } }}
+        style={{ originY: isPresent ? 0 : 1 }}
       />
     </>
   );

@@ -11,8 +11,15 @@ import typography from "../../theme/typography";
 import { textVariants } from "../../animations/animations";
 
 const StyledParagraph = styled(motion.p)`
-  color: ${({ $light }) =>
-    $light ? colors.text.light.medium : colors.text.dark.medium};
+  color: ${({ $light, $highContrast }) =>
+    $light
+      ? $highContrast
+        ? colors.text.light.high
+        : colors.text.light.medium
+      : $highContrast
+      ? colors.text.dark.high
+      : colors.text.dark.medium};
+
   max-width: 80ch;
   ${({ $fluidType }) => $fluidType};
   font-family: ${typography.bodyFont};
@@ -24,8 +31,8 @@ const StyledParagraph = styled(motion.p)`
 `;
 
 function Paragraph(props) {
-  const { small, large, xl, xxl, children } = props;
-  const light = useBgColor();
+  const { small, large, xl, xxl, children, highContrast, isLight } = props;
+  const light = useBgColor() || isLight;
 
   const mapSizeToNumber = () => {
     if (small) return 1;
@@ -40,6 +47,7 @@ function Paragraph(props) {
   return (
     <StyledParagraph
       $light={light}
+      $highContrast={highContrast}
       $fluidType={fluidType}
       variants={textVariants}
       {...props}
@@ -55,6 +63,8 @@ Paragraph.propTypes = {
   xl: PropTypes.bool,
   xxl: PropTypes.bool,
   children: PropTypes.node.isRequired,
+  highContrast: PropTypes.bool,
+  isLight: PropTypes.bool,
 };
 
 Paragraph.defaultProps = {
@@ -62,6 +72,8 @@ Paragraph.defaultProps = {
   large: false,
   xl: false,
   xxl: false,
+  highContrast: false,
+  isLight: false,
 };
 
 export default Paragraph;
