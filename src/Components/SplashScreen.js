@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import styled from "styled-components";
 import { AnimatePresence, motion } from "framer-motion";
 import Title from "./Shared/Title";
@@ -23,12 +23,12 @@ const StyledSplashScreen = styled(motion.main)`
 function SplashScreen() {
   const clientList = [
     " ",
-    "Prisjakt",
-    "Mitsubishi",
-    "Nasdaq OMX",
-    "Fitness24Seven",
-    "Nordea",
-    " ",
+    " Prisjakt",
+    " Mitsubishi",
+    " Nasdaq OMX",
+    " Fitness24Seven",
+    " Nordea",
+    " Companies...",
   ];
 
   const [index, setIndex] = useState(0);
@@ -42,18 +42,23 @@ function SplashScreen() {
   }
 
   const animationDuration = interval * clientList.length;
-  const initlaAndExitAnimationDuration = 1000;
-  let clientsAnimationFinished = false;
+  const initlaAndExitAnimationDuration = 600 + 600;
+  const [clientsAnimationFinished, setClientsAnimationFinished] =
+    useState(false);
+
   const [, setAnimationFinished] = useContext(SplashAnimationFinishedContext);
 
-  setTimeout(() => {
-    clientsAnimationFinished = true;
-
+  useEffect(() => {
     setTimeout(() => {
-      // eslint-disable-next-line react/destructuring-assignment
-      setAnimationFinished(true);
-    }, initlaAndExitAnimationDuration);
-  }, animationDuration);
+      setClientsAnimationFinished(true);
+
+      setTimeout(() => {
+        // eslint-disable-next-line react/destructuring-assignment
+        setAnimationFinished(true);
+      }, initlaAndExitAnimationDuration);
+    }, animationDuration);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   const variants = {
     initial: {},
@@ -61,7 +66,7 @@ function SplashScreen() {
     clientsAnimationFinished: {},
   };
 
-  const pretextVariants = {
+  const staticTextVariants = {
     initial: {
       opacity: 0,
     },
@@ -70,6 +75,9 @@ function SplashScreen() {
     },
     clientsAnimationFinished: {
       opacity: 0,
+      transition: {
+        duration: 0.6,
+      },
     },
   };
 
@@ -88,32 +96,38 @@ function SplashScreen() {
     },
     clientsAnimationFinished: {
       opacity: 0,
-      y: "-100%",
       transition: {
-        y: { type: "spring", stiffness: 300, damping: 30 },
-        opacity: { duration: 0.2 },
+        duration: 0.6,
       },
     },
   };
 
   return (
-    <StyledSplashScreen
-      initial="initial"
-      animate={
-        clientsAnimationFinished ? "clientsAnimationFinished" : "animate"
-      }
-      variants={variants}
-    >
-      <Title h={1} withMargin={false} isLight variants={pretextVariants}>
-        Helped:{" "}
+    <StyledSplashScreen variants={variants}>
+      <Title
+        h={1}
+        withMargin={false}
+        isLight
+        initial="initial"
+        animate={
+          clientsAnimationFinished ? "clientsAnimationFinished" : "animate"
+        }
+        variants={staticTextVariants}
+      >
+        I Helped:
       </Title>
       <AnimatePresence initial={false} mode="wait">
         <Title
           h={1}
           isLight
+          initial="initial"
+          animate={
+            clientsAnimationFinished ? "clientsAnimationFinished" : "animate"
+          }
           variants={clientsNameVariants}
           key={clientList[index]}
           withMargin={false}
+          style={{ color: colors.primary }}
         >
           {clientList[index]}
         </Title>

@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 /* import PropTypes from "prop-types"; */
 import styled from "styled-components";
 import { Link, NavLink } from "react-router-dom";
@@ -12,6 +12,7 @@ import { ReactComponent as Logo } from "../assets/logo.svg";
 import colors from "../theme/colors";
 import typography from "../theme/typography";
 import useFluidTypography from "../utils/useHeadlinesFluidTypography";
+import { SplashAnimationFinishedContext } from "../Context/SplashAnimationFinishedContext";
 
 const StyledNavigation = styled(motion.nav)`
   height: 5.5rem;
@@ -236,7 +237,9 @@ function Navigation() {
 
   const fluidType = useFluidTypography(4, false);
 
-  return (
+  const [animationFinished] = useContext(SplashAnimationFinishedContext);
+
+  return animationFinished ? (
     <StyledNavigation
       $opaque={navState === "opaque"}
       initial="show"
@@ -298,7 +301,7 @@ function Navigation() {
         </StyledNavLink>
       </StyledMenu>
     </StyledNavigation>
-  );
+  ) : null;
 }
 
 Navigation.propTypes = {};
