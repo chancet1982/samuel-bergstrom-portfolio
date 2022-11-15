@@ -14,11 +14,6 @@ function Caption({ overline, title, text, h }) {
   const { scrollY } = useScroll();
   const effectRange = [0, coverHeight * 0.4];
 
-  const captionLetterSpacing = useTransform(scrollY, effectRange, [
-    "0rem",
-    "1rem",
-  ]);
-
   const captionLineHeight = useTransform(scrollY, effectRange, [1, 1.2]);
   const captionOpacity = useTransform(scrollY, effectRange, [1, 0]);
 
@@ -31,7 +26,6 @@ function Caption({ overline, title, text, h }) {
         style={{
           opacity: captionOpacity,
           lineHeight: captionLineHeight,
-          letterSpacing: captionLetterSpacing,
         }}
       >
         {text}

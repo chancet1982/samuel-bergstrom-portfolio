@@ -25,7 +25,7 @@ export const VIEW_LANDING_PAGE = [
                 <br /> Bergström
               </>
             ),
-            h: 0,
+            h: 1,
             text: (
               <>
                 <Paragraph xxl>
