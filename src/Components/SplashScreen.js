@@ -32,7 +32,7 @@ function SplashScreen() {
   ];
 
   const [index, setIndex] = useState(0);
-  const interval = 1000;
+  const interval = 1200;
 
   // eslint-disable-next-line no-plusplus
   for (let i = 0; i < clientList.length; i++) {
@@ -94,6 +94,14 @@ function SplashScreen() {
         opacity: { duration: 0.2 },
       },
     },
+    exit: {
+      opacity: 0,
+      y: "-100%",
+      transition: {
+        y: { type: "spring", stiffness: 300, damping: 30 },
+        opacity: { duration: 0.2 },
+      },
+    },
     clientsAnimationFinished: {
       opacity: 0,
       transition: {
@@ -124,6 +132,7 @@ function SplashScreen() {
           animate={
             clientsAnimationFinished ? "clientsAnimationFinished" : "animate"
           }
+          exit="exit"
           variants={clientsNameVariants}
           key={clientList[index]}
           withMargin={false}

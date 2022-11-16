@@ -3,13 +3,13 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import Tag from "./Tag";
-import { CursorContext } from "../../Context/CursorContext";
-import { CASE_STATUS } from "../../data/dictionaries/CASE_STATUS";
-import Paragraph from "./Paragraph";
-import TitleAndText from "./TitleAndText";
-import padding from "../../theme/padding";
-import colors from "../../theme/colors";
+import Tag from "../../Shared/Tag";
+import { CursorContext } from "../../../Context/CursorContext";
+import { CASE_STATUS } from "../../../data/dictionaries/CASE_STATUS";
+import Paragraph from "../../Shared/Paragraph";
+import TitleAndText from "../../Shared/TitleAndText";
+import padding from "../../../theme/padding";
+import colors from "../../../theme/colors";
 
 /* TODO: CaseThumbnail gets bgColor which isnt used. Make sure to clean up. */
 const StyledCaseThumbnail = styled(motion.div)`

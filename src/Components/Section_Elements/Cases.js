@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
-import CaseThumbnail2 from "../Shared/CaseThumbnail2";
+import CaseThumbnail from "./Cases/CaseThumbnail";
 import { CASES } from "../../data/dictionaries/CASES";
 import breakpoints from "../../theme/breakpoints";
 import sizes from "../../theme/sizes";
@@ -40,7 +40,7 @@ function SectionCases({ preview }) {
             ? caseStatus === CASE_STATUS.FEATURED
             : caseStatus !== CASE_STATUS.DRAFT
         ).map(({ thumbnail, caseStatus, caseUrl }) => (
-          <CaseThumbnail2
+          <CaseThumbnail
             key={caseUrl}
             data={thumbnail}
             caseUrl={caseUrl}
