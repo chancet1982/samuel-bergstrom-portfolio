@@ -29,7 +29,6 @@ const ViewPageNotFound = lazy(() =>
   import("./Components/Views/ViewPageNotFound")
 );
 
-// TODO: (later) animatePrecense not having an effect AFAIK
 function App() {
   const location = useLocation();
   return (
