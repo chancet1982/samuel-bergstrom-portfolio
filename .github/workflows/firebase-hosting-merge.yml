@@ -23,3 +23,4 @@ jobs:
           projectId: samuel-bergstrom-portfolio
         env:
           FIREBASE_CLI_PREVIEWS: hostingchannels
+          CI: false
