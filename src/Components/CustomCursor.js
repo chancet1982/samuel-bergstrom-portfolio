@@ -74,7 +74,7 @@ function CustomCursor() {
     },
     contact: {
       opacity: 1,
-      backgroundColor: "#FFBCBC",
+      backgroundColor: colors.primaryShade,
       color: "#000",
       height: 64,
       width: 64,
