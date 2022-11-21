@@ -64,7 +64,7 @@ function CustomCursor() {
     },
     project: {
       opacity: 1,
-      backgroundColor: colors.offwhite,
+      backgroundColor: "#ffffff",
       color: colors.text.light.high,
       height: 80,
       width: 80,

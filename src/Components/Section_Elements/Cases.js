@@ -20,7 +20,8 @@ const StyledCases = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   column-gap: ${padding.vertical.eighth};
-  row-gap: ${padding.vertical.double};
+  row-gap: ${padding.vertical.quadruple};
+  padding: 0 ${padding.horizontal.double};
   padding-bottom: ${({ $preview }) =>
     $preview ? padding.vertical.single : padding.vertical.quadruple};
 
