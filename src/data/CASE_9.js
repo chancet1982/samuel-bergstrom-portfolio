@@ -13,7 +13,6 @@ import Title from "../Components/Shared/Title";
 
 /* TODO: Final result looks like shit for desktop products (Perhaps use the Fitness24Seven solution) */
 /* TODO: cover fgImage is missing mobile image URL */
-/* TODO: Figure out why highlights arent working for this case */
 
 const SETTINGS = {
   BG_COLOR: "#00ADDB",
