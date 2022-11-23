@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { Link, NavLink } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useWindowScroll, useWindowSize } from "react-use";
+import PropTypes from "prop-types";
 import { useScrollDirection } from "../utils/useScrollDirection";
 import breakpoints from "../theme/breakpoints";
 import padding from "../theme/padding";
@@ -18,7 +19,8 @@ const StyledNavigation = styled(motion.nav)`
   height: 5.5rem;
   position: fixed;
   top: 0;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: ${({ $isLight }) =>
+    $isLight ? "rgba(0, 0, 0, 0)" : "rgba(255, 255, 255, 0)"};
   width: 100%;
   padding-left: ${padding.horizontal.quadruple};
   padding-right: ${padding.horizontal.quadruple};
@@ -29,9 +31,9 @@ const StyledNavigation = styled(motion.nav)`
 
   /* TODO: when the navigation is NOT opaque all underlying NavLinks need to be "light" */
 
-  ${({ $opaque }) =>
+  ${({ $opaque, $isLight }) =>
     $opaque && {
-      backgroundColor: "rgba(255, 255, 255, 1)",
+      backgroundColor: $isLight ? "rgba(0, 0, 0, 1)" : "rgba(255, 255, 255, 1)",
       boxShadow: "0 1px 16px rgba(0,0,0,0.16)",
     }};
 
@@ -104,16 +106,19 @@ const StyledNavLink = styled(NavLink)`
 
   @media (min-width: ${breakpoints.desktop}px) {
     padding: 0.75rem 1.25rem;
-    color: ${colors.text.dark.medium};
+    color: ${({ $isLight }) =>
+      $isLight ? colors.text.light.medium : colors.text.dark.medium};
 
     transition: all 0.5s !important;
 
     &:hover {
-      color: ${colors.text.dark.high};
+      color: ${({ $isLight }) =>
+        $isLight ? colors.text.light.high : colors.text.dark.high};
     }
 
     &.active {
-      color: ${colors.text.dark.high};
+      color: ${({ $isLight }) =>
+        $isLight ? colors.text.light.high : colors.text.dark.high};
     }
   }
 `;
@@ -138,7 +143,8 @@ const StyledMenuToggler = styled(motion.a)`
     border-radius: 2px;
     width: 32px;
     margin: 0 auto;
-    background: ${colors.text.dark.high};
+    background: ${({ $isLight }) =>
+      $isLight ? colors.text.light.high : colors.text.dark.high};
     border-radius: 9px;
     opacity: 1;
     left: 0;
@@ -186,7 +192,7 @@ const StyledMenuToggler = styled(motion.a)`
   }
 `;
 
-function Navigation() {
+function Navigation({ isLight }) {
   const { width } = useWindowSize();
   const isDesktop = width >= breakpoints.desktop;
 
@@ -242,6 +248,7 @@ function Navigation() {
   return animationFinished ? (
     <StyledNavigation
       $opaque={navState === "opaque"}
+      $isLight={isLight}
       initial="show"
       animate={
         scrollDirection === "down" && (isDesktop || (!expanded && !isDesktop))
@@ -257,7 +264,11 @@ function Navigation() {
       </StyledLogo>
 
       {!isDesktop && (
-        <StyledMenuToggler onClick={menuTogglerClick} $expanded={expanded}>
+        <StyledMenuToggler
+          onClick={menuTogglerClick}
+          $expanded={expanded}
+          $isLight={isLight}
+        >
           <span />
           <span />
           <span />
@@ -272,6 +283,7 @@ function Navigation() {
       >
         <StyledNavLink
           $fluidType={fluidType}
+          $isLight={isLight}
           to="/"
           onClick={menuTogglerClick}
           end
@@ -280,6 +292,7 @@ function Navigation() {
         </StyledNavLink>
         <StyledNavLink
           $fluidType={fluidType}
+          $isLight={isLight}
           to="/about"
           onClick={menuTogglerClick}
         >
@@ -287,6 +300,7 @@ function Navigation() {
         </StyledNavLink>
         <StyledNavLink
           $fluidType={fluidType}
+          $isLight={isLight}
           to="/cases"
           onClick={menuTogglerClick}
         >
@@ -294,6 +308,7 @@ function Navigation() {
         </StyledNavLink>
         <StyledNavLink
           $fluidType={fluidType}
+          $isLight={isLight}
           to="/contact"
           onClick={menuTogglerClick}
         >
@@ -304,6 +319,12 @@ function Navigation() {
   ) : null;
 }
 
-Navigation.propTypes = {};
+Navigation.propTypes = {
+  isLight: PropTypes.bool,
+};
+
+Navigation.defaultProps = {
+  isLight: false,
+};
 
 export default Navigation;
