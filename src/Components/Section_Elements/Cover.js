@@ -42,8 +42,8 @@ const StyledCoverCaption = styled(motion.div)`
   width: 100%;
   background: linear-gradient(
     72deg,
-    rgba(244, 244, 244, 0.8) 0%,
-    rgba(244, 244, 244, 0) 100%
+    rgba(244, 244, 244, 0.64) 0%,
+    rgba(244, 244, 244, 0) 64%
   );
 
   h1 {
