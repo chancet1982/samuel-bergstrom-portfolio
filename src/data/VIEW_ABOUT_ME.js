@@ -44,22 +44,23 @@ export const VIEW_ABOUT_ME = [
   },
   {
     bgColor: colors.primaryShade,
-    header: "Why Sam?",
     elements: [
       {
         template: SECTION_ELEMENTS.TEXTBOX,
         data: {
-          isCentered: true,
-          listTitle: "Why Sam?",
+          title: (
+            <>
+              Why <mark>Sam</mark>?.
+            </>
+          ),
         },
       },
       {
-        template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
+        template: SECTION_ELEMENTS.LIST_OF_CARDS,
         data: {
           items: [
             {
-              imageUrl: "assets/designer.png",
-              imageAlt: "Designer",
+              mediaUrl: "assets/designer.png",
               title: "Designer",
               text: (
                 <>
@@ -79,8 +80,7 @@ export const VIEW_ABOUT_ME = [
               ),
             },
             {
-              imageUrl: "assets/speaker.png",
-              imageAlt: "Holding a lecture about accessibility",
+              mediaUrl: "assets/speaker.png",
               title: "Speaker & Mentor",
               text: (
                 <>
@@ -105,8 +105,7 @@ export const VIEW_ABOUT_ME = [
               ),
             },
             {
-              imageUrl: "assets/facilitator.png",
-              imageAlt: "Service blueprinting workshop I did",
+              mediaUrl: "assets/facilitator.png",
               title: "Facilitator",
               text: (
                 <Paragraph>
@@ -117,8 +116,7 @@ export const VIEW_ABOUT_ME = [
               ),
             },
             {
-              imageUrl: "assets/engineer.png",
-              imageAlt: "Did I mention I am a unicorn?",
+              mediaUrl: "assets/engineer.png",
               title: "Engineer",
               text: (
                 <Paragraph>
@@ -133,8 +131,7 @@ export const VIEW_ABOUT_ME = [
               ),
             },
             {
-              imageUrl: "assets/father.png",
-              imageAlt: "2 adorable monsters",
+              mediaUrl: "assets/father.png",
               title: "Father",
               text: (
                 <Paragraph>
@@ -150,7 +147,6 @@ export const VIEW_ABOUT_ME = [
     ],
   },
   {
-    header: "Clients",
     elements: [
       {
         template: SECTION_ELEMENTS.TEXTBOX,
@@ -170,7 +166,6 @@ export const VIEW_ABOUT_ME = [
     ],
   },
   {
-    header: "Testimonials",
     elements: [
       {
         template: SECTION_ELEMENTS.TESTIMONIALS,
@@ -181,7 +176,6 @@ export const VIEW_ABOUT_ME = [
     ],
   },
   {
-    header: "My story",
     elements: [
       {
         template: SECTION_ELEMENTS.TEXTBOX,
@@ -361,7 +355,6 @@ export const VIEW_ABOUT_ME = [
     ],
   },
   {
-    header: "Education",
     elements: [
       {
         template: SECTION_ELEMENTS.TEXTBOX,
@@ -395,7 +388,6 @@ export const VIEW_ABOUT_ME = [
     ],
   },
   {
-    header: "Pizza",
     elements: [
       {
         template: SECTION_ELEMENTS.TEXTBOX,

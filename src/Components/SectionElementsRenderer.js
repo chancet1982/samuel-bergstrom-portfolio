@@ -23,6 +23,7 @@ import ElementColorContextProvider from "../Context/ElementColorContext";
 import ContactDetails from "./Section_Elements/ContactDetails";
 import Insights from "./Section_Elements/Insights";
 import SectionVideo from "./Section_Elements/SectionVideo";
+import ListOfCards from "./Section_Elements/ListOfCards";
 
 function SectionElementsRenderer({ elementKey, data, template }) {
   if (!template) {
@@ -147,6 +148,12 @@ function SectionElementsRenderer({ elementKey, data, template }) {
       return (
         <ElementColorContextProvider>
           <ListOfImagesWithTitleAndText key={elementKey} items={data.items} />
+        </ElementColorContextProvider>
+      );
+    case SECTION_ELEMENTS.LIST_OF_CARDS:
+      return (
+        <ElementColorContextProvider>
+          <ListOfCards key={elementKey} items={data.items} />
         </ElementColorContextProvider>
       );
     case SECTION_ELEMENTS.VIDEO:

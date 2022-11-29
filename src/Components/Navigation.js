@@ -1,11 +1,9 @@
 /* eslint-disable no-nested-ternary */
 import React, { useEffect, useState, useContext } from "react";
-/* import PropTypes from "prop-types"; */
 import styled from "styled-components";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useWindowScroll, useWindowSize } from "react-use";
-import PropTypes from "prop-types";
 import { useScrollDirection } from "../utils/useScrollDirection";
 import breakpoints from "../theme/breakpoints";
 import padding from "../theme/padding";
@@ -14,13 +12,14 @@ import colors from "../theme/colors";
 import typography from "../theme/typography";
 import useFluidTypography from "../utils/useHeadlinesFluidTypography";
 import { SplashAnimationFinishedContext } from "../Context/SplashAnimationFinishedContext";
+import { NavBgColorContext } from "../Context/NavBgColorContext";
+import { CursorContext } from "../Context/CursorContext";
 
 const StyledNavigation = styled(motion.nav)`
   height: 5.5rem;
   position: fixed;
   top: 0;
-  background-color: ${({ $isLight }) =>
-    $isLight ? "rgba(0, 0, 0, 0)" : "rgba(255, 255, 255, 0)"};
+  background-color: transparent;
   width: 100%;
   padding-left: ${padding.horizontal.quadruple};
   padding-right: ${padding.horizontal.quadruple};
@@ -29,11 +28,10 @@ const StyledNavigation = styled(motion.nav)`
   display: flex;
   justify-content: space-between;
 
-  /* TODO: when the navigation is NOT opaque all underlying NavLinks need to be "light" */
-
-  ${({ $opaque, $isLight }) =>
-    $opaque && {
-      backgroundColor: $isLight ? "rgba(0, 0, 0, 1)" : "rgba(255, 255, 255, 1)",
+  ${({ $opaque, $navBgColor }) =>
+    $opaque &&
+    $navBgColor && {
+      backgroundColor: $navBgColor,
       boxShadow: "0 1px 16px rgba(0,0,0,0.16)",
     }};
 
@@ -92,7 +90,6 @@ const StyledNavLink = styled(NavLink)`
     display: block;
     padding: 0 3vw;
     flex: 1;
-    /*height: calc(25vh - 11rem / 4);*/
     line-height: calc(25vh - 11rem / 4);
     width: 100%;
     text-align: center;
@@ -192,13 +189,37 @@ const StyledMenuToggler = styled(motion.a)`
   }
 `;
 
-function Navigation({ isLight }) {
+function Navigation() {
+  const [, setCursorText, , setCursorVariant] = useContext(CursorContext);
+  const [navBgColor, setNavBgColor] = useContext(NavBgColorContext);
+
   const { width } = useWindowSize();
   const isDesktop = width >= breakpoints.desktop;
 
   const scrollDirection = useScrollDirection();
 
   const [expanded, setExpanded] = useState(false);
+  const [isLight, setIsLight] = useState(false);
+  const location = useLocation();
+
+  /* TODO: Resetting bgColor on navigation does not work when leaving a case to a different page (might be a sequencing issue) */
+  // Resetting things..
+  useEffect(() => {
+    setNavBgColor(colors.offwhite);
+    setCursorText("");
+    setCursorVariant("default");
+  }, [location, setNavBgColor, setCursorText, setCursorVariant]);
+
+  useEffect(() => {
+    // eslint-disable-next-line no-unused-expressions
+    setIsLight !== null &&
+      setIsLight(
+        navBgColor !== null &&
+          navBgColor !== colors.offwhite &&
+          navBgColor !== colors.primaryShade
+      );
+  }, [setIsLight, navBgColor]);
+
   const [navState, setNavState] = useState("transparent");
   const { y } = useWindowScroll();
 
@@ -210,7 +231,7 @@ function Navigation({ isLight }) {
     } else if (navState !== "transparent") {
       setNavState("transparent");
     }
-  }, [navState, y]);
+  }, [navState, y, setNavState]);
 
   useEffect(() => {
     setExpanded(!!isDesktop);
@@ -248,6 +269,7 @@ function Navigation({ isLight }) {
   return animationFinished ? (
     <StyledNavigation
       $opaque={navState === "opaque"}
+      $navBgColor={navBgColor}
       $isLight={isLight}
       initial="show"
       animate={
@@ -318,13 +340,5 @@ function Navigation({ isLight }) {
     </StyledNavigation>
   ) : null;
 }
-
-Navigation.propTypes = {
-  isLight: PropTypes.bool,
-};
-
-Navigation.defaultProps = {
-  isLight: false,
-};
 
 export default Navigation;

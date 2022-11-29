@@ -69,7 +69,7 @@ function Button({
       $fluidType={fluidType}
       disabled={disabled}
       $secondary={secondary}
-      onClick={to ? () => navigate(to) : onClick ? onClick() : null}
+      onClick={to ? () => navigate(to) : onClick ? () => onClick() : null}
       onMouseEnter={() => onMouseEnter()}
       onMouseLeave={() => onMouseLeave()}
       variants={formElementsVariants}

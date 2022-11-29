@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -9,6 +9,7 @@ import Paragraph from "../Shared/Paragraph";
 import padding from "../../theme/padding";
 import colors from "../../theme/colors";
 import sizes from "../../theme/sizes";
+import Button from "../Shared/Button";
 
 const StyledTimeline = styled(motion.dl)`
   display: grid;
@@ -81,6 +82,7 @@ TimelineItemEvent.propTypes = {
 };
 
 const StyledTimelineItem = styled(motion.dt)`
+  position: relative;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   padding-top: calc(${padding.vertical.double} - ${padding.vertical.half});
@@ -96,6 +98,24 @@ const StyledTimelineItem = styled(motion.dt)`
   :last-of-type {
     border-bottom: solid 1px
       ${({ light }) => (light ? colors.text.light.low : colors.text.dark.low)};
+
+    ::after {
+      content: "";
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      right: 0;
+      height: 100%;
+      ${({ $isPreview }) =>
+        $isPreview && {
+          background: `linear-gradient(
+        0deg,
+        rgba(244, 244, 244, 1) 0%,
+        rgba(244, 244, 244, 0.8) 30%,
+        rgba(244, 244, 244, 0) 100%
+      )`,
+        }}
+    }
   }
   > div {
     display: flex;
@@ -105,13 +125,14 @@ const StyledTimelineItem = styled(motion.dt)`
 `;
 
 /* TODO: mobile styling for timeline isnt working */
-function TimelineItem({ year, events }) {
+function TimelineItem({ year, events, isPreview }) {
   return (
     <StyledTimelineItem
       initial="hidden"
       whileInView="inView"
       viewport={{ once: true, amount: 0.2 }}
       transition={{ staggerChildren: 0.2 }}
+      $isPreview={isPreview}
     >
       <TimelineItemYear>{year}</TimelineItemYear>
       <StyledTimelineItemEvents>
@@ -135,16 +156,26 @@ TimelineItem.propTypes = {
       content: PropTypes.string.isRequired,
     })
   ).isRequired,
+  isPreview: PropTypes.bool.isRequired,
 };
 
-/* TODO: Collapse timeline based on number of items */
-/* TODO: Try and figure out the nested inView animations */
 function Timeline({ items }) {
+  const [isPreview, togglePreview] = useState(true);
+  const timelineItems = isPreview ? items.slice(0, 3) : items;
+
   return (
     <StyledTimeline>
-      {items.map(({ year, events }) => (
-        <TimelineItem key={year} year={year} events={events} />
+      {timelineItems.map(({ year, events }) => (
+        <TimelineItem
+          key={year}
+          year={year}
+          events={events}
+          isPreview={isPreview}
+        />
       ))}
+      <Button onClick={() => togglePreview(!isPreview)}>
+        {isPreview ? "Expand" : "Collapse"}
+      </Button>
     </StyledTimeline>
   );
 }

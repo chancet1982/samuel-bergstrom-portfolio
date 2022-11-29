@@ -2,8 +2,6 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import React from "react";
 import PropTypes from "prop-types";
-import Span from "../../Shared/Span";
-import Title from "../../Shared/Title";
 import { authorImageVariants } from "../../../animations/animations";
 
 const StyledTestimonialAuthor = styled(motion.figure)`
@@ -22,27 +20,19 @@ const StyledAuthorImage = styled(motion.img)`
   filter: grayscale(100%);
 `;
 
-const StyledAuthorName = styled(motion.figcaption)``;
-
-function TestimonialAuthor({ authorName, authorTitle, authorImageUrl }) {
+function TestimonialAuthor({ authorImageUrl }) {
   return (
     <StyledTestimonialAuthor>
       <StyledAuthorImage
         src={authorImageUrl}
-        alt={authorTitle}
+        alt={authorImageUrl}
         variants={authorImageVariants}
       />
-      <StyledAuthorName>
-        <Title h={5}>{authorName}</Title>
-        <Span>{authorTitle}</Span>
-      </StyledAuthorName>
     </StyledTestimonialAuthor>
   );
 }
 
 TestimonialAuthor.propTypes = {
-  authorName: PropTypes.string.isRequired,
-  authorTitle: PropTypes.string.isRequired,
   authorImageUrl: PropTypes.string.isRequired,
 };
 

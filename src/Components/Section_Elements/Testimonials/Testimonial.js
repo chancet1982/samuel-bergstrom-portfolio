@@ -4,110 +4,62 @@ import styled from "styled-components";
 import PropTypes from "prop-types";
 import padding from "../../../theme/padding";
 import colors from "../../../theme/colors";
-import breakpoints from "../../../theme/breakpoints";
+// import breakpoints from "../../../theme/breakpoints";
+import sizes from "../../../theme/sizes";
 import TestimonialAuthor from "./TestimonialAuthor";
+import Span from "../../Shared/Span";
 
 const StyledTestimonial = styled(motion.div)`
-  @media (min-width: ${breakpoints.tablet}px) {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-  }
-
-  margin-bottom: ${padding.vertical.single};
-  background-color: ${colors.primaryShade};
-  border-radius: ${padding.vertical.single};
-  padding: 1px;
-
-  > div {
-    position: relative;
-    flex-direction: column;
-    justify-content: center;
-
-    :before {
-      content: "";
-      width: 0;
-      height: 0;
-      position: absolute;
-    }
-  }
-
-  :nth-of-type(2n + 1) {
-    @media (max-width: ${breakpoints.tablet - 1}px) {
-      > div {
-        border-radius: 0 2rem 2rem 2rem;
-
-        ::before {
-          left: 0;
-          top: -2rem;
-          border: solid 1rem;
-          border-color: transparent transparent white white;
-        }
-      }
-    }
-
-    @media (min-width: ${breakpoints.tablet}px) {
-      grid-template-areas: "a b b b b";
-
-      > div {
-        border-radius: 2rem 2rem 2rem 0;
-
-        ::before {
-          left: -2rem;
-          bottom: 0;
-          border: solid 1rem;
-          border-color: transparent white white transparent;
-        }
-      }
-    }
-  }
-
-  :nth-of-type(2n + 2) {
-    @media (max-width: ${breakpoints.tablet - 1}px) {
-      > div {
-        border-radius: 2rem 0 2rem 2rem;
-
-        ::before {
-          right: 0;
-          top: -2rem;
-          border: solid 1rem;
-          border-color: transparent white white transparent;
-        }
-      }
-    }
-
-    @media (min-width: ${breakpoints.tablet}px) {
-      grid-template-areas: "b b b b a";
-
-      > div {
-        border-radius: 2rem 2rem 0 2rem;
-        position: relative;
-
-        ::before {
-          right: -2rem;
-          bottom: 0;
-          border: solid 1rem;
-          border-color: transparent transparent white white;
-        }
-      }
-    }
-  }
-
-  > figure {
-    grid-area: a;
-  }
-  > div {
-    grid-area: b;
-  }
+  max-width: ${sizes.contentWidthLimit}px;
+  margin: 0 auto;
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  margin-bottom: ${padding.vertical.double};
 `;
 
 const StyledTestimonialContent = styled(motion.div)`
-  padding: ${padding.vertical.single} ${padding.horizontal.double};
-  background-color: white;
-  display: flex;
-  align-items: center;
+  position: relative;
+  font-style: italic;
+  display: block;
+  max-width: 64ch;
+  padding: ${padding.vertical.half} ${padding.horizontal.double};
+
+  p {
+    :last-of-type {
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  :after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 2vw; /* TODO: replace magic number */
+    height: 100%;
+    width: 2px;
+    background-color: ${({ $light }) =>
+      $light ? colors.text.light.low : colors.text.dark.low};
+  }
+`;
+
+const StyledTestimonialAuthor = styled(motion.div)`
+  display: block;
+
+  :before {
+    display: inline-block;
+    content: "-";
+    width: 1rem;
+    margin-left: -1rem;
+    color: ${({ $light }) =>
+      $light ? colors.text.light.low : colors.text.dark.low};
+  }
 `;
 
 function Testimonial({ children, author }) {
+  const { authorName, authorTitle, authorImageUrl } = author;
+
   const testimonialVariants = {
     hidden: {
       opacity: 0,
@@ -134,12 +86,13 @@ function Testimonial({ children, author }) {
       }}
       variants={testimonialVariants}
     >
-      <TestimonialAuthor
-        authorName={author.authorName}
-        authorTitle={author.authorTitle}
-        authorImageUrl={author.authorImageUrl}
-      />
-      <StyledTestimonialContent>{children}</StyledTestimonialContent>
+      <TestimonialAuthor authorImageUrl={authorImageUrl} />
+      <StyledTestimonialContent>
+        {children}
+        <StyledTestimonialAuthor>
+          <Span small>{`${authorName}, ${authorTitle}`}</Span>
+        </StyledTestimonialAuthor>
+      </StyledTestimonialContent>
     </StyledTestimonial>
   );
 }

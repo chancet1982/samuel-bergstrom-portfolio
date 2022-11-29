@@ -12,6 +12,7 @@ export const SECTION_ELEMENTS = {
   TESTIMONIALS: "testimonials",
   SIDE_BY_SIDE_IMAGES_AND_TEXT: "sideBySideImagesAndText",
   LIST_OF_IMAGES_WITH_TITLE_AND_TEXT: "listOfImagesWithTitleAndText",
+  LIST_OF_CARDS: "listOfCards",
   RESULT: "result",
   TIMELINE: "timeline",
   SOCIAL_MEDIA_LINKS: "socialmedialinks",

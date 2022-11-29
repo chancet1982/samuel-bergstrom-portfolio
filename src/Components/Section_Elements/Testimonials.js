@@ -1,9 +1,8 @@
 import { motion } from "framer-motion";
 import styled from "styled-components";
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { v4 as uuid } from "uuid";
-import { useWindowSize } from "react-use";
 import TitleAndText from "../Shared/TitleAndText";
 import { TESTIMONIALS } from "../../data/dictionaries/TESTIMONIALS";
 import padding from "../../theme/padding";
@@ -11,6 +10,7 @@ import Testimonial from "./Testimonials/Testimonial";
 import breakpoints from "../../theme/breakpoints";
 import pickRandom from "../../utils/pickRandom";
 import sizes from "../../theme/sizes";
+import Button from "../Shared/Button";
 
 const StyledTestimonials = styled(motion.div)`
   padding: 0 ${padding.horizontal.double};
@@ -22,10 +22,11 @@ const StyledTestimonials = styled(motion.div)`
   }
 `;
 
+/* TODO: update style of testimonial to be more minimalistic and to match the style of quotes */
 /* TODO: title and text need to be padding left and right */
 function Testimonials({ title, text }) {
-  const { width } = useWindowSize();
-  const isMobile = width < breakpoints.desktop;
+  const [isPreview, togglePreview] = useState(true);
+  const testimonials = isPreview ? pickRandom(TESTIMONIALS, 3) : TESTIMONIALS;
 
   return (
     <StyledTestimonials>
@@ -41,17 +42,14 @@ function Testimonials({ title, text }) {
           {text}
         </TitleAndText>
       )}
-      {isMobile
-        ? pickRandom(TESTIMONIALS, 3).map(({ author, content }) => (
-            <Testimonial key={uuid()} author={author}>
-              {content}
-            </Testimonial>
-          ))
-        : TESTIMONIALS.map(({ author, content }) => (
-            <Testimonial key={uuid()} author={author}>
-              {content}
-            </Testimonial>
-          ))}
+      {testimonials.map(({ author, content }) => (
+        <Testimonial key={uuid()} author={author}>
+          {content}
+        </Testimonial>
+      ))}
+      <Button onClick={() => togglePreview(!isPreview)}>
+        {isPreview ? "Expand" : "Collapse"}
+      </Button>
     </StyledTestimonials>
   );
 }

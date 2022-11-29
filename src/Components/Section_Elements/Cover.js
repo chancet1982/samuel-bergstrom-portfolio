@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable no-nested-ternary */
-import React from "react";
+import React, { useEffect, useContext, useRef } from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import PropTypes from "prop-types";
 import BgMedia from "./Cover/BgMedia";
 import Caption from "./Cover/Caption";
@@ -13,6 +13,9 @@ import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
 import sizes from "../../theme/sizes";
 import breakpoints from "../../theme/breakpoints";
 import padding from "../../theme/padding";
+import { ElementColorContext } from "../../Context/ElementColorContext";
+import colors from "../../theme/colors";
+import { NavBgColorContext } from "../../Context/NavBgColorContext";
 
 const StyledCover = styled(motion.div)`
   height: ${sizes.xl};
@@ -41,9 +44,18 @@ const StyledCoverCaption = styled(motion.div)`
   z-index: 1;
   width: 100%;
   background: linear-gradient(
-    72deg,
+    ${({ $isLight }) =>
+      !$isLight
+        ? `
+      72deg,
     rgba(244, 244, 244, 0.64) 0%,
     rgba(244, 244, 244, 0) 64%
+      `
+        : `
+      72deg,
+    rgba(0, 0, 0, 0.64) 0%,
+    rgba(0, 0, 0, 0) 64%
+      `}
   );
 
   h1 {
@@ -81,16 +93,45 @@ const StyledCoverFooter = styled(motion.div)`
   left: 0;
   right: 0;
   background: linear-gradient(
-    0deg,
+    ${({ $isLight }) =>
+      !$isLight
+        ? `0deg,
     rgba(244, 244, 244, 1) 0%,
     rgba(244, 244, 244, 0.3) 50%,
-    rgba(244, 244, 244, 0) 100%
+    rgba(244, 244, 244, 0) 100%`
+        : `0deg,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0.3) 50%,
+    rgba(0, 0, 0, 0) 100%`}
   );
   z-index: 1;
 `;
 
-/* TODO: Highlights vanish on scroll (they shouldnt) */
+/* TOOD: clean up client logos on landing page. */
+/* TODO: better cover image for landing page */
+
 function Cover({ bgColor, bgMedia, caption, fgImage, highlights }) {
+  const ref = useRef(null);
+  const isInView = useInView(ref);
+  const [light, setLight] = useContext(ElementColorContext);
+  const [, setNavBgColor] = useContext(NavBgColorContext);
+
+  useEffect(() => {
+    setLight(
+      bgColor !== null &&
+        bgColor !== colors.offwhite &&
+        bgColor !== colors.primaryShade
+    );
+  }, [setLight, bgColor]);
+
+  useEffect(() => {
+    if (isInView && bgColor !== colors.offwhite) {
+      setNavBgColor(bgColor);
+    } else {
+      setNavBgColor(colors.offwhite);
+    }
+  }, [isInView, setNavBgColor, bgColor]);
+
   const coverVariants = {
     hidden: {
       opacity: 0,
@@ -135,10 +176,11 @@ function Cover({ bgColor, bgMedia, caption, fgImage, highlights }) {
       whileInView="inView"
       viewport={{ once: true, amount: 0.2 }}
       transition={{ staggerChildren: 0.2 }}
+      ref={ref}
     >
       {bgMedia && <BgMedia type={bgMedia.type} mediaUrl={bgMedia.mediaUrl} />}
 
-      <StyledCoverCaption variants={coverCaptionVariants}>
+      <StyledCoverCaption variants={coverCaptionVariants} $isLight={light}>
         <Caption
           overline={caption.overline}
           title={caption.title}
@@ -155,7 +197,7 @@ function Cover({ bgColor, bgMedia, caption, fgImage, highlights }) {
         />
       )}
 
-      <StyledCoverFooter variants={coverFooterVariants}>
+      <StyledCoverFooter variants={coverFooterVariants} $isLight={light}>
         {highlights ? <Highlights items={highlights} /> : <ClientPreview />}
       </StyledCoverFooter>
     </StyledCover>
