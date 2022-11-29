@@ -95,14 +95,8 @@ const StyledCoverFooter = styled(motion.div)`
   background: linear-gradient(
     ${({ $isLight }) =>
       !$isLight
-        ? `0deg,
-    rgba(244, 244, 244, 1) 0%,
-    rgba(244, 244, 244, 0.3) 50%,
-    rgba(244, 244, 244, 0) 100%`
-        : `0deg,
-    rgba(0, 0, 0, 1) 0%,
-    rgba(0, 0, 0, 0.3) 50%,
-    rgba(0, 0, 0, 0) 100%`}
+        ? `0deg, rgba(244, 244, 244, 1) 0%, rgba(244, 244, 244, 0.3) 50%, rgba(244, 244, 244, 0) 100%`
+        : `0deg, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0.08) 50%, rgba(0,0,0,0) 100%`}
   );
   z-index: 1;
 `;

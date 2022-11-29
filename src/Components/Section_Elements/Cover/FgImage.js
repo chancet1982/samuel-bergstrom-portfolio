@@ -10,6 +10,8 @@ const StyledFgImage = styled(motion.img)`
   position: absolute;
   max-height: 92vh;
   right: 0;
+  left: 50%;
+  transform-origin: center;
 `;
 
 function FgImage({ imageUrl, mobileImageUrl, imageAlt }) {
