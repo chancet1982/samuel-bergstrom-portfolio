@@ -11,6 +11,11 @@ const StyledCard = styled(motion.div)`
   background-color: white;
   border-radius: 0.5rem;
   scroll-snap-align: start;
+  position: relative;
+  box-sizing: border-box;
+  min-height: 260px;
+  border-radius: 20px;
+  box-shadow: 5px 5px 10px rgb(0 0 0 / 5%);
 `;
 
 const StyledCardMedia = styled(motion.div)`
@@ -27,7 +32,7 @@ const StyledCardContent = styled(motion.div)`
 function Card({ title, text, mediaUrl }) {
   return (
     <StyledCard>
-      <StyledCardMedia $mediaUrl={mediaUrl} />
+      {mediaUrl && <StyledCardMedia $mediaUrl={mediaUrl} />}
       <StyledCardContent>
         <TitleAndText title={title} h={4}>
           {text}

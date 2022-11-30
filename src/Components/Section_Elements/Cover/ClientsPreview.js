@@ -13,9 +13,10 @@ const StyledClientsPreview = styled(motion.div)`
   object-fit: fill;
   object-position: 50% 50%;
 
-  > div {
-    width: 150px;
-  }
+  /* TODO: replace client logos size with clamp function */
+  /*> img {
+    width: clamp(120px, 50%, 180px);
+  }*/
 `;
 
 function ClientPreview() {

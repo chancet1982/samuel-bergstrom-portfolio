@@ -63,45 +63,31 @@ export const VIEW_ABOUT_ME = [
               mediaUrl: "assets/designer.png",
               title: "Designer",
               text: (
-                <>
-                  <Paragraph>
-                    15 years of industry experience as UX/UI Designer.
-                    Throughout the years I worked in both product companies and
-                    as an external consultant. Working with clients from all
-                    sizes from small companies to well-known brands with primary
-                    focus on eCommerce, Finance. and healthcare.
-                  </Paragraph>
-                  <Paragraph>
-                    Certified UXC, by NNg and an uber-nerd, I have a tendency to
-                    keep expanding my knowledge, lately I sparked an interest
-                    for Behavioural Design
-                  </Paragraph>
-                </>
+                <Paragraph>
+                  Seasoned designer with 15 years of experience working in-house
+                  and as external consultant with clients from all sizes.
+                  Currently leading a team of 20 designers.
+                </Paragraph>
+              ),
+            },
+            {
+              mediaUrl: "assets/Mentor.png",
+              title: "Mentor",
+              text: (
+                <Paragraph>
+                  Active mentor in ADPList and ECUtbildning, sharing my
+                  knowledge with the community.
+                </Paragraph>
               ),
             },
             {
               mediaUrl: "assets/speaker.png",
-              title: "Speaker & Mentor",
+              title: "Speaker",
               text: (
-                <>
-                  <Paragraph>
-                    Public speaking? No problem. I held both internal and
-                    extanal talks sharing my experiences with hundrads of
-                    people.
-                  </Paragraph>
-                  <Paragraph>
-                    For me, speaking in-front of an audience is just another
-                    excuse to learn more about the a topic. Throughout the years
-                    I held talked for different audiences from C-level
-                    executives to Students.
-                  </Paragraph>
-                  <Paragraph>
-                    Some of the talks I did: “Inclusive design, beyond the 80%”,
-                    “UX Research Methods”, “Microcopy, how to make better
-                    products without writing a single line of code?”, and
-                    “Practical Design systems” to name a few.
-                  </Paragraph>
-                </>
+                <Paragraph>
+                  Held talks, both virtual and in-person for different audiences
+                  from C-level executives to hundrads of Students.
+                </Paragraph>
               ),
             },
             {
@@ -120,13 +106,9 @@ export const VIEW_ABOUT_ME = [
               title: "Engineer",
               text: (
                 <Paragraph>
-                  One of 2 designers (that I actually know) that is an educated
-                  engineer. I will not pretend I am a great developer, At best,
-                  I am decent. I was good enough to get hired but never good
-                  enough to be great. I simply lacked the passion I have for
-                  design. Knowing how to code helps me communicate better with
-                  developers, helps me create designs that are implementable and
-                  I better understand the implications of my design choices.
+                  Educated engineer, I can code. More importantly, I can
+                  communicate better with developers and create designs that are
+                  implementable.
                 </Paragraph>
               ),
             },

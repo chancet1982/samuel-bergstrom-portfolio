@@ -1,33 +1,98 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { useWindowSize } from "react-use";
 import Card from "./ListOfCards/Card";
 import breakpoints from "../../theme/breakpoints";
 import sizes from "../../theme/sizes";
 import padding from "../../theme/padding";
 
 const StyledListOfCards = styled(motion.div)`
-  display: flex;
-  align-items: stretch;
   @media (min-width: ${breakpoints.desktop}px) {
     max-width: ${sizes.contentWidthLimit}px;
     margin: 0 auto;
   }
-  scroll-snap-type: x mandatory;
+`;
+
+const StyledList = styled(motion.ul)`
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  width: max-content;
+`;
+
+const StyledListItem = styled(motion.li)`
+  width: ${({ $listItemWidth }) => $listItemWidth};
+  min-width: ${({ $listItemWidth }) => $listItemWidth};
+
+  margin-right: ${padding.horizontal.single};
+  display: flex;
 
   > div {
-    margin-right: ${padding.horizontal.single};
+    align-items: stretch;
   }
 `;
 
+const StyledListNavigationButtons = styled(motion.div)``;
+const StyledListButton = styled(motion.button)``;
 /* TODO: add side scrolling with Framer motion https://codesandbox.io/s/framer-motion-2-scrollable-drag-constraints-lsonq?file=/src/App.js */
+/* TODO: Make sure card animation is animated  */
+/* TODO: Make sure that when "Next" card is pressed it is moving things it never goes outside available range. */
+/* TODO: replace listWidth magic number with useMeasrure */
 function ListOfCards({ items }) {
+  const numberOfColumns = 3;
+  const [listOffset, setListOffset] = useState(0);
+
+  const { width } = useWindowSize();
+  const cardMarginRight = (width / 100) * 2; // Should be equal to 2VWs
+
+  const listItemWidth =
+    (sizes.contentWidthLimit - cardMarginRight * (numberOfColumns - 1)) /
+    numberOfColumns;
+
+  const listWidth = 2662.31; // Replace magic number with a better solution
+  const moveList = (offset) => {
+    console.log("listOffset: ", listOffset + offset);
+    console.log(
+      "AvailableRange: ",
+      listWidth + (width - sizes.contentWidthLimit) / 2 - width
+    );
+    setListOffset(listOffset + offset);
+  };
+
   return (
     <StyledListOfCards>
-      {items.map(({ mediaUrl, title, text }) => (
-        <Card mediaUrl={mediaUrl} title={title} text={text} key={mediaUrl} />
-      ))}
+      <StyledList style={{ x: listOffset }}>
+        {items.map(({ mediaUrl, title, text }) => (
+          <StyledListItem $listItemWidth={`${listItemWidth}px`}>
+            <Card
+              mediaUrl={mediaUrl}
+              title={title}
+              text={text}
+              key={mediaUrl}
+            />
+          </StyledListItem>
+        ))}
+      </StyledList>
+      <StyledListNavigationButtons>
+        <StyledListButton
+          onClick={() => moveList(listItemWidth)}
+          disabled={-listOffset < (width - sizes.contentWidthLimit) / 2}
+        >
+          Previous
+        </StyledListButton>
+        <StyledListButton
+          onClick={() => moveList(-listItemWidth)}
+          disabled={
+            -listOffset >
+            listWidth + (width - sizes.contentWidthLimit) / 2 - width
+          }
+        >
+          Next
+        </StyledListButton>
+      </StyledListNavigationButtons>
     </StyledListOfCards>
   );
 }
