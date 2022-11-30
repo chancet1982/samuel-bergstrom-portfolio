@@ -55,14 +55,13 @@ function ListOfCards({ items }) {
 
   const { width } = useWindowSize();
   const cardMarginRight = (width / 100) * 2; // Should be equal to 2VWs
-
   const listItemWidth =
     (sizes.contentWidthLimit - cardMarginRight * (numberOfColumns - 1)) /
     numberOfColumns;
-
   const listWidth = 2611.13; // Replace magic number with a better solution
-  const availableRange =
-    listWidth + (width - sizes.contentWidthLimit) / 2 - width;
+  const initialListOffset = (width - sizes.contentWidthLimit) / 2;
+  const availableRange = listWidth + initialListOffset - width;
+
   const moveList = (offset) => {
     setListOffset(listOffset + offset);
   };
@@ -84,7 +83,7 @@ function ListOfCards({ items }) {
       <StyledListNavigationButtons>
         <StyledListButton
           onClick={() => moveList(listItemWidth)}
-          disabled={(width - sizes.contentWidthLimit) / 2 + listOffset >= 0}
+          disabled={initialListOffset + listOffset >= 0}
         >
           Previous
         </StyledListButton>
