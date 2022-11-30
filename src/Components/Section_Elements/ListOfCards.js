@@ -61,11 +61,9 @@ function ListOfCards({ items }) {
     numberOfColumns;
 
   const listWidth = 2611.13; // Replace magic number with a better solution
-  const AvailableRange =
+  const availableRange =
     listWidth + (width - sizes.contentWidthLimit) / 2 - width;
   const moveList = (offset) => {
-    console.log("listOffset: ", listOffset + offset);
-    console.log("AvailableRange: ", AvailableRange);
     setListOffset(listOffset + offset);
   };
 
@@ -92,7 +90,7 @@ function ListOfCards({ items }) {
         </StyledListButton>
         <StyledListButton
           onClick={() => moveList(-listItemWidth)}
-          disabled={AvailableRange + listOffset <= 0}
+          disabled={availableRange + listOffset <= 0}
         >
           Next
         </StyledListButton>
