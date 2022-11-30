@@ -47,6 +47,7 @@ const StyledListButton = styled(motion.button)``;
 /* TODO: replace listWidth magic number with useMeasrure */
 /* TODO: Make sure number of columns changes for mobile (1) table (2) and desktop (3) */
 /* TODO: Add left adn right gutters to the cardlist */
+/* TODO: Update design for list navigation buttons  */
 
 function ListOfCards({ items }) {
   const numberOfColumns = 3; // Update to work on mobile as well
@@ -60,12 +61,11 @@ function ListOfCards({ items }) {
     numberOfColumns;
 
   const listWidth = 2611.13; // Replace magic number with a better solution
+  const AvailableRange =
+    listWidth + (width - sizes.contentWidthLimit) / 2 - width;
   const moveList = (offset) => {
     console.log("listOffset: ", listOffset + offset);
-    console.log(
-      "AvailableRange: ",
-      listWidth + (width - sizes.contentWidthLimit) / 2 - width
-    );
+    console.log("AvailableRange: ", AvailableRange);
     setListOffset(listOffset + offset);
   };
 
@@ -86,16 +86,13 @@ function ListOfCards({ items }) {
       <StyledListNavigationButtons>
         <StyledListButton
           onClick={() => moveList(listItemWidth)}
-          disabled={-listOffset < (width - sizes.contentWidthLimit) / 2}
+          disabled={(width - sizes.contentWidthLimit) / 2 + listOffset >= 0}
         >
           Previous
         </StyledListButton>
         <StyledListButton
           onClick={() => moveList(-listItemWidth)}
-          disabled={
-            -listOffset >
-            listWidth + (width - sizes.contentWidthLimit) / 2 - width
-          }
+          disabled={AvailableRange + listOffset <= 0}
         >
           Next
         </StyledListButton>
