@@ -30,6 +30,10 @@ const StyledListItem = styled(motion.li)`
   margin-right: ${padding.horizontal.single};
   display: flex;
 
+  :last-of-type {
+    margin-right: 0;
+  }
+
   > div {
     align-items: stretch;
   }
@@ -41,8 +45,11 @@ const StyledListButton = styled(motion.button)``;
 /* TODO: Make sure card animation is animated  */
 /* TODO: Make sure that when "Next" card is pressed it is moving things it never goes outside available range. */
 /* TODO: replace listWidth magic number with useMeasrure */
+/* TODO: Make sure number of columns changes for mobile (1) table (2) and desktop (3) */
+/* TODO: Add left adn right gutters to the cardlist */
+
 function ListOfCards({ items }) {
-  const numberOfColumns = 3;
+  const numberOfColumns = 3; // Update to work on mobile as well
   const [listOffset, setListOffset] = useState(0);
 
   const { width } = useWindowSize();
@@ -52,7 +59,7 @@ function ListOfCards({ items }) {
     (sizes.contentWidthLimit - cardMarginRight * (numberOfColumns - 1)) /
     numberOfColumns;
 
-  const listWidth = 2662.31; // Replace magic number with a better solution
+  const listWidth = 2611.13; // Replace magic number with a better solution
   const moveList = (offset) => {
     console.log("listOffset: ", listOffset + offset);
     console.log(
