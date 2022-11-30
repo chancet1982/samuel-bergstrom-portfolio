@@ -15,7 +15,7 @@ const StyledTestimonial = styled(motion.div)`
   position: relative;
   box-sizing: border-box;
   display: flex;
-  margin-bottom: ${padding.vertical.double};
+  padding: ${padding.vertical.double} ${padding.horizontal.double};
 `;
 
 const StyledTestimonialContent = styled(motion.div)`
