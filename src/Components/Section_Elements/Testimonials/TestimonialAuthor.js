@@ -3,6 +3,7 @@ import styled from "styled-components";
 import React from "react";
 import PropTypes from "prop-types";
 import { authorImageVariants } from "../../../animations/animations";
+import padding from "../../../theme/padding";
 
 const StyledTestimonialAuthor = styled(motion.figure)`
   display: flex;
@@ -10,6 +11,8 @@ const StyledTestimonialAuthor = styled(motion.figure)`
   text-align: center;
   align-items: stretch;
   justify-content: center;
+  margin: 0;
+  padding-left: ${padding.horizontal.double};
 `;
 
 const StyledAuthorImage = styled(motion.img)`
