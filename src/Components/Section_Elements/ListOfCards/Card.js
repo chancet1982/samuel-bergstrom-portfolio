@@ -25,7 +25,6 @@ const StyledCardMedia = styled(motion.div)`
 `;
 
 const StyledCardContent = styled(motion.div)`
-  background-color: white;
   padding: ${padding.vertical.double} ${padding.horizontal.double};
 `;
 

@@ -60,7 +60,6 @@ export const VIEW_ABOUT_ME = [
         data: {
           items: [
             {
-              mediaUrl: "assets/designer.png",
               title: "Designer",
               text: (
                 <Paragraph>
@@ -71,7 +70,6 @@ export const VIEW_ABOUT_ME = [
               ),
             },
             {
-              mediaUrl: "assets/Mentor.png",
               title: "Mentor",
               text: (
                 <Paragraph>
@@ -81,7 +79,6 @@ export const VIEW_ABOUT_ME = [
               ),
             },
             {
-              mediaUrl: "assets/speaker.png",
               title: "Speaker",
               text: (
                 <Paragraph>
@@ -91,7 +88,6 @@ export const VIEW_ABOUT_ME = [
               ),
             },
             {
-              mediaUrl: "assets/facilitator.png",
               title: "Facilitator",
               text: (
                 <Paragraph>
@@ -102,7 +98,6 @@ export const VIEW_ABOUT_ME = [
               ),
             },
             {
-              mediaUrl: "assets/engineer.png",
               title: "Engineer",
               text: (
                 <Paragraph>
@@ -113,7 +108,6 @@ export const VIEW_ABOUT_ME = [
               ),
             },
             {
-              mediaUrl: "assets/father.png",
               title: "Father",
               text: (
                 <Paragraph>

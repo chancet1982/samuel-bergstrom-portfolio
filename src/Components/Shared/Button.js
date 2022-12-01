@@ -37,6 +37,11 @@ const StyledButton = styled(motion.button)`
     box-shadow: none;
   }
 
+  :disabled {
+    opacity: 0.3;
+    box-shadow: none !important;
+  }
+
   > a {
     text-decoration: none !important;
   }
@@ -83,7 +88,7 @@ Button.propTypes = {
   onClick: PropTypes.func,
   onMouseEnter: PropTypes.func,
   onMouseLeave: PropTypes.func,
-  children: PropTypes.string,
+  children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   secondary: PropTypes.bool,
   disabled: PropTypes.bool,
   small: PropTypes.bool,

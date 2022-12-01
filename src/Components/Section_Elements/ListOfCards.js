@@ -7,9 +7,12 @@ import Card from "./ListOfCards/Card";
 import breakpoints from "../../theme/breakpoints";
 import sizes from "../../theme/sizes";
 import padding from "../../theme/padding";
+import Button from "../Shared/Button";
+import { ReactComponent as CaretRight } from "../../assets/caret-right.svg";
+import { ReactComponent as CaretLeft } from "../../assets/caret-left.svg";
+import colors from "../../theme/colors";
 
 const StyledListOfCards = styled(motion.div)`
-  position: relative;
   padding: 0 4vw;
 
   @media (min-width: ${breakpoints.desktop}px) {
@@ -44,14 +47,36 @@ const StyledListItem = styled(motion.li)`
   }
 `;
 
-const StyledListNavigationButtons = styled(motion.div)``;
-const StyledListButton = styled(motion.button)`
-  padding: 1rem 1.5rem;
+const StyledListNavigationButtons = styled(motion.div)`
+  position: absolute;
+  bottom: 8rem;
+  left: 0;
+  width: 100%;
+  height: 400px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: ${padding.horizontal.single};
+  padding-right: ${padding.horizontal.single};
+  box-sizing: border-box;
+
+  > button {
+    border-radius: 50%;
+    overflow: hidden;
+    line-height: 0;
+    margin: 0;
+    padding: 1rem;
+
+    > svg {
+      width: 24px;
+      height: 24px;
+      fill: ${colors.primary};
+    }
+  }
 `;
+
 /* TODO: add side scrolling with Framer motion https://codesandbox.io/s/framer-motion-2-scrollable-drag-constraints-lsonq?file=/src/App.js */
-/* TODO: replace listWidth magic number with useMeasrure */
 /* TODO: Make sure number of columns changes for mobile (1) table (2) and desktop (3) */
-/* TODO: Update design for list navigation buttons  */
 
 function ListOfCards({ items }) {
   const numberOfColumns = 3; // Update to work on mobile as well
@@ -94,7 +119,9 @@ function ListOfCards({ items }) {
     <StyledListOfCards>
       {styledList}
       <StyledListNavigationButtons>
-        <StyledListButton
+        <Button
+          xl
+          secondary
           onClick={() =>
             moveList(
               -(listOffset + initialListOffset) <= listItemWidth
@@ -104,9 +131,12 @@ function ListOfCards({ items }) {
           }
           disabled={initialListOffset + listOffset >= 0}
         >
-          Previous
-        </StyledListButton>
-        <StyledListButton
+          <CaretLeft />
+        </Button>
+
+        <Button
+          xl
+          secondary
           onClick={() =>
             moveList(
               availableRange + listOffset <= listItemWidth
@@ -116,8 +146,8 @@ function ListOfCards({ items }) {
           }
           disabled={availableRange + listOffset <= 0}
         >
-          Next
-        </StyledListButton>
+          <CaretRight />
+        </Button>
       </StyledListNavigationButtons>
     </StyledListOfCards>
   );

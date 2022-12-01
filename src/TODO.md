@@ -1,28 +1,21 @@
 TODO list (What's left before you're done)
-Just updating todo
-FIXES:
-Fix Casethumbnail animation.
-Fix splash screen animation.
-Fix landing page cover animation.
-fIX CASE THUMBNAIL ANIMATION
 
+FIXES:
+NAVIGATION -> Going from any case to "cases" or "about" the navigation doesnt change background color.
 NAVIGATION -> wrong width when not transparent
-NAVIGATION -> add supprt for light text if desktop, nav doesnt have a background but the first item does (?)
-NAVIGATION -> Hide navigation while screen animation is playing. (nice to have)
 IMAGE_GALLERY -> Images overflow the screen area on smaller screens.
 Fix vertical alignment - mobile
 ADDITIONAL_CASES (mobile) -> Fix height
-CASES (mobile) -> Fix text width
 FinalResult -> need better covers (case 9, 10)
-Cases -> with or without padding?
-Cases -> Padding under text shouldnt be there...
 
 FEATURES & IMPROVEMENTS:
-COVER_CAPTION: Add "back" button
-ABOUT ME -> Fix smaller images to use circular image and cliping path instead.
-TESTIMONIALS -> Looks rather bland. perhaps needs some love.
+COVER_CAPTION: Add "back" button (In cases)
+ABOUT ME -> make buttons consistant.
+ABOUT ME -> timeline is too broad (not sure why).
+ABOUT ME -> Testimonials author image is too far left.
+LANDING PAGE -> Cover client logos preview (change size and update the total width using the solution for list of cards in the about me page)
+
 ListOfImagesWithTitleAndText -> add support for background color on items only. not entire list.
-ListOfImagesWithTitleAndText -> goes to single column too soon. should keep have columns on tablets too.
 
 Add password protection to cases
 cleanup limitMaxWidth & bgColor props to be used only where relevant
