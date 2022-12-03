@@ -56,7 +56,7 @@ export const StyledH5 = styled(motion.h5)`
 `;
 
 /* TODO: Headlines dont seem to support withMargins. It should be flipped and hasMargins */
-function Title({ h, children, withMargin, isLight, style }) {
+function Title({ h, children, withMargin, isLight, ...rest }) {
   const light = useBgColor() || isLight;
 
   const fluidType = useFluidTypography(h, withMargin);
@@ -70,7 +70,7 @@ function Title({ h, children, withMargin, isLight, style }) {
             h={0}
             $fluidType={fluidType}
             variants={textVariants}
-            style={style}
+            {...rest}
           >
             {children}
           </StyledH1>
@@ -82,7 +82,7 @@ function Title({ h, children, withMargin, isLight, style }) {
             h={h}
             $fluidType={fluidType}
             variants={textVariants}
-            style={style}
+            {...rest}
           >
             {children}
           </StyledH1>
@@ -94,7 +94,7 @@ function Title({ h, children, withMargin, isLight, style }) {
             h={h}
             $fluidType={fluidType}
             variants={textVariants}
-            style={style}
+            {...rest}
           >
             {children}
           </StyledH2>
@@ -106,7 +106,7 @@ function Title({ h, children, withMargin, isLight, style }) {
             h={h}
             $fluidType={fluidType}
             variants={textVariants}
-            style={style}
+            {...rest}
           >
             {children}
           </StyledH3>
@@ -118,7 +118,7 @@ function Title({ h, children, withMargin, isLight, style }) {
             h={h}
             $fluidType={fluidType}
             variants={textVariants}
-            style={style}
+            {...rest}
           >
             {children}
           </StyledH4>
@@ -130,7 +130,7 @@ function Title({ h, children, withMargin, isLight, style }) {
             h={h}
             $fluidType={fluidType}
             variants={textVariants}
-            style={style}
+            {...rest}
           >
             {children}
           </StyledH5>
@@ -143,14 +143,11 @@ function Title({ h, children, withMargin, isLight, style }) {
   return children ? renderTitle() : null;
 }
 
-/* TODO: look at how style is applied in the spash screen to fix this */
 Title.propTypes = {
   h: PropTypes.number,
   children: PropTypes.node,
   withMargin: PropTypes.bool,
   isLight: PropTypes.bool,
-  // eslint-disable-next-line react/forbid-prop-types
-  style: PropTypes.object,
 };
 
 Title.defaultProps = {
@@ -158,7 +155,6 @@ Title.defaultProps = {
   children: null,
   withMargin: true,
   isLight: false,
-  style: null,
 };
 
 export default Title;
