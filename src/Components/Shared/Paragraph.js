@@ -30,8 +30,16 @@ const StyledParagraph = styled(motion.p)`
   }
 `;
 
-function Paragraph(props) {
-  const { small, large, xl, xxl, children, highContrast, isLight } = props;
+function Paragraph({
+  small,
+  large,
+  xl,
+  xxl,
+  children,
+  highContrast,
+  isLight,
+  style,
+}) {
   const light = useBgColor() || isLight;
 
   const mapSizeToNumber = () => {
@@ -50,7 +58,7 @@ function Paragraph(props) {
       $highContrast={highContrast}
       $fluidType={fluidType}
       variants={textVariants}
-      {...props}
+      style={style}
     >
       {children}
     </StyledParagraph>
@@ -65,6 +73,7 @@ Paragraph.propTypes = {
   children: PropTypes.node.isRequired,
   highContrast: PropTypes.bool,
   isLight: PropTypes.bool,
+  style: PropTypes.string,
 };
 
 Paragraph.defaultProps = {
@@ -74,6 +83,7 @@ Paragraph.defaultProps = {
   xxl: false,
   highContrast: false,
   isLight: false,
+  style: null,
 };
 
 export default Paragraph;

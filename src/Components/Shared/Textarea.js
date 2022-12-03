@@ -13,12 +13,12 @@ const StyledTextarea = styled(motion.textarea)`
   display: block;
   width: fill-available;
   border-radius: 0.25rem;
-  line-height: ${({ small, large }) =>
-    small ? lh + inc : large ? lh - inc : lh};
+  line-height: ${({ $small, $large }) =>
+    $small ? lh + inc : $large ? lh - inc : lh};
   border: solid 0.125rem ${colors.darkgray};
   font-family: ${typography.bodyFont};
-  font-size: ${({ small, large, xl }) =>
-    small ? size / 1.2 : large ? size * 1.2 : xl ? size * 1.618 : size}rem;
+  font-size: ${({ $small, $large, $xl }) =>
+    $small ? size / 1.2 : $large ? size * 1.2 : $xl ? size * 1.618 : size}rem;
   color: ${colors.text.dark.high};
   padding: 0.5rem;
   resize: none;
@@ -43,9 +43,9 @@ function Textarea({ name, rows, columns, required, small, large, xl }) {
       columns={columns}
       required={required}
       onChange={required ? handleChange : null}
-      small={small}
-      large={large}
-      xl={xl}
+      $small={small}
+      $large={large}
+      $xl={xl}
       variants={formElementsVariants}
     />
   );

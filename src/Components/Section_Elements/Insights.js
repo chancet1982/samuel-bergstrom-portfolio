@@ -72,10 +72,7 @@ function Insights({ title, h, items, bgColor, isTwoColumnsOnDesktop, text }) {
       <TitleAndText h={h} title={title} isPadded>
         {text && text}
       </TitleAndText>
-      <StyledInsightsContent
-        $isTwoColumnsOnDesktop={isTwoColumnsOnDesktop}
-        isPadded
-      >
+      <StyledInsightsContent $isTwoColumnsOnDesktop={isTwoColumnsOnDesktop}>
         {convertRawInsightsToElements()}
       </StyledInsightsContent>
     </StyledInsights>

@@ -28,7 +28,6 @@ function SplashScreen() {
     " Nasdaq OMX",
     " Fitness24Seven",
     " Nordea",
-    " Companies...",
   ];
 
   const [index, setIndex] = useState(0);

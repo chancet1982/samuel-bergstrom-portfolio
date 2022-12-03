@@ -29,8 +29,16 @@ const StyledSpan = styled(motion.span)`
   }
 `;
 
-function Span(props) {
-  const { small, large, xl, xxl, children, highContrast, isLight } = props;
+function Span({
+  small,
+  large,
+  xl,
+  xxl,
+  children,
+  highContrast,
+  isLight,
+  style,
+}) {
   const light = useBgColor() || isLight;
 
   const mapSizeToNumber = () => {
@@ -49,7 +57,7 @@ function Span(props) {
       $fluidType={fluidType}
       $highContrast={highContrast}
       variants={textVariants}
-      {...props}
+      style={style}
     >
       {children}
     </StyledSpan>
@@ -64,6 +72,7 @@ Span.propTypes = {
   children: PropTypes.node.isRequired,
   highContrast: PropTypes.bool,
   isLight: PropTypes.bool,
+  style: PropTypes.string,
 };
 
 Span.defaultProps = {
@@ -73,6 +82,7 @@ Span.defaultProps = {
   xxl: false,
   highContrast: false,
   isLight: false,
+  style: null,
 };
 
 export default Span;

@@ -1,4 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
 /* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 import PropTypes from "prop-types";
@@ -55,6 +54,7 @@ SectionVideo.propTypes = {
   width: PropTypes.string,
   height: PropTypes.string,
   source: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
   captions: PropTypes.any,
 };
 

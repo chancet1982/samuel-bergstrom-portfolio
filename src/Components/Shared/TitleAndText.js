@@ -32,21 +32,29 @@ const StyledTitleAndText = styled(motion.div)`
     }}
 `;
 
-function TitleAndText(props) {
-  const { title, h, children, isSticky, isPadded, isCentered } = props;
+function TitleAndText({
+  title,
+  h,
+  children,
+  isSticky,
+  isPadded,
+  isCentered,
+  style,
+}) {
   return (
     <StyledTitleAndText
       $isSticky={isSticky}
       $isPadded={isPadded}
       $isCentered={isCentered}
-      {...props}
+      style={style}
     >
       {title && <Title h={h}>{title}</Title>}
-      {children}
+      {children && children}
     </StyledTitleAndText>
   );
 }
 
+/* TODO: look at how style is applied in the spash screen to fix this */
 TitleAndText.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
@@ -54,6 +62,8 @@ TitleAndText.propTypes = {
   isSticky: PropTypes.bool,
   isPadded: PropTypes.bool,
   isCentered: PropTypes.bool,
+  // eslint-disable-next-line react/forbid-prop-types
+  style: PropTypes.object,
 };
 
 TitleAndText.defaultProps = {
@@ -63,6 +73,7 @@ TitleAndText.defaultProps = {
   isSticky: false,
   isPadded: false,
   isCentered: false,
+  style: null,
 };
 
 export default TitleAndText;

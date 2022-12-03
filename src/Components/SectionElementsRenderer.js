@@ -1,4 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
 import React from "react";
 import PropTypes from "prop-types";
 import { SECTION_ELEMENTS } from "../data/dictionaries/SECTION_ELEMENTS";
@@ -207,6 +206,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
 
 SectionElementsRenderer.propTypes = {
   elementKey: PropTypes.string.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object,
   template: PropTypes.node.isRequired,
 };

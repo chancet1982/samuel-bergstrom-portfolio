@@ -15,8 +15,7 @@ const initialContext = [
 
 export const ElementColorContext = React.createContext(initialContext);
 
-function ElementColorContextProvider(props) {
-  const { children } = props;
+function ElementColorContextProvider({ children }) {
   const [light, setLight] = useState(false);
 
   return (

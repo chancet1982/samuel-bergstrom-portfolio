@@ -14,8 +14,7 @@ const initialContext = [
 
 export const SectionColorContext = React.createContext(initialContext);
 
-function SectionColorContextProvider(props) {
-  const { children } = props;
+function SectionColorContextProvider({ children }) {
   const [light, setLight] = useState(false);
 
   return (

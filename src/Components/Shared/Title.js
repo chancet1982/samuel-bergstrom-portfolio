@@ -56,8 +56,7 @@ export const StyledH5 = styled(motion.h5)`
 `;
 
 /* TODO: Headlines dont seem to support withMargins. It should be flipped and hasMargins */
-const Title = (props) => {
-  const { h, children, withMargin, isLight } = props;
+function Title({ h, children, withMargin, isLight, style }) {
   const light = useBgColor() || isLight;
 
   const fluidType = useFluidTypography(h, withMargin);
@@ -71,7 +70,7 @@ const Title = (props) => {
             h={0}
             $fluidType={fluidType}
             variants={textVariants}
-            {...props}
+            style={style}
           >
             {children}
           </StyledH1>
@@ -83,7 +82,7 @@ const Title = (props) => {
             h={h}
             $fluidType={fluidType}
             variants={textVariants}
-            {...props}
+            style={style}
           >
             {children}
           </StyledH1>
@@ -95,7 +94,7 @@ const Title = (props) => {
             h={h}
             $fluidType={fluidType}
             variants={textVariants}
-            {...props}
+            style={style}
           >
             {children}
           </StyledH2>
@@ -107,7 +106,7 @@ const Title = (props) => {
             h={h}
             $fluidType={fluidType}
             variants={textVariants}
-            {...props}
+            style={style}
           >
             {children}
           </StyledH3>
@@ -119,7 +118,7 @@ const Title = (props) => {
             h={h}
             $fluidType={fluidType}
             variants={textVariants}
-            {...props}
+            style={style}
           >
             {children}
           </StyledH4>
@@ -131,7 +130,7 @@ const Title = (props) => {
             h={h}
             $fluidType={fluidType}
             variants={textVariants}
-            {...props}
+            style={style}
           >
             {children}
           </StyledH5>
@@ -141,20 +140,25 @@ const Title = (props) => {
     }
   };
 
-  return renderTitle();
-};
+  return children ? renderTitle() : null;
+}
 
+/* TODO: look at how style is applied in the spash screen to fix this */
 Title.propTypes = {
   h: PropTypes.number,
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
   withMargin: PropTypes.bool,
   isLight: PropTypes.bool,
+  // eslint-disable-next-line react/forbid-prop-types
+  style: PropTypes.object,
 };
 
 Title.defaultProps = {
   h: 1,
+  children: null,
   withMargin: true,
   isLight: false,
+  style: null,
 };
 
 export default Title;

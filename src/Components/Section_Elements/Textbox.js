@@ -131,7 +131,7 @@ function Textbox({
 Textbox.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   h: PropTypes.number,
-  text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
+  text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   bgColor: PropTypes.string,
   bgMedia: PropTypes.shape({
     type: PropTypes.oneOf([BG_MEDIA_TYPES.IMAGE, BG_MEDIA_TYPES.VIDEO]),
@@ -146,6 +146,7 @@ Textbox.propTypes = {
 
 Textbox.defaultProps = {
   title: null,
+  text: null,
   h: 2,
   bgColor: null,
   bgMedia: null,

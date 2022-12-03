@@ -1,4 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
 /* eslint-disable no-nested-ternary */
 import React, { useEffect, useContext } from "react";
 import PropTypes from "prop-types";
@@ -130,6 +129,7 @@ FinalResult.propTypes = {
   bgColor: PropTypes.string,
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  // eslint-disable-next-line react/forbid-prop-types
   results: PropTypes.array,
 };
 

@@ -5,8 +5,7 @@ import PropTypes from "prop-types";
 
 export const SplashAnimationFinishedContext = React.createContext(false);
 
-function SplashAnimationFinishedContextProvider(props) {
-  const { children } = props;
+function SplashAnimationFinishedContextProvider({ children }) {
   const [animationFinished, setAnimationFinished] = useState(false);
 
   return (

@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { useWindowSize, useSize } from "react-use";
+import { useWindowSize } from "react-use";
 import Card from "./ListOfCards/Card";
 import breakpoints from "../../theme/breakpoints";
 import sizes from "../../theme/sizes";
@@ -29,6 +29,7 @@ const StyledList = styled(motion.ul)`
   width: max-content;
   padding-left: ${padding.horizontal.double};
   padding-right: ${padding.horizontal.double};
+  /*cursor: grab;*/
 `;
 
 const StyledListItem = styled(motion.li)`
@@ -59,6 +60,7 @@ const StyledListNavigationButtons = styled(motion.div)`
   padding-left: ${padding.horizontal.single};
   padding-right: ${padding.horizontal.single};
   box-sizing: border-box;
+  /*pointer-events: none;*/
 
   > button {
     border-radius: 50%;
@@ -66,6 +68,7 @@ const StyledListNavigationButtons = styled(motion.div)`
     line-height: 0;
     margin: 0;
     padding: 1rem;
+    cursor: pointer;
 
     > svg {
       width: 24px;
@@ -75,41 +78,26 @@ const StyledListNavigationButtons = styled(motion.div)`
   }
 `;
 
-/* TODO: add side scrolling with Framer motion https://codesandbox.io/s/framer-motion-2-scrollable-drag-constraints-lsonq?file=/src/App.js */
 /* TODO: Make sure number of columns changes for mobile (1) table (2) and desktop (3) */
-
+/* TODO: Enable dragging with or without buttons when you decide */
 function ListOfCards({ items }) {
   const numberOfColumns = 3; // Update to work on mobile as well
-  const [listOffset, setListOffset] = useState(0);
+  const [listOffset, setListOffset] = useState(0); // When dragging the list offset doesnt get updated.
+  const [listWidth, setListWidth] = useState(0);
+  const ref = useRef(null);
 
-  const windowSize = useWindowSize();
-  const cardMarginRight = (windowSize.width / 100) * 2; // Should be equal to 2VWs
+  useEffect(() => {
+    setListWidth(ref.current.scrollWidth);
+  }, [ref]);
+
+  const { width } = useWindowSize();
+  const cardMarginRight = (width / 100) * 2; // Should be equal to 2VWs
   const listItemWidth =
     (sizes.contentWidthLimit - cardMarginRight * (numberOfColumns - 1)) /
     numberOfColumns;
-  const initialListOffset = (windowSize.width - sizes.contentWidthLimit) / 2;
+  const initialListOffset = (width - sizes.contentWidthLimit) / 2;
 
-  const [styledList, { width }] = useSize(
-    // eslint-disable-next-line no-shadow, no-unused-vars
-    ({ width }) => (
-      <StyledList animate={{ x: listOffset }}>
-        {items.map(({ mediaUrl, title, text }) => (
-          <StyledListItem $listItemWidth={`${listItemWidth}px`}>
-            <Card
-              mediaUrl={mediaUrl}
-              title={title}
-              text={text}
-              key={mediaUrl}
-            />
-          </StyledListItem>
-        ))}
-      </StyledList>
-    ),
-    { width: 0 }
-  );
-
-  const listWidth = width;
-  const availableRange = listWidth + initialListOffset - windowSize.width;
+  const availableRange = listWidth + initialListOffset - width;
 
   const moveList = (offset) => {
     setListOffset(listOffset + offset);
@@ -117,7 +105,19 @@ function ListOfCards({ items }) {
 
   return (
     <StyledListOfCards>
-      {styledList}
+      <StyledList
+        ref={ref}
+        /* drag="x"
+        dragConstraints={{ right: 0, left: -availableRange }}
+        whileTap={{ cursor: "grabbing" }} */
+        animate={{ x: listOffset }}
+      >
+        {items.map(({ mediaUrl, title, text }) => (
+          <StyledListItem $listItemWidth={`${listItemWidth}px`} key={title}>
+            <Card mediaUrl={mediaUrl} title={title} text={text} />
+          </StyledListItem>
+        ))}
+      </StyledList>
       <StyledListNavigationButtons>
         <Button
           xl
@@ -156,9 +156,9 @@ function ListOfCards({ items }) {
 ListOfCards.propTypes = {
   items: PropTypes.arrayOf(
     PropTypes.shape({
-      mediaUrl: PropTypes.string.isRequired,
+      mediaUrl: PropTypes.string,
       title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-      text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+      text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
     })
   ).isRequired,
 };

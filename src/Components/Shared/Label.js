@@ -8,18 +8,23 @@ const StyledLabel = styled.label`
   display: block;
 `;
 
-function Label(props) {
-  const { children } = props;
-
+function Label({ children, style }) {
   return (
     <StyledLabel>
-      <Span {...props}>{children}</Span>
+      <Span style={style}>{children}</Span>
     </StyledLabel>
   );
 }
 
+/* TODO: look at how style is applied in the spash screen to fix this */
 Label.propTypes = {
   children: PropTypes.node.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  style: PropTypes.object,
+};
+
+Label.defaultProps = {
+  style: null,
 };
 
 export default Label;

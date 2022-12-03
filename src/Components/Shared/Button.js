@@ -75,8 +75,8 @@ function Button({
       disabled={disabled}
       $secondary={secondary}
       onClick={to ? () => navigate(to) : onClick ? () => onClick() : null}
-      onMouseEnter={() => onMouseEnter()}
-      onMouseLeave={() => onMouseLeave()}
+      onMouseEnter={onMouseEnter ? () => onMouseEnter() : null}
+      onMouseLeave={onMouseEnter ? () => onMouseLeave() : null}
       variants={formElementsVariants}
     >
       {children}

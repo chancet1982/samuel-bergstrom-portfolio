@@ -342,12 +342,7 @@ export const CASE_1 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           h: 2,
           data: {
-            title: (
-              <>
-                <strong>Fast</strong> to implement, <strong>simple</strong> to
-                use.
-              </>
-            ),
+            title: <>Fast to implement, simple to use.</>,
             text: (
               <>
                 <Paragraph>
@@ -400,11 +395,7 @@ export const CASE_1 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           h: 2,
           data: {
-            title: (
-              <>
-                <strong>Open kitchen</strong> everyone is welcome.
-              </>
-            ),
+            title: <>Open kitchen, everyone is welcome.</>,
             text: (
               <Paragraph>
                 Validation goals were set in collaboration with the client.

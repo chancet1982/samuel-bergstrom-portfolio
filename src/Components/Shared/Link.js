@@ -42,8 +42,7 @@ const StyledAnchorLink = styled.a`
   }
 `;
 
-function Link(props) {
-  const { small, large, xl, xxl, children, to, href } = props;
+function Link({ small, large, xl, xxl, children, to, href, style }) {
   const light = useBgColor();
 
   const mapSizeToNumber = () => {
@@ -61,7 +60,7 @@ function Link(props) {
       $fluidType={fluidType}
       $light={light}
       variants={textVariants}
-      {...props}
+      style={style}
     >
       {children}
     </StyledLink>
@@ -73,7 +72,7 @@ function Link(props) {
       target="_blank"
       rel="noopener noreferrer"
       variants={textVariants}
-      {...props}
+      style={style}
     >
       {children}
     </StyledAnchorLink>
@@ -88,6 +87,8 @@ Link.propTypes = {
   children: PropTypes.node.isRequired,
   to: PropTypes.string,
   href: PropTypes.string,
+  // eslint-disable-next-line react/forbid-prop-types
+  style: PropTypes.object,
 };
 
 Link.defaultProps = {
@@ -97,6 +98,7 @@ Link.defaultProps = {
   xxl: false,
   to: null,
   href: null,
+  style: null,
 };
 
 export default Link;

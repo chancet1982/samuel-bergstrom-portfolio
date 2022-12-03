@@ -1,4 +1,3 @@
-/* eslint-disable react/forbid-prop-types */
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -82,6 +81,7 @@ function Overview({ text, toolsAndMethods }) {
 
 Overview.propTypes = {
   text: PropTypes.node,
+  // eslint-disable-next-line react/forbid-prop-types
   toolsAndMethods: PropTypes.array,
 };
 

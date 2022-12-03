@@ -8,8 +8,7 @@ export const CursorContext = React.createContext({
   cursorVariant: "default",
 });
 
-function CursorContextProvider(props) {
-  const { children } = props;
+function CursorContextProvider({ children }) {
   const [cursorText, setCursorText] = useState("");
   const [cursorVariant, setCursorVariant] = useState("default");
 

@@ -14,8 +14,7 @@ const initialContext = [
 
 export const ViewColorContext = React.createContext(initialContext);
 
-function ViewColorContextProvider(props) {
-  const { children } = props;
+function ViewColorContextProvider({ children }) {
   const [light, setLight] = useState(false);
 
   return (

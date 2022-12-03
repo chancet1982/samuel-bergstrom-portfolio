@@ -15,8 +15,7 @@ const initialContext = [
 
 export const NavBgColorContext = React.createContext(initialContext);
 
-function NavBgColorContextProvider(props) {
-  const { children } = props;
+function NavBgColorContextProvider({ children }) {
   const [navBgColor, setNavBgColor] = useState(colors.offwhite);
 
   return (
