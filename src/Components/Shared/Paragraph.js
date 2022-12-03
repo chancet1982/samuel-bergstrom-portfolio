@@ -38,7 +38,7 @@ function Paragraph({
   children,
   highContrast,
   isLight,
-  style,
+  ...rest
 }) {
   const light = useBgColor() || isLight;
 
@@ -58,7 +58,7 @@ function Paragraph({
       $highContrast={highContrast}
       $fluidType={fluidType}
       variants={textVariants}
-      style={style}
+      {...rest}
     >
       {children}
     </StyledParagraph>
@@ -73,7 +73,6 @@ Paragraph.propTypes = {
   children: PropTypes.node.isRequired,
   highContrast: PropTypes.bool,
   isLight: PropTypes.bool,
-  style: PropTypes.string,
 };
 
 Paragraph.defaultProps = {
@@ -83,7 +82,6 @@ Paragraph.defaultProps = {
   xxl: false,
   highContrast: false,
   isLight: false,
-  style: null,
 };
 
 export default Paragraph;

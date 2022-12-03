@@ -39,14 +39,14 @@ function TitleAndText({
   isSticky,
   isPadded,
   isCentered,
-  style,
+  ...rest
 }) {
   return (
     <StyledTitleAndText
       $isSticky={isSticky}
       $isPadded={isPadded}
       $isCentered={isCentered}
-      style={style}
+      {...rest}
     >
       {title && <Title h={h}>{title}</Title>}
       {children && children}
@@ -62,8 +62,6 @@ TitleAndText.propTypes = {
   isSticky: PropTypes.bool,
   isPadded: PropTypes.bool,
   isCentered: PropTypes.bool,
-  // eslint-disable-next-line react/forbid-prop-types
-  style: PropTypes.object,
 };
 
 TitleAndText.defaultProps = {
@@ -73,7 +71,6 @@ TitleAndText.defaultProps = {
   isSticky: false,
   isPadded: false,
   isCentered: false,
-  style: null,
 };
 
 export default TitleAndText;

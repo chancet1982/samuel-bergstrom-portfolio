@@ -37,7 +37,7 @@ function Span({
   children,
   highContrast,
   isLight,
-  style,
+  ...rest
 }) {
   const light = useBgColor() || isLight;
 
@@ -57,7 +57,7 @@ function Span({
       $fluidType={fluidType}
       $highContrast={highContrast}
       variants={textVariants}
-      style={style}
+      {...rest}
     >
       {children}
     </StyledSpan>
@@ -72,7 +72,6 @@ Span.propTypes = {
   children: PropTypes.node.isRequired,
   highContrast: PropTypes.bool,
   isLight: PropTypes.bool,
-  style: PropTypes.string,
 };
 
 Span.defaultProps = {
@@ -82,7 +81,6 @@ Span.defaultProps = {
   xxl: false,
   highContrast: false,
   isLight: false,
-  style: null,
 };
 
 export default Span;

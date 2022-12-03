@@ -98,7 +98,7 @@ function CustomCursor() {
       transition={spring}
     >
       <StyledCursorText>
-        <Span strong>{cursorText}</Span>
+        <Span highContrast>{cursorText}</Span>
       </StyledCursorText>
     </StyledCursor>
   );

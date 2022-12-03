@@ -56,7 +56,8 @@ function Image({
 }
 
 Image.propTypes = {
-  style: PropTypes.oneOfType([PropTypes.string, PropTypes.object]),
+  // eslint-disable-next-line react/forbid-prop-types
+  style: PropTypes.object,
   imageUrl: PropTypes.string.isRequired,
   imageAlt: PropTypes.string,
   grayscale: PropTypes.bool,
