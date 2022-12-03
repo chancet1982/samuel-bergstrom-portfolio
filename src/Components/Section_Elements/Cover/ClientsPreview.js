@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 import { motion, useTransform, useMotionValue, useScroll } from "framer-motion";
 import { useWindowSize } from "react-use";
@@ -13,10 +13,9 @@ const StyledClientsPreview = styled(motion.div)`
   object-fit: fill;
   object-position: 50% 50%;
 
-  /* TODO: replace client logos size with clamp function */
-  /*> img {
-    width: clamp(120px, 50%, 180px);
-  }*/
+  > img {
+    width: 180px; //TODO: one day we might want to use something fancier...
+  }
 `;
 
 function ClientPreview() {
@@ -36,16 +35,18 @@ function ClientPreview() {
     };
   }, []);
 
-  const renderClientsPreview = CLIENTS.map((item) => (
-    <Image
-      key={item.imageUrl}
-      grayscale
-      imageUrl={`${process.env.PUBLIC_URL}/${item.imageUrl}`}
-      imageAlt={item.imageAlt}
-    />
-  ));
-  /* TODO: Replace 5296 with clientPreviewWidth using useMeasure? https://github.com/streamich/react-use/blob/master/docs/useMeasure.md */
-  const horizontalScroll = useTransform(x, [0, width], [0, -(5296 - width)]);
+  const [clientsWidth, setClientLogosWidth] = useState(0);
+  const ref = useRef(null);
+
+  useEffect(() => {
+    setClientLogosWidth(ref.current.scrollWidth);
+  }, [ref]);
+
+  const horizontalScroll = useTransform(
+    x,
+    [0, width],
+    [0, -(clientsWidth - width)]
+  );
 
   const { height } = useWindowSize();
   const coverHeight = (height / 100) * 92;
@@ -64,13 +65,21 @@ function ClientPreview() {
 
   return (
     <StyledClientsPreview
+      ref={ref}
       style={{
         x: horizontalScroll,
         y: clientPreviewPosition,
         opacity: clientPreviewOpacity,
       }}
     >
-      {renderClientsPreview}
+      {CLIENTS.map((item) => (
+        <Image
+          key={item.imageUrl}
+          grayscale
+          imageUrl={`${process.env.PUBLIC_URL}/${item.imageUrl}`}
+          imageAlt={item.imageAlt}
+        />
+      ))}
     </StyledClientsPreview>
   );
 }
