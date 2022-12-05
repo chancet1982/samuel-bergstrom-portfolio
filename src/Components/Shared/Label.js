@@ -16,7 +16,6 @@ function Label({ children, ...rest }) {
   );
 }
 
-/* TODO: look at how style is applied in the spash screen to fix this */
 Label.propTypes = {
   children: PropTypes.node.isRequired,
 };

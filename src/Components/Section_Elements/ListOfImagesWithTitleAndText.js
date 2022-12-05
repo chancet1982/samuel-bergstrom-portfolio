@@ -6,7 +6,6 @@ import ImageWithTitleAndText2 from "../Shared/ImageWithTitleAndText2";
 
 const StyledListOfImagesWithTitleAndText = styled(motion.div)``;
 
-/* TODO: After changes to list of images with title and text we will need to change the sneakpeak images on all cases. */
 function ListOfImagesWithTitleAndText({ items }) {
   return (
     <StyledListOfImagesWithTitleAndText>

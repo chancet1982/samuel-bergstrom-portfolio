@@ -28,7 +28,6 @@ const StyledRollUp = styled(motion.div)`
   z-index: 2;
 `;
 
-/* TODO: add support for reverseTransition */
 function View({ children, bgColor }) {
   const isPresent = useIsPresent();
   const [, setLight] = useContext(ViewColorContext);

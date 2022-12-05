@@ -17,7 +17,6 @@ const linkStyle = `
   font-weight: 500;
 `;
 
-/* TODO: RouterLink styling isnt working with light and fluidtype */
 const StyledLink = styled(RouterLink)`
   ${linkStyle}
 

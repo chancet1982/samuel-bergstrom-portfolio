@@ -43,8 +43,6 @@ const StyledTestimonials = styled(motion.div)`
   }
 `;
 
-/* TODO: update style of testimonial to be more minimalistic and to match the style of quotes */
-/* TODO: title and text need to be padding left and right */
 function Testimonials({ title, text }) {
   const [isPreview, togglePreview] = useState(true);
   const testimonials = isPreview ? pickRandom(TESTIMONIALS, 3) : TESTIMONIALS;

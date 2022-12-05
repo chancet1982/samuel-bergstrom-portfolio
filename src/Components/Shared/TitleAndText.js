@@ -54,7 +54,6 @@ function TitleAndText({
   );
 }
 
-/* TODO: look at how style is applied in the spash screen to fix this */
 TitleAndText.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),

@@ -5,9 +5,6 @@ import { useWindowSize } from "react-use";
 import TitleAndText from "../../Shared/TitleAndText";
 import Overline from "../../Shared/Overline";
 
-/* TODO: Implement better support for light texts and background in case the caption background is vibrant */
-/* TODO: Fix scroll animation to work */
-
 function Caption({ overline, title, text, h }) {
   const { height } = useWindowSize();
   const coverHeight = (height / 100) * 92;

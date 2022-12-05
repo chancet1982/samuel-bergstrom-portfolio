@@ -103,7 +103,6 @@ const StyledCoverFooter = styled(motion.div)`
 
 /* TOOD: clean up client logos on landing page. */
 /* TODO: better cover image for landing page */
-/* TODO: figure out the highlights bug */
 
 function Cover({ bgColor, bgMedia, caption, fgImage, highlights }) {
   const ref = useRef(null);
