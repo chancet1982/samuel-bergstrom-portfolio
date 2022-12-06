@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { motion, useTransform, useMotionValue, useScroll } from "framer-motion";
 import { useWindowSize } from "react-use";
 import Image from "../../Shared/Image";
-import { CLIENTS } from "../../../data/dictionaries/CLIENTS";
+import { CLIENTS } from "../../../data/dictionaries/CLIENTS_WHITE";
 
 const StyledClientsPreview = styled(motion.div)`
   display: flex;
@@ -60,7 +60,7 @@ function ClientPreview() {
   const clientPreviewOpacity = useTransform(
     scrollY,
     [0, coverHeight / 2],
-    [1, 0]
+    [0.48, 0]
   );
 
   return (
@@ -83,9 +83,5 @@ function ClientPreview() {
     </StyledClientsPreview>
   );
 }
-
-ClientPreview.propTypes = {};
-
-ClientPreview.defaultProps = {};
 
 export default ClientPreview;

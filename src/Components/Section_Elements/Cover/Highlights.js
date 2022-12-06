@@ -6,9 +6,12 @@ import breakpoints from "../../../theme/breakpoints";
 import ValueAndLabel from "../../Shared/ValueAndLabel";
 import colors from "../../../theme/colors";
 import sizes from "../../../theme/sizes";
+import padding from "../../../theme/padding";
 
 const StyledHighlights = styled(motion.div)`
   display: flex;
+  padding-left: ${padding.horizontal.double};
+  padding-right: ${padding.horizontal.double};
 
   > div {
     flex: 1;
