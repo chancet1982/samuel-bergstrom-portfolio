@@ -36,8 +36,10 @@ const StyledOverviewText = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: ${padding.vertical.double} ${padding.horizontal.double} 0
+    ${padding.horizontal.double};
 
-  @media (min-width: ${breakpoints.desktop}px) {
+  @media (min-width: ${breakpoints.tablet}px) {
     grid-column: 1 / span 2;
     padding: ${padding.vertical.double} ${padding.horizontal.double};
   }
@@ -49,7 +51,14 @@ const StyledOverviewItems = styled(motion.div)`
     align-items: flex-start;
     text-align: left;
   }
-  @media (min-width: ${breakpoints.desktop}px) {
+
+  @media (max-width: ${breakpoints.tablet - 1}px) {
+    > div {
+      padding: 0 ${padding.horizontal.double} ${padding.vertical.double}
+        ${padding.horizontal.double};
+    }
+  }
+  @media (min-width: ${breakpoints.tablet}px) {
     grid-column: 3 / span 1;
   }
 `;
