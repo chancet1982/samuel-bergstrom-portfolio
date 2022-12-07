@@ -27,6 +27,29 @@ const StyledCover = styled(motion.div)`
     $bgColor && {
       backgroundColor: $bgColor,
     }}
+
+  :before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      ${({ $isLight }) =>
+        !$isLight
+          ? `
+      72deg,
+    rgba(244, 244, 244, 0.64) 0%,
+    rgba(244, 244, 244, 0) 64%
+      `
+          : `
+      72deg,
+    rgba(0, 0, 0, 0.64) 0%,
+    rgba(0, 0, 0, 0) 64%
+      `}
+    );
+  }
 `;
 
 const StyledCoverCaption = styled(motion.div)`
@@ -43,20 +66,6 @@ const StyledCoverCaption = styled(motion.div)`
   padding-right: ${padding.horizontal.quadruple};
   z-index: 1;
   width: 100%;
-  background: linear-gradient(
-    ${({ $isLight }) =>
-      !$isLight
-        ? `
-      72deg,
-    rgba(244, 244, 244, 0.64) 0%,
-    rgba(244, 244, 244, 0) 64%
-      `
-        : `
-      72deg,
-    rgba(0, 0, 0, 0.64) 0%,
-    rgba(0, 0, 0, 0) 64%
-      `}
-  );
 
   h1 {
     max-width: 15ch;
@@ -84,6 +93,13 @@ const StyledCoverCaption = styled(motion.div)`
   @media (min-width: ${breakpoints.mobileLarge}px) {
     justify-content: center;
     padding-top: 0;
+  }
+
+  @media (min-width: ${breakpoints.desktop}px) {
+    max-width: ${sizes.contentWidthLimit}px;
+    margin: 0 auto;
+    padding-left: ${padding.horizontal.double};
+    padding-right: ${padding.horizontal.double};
   }
 `;
 
@@ -171,10 +187,11 @@ function Cover({ bgColor, bgMedia, caption, fgImage, highlights }) {
       viewport={{ once: true, amount: 0.2 }}
       transition={{ staggerChildren: 0.2 }}
       ref={ref}
+      $isLight={light}
     >
       {bgMedia && <BgMedia type={bgMedia.type} mediaUrl={bgMedia.mediaUrl} />}
 
-      <StyledCoverCaption variants={coverCaptionVariants} $isLight={light}>
+      <StyledCoverCaption variants={coverCaptionVariants}>
         <Caption
           overline={caption.overline}
           title={caption.title}
