@@ -5,10 +5,12 @@ import PropTypes from "prop-types";
 import TitleAndText from "../../Shared/TitleAndText";
 import padding from "../../../theme/padding";
 import breakpoints from "../../../theme/breakpoints";
+import useBgColor from "../../../utils/useBgColor";
 
 const StyledCard = styled(motion.div)`
   width: clamp(${breakpoints.mobile}, 50%, ${breakpoints.mobileLarge});
-  background-color: white;
+  background-color: ${({ $light }) =>
+    $light ? "rgba(255,255,255,0.04)" : "white"};
   border-radius: 0.5rem;
   scroll-snap-align: start;
   position: relative;
@@ -29,8 +31,9 @@ const StyledCardContent = styled(motion.div)`
 `;
 
 function Card({ title, text, mediaUrl }) {
+  const light = useBgColor();
   return (
-    <StyledCard>
+    <StyledCard $light={light}>
       {mediaUrl && <StyledCardMedia $mediaUrl={mediaUrl} />}
       <StyledCardContent>
         <TitleAndText title={title} h={4}>

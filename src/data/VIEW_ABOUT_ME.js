@@ -39,16 +39,12 @@ export const VIEW_ABOUT_ME = [
     ],
   },
   {
-    bgColor: colors.primaryShade,
+    bgColor: colors.offblack,
     elements: [
       {
         template: SECTION_ELEMENTS.TEXTBOX,
         data: {
-          title: (
-            <>
-              Why <mark>Sam</mark>?.
-            </>
-          ),
+          title: <>Why Sam?.</>,
         },
       },
       {
