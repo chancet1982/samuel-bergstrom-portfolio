@@ -7,10 +7,10 @@ import Card from "./ListOfCards/Card";
 import breakpoints from "../../theme/breakpoints";
 import sizes from "../../theme/sizes";
 import padding from "../../theme/padding";
-import Button from "../Shared/Button";
-import { ReactComponent as CaretRight } from "../../assets/caret-right.svg";
-import { ReactComponent as CaretLeft } from "../../assets/caret-left.svg";
-import colors from "../../theme/colors";
+// import Button from "../Shared/Button";
+// import { ReactComponent as CaretRight } from "../../assets/caret-right.svg";
+// import { ReactComponent as CaretLeft } from "../../assets/caret-left.svg";
+// import colors from "../../theme/colors";
 
 const StyledListOfCards = styled(motion.div)`
   padding: 0 4vw;
@@ -29,7 +29,7 @@ const StyledList = styled(motion.ul)`
   width: max-content;
   padding-left: ${padding.horizontal.double};
   padding-right: ${padding.horizontal.double};
-  /*cursor: grab;*/
+  cursor: grab;
 `;
 
 const StyledListItem = styled(motion.li)`
@@ -48,7 +48,7 @@ const StyledListItem = styled(motion.li)`
   }
 `;
 
-const StyledListNavigationButtons = styled(motion.div)`
+/* const StyledListNavigationButtons = styled(motion.div)`
   position: absolute;
   bottom: 8rem;
   left: 0;
@@ -60,7 +60,7 @@ const StyledListNavigationButtons = styled(motion.div)`
   padding-left: ${padding.horizontal.single};
   padding-right: ${padding.horizontal.single};
   box-sizing: border-box;
-  /*pointer-events: none;*/
+  pointer-events: none;
 
   > button {
     border-radius: 50%;
@@ -76,13 +76,13 @@ const StyledListNavigationButtons = styled(motion.div)`
       fill: ${colors.primary};
     }
   }
-`;
+`; */
 
 /* TODO: Make sure number of columns changes for mobile (1) table (2) and desktop (3) */
-/* TODO: Enable dragging with or without buttons when you decide */
 function ListOfCards({ items }) {
   const numberOfColumns = 3; // Update to work on mobile as well
-  const [listOffset, setListOffset] = useState(0); // When dragging the list offset doesnt get updated.
+  // const [listOffset, setListOffset] = useState(0); // When dragging the list offset doesnt get updated.
+  const [listOffset] = useState(0); // When dragging the list offset doesnt get updated.
   const [listWidth, setListWidth] = useState(0);
   const ref = useRef(null);
 
@@ -99,17 +99,17 @@ function ListOfCards({ items }) {
 
   const availableRange = listWidth + initialListOffset - width;
 
-  const moveList = (offset) => {
+  /* const moveList = (offset) => {
     setListOffset(listOffset + offset);
-  };
+  }; */
 
   return (
     <StyledListOfCards>
       <StyledList
         ref={ref}
-        /* drag="x"
+        drag="x"
         dragConstraints={{ right: 0, left: -availableRange }}
-        whileTap={{ cursor: "grabbing" }} */
+        whileTap={{ cursor: "grabbing" }}
         animate={{ x: listOffset }}
       >
         {items.map(({ mediaUrl, title, text }) => (
@@ -118,7 +118,7 @@ function ListOfCards({ items }) {
           </StyledListItem>
         ))}
       </StyledList>
-      <StyledListNavigationButtons>
+      {/* <StyledListNavigationButtons>
         <Button
           xl
           secondary
@@ -148,7 +148,7 @@ function ListOfCards({ items }) {
         >
           <CaretRight />
         </Button>
-      </StyledListNavigationButtons>
+        </StyledListNavigationButtons> */}
     </StyledListOfCards>
   );
 }

@@ -7,37 +7,33 @@ import colors from "../theme/colors";
 import Span from "../Components/Shared/Span";
 import Link from "../Components/Shared/Link";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
+import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
 
 export const VIEW_ABOUT_ME = [
   {
     elements: [
       {
-        template: SECTION_ELEMENTS.SECTION_IMAGE,
+        template: SECTION_ELEMENTS.COVER,
         data: {
-          limitMaxWidth: true,
-          imageUrl: "assets/meet-sam.png",
-          imageAlt: "A wonderful picture of me being myself",
-        },
-      },
-    ],
-  },
-  {
-    elements: [
-      {
-        template: SECTION_ELEMENTS.TEXTBOX,
-        data: {
-          title: (
-            <>
-              Creating <mark>business value</mark> using design.
-            </>
-          ),
-          h: 1,
-          text: (
-            <Paragraph xl>
-              A digital product designer, engineer, speaker, mentor,
-              accessibility enthusiast, father, husband, and quite a nice guy.
-            </Paragraph>
-          ),
+          caption: {
+            title: (
+              <>
+                Creating <mark>business value</mark> using design.
+              </>
+            ),
+            h: 1,
+            text: (
+              <Paragraph xl>
+                A digital product designer, engineer, speaker, mentor,
+                accessibility enthusiast, father, husband, and quite a nice guy.
+              </Paragraph>
+            ),
+          },
+          bgMedia: {
+            type: BG_MEDIA_TYPES.VIDEO,
+            mediaUrl: "assets/about-me.mp4",
+            fit: "cover",
+          },
         },
       },
     ],

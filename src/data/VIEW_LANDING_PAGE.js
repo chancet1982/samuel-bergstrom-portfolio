@@ -2,19 +2,13 @@
 import React from "react";
 import Button from "../Components/Shared/Button";
 import Paragraph from "../Components/Shared/Paragraph";
-// import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
+import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
 
 export const VIEW_LANDING_PAGE = [
   {
     elements: [
-      /* {
-        template: SECTION_ELEMENTS.VIDEO,
-        data: {
-          source: "assets/mood-1.mp4",
-        },
-      }, */
       {
         template: SECTION_ELEMENTS.COVER,
         data: {
@@ -36,10 +30,12 @@ export const VIEW_LANDING_PAGE = [
               </>
             ),
           },
-          bgColor: "black",
-          fgImage: {
-            imageUrl: "assets/cover-fg.jpg",
+          bgMedia: {
+            type: BG_MEDIA_TYPES.VIDEO,
+            mediaUrl: "assets/landing-page-1.mp4",
           },
+          clientsPreview: true,
+          isLight: true,
         },
       },
     ],

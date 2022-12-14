@@ -4,6 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import PropTypes from "prop-types";
 import { useWindowSize } from "react-use";
 import { BG_MEDIA_TYPES } from "../../../data/dictionaries/BG_MEDIA_TYPES";
+import breakpoints from "../../../theme/breakpoints";
 
 const StyledCoverImage = styled(motion.img)`
   position: absolute;
@@ -21,10 +22,16 @@ const StyledCoverVideo = styled(motion.video)`
   left: 0;
   right: 0;
   bottom: 0;
-  width: 100vw;
-  height: auto;
+  min-width: 100vw;
+  width: auto;
+  height: 92vh;
   object-fit: cover;
   z-index: -1;
+  object-position: top left;
+
+  @media (min-width: ${breakpoints.desktop}px) {
+    object-position: top right;
+  }
 `;
 
 function BgMedia({ type, mediaUrl }) {
@@ -49,10 +56,8 @@ function BgMedia({ type, mediaUrl }) {
       style={{ scale: coverImageParallax }}
     />
   ) : (
-    <StyledCoverVideo autoPlay loop muted variants={imageVariants}>
+    <StyledCoverVideo autoPlay muted variants={imageVariants}>
       <source src={`${process.env.PUBLIC_URL}/${mediaUrl}`} type="video/mp4" />
-      <source src={`${process.env.PUBLIC_URL}/${mediaUrl}`} type="video/webm" />
-      <source src={`${process.env.PUBLIC_URL}/${mediaUrl}`} type="video/ogg" />
     </StyledCoverVideo>
   );
 }

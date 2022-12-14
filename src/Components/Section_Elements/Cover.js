@@ -120,7 +120,15 @@ const StyledCoverFooter = styled(motion.div)`
 /* TOOD: clean up client logos on landing page. */
 /* TODO: better cover image for landing page */
 
-function Cover({ bgColor, bgMedia, caption, fgImage, highlights }) {
+function Cover({
+  bgColor,
+  bgMedia,
+  caption,
+  fgImage,
+  highlights,
+  clientsPreview,
+  isLight,
+}) {
   const ref = useRef(null);
   const isInView = useInView(ref);
   const [light, setLight] = useContext(ElementColorContext);
@@ -128,15 +136,16 @@ function Cover({ bgColor, bgMedia, caption, fgImage, highlights }) {
 
   useEffect(() => {
     setLight(
-      bgColor !== null &&
-        bgColor !== colors.offwhite &&
-        bgColor !== colors.primaryShade
+      isLight ||
+        (bgColor !== null &&
+          bgColor !== colors.offwhite &&
+          bgColor !== colors.primaryShade)
     );
-  }, [setLight, bgColor]);
+  }, [setLight, bgColor, isLight]);
 
   useEffect(() => {
-    if (isInView && bgColor !== colors.offwhite) {
-      setNavBgColor(bgColor);
+    if ((isInView && bgColor !== colors.offwhite) || (isInView && isLight)) {
+      setNavBgColor(bgColor || "black");
     } else {
       setNavBgColor(colors.offwhite);
     }
@@ -208,9 +217,12 @@ function Cover({ bgColor, bgMedia, caption, fgImage, highlights }) {
         />
       )}
 
-      <StyledCoverFooter variants={coverFooterVariants} $isLight={light}>
-        {highlights ? <Highlights items={highlights} /> : <ClientPreview />}
-      </StyledCoverFooter>
+      {highlights ||
+        (clientsPreview && (
+          <StyledCoverFooter variants={coverFooterVariants} $isLight={light}>
+            {highlights ? <Highlights items={highlights} /> : <ClientPreview />}
+          </StyledCoverFooter>
+        ))}
     </StyledCover>
   );
 }
@@ -241,6 +253,8 @@ Cover.propTypes = {
       label: PropTypes.string,
     })
   ),
+  clientsPreview: PropTypes.bool,
+  isLight: PropTypes.bool,
 };
 
 Cover.defaultProps = {
@@ -249,6 +263,8 @@ Cover.defaultProps = {
   fgImage: null,
   caption: null,
   highlights: null,
+  clientsPreview: false,
+  isLight: false,
 };
 
 export default Cover;

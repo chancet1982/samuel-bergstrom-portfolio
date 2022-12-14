@@ -43,6 +43,8 @@ function SectionElementsRenderer({ elementKey, data, template }) {
             fgImage={data.fgImage}
             caption={data.caption}
             highlights={data.highlights}
+            clientsPreview={data.clientsPreview}
+            isLight={data.isLight}
           />
         </ElementColorContextProvider>
       );
