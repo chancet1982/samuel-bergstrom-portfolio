@@ -21,7 +21,7 @@ const StyledHighlights = styled(motion.div)`
   @media (min-width: ${breakpoints.desktop}px) {
     max-width: ${sizes.contentWidthLimit}px;
     margin: 0 auto;
-    border-top: 1px solid ${colors.text.dark.low};
+    border-top: 1px solid ${colors.darken.medium};
   }
 `;
 

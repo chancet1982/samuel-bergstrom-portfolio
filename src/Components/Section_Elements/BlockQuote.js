@@ -27,7 +27,7 @@ const StyledBlockQuote = styled(motion.blockquote)`
     height: 100%;
     width: 2px;
     background-color: ${({ $light }) =>
-      $light ? colors.text.light.low : colors.text.dark.low};
+      $light ? colors.lighten.medium : colors.darken.medium};
   }
 `;
 

@@ -40,7 +40,7 @@ const StyledTestimonialContent = styled(motion.div)`
     height: 100%;
     width: 2px;
     background-color: ${({ $light }) =>
-      $light ? colors.text.light.low : colors.text.dark.low};
+      $light ? colors.lighten.medium : colors.darken.medium};
   }
 `;
 
@@ -53,7 +53,7 @@ const StyledTestimonialAuthor = styled(motion.div)`
     width: 1rem;
     margin-left: -1rem;
     color: ${({ $light }) =>
-      $light ? colors.text.light.low : colors.text.dark.low};
+      $light ? colors.lighten.medium : colors.darken.medium};
   }
 `;
 

@@ -17,8 +17,8 @@ const StyledKeyFigures = styled(motion.div)`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border-top: 1px solid ${colors.text.dark.low};
-  border-bottom: 1px solid ${colors.text.dark.low};
+  border-top: 1px solid ${colors.darken.medium};
+  border-bottom: 1px solid ${colors.darken.medium};
   box-sizing: border-box;
 
   padding: ${({ bgColor }) =>

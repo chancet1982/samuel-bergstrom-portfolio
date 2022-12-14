@@ -93,11 +93,11 @@ const StyledTimelineItem = styled(motion.dt)`
   }
 
   border-top: solid 1px
-    ${({ light }) => (light ? colors.text.light.low : colors.text.dark.low)};
+    ${({ light }) => (light ? colors.lighten.medium : colors.darken.medium)};
 
   :last-of-type {
     border-bottom: solid 1px
-      ${({ light }) => (light ? colors.text.light.low : colors.text.dark.low)};
+      ${({ light }) => (light ? colors.lighten.medium : colors.darken.medium)};
 
     ::after {
       content: "";

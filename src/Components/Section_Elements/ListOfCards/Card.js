@@ -6,11 +6,11 @@ import TitleAndText from "../../Shared/TitleAndText";
 import padding from "../../../theme/padding";
 import breakpoints from "../../../theme/breakpoints";
 import useBgColor from "../../../utils/useBgColor";
+import colors from "../../../theme/colors";
 
 const StyledCard = styled(motion.div)`
   width: clamp(${breakpoints.mobile}, 50%, ${breakpoints.mobileLarge});
-  background-color: ${({ $light }) =>
-    $light ? "rgba(255,255,255,0.04)" : "white"};
+  background-color: ${({ $light }) => ($light ? colors.lighten.low : "white")};
   border-radius: 0.5rem;
   scroll-snap-align: start;
   position: relative;

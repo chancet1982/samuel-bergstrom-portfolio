@@ -68,7 +68,7 @@ const StyledAdditionalCasesCaseThumbnailImage = styled(motion.div)`
     bottom: 0;
     left: 0;
     right: 0;
-    background: ${colors.darker24};
+    background: ${colors.darken.high};
   }
 `;
 

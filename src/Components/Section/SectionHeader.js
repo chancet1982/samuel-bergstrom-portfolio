@@ -22,8 +22,8 @@ const StyledSectionHeader = styled.header`
     padding-bottom: ${padding.vertical.half};
     margin-bottom: ${padding.vertical.half};
     color: ${({ light }) =>
-      light ? colors.text.light.low : colors.text.dark.low};
-    box-shadow: inset 0px -0.125rem 0px 0rem ${({ light }) => (light ? colors.text.light.low : colors.text.dark.low)};
+      light ? colors.lighten.medium : colors.darken.medium};
+    box-shadow: inset 0px -0.125rem 0px 0rem ${({ light }) => (light ? colors.lighten.medium : colors.darken.medium)};
     position: relative;
     top: 8rem;
   }
