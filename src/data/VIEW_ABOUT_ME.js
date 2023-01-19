@@ -330,7 +330,7 @@ export const VIEW_ABOUT_ME = [
         data: {
           title: (
             <>
-              Just some of my <mark>credentials</mark>:
+              Some of my <mark>credentials</mark>:
             </>
           ),
           h: 2,
@@ -360,10 +360,17 @@ export const VIEW_ABOUT_ME = [
       {
         template: SECTION_ELEMENTS.TEXTBOX,
         data: {
-          title: "Ho, did I mention I make some kick-ass pizzas?",
+          title: "More than a designer",
           h: 2,
           text: (
-            <Paragraph>Some of the awesome pizzas I did last summer</Paragraph>
+            <Paragraph>
+              Ho, did I mention I make some kick-ass pizzas? So yeah, sourdough,
+              Biga, Poolish, you name it. I started making neapolitan pizzas
+              about 5 years ago. I bought a small Ooni and started
+              experimenting. Now, 5 years, 3 pizza ovens, and several hundrads
+              of kilos of imported flour later, I think I&apos;m getting the
+              trick.
+            </Paragraph>
           ),
         },
       },
