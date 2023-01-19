@@ -14,8 +14,8 @@ import Button from "../Shared/Button";
 const StyledTimeline = styled(motion.dl)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  padding-top: ${padding.vertical.double};
-  padding-bottom: ${padding.vertical.double};
+  padding: 0 ${padding.horizontal.double};
+  margin: 0;
 
   @media (min-width: ${breakpoints.desktop}px) {
     max-width: ${sizes.contentWidthLimit}px;
@@ -40,9 +40,16 @@ const StyledTimelineItemYear = styled(motion.div)`
 const StyledTimelineItemEvents = styled(motion.div)`
   grid-column: 2 / span 1;
   align-items: flex-start;
-  width: calc(1280px * 0.8);
   padding-right: ${padding.horizontal.double};
   box-sizing: border-box;
+
+  @media (max-width: ${breakpoints.mobileLarge - 1}px) {
+    padding-left: ${padding.horizontal.double};
+  }
+
+  @media (min-width: ${breakpoints.desktop}px) {
+    width: calc(1280px * 0.8);
+  }
 
   > div {
     margin-top: ${padding.vertical.half};
@@ -83,12 +90,11 @@ TimelineItemEvent.propTypes = {
 
 const StyledTimelineItem = styled(motion.dt)`
   position: relative;
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
   padding-top: calc(${padding.vertical.double} - ${padding.vertical.half});
   padding-bottom: calc(${padding.vertical.double} - ${padding.vertical.half});
 
   @media (min-width: ${breakpoints.mobileLarge}px) {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -124,7 +130,7 @@ const StyledTimelineItem = styled(motion.dt)`
   }
 `;
 
-/* TODO: mobile styling for timeline isnt working */
+/* TODO: why is the button wierd or part of the list? */
 function TimelineItem({ year, events, isPreview }) {
   return (
     <StyledTimelineItem
