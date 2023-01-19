@@ -187,6 +187,13 @@ function Cover({
     },
   };
 
+  const renderCoverFooterContent = () =>
+    highlights ? (
+      <Highlights items={highlights} />
+    ) : clientsPreview ? (
+      <ClientPreview />
+    ) : null;
+
   return (
     <StyledCover
       $bgColor={bgColor}
@@ -217,12 +224,11 @@ function Cover({
         />
       )}
 
-      {highlights ||
-        (clientsPreview && (
-          <StyledCoverFooter variants={coverFooterVariants} $isLight={light}>
-            {highlights ? <Highlights items={highlights} /> : <ClientPreview />}
-          </StyledCoverFooter>
-        ))}
+      {highlights || clientsPreview ? (
+        <StyledCoverFooter variants={coverFooterVariants} $isLight={light}>
+          {renderCoverFooterContent()}
+        </StyledCoverFooter>
+      ) : null}
     </StyledCover>
   );
 }
