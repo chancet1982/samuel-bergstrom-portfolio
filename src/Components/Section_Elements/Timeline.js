@@ -110,9 +110,9 @@ const StyledTimelineItem = styled(motion.dt)`
         $isPreview && {
           background: `linear-gradient(
         0deg,
-        rgba(244, 244, 244, 1) 0%,
-        rgba(244, 244, 244, 0.8) 30%,
-        rgba(244, 244, 244, 0) 100%
+        rgba(249, 249, 249, 1) 0%,
+        rgba(249, 249, 249, 0.8) 30%,
+        rgba(249, 249, 249, 0) 100%
       )`,
         }}
     }
