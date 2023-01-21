@@ -35,13 +35,11 @@ const StyledCasesList = styled(motion.div)`
   }
 `;
 
-/* TODO: exclude current case from list of additional cases */
 /* TODO: fix inView animations for additional cases */
 
 function AdditionalCases() {
   const { id } = useParams();
-  const currentCaseTitle = CASES[id].thumbnail.title;
-
+  const currentCaseTitle = CASES[id - 1].thumbnail.title;
   const cases = CASES.filter(
     ({ caseStatus, thumbnail: { title } }) =>
       caseStatus !== CASE_STATUS.DRAFT &&

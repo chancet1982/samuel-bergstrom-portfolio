@@ -5,10 +5,12 @@ import { TOOLS_AND_METHODS } from "./dictionaries/TOOLS_AND_METHODS";
 import { ROLES } from "./dictionaries/ROLES";
 import { PLATFORMS } from "./dictionaries/PLATFORMS";
 import Paragraph from "../Components/Shared/Paragraph";
+import Title from "../Components/Shared/Title";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
+import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 
-/* TODO: This is empty example case */
+/* TODO: This is a non-finished project. Finish it or remove. */
 const SETTINGS = {
   BG_COLOR: "#00ADDB",
   URL: "/cases/11",
@@ -23,18 +25,18 @@ const SETTINGS = {
       label: PLATFORMS.LABEL,
       value: [PLATFORMS.DESKTOP, PLATFORMS.TABLET, PLATFORMS.MOBILE],
     },
-    CASE_YEAR: { label: "Year:", value: "2021" },
-    CASE_DURATION: { label: "Duration:", value: "1 month" },
+    CASE_YEAR: { label: "Year:", value: "2022" },
+    CASE_DURATION: { label: "Duration:", value: "3 month" },
   },
 };
 
 export const CASE_11 = {
-  caseStatus: CASE_STATUS.DRAFT,
+  caseStatus: CASE_STATUS.FEATURED,
   caseUrl: SETTINGS.URL,
   thumbnail: {
-    overline: "Overline is usually the industry",
-    title: "What did you do?",
-    text: <>Some catch phrase here</>,
+    overline: "Price Comparison Service",
+    title: "Selling non-new products",
+    text: <>Helping stores sell demo, refurbished, and used products</>,
     imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
     imageAlt: "thumbnail",
     bgColor: SETTINGS.BG_COLOR,
@@ -47,9 +49,13 @@ export const CASE_11 = {
           data: {
             bgColor: SETTINGS.BG_COLOR,
             caption: {
-              overline: "Overline is usually the industry",
-              title: "What did you do?",
-              text: <Paragraph xxl>Some catch phrase here</Paragraph>,
+              overline: "Price Comparison Service",
+              title: "Selling non-new products",
+              text: (
+                <Paragraph xxl>
+                  Helping stores sell demo, refurbished, and used products
+                </Paragraph>
+              ),
             },
             fgImage: {
               imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
@@ -70,7 +76,16 @@ export const CASE_11 = {
         {
           template: SECTION_ELEMENTS.OVERVIEW,
           data: {
-            text: <Paragraph xl>...</Paragraph>,
+            text: (
+              <Paragraph xl>
+                Prisjakt started off by catering to computer enthusiasts and was
+                one of the first price comparison sites in the Nordics. It is
+                still the leading price comparison service but in recent years
+                Prisjak’t growth stagnated. Prisjakt’s conversion is based
+                mostly on click-outs where different the price per click is
+                based on the product category.
+              </Paragraph>
+            ),
             toolsAndMethods: [
               TOOLS_AND_METHODS.SURVEYS,
               TOOLS_AND_METHODS.WEB_ANALYTICS,
@@ -83,6 +98,290 @@ export const CASE_11 = {
       ],
     },
     {
+      header: "Background",
+      elements: [
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>The problem</>,
+            h: 2,
+            text: (
+              <>
+                <Paragraph>
+                  Today one of the leading categories is mobile phones.
+                  Smartphones over the years have grown in both popularity and
+                  cost and today the price of a new smartphone is higher than
+                  ever with flagship smartphones costing upwards of 10 000sek.
+                </Paragraph>
+                <Paragraph>
+                  Shops on the other hand have had an issue with selling demo,
+                  refurbished, and used phones. In the Nordics, every purchase
+                  is eligible by law to be returned for a full refund within 14
+                  days. This means that shops have a lot of products that are
+                  returned, hardly used but cannot be sold as “new”. Smartphones
+                  are one of these categories where a lot of demo products can
+                  be found.
+                </Paragraph>
+                <Paragraph>
+                  Shops have good margins on these products and want to promote
+                  and attract customers to buy them. Prisjakt on the other hand
+                  wanted to capitalize on this without misleading the consumers.
+                  Historically though, these products were included as part of
+                  the regular product list with small icons to indicate that the
+                  product is “not new”. These icons were not generally
+                  understood or even noticed by users leading to frustration for
+                  both users (that accidentally ended up on a used product) and
+                  stores (that got traffic that never converted).
+                </Paragraph>
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.IMAGE_GALLERY,
+          data: {
+            template: IMAGE_GALLERY_TEMPLATES.THREE_IMAGES_TWO_COLUMNS,
+            images: [
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-0.jpg`,
+                imageAlt: "?",
+              },
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-2.png`,
+                imageAlt: "Co-creating wireframes",
+              },
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-3.png`,
+                imageAlt: "Co-creating wireframes",
+              },
+            ],
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>The goal:</>,
+            h: 2,
+            text: (
+              <Paragraph>
+                My goal was to lead more traffic to used and demo products,
+                increase clarity, and align users expectations. Reducing
+                missclicks means we increate the quality of traffic (more likely
+                to actually make a purchase) and redirect more valuable traffic
+                to the stores.
+              </Paragraph>
+            ),
+          },
+        },
+      ],
+    },
+    {
+      header: "Research",
+      elements: [
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Quantitative Research</>,
+            h: 2,
+            text: (
+              <>
+                <Paragraph>
+                  Looking at user feedback and quarterly survey responses.
+                  Looking at user feedback it was an obvious pain point for the
+                  users. The layout led to numerous users misclicking “demo”
+                  products believing these were new. Leading complaints on the
+                  site was that “used and demo products are sold as new” and
+                  that the price history does not reflect the actual product
+                  price as it is contaminated with “demo” and “refurbished”
+                  products.
+                </Paragraph>
+                <Paragraph>
+                  Looking at the quarterly survey, XXX% of the complaints were
+                  tagged with “demo” issues.
+                </Paragraph>
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Qualitative research</>,
+            h: 2,
+            text: (
+              <Paragraph>
+                In one of the usability testing rounds, we asked participants to
+                look at smartphones and point out demo products. Not a single
+                participant managed to point these out.
+              </Paragraph>
+            ),
+          },
+        },
+      ],
+    },
+    {
+      header: "Ideation",
+      elements: [
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Ideation and competitor analysis</>,
+            h: 2,
+            text: (
+              <Paragraph>
+                At this point, it was obvious that we had a problem worth
+                solving. But it was not a unique problem. More or less every
+                marketplace and competitor was trying to do the same. I looked
+                at and evaluated how used products were sold by 17 leading
+                competitors in Europe.
+              </Paragraph>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Figuring out alternatives</>,
+            h: 2,
+            text: (
+              <Paragraph>
+                These ideas were then summarized and evaluated based on
+                feasibility, usability, and business potential. Feasibility with
+                the engineers on our team, business with the responsible PM, and
+                usability was evaluated based on best practices (Published by
+                Baymard Institute)
+              </Paragraph>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Addressing concerns</>,
+            h: 2,
+            text: (
+              <>
+                <Paragraph>
+                  There were some internal concerns in the organization. Namely,
+                  how this aligns with the company’s values and how it might
+                  impact their sustainability initiatives. As this was aligned
+                  with both it was not a problem.
+                </Paragraph>
+                <Paragraph>
+                  In fact, the solution encouraged the consumption of
+                  refurbished products and reduced waste. It was basically a PR
+                  win.
+                </Paragraph>
+              </>
+            ),
+          },
+        },
+      ],
+    },
+    {
+      header: "Design",
+      elements: [
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Design</>,
+            h: 2,
+            text: (
+              <Paragraph>
+                The new design needed to improve clarity for users (what
+                products am I looking at now?), and encourage users to buy used
+                products, all without adding to the clutter and risk harming
+                conversion rates.
+              </Paragraph>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Steps towards the right solution.</>,
+            h: 2,
+            text: (
+              <>
+                <Paragraph>
+                  The solution was actually rather simple. Firstly it was
+                  obvious that we couldn’t mix new and used products in the same
+                  bucket. So instead all non-new products were removed from the
+                  general offers list.
+                </Paragraph>
+                <Paragraph>
+                  As prices across the site reflected new products. We decided
+                  to do the same even though non-new products existed and were
+                  perhaps the cheapest. On top of that, the price history was
+                  limited to account for new products only.
+                </Paragraph>
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>“New” vs “Used” as product variants.</>,
+            h: 2,
+            text: (
+              <>
+                <Paragraph>
+                  Access to non-new products was then introduced as product
+                  variants. Product variants traditionally refer to different
+                  colors, and sizes, of things that are essentially the same.
+                  Variants however can have different prices. Think iPhone with
+                  64gb vs 256gb version. They are both iPhones but one costs
+                  much more.
+                </Paragraph>
+                <Paragraph>
+                  Variants are typically included as part of the product page
+                  header and in this case, we wanted to encourage users to pick
+                  “used” over “new”. We decided to include the cheapest offer
+                  text (“From XXkr”) as part of the variant selection in order
+                  to facilitate that.
+                </Paragraph>
+                <Paragraph>
+                  new/used variants were only shown if a product had “used”
+                  offers and were always the last variant on the list (in order
+                  to allow for the general variants to co-exist)
+                </Paragraph>
+              </>
+            ),
+          },
+        },
+      ],
+    },
+    {
+      header: "Testing",
+      elements: [
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Testing</>,
+            h: 2,
+            text: (
+              <>
+                <Paragraph>
+                  In order to test the new design, we started off by conducting
+                  a usability test to ensure we addressed the usability issues.
+                  All participants were able to find non-new products and the
+                  feedback was very positive.
+                </Paragraph>
+                <Paragraph>
+                  Once implemented, we conducted an A/B test to test the impact
+                  before releasing this change. The test was limited to the
+                  “Smartphones” category and ran for 2 weeks. Data was collected
+                  from about 250 000 sessions after which we could conclude that
+                  the new design was far better than the benchmark.
+                </Paragraph>
+              </>
+            ),
+          },
+        },
+      ],
+    },
+    {
       elements: [
         {
           template: SECTION_ELEMENTS.RESULT,
@@ -90,7 +389,33 @@ export const CASE_11 = {
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/result-desktop.png`,
             mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/result-mobile.png`,
             bgColor: SETTINGS.BG_COLOR,
-            text: <Paragraph large>...</Paragraph>,
+            text: (
+              <>
+                <Paragraph large>
+                  The new design showed a general conversion improvement of 2.8%
+                  in relevant categories. Relevant categories were defined as
+                  categories where we had “used”, “demo”, and “refurbished”
+                  products.
+                </Paragraph>
+                <Paragraph>
+                  On top of that, the new design led to an 8X increase in the
+                  number of clicks on used products.
+                </Paragraph>
+
+                <Paragraph>
+                  Last but not least, the perceived usefulness and usability
+                  scores (UUP Score) for the page increased by 6.5%
+                </Paragraph>
+                <Title h={3}>Reflections</Title>
+                <Paragraph>
+                  This was one of those rare times when doing the right thing
+                  for users, businesses, and the environment actually happened.
+                  We achieved our goal, generated extra revenue for Prisjakt,
+                  and made some headlines “Prisjakt now makes it easier to find
+                  and buy used products” was my favorite
+                </Paragraph>
+              </>
+            ),
           },
         },
       ],
