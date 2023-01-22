@@ -9,7 +9,7 @@ import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Shared/Title";
 import colors from "../theme/colors";
-
+import Image from "../Components/Shared/ImageWithCaption";
 /* TODO: Final result looks like shit for desktop products (Perhaps use the Fitness24Seven solution) */
 /* TODO: cover fgImage is missing mobile image URL */
 
@@ -79,12 +79,12 @@ export const CASE_10 = {
           data: {
             text: (
               <Paragraph xl>
-                My client was a leading price comparison site operating in 6
-                different countries. They were a leader in their field, but
-                circumstances changed and their revenue stagnated. I was asked
-                to assist them to increase traffic to paying customers and help
-                encourage potential customers to sign-up. One small change
-                created a xl impact.
+                Prisjakt started off by catering to computer enthusiasts and was
+                one of the first price comparison sites in the Nordics. It is
+                still the leading price comparison service but in recent years
+                Prisjak’t growth stagnated. Prisjakt’s conversion is based
+                mostly on click-outs where different the price per click is
+                based on the product category.
               </Paragraph>
             ),
             toolsAndMethods: [
@@ -105,20 +105,22 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Revenue model:</>,
+            title: <>The problem</>,
             text: (
               <>
                 <Paragraph>
-                  My client relies on 2 streams of revenue: Advertising, and
-                  Click-outs. A click-out is defined as “Whenever a user clicked
-                  to any of our customers’ offers”. After helping them with the
-                  search I was asked to find ways to help users find the right
-                  shop.
+                  Price comparison sites have a double challenges. On one hand
+                  they need to compare as many prices as possible to provide the
+                  lowest price possible for their users. This means comparing as
+                  many prices as possible. This is even more important in new
+                  markets where agreements are not yet signed. On the other
+                  hand, only stores that have an agreement with them generate
+                  revenue.
                 </Paragraph>
                 <Paragraph>
-                  It aims to present a complete picture of the market to help
-                  users find the cheapest price possible. In order to do that
-                  they collect data from both customers and non-customer sites.
+                  How could we drive more traffic to paying customers without
+                  sacrifising neutrality? What do we do if the cheapest price
+                  comes from stores that dont generate revenue?
                 </Paragraph>
               </>
             ),
@@ -136,9 +138,9 @@ export const CASE_10 = {
                   and encourage potential customers to sign-up.
                 </Paragraph>
                 <Paragraph>
-                  We already knew at this point that some shops are “taking
-                  advantage of the system”: posting fake prices, or not keeping
-                  their stock status up-to-date.
+                  On top of that, we already knew that some shops are “taking
+                  advantage of the system” but without an agreement there was
+                  little my client could do in order to ensure data quality.
                 </Paragraph>
               </>
             ),
@@ -342,20 +344,31 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>One small step in the right direction</>,
+            title: <>Baby steps in the right direction</>,
             text: (
               <>
                 <Paragraph>
-                  Based on the insights, an idea started to materialize.
+                  Based on the insights, we had some small changes we could do
+                  in order to test our hypothesis.
                 </Paragraph>
+                <Title h={4}>Reducing free information</Title>
                 <Paragraph>
                   To start with I suggested reducing the amount of information
                   that is visible for free. limiting the information to only the
                   product name, store name, and its ratings. Stock status and
                   all other information from non-paying customers should be
-                  removed. This should increase the attractiveness of becoming a
-                  paying customer.
+                  removed.{" "}
                 </Paragraph>
+                <Image
+                  imageUrl={`${SETTINGS.MEDIA_BASE_URL}/offer-change.png`}
+                />
+                <Paragraph>
+                  The idea was to increase the benefits shops get for signing an
+                  agreement. Making it more attractive to become a paying
+                  customer.
+                </Paragraph>
+
+                <Title h={4}>Sort by recommended</Title>
                 <Paragraph>
                   On top of that, I suggested we should a recommended sorting on
                   top of the existing sorting which is based on price. Most
@@ -371,6 +384,9 @@ export const CASE_10 = {
                   prevent any non-paying shop to be at the top of the list while
                   showing more relevant offers for users.
                 </Paragraph>
+                <Image
+                  imageUrl={`${SETTINGS.MEDIA_BASE_URL}/sorting-change.png`}
+                />
                 <Paragraph>
                   In order to keep transparency, I suggested we use a grouping
                   mechanism where we show all the offers where information is
@@ -428,6 +444,10 @@ export const CASE_10 = {
                   categories. We collected data and the experiment was left to
                   run for a total of 55 days during summer.
                 </Paragraph>
+                <Image
+                  imageUrl={`${SETTINGS.MEDIA_BASE_URL}/ab-test.png`}
+                  imageAlt="AB test in action"
+                />
                 <Paragraph>
                   In total 1,129,261 sessions were collected and the split list
                   had a 69% chance to be better compared to the benchmark.
@@ -435,8 +455,6 @@ export const CASE_10 = {
                 </Paragraph>
               </>
             ),
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/ab-test.png`,
-            imageAlt: "AB test in action",
           },
         },
       ],
