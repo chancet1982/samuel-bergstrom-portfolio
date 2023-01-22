@@ -8,8 +8,14 @@ import Paragraph from "../Components/Shared/Paragraph";
 import Title from "../Components/Shared/Title";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
-import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
+// import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 
+/* TODO: First attempt expectations vs reality... (implement as side by side content) */
+/* TODO: "Problem" image test to see if its better as part of the first text box. */
+/* TODO: Clean up the steps in the preview (based on the the other content) */
+/* TODO: Add a slide about creating a design system (mostly a filler with some text above to explain why there is a missmatch) */
+/* TODO: add missing results */
+/* TODO: Add missing thumbnail */
 /* TODO: This is a non-finished project. Finish it or remove. */
 const SETTINGS = {
   BG_COLOR: "#00ADDB",
@@ -138,23 +144,12 @@ export const CASE_11 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.IMAGE_GALLERY,
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
-            template: IMAGE_GALLERY_TEMPLATES.THREE_IMAGES_TWO_COLUMNS,
-            images: [
-              {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-0.jpg`,
-                imageAlt: "?",
-              },
-              {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-2.png`,
-                imageAlt: "Co-creating wireframes",
-              },
-              {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-3.png`,
-                imageAlt: "Co-creating wireframes",
-              },
-            ],
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/before.png`,
+            imageAlt: "?",
+            limitMaxWidth: true,
+            caption: "Which one of the CDON offers is a used product?",
           },
         },
         {
@@ -163,13 +158,19 @@ export const CASE_11 = {
             title: <>The goal:</>,
             h: 2,
             text: (
-              <Paragraph>
-                My goal was to lead more traffic to used and demo products,
-                increase clarity, and align users expectations. Reducing
-                missclicks means we increate the quality of traffic (more likely
-                to actually make a purchase) and redirect more valuable traffic
-                to the stores.
-              </Paragraph>
+              <>
+                <Paragraph>
+                  My goal was to lead more traffic to used and demo products,
+                  increase clarity, and align users expectations. Reducing
+                  missclicks means we increate the quality of traffic (more
+                  likely to actually make a purchase) and redirect more valuable
+                  traffic to the stores.
+                </Paragraph>
+                <Paragraph>
+                  On top of that, refurbished products often have higer margins
+                  which means that click price on those products can be higher
+                </Paragraph>
+              </>
             ),
           },
         },
@@ -177,16 +178,19 @@ export const CASE_11 = {
     },
     {
       header: "Research",
+      bgColor: SETTINGS.BG_COLOR,
       elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Quantitative Research</>,
+            title: <>Research</>,
             h: 2,
             text: (
               <>
-                <Paragraph>
+                <Title h={4}>
                   Looking at user feedback and quarterly survey responses.
+                </Title>
+                <Paragraph>
                   Looking at user feedback it was an obvious pain point for the
                   users. The layout led to numerous users misclicking “demo”
                   products believing these were new. Leading complaints on the
@@ -196,24 +200,16 @@ export const CASE_11 = {
                   products.
                 </Paragraph>
                 <Paragraph>
-                  Looking at the quarterly survey, XXX% of the complaints were
-                  tagged with “demo” issues.
+                  During the quarterly survey, a large share of the complaints
+                  were related to “non-new” products and how they are displayed.
+                </Paragraph>
+                <Title h={4}>Qualitative research</Title>
+                <Paragraph>
+                  On top of that, as part of ongoing usability testings, we
+                  asked participants to point out demo products. Not a single
+                  participant managed to point these out.
                 </Paragraph>
               </>
-            ),
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: <>Qualitative research</>,
-            h: 2,
-            text: (
-              <Paragraph>
-                In one of the usability testing rounds, we asked participants to
-                look at smartphones and point out demo products. Not a single
-                participant managed to point these out.
-              </Paragraph>
             ),
           },
         },
@@ -228,39 +224,23 @@ export const CASE_11 = {
             title: <>Ideation and competitor analysis</>,
             h: 2,
             text: (
-              <Paragraph>
-                At this point, it was obvious that we had a problem worth
-                solving. But it was not a unique problem. More or less every
-                marketplace and competitor was trying to do the same. I looked
-                at and evaluated how used products were sold by 17 leading
-                competitors in Europe.
-              </Paragraph>
-            ),
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: <>Figuring out alternatives</>,
-            h: 2,
-            text: (
-              <Paragraph>
-                These ideas were then summarized and evaluated based on
-                feasibility, usability, and business potential. Feasibility with
-                the engineers on our team, business with the responsible PM, and
-                usability was evaluated based on best practices (Published by
-                Baymard Institute)
-              </Paragraph>
-            ),
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: <>Addressing concerns</>,
-            h: 2,
-            text: (
               <>
+                <Paragraph>
+                  At this point, it was obvious that we had a problem worth
+                  solving. But it was not a unique problem. More or less every
+                  marketplace and competitor was trying to do the same. I looked
+                  at and evaluated how used products were sold by 17 leading
+                  competitors in Europe.
+                </Paragraph>
+                <Title h={4}>Figuring out alternatives</Title>
+                <Paragraph>
+                  These ideas were then summarized and evaluated based on
+                  feasibility, usability, and business potential. Feasibility
+                  with the engineers on our team, business with the responsible
+                  PM, and usability was evaluated based on best practices
+                  (Published by Baymard Institute)
+                </Paragraph>
+                <Title h={4}>Addressing concerns</Title>
                 <Paragraph>
                   There were some internal concerns in the organization. Namely,
                   how this aligns with the company’s values and how it might
@@ -287,22 +267,15 @@ export const CASE_11 = {
             title: <>Design</>,
             h: 2,
             text: (
-              <Paragraph>
-                The new design needed to improve clarity for users (what
-                products am I looking at now?), and encourage users to buy used
-                products, all without adding to the clutter and risk harming
-                conversion rates.
-              </Paragraph>
-            ),
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: <>Steps towards the right solution.</>,
-            h: 2,
-            text: (
               <>
+                <Paragraph>
+                  The new design needed to improve clarity for users (what
+                  products am I looking at now?), and encourage users to buy
+                  used products, all without adding to the clutter and risk
+                  harming conversion rates.
+                </Paragraph>
+
+                <Title h={4}>Steps towards the right solution.</Title>
                 <Paragraph>
                   The solution was actually rather simple. Firstly it was
                   obvious that we couldn’t mix new and used products in the same
@@ -315,17 +288,8 @@ export const CASE_11 = {
                   perhaps the cheapest. On top of that, the price history was
                   limited to account for new products only.
                 </Paragraph>
-              </>
-            ),
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: <>“New” vs “Used” as product variants.</>,
-            h: 2,
-            text: (
-              <>
+
+                <Title h={4}>Introduce product condition as variant.</Title>
                 <Paragraph>
                   Access to non-new products was then introduced as product
                   variants. Product variants traditionally refer to different
@@ -348,6 +312,96 @@ export const CASE_11 = {
                 </Paragraph>
               </>
             ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
+          data: {
+            items: [
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-1.png`,
+                imageAlt:
+                  "Step 1: First attempt at product condition as variant",
+                title: "Step 1: First attempt at product condition as variant",
+                text: (
+                  <>
+                    <Paragraph>
+                      The solution was actually rather simple. Firstly it was
+                      obvious that we couldn’t mix new and used products in the
+                      same bucket. So instead all non-new products were removed
+                      from the general offers list.
+                    </Paragraph>
+                    <Paragraph>
+                      As prices across the site reflected new products. We
+                      decided to do the same even though non-new products
+                      existed and were perhaps the cheapest. On top of that, the
+                      price history was limited to account for new products
+                      only.
+                    </Paragraph>
+                  </>
+                ),
+              },
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-2.png`,
+                imageAlt: "Step 2: Reality check, constraints and concerns",
+                title: "Step 2: Reality check, constraints and concerns",
+                text: (
+                  <>
+                    <Paragraph>
+                      Messages are used to communicate vital information but are
+                      only available before accepting a route.
+                    </Paragraph>
+                    <Paragraph>
+                      <strong>Solution:</strong> It was decided to lift messages
+                      into their own link accessible at all times as a
+                      notification center. On top of that, messages will pop-up
+                      before couriers accept the route and if a client has any
+                      messages related to them the couriers will see that when
+                      they arrive at the location.
+                    </Paragraph>
+                  </>
+                ),
+              },
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-3.png`,
+                imageAlt: "Step 3: Adressing some concerns",
+                title: "Step 3: Adressing some concerns",
+                text: (
+                  <>
+                    <Paragraph>
+                      Long customer names and long addresses were not displayed
+                      properly.
+                    </Paragraph>
+                    <Paragraph>
+                      <strong>Solution:</strong> After finding the maximum
+                      length of both names and addresses it was decided that we
+                      should allow them to wrap into several lines instead of
+                      limiting them to one line.
+                    </Paragraph>
+                  </>
+                ),
+              },
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-4.png`,
+                imageAlt: "Step 4: Exposing product condition as variant",
+                title: "Step 4: Exposing product condition as variant",
+                h: 4,
+                text: (
+                  <>
+                    <Paragraph>
+                      Long customer names and long addresses were not displayed
+                      properly.
+                    </Paragraph>
+                    <Paragraph>
+                      <strong>Solution:</strong> After finding the maximum
+                      length of both names and addresses it was decided that we
+                      should allow them to wrap into several lines instead of
+                      limiting them to one line.
+                    </Paragraph>
+                  </>
+                ),
+              },
+            ],
           },
         },
       ],
@@ -377,6 +431,15 @@ export const CASE_11 = {
                 </Paragraph>
               </>
             ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/testing.png`,
+            imageAlt: "?",
+            limitMaxWidth: true,
+            caption: "Conversion rate changes as measured in Optimizely",
           },
         },
       ],
