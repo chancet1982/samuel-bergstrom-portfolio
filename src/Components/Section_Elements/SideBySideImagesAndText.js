@@ -11,9 +11,16 @@ import sizes from "../../theme/sizes";
 const StyledSideBySideImagesAndText = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 4rem;
-  max-width: ${sizes.contentWidthLimit}px;
-  margin: 0 auto;
+  column-gap: ${padding.vertical.double};
+  padding: 0 ${padding.horizontal.double};
+
+  @media (min-width: ${breakpoints.desktop}px) {
+    ${({ $limitMaxWidth }) =>
+      $limitMaxWidth && {
+        maxWidth: `${sizes.contentWidthLimit}px`,
+        margin: "0 auto",
+      }}
+  }
 
   > div div {
     padding-top: ${padding.vertical.single};
@@ -39,9 +46,9 @@ const StyledSideBySideImagesAndText = styled(motion.div)`
   }
 `;
 
-function SideBySideImagesAndText({ items }) {
+function SideBySideImagesAndText({ limitMaxWidth, items }) {
   return (
-    <StyledSideBySideImagesAndText>
+    <StyledSideBySideImagesAndText $limitMaxWidth={limitMaxWidth}>
       {items.map(({ imageUrl, imageAlt, title, text, bgColor }) => (
         <ElementContextProvider key={imageUrl}>
           <ImageWithTitleAndText
@@ -58,6 +65,7 @@ function SideBySideImagesAndText({ items }) {
 }
 
 SideBySideImagesAndText.propTypes = {
+  limitMaxWidth: PropTypes.bool,
   items: PropTypes.arrayOf(
     PropTypes.shape({
       imageUrl: PropTypes.string.isRequired,
@@ -67,6 +75,10 @@ SideBySideImagesAndText.propTypes = {
       bgColor: PropTypes.string,
     })
   ).isRequired,
+};
+
+SideBySideImagesAndText.defaultProps = {
+  limitMaxWidth: true,
 };
 
 export default SideBySideImagesAndText;

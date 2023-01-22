@@ -3,13 +3,16 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import ImageWithCaption from "../Shared/ImageWithCaption";
 import sizes from "../../theme/sizes";
+import breakpoints from "../../theme/breakpoints";
 
 const StyledSectionImage = styled.div`
-  ${({ limitMaxWidth }) =>
-    limitMaxWidth && {
-      maxWidth: `${sizes.contentWidthLimit}px`,
-      margin: "0 auto",
-    }}
+  @media (min-width: ${breakpoints.desktop}px) {
+    ${({ $limitMaxWidth }) =>
+      $limitMaxWidth && {
+        maxWidth: `${sizes.contentWidthLimit}px`,
+        margin: "0 auto",
+      }}
+  }
 `;
 
 function SectionImage({ imageUrl, imageAlt, caption, limitMaxWidth }) {

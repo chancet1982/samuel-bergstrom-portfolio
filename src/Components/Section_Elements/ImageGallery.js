@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { v4 as uuid } from "uuid";
 import ImageWithCaption from "../Shared/ImageWithCaption";
 import sizes from "../../theme/sizes";
+import breakpoints from "../../theme/breakpoints";
 
 const StyledImageGallery = styled.div`
   padding-top: 4rem;
@@ -12,12 +13,14 @@ const StyledImageGallery = styled.div`
   column-gap: 0.5rem;
   row-gap: 0.5rem;
   ${({ template }) => template};
-  ${({ limitMaxWidth }) =>
-    limitMaxWidth &&
-    `
-   max-width:${sizes.contentWidthLimit}px;
-   margin: 0 auto;
-  `};
+
+  @media (min-width: ${breakpoints.desktop}px) {
+    ${({ $limitMaxWidth }) =>
+      $limitMaxWidth && {
+        maxWidth: `${sizes.contentWidthLimit}px`,
+        margin: "0 auto",
+      }}
+  }
 `;
 
 function ImageGallery({ images, template, limitMaxWidth }) {

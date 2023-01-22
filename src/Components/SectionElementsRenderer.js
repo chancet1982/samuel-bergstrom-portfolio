@@ -142,6 +142,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
         <SideBySideImagesAndText
           key={elementKey}
           bgColor={data.bgColor}
+          limitMaxWidth={data.limitMaxWidth}
           items={data.items}
         />
       );

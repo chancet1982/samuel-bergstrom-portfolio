@@ -13,7 +13,7 @@ import padding from "../../theme/padding";
 // import colors from "../../theme/colors";
 
 const StyledListOfCards = styled(motion.div)`
-  padding: 0 4vw;
+  padding: 0 ${padding.horizontal.double};
 
   @media (min-width: ${breakpoints.desktop}px) {
     max-width: ${sizes.contentWidthLimit}px;

@@ -5,6 +5,7 @@ import colors from "../../theme/colors";
 import padding from "../../theme/padding";
 import sizes from "../../theme/sizes";
 import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
+import breakpoints from "../../theme/breakpoints";
 
 const StyledBackground = styled.div`
   height: 100%;
@@ -26,11 +27,13 @@ ${({ $bgMedia, $bgColor, $isPadded }) =>
       paddingBottom: padding.vertical.double,
     }}
 
-${({ $limitMaxWidth }) =>
-    $limitMaxWidth && {
-      maxWidth: `${sizes.contentWidthLimit}px`,
-      margin: "0 auto",
-    }}
+@media (min-width: ${breakpoints.desktop}px) {
+    ${({ $limitMaxWidth }) =>
+      $limitMaxWidth && {
+        maxWidth: `${sizes.contentWidthLimit}px`,
+        margin: "0 auto",
+      }}
+  }
 `;
 
 function BackgroundWrapper({
