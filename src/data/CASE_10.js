@@ -152,7 +152,7 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Kicking-off with internal interviews</>,
+            title: <>Internal interviews</>,
             h: 2,
             text: (
               <Paragraph>
@@ -207,9 +207,6 @@ export const CASE_10 = {
           data: {
             title: <>Looking for ideas</>,
             h: 2,
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/ideation.png`,
-            imageAlt: "",
-            caption: "Digital whiteboard from one of the workshops",
             text: (
               <>
                 <Paragraph>
@@ -224,6 +221,15 @@ export const CASE_10 = {
                 </Paragraph>
               </>
             ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/ideation.png`,
+            imageAlt: "Digital whiteboard from one of the workshops",
+            limitMaxWidth: true,
+            caption: "Digital whiteboard from one of the workshops",
           },
         },
         {
@@ -268,7 +274,7 @@ export const CASE_10 = {
       ],
     },
     {
-      header: "More research",
+      header: "Design",
       elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
@@ -285,6 +291,7 @@ export const CASE_10 = {
                   with “price” but digging deeper revealed a more complex set of
                   criteria users use to evaluate a potential purchase.
                 </Paragraph>
+                <Title h={4}>Competitor analysis</Title>
                 <Paragraph>
                   I was looking at 17 competitor sites. Some in direct
                   competition and others that have similar challenges. On top of
@@ -292,20 +299,13 @@ export const CASE_10 = {
                   from scholarly literature to white papers and research
                   dossiers from big and respected companies.
                 </Paragraph>
+                <Title h={4}>User interviews</Title>
+                <Paragraph>
+                  I conducted 10 interviews asking them how they choose online
+                  shops to buy from. One of the participants summarized it
+                  really well:
+                </Paragraph>
               </>
-            ),
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: <>User interviews</>,
-            text: (
-              <Paragraph>
-                I conducted 10 interviews asking them how they choose online
-                shops to buy from. One of the participants summarized it really
-                well:
-              </Paragraph>
             ),
           },
         },
@@ -388,7 +388,7 @@ export const CASE_10 = {
               {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/before.png`,
                 imageAlt: "Prices list, before",
-                title: "Prices list, before",
+                title: "Before",
                 text: (
                   <Paragraph>
                     Price-list before changes: A mixture of paying and
@@ -399,7 +399,7 @@ export const CASE_10 = {
               {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/after.png`,
                 imageAlt: "Prices list, after",
-                title: "Prices list, after",
+                title: "After",
                 text: (
                   <Paragraph>
                     Price-list after: Recommended sorting in-place, non-paying

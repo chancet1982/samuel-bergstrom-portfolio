@@ -18,7 +18,7 @@ const StyledSectionImage = styled.div`
 function SectionImage({ imageUrl, imageAlt, caption, limitMaxWidth }) {
   return (
     <StyledSectionImage
-      limitMaxWidth={limitMaxWidth}
+      $limitMaxWidth={limitMaxWidth}
       initial="hidden"
       whileInView="inView"
       viewport={{ once: true, amount: 0.2 }}
