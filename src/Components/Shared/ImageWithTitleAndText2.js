@@ -23,7 +23,7 @@ const StyledTitleAndText = styled(motion.div)`
   }
 
   @media (min-width: ${breakpoints.mobileLarge}px) {
-    height: 80vw;
+    height: 80vh;
   }
 `;
 

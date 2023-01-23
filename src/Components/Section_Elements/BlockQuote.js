@@ -20,13 +20,13 @@ const StyledBlockQuote = styled(motion.blockquote)`
   box-sizing: border-box;
   margin-left: ${padding.horizontal.double};
   margin-right: ${padding.horizontal.double};
+  margin-bottom: ${({ $light }) => ($light ? 0 : padding.vertical.double)};
 
   @media (min-width: ${breakpoints.mobileLarge}px) {
     margin: 0 auto;
-    padding: ${padding.vertical.double} ${padding.horizontal.double};
+    padding: ${padding.vertical.double} ${padding.horizontal.quadruple};
+    margin-bottom: ${({ $light }) => ($light ? 0 : padding.vertical.double)};
   }
-
-  margin-bottom: ${({ $light }) => ($light ? 0 : padding.vertical.double)};
 
   :after {
     content: "";

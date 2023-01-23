@@ -55,7 +55,9 @@ const StyledTextbox = styled(motion.div)`
   }
 `;
 
-const StyledTextboxImage = styled.figure``;
+const StyledTextboxImage = styled.figure`
+  margin: 0;
+`;
 
 function Textbox({
   title,
