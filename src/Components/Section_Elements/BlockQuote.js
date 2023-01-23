@@ -10,20 +10,35 @@ import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
 import sizes from "../../theme/sizes";
 import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
+import breakpoints from "../../theme/breakpoints";
 
 const StyledBlockQuote = styled(motion.blockquote)`
-  padding: ${padding.vertical.double} ${padding.horizontal.quadruple};
+  padding: ${padding.vertical.single} ${padding.horizontal.double}
+    ${padding.vertical.single} ${padding.horizontal.quadruple};
   max-width: ${sizes.contentWidthLimit}px;
-  margin: 0 auto;
   position: relative;
   box-sizing: border-box;
+  margin-left: ${padding.horizontal.double};
+  margin-right: ${padding.horizontal.double};
+
+  @media (min-width: ${breakpoints.mobileLarge}px) {
+    margin: 0 auto;
+    padding: ${padding.vertical.double} ${padding.horizontal.double};
+  }
+
   margin-bottom: ${({ $light }) => ($light ? 0 : padding.vertical.double)};
 
   :after {
     content: "";
     position: absolute;
     top: 0;
-    left: 6vw; /* TODO: replace magic number */
+
+    left: ${padding.horizontal.double};
+
+    @media (min-width: ${breakpoints.mobileLarge}px) {
+      left: 6vw; /* TODO: replace magic number */
+    }
+
     height: 100%;
     width: 2px;
     background-color: ${({ $light }) =>

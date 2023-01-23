@@ -5,6 +5,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import Title from "./Title";
 import padding from "../../theme/padding";
+import breakpoints from "../../theme/breakpoints";
 
 const StyledTitleAndText = styled(motion.div)`
   ${({ $isPadded }) =>
@@ -14,9 +15,16 @@ const StyledTitleAndText = styled(motion.div)`
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 80vh;
   box-sizing: border-box;
   grid-area: ${({ $flip }) => ($flip ? "b" : "a")};
+
+  @media (max-width: ${breakpoints.mobileLarge - 1}px) {
+    min-height: 80vh;
+  }
+
+  @media (min-width: ${breakpoints.mobileLarge}px) {
+    height: 80vw;
+  }
 `;
 
 const StyledImageWithTitleAndText = styled(motion.div)`
@@ -26,6 +34,7 @@ const StyledImageWithTitleAndText = styled(motion.div)`
   margin: 0 auto;
   grid-template-areas: "a b";
   padding: 0 ${padding.horizontal.double};
+  position: relative;
 `;
 
 const StyledImage = styled(motion.div)`
@@ -34,6 +43,11 @@ const StyledImage = styled(motion.div)`
   background-size: cover;
   width: 50%;
   position: absolute;
+
+  @media (max-width: ${breakpoints.mobileLarge - 1}px) {
+    top: 50%;
+    margin-top: -50%;
+  }
 
   ${({ $imageUrl }) =>
     $imageUrl && {
