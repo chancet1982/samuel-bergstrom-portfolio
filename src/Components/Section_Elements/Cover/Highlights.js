@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import breakpoints from "../../../theme/breakpoints";
 import ValueAndLabel from "../../Shared/ValueAndLabel";
-import colors from "../../../theme/colors";
 import sizes from "../../../theme/sizes";
 import padding from "../../../theme/padding";
 
@@ -14,14 +13,28 @@ const StyledHighlights = styled(motion.div)`
   padding-right: ${padding.horizontal.double};
 
   > div {
-    flex: 1;
     align-items: flex-start;
+    justify-content: flex-start;
+    padding-left: 0;
+    padding-right: ${padding.horizontal.single};
+    flex: 1;
+
+    h5 {
+      text-align: left;
+    }
+
+    :first-of-type {
+      padding-left: ${padding.horizontal.double};
+    }
+
+    :last-of-type {
+      padding-right: ${padding.horizontal.double};
+    }
   }
 
   @media (min-width: ${breakpoints.desktop}px) {
     max-width: ${sizes.contentWidthLimit}px;
     margin: 0 auto;
-    border-top: 1px solid ${colors.darken.medium};
   }
 `;
 

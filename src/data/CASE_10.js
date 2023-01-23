@@ -8,7 +8,7 @@ import Paragraph from "../Components/Shared/Paragraph";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Shared/Title";
-import colors from "../theme/colors";
+/* import colors from "../theme/colors"; */
 import Image from "../Components/Shared/ImageWithCaption";
 /* TODO: Final result looks like shit for desktop products (Perhaps use the Fitness24Seven solution) */
 /* TODO: cover fgImage is missing mobile image URL */
@@ -60,7 +60,7 @@ export const CASE_10 = {
               ),
             },
             fgImage: {
-              imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover.png`,
+              imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
             },
             highlights: [
               SETTINGS.KEY_FIGURES.CASE_TYPE,
@@ -211,15 +211,21 @@ export const CASE_10 = {
             h: 2,
             text: (
               <>
+                <Title h={4}>More interviews</Title>
                 <Paragraph>
-                  We continued interviewing internal stakeholders and looked
-                  through the survey results to identify potential solutions.
-                </Paragraph>
-
-                <Paragraph>
-                  We conducted ideation workshops with different stakeholder
+                  I continued interviewing internal stakeholders and looked
+                  through the survey results to identify potential solutions. We
+                  conducted ideation workshops with different stakeholder
                   grouped and combined all the suggestions into a list with a
                   little over 60 improvement suggestions.
+                </Paragraph>
+
+                <Title h={4}>Competitor analysis</Title>
+                <Paragraph>
+                  I was looking at 17 competitor sites. Some in direct
+                  competition and others that have similar challenges. Most
+                  competitors simply only show their affeliates which is the
+                  easiest approach.
                 </Paragraph>
               </>
             ),
@@ -262,7 +268,12 @@ export const CASE_10 = {
             ),
           },
         },
-        {
+      ],
+    },
+    {
+      header: "Design",
+      elements: [
+        /* {
           template: SECTION_ELEMENTS.QUOTE,
           data: {
             bgMedia: {
@@ -273,56 +284,17 @@ export const CASE_10 = {
             cite: "User, Survey reponse",
           },
         },
-      ],
-    },
-    {
-      header: "Design",
-      elements: [
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: <>Back to the library</>,
-            text: (
-              <>
-                <Paragraph>
-                  When a user finds a shop it uses the service to search among
-                  different shops to find the cheapest price for a given item.
-                  This forces paying customers to compete with all shops. But it
-                  is never so simple, during interviews, I asked: “So how do you
-                  choose where to buy an item?” In most cases, users responded
-                  with “price” but digging deeper revealed a more complex set of
-                  criteria users use to evaluate a potential purchase.
-                </Paragraph>
-                <Title h={4}>Competitor analysis</Title>
-                <Paragraph>
-                  I was looking at 17 competitor sites. Some in direct
-                  competition and others that have similar challenges. On top of
-                  that, I was reading a lot of research about this topic, from
-                  from scholarly literature to white papers and research
-                  dossiers from big and respected companies.
-                </Paragraph>
-                <Title h={4}>User interviews</Title>
-                <Paragraph>
-                  I conducted 10 interviews asking them how they choose online
-                  shops to buy from. One of the participants summarized it
-                  really well:
-                </Paragraph>
-              </>
-            ),
-          },
-        },
-        {
+         {
           template: SECTION_ELEMENTS.QUOTE,
           data: {
             quote:
               "I want to find a trustworthy shop that sells the product I want for a reasonable price",
             cite: "User, during interview",
           },
-        },
-        {
+        }, 
+         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            bgColor: colors.offwhite,
             title: <>Insights:</>,
             text: (
               <>
@@ -340,7 +312,7 @@ export const CASE_10 = {
               </>
             ),
           },
-        },
+        }, */
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
@@ -357,7 +329,13 @@ export const CASE_10 = {
                   that is visible for free. limiting the information to only the
                   product name, store name, and its ratings. Stock status and
                   all other information from non-paying customers should be
-                  removed.{" "}
+                  removed.
+                </Paragraph>
+                <Paragraph>
+                  On top of that, greying out the link to shops without an
+                  agreement, would make those less attractive to click on &
+                  would align better with users expectations (i.e. a disabled
+                  link)
                 </Paragraph>
                 <Image
                   imageUrl={`${SETTINGS.MEDIA_BASE_URL}/offer-change.png`}
@@ -368,7 +346,7 @@ export const CASE_10 = {
                   customer.
                 </Paragraph>
 
-                <Title h={4}>Sort by recommended</Title>
+                <Title h={4}>Change the default sorting</Title>
                 <Paragraph>
                   On top of that, I suggested we should a recommended sorting on
                   top of the existing sorting which is based on price. Most
