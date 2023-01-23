@@ -6,18 +6,27 @@ import Title from "./Shared/Title";
 import padding from "../theme/padding";
 import colors from "../theme/colors";
 import { SplashAnimationFinishedContext } from "../Context/SplashAnimationFinishedContext";
+import breakpoints from "../theme/breakpoints";
 
 const StyledSplashScreen = styled(motion.main)`
   display: flex;
   min-height: 100vh;
-  align-items: center;
-  justify-content: flex-start;
   padding-left: ${padding.horizontal.quadruple};
   padding-right: ${padding.horizontal.quadruple};
   padding-top: ${padding.vertical.quadruple};
   padding-bottom: ${padding.vertical.quadruple};
   box-sizing: border-box;
   background-color: ${colors.offblack};
+
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+
+  @media (min-width: ${breakpoints.mobileLarge}px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
 `;
 
 function SplashScreen() {
