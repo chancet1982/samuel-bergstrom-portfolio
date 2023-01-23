@@ -19,8 +19,7 @@ const StyledCoverImage = styled(motion.img)`
 const StyledCoverVideo = styled(motion.video)`
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
+  right: -50%;
   bottom: 0;
   min-width: 100vw;
   width: auto;
@@ -28,6 +27,11 @@ const StyledCoverVideo = styled(motion.video)`
   object-fit: cover;
   z-index: -1;
   object-position: top left;
+
+  @media (min-width: ${breakpoints.mobileLarge}px) {
+    left: 0;
+    right: 0;
+  }
 
   @media (min-width: ${breakpoints.desktop}px) {
     object-position: top right;

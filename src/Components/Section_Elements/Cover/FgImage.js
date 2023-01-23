@@ -10,7 +10,10 @@ const StyledFgImage = styled(motion.img)`
   position: absolute;
   max-height: 92vh;
   right: 0;
-  left: 50%;
+
+  @media (min-width: ${breakpoints.mobileLarge}px) {
+    left: 50%;
+  }
   transform-origin: center;
 `;
 

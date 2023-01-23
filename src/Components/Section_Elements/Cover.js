@@ -35,20 +35,39 @@ const StyledCover = styled(motion.div)`
     left: 0;
     width: 100%;
     height: 100%;
+    z-index: 1;
+
     background: linear-gradient(
       ${({ $isLight }) =>
         !$isLight
           ? `
       72deg,
     rgba(244, 244, 244, 0.64) 0%,
-    rgba(244, 244, 244, 0) 64%
+    rgba(244, 244, 244, 0) 100%
       `
           : `
       72deg,
     rgba(0, 0, 0, 0.64) 0%,
-    rgba(0, 0, 0, 0) 64%
+    rgba(0, 0, 0, 0) 100%
       `}
     );
+
+    @media (min-width: ${breakpoints.mobileLarge}px) {
+      background: linear-gradient(
+        ${({ $isLight }) =>
+          !$isLight
+            ? `
+      72deg,
+    rgba(244, 244, 244, 0.64) 0%,
+    rgba(244, 244, 244, 0) 64%
+      `
+            : `
+      72deg,
+    rgba(0, 0, 0, 0.64) 0%,
+    rgba(0, 0, 0, 0) 64%
+      `}
+      );
+    }
   }
 `;
 

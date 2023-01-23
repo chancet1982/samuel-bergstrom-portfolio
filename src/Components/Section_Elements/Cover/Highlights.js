@@ -19,7 +19,7 @@ const StyledHighlights = styled(motion.div)`
     padding-right: ${padding.horizontal.single};
     flex: 1;
 
-    h5 {
+    > * {
       text-align: left;
     }
 
