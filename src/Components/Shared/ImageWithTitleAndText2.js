@@ -34,7 +34,10 @@ const StyledImageWithTitleAndText = styled(motion.div)`
   margin: 0 auto;
   grid-template-areas: "a b";
   padding: 0 ${padding.horizontal.double};
-  position: relative;
+
+  @media (max-width: ${breakpoints.mobileLarge - 1}px) {
+    position: relative;
+  }
 `;
 
 const StyledImage = styled(motion.div)`
@@ -42,6 +45,7 @@ const StyledImage = styled(motion.div)`
   background-repeat: no-repeat;
   background-size: cover;
   width: 50%;
+
   position: absolute;
 
   @media (max-width: ${breakpoints.mobileLarge - 1}px) {
@@ -57,6 +61,7 @@ const StyledImage = styled(motion.div)`
   background-position: ${({ $flip }) => ($flip ? "right" : "left")};
   left: ${({ $flip }) => ($flip ? "0" : "auto")};
   right: ${({ $flip }) => ($flip ? "auto" : "0")};
+  background-size: contain;
 `;
 
 /* TODO: StyledTitleAndText doesnt get props (for whatever reason) */
