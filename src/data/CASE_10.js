@@ -10,6 +10,8 @@ import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Shared/Title";
 /* import colors from "../theme/colors"; */
 import Image from "../Components/Shared/ImageWithCaption";
+import Note from "../Components/Shared/Note";
+
 /* TODO: Final result looks like shit for desktop products (Perhaps use the Fitness24Seven solution) */
 /* TODO: cover fgImage is missing mobile image URL */
 
@@ -55,7 +57,7 @@ export const CASE_10 = {
               title: "Increasing revenue",
               text: (
                 <Paragraph xxl>
-                  Directing more traffic to paying customers
+                  Increasing traffic <br /> to paying customers
                 </Paragraph>
               ),
             },
@@ -124,6 +126,16 @@ export const CASE_10 = {
                 </Paragraph>
               </>
             ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/problem.png`,
+            imageAlt: "?",
+            limitMaxWidth: true,
+            caption:
+              "Problem: Almost non of the visible store links will generate revenue.",
           },
         },
         {
@@ -273,46 +285,37 @@ export const CASE_10 = {
     {
       header: "Design",
       elements: [
-        /* {
-          template: SECTION_ELEMENTS.QUOTE,
-          data: {
-            bgMedia: {
-              mediaUrl: `${SETTINGS.MEDIA_BASE_URL}/quote-bg.jpg`,
-            },
-            quote:
-              "Det verkar finnas en del “fejkaktörer” som ofta hamnar överst i listan och som sen inte har produkten. Det gör att man ofta inte chansar med företag som inte är kända sen innan.",
-            cite: "User, Survey reponse",
-          },
-        },
-         {
-          template: SECTION_ELEMENTS.QUOTE,
-          data: {
-            quote:
-              "I want to find a trustworthy shop that sells the product I want for a reasonable price",
-            cite: "User, during interview",
-          },
-        }, 
-         {
+        {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Insights:</>,
+            title: <>Initial idea: only show shops we have an agreement with</>,
             text: (
               <>
                 <Paragraph>
-                  So selecting where to buy products isn’t just about price.
+                  Its very simple. Hotels.com, booking.com and others are not
+                  showing all hotels. It is common practice that comparison
+                  sites will only compare prices from sites/stores that they are
+                  affeliated with. In such a case, other stores can be hidden
+                  behind a link that will either show or hide prices from
+                  non-affeliated stores.
                 </Paragraph>
-                <Paragraph>
-                  Of course, price plays a part in it, but also about trust (Do
-                  I know them? Did I buy there before? Was it a bad or good
-                  experience? Did I hear about them? Perhaps a friend bought
-                  from them?), delivery (When should I expect delivery? Is it in
-                  stock?), and payment options (I don’t like to share my credit
-                  card online, do they use Swish or Klarna?).
-                </Paragraph>
+                <Image
+                  imageUrl={`${SETTINGS.MEDIA_BASE_URL}/initial-idea.png`}
+                  imageAlt="example of how the site could look with with such a solution"
+                  caption="example of how the site could look with with such a solution"
+                />
+                <Note>
+                  <Paragraph>
+                    Due to the risk of losing market position and neutrality, it
+                    was decided against this solution. Since then, it seems like
+                    my client went more towards this solution but initially it
+                    was not possible.
+                  </Paragraph>
+                </Note>
               </>
             ),
           },
-        }, */
+        },
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {

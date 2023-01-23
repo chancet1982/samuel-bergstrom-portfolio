@@ -18,7 +18,7 @@ import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 /* TODO: Add missing thumbnail */
 /* TODO: This is a non-finished project. Finish it or remove. */
 const SETTINGS = {
-  BG_COLOR: "#00ADDB",
+  BG_COLOR: "#FF3366",
   URL: "/cases/11",
   MEDIA_BASE_URL: "assets/case-11",
   KEY_FIGURES: {
