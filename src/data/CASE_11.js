@@ -41,8 +41,13 @@ export const CASE_11 = {
   caseUrl: SETTINGS.URL,
   thumbnail: {
     overline: "Price Comparison Service",
-    title: "Selling non-new products",
-    text: <>Helping stores sell demo, refurbished, and used products</>,
+    title: "Non-new products",
+    text: (
+      <>
+        Helping stores sell demo, <br />
+        refurbished, and used products
+      </>
+    ),
     imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
     imageAlt: "thumbnail",
     bgColor: SETTINGS.BG_COLOR,
@@ -56,10 +61,11 @@ export const CASE_11 = {
             bgColor: SETTINGS.BG_COLOR,
             caption: {
               overline: "Price Comparison Service",
-              title: "Selling non-new products",
+              title: "Non-new products",
               text: (
                 <Paragraph xxl>
-                  Helping stores sell demo, refurbished, and used products
+                  Helping stores sell demo, <br /> refurbished, and used
+                  products
                 </Paragraph>
               ),
             },

@@ -2,16 +2,13 @@ import React from "react";
 import { motion } from "framer-motion";
 import styled from "styled-components";
 import PropTypes from "prop-types";
-import TitleAndText from "../../Shared/TitleAndText";
-import padding from "../../../theme/padding";
-import breakpoints from "../../../theme/breakpoints";
-import useBgColor from "../../../utils/useBgColor";
-import colors from "../../../theme/colors";
+import padding from "../../theme/padding";
+import useBgColor from "../../utils/useBgColor";
+import colors from "../../theme/colors";
+import { cardVariants } from "../../animations/animations";
 
 const StyledCard = styled(motion.div)`
-  width: clamp(${breakpoints.mobile}, 50%, ${breakpoints.mobileLarge});
   background-color: ${({ $light }) => ($light ? colors.lighten.low : "white")};
-  border-radius: 0.5rem;
   scroll-snap-align: start;
   position: relative;
   box-sizing: border-box;
@@ -27,32 +24,26 @@ const StyledCardMedia = styled(motion.div)`
 `;
 
 const StyledCardContent = styled(motion.div)`
-  padding: ${padding.vertical.double} ${padding.horizontal.double};
+  padding: ${padding.vertical.single} ${padding.horizontal.single};
 `;
 
-function Card({ title, text, mediaUrl }) {
+function Card({ children, mediaUrl }) {
   const light = useBgColor();
   return (
-    <StyledCard $light={light}>
+    <StyledCard $light={light} variants={cardVariants}>
       {mediaUrl && <StyledCardMedia $mediaUrl={mediaUrl} />}
-      <StyledCardContent>
-        <TitleAndText title={title} h={4}>
-          {text}
-        </TitleAndText>
-      </StyledCardContent>
+      <StyledCardContent>{children}</StyledCardContent>
     </StyledCard>
   );
 }
 
 Card.propTypes = {
   mediaUrl: PropTypes.string,
-  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
-  text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 Card.defaultProps = {
   mediaUrl: null,
-  title: null,
 };
 
 Card.defaultProps = {};

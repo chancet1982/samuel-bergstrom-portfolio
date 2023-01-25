@@ -3,11 +3,11 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useWindowSize } from "react-use";
-import Card from "./ListOfCards/Card";
+import Card from "../Shared/Card";
 import breakpoints from "../../theme/breakpoints";
 import sizes from "../../theme/sizes";
 import padding from "../../theme/padding";
-// import Button from "../Shared/Button";
+import TitleAndText from "../Shared/TitleAndText";
 // import { ReactComponent as CaretRight } from "../../assets/caret-right.svg";
 // import { ReactComponent as CaretLeft } from "../../assets/caret-left.svg";
 // import colors from "../../theme/colors";
@@ -103,6 +103,12 @@ function ListOfCards({ items }) {
     setListOffset(listOffset + offset);
   }; */
 
+  const renderCardContent = (title, text) => (
+    <TitleAndText title={title} h={4}>
+      {text}
+    </TitleAndText>
+  );
+
   return (
     <StyledListOfCards>
       <StyledList
@@ -114,7 +120,7 @@ function ListOfCards({ items }) {
       >
         {items.map(({ mediaUrl, title, text }) => (
           <StyledListItem $listItemWidth={`${listItemWidth}px`} key={title}>
-            <Card mediaUrl={mediaUrl} title={title} text={text} />
+            <Card mediaUrl={mediaUrl}>{renderCardContent(title, text)}</Card>
           </StyledListItem>
         ))}
       </StyledList>

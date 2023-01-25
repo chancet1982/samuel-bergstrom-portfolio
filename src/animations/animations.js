@@ -11,6 +11,7 @@ export const textVariants = {
   },
 };
 
+/* TODO: currently not used in all images. */
 export const imageVariants = {
   hidden: {
     opacity: 0,
@@ -40,5 +41,17 @@ export const formElementsVariants = {
   inView: {
     opacity: 1,
     y: 0,
+  },
+};
+
+export const cardVariants = {
+  hidden: {
+    opacity: 0,
+    y: 10,
+  },
+  inView: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6 },
   },
 };
