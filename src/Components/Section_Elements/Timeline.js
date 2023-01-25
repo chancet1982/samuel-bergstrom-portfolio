@@ -11,7 +11,7 @@ import colors from "../../theme/colors";
 import sizes from "../../theme/sizes";
 import Button from "../Shared/Button";
 
-const StyledTimeline = styled(motion.dl)`
+const StyledTimelineWrapper = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   padding: 0 ${padding.horizontal.double};
@@ -21,7 +21,17 @@ const StyledTimeline = styled(motion.dl)`
     max-width: ${sizes.contentWidthLimit}px;
     margin: 0 auto;
   }
+
+  > button {
+    margin: 0 auto;
+    width: 100%;
+    max-width: calc(${breakpoints.mobile}px - 2 * ${padding.horizontal.double});
+    align-self: center;
+    justify-self: center;
+  }
 `;
+
+const StyledTimeline = styled(motion.dl)``;
 
 const StyledTimelineItemYear = styled(motion.div)`
   grid-column: 1 / span 1;
@@ -98,12 +108,13 @@ const StyledTimelineItem = styled(motion.dt)`
     grid-template-columns: repeat(2, 1fr);
   }
 
-  border-top: solid 1px
-    ${({ light }) => (light ? colors.lighten.medium : colors.darken.medium)};
+  /*border-top: solid 1px
+    ${({ light }) => (light ? colors.lighten.medium : colors.darken.medium)};*/
 
   :last-of-type {
-    border-bottom: solid 1px
-      ${({ light }) => (light ? colors.lighten.medium : colors.darken.medium)};
+    /*border-bottom: solid 1px
+      ${({ light }) =>
+      light ? colors.lighten.medium : colors.darken.medium};*/
 
     ::after {
       content: "";
@@ -170,19 +181,21 @@ function Timeline({ items }) {
   const timelineItems = isPreview ? items.slice(0, 3) : items;
 
   return (
-    <StyledTimeline>
-      {timelineItems.map(({ year, events }) => (
-        <TimelineItem
-          key={year}
-          year={year}
-          events={events}
-          isPreview={isPreview}
-        />
-      ))}
+    <StyledTimelineWrapper>
+      <StyledTimeline>
+        {timelineItems.map(({ year, events }) => (
+          <TimelineItem
+            key={year}
+            year={year}
+            events={events}
+            isPreview={isPreview}
+          />
+        ))}
+      </StyledTimeline>
       <Button onClick={() => togglePreview(!isPreview)}>
         {isPreview ? "Expand" : "Collapse"}
       </Button>
-    </StyledTimeline>
+    </StyledTimelineWrapper>
   );
 }
 
