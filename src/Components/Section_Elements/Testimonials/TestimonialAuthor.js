@@ -10,6 +10,7 @@ const StyledTestimonialAuthor = styled(motion.figure)`
   display: flex;
   align-items: center;
   margin: 0;
+  padding-bottom: ${padding.vertical.half};
 `;
 
 const StyledAuthorImage = styled(motion.img)`
@@ -23,7 +24,7 @@ const StyledAuthorImage = styled(motion.img)`
 
 const StyledAuthorInfo = styled(motion.figcaption)`
   flex: 1;
-  padding-left: ${padding.horizontal.single};
+  padding-left: ${padding.vertical.half};
 `;
 
 function TestimonialAuthor({ author }) {
