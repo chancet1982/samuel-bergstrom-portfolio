@@ -9,6 +9,7 @@ import padding from "../../theme/padding";
 import sizes from "../../theme/sizes";
 import Image from "../Shared/Image";
 
+/* TODO: this component doesnt have padding bottom (but it should) */
 const StyledClients = styled(motion.div)`
   margin-left: ${padding.horizontal.quadruple};
   margin-right: ${padding.horizontal.quadruple};

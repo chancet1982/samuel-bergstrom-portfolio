@@ -134,6 +134,7 @@ export const VIEW_ABOUT_ME = [
     ],
   },
   {
+    bgColor: colors.offblack,
     elements: [
       {
         template: SECTION_ELEMENTS.TESTIMONIALS,
