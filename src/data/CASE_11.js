@@ -8,6 +8,8 @@ import Paragraph from "../Components/Shared/Paragraph";
 import Title from "../Components/Shared/Title";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
+import Image from "../Components/Shared/Image";
+
 // import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 
 /* TODO: First attempt expectations vs reality... (implement as side by side content) */
@@ -18,7 +20,7 @@ import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 /* TODO: Add missing thumbnail */
 /* TODO: This is a non-finished project. Finish it or remove. */
 const SETTINGS = {
-  BG_COLOR: "#FF3366",
+  BG_COLOR: "#FFB100",
   URL: "/cases/11",
   MEDIA_BASE_URL: "assets/case-11",
   KEY_FIGURES: {
@@ -61,7 +63,7 @@ export const CASE_11 = {
             bgColor: SETTINGS.BG_COLOR,
             caption: {
               overline: "Price Comparison Service",
-              title: "Non-new products",
+              title: "Non-new <br> products",
               text: (
                 <Paragraph xxl>
                   Helping stores sell demo, <br /> refurbished, and used
@@ -140,10 +142,40 @@ export const CASE_11 = {
                   wanted to capitalize on this without misleading the consumers.
                   Historically though, these products were included as part of
                   the regular product list with small icons to indicate that the
-                  product is “not new”. These icons were not generally
-                  understood or even noticed by users leading to frustration for
-                  both users (that accidentally ended up on a used product) and
-                  stores (that got traffic that never converted).
+                  product is “not new”.
+                </Paragraph>
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/initial-used-product.png`,
+            limitMaxWidth: true,
+            imageAlt:
+              "A picture of the tiny icon that indicated used products in the product page",
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            h: 2,
+            text: (
+              <>
+                <Paragraph>
+                  These icons are easy to miss. The placement and color choice
+                  are problematic. On top of that, they are very generic making
+                  them hard to notice, and understand. On top of that, having
+                  both new and used products in the same bucket meant that the
+                  price history for a product was not reliable as non-new
+                  products tend to be cheaper they would usually trigger price
+                  alerts, and missclicks.
+                </Paragraph>
+                <Paragraph>
+                  This of course is frustrating to both users that accidentally
+                  ended up on a used product, and stores that got traffic that
+                  never converted.
                 </Paragraph>
               </>
             ),
@@ -205,6 +237,10 @@ export const CASE_11 = {
                   price as it is contaminated with “demo” and “refurbished”
                   products.
                 </Paragraph>
+                <Image
+                  imageUrl={`/${SETTINGS.MEDIA_BASE_URL}/bad-reviews.png`}
+                  inTextbox
+                />
                 <Paragraph>
                   During the quarterly survey, a large share of the complaints
                   were related to “non-new” products and how they are displayed.
