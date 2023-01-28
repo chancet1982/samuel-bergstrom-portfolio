@@ -30,7 +30,7 @@ function Clients() {
     <Image
       key={uuid()}
       grayscale
-      imageUrl={`${process.env.PUBLIC_URL}/${item.imageUrl}`}
+      imageUrl={`${process.env.PUBLIC_URL}/${item.imageUrl.color}`}
       imageAlt={item.imageAlt}
     />
   ));
