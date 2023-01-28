@@ -18,7 +18,6 @@ Add password protection to cases
 cleanup limitMaxWidth & bgColor props to be used only where relevant
 
 ANIMATIONS:
-Testimonial -> add inView animation.
 ImageGallery -> add inView animation.
 ListOfOmageWithTitleAndText -> add inView animation to images.
 

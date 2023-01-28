@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import React from "react";
 import PropTypes from "prop-types";
-import { authorImageVariants } from "../../../animations/animations";
+import { imageVariants } from "../../../animations/animations";
 import Span from "../../Shared/Span";
 import padding from "../../../theme/padding";
 
@@ -35,7 +35,7 @@ function TestimonialAuthor({ author }) {
       <StyledAuthorImage
         src={authorImageUrl}
         alt={authorImageUrl}
-        variants={authorImageVariants}
+        variants={imageVariants}
       />
       <StyledAuthorInfo>
         <Span highContrast>{authorName}</Span>

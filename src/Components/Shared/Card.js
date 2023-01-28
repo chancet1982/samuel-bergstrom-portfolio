@@ -30,7 +30,14 @@ const StyledCardContent = styled(motion.div)`
 function Card({ children, mediaUrl }) {
   const light = useBgColor();
   return (
-    <StyledCard $light={light} variants={cardVariants}>
+    <StyledCard
+      $light={light}
+      initial="hidden"
+      whileInView="inView"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ duration: 0.3, staggerChildren: 0.1, delayChildren: 0.2 }}
+      variants={cardVariants}
+    >
       {mediaUrl && <StyledCardMedia $mediaUrl={mediaUrl} />}
       <StyledCardContent>{children}</StyledCardContent>
     </StyledCard>
