@@ -11,7 +11,6 @@ import Link from "../Shared/Link";
 import sizes from "../../theme/sizes";
 import { CursorContext } from "../../Context/CursorContext";
 
-/* TODO: inView animation doesnt have effect on links in case footer */
 const StyledCaseFooter = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);

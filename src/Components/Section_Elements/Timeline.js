@@ -141,7 +141,6 @@ const StyledTimelineItem = styled(motion.dt)`
   }
 `;
 
-/* TODO: why is the button wierd or part of the list? */
 function TimelineItem({ year, events, isPreview }) {
   return (
     <StyledTimelineItem

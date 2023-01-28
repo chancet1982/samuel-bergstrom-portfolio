@@ -62,7 +62,6 @@ const StyledResultCaption = styled(motion.div)`
     }}
 `;
 
-// TODO: fix results display on mobile.
 function FinalResult({
   imageUrl,
   mobileImageUrl,

@@ -64,7 +64,6 @@ const StyledImage = styled(motion.div)`
   //background-size: contain;
 `;
 
-/* TODO: StyledTitleAndText doesnt get props (for whatever reason) */
 function ImageWithTitleAndText({ imageUrl, title, text, flip }) {
   return (
     <StyledImageWithTitleAndText

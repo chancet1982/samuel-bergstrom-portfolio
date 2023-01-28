@@ -9,7 +9,6 @@ import padding from "../../theme/padding";
 import sizes from "../../theme/sizes";
 import Image from "../Shared/Image";
 
-/* TODO: this component doesnt have padding bottom (but it should) */
 const StyledClients = styled(motion.div)`
   margin-left: ${padding.horizontal.quadruple};
   margin-right: ${padding.horizontal.quadruple};
@@ -24,7 +23,6 @@ const StyledClients = styled(motion.div)`
   padding-bottom: ${padding.horizontal.quadruple};
 `;
 
-/* TODO: all client logos appear at once and not staggered */
 function Clients() {
   const renderClients = CLIENTS.map((item) => (
     <Image

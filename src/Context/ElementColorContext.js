@@ -3,7 +3,6 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 
-/* TODO: Something something with useMemo */
 const initialContext = [
   false,
   () => {

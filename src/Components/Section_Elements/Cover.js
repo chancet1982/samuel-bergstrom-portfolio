@@ -136,9 +136,6 @@ const StyledCoverFooter = styled(motion.div)`
   z-index: 1;
 `;
 
-/* TOOD: clean up client logos on landing page. */
-/* TODO: better cover image for landing page */
-
 function Cover({
   bgColor,
   bgMedia,

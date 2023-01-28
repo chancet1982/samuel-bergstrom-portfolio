@@ -30,7 +30,7 @@ const StyledInput = styled(motion.input)`
   }
 `;
 
-// TODO: (later) add input validation
+/* TODO: (later) add input validation */
 function Input({ type, name, required, small, large, xl }) {
   const handleChange = (event) => {
     event.target.checkValidity();

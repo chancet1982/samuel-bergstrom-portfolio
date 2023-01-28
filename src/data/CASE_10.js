@@ -8,12 +8,8 @@ import Paragraph from "../Components/Shared/Paragraph";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Shared/Title";
-/* import colors from "../theme/colors"; */
 import Image from "../Components/Shared/ImageWithCaption";
 import Note from "../Components/Shared/Note";
-
-/* TODO: Final result looks like shit for desktop products (Perhaps use the Fitness24Seven solution) */
-/* TODO: cover fgImage is missing mobile image URL */
 
 const SETTINGS = {
   BG_COLOR: "#00ADDB",

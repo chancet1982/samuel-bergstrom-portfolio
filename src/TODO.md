@@ -32,6 +32,5 @@ CASE-1 -> Fix better images so it works on mobile
 One day...
 Use Contentful for content.
 server side rendering using Next.js (?)
-
-TODO: implement smooth scrolling:
+Implement smooth scrolling:
 https://www.npmjs.com/package/scroller-motion
