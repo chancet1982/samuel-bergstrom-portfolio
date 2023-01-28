@@ -8,27 +8,18 @@ import sizes from "../../../theme/sizes";
 import padding from "../../../theme/padding";
 
 const StyledHighlights = styled(motion.div)`
-  display: flex;
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(${({ $columns }) => $columns}, 1fr);
   padding-left: ${padding.horizontal.double};
   padding-right: ${padding.horizontal.double};
 
   > div {
     align-items: flex-start;
     justify-content: flex-start;
-    padding-left: 0;
-    padding-right: ${padding.horizontal.single};
-    flex: 1;
 
-    > * {
+    > h5 {
       text-align: left;
-    }
-
-    :first-of-type {
-      padding-left: ${padding.horizontal.double};
-    }
-
-    :last-of-type {
-      padding-right: ${padding.horizontal.double};
     }
   }
 
@@ -40,7 +31,7 @@ const StyledHighlights = styled(motion.div)`
 
 function Highlights({ items }) {
   return (
-    <StyledHighlights>
+    <StyledHighlights $columns={items.length}>
       {items.map(({ value, label }) => (
         <ValueAndLabel value={value} label={label} key={label} flip />
       ))}

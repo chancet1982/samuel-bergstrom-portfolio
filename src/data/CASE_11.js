@@ -76,9 +76,8 @@ export const CASE_11 = {
               mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
             highlights: [
-              SETTINGS.KEY_FIGURES.CASE_TYPE,
               SETTINGS.KEY_FIGURES.CASE_YEAR,
-              SETTINGS.KEY_FIGURES.CASE_DURATION,
+              SETTINGS.KEY_FIGURES.CASE_TYPE,
               SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
             ],
           },
@@ -117,7 +116,9 @@ export const CASE_11 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>The problem</>,
+            title: (
+              <>Product conditions present challenges for users and shops</>
+            ),
             h: 2,
             text: (
               <>
@@ -184,7 +185,7 @@ export const CASE_11 = {
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/before.png`,
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/problem.png`,
             imageAlt: "?",
             limitMaxWidth: true,
             caption: "Which one of the CDON offers is a used product?",
@@ -193,7 +194,7 @@ export const CASE_11 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>The goal:</>,
+            title: <>The goal: Increasing traffic to non-new products.</>,
             h: 2,
             text: (
               <>
@@ -287,19 +288,25 @@ export const CASE_11 = {
                   There were some internal concerns in the organization. Namely,
                   how this aligns with the company’s values and how it might
                   impact their sustainability initiatives. As this was aligned
-                  with both it was not a problem.
-                </Paragraph>
-                <Paragraph>
-                  In fact, the solution encouraged the consumption of
-                  refurbished products and reduced waste. It was basically a PR
-                  win.
+                  with both it was not a problem. In fact, the solution
+                  encouraged the consumption of refurbished products and reduced
+                  waste. It was basically a PR win.
                 </Paragraph>
               </>
             ),
           },
         },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/spreadsheets.png`,
+            imageAlt: "?",
+            limitMaxWidth: true,
+          },
+        },
       ],
     },
+
     {
       header: "Design",
       elements: [
@@ -317,28 +324,31 @@ export const CASE_11 = {
                   harming conversion rates.
                 </Paragraph>
 
-                <Title h={4}>Steps towards the right solution.</Title>
+                <Title h={4}>Before everything else, split the lists.</Title>
                 <Paragraph>
-                  The solution was actually rather simple. Firstly it was
-                  obvious that we couldn’t mix new and used products in the same
-                  bucket. So instead all non-new products were removed from the
-                  general offers list.
+                  It was obvous that we couldn’t mix new and used products in
+                  the same bucket. All non-new products were moved to a
+                  dedicated list.
                 </Paragraph>
+                <Title h={4}>Reducing price confusion</Title>
                 <Paragraph>
-                  As prices across the site reflected new products. We decided
-                  to do the same even though non-new products existed and were
-                  perhaps the cheapest. On top of that, the price history was
+                  It was important to ensure that the price shown across the
+                  site is consistent. We decided to use the cheapest offer for a
+                  new product throughout the site even if cheaper “used” offers
+                  existed. prices are handled across the site. On all other
+                  pages, the cheapest price As prices across the site reflected
+                  new products. We decided On top of that, the price history was
                   limited to account for new products only.
                 </Paragraph>
-
-                <Title h={4}>Introduce product condition as variant.</Title>
+                <Title h={4}>List switcher as product variants</Title>
                 <Paragraph>
-                  Access to non-new products was then introduced as product
-                  variants. Product variants traditionally refer to different
-                  colors, and sizes, of things that are essentially the same.
-                  Variants however can have different prices. Think iPhone with
-                  64gb vs 256gb version. They are both iPhones but one costs
-                  much more.
+                  Now that we had 2 lists, we needed a way to switch between
+                  them. Following Amazon’s example, we decided to introduce the
+                  switcher in the same way we handled variants. Product variants
+                  traditionally refer to different colors, and sizes, of things
+                  that are essentially the same. Variants however can have
+                  different prices. Think iPhone with 64gb vs 256gb version.
+                  They are both iPhones but one costs much more.
                 </Paragraph>
                 <Paragraph>
                   Variants are typically included as part of the product page
@@ -357,88 +367,60 @@ export const CASE_11 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.SIDE_BY_SIDE_IMAGES_AND_TEXT,
+          data: {
+            items: [
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/before.png`,
+                imageAlt: "Introduce product condition as variant",
+                title: "Introduce product condition as variant",
+                text: (
+                  <Paragraph>
+                    Product variants typically are placed as part of the product
+                    header. So our initial idea was to add the product condition
+                    to the header.
+                  </Paragraph>
+                ),
+              },
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/after.png`,
+                imageAlt: "Technical limitations and constraints",
+                title: "Technical limitations and constraints",
+                text: (
+                  <Paragraph>
+                    Due to technical constraints though, we could only place the
+                    product condition switcher under the tabs and not as part of
+                    the header.
+                  </Paragraph>
+                ),
+              },
+            ],
+          },
+        },
+        {
           template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
           data: {
             items: [
               {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-1.png`,
-                imageAlt:
-                  "Step 1: First attempt at product condition as variant",
-                title: "Step 1: First attempt at product condition as variant",
-                text: (
-                  <>
-                    <Paragraph>
-                      The solution was actually rather simple. Firstly it was
-                      obvious that we couldn’t mix new and used products in the
-                      same bucket. So instead all non-new products were removed
-                      from the general offers list.
-                    </Paragraph>
-                    <Paragraph>
-                      As prices across the site reflected new products. We
-                      decided to do the same even though non-new products
-                      existed and were perhaps the cheapest. On top of that, the
-                      price history was limited to account for new products
-                      only.
-                    </Paragraph>
-                  </>
-                ),
-              },
-              {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-2.png`,
-                imageAlt: "Step 2: Reality check, constraints and concerns",
-                title: "Step 2: Reality check, constraints and concerns",
-                text: (
-                  <>
-                    <Paragraph>
-                      Messages are used to communicate vital information but are
-                      only available before accepting a route.
-                    </Paragraph>
-                    <Paragraph>
-                      <strong>Solution:</strong> It was decided to lift messages
-                      into their own link accessible at all times as a
-                      notification center. On top of that, messages will pop-up
-                      before couriers accept the route and if a client has any
-                      messages related to them the couriers will see that when
-                      they arrive at the location.
-                    </Paragraph>
-                  </>
-                ),
-              },
-              {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-3.png`,
-                imageAlt: "Step 3: Adressing some concerns",
-                title: "Step 3: Adressing some concerns",
-                text: (
-                  <>
-                    <Paragraph>
-                      Long customer names and long addresses were not displayed
-                      properly.
-                    </Paragraph>
-                    <Paragraph>
-                      <strong>Solution:</strong> After finding the maximum
-                      length of both names and addresses it was decided that we
-                      should allow them to wrap into several lines instead of
-                      limiting them to one line.
-                    </Paragraph>
-                  </>
-                ),
-              },
-              {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-4.png`,
-                imageAlt: "Step 4: Exposing product condition as variant",
-                title: "Step 4: Exposing product condition as variant",
+                imageAlt:
+                  "Montage, Finally exposing product condition as variant",
+                title: "Montage, Finally exposing product condition as variant",
                 h: 4,
                 text: (
                   <>
                     <Paragraph>
-                      Long customer names and long addresses were not displayed
-                      properly.
+                      After moving to a long page layout the 4 different pages
+                      were merged to 1 long page which then allowed us to move
+                      the product condition selector to where it was initially
+                      intended.
                     </Paragraph>
                     <Paragraph>
-                      <strong>Solution:</strong> After finding the maximum
-                      length of both names and addresses it was decided that we
-                      should allow them to wrap into several lines instead of
-                      limiting them to one line.
+                      We made some changes to the header in order to create
+                      space for variants. This was mostly done in order to
+                      address concerns that pushing the offerlist down will harm
+                      convertions. Once in place we could start testing if it
+                      had the desired affect.
                     </Paragraph>
                   </>
                 ),

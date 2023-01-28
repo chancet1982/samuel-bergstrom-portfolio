@@ -65,9 +65,8 @@ export const CASE_10 = {
               imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
             },
             highlights: [
-              SETTINGS.KEY_FIGURES.CASE_TYPE,
               SETTINGS.KEY_FIGURES.CASE_YEAR,
-              SETTINGS.KEY_FIGURES.CASE_DURATION,
+              SETTINGS.KEY_FIGURES.CASE_TYPE,
               SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
             ],
           },

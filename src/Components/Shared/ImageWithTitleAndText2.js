@@ -61,7 +61,7 @@ const StyledImage = styled(motion.div)`
   background-position: ${({ $flip }) => ($flip ? "right" : "left")};
   left: ${({ $flip }) => ($flip ? "0" : "auto")};
   right: ${({ $flip }) => ($flip ? "auto" : "0")};
-  background-size: contain;
+  //background-size: contain;
 `;
 
 /* TODO: StyledTitleAndText doesnt get props (for whatever reason) */
