@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { motion, useTransform, useMotionValue, useScroll } from "framer-motion";
 import { useWindowSize } from "react-use";
 import Image from "../../Shared/Image";
-import { CLIENTS } from "../../../data/dictionaries/CLIENTS_WHITE";
+import { CLIENTS } from "../../../data/dictionaries/CLIENTS";
 
 const StyledClientsPreview = styled(motion.div)`
   display: flex;
@@ -14,7 +14,7 @@ const StyledClientsPreview = styled(motion.div)`
   object-position: 50% 50%;
 
   > img {
-    width: 180px; //TODO: one day we might want to use something fancier...
+    height: 128px; //TODO: one day we might want to use something fancier...
   }
 `;
 
@@ -76,7 +76,7 @@ function ClientPreview() {
         <Image
           key={item.imageUrl}
           grayscale
-          imageUrl={`${process.env.PUBLIC_URL}/${item.imageUrl}`}
+          imageUrl={`${process.env.PUBLIC_URL}/${item.imageUrl.white}`}
           imageAlt={item.imageAlt}
         />
       ))}
