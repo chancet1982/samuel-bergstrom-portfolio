@@ -29,7 +29,7 @@ const StyledCoverVideo = styled(motion.video)`
   object-position: top left;
 
   @media (min-width: ${breakpoints.mobileLarge}px) {
-    left: 0;
+    /*left: 0;*/
     right: 0;
   }
 
