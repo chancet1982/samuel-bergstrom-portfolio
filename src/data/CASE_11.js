@@ -63,7 +63,11 @@ export const CASE_11 = {
             bgColor: SETTINGS.BG_COLOR,
             caption: {
               overline: "Price Comparison Service",
-              title: "Non-new <br> products",
+              title: (
+                <>
+                  Non-new <br /> products.
+                </>
+              ),
               text: (
                 <Paragraph xxl>
                   Helping stores sell demo, <br /> refurbished, and used
