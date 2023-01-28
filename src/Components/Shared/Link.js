@@ -68,7 +68,7 @@ function Link({ small, large, xl, xxl, children, to, href, ...rest }) {
     <StyledAnchorLink
       href={href}
       $fluidType={fluidType}
-      light={light}
+      $light={light}
       target="_blank"
       rel="noopener noreferrer"
       variants={textVariants}

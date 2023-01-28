@@ -13,7 +13,7 @@ const StyledImageGallery = styled(motion.div)`
   display: grid;
   column-gap: 0.5rem;
   row-gap: 0.5rem;
-  ${({ template }) => template};
+  ${({ $template }) => $template};
 
   @media (min-width: ${breakpoints.desktop}px) {
     ${({ $limitMaxWidth }) =>
@@ -27,8 +27,8 @@ const StyledImageGallery = styled(motion.div)`
 function ImageGallery({ images, template, limitMaxWidth }) {
   return (
     <StyledImageGallery
-      template={template}
-      limitMaxWidth={limitMaxWidth}
+      $template={template}
+      $limitMaxWidth={limitMaxWidth}
       initial="hidden"
       whileInView="inView"
       viewport={{ once: true, amount: 0.2 }}
