@@ -1,111 +1,192 @@
 /* eslint-disable import/prefer-default-export */
 export const CLIENTS = [
   {
-    imageUrl: "assets/clients/color/qlick-color.svg",
+    imageUrl: {
+      color: "assets/clients/qlik-color.svg",
+      white: "assets/clients/qlik-white.svg",
+    },
     imageAlt: "qlick",
   },
   {
-    imageUrl: "assets/clients/color/capish-color.svg",
+    imageUrl: {
+      color: "assets/clients/capish-color.svg",
+      white: "assets/clients/capish-white.svg",
+    },
     imageAlt: "capish",
   },
   {
-    imageUrl: "assets/clients/color/diaverum-color.svg",
+    imageUrl: {
+      color: "assets/clients/diaverum-color.svg",
+      white: "assets/clients/diaverum-white.svg",
+    },
     imageAlt: "diaverum",
   },
   {
-    imageUrl: "assets/clients/color/nasdaq-omx-color.svg",
+    imageUrl: {
+      color: "assets/clients/nasdaq-omx-color.svg",
+      white: "assets/clients/nasdaq-omx-white.svg",
+    },
     imageAlt: "nasdaq-omx",
   },
   {
-    imageUrl: "assets/clients/color/1337works-color.svg",
+    imageUrl: {
+      color: "assets/clients/1337works-color.svg",
+      white: "assets/clients/1337works-white.svg",
+    },
     imageAlt: "1337works",
   },
   {
-    imageUrl: "assets/clients/color/clas-ohlson-color.svg",
+    imageUrl: {
+      color: "assets/clients/clas-ohlson-color.svg",
+      white: "assets/clients/clas-ohlson-white.svg",
+    },
     imageAlt: "clas-ohlson",
   },
   {
-    imageUrl: "assets/clients/color/euronext-color.svg",
+    imageUrl: {
+      color: "assets/clients/euronext-color.svg",
+      white: "assets/clients/euronext-white.svg",
+    },
     imageAlt: "irish stock exchange",
   },
   {
-    imageUrl: "assets/clients/color/fitness24seven-color.svg",
+    imageUrl: {
+      color: "assets/clients/fitness24seven-color.svg",
+      white: "assets/clients/fitness24seven-white.svg",
+    },
     imageAlt: "fitness24seven",
   },
   {
-    imageUrl: "assets/clients/color/nowaste-logistics-color.svg",
+    imageUrl: {
+      color: "assets/clients/nowaste-logistics-color.svg",
+      white: "assets/clients/nowaste-logistics-white.svg",
+    },
     imageAlt: "nowaste-logistics",
   },
   {
-    imageUrl: "assets/clients/color/loomis-color.svg",
+    imageUrl: {
+      color: "assets/clients/loomis-color.svg",
+      white: "assets/clients/loomis-white.svg",
+    },
     imageAlt: "loomis",
   },
   {
-    imageUrl: "assets/clients/color/mitsubishi-electric-color.svg",
+    imageUrl: {
+      color: "assets/clients/mitsubishi-electric-color.svg",
+      white: "assets/clients/mitsubishi-electric-white.svg",
+    },
     imageAlt: "mitsubishi-electric",
   },
   {
-    imageUrl: "assets/clients/color/lumito-color.svg",
+    imageUrl: {
+      color: "assets/clients/lumito-color.svg",
+      white: "assets/clients/lumito-white.svg",
+    },
     imageAlt: "lumito",
   },
   {
-    imageUrl: "assets/clients/color/euro-finans-color.svg",
+    imageUrl: {
+      color: "assets/clients/euro-finans-color.svg",
+      white: "assets/clients/euro-finans-white.svg",
+    },
     imageAlt: "euro-finans",
   },
   {
-    imageUrl: "assets/clients/color/nordea-color.svg",
+    imageUrl: {
+      color: "assets/clients/nordea-color.svg",
+      white: "assets/clients/nordea-white.svg",
+    },
     imageAlt: "nordea",
   },
   {
-    imageUrl: "assets/clients/color/atea-color.svg",
+    imageUrl: {
+      color: "assets/clients/atea-color.svg",
+      white: "assets/clients/atea-white.svg",
+    },
     imageAlt: "atea",
   },
   {
-    imageUrl: "assets/clients/color/seb-color.svg",
+    imageUrl: {
+      color: "assets/clients/seb-color.svg",
+      white: "assets/clients/seb-white.svg",
+    },
     imageAlt: "seb",
   },
   {
-    imageUrl: "assets/clients/color/tretton37-color.svg",
+    imageUrl: {
+      color: "assets/clients/tretton37-color.svg",
+      white: "assets/clients/tretton37-white.svg",
+    },
     imageAlt: "tretton37",
   },
   {
-    imageUrl: "assets/clients/color/lord-abbett-color.svg",
+    imageUrl: {
+      color: "assets/clients/lord-abbett-color.svg",
+      white: "assets/clients/lord-abbett-white.svg",
+    },
     imageAlt: "lord-abbett",
   },
   {
-    imageUrl: "assets/clients/color/modity-color.svg",
+    imageUrl: {
+      color: "assets/clients/modity-color.svg",
+      white: "assets/clients/modity-white.svg",
+    },
     imageAlt: "modity",
   },
   {
-    imageUrl: "assets/clients/color/pfa-color.svg",
+    imageUrl: {
+      color: "assets/clients/pfa-color.svg",
+      white: "assets/clients/pfa-white.svg",
+    },
     imageAlt: "pfa",
   },
   {
-    imageUrl: "assets/clients/color/alfa-laval-color.svg",
+    imageUrl: {
+      color: "assets/clients/alfa-laval-color.svg",
+      white: "assets/clients/alfa-laval-white.svg",
+    },
     imageAlt: "alfa-laval",
   },
   {
-    imageUrl: "assets/clients/color/netset-color.svg",
+    imageUrl: {
+      color: "assets/clients/netset-color.svg",
+      white: "assets/clients/netset-white.svg",
+    },
     imageAlt: "netset",
   },
   {
-    imageUrl: "assets/clients/color/svensk-cater-color.svg",
+    imageUrl: {
+      color: "assets/clients/svensk-cater-color.svg",
+      white: "assets/clients/svensk-cater-white.svg",
+    },
     imageAlt: "svensk-cater",
   },
   {
-    imageUrl: "assets/clients/color/be-at-your-best-color.svg",
+    imageUrl: {
+      color: "assets/clients/be-at-your-best-color.svg",
+      white: "assets/clients/be-at-your-best-white.svg",
+    },
     imageAlt: "be-at-your-best",
   },
   {
-    imageUrl: "assets/clients/color/prisjakt-color.svg",
+    imageUrl: {
+      color: "assets/clients/prisjakt-color.svg",
+      white: "assets/clients/prisjakt-white.svg",
+    },
     imageAlt: "prisjakt",
   },
   {
-    imageUrl: "assets/clients/color/sbab-color.svg",
+    imageUrl: {
+      color: "assets/clients/sbab-color.svg",
+      white: "assets/clients/sbab-white.svg",
+    },
     imageAlt: "sbab",
   },
   {
-    imageUrl: "assets/clients/color/lu-innovation-color.svg",
+    imageUrl: {
+      color: "assets/clients/lu-innovation-color.svg",
+      white: "assets/clients/lu-innovation-white.svg",
+    },
     imageAlt: "lu-innovation",
   },
 ];
