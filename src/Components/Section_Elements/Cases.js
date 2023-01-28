@@ -40,14 +40,16 @@ function SectionCases({ preview }) {
           preview
             ? caseStatus === CASE_STATUS.FEATURED
             : caseStatus !== CASE_STATUS.DRAFT
-        ).map(({ thumbnail, caseStatus, caseUrl }) => (
-          <CaseThumbnail
-            key={caseUrl}
-            data={thumbnail}
-            caseUrl={caseUrl}
-            status={caseStatus}
-          />
-        ))}
+        )
+          .reverse()
+          .map(({ thumbnail, caseStatus, caseUrl }) => (
+            <CaseThumbnail
+              key={caseUrl}
+              data={thumbnail}
+              caseUrl={caseUrl}
+              status={caseStatus}
+            />
+          ))}
       </StyledCases>
       {preview && (
         <StyledPageLink>

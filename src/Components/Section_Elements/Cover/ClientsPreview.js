@@ -14,10 +14,11 @@ const StyledClientsPreview = styled(motion.div)`
   object-position: 50% 50%;
 
   > img {
-    height: 128px; //TODO: one day we might want to use something fancier...
+    height: 128px;
   }
 `;
 
+/* TODO: Something is off sometimes with calculating the width of the client logos list */
 function ClientPreview() {
   const { width } = useWindowSize();
 
@@ -35,7 +36,7 @@ function ClientPreview() {
     };
   }, []);
 
-  const [clientsWidth, setClientLogosWidth] = useState(0);
+  const [clientsWidth, setClientLogosWidth] = useState(4927);
   const ref = useRef(null);
 
   useEffect(() => {
@@ -74,7 +75,7 @@ function ClientPreview() {
     >
       {CLIENTS.map((item) => (
         <Image
-          key={item.imageUrl}
+          key={item.imageUrl.white}
           grayscale
           imageUrl={`${process.env.PUBLIC_URL}/${item.imageUrl.white}`}
           imageAlt={item.imageAlt}

@@ -35,7 +35,7 @@ const SETTINGS = {
 };
 
 export const CASE_10 = {
-  caseStatus: CASE_STATUS.PUBLISHED,
+  caseStatus: CASE_STATUS.FEATURED,
   caseUrl: SETTINGS.URL,
   thumbnail: {
     overline: "Price Comparison Service",

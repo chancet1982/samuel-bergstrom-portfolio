@@ -18,7 +18,7 @@ export const imageVariants = {
   },
   inView: {
     opacity: 1,
-    transition: { delay: 0.9, duration: 0.9 },
+    transition: { duration: 0.9 },
   },
 };
 
