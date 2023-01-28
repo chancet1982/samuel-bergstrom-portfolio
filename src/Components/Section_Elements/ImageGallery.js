@@ -2,11 +2,12 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { v4 as uuid } from "uuid";
+import { motion } from "framer-motion";
 import ImageWithCaption from "../Shared/ImageWithCaption";
 import sizes from "../../theme/sizes";
 import breakpoints from "../../theme/breakpoints";
 
-const StyledImageGallery = styled.div`
+const StyledImageGallery = styled(motion.div)`
   padding-top: 4rem;
   grid-column: 1 / span 2;
   display: grid;
@@ -25,7 +26,14 @@ const StyledImageGallery = styled.div`
 
 function ImageGallery({ images, template, limitMaxWidth }) {
   return (
-    <StyledImageGallery template={template} limitMaxWidth={limitMaxWidth}>
+    <StyledImageGallery
+      template={template}
+      limitMaxWidth={limitMaxWidth}
+      initial="hidden"
+      whileInView="inView"
+      viewport={{ once: true, amount: 0.2 }}
+      transition={{ staggerChildren: 0.2 }}
+    >
       {images.map(({ imageUrl, imageAlt, caption }, index) => (
         <ImageWithCaption
           imageUrl={imageUrl}
@@ -34,10 +42,6 @@ function ImageGallery({ images, template, limitMaxWidth }) {
           gridArea={String.fromCharCode(index + 65).toLowerCase()} // Mother of all hacks
           key={uuid()}
           inGallery
-          initial="hidden"
-          whileInView="inView"
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ staggerChildren: 0.2 }}
         />
       ))}
     </StyledImageGallery>

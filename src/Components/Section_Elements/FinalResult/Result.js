@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import Span from "../../Shared/Span";
 import Title from "../../Shared/Title";
 import padding from "../../../theme/padding";
 
-const StyledResult = styled.div`
+const StyledResult = styled(motion.div)`
   margin-bottom: ${padding.vertical.half};
 `;
 

@@ -1,13 +1,14 @@
 import styled from "styled-components";
 import React from "react";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 import useBgColor from "../../../utils/useBgColor";
 import Span from "../../Shared/Span";
 import colors from "../../../theme/colors";
 
 /* TODO: check if this style is redaundant (one day) */
 
-const StyledCite = styled.cite`
+const StyledCite = styled(motion.div)`
   display: block;
 
   :before {

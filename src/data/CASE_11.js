@@ -337,34 +337,21 @@ export const CASE_11 = {
                 <Title h={4}>Reducing price confusion</Title>
                 <Paragraph>
                   It was important to ensure that the price shown across the
-                  site is consistent. We decided to use the cheapest offer for a
-                  new product throughout the site even if cheaper “used” offers
-                  existed. prices are handled across the site. On all other
-                  pages, the cheapest price As prices across the site reflected
-                  new products. We decided On top of that, the price history was
+                  site is consistent. We decided to use the cheapest “new”
+                  product price throughout the site even if cheaper “used”
+                  products existed. On top of that, the price history was
                   limited to account for new products only.
                 </Paragraph>
                 <Title h={4}>List switcher as product variants</Title>
                 <Paragraph>
                   Now that we had 2 lists, we needed a way to switch between
                   them. Following Amazon’s example, we decided to introduce the
-                  switcher in the same way we handled variants. Product variants
-                  traditionally refer to different colors, and sizes, of things
-                  that are essentially the same. Variants however can have
-                  different prices. Think iPhone with 64gb vs 256gb version.
-                  They are both iPhones but one costs much more.
-                </Paragraph>
-                <Paragraph>
-                  Variants are typically included as part of the product page
-                  header and in this case, we wanted to encourage users to pick
-                  “used” over “new”. We decided to include the cheapest offer
-                  text (“From XXkr”) as part of the variant selection in order
-                  to facilitate that.
-                </Paragraph>
-                <Paragraph>
-                  new/used variants were only shown if a product had “used”
-                  offers and were always the last variant on the list (in order
-                  to allow for the general variants to co-exist)
+                  switcher in the same way we handled variants. Variants and are
+                  typically included as part of the product page header. We
+                  added the product condition switcher above existing variants
+                  and made it visible only when used offers existed. We wanted
+                  to nudge users towards used products so we included the
+                  cheapest offer price (“From XXkr”) as part of the switcher.
                 </Paragraph>
               </>
             ),

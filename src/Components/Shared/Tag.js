@@ -1,9 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import Span from "./Span";
 import shadows from "../../theme/shadows";
 
-const StyledTag = styled.div`
+const StyledTag = styled(motion.div)`
   position: absolute;
   top: -40px;
   right: -96px;

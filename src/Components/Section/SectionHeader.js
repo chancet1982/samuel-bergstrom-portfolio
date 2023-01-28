@@ -1,12 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import Title from "../Shared/Title";
 import colors from "../../theme/colors";
 import useBgColor from "../../utils/useBgColor";
 import padding from "../../theme/padding";
 
-const StyledSectionHeader = styled.header`
+const StyledSectionHeader = styled(motion.header)`
   position: sticky;
   top: 0;
   left: 0;

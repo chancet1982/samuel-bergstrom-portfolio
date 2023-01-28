@@ -1,13 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import colors from "../../theme/colors";
 import padding from "../../theme/padding";
 import sizes from "../../theme/sizes";
 import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
 import breakpoints from "../../theme/breakpoints";
 
-const StyledBackground = styled.div`
+const StyledBackground = styled(motion.div)`
   height: 100%;
   width: 100%;
 

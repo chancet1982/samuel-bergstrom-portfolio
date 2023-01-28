@@ -68,7 +68,7 @@ const StyledRollup = styled(motion.div)`
   left: 0;
 `;
 
-const StyledCaseThumbnailImageAndCaption = styled.div`
+const StyledCaseThumbnailImageAndCaption = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   position: relative;

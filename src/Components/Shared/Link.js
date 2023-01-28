@@ -4,6 +4,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Link as RouterLink } from "react-router-dom";
+import { motion } from "framer-motion";
 import typography from "../../theme/typography";
 import colors from "../../theme/colors";
 import useBgColor from "../../utils/useBgColor";
@@ -29,7 +30,7 @@ const StyledLink = styled(RouterLink)`
   }
 `;
 
-const StyledAnchorLink = styled.a`
+const StyledAnchorLink = styled(motion.a)`
   ${linkStyle}
 
   color: ${({ $light }) =>

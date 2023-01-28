@@ -145,6 +145,7 @@ export const VIEW_ABOUT_ME = [
     ],
   },
   {
+    bgColor: colors.offwhite,
     elements: [
       {
         template: SECTION_ELEMENTS.TEXTBOX,

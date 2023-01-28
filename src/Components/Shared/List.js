@@ -2,9 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { v4 as uuid } from "uuid";
+import { motion } from "framer-motion";
 import colors from "../../theme/colors";
 
-const StyledList = styled.ul`
+const StyledList = styled(motion.ul)`
   list-style-type: none;
   padding-inline-start: 0px;
 
@@ -21,7 +22,7 @@ const styleListItem = (size, lh, margin) => `
   line-height: ${lh};
 `;
 
-const StyledListItem = styled.li`
+const StyledListItem = styled(motion.li)`
   :before {
     ${({ plain }) =>
       !plain && {

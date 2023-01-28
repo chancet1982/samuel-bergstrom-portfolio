@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
-const StyledDetails = styled.details``;
-const StyledSummary = styled.summary``;
+const StyledDetails = styled(motion.details)``;
+const StyledSummary = styled(motion.summary)``;
 
 function Details({ open, summary, details }) {
   return (

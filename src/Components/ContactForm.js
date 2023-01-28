@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React, { useState } from "react";
 import styled from "styled-components";
 import padding from "../theme/padding";
@@ -6,7 +7,7 @@ import Input from "./Shared/Input";
 import Label from "./Shared/Label";
 import Textarea from "./Shared/Textarea";
 
-const StyledDiv = styled.div`
+const StyledDiv = styled(motion.div)`
   padding-bottom: ${padding.vertical.half};
 `;
 

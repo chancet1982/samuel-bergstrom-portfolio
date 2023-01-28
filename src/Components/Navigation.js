@@ -40,7 +40,7 @@ const StyledNavigation = styled(motion.nav)`
   }
 `;
 
-const StyledLogo = styled.div`
+const StyledLogo = styled(motion.div)`
   align-self: center;
   color: ${colors.text.dark.high};
   font-weight: 600;

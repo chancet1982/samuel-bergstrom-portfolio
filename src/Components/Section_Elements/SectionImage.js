@@ -1,11 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 import ImageWithCaption from "../Shared/ImageWithCaption";
 import sizes from "../../theme/sizes";
 import breakpoints from "../../theme/breakpoints";
 
-const StyledSectionImage = styled.div`
+const StyledSectionImage = styled(motion.div)`
   @media (min-width: ${breakpoints.desktop}px) {
     ${({ $limitMaxWidth }) =>
       $limitMaxWidth && {

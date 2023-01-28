@@ -11,7 +11,7 @@ import padding from "../../theme/padding";
 import { CASE_STATUS } from "../../data/dictionaries/CASE_STATUS";
 import Button from "../Shared/Button";
 
-const StyledPageLink = styled.div`
+const StyledPageLink = styled(motion.div)`
   text-align: center;
   padding-bottom: ${padding.vertical.double};
 `;
