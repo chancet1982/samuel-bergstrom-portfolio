@@ -32,7 +32,7 @@ const StyledMenuToggler = styled(motion.a)`
     opacity: 1;
     left: 0;
     transform: rotate(0deg);
-    transition: 0.25s ease-in-out;
+    transition: 0.3s ease-in-out;
   }
 
   span:nth-child(1) {

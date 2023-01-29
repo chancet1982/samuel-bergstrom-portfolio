@@ -29,7 +29,7 @@ function MobileMenu({ isLight }) {
       x: "5%",
       transition: {
         type: "spring",
-        duration: 0.3,
+        duration: 0.4,
         staggerChildren: 0.2,
         when: "beforeChildren",
       },
@@ -38,7 +38,7 @@ function MobileMenu({ isLight }) {
       x: "100%",
       transition: {
         type: "spring",
-        duration: 0.3,
+        duration: 0.4,
         when: "afterChildren",
       },
     },
