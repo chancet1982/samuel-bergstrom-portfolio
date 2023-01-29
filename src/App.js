@@ -6,13 +6,11 @@ import CursorContextProvider from "./Context/CursorContext";
 import ViewLoading from "./Components/Views/ViewLoading";
 import Nav from "./Components/Nav";
 import ErrorBoundary from "./Components/ErrorBoundary";
-
 import theme from "./theme/theme";
 import ViewColorContextProvider from "./Context/ViewColorContext";
 import SplashAnimationFinishedContextProvider from "./Context/SplashAnimationFinishedContext";
 import NavBgColorContextProvider from "./Context/NavBgColorContext";
 import MenuExpandedContextProvider from "./Context/MenuExpandedContext";
-import Overlay from "./Components/Overley";
 
 const ViewLandingPage = lazy(() =>
   import("./Components/Views/ViewLandingPage")
@@ -42,7 +40,6 @@ function App() {
             <ViewColorContextProvider>
               <NavBgColorContextProvider>
                 <MenuExpandedContextProvider>
-                  <Overlay />
                   <Nav />
                   <Suspense fallback={<ViewLoading />}>
                     <AnimatePresence mode="wait">

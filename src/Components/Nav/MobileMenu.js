@@ -21,6 +21,18 @@ const StyledMobileMenu = styled(motion.menu)`
   flex-direction: column;
 `;
 
+const StyledOverlay = styled(motion.div)`
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+`;
+
 function MobileMenu({ isLight }) {
   const [expanded] = useContext(MenuExpandedContext);
 
@@ -30,6 +42,7 @@ function MobileMenu({ isLight }) {
       transition: {
         type: "spring",
         duration: 0.4,
+        delay: 0.2,
         staggerChildren: 0.2,
         when: "beforeChildren",
       },
@@ -44,6 +57,14 @@ function MobileMenu({ isLight }) {
     },
   };
 
+  const overlayVariants = {
+    expanded: {
+      opacity: 1,
+      transition: { duration: 0.3 },
+    },
+    collapsed: { opacity: 0 },
+  };
+
   const menuLinks = [
     { to: "/", text: "Home", end: true },
     { to: "/about", text: "About me" },
@@ -52,17 +73,24 @@ function MobileMenu({ isLight }) {
   ];
 
   return (
-    <StyledMobileMenu
-      initial="collapsed"
-      animate={expanded ? "expanded" : "collapsed"}
-      variants={menuVariants}
-    >
-      {menuLinks.map(({ to, text, end }) => (
-        <MenuLink key={to} to={to} isLight={isLight} end={end}>
-          {text}
-        </MenuLink>
-      ))}
-    </StyledMobileMenu>
+    <>
+      <StyledOverlay
+        initial="collapsed"
+        animate={expanded ? "expanded" : "collapsed"}
+        variants={overlayVariants}
+      />
+      <StyledMobileMenu
+        initial="collapsed"
+        animate={expanded ? "expanded" : "collapsed"}
+        variants={menuVariants}
+      >
+        {menuLinks.map(({ to, text, end }) => (
+          <MenuLink key={to} to={to} isLight={isLight} end={end}>
+            {text}
+          </MenuLink>
+        ))}
+      </StyledMobileMenu>
+    </>
   );
 }
 
