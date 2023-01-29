@@ -89,11 +89,14 @@ function Nav() {
     show: {
       y: "0%",
       transition: {
-        staggerChildren: 0.2,
+        type: "spring",
+        bounce: 0.125,
         duration: 0.6,
+        staggerChildren: 0.2,
+        when: "beforeChildren",
       },
     },
-    hide: { y: "-100%", duration: 0.6 },
+    hide: { y: "-100%" },
   };
 
   const [animationFinished] = useContext(SplashAnimationFinishedContext);

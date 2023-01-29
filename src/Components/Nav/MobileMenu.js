@@ -25,8 +25,23 @@ function MobileMenu({ isLight }) {
   const [expanded] = useContext(MenuExpandedContext);
 
   const menuVariants = {
-    expanded: { x: "0%" },
-    collapsed: { x: "100%" },
+    expanded: {
+      x: "5%",
+      transition: {
+        type: "spring",
+        duration: 0.3,
+        staggerChildren: 0.2,
+        when: "beforeChildren",
+      },
+    },
+    collapsed: {
+      x: "100%",
+      transition: {
+        type: "spring",
+        duration: 0.3,
+        when: "afterChildren",
+      },
+    },
   };
 
   const menuLinks = [

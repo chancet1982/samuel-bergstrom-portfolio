@@ -81,7 +81,7 @@ function MenuToggler({ isLight }) {
   return (
     <StyledMenuToggler
       onClick={() => setExpanded(!expanded)}
-      $isLight={isLight}
+      $isLight={isLight || expanded}
       $expanded={expanded}
     >
       <span />
