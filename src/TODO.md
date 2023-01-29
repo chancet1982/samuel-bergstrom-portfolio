@@ -6,16 +6,6 @@ IMAGE_GALLERY -> Images overflow the screen area on smaller screens.
 Fix vertical alignment - mobile
 ADDITIONAL_CASES (mobile) -> Fix height
 
-FEATURES & IMPROVEMENTS:
-COVER_CAPTION: Add "back" button (In cases)
-
-LANDING PAGE -> Cover client logos preview (change size and update the total width using the solution for list of cards in the about me page)
-
-ListOfImagesWithTitleAndText -> add support for background color on items only. not entire list.
-
-Add password protection to cases
-cleanup limitMaxWidth & bgColor props to be used only where relevant
-
 ANIMATIONS:
 ImageGallery -> add inView animation.
 ListOfOmageWithTitleAndText -> add inView animation to images.
@@ -31,5 +21,9 @@ CASE-1 -> Fix better images so it works on mobile
 One day...
 Use Contentful for content.
 server side rendering using Next.js (?)
+Add password protection to cases
+cleanup limitMaxWidth & bgColor props to be used only where relevant
+COVER_CAPTION: Add "back" button (In cases)
+
 Implement smooth scrolling:
 https://www.npmjs.com/package/scroller-motion

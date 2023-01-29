@@ -1,8 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { useWindowSize } from "react-use";
+import { useWindowSize, useMeasure } from "react-use";
 import Card from "../Shared/Card";
 import breakpoints from "../../theme/breakpoints";
 import sizes from "../../theme/sizes";
@@ -51,24 +51,32 @@ const StyledListItem = styled(motion.li)`
   }
 `;
 
+/* TODO: drag constraints are not updated for whatever reason */
 /* TODO: Make sure number of columns changes for mobile (1) table (2) and desktop (3) */
 function ListOfCards({ items }) {
   const numberOfColumns = 3; // Update to work on mobile as well
-  const [listWidth, setListWidth] = useState(0);
-  const ref = useRef(null);
+  const [ref, { width }] = useMeasure();
+  const [availableRange, setAvailableRange] = useState(0);
 
-  useEffect(() => {
-    setListWidth(ref.current.scrollWidth);
-  }, [ref]);
+  const viewport = useWindowSize();
+  const viewportWidth = viewport.width;
 
-  const { width } = useWindowSize();
-  const cardMarginRight = (width / 100) * 2; // Should be equal to 2VWs
+  const cardMarginRight = (viewportWidth / 100) * 2; // Should be equal to 2VWs
   const listItemWidth =
     (sizes.contentWidthLimit - cardMarginRight * (numberOfColumns - 1)) /
     numberOfColumns;
-  const initialListOffset = (width - sizes.contentWidthLimit) / 2;
+  const initialListOffset = (viewportWidth - sizes.contentWidthLimit) / 2;
 
-  const availableRange = listWidth + initialListOffset - width;
+  useEffect(() => {
+    setAvailableRange(width + initialListOffset - viewportWidth);
+    /* console.log("availableRange: ", availableRange);
+    console.log(
+      "width, initialListOffset, viewportWidth",
+      width,
+      initialListOffset,
+      viewportWidth
+    ); */
+  }, [width, initialListOffset, viewportWidth]);
 
   const renderCardContent = (title, text) => (
     <TitleAndText title={title} h={4}>

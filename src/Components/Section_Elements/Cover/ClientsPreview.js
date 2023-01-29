@@ -1,8 +1,8 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import { motion, useTransform, useMotionValue, useScroll } from "framer-motion";
-import { useWindowSize } from "react-use";
+import { useWindowSize, useMeasure } from "react-use";
 import Image from "../../Shared/Image";
 import { CLIENTS } from "../../../data/dictionaries/CLIENTS";
 
@@ -18,9 +18,10 @@ const StyledClientsPreview = styled(motion.div)`
   }
 `;
 
-/* TODO: Something is off sometimes with calculating the width of the client logos list */
 function ClientPreview() {
-  const { width } = useWindowSize();
+  const viewport = useWindowSize();
+  const viewportWidth = viewport.width;
+  const [ref, { width }] = useMeasure();
 
   const x = useMotionValue(200);
 
@@ -36,17 +37,10 @@ function ClientPreview() {
     };
   }, []);
 
-  const [clientsWidth, setClientLogosWidth] = useState(4927);
-  const ref = useRef(null);
-
-  useEffect(() => {
-    setClientLogosWidth(ref.current.scrollWidth);
-  }, [ref]);
-
   const horizontalScroll = useTransform(
     x,
-    [0, width],
-    [0, -(clientsWidth - width)]
+    [0, viewportWidth],
+    [0, -(width - viewportWidth)]
   );
 
   const { height } = useWindowSize();
@@ -58,6 +52,7 @@ function ClientPreview() {
     [0, coverHeight / 2],
     ["0%", "100%"]
   );
+
   const clientPreviewOpacity = useTransform(
     scrollY,
     [0, coverHeight / 2],
