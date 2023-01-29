@@ -11,11 +11,8 @@ import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Shared/Title";
 
-/* TODO: Final result looks like shit for desktop products (Perhaps use the Fitness24Seven solution) */
-/* TODO: cover fgImage is missing mobile image URL */
-
 const SETTINGS = {
-  BG_COLOR: "#00ADDB",
+  BG_COLOR: "#FF3366",
   URL: "/cases/9",
   MEDIA_BASE_URL: "assets/case-9",
   KEY_FIGURES: {
@@ -38,7 +35,7 @@ export const CASE_9 = {
   caseUrl: SETTINGS.URL,
   thumbnail: {
     overline: "Price Comparison Service",
-    title: "Improving search experience",
+    title: "Finding the right product",
     text: <>Genarating millions without moving a pixel</>,
     imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
     imageAlt: "thumbnail",
@@ -53,7 +50,12 @@ export const CASE_9 = {
             bgColor: SETTINGS.BG_COLOR,
             caption: {
               overline: "Price Comparison Service",
-              title: "Improving search experience",
+              title: (
+                <>
+                  Finding the
+                  <br /> right product
+                </>
+              ),
               text: (
                 <Paragraph xxl>
                   Or, how to make millions of without moving a PX
@@ -64,9 +66,8 @@ export const CASE_9 = {
               imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover.png`,
             },
             highlights: [
-              SETTINGS.KEY_FIGURES.CASE_TYPE,
               SETTINGS.KEY_FIGURES.CASE_YEAR,
-              SETTINGS.KEY_FIGURES.CASE_DURATION,
+              SETTINGS.KEY_FIGURES.CASE_TYPE,
               SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
             ],
           },

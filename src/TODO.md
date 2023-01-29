@@ -11,7 +11,7 @@ ListOfOmageWithTitleAndText -> add inView animation to images.
 
 CONTENT:
 case-11-> Add whitespace before results section.
-case-9 -> change to the prisjakt red instead.
+case-9 -> mobile cover image is missing
 case-7 -> Add pictures of the report?
 case-6 -> Go through and rewrite
 case-8 -> Go through and rewrite
