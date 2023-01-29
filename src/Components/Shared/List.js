@@ -24,8 +24,8 @@ const styleListItem = (size, lh, margin) => `
 
 const StyledListItem = styled(motion.li)`
   :before {
-    ${({ plain }) =>
-      !plain && {
+    ${({ $plain }) =>
+      !$plain && {
         display: "inline-block",
         content: "-",
         width: "1rem",
@@ -47,7 +47,7 @@ function List({ items, plain, columns }) {
   return (
     <StyledList columns={columns}>
       {items.map((item) => (
-        <StyledListItem key={uuid()} plain={plain}>
+        <StyledListItem key={uuid()} $plain={plain}>
           {item}
         </StyledListItem>
       ))}

@@ -51,7 +51,7 @@ function Testimonials({ title, text }) {
             ? 2
             : 3
         }
-        gap="24"
+        gap={24}
       >
         {testimonials.map(({ author, content }) => (
           <Testimonial key={uuid()} author={author}>

@@ -4,13 +4,13 @@ import { ElementColorContext } from "../Context/ElementColorContext";
 import { SectionColorContext } from "../Context/SectionColorContext";
 import { ViewColorContext } from "../Context/ViewColorContext";
 
-const useBgColor = () => {
+function useBgColor() {
   const [hasViewBgColor] = useContext(ViewColorContext);
   const [hasSectionBgColor] = useContext(SectionColorContext);
   const [hasElementBgColor] = useContext(ElementColorContext);
 
   return hasViewBgColor || hasSectionBgColor || hasElementBgColor;
-};
+}
 
 useBgColor.propTypes = {};
 

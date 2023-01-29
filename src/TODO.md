@@ -1,17 +1,17 @@
 TODO list (What's left before you're done)
 
 FIXES:
+NAVIGATION -> Navigation gets wrong bgColor when in about page.
 NAVIGATION -> Navigating from "home" to "about" the navigation doesnt change background color.
-IMAGE_GALLERY -> Images overflow the screen area on smaller screens.
 Fix vertical alignment - mobile
 ADDITIONAL_CASES (mobile) -> Fix height
 
 ANIMATIONS:
-ImageGallery -> add inView animation.
 ListOfOmageWithTitleAndText -> add inView animation to images.
 
 CONTENT:
 case-11-> Add whitespace before results section.
+case-9 -> change to the prisjakt red instead.
 case-7 -> Add pictures of the report?
 case-6 -> Go through and rewrite
 case-8 -> Go through and rewrite
