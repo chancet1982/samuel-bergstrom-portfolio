@@ -4,13 +4,15 @@ import { ThemeProvider } from "styled-components";
 import { AnimatePresence } from "framer-motion";
 import CursorContextProvider from "./Context/CursorContext";
 import ViewLoading from "./Components/Views/ViewLoading";
-import Navigation from "./Components/Navigation";
+import Nav from "./Components/Nav";
 import ErrorBoundary from "./Components/ErrorBoundary";
 
 import theme from "./theme/theme";
 import ViewColorContextProvider from "./Context/ViewColorContext";
 import SplashAnimationFinishedContextProvider from "./Context/SplashAnimationFinishedContext";
 import NavBgColorContextProvider from "./Context/NavBgColorContext";
+import MenuExpandedContextProvider from "./Context/MenuExpandedContext";
+import Overlay from "./Components/Overley";
 
 const ViewLandingPage = lazy(() =>
   import("./Components/Views/ViewLandingPage")
@@ -39,21 +41,24 @@ function App() {
           <CursorContextProvider>
             <ViewColorContextProvider>
               <NavBgColorContextProvider>
-                <Navigation />
-                <Suspense fallback={<ViewLoading />}>
-                  <AnimatePresence mode="wait">
-                    <Routes location={location} key={location.pathname}>
-                      <Route exact path="/" element={<ViewLandingPage />} />
-                      <Route path="/cases" element={<ViewCases />} />
-                      <Route path="/cases/:id" element={<ViewCase />} />
-                      <Route path="/about" element={<ViewAboutMe />} />
-                      <Route path="/contact" element={<ViewContact />} />
-                      <Route path="/test" element={<ViewTest />} />
-                      <Route path="/loading" element={<ViewLoading />} />
-                      <Route path="*" element={<ViewPageNotFound />} />
-                    </Routes>
-                  </AnimatePresence>
-                </Suspense>
+                <MenuExpandedContextProvider>
+                  <Overlay />
+                  <Nav />
+                  <Suspense fallback={<ViewLoading />}>
+                    <AnimatePresence mode="wait">
+                      <Routes location={location} key={location.pathname}>
+                        <Route exact path="/" element={<ViewLandingPage />} />
+                        <Route path="/cases" element={<ViewCases />} />
+                        <Route path="/cases/:id" element={<ViewCase />} />
+                        <Route path="/about" element={<ViewAboutMe />} />
+                        <Route path="/contact" element={<ViewContact />} />
+                        <Route path="/test" element={<ViewTest />} />
+                        <Route path="/loading" element={<ViewLoading />} />
+                        <Route path="*" element={<ViewPageNotFound />} />
+                      </Routes>
+                    </AnimatePresence>
+                  </Suspense>
+                </MenuExpandedContextProvider>
               </NavBgColorContextProvider>
             </ViewColorContextProvider>
           </CursorContextProvider>

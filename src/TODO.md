@@ -2,7 +2,6 @@ TODO list (What's left before you're done)
 
 FIXES:
 NAVIGATION -> Navigating from "home" to "about" the navigation doesnt change background color.
-NAVIGATION -> Split up mobile navigation, make better panel based mobile navigation.
 IMAGE_GALLERY -> Images overflow the screen area on smaller screens.
 Fix vertical alignment - mobile
 ADDITIONAL_CASES (mobile) -> Fix height
