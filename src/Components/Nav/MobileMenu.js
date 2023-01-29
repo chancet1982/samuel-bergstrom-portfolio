@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
@@ -71,6 +71,14 @@ function MobileMenu({ isLight }) {
     { to: "/cases", text: "Cases" },
     { to: "/contact", text: "Get in touch" },
   ];
+
+  useEffect(() => {
+    if (expanded) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+  }, [expanded]);
 
   return (
     <>
