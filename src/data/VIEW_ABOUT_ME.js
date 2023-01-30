@@ -5,7 +5,7 @@ import Paragraph from "../Components/Shared/Paragraph";
 import List from "../Components/Shared/List";
 import colors from "../theme/colors";
 import Span from "../Components/Shared/Span";
-import Link from "../Components/Shared/Link";
+import Title from "../Components/Shared/Title";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
 
@@ -15,6 +15,7 @@ export const VIEW_ABOUT_ME = [
       {
         template: SECTION_ELEMENTS.COVER,
         data: {
+          bgColor: "#9c9090",
           caption: {
             title: (
               <>
@@ -120,11 +121,7 @@ export const VIEW_ABOUT_ME = [
         template: SECTION_ELEMENTS.TEXTBOX,
         data: {
           isCentered: true,
-          title: (
-            <>
-              Some of the <mark>companies</mark> I worked with
-            </>
-          ),
+          title: <>Among my clients</>,
         },
       },
       {
@@ -155,42 +152,50 @@ export const VIEW_ABOUT_ME = [
           text: (
             <>
               <Paragraph>
-                I started off 15 years ago when I was hired as a graphic
-                designer for a company developing solutions for banks and
-                investment groups. There I grew and eventually led a team that
-                was responsible for all web-solutions used by 50-70 banks and
-                investment groups.
+                My career started off 15 years ago when I was hired as a graphic
+                designer for a financial services provider in Copenhagen. I had
+                many hats at that time and eventually I was in charge of a small
+                team responsible for creating web and document creation
+                solutions used by 50-70 banks and investment groups.
               </Paragraph>
               <Paragraph>
-                I then decided to deepen my knowledge and signed up to the
-                university where I studied It Communications and New Media
-                (while working full-time). This side-tracked my career for a
-                short while until I returned to my roots in designing usable
-                interfaces.
-              </Paragraph>
-              <Paragraph>
-                I worked for a while with data visualizations for medical
+                But work got repetative. I needed a new challenge. I signed up
+                to go back to university where I studied It Communications and
+                New Media while working full-time. After graduation, I worked as
+                a Front-end developer for a couple of years before going back to
+                design. This time working with data visualizations for medical
                 studies before being hired as a consultant.
               </Paragraph>
               <Paragraph>
                 As a consultant, I was hired to work as part of an in-house
-                delivery organization where we worked with large organizations
-                helping them reach their goals. This included involvement in all
-                parts of the client communication, from pre-sales, discovery,
-                ideation, design, validation, to building, launching and
-                evaluting the impact of our efforts.
+                delivery organization. This included involvement in all parts of
+                process. From from defining problems worth solving, through
+                product discovery, ideation, design, and validation, to
+                building, launching and evaluting the impact of our efforts.
               </Paragraph>
               <Paragraph>
-                I now work as a UX consultant as part of a larger design team.
-                In this role I help the team establish their ways of working and
-                improve designs based on user input.
+                Currently working as head of design at tretton37. I lead a team
+                of 20 designers and am responsible for working on our VP, EVP,
+                Competence development (in collaboration with a dedicated
+                competence lead) packaging design services, and generally trying
+                to ensure that designers have a home at tretton37.
               </Paragraph>
-              <Paragraph>
-                If any of this sounds interesting or if you just want to start a
-                flamewar regarding web accessibility, just{" "}
-                <Link to="/contact">reach out</Link>. I’m sure we could sort it
-                over some warm slice of pizza and some cold beer.
-              </Paragraph>
+              <Title h={4}>Some of my credentials</Title>
+              <List
+                items={[
+                  <Span>
+                    <strong>UXC Spec. UX Management</strong>, NNg (Nielson
+                    Norman Group)
+                  </Span>,
+                  <Span>
+                    <strong>BSc</strong> Eng. ICT, Ålborg university
+                  </Span>,
+                  <Span>
+                    <strong>Assoc. Deg.</strong> Graphic Design, College of
+                    Management
+                  </Span>,
+                ]}
+              />
             </>
           ),
         },
@@ -320,39 +325,6 @@ export const VIEW_ABOUT_ME = [
               ],
             },
           ],
-        },
-      },
-    ],
-  },
-  {
-    elements: [
-      {
-        template: SECTION_ELEMENTS.TEXTBOX,
-
-        data: {
-          title: (
-            <>
-              Some of my <mark>credentials</mark>:
-            </>
-          ),
-          h: 2,
-          text: (
-            <List
-              items={[
-                <Span>
-                  <strong>UXC Spec. UX Management</strong>, NNg (Nielson Norman
-                  Group)
-                </Span>,
-                <Span>
-                  <strong>BSc</strong> Eng. ICT, Ålborg university
-                </Span>,
-                <Span>
-                  <strong>Assoc. Deg.</strong> Graphic Design, College of
-                  Management
-                </Span>,
-              ]}
-            />
-          ),
         },
       },
     ],

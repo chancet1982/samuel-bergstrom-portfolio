@@ -12,6 +12,7 @@ export const VIEW_LANDING_PAGE = [
       {
         template: SECTION_ELEMENTS.COVER,
         data: {
+          bgColor: "black",
           caption: {
             title: (
               <>
