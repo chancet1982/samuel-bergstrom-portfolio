@@ -9,16 +9,11 @@ import Title from "../Components/Shared/Title";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Image from "../Components/Shared/Image";
+import Note from "../Components/Shared/Note";
+import List from "../Components/Shared/List";
+import Span from "../Components/Shared/Span";
 
-// import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
-
-/* TODO: First attempt expectations vs reality... (implement as side by side content) */
-/* TODO: "Problem" image test to see if its better as part of the first text box. */
-/* TODO: Clean up the steps in the preview (based on the the other content) */
 /* TODO: Add a slide about creating a design system (mostly a filler with some text above to explain why there is a missmatch) */
-/* TODO: add missing results */
-/* TODO: Add missing thumbnail */
-/* TODO: This is a non-finished project. Finish it or remove. */
 const SETTINGS = {
   BG_COLOR: "#FFB100",
   URL: "/cases/11",
@@ -169,18 +164,17 @@ export const CASE_11 = {
             text: (
               <>
                 <Paragraph>
-                  These icons are easy to miss. The placement and color choice
-                  are problematic. On top of that, they are very generic making
-                  them hard to notice, and understand. On top of that, having
-                  both new and used products in the same bucket meant that the
-                  price history for a product was not reliable as non-new
-                  products tend to be cheaper they would usually trigger price
-                  alerts, and missclicks.
+                  These icons are <strong>easy to miss</strong>. The placement
+                  and color choice are problematic. On top of that, they are
+                  very generic. Making them hard to notice, and understand.
                 </Paragraph>
                 <Paragraph>
-                  This of course is frustrating to both users that accidentally
-                  ended up on a used product, and stores that got traffic that
-                  never converted.
+                  Treating all different product conditions as one was
+                  contaminating the price history, triggering false price
+                  reduction notifications, and leading to missclicks. This
+                  frustrated both users that accidentally ended up on a used
+                  product, and stores that pay for traffic that is unlikely to
+                  buy.
                 </Paragraph>
               </>
             ),
@@ -201,19 +195,17 @@ export const CASE_11 = {
             title: <>The goal: Increasing traffic to non-new products.</>,
             h: 2,
             text: (
-              <>
-                <Paragraph>
-                  My goal was to lead more traffic to used and demo products,
-                  increase clarity, and align users expectations. Reducing
-                  missclicks means we increate the quality of traffic (more
-                  likely to actually make a purchase) and redirect more valuable
-                  traffic to the stores.
-                </Paragraph>
-                <Paragraph>
-                  On top of that, refurbished products often have higer margins
-                  which means that click price on those products can be higher
-                </Paragraph>
-              </>
+              <Paragraph>
+                My goal was to lead more traffic to refurbished, used and demo
+                products. These products often have higer margins and are
+                typically found in popular categories so they can have a very
+                high CPC. In order to charge more, we needed to ensure quality
+                traffic. I.E. traffic that is likely to purchase.{" "}
+                <strong>
+                  Users needed to choose non-new products, not arrive to demo
+                  products by chance.
+                </strong>
+              </Paragraph>
             ),
           },
         },
@@ -240,21 +232,20 @@ export const CASE_11 = {
                   site was that “used and demo products are sold as new” and
                   that the price history does not reflect the actual product
                   price as it is contaminated with “demo” and “refurbished”
-                  products.
+                  products. In fact, during the quarterly survey, one of the
+                  most common complaints were related to“non-new” products.
                 </Paragraph>
                 <Image
                   imageUrl={`/${SETTINGS.MEDIA_BASE_URL}/bad-reviews.png`}
                   inTextbox
                 />
-                <Paragraph>
-                  During the quarterly survey, a large share of the complaints
-                  were related to “non-new” products and how they are displayed.
-                </Paragraph>
                 <Title h={4}>Qualitative research</Title>
                 <Paragraph>
-                  On top of that, as part of ongoing usability testings, we
-                  asked participants to point out demo products. Not a single
-                  participant managed to point these out.
+                  We integrated this as part of our usability testing and asked
+                  participants to point out demo products.{" "}
+                  <strong>
+                    Not a single participant managed to point these out.
+                  </strong>
                 </Paragraph>
               </>
             ),
@@ -268,33 +259,23 @@ export const CASE_11 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Ideation and competitor analysis</>,
+            title: <>Looking at our competitors and best practices</>,
             h: 2,
             text: (
               <>
                 <Paragraph>
                   At this point, it was obvious that we had a problem worth
-                  solving. But it was not a unique problem. More or less every
-                  marketplace and competitor was trying to do the same. I looked
-                  at and evaluated how used products were sold by 17 leading
-                  competitors in Europe.
+                  solving just not how to solve it. Most competitors focused
+                  only on new products. The ones that did, considered “product
+                  condition” as variant. Looking at marketplaces, all 3 leading
+                  marketplaces in Europe used this approach.
                 </Paragraph>
-                <Title h={4}>Figuring out alternatives</Title>
+                <Title h={4}>How to best implement variants?</Title>
                 <Paragraph>
-                  These ideas were then summarized and evaluated based on
-                  feasibility, usability, and business potential. Feasibility
-                  with the engineers on our team, business with the responsible
-                  PM, and usability was evaluated based on best practices
-                  (Published by Baymard Institute)
-                </Paragraph>
-                <Title h={4}>Addressing concerns</Title>
-                <Paragraph>
-                  There were some internal concerns in the organization. Namely,
-                  how this aligns with the company’s values and how it might
-                  impact their sustainability initiatives. As this was aligned
-                  with both it was not a problem. In fact, the solution
-                  encouraged the consumption of refurbished products and reduced
-                  waste. It was basically a PR win.
+                  We followed the guidelines published by Baymard institute and
+                  NNGroup when possible but at that point, variants were not
+                  supported on prisjakt and some technical debt was holding us
+                  back.
                 </Paragraph>
               </>
             ),
@@ -342,7 +323,7 @@ export const CASE_11 = {
                   products existed. On top of that, the price history was
                   limited to account for new products only.
                 </Paragraph>
-                <Title h={4}>List switcher as product variants</Title>
+                <Title h={4}>Introducing product condition as variant</Title>
                 <Paragraph>
                   Now that we had 2 lists, we needed a way to switch between
                   them. Following Amazon’s example, we decided to introduce the
@@ -363,8 +344,8 @@ export const CASE_11 = {
             items: [
               {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/before.png`,
-                imageAlt: "Introduce product condition as variant",
-                title: "Introduce product condition as variant",
+                imageAlt: "Expectation",
+                title: "Expectation",
                 text: (
                   <Paragraph>
                     Product variants typically are placed as part of the product
@@ -375,13 +356,14 @@ export const CASE_11 = {
               },
               {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/after.png`,
-                imageAlt: "Technical limitations and constraints",
-                title: "Technical limitations and constraints",
+                imageAlt: "Reality",
+                title: "Reality",
                 text: (
                   <Paragraph>
-                    Due to technical constraints though, we could only place the
-                    product condition switcher under the tabs and not as part of
-                    the header.
+                    Due to technical constraints (at that time, the product page
+                    was in fact 4 separate pages), we had to temporarly place
+                    the product condition switcher under the tabs which is not
+                    optimal.
                   </Paragraph>
                 ),
               },
@@ -394,24 +376,22 @@ export const CASE_11 = {
             items: [
               {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-4.png`,
-                imageAlt:
-                  "Montage, Finally exposing product condition as variant",
-                title: "Montage, Finally exposing product condition as variant",
+                imageAlt: "Exposing the variant selector as intended",
+                title: "Exposing the variant selector as intended",
                 h: 4,
                 text: (
                   <>
                     <Paragraph>
-                      After moving to a long page layout the 4 different pages
-                      were merged to 1 long page which then allowed us to move
-                      the product condition selector to where it was initially
-                      intended.
+                      After moving to a long page layout, the 4 pages were now 1
+                      page. This allowed us to move the variant selector to
+                      where it was originally intended.
                     </Paragraph>
                     <Paragraph>
-                      We made some changes to the header in order to create
-                      space for variants. This was mostly done in order to
-                      address concerns that pushing the offerlist down will harm
-                      convertions. Once in place we could start testing if it
-                      had the desired affect.
+                      In order to address concerns that pushing the offerlist
+                      down will harm convertions. We aimed to minimize the shift
+                      by moving the ratings, rank and some of the buttons. Once
+                      in place we could start testing if it had the desired
+                      affect.
                     </Paragraph>
                   </>
                 ),
@@ -457,6 +437,24 @@ export const CASE_11 = {
             caption: "Conversion rate changes as measured in Optimizely",
           },
         },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            text: (
+              <Note>
+                <Paragraph>
+                  <strong>A/B test tooling is often missleading.</strong> It
+                  accounts for all sessions and often would results in a watered
+                  down result. In order get a real result you need to use other
+                  tools (In this case Amplitude) so that we could limit the
+                  scope to only account for sessions that clicked out after
+                  watching the product page in mobile phone category, where used
+                  products existed.
+                </Paragraph>
+              </Note>
+            ),
+          },
+        },
       ],
     },
     {
@@ -467,23 +465,30 @@ export const CASE_11 = {
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/result-desktop.png`,
             mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/result-mobile.png`,
             bgColor: SETTINGS.BG_COLOR,
+            results: [
+              {
+                value: "+2.8%",
+                description: "Conversion increase *",
+              },
+              {
+                value: "8X",
+                description: "Clickouts on non-new products",
+              },
+              {
+                value: "+6.3%",
+                description: "increase in UUP Score **",
+              },
+            ],
             text: (
               <>
-                <Paragraph large>
-                  The new design showed a general conversion improvement of 2.8%
-                  in relevant categories. Relevant categories were defined as
-                  categories where we had “used”, “demo”, and “refurbished”
-                  products.
-                </Paragraph>
-                <Paragraph>
-                  On top of that, the new design led to an 8X increase in the
-                  number of clicks on used products.
-                </Paragraph>
-
-                <Paragraph>
-                  Last but not least, the perceived usefulness and usability
-                  scores (UUP Score) for the page increased by 6.5%
-                </Paragraph>
+                <List
+                  items={[
+                    <Span small>* in relevant categories.</Span>,
+                    <Span small>
+                      ** perceived usefulness and usability scores
+                    </Span>,
+                  ]}
+                />
                 <Title h={3}>Reflections</Title>
                 <Paragraph>
                   This was one of those rare times when doing the right thing

@@ -47,11 +47,7 @@ export const VIEW_LANDING_PAGE = [
         template: SECTION_ELEMENTS.TEXTBOX,
         data: {
           isCentered: true,
-          title: (
-            <>
-              Selected <mark>work</mark>
-            </>
-          ),
+          title: <>Featured cases</>,
           text: (
             <Paragraph large>
               Just some of my work from the last couple of years.

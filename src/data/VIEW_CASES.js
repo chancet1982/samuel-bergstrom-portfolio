@@ -11,11 +11,7 @@ export const VIEW_CASES = [
         data: {
           isCentered: true,
 
-          title: (
-            <>
-              Selected <mark>cases</mark>
-            </>
-          ),
+          title: <>Selected cases</>,
           h: 1,
           text: (
             <Paragraph large>
