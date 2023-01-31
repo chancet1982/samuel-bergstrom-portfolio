@@ -13,7 +13,6 @@ import padding from "../../../theme/padding";
 import colors from "../../../theme/colors";
 import breakpoints from "../../../theme/breakpoints";
 
-/* TODO: CaseThumbnail gets bgColor which isnt used. Make sure to clean up. */
 const StyledCaseThumbnail = styled(motion.div)`
   overflow: hidden;
   transition: box-shadow 600ms;

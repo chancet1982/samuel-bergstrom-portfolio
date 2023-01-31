@@ -31,7 +31,6 @@ const StyledCases = styled(motion.div)`
   }
 `;
 
-/* Animation in cases is still fucked up. see if there is anything that can be fixed. */
 function SectionCases({ preview }) {
   return (
     <motion.div>
