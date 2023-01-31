@@ -36,7 +36,7 @@ function Testimonials({ title, text }) {
           initial="hidden"
           whileInView="inView"
           viewport={{ once: true, amount: 0.2 }}
-          transition={{ staggerChildren: 0.2 }}
+          transition={{ staggerChildren: 0.1 }}
           isPadded
           isCentered
         >
