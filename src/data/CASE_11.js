@@ -93,9 +93,9 @@ export const CASE_11 = {
                 Prisjakt started off by catering to computer enthusiasts and was
                 one of the first price comparison sites in the Nordics. It is
                 still the leading price comparison service but in recent years
-                Prisjak’t growth stagnated. Prisjakt’s conversion is based
-                mostly on click-outs where different the price per click is
-                based on the product category.
+                Prisjak’t growth stagnated. Prisjakt’s main revenue originates
+                from click-outs where the CPC varies depentend on product
+                category.
               </Paragraph>
             ),
             toolsAndMethods: [

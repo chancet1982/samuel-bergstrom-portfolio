@@ -338,7 +338,7 @@ export const VIEW_ABOUT_ME = [
           h: 2,
           text: (
             <Paragraph>
-              Ho, did I mention I make some kick-ass pizzas? So yeah, sourdough,
+              Did I mention I make some kick-ass pizzas? So yeah, sourdough,
               Biga, Poolish, you name it. I started making neapolitan pizzas
               about 5 years ago. I bought a small Ooni and started
               experimenting. Now, 5 years, 3 pizza ovens, and several hundrads

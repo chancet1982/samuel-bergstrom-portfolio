@@ -31,8 +31,8 @@ export const CASE_5 = {
   caseUrl: SETTINGS.URL,
   thumbnail: {
     overline: "Renal Care",
-    title: "Self service Kiost",
-    text: <>Speeding up adminisions and discharge in dialysis clinics.</>,
+    title: "Self service Kiosk",
+    text: <>Speeding up admissions and discharge in dialysis clinics.</>,
     imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
     imageAlt: "thumbnail",
     bgColor: SETTINGS.BG_COLOR,
@@ -46,10 +46,10 @@ export const CASE_5 = {
             bgColor: SETTINGS.BG_COLOR,
             caption: {
               overline: "Renal Care",
-              title: "Self service Kiost",
+              title: "Self service Kiosk",
               text: (
                 <Paragraph xxl>
-                  Speeding up adminisions and discharge in dialysis clinics.
+                  Speeding up admissions and discharge in dialysis clinics.
                 </Paragraph>
               ),
             },
