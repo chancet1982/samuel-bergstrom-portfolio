@@ -220,12 +220,11 @@ export const VIEW_ABOUT_ME = [
                 {
                   title: "UX Consultant, Prisjakt",
                   content:
-                    "Making sure design has a place in a tech consultancy",
+                    "Helped prisjakt work strategically with insights and UX. Worked on improving search, cateogry, and product page",
                 },
                 {
                   title: "UX Consultant & Mentor, Alfa Laval",
-                  content:
-                    "Making sure design has a place in a tech consultancy",
+                  content: "Under NDA",
                 },
               ],
             },
@@ -235,17 +234,16 @@ export const VIEW_ABOUT_ME = [
                 {
                   title: "UX Lead, Mitsubishi Electric",
                   content:
-                    "Making sure design has a place in a tech consultancy",
+                    "Helped Mitsubishi Electric genarate a vision for D2C sales",
                 },
                 {
                   title: "UX Designer, Fitness 24 Seven",
                   content:
-                    "Making sure design has a place in a tech consultancy",
+                    "Helped Fitness 24 Seven investigate new business oppurtunities",
                 },
                 {
                   title: "Senior UX Designer, Loomis",
-                  content:
-                    "Making sure design has a place in a tech consultancy",
+                  content: "Helped redesign Loomises courier app",
                 },
               ],
             },
@@ -255,17 +253,17 @@ export const VIEW_ABOUT_ME = [
                 {
                   title: "UX Designer, Lumito",
                   content:
-                    "Making sure design has a place in a tech consultancy",
+                    "Conducted research and design work used for utilizing disruptive technology in digital patology",
                 },
                 {
                   title: "Head of design, Euro Finans",
                   content:
-                    "Making sure design has a place in a tech consultancy",
+                    "Led the omni channel design activities on behalf of EuroFinans",
                 },
                 {
                   title: "Senior UX Designer, NoWaste Logistics",
                   content:
-                    "Making sure design has a place in a tech consultancy",
+                    "Created a design for a last mile grocery delivery solution",
                 },
               ],
             },
@@ -275,12 +273,11 @@ export const VIEW_ABOUT_ME = [
                 {
                   title: "UX Designer, Diaverum",
                   content:
-                    "Making sure design has a place in a tech consultancy",
+                    "Worked on multiple projects and platforms aimed at providing better treatment for renal patients",
                 },
                 {
                   title: "UX Designer, Modity",
-                  content:
-                    "Making sure design has a place in a tech consultancy",
+                  content: "Designed an energy trading platform",
                 },
               ],
             },
@@ -290,7 +287,7 @@ export const VIEW_ABOUT_ME = [
                 {
                   title: "UX Engineer, Capish",
                   content:
-                    "Making sure design has a place in a tech consultancy",
+                    "Worked on complex data visualizations for medical studies",
                 },
               ],
             },
@@ -300,7 +297,7 @@ export const VIEW_ABOUT_ME = [
                 {
                   title: "Frontend Developer, NetSet",
                   content:
-                    "Making sure design has a place in a tech consultancy",
+                    "Helped ATEA webshop transition to responsive design as part of a product team",
                 },
               ],
             },
@@ -310,7 +307,7 @@ export const VIEW_ABOUT_ME = [
                 {
                   title: "Head of Web, FundConnect (Accuired by FEFundInfo)",
                   content:
-                    "Making sure design has a place in a tech consultancy",
+                    "I was in charge of the companies portfolio of online and document creation solutions used by 50-70 banks, financial institutions, and stock exchanges",
                 },
               ],
             },
@@ -320,7 +317,7 @@ export const VIEW_ABOUT_ME = [
                 {
                   title: "UI/UX Designer, (Accuired by FEFundInfo)",
                   content:
-                    "Making sure design has a place in a tech consultancy",
+                    "Designing internal and extrnal fund information services",
                 },
               ],
             },
