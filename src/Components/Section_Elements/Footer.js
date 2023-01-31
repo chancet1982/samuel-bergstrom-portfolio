@@ -27,7 +27,7 @@ function SectionFooter() {
       viewport={{ once: true, amount: 0.2 }}
       transition={{ staggerChildren: 0.2 }}
     >
-      <Span small>2021, Samuel Bergström</Span>
+      <Span small>2023, Samuel Bergström</Span>
     </StyledFooter>
   );
 }

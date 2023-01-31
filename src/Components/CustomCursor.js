@@ -15,8 +15,8 @@ const StyledCursor = styled(motion.div)`
   justify-content: center;
   top: 0;
   left: 0;
-  height: 10px;
-  width: 10px;
+  height: 0px;
+  width: 0px;
   background-color: ${colors.primary};
   border-radius: 200px;
   pointer-events: none;
@@ -51,8 +51,8 @@ function CustomCursor() {
   const variants = {
     default: {
       opacity: 1,
-      height: 10,
-      width: 10,
+      height: 0,
+      width: 0,
       fontSize: "16px",
       backgroundColor: colors.offblack,
       x: mouseXPosition,

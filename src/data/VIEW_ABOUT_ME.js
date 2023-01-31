@@ -19,7 +19,7 @@ export const VIEW_ABOUT_ME = [
           caption: {
             title: (
               <>
-                Creating <mark>business value</mark> using design.
+                Creating <mark>business value</mark> through better experiences.
               </>
             ),
             h: 1,
@@ -57,7 +57,7 @@ export const VIEW_ABOUT_ME = [
               text: (
                 <Paragraph>
                   Seasoned designer with 15 years of experience working in-house
-                  and as external consultant with clients from all sizes.
+                  and as an external consultant with clients from all sizes.
                   Currently leading a team of 20 designers.
                 </Paragraph>
               ),
@@ -85,8 +85,8 @@ export const VIEW_ABOUT_ME = [
               text: (
                 <Paragraph>
                   Experience in facilitating various workshops. In-person and
-                  virtual. Ideation sessions, discovery workshops, User story
-                  mapping etc.
+                  virtual. Design Sprints, ideation sessions, discovery
+                  workshops, User story mapping etc.
                 </Paragraph>
               ),
             },
