@@ -94,8 +94,7 @@ export const CASE_11 = {
                 one of the first price comparison sites in the Nordics. It is
                 still the leading price comparison service but in recent years
                 Prisjak’t growth stagnated. Prisjakt’s main revenue originates
-                from click-outs where the CPC varies depentend on product
-                category.
+                from click-outs where different categories have different CPC.
               </Paragraph>
             ),
             toolsAndMethods: [

@@ -10,6 +10,7 @@ import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Shared/Title";
 import Image from "../Components/Shared/ImageWithCaption";
 import Note from "../Components/Shared/Note";
+import List from "../Components/Shared/List";
 
 const SETTINGS = {
   BG_COLOR: "#00ADDB",
@@ -80,8 +81,7 @@ export const CASE_10 = {
                 one of the first price comparison sites in the Nordics. It is
                 still the leading price comparison service but in recent years
                 Prisjak’t growth stagnated. Prisjakt’s main revenue originates
-                from click-outs where the CPC varies depentend on product
-                category.
+                from click-outs where different categories have different CPC.
               </Paragraph>
             ),
             toolsAndMethods: [
@@ -102,22 +102,34 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>The problem</>,
+            title: <>Price comparison, catch 22</>,
             text: (
               <>
                 <Paragraph>
-                  Price comparison sites have a double challenges. On one hand
-                  they need to compare as many prices as possible to provide the
-                  lowest price possible for their users. This means comparing as
-                  many prices as possible. This is even more important in new
-                  markets where agreements are not yet signed. On the other
-                  hand, only stores that have an agreement with them generate
-                  revenue.
+                  <strong>
+                    Price comparison sites face a multi layered problem
+                  </strong>
+                  <br />
+                  From one side, they need to include as many prices and find
+                  the cheapest prices to be relevant. While from the other, only
+                  stores that have an agreement with them generate revenue.
+                </Paragraph>
+                <Paragraph>
+                  They need quality data in order to preform, while they can
+                  only control the data quality when agreements are signed. In
+                  emerging markets, it is hard to motivate signing an agreement,
+                  unless you can proove you redirect valuable traffic, and you
+                  can’t redirect valuable traffic without good data.
+                </Paragraph>
+                <Paragraph>
+                  On top of that, we knew that some shops are “taking advantage
+                  of the system” but without an agreement there was little my
+                  client could do in order to ensure data quality.
                 </Paragraph>
                 <Paragraph>
                   How could we drive more traffic to paying customers without
-                  sacrifising neutrality? What do we do if the cheapest price
-                  comes from stores that dont generate revenue?
+                  being biased? What do we do if the cheapest price comes from
+                  stores that dont generate revenue?
                 </Paragraph>
               </>
             ),
@@ -136,20 +148,31 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>The goal:</>,
+            title: (
+              <>
+                A <strong>BIG</strong> ask
+              </>
+            ),
             h: 2,
             text: (
-              <>
-                <Paragraph>
-                  The goal of this was to increase traffic to paying customers
-                  and encourage potential customers to sign-up.
-                </Paragraph>
-                <Paragraph>
-                  On top of that, we already knew that some shops are “taking
-                  advantage of the system” but without an agreement there was
-                  little my client could do in order to ensure data quality.
-                </Paragraph>
-              </>
+              <Paragraph>
+                This project set out with 3 main goals in mind:
+                <List
+                  items={[
+                    <>
+                      <strong>increase revenues</strong> by shifting traffic to
+                      paying customers
+                    </>,
+                    <>
+                      encourage potential customers to{" "}
+                      <strong>sign agreements</strong>
+                    </>,
+                    <>
+                      increase <strong>data quality</strong>
+                    </>,
+                  ]}
+                />
+              </Paragraph>
             ),
           },
         },
@@ -165,11 +188,10 @@ export const CASE_10 = {
             h: 2,
             text: (
               <Paragraph>
-                At this point, I needed to collect as much information as
-                possible. I interviewed more than 20 people in 6 different
-                departments to help learn how we onboard new clients, manage our
-                client relationships, what are their pain points and areas where
-                we can improve.
+                In order to succeed, I needed to understand the problem. I spent
+                a week interviewing more than 20 stakeholders from 6 different
+                departments in order to learn how we onboard new clients, manage
+                client relationships, and explore oppurtuinities.
               </Paragraph>
             ),
           },
@@ -184,24 +206,51 @@ export const CASE_10 = {
               <>
                 {" "}
                 <Paragraph>
-                  From the interviews, we learned a lot. There were a lot of
-                  issues that needed to be addressed. 3 different problem areas
-                  were identified:
+                  From the interviews, we identified 3 problem areas:
                 </Paragraph>
               </>
             ),
             items: [
               {
                 title: "Onboarding new customers",
-                text: "Treating all markets equally, in some markets the client is a “well-established brand” but not always. On top of that, local industry-standard payment options are not available. Additionally, my client offered no cost-caps, no cherry-picking products, and no flexibility in data-ingestion.",
+                text: (
+                  <>
+                    <strong>
+                      Treating all markets as one is not a good approach.
+                    </strong>{" "}
+                    In some markets the client is a “well-established brand” but
+                    not always. On top of that, local industry-standard payment
+                    options are not available. Additionally, my client offered
+                    no cost-caps, no cherry-picking products, and no flexibility
+                    in data-ingestion.
+                  </>
+                ),
               },
               {
                 title: "Customer relationship",
-                text: "Customers are punished for non-compliance, no proactive communication exists, no follow-up on the impact, and even for happy customers there is no “next level”.",
+                text: (
+                  <>
+                    <strong>
+                      Customers are punished for non-compliance without warning.
+                    </strong>{" "}
+                    No one is checking up on the clients, or measures our
+                    impact. Even for happy customers there is no “next level”.
+                  </>
+                ),
               },
               {
                 title: "Insufficient incentives to becoming a customer.",
-                text: "Non-paying customers are getting too much for free. Sole focus on price means that non-paying customers can be not only competitive but destructive (for example by putting fake prices on products they don’t actually have) with no repercussions.",
+                text: (
+                  <>
+                    <strong>
+                      Non-paying customers are getting too much for free.
+                    </strong>{" "}
+                    Sole focus on price means that non-paying customers can be
+                    not only competitive but destructive (for example by putting
+                    fake prices on products they don’t actually have) with no
+                    repercussions.
+                  </>
+                ),
               },
             ],
           },
@@ -218,21 +267,20 @@ export const CASE_10 = {
             h: 2,
             text: (
               <>
-                <Title h={4}>More interviews</Title>
+                <Title h={4}>Looking internally</Title>
                 <Paragraph>
-                  I continued interviewing internal stakeholders and looked
-                  through the survey results to identify potential solutions. We
-                  conducted ideation workshops with different stakeholder
-                  grouped and combined all the suggestions into a list with a
+                  We talked to all stakeholders and consucted ideation workshops
+                  with each group. When the dust settled we had a list with a
                   little over 60 improvement suggestions.
                 </Paragraph>
 
-                <Title h={4}>Competitor analysis</Title>
+                <Title h={4}>Looking at our competitors</Title>
                 <Paragraph>
                   I was looking at 17 competitor sites. Some in direct
                   competition and others that have similar challenges. Most
-                  competitors simply only show their affeliates which is the
-                  easiest approach.
+                  competitors simply only show their affeliates. For my client
+                  however, “market completeness” was more important than data
+                  quality.
                 </Paragraph>
               </>
             ),

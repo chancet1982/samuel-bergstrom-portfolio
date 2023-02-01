@@ -1,8 +1,8 @@
 TODO list (What's left before you're done)
 
 FIXES:
-NAVIGATION -> Navigation gets wrong bgColor when in about page.
-NAVIGATION -> Navigating from "home" to "about" the navigation doesnt change background color.
+CaseThumbnail -> Fix better tag for COMING SOON cases.
+NAVIGATION -> Navigation gets wrong bgColor when leaving a page with COVER when COVER is not in viewport.
 Fix vertical alignment - mobile
 ADDITIONAL_CASES (mobile) -> Fix height
 
@@ -10,7 +10,6 @@ ANIMATIONS:
 ListOfOmageWithTitleAndText -> add inView animation to images.
 
 CONTENT:
-case-11-> Add whitespace before results section.
 case-9 -> mobile cover image is missing
 case-7 -> Add pictures of the report?
 case-6 -> Go through and rewrite
