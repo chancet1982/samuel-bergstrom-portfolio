@@ -17,18 +17,19 @@ const StyledBackground = styled(motion.div)`
       backgroundImage: `url(${process.env.PUBLIC_URL}/${$bgMedia})`,
       backgroundSize: "cover",
     }}
+
   ${({ $bgColor }) =>
     $bgColor && {
       backgroundColor: $bgColor || colors.offwhite,
     }}
 
-${({ $bgMedia, $bgColor, $isPadded }) =>
+  ${({ $bgMedia, $bgColor, $isPadded }) =>
     (($bgMedia && $isPadded) || ($bgColor && $isPadded)) && {
       paddingTop: padding.vertical.double,
       paddingBottom: padding.vertical.double,
     }}
 
-@media (min-width: ${breakpoints.desktop}px) {
+  @media (min-width: ${breakpoints.desktop}px) {
     ${({ $limitMaxWidth }) =>
       $limitMaxWidth && {
         maxWidth: `${sizes.contentWidthLimit}px`,

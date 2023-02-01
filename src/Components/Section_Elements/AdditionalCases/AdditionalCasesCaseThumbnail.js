@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useIntersection, useWindowSize } from "react-use";
 import sizes from "../../../theme/sizes";
-import Tag from "../../Shared/Tag";
+import Badge from "../../Shared/Badge";
 import breakpoints from "../../../theme/breakpoints";
 import padding from "../../../theme/padding";
 import { ElementColorContext } from "../../../Context/ElementColorContext";
@@ -190,7 +190,7 @@ function AdditionalCasesCaseThumbnail({
         </TitleAndText>
       </StyledAdditionalCasesCaseThumbnailCaption>
 
-      {status === CASE_STATUS.COMING_SOON && <Tag />}
+      {status === CASE_STATUS.COMING_SOON && <Badge>COMING SOON!</Badge>}
     </motion.div>
   );
 

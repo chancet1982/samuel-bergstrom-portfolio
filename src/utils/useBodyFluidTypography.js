@@ -30,7 +30,7 @@ const useFluidTypography = (pSize = 2, withMargin = true) => {
     ${
       !!withMargin &&
       `
-    margin-top: ${multiply(currentMod, pSize)}rem;
+    margin-top: 0;
     margin-bottom: ${multiply(currentMod, pSize * 3)}rem;
     `
     }}

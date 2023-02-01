@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { useIntersection } from "react-use";
-import Tag from "../../Shared/Tag";
+import Badge from "../../Shared/Badge";
 import { CursorContext } from "../../../Context/CursorContext";
 import { CASE_STATUS } from "../../../data/dictionaries/CASE_STATUS";
 import Paragraph from "../../Shared/Paragraph";
@@ -158,7 +158,7 @@ function CaseThumbnail({ data, status, caseUrl }) {
         </StyledCaseThumbnailImageWrapper>
       )}
 
-      {status === CASE_STATUS.COMING_SOON && <Tag />}
+      {status === CASE_STATUS.COMING_SOON && <Badge>COMING SOON!</Badge>}
     </StyledCaseThumbnailImageAndCaption>
   );
 

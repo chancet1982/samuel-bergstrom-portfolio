@@ -29,9 +29,7 @@ const useFluidTypography = (h = 1, withMargin = true) => {
     ${
       withMargin
         ? `
-    margin-top: ${
-      h === 1 ? 2 * multiply(currentMod, 6 - h) : multiply(currentMod, 6 - h)
-    }rem;
+    margin-top: 0;
     margin-bottom: ${multiply(currentMod, 6 - h)}rem;
     `
         : ` margin-top: 0; margin-bottom: 0;

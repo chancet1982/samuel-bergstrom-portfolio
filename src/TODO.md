@@ -2,6 +2,8 @@ TODO list (What's left before you're done)
 
 FIXES:
 CaseThumbnail -> Fix better tag for COMING SOON cases.
+Look at components and vertical rythem (it should be okey on component level but on section level might need some love).
+
 NAVIGATION -> Navigation gets wrong bgColor when leaving a page with COVER when COVER is not in viewport.
 Fix vertical alignment - mobile
 ADDITIONAL_CASES (mobile) -> Fix height

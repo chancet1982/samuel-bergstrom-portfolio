@@ -39,10 +39,6 @@ const StyledOverviewText = styled(motion.div)`
   padding: ${padding.vertical.double} ${padding.horizontal.double} 0
     ${padding.horizontal.double};
 
-  p:last-of-type {
-    margin: 0;
-  }
-
   @media (min-width: ${breakpoints.tablet}px) {
     grid-column: 1 / span 2;
     padding: ${padding.vertical.double} ${padding.horizontal.double};

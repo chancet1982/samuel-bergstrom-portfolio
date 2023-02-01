@@ -8,6 +8,11 @@ import padding from "../../theme/padding";
 import sizes from "../../theme/sizes";
 
 const StyledTitleAndText = styled(motion.div)`
+  /* removing the last bit of margin*/
+  > *:last-child:not(h1, h2, h3, h4, h5) {
+    margin-bottom: 0;
+  }
+
   ${({ $isPadded }) =>
     $isPadded && {
       padding: `${padding.vertical.double} ${padding.horizontal.double}`,

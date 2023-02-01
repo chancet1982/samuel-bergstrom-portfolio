@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 import Image from "./Image";
 import Span from "./Span";
+import padding from "../../theme/padding";
 
 const StyledImageWithCaption = styled(motion.figure)`
   margin: 0;
@@ -14,7 +15,10 @@ const StyledImageWithCaption = styled(motion.figure)`
 
 const StyledCaption = styled(motion.figcaption)`
   text-align: center;
-  padding: 1vw 4vw 0;
+
+  padding: ${padding.vertical.half} ${padding.horizontal.double}
+    ${padding.vertical.single};
+
   color: ${({
     theme: {
       colors: { text },

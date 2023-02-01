@@ -17,6 +17,11 @@ const StyledInsights = styled(motion.div)`
   grid-template-columns: repeat(1, 1fr);
   padding: 0 ${padding.horizontal.double};
 
+  > div:first-of-type {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
   @media (min-width: ${breakpoints.desktop}px) {
     max-width: ${sizes.contentWidthLimit}px;
     margin: 0 auto;
@@ -28,6 +33,7 @@ const StyledInsightsContent = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   column-gap: ${padding.vertical.single};
+  row-gap: ${padding.vertical.single};
   padding: 0 ${padding.horizontal.double};
 
   @media (min-width: ${breakpoints.mobileLarge}px) and (max-width: ${breakpoints.desktop -

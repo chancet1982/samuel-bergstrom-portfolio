@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
 import PropTypes from "prop-types";
+import { motion, useTransform, useScroll } from "framer-motion";
+import { useWindowSize } from "react-use";
 import breakpoints from "../../../theme/breakpoints";
 import ValueAndLabel from "../../Shared/ValueAndLabel";
 import sizes from "../../../theme/sizes";
@@ -30,8 +31,26 @@ const StyledHighlights = styled(motion.div)`
 `;
 
 function Highlights({ items }) {
+  const { height } = useWindowSize();
+  const coverHeight = (height / 100) * 92;
+  const { scrollY } = useScroll();
+
+  const highlightsPosition = useTransform(
+    scrollY,
+    [0, coverHeight / 2],
+    ["0%", "100%"]
+  );
+
+  const highlightsOpacity = useTransform(scrollY, [0, coverHeight / 2], [1, 0]);
+
   return (
-    <StyledHighlights $columns={items.length}>
+    <StyledHighlights
+      $columns={items.length}
+      style={{
+        y: highlightsPosition,
+        opacity: highlightsOpacity,
+      }}
+    >
       {items.map(({ value, label }) => (
         <ValueAndLabel value={value} label={label} key={label} flip />
       ))}

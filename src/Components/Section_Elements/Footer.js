@@ -1,12 +1,13 @@
 import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
+import colors from "../../theme/colors";
 import padding from "../../theme/padding";
 import Span from "../Shared/Span";
 
 const StyledFooter = styled(motion.footer)`
   padding: ${padding.vertical.double} ${padding.horizontal.quadruple};
-  background-color: ${({ theme: { colors } }) => colors.offwhite};
+  background-color: ${colors.offwhite};
   position: relative;
 
   p {

@@ -6,15 +6,15 @@ import Paragraph from "../Shared/Paragraph";
 import breakpoints from "../../theme/breakpoints";
 import padding from "../../theme/padding";
 import Button from "../Shared/Button";
-import colors from "../../theme/colors";
 import Link from "../Shared/Link";
 import sizes from "../../theme/sizes";
 import { CursorContext } from "../../Context/CursorContext";
+import BackgroundWrapper from "../Shared/BackgroundWrapper";
 
 const StyledCaseFooter = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: ${padding.vertical.double} ${padding.horizontal.double};
+  padding: 0 ${padding.horizontal.double};
 
   @media (min-width: ${breakpoints.desktop}px) {
     max-width: ${sizes.contentWidthLimit}px;
@@ -34,7 +34,6 @@ const StyledCaseFooter = styled(motion.div)`
 
     @media (min-width: ${breakpoints.tablet}px) {
       grid-column: 3 / span 1;
-      border-left: solid 4px ${colors.offwhite};
     }
   }
 `;
@@ -70,34 +69,36 @@ function CaseFooter() {
   }
 
   return (
-    <StyledCaseFooter
-      initial="hidden"
-      whileInView="inView"
-      viewport={{ once: true, amount: 0.2 }}
-      transition={{ staggerChildren: 0.2 }}
-    >
-      <TitleAndText h={3} title="Let's get in touch" isPadded>
-        <Paragraph>Found me interesting? Let’s talk</Paragraph>
+    <BackgroundWrapper bgColor="white">
+      <StyledCaseFooter
+        initial="hidden"
+        whileInView="inView"
+        viewport={{ once: true, amount: 0.2 }}
+        transition={{ staggerChildren: 0.2 }}
+      >
+        <TitleAndText h={3} title="Let's get in touch" isPadded>
+          <Paragraph>Found me interesting? Let’s talk</Paragraph>
 
-        <Button
-          to="/contact"
-          onMouseEnter={() => caseFooterButtonMouseEnter()}
-          onMouseLeave={() => caseFooterButtonMouseLeave()}
-        >
-          Get in touch
-        </Button>
-      </TitleAndText>
-      <StyledLinksMenu>
-        <Link href="https://www.linkedin.com/in/samuel-bergstr%C3%B6m-13bb8b1b/">
-          LinkedIn
-        </Link>
-        <Link href="https://stackoverflow.com/users/4042508/samuel-bergstr%C3%B6m">
-          StackOverflow
-        </Link>
-        <Link href="https://www.facebook.com/samuel.maayan">Facebook</Link>
-        <Link href="https://medium.com/@chancet1982">Medium</Link>
-      </StyledLinksMenu>
-    </StyledCaseFooter>
+          <Button
+            to="/contact"
+            onMouseEnter={() => caseFooterButtonMouseEnter()}
+            onMouseLeave={() => caseFooterButtonMouseLeave()}
+          >
+            Get in touch
+          </Button>
+        </TitleAndText>
+        <StyledLinksMenu>
+          <Link href="https://www.linkedin.com/in/samuel-bergstr%C3%B6m-13bb8b1b/">
+            LinkedIn
+          </Link>
+          <Link href="https://stackoverflow.com/users/4042508/samuel-bergstr%C3%B6m">
+            StackOverflow
+          </Link>
+          <Link href="https://www.facebook.com/samuel.maayan">Facebook</Link>
+          <Link href="https://medium.com/@chancet1982">Medium</Link>
+        </StyledLinksMenu>
+      </StyledCaseFooter>
+    </BackgroundWrapper>
   );
 }
 

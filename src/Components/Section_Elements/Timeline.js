@@ -31,7 +31,9 @@ const StyledTimelineWrapper = styled(motion.div)`
   }
 `;
 
-const StyledTimeline = styled(motion.dl)``;
+const StyledTimeline = styled(motion.dl)`
+  margin: 0;
+`;
 
 const StyledTimelineItemYear = styled(motion.div)`
   grid-column: 1 / span 1;
@@ -62,12 +64,16 @@ const StyledTimelineItemEvents = styled(motion.div)`
   }
 
   > div {
-    margin-top: ${padding.vertical.half};
     margin-bottom: ${padding.vertical.half};
 
     p {
       margin: 0;
     }
+  }
+
+  /* removing the last bit of margin*/
+  > *:last-child {
+    margin-bottom: 0;
   }
 `;
 
@@ -100,8 +106,8 @@ TimelineItemEvent.propTypes = {
 
 const StyledTimelineItem = styled(motion.dt)`
   position: relative;
-  padding-top: calc(${padding.vertical.double} - ${padding.vertical.half});
-  padding-bottom: calc(${padding.vertical.double} - ${padding.vertical.half});
+  padding-top: calc(${padding.vertical.single});
+  padding-bottom: calc(${padding.vertical.single});
 
   @media (min-width: ${breakpoints.mobileLarge}px) {
     display: grid;

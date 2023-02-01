@@ -16,7 +16,16 @@ function Caption({ overline, title, text, h }) {
 
   return (
     <>
-      {overline && <Overline>{overline}</Overline>}
+      {overline && (
+        <Overline
+          style={{
+            opacity: captionOpacity,
+            lineHeight: captionLineHeight,
+          }}
+        >
+          {overline}
+        </Overline>
+      )}
       <TitleAndText
         h={h}
         title={title}

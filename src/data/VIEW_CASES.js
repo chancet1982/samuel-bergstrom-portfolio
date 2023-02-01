@@ -2,9 +2,11 @@
 import React from "react";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import Paragraph from "../Components/Shared/Paragraph";
+import colors from "../theme/colors";
 
 export const VIEW_CASES = [
   {
+    bgColor: colors.offwhite,
     elements: [
       {
         template: SECTION_ELEMENTS.TEXTBOX,

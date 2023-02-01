@@ -58,9 +58,8 @@ export const CASE_5 = {
               mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
             highlights: [
-              SETTINGS.KEY_FIGURES.CASE_TYPE,
               SETTINGS.KEY_FIGURES.CASE_YEAR,
-              SETTINGS.KEY_FIGURES.CASE_DURATION,
+              SETTINGS.KEY_FIGURES.CASE_TYPE,
               SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
             ],
           },
