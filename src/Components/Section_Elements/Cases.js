@@ -13,17 +13,14 @@ import Button from "../Shared/Button";
 
 const StyledPageLink = styled(motion.div)`
   text-align: center;
-  padding-bottom: ${padding.vertical.double};
 `;
 
 const StyledCases = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  column-gap: ${padding.vertical.eighth};
   row-gap: ${padding.vertical.quadruple};
   padding: 0 ${padding.horizontal.double};
-  padding-bottom: ${({ $preview }) =>
-    $preview ? padding.vertical.single : padding.vertical.quadruple};
+  padding-bottom: ${({ $preview }) => ($preview ? padding.vertical.double : 0)};
 
   @media (min-width: ${breakpoints.desktop}px) {
     max-width: ${sizes.contentWidthLimit}px;

@@ -12,7 +12,6 @@ export const VIEW_CASES = [
         template: SECTION_ELEMENTS.TEXTBOX,
         data: {
           isCentered: true,
-
           title: <>Selected cases</>,
           h: 1,
           text: (

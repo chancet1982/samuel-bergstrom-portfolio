@@ -5,6 +5,7 @@ import Paragraph from "../Components/Shared/Paragraph";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
+import colors from "../theme/colors";
 
 export const VIEW_LANDING_PAGE = [
   {
@@ -42,6 +43,7 @@ export const VIEW_LANDING_PAGE = [
     ],
   },
   {
+    bgColor: colors.offwhite,
     elements: [
       {
         template: SECTION_ELEMENTS.TEXTBOX,
