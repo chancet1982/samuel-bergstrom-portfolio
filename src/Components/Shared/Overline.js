@@ -14,7 +14,7 @@ const StyledOverline = styled(motion.div)`
 function Overline({ children, ...rest }) {
   return (
     <StyledOverline {...rest}>
-      <Paragraph small highContrast>
+      <Paragraph small>
         <strong>{children}</strong>
       </Paragraph>
     </StyledOverline>

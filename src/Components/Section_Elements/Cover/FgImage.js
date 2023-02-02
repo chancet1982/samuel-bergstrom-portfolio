@@ -34,7 +34,7 @@ function FgImage({ imageUrl, mobileImageUrl, imageAlt }) {
       opacity: 1,
       y: 0,
       transition: {
-        delay: 2,
+        delay: 1.4,
         duration: 0.6,
       },
     },

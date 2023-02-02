@@ -38,7 +38,7 @@ export const CASE_11 = {
   caseUrl: SETTINGS.URL,
   thumbnail: {
     overline: "Price Comparison Service",
-    title: "Non-new products",
+    title: "Selling non-new products",
     text: (
       <>
         Helping stores sell demo, <br />

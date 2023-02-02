@@ -148,11 +148,7 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: (
-              <>
-                A <strong>BIG</strong> ask
-              </>
-            ),
+            title: <>A BIG ask</>,
             h: 2,
             text: (
               <Paragraph>
@@ -160,15 +156,15 @@ export const CASE_10 = {
                 <List
                   items={[
                     <>
-                      <strong>increase revenues</strong> by shifting traffic to
-                      paying customers
+                      1. <strong>Increase revenues</strong> by shifting traffic
+                      to paying customers
                     </>,
                     <>
-                      encourage potential customers to{" "}
+                      2. Encourage potential customers to{" "}
                       <strong>sign agreements</strong>
                     </>,
                     <>
-                      increase <strong>data quality</strong>
+                      3. Increase <strong>data quality</strong>
                     </>,
                   ]}
                 />
@@ -200,17 +196,23 @@ export const CASE_10 = {
           template: SECTION_ELEMENTS.INSIGHTS,
           data: {
             bgColor: SETTINGS.BG_COLOR,
-            title: <>Insights:</>,
+            title: <>3 areas for improvement</>,
             h: 2,
-            text: (
-              <>
-                {" "}
-                <Paragraph>
-                  From the interviews, we identified 3 problem areas:
-                </Paragraph>
-              </>
-            ),
             items: [
+              {
+                title: "Motiviating potential customers",
+                text: (
+                  <>
+                    <strong>
+                      Non-paying customers are getting too much for free.
+                    </strong>{" "}
+                    Sole focus on price means that non-paying customers can be
+                    not only competitive but destructive (for example by putting
+                    fake prices on products they don’t actually have) with no
+                    repercussions.
+                  </>
+                ),
+              },
               {
                 title: "Onboarding new customers",
                 text: (
@@ -235,20 +237,6 @@ export const CASE_10 = {
                     </strong>{" "}
                     No one is checking up on the clients, or measures our
                     impact. Even for happy customers there is no “next level”.
-                  </>
-                ),
-              },
-              {
-                title: "Insufficient incentives to becoming a customer.",
-                text: (
-                  <>
-                    <strong>
-                      Non-paying customers are getting too much for free.
-                    </strong>{" "}
-                    Sole focus on price means that non-paying customers can be
-                    not only competitive but destructive (for example by putting
-                    fake prices on products they don’t actually have) with no
-                    repercussions.
                   </>
                 ),
               },
@@ -303,16 +291,14 @@ export const CASE_10 = {
             text: (
               <>
                 <Paragraph>
-                  At this point, we needed to evaluate the ideas based on their
-                  business value, user value, and technical feasibility. I
-                  created a shared Google Spreadsheet with 3 separate sheets (in
-                  order to minimize bias). I evaluated potential user value
-                  based on the survey results and interviews that I conducted. A
-                  business representative evaluated their business potential,
-                  and a senior developer estimated their technical feasibility.
-                  Each idea was first discussed and then evaluated individually
-                  while the results of the evaluation aggregated to a combined
-                  score.
+                  For prioritizing ideas, I created 3 spreadsheets for
+                  evaluating business value, user value, and technical
+                  feasibility. I evaluated potential user value based on the
+                  survey results and interviews that I conducted. A business
+                  representative evaluated their business potential, and a
+                  senior developer estimated their technical feasibility. Each
+                  idea was first discussed and then evaluated individually while
+                  the results of the evaluation aggregated to a combined score.
                 </Paragraph>
 
                 <Paragraph>
@@ -331,7 +317,7 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Initial idea: only show shops we have an agreement with</>,
+            title: <>Initial idea: show only affeliated shops</>,
             text: (
               <>
                 <Paragraph>
@@ -362,12 +348,12 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Baby steps in the right direction</>,
+            title: <>Pivot, show everything (but better)</>,
             text: (
               <>
                 <Paragraph>
-                  Based on the insights, we had some small changes we could do
-                  in order to test our hypothesis.
+                  If we needed to show all shops regardless of affeliation, we
+                  could at least do it in a better way.
                 </Paragraph>
                 <Title h={4}>Reducing free information</Title>
                 <Paragraph>
@@ -411,10 +397,12 @@ export const CASE_10 = {
                 <Image
                   imageUrl={`${SETTINGS.MEDIA_BASE_URL}/sorting-change.png`}
                 />
+                <Title h={4}>Making sense of it</Title>
                 <Paragraph>
                   In order to keep transparency, I suggested we use a grouping
                   mechanism where we show all the offers where information is
-                  missing. In simple terms: Non-paying shops were now
+                  missing. <br /> <strong>This has 2 benefits:</strong>
+                  This on one hand In simple terms: Non-paying shops were now
                   second-class citizens.
                 </Paragraph>
               </>
@@ -431,8 +419,8 @@ export const CASE_10 = {
                 title: "Before",
                 text: (
                   <Paragraph>
-                    Price-list before changes: A mixture of paying and
-                    non-paying customers. Sorting is based on price only.
+                    A mixture of paying and non-paying customers. Sorting is
+                    based on price only.
                   </Paragraph>
                 ),
               },
@@ -442,9 +430,9 @@ export const CASE_10 = {
                 title: "After",
                 text: (
                   <Paragraph>
-                    Price-list after: Recommended sorting in-place, non-paying
-                    shops grouped at the bottoms. Note: users that prefer the
-                    old sorting can still choose to do so.
+                    Recommended sorting in-place, non-paying shops grouped at
+                    the bottoms. Users can still sort by price only if they
+                    prefer.
                   </Paragraph>
                 ),
               },
@@ -465,8 +453,8 @@ export const CASE_10 = {
               <>
                 <Paragraph>
                   We set up an A/B test using a 50/50 split on select
-                  categories. We collected data and the experiment was left to
-                  run for a total of 55 days during summer.
+                  categories. We collected data for a total of 55 days during
+                  summer.
                 </Paragraph>
                 <Image
                   imageUrl={`${SETTINGS.MEDIA_BASE_URL}/ab-test.png`}
