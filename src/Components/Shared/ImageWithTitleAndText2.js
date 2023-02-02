@@ -43,7 +43,7 @@ const StyledImageWithTitleAndText = styled(motion.div)`
 const StyledImage = styled(motion.div)`
   height: 80vh;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: auto 100%;
   width: 50%;
 
   position: absolute;
