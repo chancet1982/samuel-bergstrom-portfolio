@@ -10,7 +10,7 @@ import sizes from "../../theme/sizes";
 
 const StyledSideBySideImagesAndText = styled(motion.div)`
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(${({ $itemsLength }) => $itemsLength}, 1fr);
   column-gap: ${padding.vertical.double};
   padding: 0 ${padding.horizontal.double};
 
@@ -48,7 +48,10 @@ const StyledSideBySideImagesAndText = styled(motion.div)`
 
 function SideBySideImagesAndText({ limitMaxWidth, items }) {
   return (
-    <StyledSideBySideImagesAndText $limitMaxWidth={limitMaxWidth}>
+    <StyledSideBySideImagesAndText
+      $limitMaxWidth={limitMaxWidth}
+      $itemsLength={items.length}
+    >
       {items.map(({ imageUrl, imageAlt, title, text, bgColor }) => (
         <ElementContextProvider key={imageUrl}>
           <ImageWithTitleAndText

@@ -5,11 +5,11 @@ import { TOOLS_AND_METHODS } from "./dictionaries/TOOLS_AND_METHODS";
 import { ROLES } from "./dictionaries/ROLES";
 import { PLATFORMS } from "./dictionaries/PLATFORMS";
 import Paragraph from "../Components/Shared/Paragraph";
-import TitleAndText from "../Components/Shared/TitleAndText";
-import List from "../Components/Shared/List";
+// import List from "../Components/Shared/List";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Shared/Title";
+// import Span from "../Components/Shared/Span";
 
 const SETTINGS = {
   BG_COLOR: "#FF3366",
@@ -35,8 +35,8 @@ export const CASE_9 = {
   caseUrl: SETTINGS.URL,
   thumbnail: {
     overline: "Price Comparison Service",
-    title: "Finding the right product",
-    text: <>Genarating millions without moving a pixel</>,
+    title: "Invisible redesign (without moving a PX)",
+    text: <>Creating a shortcut between users and products</>,
     imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
     imageAlt: "thumbnail",
     bgColor: SETTINGS.BG_COLOR,
@@ -52,18 +52,19 @@ export const CASE_9 = {
               overline: "Price Comparison Service",
               title: (
                 <>
-                  Finding the
-                  <br /> right product
+                  Invisible
+                  <br /> redesign
                 </>
               ),
               text: (
                 <Paragraph xxl>
-                  Or, how to make millions of without moving a PX
+                  Creating a shortcut between users and products
                 </Paragraph>
               ),
             },
             fgImage: {
-              imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover.png`,
+              imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
+              mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
             highlights: [
               SETTINGS.KEY_FIGURES.CASE_YEAR,
@@ -81,11 +82,11 @@ export const CASE_9 = {
           data: {
             text: (
               <Paragraph xl>
-                My client was a leading price comparison service operating in 6
-                different countries. It was couldn’t reach the growth they
-                expected. I was asked to assist and evaluate their search
-                experience and to come up with quick fixes to increase search
-                success.
+                Prisjakt started off by catering to computer enthusiasts and was
+                one of the first price comparison sites in the Nordics. It is
+                still the leading price comparison service but in recent years
+                Prisjak’t growth stagnated. Prisjakt’s main revenue originates
+                from click-outs where different categories have different CPC.
               </Paragraph>
             ),
             toolsAndMethods: [
@@ -100,114 +101,130 @@ export const CASE_9 = {
       ],
     },
     {
+      header: "Background",
+      elements: [
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: "Searching +2 Mil. products is hard",
+            text: (
+              <>
+                <Paragraph>
+                  All price comparison sites have one declared purpose: Finding
+                  a product I want, from a shop I trust, for the cheapest price
+                  possible. The search functionality plays a crusial role in
+                  finding products. This is even more true when trying to look
+                  through millions of products. As users are more search
+                  inclined the larger the product catalogue gets.
+                </Paragraph>
+                <Title h={4}>Search is broken</Title>
+                <Paragraph>
+                  Testing the search myself, I was shocked. Search suggestions
+                  did not reflect the search results. Search results page had
+                  many broken features and the overall search accuracy was low.
+                </Paragraph>
+                <Title h={4}>The users have spoken</Title>
+                <Paragraph>
+                  It wasn’t just my poor search skills. Users were complaining
+                  on forums, support, in surveys, and in usability tests{" "}
+                </Paragraph>
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/problem.png`,
+            imageAlt: "Some recordings from the usability testing",
+            caption: "Some recordings from the usability testing",
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: "What's the ROI of better search?",
+            text: (
+              <Paragraph>
+                Search is complex. and the manually tweaking the parameters was
+                not having an impact. Buying off-the-shelf solutions for such
+                large catalogue is expensive and dependent on data quality. So
+                improving search success is no simple feat. I was asked to
+                assist and evaluate their search experience and evaluate
+                potential ROI for investing in the online search.
+              </Paragraph>
+            ),
+          },
+        },
+      ],
+    },
+    {
       header: "Research",
       elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: (
-              <>Identifying strengths and weaknesses in data collection.</>
-            ),
+            title: <>Reviewing what we know</>,
             text: (
               <Paragraph>
-                My client already had a solid data collection infrastructure.
-                From Analytics, Usage statistics, support cases that are
-                documented and tagged. This however provides an incomplete
-                picture Analytics and usage statistics provide valuable insights
-                for what users do but not to why(!) they do it. On top of that,
-                the support cases (and various forums) are inherently biased as
-                they only represent ’frustrated users’ or ’power users’. In
-                order for me to get a better picture of the problem, I suggested
-                sending an open survey and promoting it on social media. The
-                survey was designed to answer 3 main questions:
+                Wokring on a popular B2C product has its perks. User input is
+                not hard to come by. I started off by looking at all the
+                different sources to understand how people search, where we fail
+                and what can be done differently. Looking at online forums,
+                support tickets, and survey results confirmed that search isnt
+                working
               </Paragraph>
             ),
           },
         },
         {
-          template: SECTION_ELEMENTS.KEY_FIGURES,
-          data: {
-            items: [
-              { value: "1", label: "When do people compare prices?" },
-              { value: "2", label: "What works well?" },
-              { value: "3", label: "What needs to be improved?" },
-            ],
-          },
-        },
-        {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Sometimes jobs are more important than others</>,
-            text: (
-              <>
-                <Paragraph large>
-                  The survey was sent to 140000 people, out of which, we
-                  collected more than 2500 responses. Mapping the survey and
-                  cross-referencing it with our jobs-to-be-done indicated that
-                  there are 2 jobs that are critical:
-                </Paragraph>
-                <List
-                  items={[
-                    <TitleAndText title="Find the right product:" h={5}>
-                      <Paragraph>
-                        Users must be able to find products in order to convert.
-                      </Paragraph>
-                    </TitleAndText>,
-                    <TitleAndText title="Find the right shop:" h={5}>
-                      <Paragraph>
-                        Once users know what products they are interested in
-                        they need to be able to find a shop that sells these
-                        products.
-                      </Paragraph>
-                    </TitleAndText>,
-                  ]}
-                />
-              </>
-            ),
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            bgColor: SETTINGS.BG_COLOR,
-            title: <>Problem areas</>,
-            h: 2,
-            flip: true,
+            title: <>Seeing is believing</>,
             text: (
               <>
                 <Paragraph>
-                  Looking at the survey results, I noticed that there are 2
-                  leading sources of complaints:
+                  I decided to conduct usability tests to see how people search
+                  for products online, the premise was simple. “Your partner has
+                  a birthday and you want to buy him something up to 1500kr, can
+                  you choose something he likes (where you have limited
+                  knowledge) and show me how you would do that?”
                 </Paragraph>
-                <List
-                  items={[
-                    <TitleAndText title="Bad actors" h={5}>
-                      <Paragraph>
-                        Shops that abuse the system, publishing fake prices,
-                        misleading stock, and delivery terms.
-                      </Paragraph>
-                    </TitleAndText>,
-                    <TitleAndText title="search" h={5}>
-                      <Paragraph>
-                        Users can’t seem to find what they are looking for on
-                        the service.
-                      </Paragraph>
-                    </TitleAndText>,
-                  ]}
-                />
+
+                <Paragraph>
+                  We recruited 9 participants and conducted the testing
+                  remotely.
+                </Paragraph>
               </>
             ),
-            imageAlt: "Survey results, search indicated in green.",
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/survey.png`,
           },
         },
         {
-          template: SECTION_ELEMENTS.KEY_FIGURES,
+          template: SECTION_ELEMENTS.INSIGHTS,
           data: {
+            bgColor: SETTINGS.BG_COLOR,
+            title: <>Insights</>,
             items: [
-              { value: "2 500+", label: "Responses" },
-              { value: "2256", label: "Mapped insights" },
-              { value: "178", label: "Wanted to improve search" },
+              {
+                title: "Every search starts with Google",
+                text: "Most users started their search on Google. Most ended up looking at on my client’s site only after they had a clear idea of the product they want to buy. But for those that tried, it was an uphill battle.",
+              },
+              {
+                title: "Search over on-site navigation",
+                text: "No one had trouble finding the search functionality. In general, only one of the participants preferred using on-site navigation.",
+              },
+              {
+                title: "Search suggestions add little value",
+                text: "Search suggestions were of no use either. Most participants just typed a query and pressed “enter” leading them to the search results page.",
+              },
+              {
+                title: "Search results page needs an overhaul",
+                text: "There were obvious flaws with the search results page. Users couldn’t proceed to look at product categories. Product pictures were too small. Filtering the search options was buggy and most participants just gave up at this point.",
+              },
+              {
+                title: "Not many users succeed",
+                text: " Of all the participants only one was able to find a present for their partner using my client’s site",
+              },
             ],
           },
         },
@@ -219,21 +236,16 @@ export const CASE_9 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>How can we improve search?</>,
+            title: <>Considering our options</>,
             text: (
               <Paragraph>
-                Understanding what the problem is, is a good first step. We had
-                limited time and resources and needed to find an idea that is
-                easy to implement and that had the best potential.
+                Searching in itself is a process. Finding the searchbox,
+                focusing on it, typing, correcting typos while typing, reviewing
+                suggestions, and if nothing else worked digging deeper in a list
+                of results trying to narrow down on the result that is nearest
+                to what you were looking for. So where do we start?
               </Paragraph>
             ),
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            isCentered: true,
-            listTitle: "What has the most potential? Before, during, or after?",
           },
         },
         {
@@ -293,93 +305,47 @@ export const CASE_9 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Adding some qualitative data to the mix</>,
-            h: 2,
+            title: <>A moment of inspiration</>,
             text: (
-              <>
-                <Paragraph>
-                  I decided to conduct usability tests to see how people search
-                  for products online, the premise was simple. “Your partner has
-                  a birthday and you want to buy him something up to 1500kr, can
-                  you choose something he likes (where you have limited
-                  knowledge) and show me how you would do that?”
-                </Paragraph>
-
-                <Paragraph>
-                  We recruited 9 participants and conducted the testing
-                  remotely.
-                </Paragraph>
-              </>
+              <Paragraph>
+                A logical place to start would be the search results page. But
+                it was not technically feasible to fix all the issues there
+                within a reasonable time. Instead, we needed something to prove
+                the potential in fixing the search. All seemed lost until
+                something happened.
+              </Paragraph>
             ),
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/usability-test.png`,
-            imageAlt: "Picture from usability testing.",
           },
         },
         {
-          template: SECTION_ELEMENTS.INSIGHTS,
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
-            bgColor: SETTINGS.BG_COLOR,
-            title: <>Insights</>,
-            h: 2,
-            items: [
-              {
-                title: "Every search starts with Google",
-                text: "Most users started their search on Google. Most ended up looking at on my client’s site only after they had a clear idea of the product they want to buy. But for those that tried, it was an uphill battle.",
-              },
-              {
-                title: "Search over on-site navigation",
-                text: "No one had trouble finding the search functionality. In general, only one of the participants preferred using on-site navigation.",
-              },
-              {
-                title: "Search suggestions add little value",
-                text: "Search suggestions were of no use either. Most participants just typed a query and pressed “enter” leading them to the search results page.",
-              },
-              {
-                title: "Search results page needs an overhaul",
-                text: "There were obvious flaws with the search results page. Users couldn’t proceed to look at product categories. Product pictures were too small. Filtering the search options was buggy and most participants just gave up at this point.",
-              },
-              {
-                title: "Not many users succeed",
-                text: " Of all the participants only one was able to find a present for their partner using my client’s site",
-              },
-            ],
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/eureka.png`,
+            limitMaxWidth: true,
+            imageAlt: "AB Testing result",
           },
         },
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>A moment of inspiration</>,
-            h: 2,
+            title: "Eureka!",
+            h: 3,
             text: (
-              <>
-                <Paragraph>
-                  A logical place to start would be the search results page. But
-                  it was not technically feasible to fix all the issues there
-                  within a reasonable time. Instead, we needed something to
-                  prove the potential in fixing the search. All seemed lost
-                  until something happened.
-                </Paragraph>
-                <Title h={3}>Finding a needle in a haystack</Title>
-                <Paragraph>
-                  I was looking through the search logs trying to identify
-                  themes. I soon realized it was an unrealistic mission as we
-                  are talking about over 2 million searches a month. But I
-                  decided to export the data and looked through the most popular
-                  searches. I noticed that 77.5% of the searches could be
-                  manually mapped to existing products. Then it hit me:
-                </Paragraph>
-              </>
+              <Paragraph>
+                I was looking through the search logs trying to identify themes.
+                I soon realized it was an unrealistic mission as we are talking
+                about over 2 million searches a month. But I decided to export
+                the data and looked through the most popular searches. Then it
+                hit me:
+              </Paragraph>
             ),
           },
         },
         {
           template: SECTION_ELEMENTS.QUOTE,
           data: {
-            bgMedia: {
-              mediaUrl: `${SETTINGS.MEDIA_BASE_URL}/quote-bg.jpg`,
-            },
             quote:
-              "We cant fix the search results page, but what if we can bypass it?",
+              "77.5% of the searches could be manually mapped to existing products!",
             cite: "Me (being sneaky)",
           },
         },
@@ -387,7 +353,6 @@ export const CASE_9 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>Plan set in motion</>,
-            h: 2,
             text: (
               <>
                 <Paragraph>
@@ -415,7 +380,6 @@ export const CASE_9 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>Is it feasible?</>,
-            h: 2,
             text: (
               <>
                 <Paragraph>
@@ -473,7 +437,6 @@ export const CASE_9 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>AB testing and result</>,
-            h: 2,
             text: (
               <>
                 <Paragraph>
@@ -489,8 +452,15 @@ export const CASE_9 = {
                 </Paragraph>
               </>
             ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/ab-test.png`,
-            imageAlt: "AB test in action",
+            limitMaxWidth: true,
+            imageAlt: "AB Testing result",
+            caption: "AB Testing result",
           },
         },
       ],

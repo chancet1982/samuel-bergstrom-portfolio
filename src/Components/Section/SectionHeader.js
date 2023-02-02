@@ -23,9 +23,9 @@ const StyledSectionHeader = styled(motion.header)`
     display: inline-block;
     padding-bottom: ${padding.vertical.half};
     margin-bottom: ${padding.vertical.half};
-    color: ${({ light }) =>
-      light ? colors.lighten.medium : colors.darken.medium};
-    box-shadow: inset 0px -0.125rem 0px 0rem ${({ light }) => (light ? colors.lighten.medium : colors.darken.medium)};
+    color: ${({ $light }) =>
+      $light ? colors.lighten.medium : colors.darken.medium};
+    box-shadow: inset 0px -0.125rem 0px 0rem ${({ $light }) => ($light ? colors.lighten.medium : colors.darken.medium)};
     position: relative;
     top: 7rem;
   }
@@ -35,7 +35,7 @@ function SectionHeader({ children }) {
   const light = useBgColor();
 
   return (
-    <StyledSectionHeader light={light}>
+    <StyledSectionHeader $light={light}>
       <Title h={5}>{children}</Title>
     </StyledSectionHeader>
   );
