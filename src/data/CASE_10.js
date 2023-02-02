@@ -60,6 +60,7 @@ export const CASE_10 = {
             },
             fgImage: {
               imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
+              mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
             highlights: [
               SETTINGS.KEY_FIGURES.CASE_YEAR,
@@ -139,8 +140,9 @@ export const CASE_10 = {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/problem.png`,
-            imageAlt: "?",
             limitMaxWidth: true,
+            imageAlt:
+              "Problem: Almost non of the visible store links will generate revenue.",
             caption:
               "Problem: Almost non of the visible store links will generate revenue.",
           },
@@ -149,7 +151,6 @@ export const CASE_10 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>A BIG ask</>,
-            h: 2,
             text: (
               <Paragraph>
                 This project set out with 3 main goals in mind:
@@ -181,7 +182,6 @@ export const CASE_10 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>Internal interviews</>,
-            h: 2,
             text: (
               <Paragraph>
                 In order to succeed, I needed to understand the problem. I spent
@@ -197,7 +197,6 @@ export const CASE_10 = {
           data: {
             bgColor: SETTINGS.BG_COLOR,
             title: <>3 areas for improvement</>,
-            h: 2,
             items: [
               {
                 title: "Motiviating potential customers",
@@ -252,7 +251,6 @@ export const CASE_10 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>Looking for ideas</>,
-            h: 2,
             text: (
               <>
                 <Title h={4}>Looking internally</Title>
@@ -278,8 +276,8 @@ export const CASE_10 = {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/ideation.png`,
-            imageAlt: "Digital whiteboard from one of the workshops",
             limitMaxWidth: true,
+            imageAlt: "Digital whiteboard from one of the workshops",
             caption: "Digital whiteboard from one of the workshops",
           },
         },
@@ -287,7 +285,6 @@ export const CASE_10 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>Prioritizing</>,
-            h: 2,
             text: (
               <>
                 <Paragraph>
@@ -448,7 +445,6 @@ export const CASE_10 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>AB testing and result</>,
-            h: 2,
             text: (
               <>
                 <Paragraph>

@@ -117,7 +117,6 @@ export const CASE_11 = {
             title: (
               <>Product conditions present challenges for users and shops</>
             ),
-            h: 2,
             text: (
               <>
                 <Paragraph>
@@ -159,7 +158,6 @@ export const CASE_11 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            h: 2,
             text: (
               <>
                 <Paragraph>
@@ -183,8 +181,8 @@ export const CASE_11 = {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/problem.png`,
-            imageAlt: "?",
             limitMaxWidth: true,
+            imageAlt: "Which one of the CDON offers is a used product?",
             caption: "Which one of the CDON offers is a used product?",
           },
         },
@@ -192,7 +190,6 @@ export const CASE_11 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>The goal: Increasing traffic to non-new products.</>,
-            h: 2,
             text: (
               <Paragraph>
                 My goal was to lead more traffic to refurbished, used and demo
@@ -218,7 +215,6 @@ export const CASE_11 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>Research</>,
-            h: 2,
             text: (
               <>
                 <Title h={4}>
@@ -259,7 +255,6 @@ export const CASE_11 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>Looking at our competitors and best practices</>,
-            h: 2,
             text: (
               <>
                 <Paragraph>
@@ -284,8 +279,8 @@ export const CASE_11 = {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/spreadsheets.png`,
-            imageAlt: "?",
             limitMaxWidth: true,
+            imageAlt: "?",
           },
         },
       ],
@@ -298,7 +293,6 @@ export const CASE_11 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>Design</>,
-            h: 2,
             text: (
               <>
                 <Paragraph>
@@ -407,7 +401,6 @@ export const CASE_11 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>Testing</>,
-            h: 2,
             text: (
               <>
                 <Paragraph>
@@ -431,8 +424,8 @@ export const CASE_11 = {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/testing.png`,
-            imageAlt: "?",
             limitMaxWidth: true,
+            imageAlt: "?",
             caption: "Conversion rate changes as measured in Optimizely",
           },
         },
