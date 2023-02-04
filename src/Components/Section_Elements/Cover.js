@@ -4,6 +4,7 @@ import React, { useEffect, useContext, useRef } from "react";
 import styled from "styled-components";
 import { motion, useInView } from "framer-motion";
 import PropTypes from "prop-types";
+import { useWindowSize } from "react-use";
 import BgMedia from "./Cover/BgMedia";
 import Caption from "./Cover/Caption";
 import FgImage from "./Cover/FgImage";
@@ -95,15 +96,6 @@ const StyledCoverCaption = styled(motion.div)`
   }
 
   p {
-    @media (max-width: ${breakpoints.mobileLarge - 1}px) {
-      max-width: 15ch;
-    }
-
-    @media (min-width: ${breakpoints.mobileLarge}px) and (max-width: ${breakpoints.tablet -
-      1}px) {
-      max-width: 20ch;
-    }
-
     @media (min-width: ${breakpoints.tablet}px) {
       max-width: 30ch;
     }
@@ -149,6 +141,8 @@ function Cover({
   const isInView = useInView(ref);
   const [light, setLight] = useContext(ElementColorContext);
   const [, setNavBgColor] = useContext(NavBgColorContext);
+  const { width } = useWindowSize();
+  const isTabletOrDesktop = width >= breakpoints.mobileLarge;
 
   useEffect(() => {
     setLight(
@@ -205,7 +199,9 @@ function Cover({
 
   const renderCoverFooterContent = () =>
     highlights ? (
-      <Highlights items={highlights} />
+      isTabletOrDesktop ? (
+        <Highlights items={highlights} />
+      ) : null
     ) : clientsPreview ? (
       <ClientPreview />
     ) : null;

@@ -84,6 +84,7 @@ export const CASE_11 = {
       ],
     },
     {
+      paddedUp: true,
       elements: [
         {
           template: SECTION_ELEMENTS.OVERVIEW,
@@ -109,14 +110,13 @@ export const CASE_11 = {
       ],
     },
     {
+      paddedUp: true,
       header: "Background",
       elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: (
-              <>Product conditions present challenges for users and shops</>
-            ),
+            title: <>Mixed product conditions lead to new challenges</>,
             text: (
               <>
                 <Paragraph>
@@ -166,12 +166,12 @@ export const CASE_11 = {
                   very generic. Making them hard to notice, and understand.
                 </Paragraph>
                 <Paragraph>
-                  Treating all different product conditions as one was
-                  contaminating the price history, triggering false price
-                  reduction notifications, and leading to missclicks. This
-                  frustrated both users that accidentally ended up on a used
-                  product, and stores that pay for traffic that is unlikely to
-                  buy.
+                  Treating all different product conditions as one was{" "}
+                  <strong>contaminating the price history</strong>, triggering{" "}
+                  <strong>false price alerts</strong>, and leading to{" "}
+                  <strong>missclicks</strong>. This frustrated both users that
+                  accidentally ended up on a used product, and stores that pay
+                  for traffic that is unlikely to buy.
                 </Paragraph>
               </>
             ),
@@ -189,7 +189,8 @@ export const CASE_11 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>The goal: Increasing traffic to non-new products.</>,
+            title: <>Choose non-new products.</>,
+            h: 4,
             text: (
               <Paragraph>
                 My goal was to lead more traffic to refurbished, used and demo
@@ -287,6 +288,7 @@ export const CASE_11 = {
     },
 
     {
+      paddedUp: true,
       header: "Design",
       elements: [
         {
@@ -302,7 +304,7 @@ export const CASE_11 = {
                   harming conversion rates.
                 </Paragraph>
 
-                <Title h={4}>Before everything else, split the lists.</Title>
+                <Title h={4}>Splitting the lists</Title>
                 <Paragraph>
                   It was obvous that we couldn’t mix new and used products in
                   the same bucket. All non-new products were moved to a
@@ -395,6 +397,8 @@ export const CASE_11 = {
       ],
     },
     {
+      paddedUp: true,
+      paddedDown: true,
       header: "Testing",
       elements: [
         {
@@ -496,13 +500,23 @@ export const CASE_11 = {
       ],
     },
     {
+      paddedUp: true,
+      paddedDown: true,
       elements: [
         {
           template: SECTION_ELEMENTS.ADDITIONAL_CASES,
         },
+      ],
+    },
+    {
+      elements: [
         {
           template: SECTION_ELEMENTS.CASE_FOOTER,
         },
+      ],
+    },
+    {
+      elements: [
         {
           template: SECTION_ELEMENTS.FOOTER,
         },

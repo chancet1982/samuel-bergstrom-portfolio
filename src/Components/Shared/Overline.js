@@ -2,21 +2,18 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { motion } from "framer-motion";
 
 import Paragraph from "./Paragraph";
 
-const StyledOverline = styled(motion.div)`
+const StyledOverline = styled(Paragraph)`
   text-transform: uppercase;
   position: relative;
 `;
 
 function Overline({ children, ...rest }) {
   return (
-    <StyledOverline {...rest}>
-      <Paragraph small>
-        <strong>{children}</strong>
-      </Paragraph>
+    <StyledOverline small {...rest}>
+      <strong>{children}</strong>
     </StyledOverline>
   );
 }
