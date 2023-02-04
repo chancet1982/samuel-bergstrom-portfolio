@@ -365,7 +365,7 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Show all (but better)</>,
+            title: <>Second idea: grouped display for all shops</>,
             text: (
               <>
                 <Paragraph>
