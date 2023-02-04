@@ -5,24 +5,36 @@ import SectionElementsRenderer from "./SectionElementsRenderer";
 import SectionColorContextProvider from "../Context/SectionColorContext";
 
 const SectionsRenderer = ({ sections }) =>
-  sections.map(({ elements, header, bgColor, isSticky, isPadded }) => (
-    <SectionColorContextProvider key={uuid()}>
-      <Section
-        header={header}
-        bgColor={bgColor}
-        isSticky={isSticky}
-        isPadded={isPadded}
-      >
-        {elements.map(({ data, template }) => (
-          <SectionElementsRenderer
-            key={uuid()}
-            elementKey={uuid()}
-            data={data}
-            template={template}
-          />
-        ))}
-      </Section>
-    </SectionColorContextProvider>
-  ));
+  sections.map(
+    ({
+      elements,
+      header,
+      bgColor,
+      isSticky,
+      isPadded,
+      paddedUp,
+      paddedDown,
+    }) => (
+      <SectionColorContextProvider key={uuid()}>
+        <Section
+          header={header}
+          bgColor={bgColor}
+          isSticky={isSticky}
+          isPadded={isPadded}
+          paddedUp={paddedUp}
+          paddedDown={paddedDown}
+        >
+          {elements.map(({ data, template }) => (
+            <SectionElementsRenderer
+              key={uuid()}
+              elementKey={uuid()}
+              data={data}
+              template={template}
+            />
+          ))}
+        </Section>
+      </SectionColorContextProvider>
+    )
+  );
 
 export default SectionsRenderer;

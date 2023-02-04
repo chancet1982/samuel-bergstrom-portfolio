@@ -4,8 +4,9 @@ import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 
 export const VIEW_CONTACT = [
   {
+    paddedUp: true,
+    paddedDown: true,
     header: "Get in touch",
-    isPadded: true,
     elements: [
       {
         template: SECTION_ELEMENTS.CONTACT_DETAILS,

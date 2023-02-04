@@ -22,15 +22,17 @@ const useFluidTypography = (h = 1, withMargin = true) => {
       ? minHMod + ((res - ftMin) * (maxHMod - minHMod)) / (ftMax - ftMin)
       : minHMod;
 
-  const currentMod = getMod(width);
+  const currentFontSize = magnify(size, getMod(width), 6 - h);
+  const currentLineHeight = decrease(lh, inc, 6 - h);
+
   return `
-    font-size: ${magnify(size, currentMod, 6 - h)}rem;
-    line-height: ${decrease(lh, inc, 6 - h)};
+    font-size: ${currentFontSize}rem;
+    line-height: ${currentLineHeight};
     ${
       withMargin
         ? `
-    margin-top: 0;
-    margin-bottom: ${multiply(currentMod, 6 - h)}rem;
+    margin-top: ${currentLineHeight}em;
+    margin-bottom: 0;
     `
         : ` margin-top: 0; margin-bottom: 0;
     `

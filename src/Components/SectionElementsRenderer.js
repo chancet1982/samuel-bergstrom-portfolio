@@ -23,6 +23,7 @@ import ContactDetails from "./Section_Elements/ContactDetails";
 import Insights from "./Section_Elements/Insights";
 import SectionVideo from "./Section_Elements/SectionVideo";
 import ListOfCards from "./Section_Elements/ListOfCards";
+import Spacer from "./Section_Elements/Spacer";
 
 function SectionElementsRenderer({ elementKey, data, template }) {
   if (!template) {
@@ -59,6 +60,8 @@ function SectionElementsRenderer({ elementKey, data, template }) {
           />
         </ElementColorContextProvider>
       );
+    case SECTION_ELEMENTS.SPACER:
+      return <Spacer size={data.size} />;
     case SECTION_ELEMENTS.OVERVIEW:
       return (
         <Overview

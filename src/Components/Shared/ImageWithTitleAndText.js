@@ -39,6 +39,7 @@ function ImageWithTitleAndText({
   imageAlt,
   caption,
   title,
+  h,
   text,
   bgColor,
   horizontal,
@@ -71,7 +72,7 @@ function ImageWithTitleAndText({
         ignoreSize
         size={IMAGE_WITH_CAPTION_SIZES.MEDIUM_DOUBLE}
       />
-      <TitleAndText h={3} title={title} isPadded>
+      <TitleAndText h={h} title={title} isPadded>
         {text}
       </TitleAndText>
     </StyledImageWithTitleAndText>
@@ -84,12 +85,14 @@ ImageWithTitleAndText.propTypes = {
   imageAlt: PropTypes.string.isRequired,
   caption: PropTypes.string,
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
+  h: PropTypes.number,
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   horizontal: PropTypes.bool,
   flip: PropTypes.bool,
 };
 
 ImageWithTitleAndText.defaultProps = {
+  h: 3,
   caption: null,
   bgColor: null,
   horizontal: false,

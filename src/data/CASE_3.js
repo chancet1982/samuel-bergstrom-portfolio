@@ -488,13 +488,23 @@ export const CASE_3 = {
       ],
     },
     {
+      paddedUp: true,
+      paddedDown: true,
       elements: [
         {
           template: SECTION_ELEMENTS.ADDITIONAL_CASES,
         },
+      ],
+    },
+    {
+      elements: [
         {
           template: SECTION_ELEMENTS.CASE_FOOTER,
         },
+      ],
+    },
+    {
+      elements: [
         {
           template: SECTION_ELEMENTS.FOOTER,
         },

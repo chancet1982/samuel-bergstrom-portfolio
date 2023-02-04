@@ -76,6 +76,7 @@ export const CASE_9 = {
       ],
     },
     {
+      paddedUp: true,
       elements: [
         {
           template: SECTION_ELEMENTS.OVERVIEW,
@@ -101,6 +102,7 @@ export const CASE_9 = {
       ],
     },
     {
+      paddedUp: true,
       header: "Background",
       elements: [
         {
@@ -159,6 +161,7 @@ export const CASE_9 = {
       ],
     },
     {
+      paddedUp: true,
       header: "Research",
       elements: [
         {
@@ -199,6 +202,11 @@ export const CASE_9 = {
             ),
           },
         },
+      ],
+    },
+    {
+      bgColor: SETTINGS.BG_COLOR,
+      elements: [
         {
           template: SECTION_ELEMENTS.INSIGHTS,
           data: {
@@ -302,6 +310,12 @@ export const CASE_9 = {
             ],
           },
         },
+      ],
+    },
+    {
+      paddedUp: true,
+      header: "Design",
+      elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
@@ -322,7 +336,7 @@ export const CASE_9 = {
           data: {
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/eureka.png`,
             limitMaxWidth: true,
-            imageAlt: "AB Testing result",
+            imageAlt: "Spreadsheet bonanza!",
           },
         },
         {
@@ -371,11 +385,6 @@ export const CASE_9 = {
             ),
           },
         },
-      ],
-    },
-    {
-      header: "Design",
-      elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
@@ -431,6 +440,8 @@ export const CASE_9 = {
       ],
     },
     {
+      paddedUp: true,
+      paddedDown: true,
       header: "Validation",
       elements: [
         {
@@ -494,13 +505,23 @@ export const CASE_9 = {
       ],
     },
     {
+      paddedUp: true,
+      paddedDown: true,
       elements: [
         {
           template: SECTION_ELEMENTS.ADDITIONAL_CASES,
         },
+      ],
+    },
+    {
+      elements: [
         {
           template: SECTION_ELEMENTS.CASE_FOOTER,
         },
+      ],
+    },
+    {
+      elements: [
         {
           template: SECTION_ELEMENTS.FOOTER,
         },

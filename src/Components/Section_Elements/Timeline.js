@@ -72,8 +72,8 @@ const StyledTimelineItemEvents = styled(motion.div)`
   }
 
   /* removing the last bit of margin*/
-  > *:last-child {
-    margin-bottom: 0;
+  > *:first-child {
+    margin-top: 0;
   }
 `;
 

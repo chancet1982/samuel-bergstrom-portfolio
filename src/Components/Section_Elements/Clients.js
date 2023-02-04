@@ -20,7 +20,6 @@ const StyledClients = styled(motion.div)`
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(144px, 1fr));
-  padding-bottom: ${padding.horizontal.quadruple};
 `;
 
 function Clients() {

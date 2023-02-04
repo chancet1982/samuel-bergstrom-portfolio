@@ -2,12 +2,18 @@
 import React from "react";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import Paragraph from "../Components/Shared/Paragraph";
-import colors from "../theme/colors";
+import { SPACER_SIZES } from "./dictionaries/SPACER_SIZES";
 
 export const VIEW_CASES = [
   {
-    bgColor: colors.offwhite,
+    paddedUp: true,
     elements: [
+      {
+        template: SECTION_ELEMENTS.SPACER,
+        data: {
+          size: SPACER_SIZES.MEDIUM,
+        },
+      },
       {
         template: SECTION_ELEMENTS.TEXTBOX,
         data: {
@@ -34,6 +40,10 @@ export const VIEW_CASES = [
       {
         template: SECTION_ELEMENTS.CASE_FOOTER,
       },
+    ],
+  },
+  {
+    elements: [
       {
         template: SECTION_ELEMENTS.FOOTER,
       },

@@ -8,7 +8,7 @@ import sizes from "../../theme/sizes";
 import breakpoints from "../../theme/breakpoints";
 
 const StyledImageGallery = styled(motion.div)`
-  padding-top: 4rem;
+  padding-top: 4rem; /* TODO: this needs to be update */
   grid-column: 1 / span 2;
   display: grid;
   column-gap: 0.5rem;

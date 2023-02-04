@@ -52,12 +52,13 @@ function SideBySideImagesAndText({ limitMaxWidth, items }) {
       $limitMaxWidth={limitMaxWidth}
       $itemsLength={items.length}
     >
-      {items.map(({ imageUrl, imageAlt, title, text, bgColor }) => (
+      {items.map(({ imageUrl, imageAlt, title, h, text, bgColor }) => (
         <ElementContextProvider key={imageUrl}>
           <ImageWithTitleAndText
             imageUrl={imageUrl}
             imageAlt={imageAlt}
             title={title}
+            h={h}
             text={text}
             bgColor={bgColor}
           />
@@ -74,6 +75,7 @@ SideBySideImagesAndText.propTypes = {
       imageUrl: PropTypes.string.isRequired,
       imageAlt: PropTypes.string.isRequired,
       title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+      h: PropTypes.number,
       text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
       bgColor: PropTypes.string,
     })

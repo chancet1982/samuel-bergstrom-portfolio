@@ -10,6 +10,8 @@ import Title from "../Components/Shared/Title";
 import List from "../Components/Shared/List";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import { PLATFORMS } from "./dictionaries/PLATFORMS";
+import { SPACER_SIZES } from "./dictionaries/SPACER_SIZES";
+import Note from "../Components/Shared/Note";
 
 const SETTINGS = {
   BG_COLOR: "#2161C9",
@@ -71,6 +73,7 @@ export const CASE_7 = {
       ],
     },
     {
+      paddedUp: true,
       elements: [
         {
           template: SECTION_ELEMENTS.OVERVIEW,
@@ -96,6 +99,7 @@ export const CASE_7 = {
       ],
     },
     {
+      paddedUp: true,
       header: "Background",
       elements: [
         {
@@ -165,6 +169,7 @@ export const CASE_7 = {
       ],
     },
     {
+      paddedUp: true,
       header: "Research",
       elements: [
         {
@@ -209,6 +214,12 @@ export const CASE_7 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.SPACER,
+          data: {
+            size: SPACER_SIZES.MEDIUM,
+          },
+        },
+        {
           template: SECTION_ELEMENTS.INSIGHTS,
           data: {
             isTwoColumnsOnDesktop: true,
@@ -233,6 +244,12 @@ export const CASE_7 = {
                 text: "Some offers are not available online. For example, its not possible to select a prepaid membership online and directed users to visit a gym in person so that they could do that.",
               },
             ],
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER,
+          data: {
+            size: SPACER_SIZES.MEDIUM,
           },
         },
         {
@@ -273,26 +290,34 @@ export const CASE_7 = {
                     </Paragraph>,
                   ]}
                 />
-                <Paragraph>
-                  <strong>Note:</strong> Given more time I would have loved to
-                  conduct a more structured evaluation of the onboarding
-                  usability. Due to time and budget constraints, this was not
-                  possible
-                </Paragraph>
+                <Note>
+                  <Paragraph>
+                    Given more time I would have loved to conduct a more
+                    structured evaluation of the onboarding usability. Due to
+                    time and budget constraints, this was not possible
+                  </Paragraph>
+                </Note>
               </>
             ),
           },
         },
         {
-          template: SECTION_ELEMENTS.IMAGE_GALLERY,
+          template: SECTION_ELEMENTS.SPACER,
           data: {
-            template: IMAGE_GALLERY_TEMPLATES.ONE_IMAGE_FULLSIZE,
-            images: [
-              {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/onboarding-before.png`,
-                imageAlt: "Workflow",
-              },
-            ],
+            size: SPACER_SIZES.MEDIUM,
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/onboarding-before.png`,
+            imageAlt: "Workflow",
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER,
+          data: {
+            size: SPACER_SIZES.MEDIUM,
           },
         },
         {
@@ -345,26 +370,6 @@ export const CASE_7 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.IMAGE_GALLERY,
-          data: {
-            template: IMAGE_GALLERY_TEMPLATES.THREE_IMAGES_TWO_COLUMNS,
-            images: [
-              {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/gym-visit-1.png`,
-                imageAlt: "?",
-              },
-              {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/gym-visit-2.png`,
-                imageAlt: "?",
-              },
-              {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/gym-visit-3.png`,
-                imageAlt: "?",
-              },
-            ],
-          },
-        },
-        {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>Visiting gyms and conducting interviews.</>,
@@ -397,9 +402,30 @@ export const CASE_7 = {
             ),
           },
         },
+        {
+          template: SECTION_ELEMENTS.IMAGE_GALLERY,
+          data: {
+            template: IMAGE_GALLERY_TEMPLATES.THREE_IMAGES_TWO_COLUMNS,
+            images: [
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/gym-visit-1.png`,
+                imageAlt: "?",
+              },
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/gym-visit-2.png`,
+                imageAlt: "?",
+              },
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/gym-visit-3.png`,
+                imageAlt: "?",
+              },
+            ],
+          },
+        },
       ],
     },
     {
+      paddedUp: true,
       header: "Redesign",
       elements: [
         {
@@ -426,20 +452,22 @@ export const CASE_7 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.IMAGE_GALLERY,
+          template: SECTION_ELEMENTS.SPACER,
           data: {
-            template: IMAGE_GALLERY_TEMPLATES.ONE_IMAGE_FULLSIZE,
-            images: [
-              {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/wip-1.png`,
-                imageAlt: "Workflow",
-              },
-            ],
+            size: SPACER_SIZES.MEDIUM,
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/wip-1.png`,
+            imageAlt: "Workflow",
           },
         },
       ],
     },
     {
+      paddedUp: true,
       header: "eCommerce",
       elements: [
         {
@@ -494,20 +522,22 @@ export const CASE_7 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.IMAGE_GALLERY,
+          template: SECTION_ELEMENTS.SPACER,
           data: {
-            template: IMAGE_GALLERY_TEMPLATES.ONE_IMAGE_FULLSIZE,
-            images: [
-              {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/wip-2.png`,
-                imageAlt: "Workflow",
-              },
-            ],
+            size: SPACER_SIZES.MEDIUM,
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/wip-2.png`,
+            imageAlt: "Workflow",
           },
         },
       ],
     },
     {
+      paddedUp: true,
       header: "Design",
       elements: [
         {
@@ -537,15 +567,22 @@ export const CASE_7 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.IMAGE_GALLERY,
+          template: SECTION_ELEMENTS.SPACER,
           data: {
-            template: IMAGE_GALLERY_TEMPLATES.ONE_IMAGE_FULLSIZE,
-            images: [
-              {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/wip-3.png`,
-                imageAlt: "Workflow",
-              },
-            ],
+            size: SPACER_SIZES.MEDIUM,
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/wip-3.png`,
+            imageAlt: "Workflow",
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER,
+          data: {
+            size: SPACER_SIZES.MEDIUM,
           },
         },
         {
@@ -640,15 +677,16 @@ export const CASE_7 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.IMAGE_GALLERY,
+          template: SECTION_ELEMENTS.SPACER,
           data: {
-            template: IMAGE_GALLERY_TEMPLATES.ONE_IMAGE_FULLSIZE,
-            images: [
-              {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/onboarding-after.png`,
-                imageAlt: "Workflow",
-              },
-            ],
+            size: SPACER_SIZES.MEDIUM,
+          },
+        },
+        /* {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/onboarding-after.png`,
+            imageAlt: "Workflow",
           },
         },
         {
@@ -663,6 +701,12 @@ export const CASE_7 = {
             ),
           },
         },
+        {
+          template: SECTION_ELEMENTS.SPACER,
+          data: {
+            size: SPACER_SIZES.MEDIUM,
+          },
+        }, */
       ],
     },
     {
@@ -695,13 +739,23 @@ export const CASE_7 = {
       ],
     },
     {
+      paddedUp: true,
+      paddedDown: true,
       elements: [
         {
           template: SECTION_ELEMENTS.ADDITIONAL_CASES,
         },
+      ],
+    },
+    {
+      elements: [
         {
           template: SECTION_ELEMENTS.CASE_FOOTER,
         },
+      ],
+    },
+    {
+      elements: [
         {
           template: SECTION_ELEMENTS.FOOTER,
         },

@@ -14,7 +14,8 @@ import breakpoints from "../../theme/breakpoints";
 import sizes from "../../theme/sizes";
 
 const StyledAdditionalCases = styled(motion.div)`
-  padding: ${padding.vertical.quadruple} ${padding.horizontal.double};
+  padding-right: ${padding.horizontal.double};
+  padding-left: ${padding.horizontal.double};
 
   @media (min-width: ${breakpoints.desktop}px) {
     > div:first-of-type {

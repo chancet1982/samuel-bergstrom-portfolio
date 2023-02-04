@@ -3,17 +3,19 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 
-import Paragraph from "./Paragraph";
+import Span from "./Span";
 
-const StyledOverline = styled(Paragraph)`
+const StyledOverline = styled(Span)`
+  display: inline-block;
   text-transform: uppercase;
   position: relative;
+  font-weight: 600;
 `;
 
 function Overline({ children, ...rest }) {
   return (
     <StyledOverline small {...rest}>
-      <strong>{children}</strong>
+      {children}
     </StyledOverline>
   );
 }

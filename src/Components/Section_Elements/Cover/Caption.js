@@ -20,7 +20,6 @@ function Caption({ overline, title, text, h }) {
         <Overline
           style={{
             opacity: captionOpacity,
-            lineHeight: captionLineHeight,
           }}
         >
           {overline}

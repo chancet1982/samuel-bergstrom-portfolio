@@ -11,6 +11,8 @@ import Title from "../Components/Shared/Title";
 import Image from "../Components/Shared/ImageWithCaption";
 import Note from "../Components/Shared/Note";
 import List from "../Components/Shared/List";
+import Span from "../Components/Shared/Span";
+import { SPACER_SIZES } from "./dictionaries/SPACER_SIZES";
 
 const SETTINGS = {
   BG_COLOR: "#00ADDB",
@@ -72,6 +74,7 @@ export const CASE_10 = {
       ],
     },
     {
+      paddedUp: true,
       elements: [
         {
           template: SECTION_ELEMENTS.OVERVIEW,
@@ -98,6 +101,7 @@ export const CASE_10 = {
       ],
     },
     {
+      paddedUp: true,
       header: "Background",
       elements: [
         {
@@ -151,31 +155,35 @@ export const CASE_10 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>A BIG ask</>,
+            h: 4,
             text: (
-              <Paragraph>
-                This project set out with 3 main goals in mind:
+              <>
+                <Paragraph large>
+                  This project set out with 3 main goals in mind:
+                </Paragraph>
                 <List
                   items={[
-                    <>
+                    <Span>
                       1. <strong>Increase revenues</strong> by shifting traffic
                       to paying customers
-                    </>,
-                    <>
+                    </Span>,
+                    <Span>
                       2. Encourage potential customers to{" "}
                       <strong>sign agreements</strong>
-                    </>,
-                    <>
+                    </Span>,
+                    <Span>
                       3. Increase <strong>data quality</strong>
-                    </>,
+                    </Span>,
                   ]}
                 />
-              </Paragraph>
+              </>
             ),
           },
         },
       ],
     },
     {
+      paddedUp: true,
       header: "Research",
       elements: [
         {
@@ -192,10 +200,14 @@ export const CASE_10 = {
             ),
           },
         },
+      ],
+    },
+    {
+      bgColor: SETTINGS.BG_COLOR,
+      elements: [
         {
           template: SECTION_ELEMENTS.INSIGHTS,
           data: {
-            bgColor: SETTINGS.BG_COLOR,
             title: <>3 areas for improvement</>,
             items: [
               {
@@ -285,6 +297,7 @@ export const CASE_10 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>Prioritizing</>,
+            h: 4,
             text: (
               <>
                 <Paragraph>
@@ -309,6 +322,7 @@ export const CASE_10 = {
       ],
     },
     {
+      paddedUp: true,
       header: "Design",
       elements: [
         {
@@ -343,9 +357,15 @@ export const CASE_10 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.SPACER,
+          data: {
+            size: SPACER_SIZES.MEDIUM,
+          },
+        },
+        {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Pivot, show everything (but better)</>,
+            title: <>Show all (but better)</>,
             text: (
               <>
                 <Paragraph>
@@ -439,6 +459,8 @@ export const CASE_10 = {
       ],
     },
     {
+      paddedUp: true,
+      paddedDown: true,
       header: "Validation",
       elements: [
         {
@@ -496,13 +518,23 @@ export const CASE_10 = {
       ],
     },
     {
+      paddedUp: true,
+      paddedDown: true,
       elements: [
         {
           template: SECTION_ELEMENTS.ADDITIONAL_CASES,
         },
+      ],
+    },
+    {
+      elements: [
         {
           template: SECTION_ELEMENTS.CASE_FOOTER,
         },
+      ],
+    },
+    {
+      elements: [
         {
           template: SECTION_ELEMENTS.FOOTER,
         },

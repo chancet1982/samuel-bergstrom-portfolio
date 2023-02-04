@@ -27,7 +27,7 @@ const StyledSectionHeader = styled(motion.header)`
       $light ? colors.lighten.medium : colors.darken.medium};
     box-shadow: inset 0px -0.125rem 0px 0rem ${({ $light }) => ($light ? colors.lighten.medium : colors.darken.medium)};
     position: relative;
-    top: 7rem;
+    top: 6.5vh;
   }
 `;
 

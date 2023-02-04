@@ -22,16 +22,18 @@ const useFluidTypography = (pSize = 2, withMargin = true) => {
       ? minBMod + ((res - ftMin) * (maxBMod - minBMod)) / (ftMax - ftMin)
       : minBMod;
 
-  const currentMod = getMod(width);
+  const currentFontSize =
+    pSize === 1 ? 1 : magnify(size, getMod(width), pSize - 2);
+  const currentLineHeight = decrease(lh, inc, pSize - 2);
 
   return `
-    font-size: ${pSize === 1 ? 1 : magnify(size, getMod(width), pSize - 2)}rem;
-    line-height: ${decrease(lh, inc, pSize - 2)};
+    font-size: ${currentFontSize}rem;
+    line-height: ${currentLineHeight};
     ${
       !!withMargin &&
       `
-    margin-top: 0;
-    margin-bottom: ${multiply(currentMod, pSize * 3)}rem;
+    margin-top: ${currentLineHeight}em;
+    margin-bottom: 0;
     `
     }}
   `;

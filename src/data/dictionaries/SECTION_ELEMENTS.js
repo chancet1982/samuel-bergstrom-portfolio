@@ -1,6 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 export const SECTION_ELEMENTS = {
   COVER: "cover",
+  SPACER: "spacer",
   OVERVIEW: "overview",
   TEXTBOX: "textbox",
   INSIGHTS: "insights",
