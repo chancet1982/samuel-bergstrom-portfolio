@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import ImageWithCaption from "../Shared/ImageWithCaption";
 import sizes from "../../theme/sizes";
 import breakpoints from "../../theme/breakpoints";
+import padding from "../../theme/padding";
 
 const StyledSectionImage = styled(motion.div)`
   @media (min-width: ${breakpoints.desktop}px) {
@@ -14,6 +15,25 @@ const StyledSectionImage = styled(motion.div)`
         margin: "0 auto",
       }}
   }
+
+  /* TODO: align all elementHorizontalPadding in this way */
+  ${({ $isPadded }) =>
+    $isPadded && {
+      paddingRight: padding.horizontal.double,
+      paddingLeft: padding.horizontal.double,
+    }}
+
+  ${({ $paddedUp }) =>
+    $paddedUp && {
+      paddingTop: padding.vertical.double,
+      /* backgroundColor: "yellow", */
+    }}
+
+${({ $paddedDown }) =>
+    $paddedDown && {
+      paddingBottom: padding.vertical.double,
+      /* backgroundColor: "blue", */
+    }}
 `;
 
 function SectionImage({ imageUrl, imageAlt, caption, limitMaxWidth }) {

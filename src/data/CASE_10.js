@@ -110,21 +110,21 @@ export const CASE_10 = {
             title: <>Price comparison, catch 22</>,
             text: (
               <>
-                <Paragraph>
+                <Paragraph large>
                   <strong>
-                    Price comparison sites face a multi layered problem
+                    Price comparison sites face a multi layered problem.{" "}
                   </strong>
-                  <br />
                   From one side, they need to include as many prices and find
                   the cheapest prices to be relevant. While from the other, only
                   stores that have an agreement with them generate revenue.
                 </Paragraph>
                 <Paragraph>
-                  They need quality data in order to preform, while they can
-                  only control the data quality when agreements are signed. In
-                  emerging markets, it is hard to motivate signing an agreement,
-                  unless you can proove you redirect valuable traffic, and you
-                  can’t redirect valuable traffic without good data.
+                  Price comparison sites need quality data in order to preform,
+                  while they can only control the data quality when agreements
+                  are signed. In emerging markets, it is hard to motivate
+                  signing an agreement, unless you can prove you redirect
+                  valuable traffic, and you can’t redirect valuable traffic
+                  without good data.
                 </Paragraph>
                 <Paragraph>
                   On top of that, we knew that some shops are “taking advantage
@@ -468,23 +468,22 @@ export const CASE_10 = {
           data: {
             title: <>AB testing and result</>,
             text: (
-              <>
-                <Paragraph>
-                  We set up an A/B test using a 50/50 split on select
-                  categories. We collected data for a total of 55 days during
-                  summer.
-                </Paragraph>
-                <Image
-                  imageUrl={`${SETTINGS.MEDIA_BASE_URL}/ab-test.png`}
-                  imageAlt="AB test in action"
-                />
-                <Paragraph>
-                  In total 1,129,261 sessions were collected and the split list
-                  had a 69% chance to be better compared to the benchmark.
-                  Modeled improvment of -2% to 4% increase in conversions.
-                </Paragraph>
-              </>
+              <Paragraph>
+                We set up an A/B test using a 50/50 split on select categories.
+                We collected data for a total of 55 days during summer. In total
+                1,129,261 sessions were collected and the split list had a 69%
+                chance to be better compared to the benchmark. Modeled
+                improvment of -2% to 4% increase in conversions.
+              </Paragraph>
             ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/ab-test.png`,
+            imageAlt: "AB test in action",
+            caption: "AB test in action",
           },
         },
       ],

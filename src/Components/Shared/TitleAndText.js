@@ -8,6 +8,7 @@ import padding from "../../theme/padding";
 import sizes from "../../theme/sizes";
 
 const StyledTitleAndText = styled(motion.div)`
+  /*background: orange;*/
   /* removing the last bit of margin*/
   > *:first-child {
     margin-top: 0;
@@ -16,6 +17,18 @@ const StyledTitleAndText = styled(motion.div)`
   ${({ $isPadded }) =>
     $isPadded && {
       padding: `${padding.vertical.double} ${padding.horizontal.double}`,
+    }}
+
+  ${({ $paddedUp }) =>
+    $paddedUp && {
+      paddingTop: padding.vertical.double,
+      /* backgroundColor: "yellow", */
+    }}
+
+${({ $paddedDown }) =>
+    $paddedDown && {
+      paddingBottom: padding.vertical.double,
+      /* backgroundColor: "blue", */
     }}
 
   ${({ $isSticky }) =>

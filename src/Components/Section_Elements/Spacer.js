@@ -16,13 +16,13 @@ const StyledSpacer = styled(motion.div)`
   ${({ $size }) =>
     $size === SPACER_SIZES.MEDIUM && {
       paddingTop: padding.vertical.quadruple,
-      /* backgroundColor: "purple", */
+      /* backgroundColor: "pink", */
     }}
 
 ${({ $size }) =>
     $size === SPACER_SIZES.SMALL && {
       paddingTop: padding.vertical.double,
-      /* backgroundColor: "yellow", */
+      /* backgroundColor: "pink", */
     }}
 `;
 

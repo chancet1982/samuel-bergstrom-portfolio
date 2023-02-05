@@ -21,7 +21,6 @@ const StyledSection = styled(motion.section)`
       top: "0",
     }}
 
-  /* TODO: add the ability for sections to have padding and not just based on the bgColor */
   ${({ $paddedUp }) =>
     $paddedUp && {
       paddingTop: padding.vertical.quadruple,
@@ -32,13 +31,6 @@ ${({ $paddedDown }) =>
     $paddedDown && {
       paddingBottom: padding.vertical.quadruple,
       /* backgroundColor: "green", */
-    }}
-
-  /* TODO: this is only used once (in the contact form) should most likely be handled there */
-  ${({ $isPadded }) =>
-    $isPadded && {
-      paddingLeft: padding.horizontal.double,
-      paddingRight: padding.horizontal.double,
     }}
 
   ${({ $bgColor }) =>
@@ -57,7 +49,6 @@ function Section({
   children,
   bgColor,
   isSticky,
-  isPadded,
   paddedUp,
   paddedDown,
 }) {
@@ -78,7 +69,6 @@ function Section({
     <StyledSection
       $bgColor={bgColor}
       $isSticky={isSticky}
-      $isPadded={isPadded}
       $paddedUp={paddedUp}
       $paddedDown={paddedDown}
     >
@@ -95,7 +85,6 @@ Section.propTypes = {
   children: PropTypes.node.isRequired,
   bgColor: PropTypes.string,
   isSticky: PropTypes.bool,
-  isPadded: PropTypes.bool,
   paddedUp: PropTypes.bool,
   paddedDown: PropTypes.bool,
 };
@@ -105,7 +94,6 @@ Section.defaultProps = {
   sectionTitle: null,
   bgColor: null,
   isSticky: false,
-  isPadded: false,
   paddedUp: false,
   paddedDown: false,
 };
