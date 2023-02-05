@@ -9,6 +9,7 @@ import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES"
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import colors from "../theme/colors";
+import Title from "../Components/Shared/Title";
 
 const SETTINGS = {
   BG_COLOR: "#158FC9",
@@ -67,6 +68,7 @@ export const CASE_5 = {
       ],
     },
     {
+      paddedUp: true,
       elements: [
         {
           template: SECTION_ELEMENTS.OVERVIEW,
@@ -99,15 +101,17 @@ export const CASE_5 = {
       ],
     },
     {
+      paddedUp: true,
       header: "Background",
       elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>The problem</>,
+            title: <>Background</>,
             h: 2,
             text: (
               <>
+                <Title h={4}>Problem</Title>
                 <Paragraph>
                   Renal patients are a very specific group. On top of their
                   illness (Kidney failure) most of them suffer from a vast array
@@ -169,49 +173,36 @@ export const CASE_5 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>The goal:</>,
-            h: 2,
+            h: 4,
             text: (
-              <Paragraph>
-                The client asked us to deliver a self-admission and discharge
-                system to free their staff, shorten admission times, and free up
-                treatment stations.
-              </Paragraph>
+              <>
+                <Paragraph>
+                  The client asked us to deliver a self-admission and discharge
+                  system in order to free their staff, shorten admission times,
+                  and free up treatment stations.
+                </Paragraph>
+                <Paragraph>
+                  Every admission/discharge we need to achieve 2 things:
+                  Identifying patients (without disclosing their identity), and
+                  registering their weight. In some cases, our system needs to
+                  allow staff to assist patients and correct invalid
+                  measurements. On the surface, these are simple tasks, but
+                  having to support multiple languages, operate in over 20
+                  countries, be accessible and easy enough for our grandparents
+                  to use things get complicated. All of that is of course before
+                  we’re taking into account the specific impairments that are
+                  common for renal patients. We needed to do some homework.
+                </Paragraph>
+              </>
             ),
           },
         },
       ],
     },
     {
+      paddedUp: true,
       header: "Process",
       elements: [
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: <>3 main goals,</>,
-            text: (
-              <>
-                <Paragraph>
-                  Early in the process, we realized that for every
-                  admission/discharge we need to achieve 2 things: Identifying
-                  patients (without disclosing their identity), and registering
-                  their weight.
-                </Paragraph>
-                <Paragraph>
-                  In some cases, our system needs to allow staff to assist
-                  patients and correct invalid measurements.
-                </Paragraph>
-                <Paragraph>
-                  On the surface, these are simple tasks, but having to support
-                  multiple languages, operate in over 20 countries, be
-                  accessible and easy enough for our grandparents to use things
-                  get complicated. All of that is of course before we’re taking
-                  into account the specific impairments that are common for
-                  renal patients. We needed to do some homework.
-                </Paragraph>
-              </>
-            ),
-          },
-        },
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
@@ -274,17 +265,13 @@ export const CASE_5 = {
       ],
     },
     {
+      paddedUp: true,
       header: "Proposal",
       elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: (
-              <>
-                2 approaches to the same problem,{" "}
-                <strong>no clear winner</strong>
-              </>
-            ),
+            title: <>2 approaches to the same problem</>,
             text: (
               <>
                 <Paragraph>
@@ -368,7 +355,7 @@ export const CASE_5 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>If at first, you don’t succeed.</>,
-            h: 2,
+            h: 3,
             flip: true,
             limitMaxWidth: false,
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/design.jpg`,
@@ -494,6 +481,8 @@ export const CASE_5 = {
       ],
     },
     {
+      paddedUp: true,
+      paddedDown: true,
       header: "Validation",
       elements: [
         {

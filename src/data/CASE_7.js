@@ -105,7 +105,7 @@ export const CASE_7 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>The problem</>,
+            title: <>Exploring new business</>,
             h: 2,
             text: (
               <Paragraph>
@@ -146,8 +146,8 @@ export const CASE_7 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>The goal:</>,
-            h: 2,
+            title: <>2 Focus areas: onboarding, and cross-sales</>,
+            h: 4,
             text: (
               <>
                 <Paragraph>
@@ -175,10 +175,11 @@ export const CASE_7 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Kickoff & expectation alignment.</>,
+            title: <>Gathering internal insights</>,
             h: 2,
             text: (
               <>
+                <Title h={4}>Kickoff & expectation alignment.</Title>
                 <Paragraph>
                   In order to kick off the process, I facilitated a workshop
                   aimed at aligning the stakeholders regarding their
@@ -192,27 +193,21 @@ export const CASE_7 = {
                   insights and align everyone’s expectations. The red thread
                   throughout these discussions was “generating more revenue”.
                 </Paragraph>
+                <Title h={4}>Analytics & Customer support</Title>
+                <Paragraph>
+                  It’s rather unusual that a gym chain would have an entire team
+                  dedicated to helping signing new members online. It indicates
+                  that a lot of people have trouble signing up for memberships
+                  online. So much so that a team is in place to support them. On
+                  the other hand, this team already knew all the common pitfalls
+                  and issues users frequently encountered. We decided to hold a
+                  meeting with them to try and uncover the current user pains.
+                </Paragraph>
               </>
             ),
           },
         },
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: <>Analytics & Customer support</>,
-            text: (
-              <Paragraph>
-                It’s rather unusual that a gym chain would have an entire team
-                dedicated to helping signing new members online. It indicates
-                that a lot of people have trouble signing up for memberships
-                online. So much so that a team is in place to support them. On
-                the other hand, this team already knew all the common pitfalls
-                and issues users frequently encountered. We decided to hold a
-                meeting with them to try and uncover the current user pains.
-              </Paragraph>
-            ),
-          },
-        },
+
         {
           template: SECTION_ELEMENTS.SPACER,
           data: {
@@ -256,7 +251,7 @@ export const CASE_7 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>Testing the current onboarding flow</>,
-            h: 2,
+            h: 4,
             text: (
               <>
                 <Paragraph>
@@ -323,32 +318,30 @@ export const CASE_7 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Looking at competitors</>,
+            title: <>User insights & Competitor analysis</>,
             h: 2,
             text: (
-              <Paragraph>
-                I compared the onboarding experience to some of the competitors.
-                It was easy, my wife just signed up for a new gym. All I needed
-                to do was to observe. Prices were clear, plans well explained,
-                no gotchas or nasty surprises. just a smooth experience overall.
-              </Paragraph>
-            ),
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: "Conducting a survey, gym membership preferences",
-            h: 2,
-            text: (
-              <Paragraph>
-                We needed to understand what was important for potential gym
-                members. Do they prefer to signup online or at the gym? How do
-                people choose gyms? What services might be relevant for them?
-                etc. Part of the survey was dedicated to exploring the potential
-                of cross-sales while onboarding. I created a survey and promoted
-                it on social media.
-              </Paragraph>
+              <>
+                <Title h={4}>Looking at competitors</Title>
+                <Paragraph>
+                  I compared the onboarding experience to some of the
+                  competitors. It was easy, my wife just signed up for a new
+                  gym. All I needed to do was to observe. Prices were clear,
+                  plans well explained, no gotchas or nasty surprises. just a
+                  smooth experience overall.
+                </Paragraph>
+                <Title h={4}>
+                  Conducting a survey, gym membership preferences
+                </Title>
+                <Paragraph>
+                  We needed to understand what was important for potential gym
+                  members. Do they prefer to signup online or at the gym? How do
+                  people choose gyms? What services might be relevant for them?
+                  etc. Part of the survey was dedicated to exploring the
+                  potential of cross-sales while onboarding. I created a survey
+                  and promoted it on social media.
+                </Paragraph>
+              </>
             ),
           },
         },
@@ -373,7 +366,7 @@ export const CASE_7 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>Visiting gyms and conducting interviews.</>,
-            h: 2,
+            h: 4,
             text: (
               <>
                 <Paragraph>
@@ -392,12 +385,13 @@ export const CASE_7 = {
                   not, the project promised cross-sales, hence it will include
                   them. This was discouraging...
                 </Paragraph>
-                <Paragraph>
-                  <strong>Note:</strong> This was far from ideal data
-                  collection. In a perfect world, I would have loved a larger
-                  sample size but due to time and budget limitations, this was
-                  not possible.
-                </Paragraph>
+                <Note>
+                  <Paragraph>
+                    This was far from ideal data collection. In a perfect world,
+                    I would have loved a larger sample size but due to time and
+                    budget limitations, this was not possible.
+                  </Paragraph>
+                </Note>
               </>
             ),
           },

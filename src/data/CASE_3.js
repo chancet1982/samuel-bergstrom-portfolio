@@ -8,6 +8,7 @@ import { ROLES } from "./dictionaries/ROLES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
+import { SPACER_SIZES } from "./dictionaries/SPACER_SIZES";
 
 const SETTINGS = {
   BG_COLOR: "#47C8BC",
@@ -63,6 +64,7 @@ export const CASE_3 = {
       ],
     },
     {
+      paddedUp: true,
       elements: [
         {
           template: SECTION_ELEMENTS.OVERVIEW,
@@ -95,6 +97,7 @@ export const CASE_3 = {
       ],
     },
     {
+      paddedUp: true,
       header: "Background",
       elements: [
         {
@@ -191,6 +194,7 @@ export const CASE_3 = {
     },
     {
       header: "Research",
+      paddedUp: true,
       elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
@@ -258,6 +262,12 @@ export const CASE_3 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.SPACER,
+          data: {
+            size: SPACER_SIZES.MEDIUM,
+          },
+        },
+        {
           template: SECTION_ELEMENTS.INSIGHTS,
           data: {
             title: <>Research findings and application:</>,
@@ -284,6 +294,12 @@ export const CASE_3 = {
                 text: "In retrospect, it was clear that the issue isnt providing better cancer diagnosis. Nor was it the lack of pathologists. If at all the product should be able to provide a pre-diagnosis evaluation in order to free up pathologists to deal with the increasing workload. Digital pathology in itself is a xl leap forward. Instead of sending physical tissue samples from one clinic to another, digital copies could be sent. The side-effect however was that it increased the workload on lab personal, reducing their role to manufacturing workers, and creating an environment where speed is all that matters.",
               },
             ],
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER,
+          data: {
+            size: SPACER_SIZES.MEDIUM,
           },
         },
         {
@@ -352,6 +368,7 @@ export const CASE_3 = {
       ],
     },
     {
+      paddedUp: true,
       header: "Design",
       elements: [
         {
@@ -419,6 +436,8 @@ export const CASE_3 = {
       ],
     },
     {
+      paddedUp: true,
+      paddedDown: true,
       header: "Validation",
       elements: [
         {

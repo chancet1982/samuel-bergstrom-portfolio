@@ -8,6 +8,8 @@ import Paragraph from "../Components/Shared/Paragraph";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
+import Note from "../Components/Shared/Note";
+import { SPACER_SIZES } from "./dictionaries/SPACER_SIZES";
 
 const SETTINGS = {
   BG_COLOR: "#546368",
@@ -66,6 +68,7 @@ export const CASE_4 = {
       ],
     },
     {
+      paddedUp: true,
       elements: [
         {
           template: SECTION_ELEMENTS.OVERVIEW,
@@ -93,6 +96,7 @@ export const CASE_4 = {
       ],
     },
     {
+      paddedUp: true,
       header: "Background",
       elements: [
         {
@@ -140,7 +144,7 @@ export const CASE_4 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>The goal:</>,
-            h: 2,
+            h: 4,
             text: (
               <>
                 <Paragraph>
@@ -158,14 +162,16 @@ export const CASE_4 = {
                   backend developers making design decisions. The outcome as
                   expected didn’t impress.
                 </Paragraph>
-                <Paragraph>
-                  <strong>Important note:</strong> It was not intended to test
-                  if these apps are “the right way forward”, I personally
-                  believe that an unobtrusive lock/unlock functionality (using
-                  proximity for example) would have been better for end-users.
-                  But as contracts were signed and promise made, the focus was
-                  on improving commonly used functionality and visual appeal.
-                </Paragraph>
+                <Note>
+                  <Paragraph>
+                    It was not intended to test if these apps are “the right way
+                    forward”, I personally believe that an unobtrusive
+                    lock/unlock functionality (using proximity for example)
+                    would have been better for end-users. But as contracts were
+                    signed and promise made, the focus was on improving commonly
+                    used functionality and visual appeal.
+                  </Paragraph>
+                </Note>
               </>
             ),
           },
@@ -260,6 +266,12 @@ export const CASE_4 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.SPACER,
+          data: {
+            size: SPACER_SIZES.MEDIUM,
+          },
+        },
+        {
           template: SECTION_ELEMENTS.INSIGHTS,
           data: {
             title: <>Insights:</>,
@@ -291,6 +303,12 @@ export const CASE_4 = {
                 text: "Some users complained about not knowing if their locker is on or not and if it was ready to receive a delivery and that when a delivery is made it is hard to find the lock/unlock button. ",
               },
             ],
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER,
+          data: {
+            size: SPACER_SIZES.MEDIUM,
           },
         },
       ],
@@ -450,6 +468,8 @@ export const CASE_4 = {
       ],
     },
     {
+      paddedUp: true,
+      paddedDown: true,
       header: "Validation",
       elements: [
         {

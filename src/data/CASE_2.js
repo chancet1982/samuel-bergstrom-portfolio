@@ -9,6 +9,7 @@ import List from "../Components/Shared/List";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
+import { SPACER_SIZES } from "./dictionaries/SPACER_SIZES";
 
 const SETTINGS = {
   BG_COLOR: "#FF8D48",
@@ -71,6 +72,7 @@ export const CASE_2 = {
       ],
     },
     {
+      paddedUp: true,
       elements: [
         {
           template: SECTION_ELEMENTS.OVERVIEW,
@@ -100,6 +102,7 @@ export const CASE_2 = {
       ],
     },
     {
+      paddedUp: true,
       header: "Background",
       elements: [
         {
@@ -155,7 +158,7 @@ export const CASE_2 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>The goal:</>,
-            h: 2,
+            h: 4,
             text: (
               <Paragraph>
                 The goal, in this case, was simply, “make a better app”. From an
@@ -171,6 +174,7 @@ export const CASE_2 = {
       ],
     },
     {
+      paddedUp: true,
       header: "Research",
       elements: [
         {
@@ -236,6 +240,12 @@ export const CASE_2 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.SPACER,
+          data: {
+            size: SPACER_SIZES.MEDIUM,
+          },
+        },
+        {
           template: SECTION_ELEMENTS.INSIGHTS,
           data: {
             title: <>Insights</>,
@@ -275,6 +285,12 @@ export const CASE_2 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.SPACER,
+          data: {
+            size: SPACER_SIZES.MEDIUM,
+          },
+        },
+        {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>Sharing back the insights.</>,
@@ -291,6 +307,7 @@ export const CASE_2 = {
       ],
     },
     {
+      paddedUp: true,
       header: "Ideation & prioritization",
       elements: [
         {
@@ -420,11 +437,6 @@ export const CASE_2 = {
             ],
           },
         },
-      ],
-    },
-    {
-      header: "Design",
-      elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
@@ -476,6 +488,13 @@ export const CASE_2 = {
             imageAlt: "Just some decoration",
           },
         },
+      ],
+    },
+    {
+      paddedUp: true,
+      paddedDown: true,
+      header: "Validation",
+      elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
@@ -498,14 +517,10 @@ export const CASE_2 = {
             ),
           },
         },
-      ],
-    },
-    {
-      header: "Validation",
-      elements: [
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
+            limitMaxWidth: true,
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/validation.jpg`,
             imageAlt:
               "Guerilla usability testing in Skånes universitetssjukhus Malmö cafeteria",

@@ -145,7 +145,8 @@ export const CASE_9 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: "What's the ROI of better search?",
+            title: "The ROI of a better search",
+            h: 4,
             text: (
               <Paragraph>
                 Search is complex. and the manually tweaking the parameters was
@@ -169,34 +170,23 @@ export const CASE_9 = {
           data: {
             title: <>Reviewing what we know</>,
             text: (
-              <Paragraph>
-                Wokring on a popular B2C product has its perks. User input is
-                not hard to come by. I started off by looking at all the
-                different sources to understand how people search, where we fail
-                and what can be done differently. Looking at online forums,
-                support tickets, and survey results confirmed that search isnt
-                working
-              </Paragraph>
-            ),
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: <>Seeing is believing</>,
-            text: (
               <>
+                <Paragraph>
+                  Wokring on a popular B2C product has its perks. User input is
+                  not hard to come by. I started off by looking at all the
+                  different sources to understand how people search, where we
+                  fail and what can be done differently. Looking at online
+                  forums, support tickets, and survey results confirmed that
+                  search isnt working
+                </Paragraph>
+                <Title h={4}>Seeing is believing</Title>
                 <Paragraph>
                   I decided to conduct usability tests to see how people search
                   for products online, the premise was simple. “Your partner has
                   a birthday and you want to buy him something up to 1500kr, can
                   you choose something he likes (where you have limited
-                  knowledge) and show me how you would do that?”
-                </Paragraph>
-
-                <Paragraph>
-                  We recruited 9 participants and conducted the testing
-                  remotely.
+                  knowledge) and show me how you would do that?”. We recruited 9
+                  participants and conducted the testing remotely.
                 </Paragraph>
               </>
             ),
@@ -343,7 +333,7 @@ export const CASE_9 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: "Eureka!",
-            h: 3,
+            h: 4,
             text: (
               <Paragraph>
                 I was looking through the search logs trying to identify themes.
@@ -367,6 +357,7 @@ export const CASE_9 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>Plan set in motion</>,
+            h: 4,
             text: (
               <>
                 <Paragraph>
@@ -389,6 +380,7 @@ export const CASE_9 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>Is it feasible?</>,
+            h: 4,
             text: (
               <>
                 <Paragraph>

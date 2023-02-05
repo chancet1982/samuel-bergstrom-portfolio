@@ -20,9 +20,8 @@ ANIMATIONS:
 ListOfOmageWithTitleAndText -> add inView animation to images.
 
 CONTENT:
-
 case-8 -> FINISH ME!
-case-7 -> Add pictures of the report?
+case-7 -> Add pictures of the report? Finish aliging the vertical rythem
 case-6 -> FINISH ME!
 CASE-4 -> Make a better flow image (flows.png)
 CASE-1 -> Fix better images so it works on mobile
