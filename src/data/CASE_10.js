@@ -481,6 +481,7 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
+            limitMaxWidth: true,
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/ab-test.png`,
             imageAlt: "AB test in action",
             caption: "AB test in action",
