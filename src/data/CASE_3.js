@@ -103,7 +103,7 @@ export const CASE_3 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: "Goal",
+            title: "Interface a for medical hardware device",
             h: 2,
             text: (
               <>
@@ -151,43 +151,17 @@ export const CASE_3 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: "Process",
-            h: 2,
-            text: (
-              <>
-                <Paragraph>
-                  As the focus of this project was creating a scanner to support
-                  their tech. Certain fundamental questions were left
-                  unanswered. For Example: do Pathologists even prefer their
-                  imaging compared to conventional technology. Instead, the sole
-                  focus was to create the “best” scanner for its intended
-                  purpose. purpose.
-                </Paragraph>
-                <Paragraph>
-                  In order to do that, we defined potential users and their
-                  relevant use-cases and environments.
-                </Paragraph>
-              </>
-            ),
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: "Personas",
-            h: 2,
-            flip: true,
+            title: "A proof of concept, nothing more",
+            h: 4,
             text: (
               <Paragraph>
-                Originally, the scanner was intended to be used by lab
-                technicians and researchers. Later we discovered that these 2
-                groups have very little in common and decided to focus on Lab
-                Technicians in Pathology labs because simply put, it is a much
-                larger market compared to researchers.
+                As the focus of this project was creating a scanner to support
+                their tech. Certain fundamental questions were left unanswered.
+                For Example: do Pathologists even prefer their imaging compared
+                to conventional technology. Instead, the sole focus was to
+                create the “best” scanner for its intended purpose.
               </Paragraph>
             ),
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/personas.png`,
-            imageAlt: "The personas used for this project",
           },
         },
       ],
@@ -199,8 +173,44 @@ export const CASE_3 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: "Field Studies & Interviews",
+            title: "Digital pathology, crash course",
             h: 2,
+            text: (
+              <>
+                <Paragraph>
+                  My client invented a new technology that if successful, can
+                  revolutionize how we detect and treat cancer. Originally, the
+                  scanner was intended to be used by lab technicians and
+                  researchers. Later we discovered that these 2 groups have very
+                  little in common and decided to focus on Lab Technicians in
+                  Pathology labs because simply put, it is a much larger market
+                  compared to researchers.
+                </Paragraph>
+                <Title h={4}>
+                  Protopersonas help prioritize potential users
+                </Title>
+                <Paragraph>
+                  They were unsure of where to start, and I knew very little
+                  about pathology. So in order to facilitate discussions we
+                  created some protopersonas and tried to prioritize their
+                  needs.
+                </Paragraph>
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/personas.png`,
+            imageAlt: "The personas used for this project",
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: "Field Studies & Interviews",
+            h: 4,
             text: (
               <Paragraph>
                 For me this was uncharted waters, I have no background in
@@ -237,8 +247,8 @@ export const CASE_3 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: "Digital pathology, crash course",
-            h: 2,
+            title: "Collaborating with medical institutions",
+            h: 4,
             text: (
               <Paragraph>
                 We collaborated with 2 hospitals in Sweden and visited an
@@ -262,6 +272,20 @@ export const CASE_3 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: "Pathology clinics, not what you'd expect",
+            h: 4,
+            text: (
+              <Paragraph>
+                We learned a lot about the work environment. This was not a
+                research lab, but an assembly line these technicians slicing,
+                sanding, filing, and preparing tissue samples in hectic pase.
+              </Paragraph>
+            ),
+          },
+        },
+        {
           template: SECTION_ELEMENTS.SPACER,
           data: {
             size: SPACER_SIZES.MEDIUM,
@@ -270,16 +294,9 @@ export const CASE_3 = {
         {
           template: SECTION_ELEMENTS.INSIGHTS,
           data: {
-            title: <>Research findings and application:</>,
+            title: <>Insights:</>,
             h: 2,
             bgColor: SETTINGS.BG_COLOR,
-            text: (
-              <Paragraph>
-                We learned a lot about the work environment. This was not a
-                research lab, but an assembly line these technicians slicing,
-                sanding, filing, and preparing tissue samples in hectic pase.
-              </Paragraph>
-            ),
             items: [
               {
                 title: "Production line, not a lab",
@@ -443,7 +460,7 @@ export const CASE_3 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: "Implementation and validation",
+            title: "Testing without being able to test",
             text: (
               <>
                 <Paragraph>

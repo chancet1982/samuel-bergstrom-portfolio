@@ -2,7 +2,7 @@ TODO list (What's left before you're done)
 
 FIXES:
 CaseThumbnail -> Fix better tag for COMING SOON cases.
-CLEAN UP CASES TO USE THE NEW PADDING STRATEGGY.
+CLEAN UP CASES TO USE THE NEW PADDING STRATEGY.
 FOOTER & CASE_FOOTER -> Clean up padding.
 CONTACT ME: Fix padding left and right.
 case-10 -> Replace AB testing image with the normal aspect ratio and add spacer above and below if needed.
@@ -21,9 +21,10 @@ ListOfOmageWithTitleAndText -> add inView animation to images.
 
 CONTENT:
 case-8 -> FINISH ME!
-case-7 -> Add pictures of the report? Finish aliging the vertical rythem
+case-7 -> Add pictures of the report. Better case cover.
 case-6 -> FINISH ME!
-CASE-4 -> Make a better flow image (flows.png)
+CASE-5 -> better case cover.
+CASE-4 -> Make a better flow image (flows.png),
 CASE-1 -> Fix better images so it works on mobile
 
 One day...

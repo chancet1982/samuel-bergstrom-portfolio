@@ -14,6 +14,7 @@ const StyledValueAndLabel = styled(motion.div)`
   align-items: center;
   text-align: center;
   padding: ${padding.vertical.double} ${padding.horizontal.double};
+  /*background-color: violet;*/
 `;
 
 /* TODO: Implement this in "FinalResult" as well, for that to happen youll need to control text alignment and padding as prop */

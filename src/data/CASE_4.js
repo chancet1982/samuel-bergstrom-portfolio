@@ -10,6 +10,7 @@ import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Note from "../Components/Shared/Note";
 import { SPACER_SIZES } from "./dictionaries/SPACER_SIZES";
+import Title from "../Components/Shared/Title";
 
 const SETTINGS = {
   BG_COLOR: "#546368",
@@ -179,6 +180,7 @@ export const CASE_4 = {
       ],
     },
     {
+      paddedUp: true,
       header: "Process",
       elements: [
         {
@@ -187,23 +189,15 @@ export const CASE_4 = {
             title: <>Gathering feedback and recruiting users.</>,
             h: 2,
             text: (
-              <Paragraph>
-                We needed to understand why the current app is failing. In order
-                to do that we needed to get a better understanding of the target
-                group, how often do they encounter issues with their food
-                deliveries, what is important for them and how do they
-                experience the current app.
-              </Paragraph>
-            ),
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: <>Survey, anyone?</>,
-            h: 2,
-            text: (
               <>
+                <Paragraph>
+                  We needed to understand why the current app is failing. In
+                  order to do that we needed to get a better understanding of
+                  the target group, how often do they encounter issues with
+                  their food deliveries, what is important for them and how do
+                  they experience the current app.
+                </Paragraph>
+                <Title h={4}>Survey, anyone?</Title>
                 <Paragraph>
                   We decided to send a feedback questionnaire to test users and
                   An open survey to users that match the products’ target
@@ -211,14 +205,14 @@ export const CASE_4 = {
                   extent of the problems, desirable features, and even use for
                   of the responders to a future usability test.
                 </Paragraph>
-
-                <Paragraph>
-                  <strong>Note: </strong> Sadly, short after sending the survey
-                  we realised that the test group actually consisted of a
-                  handful users that got a locker for free. Far from what we
-                  needed. Despite that the input we got from them affirmed what
-                  we already suspected.
-                </Paragraph>
+                <Note>
+                  <Paragraph>
+                    Sadly, short after sending the survey we realised that the
+                    test group actually consisted of a handful users that got a
+                    locker for free. Far from what we needed. Despite that the
+                    input we got from them affirmed what we already suspected.
+                  </Paragraph>
+                </Note>
               </>
             ),
           },
@@ -234,34 +228,40 @@ export const CASE_4 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SPACER,
           data: {
-            title: <>Mapping out user-flows and identifying red routes</>,
-            h: 2,
-            text: (
-              <Paragraph>
-                While we were waiting for the survey results, I sat with the
-                Product Owner and Tech lead to map out the current flows in the
-                application. Afterward, based on feedback from test users and
-                responses to our open survey we were able to map the user flows
-                in the current app and identify the most commonly used flows.
-              </Paragraph>
-            ),
+            size: SPACER_SIZES.MEDIUM,
           },
         },
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Usability test, round 1, establishing a benchmark</>,
+            title: <>Creating an index for comparison</>,
             h: 2,
             text: (
-              <Paragraph>
-                Based on that I could create scenarios to cover key
-                functionality and conducted usability testing to serve as a
-                benchmark. After conducting an inIt was evident that some key
-                features were not easily discoverable and often included obscure
-                naming and overly complex interfaces.
-              </Paragraph>
+              <>
+                <Title h={4}>
+                  Mapping out user-flows and identifying red routes
+                </Title>
+                <Paragraph>
+                  While we were waiting for the survey results, I sat with the
+                  Product Owner and Tech lead to map out the current flows in
+                  the application. Afterward, based on feedback from test users
+                  and responses to our open survey we were able to map the user
+                  flows in the current app and identify the most commonly used
+                  flows.
+                </Paragraph>
+                <Title h={4}>
+                  Usability test, round 1, establishing a benchmark
+                </Title>
+                <Paragraph>
+                  Based on that I could create scenarios to cover key
+                  functionality and conducted usability testing to serve as a
+                  benchmark. After conducting an inIt was evident that some key
+                  features were not easily discoverable and often included
+                  obscure naming and overly complex interfaces.
+                </Paragraph>
+              </>
             ),
           },
         },
@@ -314,14 +314,13 @@ export const CASE_4 = {
       ],
     },
     {
+      paddedUp: true,
       header: "Design",
       elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: (
-              <>Slimming, simplifying and optimizing common functionality</>
-            ),
+            title: <>When a bloated app goes on a diet</>,
             h: 2,
             text: (
               <>
@@ -351,7 +350,7 @@ export const CASE_4 = {
               {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/before.png`,
                 imageAlt: "Unlocking the locker before redesign",
-                title: "Unlock unit, before",
+                title: "Before",
                 text: (
                   <Paragraph>
                     Before, lockers were not listed in the home screen. In order
@@ -368,7 +367,7 @@ export const CASE_4 = {
               {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/after.png`,
                 imageAlt: "Unlocking the locker before after",
-                title: "Unlock unit, after",
+                title: "After",
                 text: (
                   <Paragraph>
                     Considering that the most common scenraio is that a user
@@ -383,13 +382,6 @@ export const CASE_4 = {
                 ),
               },
             ],
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            isCentered: true,
-            title: "Problem solving via design",
           },
         },
         {

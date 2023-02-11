@@ -35,7 +35,7 @@ export const CASE_9 = {
   caseUrl: SETTINGS.URL,
   thumbnail: {
     overline: "Price Comparison Service",
-    title: "Invisible redesign (without moving a PX)",
+    title: "Invisible redesign",
     text: <>Creating a shortcut between users and products</>,
     imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
     imageAlt: "thumbnail",

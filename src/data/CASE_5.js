@@ -107,11 +107,10 @@ export const CASE_5 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Background</>,
+            title: <>An unexpected problem is blocking dialysis treatments</>,
             h: 2,
             text: (
               <>
-                <Title h={4}>Problem</Title>
                 <Paragraph>
                   Renal patients are a very specific group. On top of their
                   illness (Kidney failure) most of them suffer from a vast array
@@ -120,6 +119,9 @@ export const CASE_5 = {
                   cognitive degradation loss of motor control, and deteriorating
                   eyesight.
                 </Paragraph>
+                <Title h={4}>
+                  Weighing dialysis patients is blocking treatment stations
+                </Title>
                 <Paragraph>
                   Dialysis patients need to register their weight before and
                   after every treatment. This is done to both ensure proper
@@ -128,16 +130,18 @@ export const CASE_5 = {
                   their treatment cannot be terminated and the treatment station
                   is blocked.
                 </Paragraph>
+                <Title h={4}>
+                  Manual, time consuming, and error prone process.
+                </Title>
                 <Paragraph>
                   It is a manual process in which patients disconnect from the
                   dialysis machines, queue up for taking their weight, and then
-                  communicate this back to the medical staff.{" "}
+                  communicate this back to the medical staff. This is very
+                  error-prone and time-consuming process in which, almost all
+                  patients require assistance to ensure that the correct weight
+                  is entered into the systems.
                 </Paragraph>
-                <Paragraph>
-                  This is very error-prone and time-consuming process in which,
-                  almost all patients require assistance to ensure that the
-                  correct weight is entered into the systems.
-                </Paragraph>
+                <Title h={4}>Added complexity weighing wheelchairs users</Title>
                 <Paragraph>
                   On top of that upwards of 10% of their patients use
                   wheelchairs which creates an additional challenge: A patient
@@ -172,7 +176,7 @@ export const CASE_5 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>The goal:</>,
+            title: <>Self service to expedite admission and discharge</>,
             h: 4,
             text: (
               <>
@@ -529,11 +533,11 @@ export const CASE_5 = {
             results: [
               {
                 value: "+1.6 mil.",
-                description: "treatment station hours freed *",
+                description: "Treatment station hours freed *",
               },
               {
                 value: "+3.3 mil.",
-                description: "staff & patients hours saved *",
+                description: "Staff & patients hours saved *",
               },
             ],
             text: (

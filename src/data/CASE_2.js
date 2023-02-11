@@ -5,11 +5,11 @@ import { ROLES } from "./dictionaries/ROLES";
 import { TOOLS_AND_METHODS } from "./dictionaries/TOOLS_AND_METHODS";
 import { PLATFORMS } from "./dictionaries/PLATFORMS";
 import Paragraph from "../Components/Shared/Paragraph";
-import List from "../Components/Shared/List";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import { SPACER_SIZES } from "./dictionaries/SPACER_SIZES";
+import Title from "../Components/Shared/Title";
 
 const SETTINGS = {
   BG_COLOR: "#FF8D48",
@@ -191,11 +191,27 @@ export const CASE_2 = {
                   groups internally to provide their perspectives. Then we
                   needed to look outwards...
                 </Paragraph>
+                <Title h={4}>General research</Title>
                 <Paragraph>
                   We gathered general insights and best practices regarding
                   designing for the elderly and accessible design from NNg’s
                   research report on the matter, hoping to avoid common pitfalls
                   and known design issues.
+                </Paragraph>
+                <Title h={4}>
+                  Survey and Interviews to understand user needs
+                </Title>
+                <Paragraph>
+                  We later looked more specifically at Renal patients. We
+                  conducted Surveys aimed to align the expectations and define
+                  the essential features for our users. The survey was sent to 5
+                  clinics in 3 different countries, 102 responses were
+                  collected.
+                </Paragraph>
+                <Paragraph>
+                  On top of the survey we conducted interviews with renal
+                  patients to better understand what challanges they were
+                  facing.
                 </Paragraph>
               </>
             ),
@@ -215,28 +231,6 @@ export const CASE_2 = {
                 label: "countries",
               },
             ],
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: <>Survey and Interviews </>,
-            text: (
-              <>
-                <Paragraph>
-                  We later looked more specifically at Renal patients. We
-                  conducted Surveys aimed to align the expectations and define
-                  the essential features for our users. The survey was sent to 5
-                  clinics in 3 different countries, 102 responses were
-                  collected.
-                </Paragraph>
-                <Paragraph>
-                  On top of the survey we conducted interviews with renal
-                  patients to better understand what challanges they were
-                  facing.
-                </Paragraph>
-              </>
-            ),
           },
         },
         {
@@ -293,7 +287,7 @@ export const CASE_2 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Sharing back the insights.</>,
+            title: <>Sharing learnings and planning the road ahead</>,
             text: (
               <Paragraph>
                 The insights were shared with the internal stakeholders and
@@ -313,15 +307,13 @@ export const CASE_2 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Planning the road ahead</>,
-            h: 2,
+            title: <>Prioritizing features and scoping and MVP</>,
+            h: 3,
             text: (
               <Paragraph>
-                With some initial data in place, we could prioritize features
-                based on our proto persona (dialysis patient). We sat with all
-                stakeholders and mapped the functionality, the capacity of the
-                team, prioritized, and created a road-map that would balance
-                user needs and business goals.
+                We sat with all stakeholders and mapped the functionality, the
+                capacity of the team, prioritized, and created a road-map that
+                would balance user needs and business goals.
               </Paragraph>
             ),
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/design.jpg`,
@@ -440,50 +432,38 @@ export const CASE_2 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Inclusive design for iOS and Android</>,
+            title: <>Design for iOS and Android</>,
             h: 2,
             text: (
               <>
                 <Paragraph>
                   We needed to support multiple platforms and devices. We didn’t
                   want to create separate Android and iOS versions so instead,
-                  we made an app that was neither.
+                  we made an app that was neither.{" "}
+                  <strong>
+                    It was meant to be supportive, playful, and colorful without
+                    reducing its accessibility.
+                  </strong>
                 </Paragraph>
+                <Title h={4}>A word about accessibility</Title>
                 <Paragraph>
-                  It was meant to be supportive, playful, and colorful without
-                  reducing its accessibility.
+                  Loss of sensation around the fingertips and loss of motor
+                  control is quite common in renal care. This makes scrolling
+                  especially challenging. In order to mitigate that we laid out
+                  the content to minimize the need for scrolling. We made sure
+                  that we provided at least a 9mm target area for all links and
+                  buttons to avoid miss-clicks. We used a shallow nagivation
+                  stracture in order to reduce the need for recollection.
+                  Ensured contrast ratios were compliant with WCAG 2.0 AA and
+                  used “Heavier” font garuntee legibility.
                 </Paragraph>
               </>
             ),
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
-            flip: true,
-            title: <>Accessibility in design:</>,
-            h: 3,
-            text: (
-              <List
-                plain
-                items={[
-                  <Paragraph>
-                    Loss of sensation around the fingertips and loss of motor
-                    control is quite common in renal care. This makes scrolling
-                    especially challenging. In order to mitigate that we laid
-                    out the content to minimize the need for scrolling. We made
-                    sure that we provided at least a 9mm target area for all
-                    links and buttons to avoid miss-clicks.
-                  </Paragraph>,
-                  <Paragraph>
-                    We made sure all colors are WCAG 2.0 AA compatible.
-                    “Heavier” font weights were used and font sizes were tested
-                    to ensure legibility and a shallow nagivation was used in
-                    order to reduce the need for recollection.
-                  </Paragraph>,
-                ]}
-              />
-            ),
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/accessibility.jpg`,
             imageAlt: "Just some decoration",
           },
@@ -498,7 +478,7 @@ export const CASE_2 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>So now what?</>,
+            title: <>Usability testing on a shoestring</>,
             h: 2,
             text: (
               <>
@@ -532,7 +512,7 @@ export const CASE_2 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>2 hours, and 500 SEK later…</>,
-            h: 2,
+            h: 4,
             text: (
               <>
                 <Paragraph>

@@ -470,22 +470,14 @@ export const CASE_7 = {
             title: <>Shifting the focus to eCommerce</>,
             h: 2,
             text: (
-              <Paragraph>
-                At this point, the focus was shifted to covering a potential
-                e-commerce platform. One of the daughter companies in the
-                organization specializes in selling gym equipment to businesses
-                and they wanted to explore potential collaboration.
-              </Paragraph>
-            ),
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.TEXTBOX,
-          data: {
-            title: "A second survey, more interviews",
-            h: 2,
-            text: (
               <>
+                <Paragraph>
+                  At this point, the focus was shifted to covering a potential
+                  e-commerce platform. One of the daughter companies in the
+                  organization specializes in selling gym equipment to
+                  businesses and they wanted to explore potential collaboration.
+                </Paragraph>
+                <Title h={4}>A second survey, more interviews</Title>
                 <Paragraph>
                   A second survey was sent. Focusing on product customer
                   interest, desirability, and potential product offering.
@@ -495,7 +487,7 @@ export const CASE_7 = {
                   and in-person to complement the quantitative findings with
                   qualitative data.
                 </Paragraph>
-                <Title h={3}>Learnings: </Title>
+                <Title h={4}>Learnings: </Title>
                 <Paragraph>
                   We collected 37 responses. As the sheer competition in this
                   segment could have indicated an interest in buying gym

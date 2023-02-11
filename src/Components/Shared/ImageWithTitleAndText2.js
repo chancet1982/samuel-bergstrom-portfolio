@@ -11,6 +11,7 @@ const StyledTitleAndText = styled(motion.div)`
   ${({ $isPadded }) =>
     $isPadded && {
       padding: `${padding.vertical.double} ${padding.horizontal.double}`,
+      /* backgroundColor: "green", */
     }}
   display: flex;
   flex-direction: column;

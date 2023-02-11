@@ -17,10 +17,10 @@ const StyledInsights = styled(motion.div)`
   grid-template-columns: repeat(1, 1fr);
   padding: 0 ${padding.horizontal.double};
 
-  > div:first-of-type {
+  /*> div:first-of-type {
     padding-top: 0;
     padding-bottom: 0;
-  }
+  }*/
 
   @media (min-width: ${breakpoints.desktop}px) {
     max-width: ${sizes.contentWidthLimit}px;

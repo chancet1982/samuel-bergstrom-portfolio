@@ -106,7 +106,7 @@ export const CASE_1 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>The problem</>,
+            title: <>Old devices in a new world</>,
             h: 2,
             text: (
               <Paragraph>
@@ -145,7 +145,7 @@ export const CASE_1 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>The goal:</>,
+            title: <>A quick facelift as a footnote</>,
             h: 4,
             text: (
               <Paragraph>
@@ -192,7 +192,7 @@ export const CASE_1 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: "Meeting couriers and ATM service technicians",
-            h: 2,
+            h: 4,
             text: (
               <Paragraph>
                 Once the existing app was mapped, and the scope defined, it was
@@ -261,7 +261,7 @@ export const CASE_1 = {
       ],
     },
     {
-      paddedDown: true,
+      paddedUp: true,
       header: "Design",
       elements: [
         {
@@ -377,11 +377,9 @@ export const CASE_1 = {
                 <Paragraph>
                   I only tweaked the color scheme to match the corporate
                   identity and added making a collection of unique illustrations
-                  for the project to give the design some “personality”.
-                </Paragraph>
-                <Paragraph>
-                  During the design I put extra emphasis on reusability and
-                  sharing components and patterns accross screens.
+                  for the project to give the design some “personality”. During
+                  the design I put extra emphasis on reusability and sharing
+                  components and patterns accross screens.
                 </Paragraph>
                 <Paragraph>
                   I started off by creating low fidelity wireframe. This went
@@ -407,6 +405,13 @@ export const CASE_1 = {
             ],
           },
         },
+      ],
+    },
+    {
+      paddedUp: true,
+      paddedDown: true,
+      header: "Validation",
+      elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           h: 2,

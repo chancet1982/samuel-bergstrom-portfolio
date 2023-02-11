@@ -19,7 +19,11 @@ const StyledKeyFigures = styled(motion.div)`
   flex-direction: column;
   border-top: 1px solid ${colors.darken.medium};
   border-bottom: 1px solid ${colors.darken.medium};
-  box-sizing: border-box;
+  /*box-sizing: border-box;*/
+
+  /*> div {
+    flex: 1;
+  }*/
 
   padding: ${({ bgColor }) =>
     bgColor
