@@ -101,7 +101,6 @@ function Nav() {
 
   const [animationFinished] = useContext(SplashAnimationFinishedContext);
 
-  /* TODO: implement a better mobile navigation (side panel style) */
   /* TODO: implement a better logo that only shows once you scroll past a certain point */
   return animationFinished ? (
     <StyledNav

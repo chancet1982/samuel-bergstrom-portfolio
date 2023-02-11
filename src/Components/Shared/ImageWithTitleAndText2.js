@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Title from "./Title";
 import padding from "../../theme/padding";
 import breakpoints from "../../theme/breakpoints";
+import { textVariants } from "../../animations/animations";
 
 const StyledTitleAndText = styled(motion.div)`
   ${({ $isPadded }) =>
@@ -75,14 +76,18 @@ function ImageWithTitleAndText({ imageUrl, title, text, flip }) {
       {flip ? (
         <>
           <StyledImage $imageUrl={imageUrl} $flip />
-          <StyledTitleAndText $isPadded style={{ gridArea: "b" }}>
+          <StyledTitleAndText
+            $isPadded
+            style={{ gridArea: "b" }}
+            variants={textVariants}
+          >
             <Title h={3}>{title}</Title>
             {text}
           </StyledTitleAndText>
         </>
       ) : (
         <>
-          <StyledTitleAndText $isPadded>
+          <StyledTitleAndText $isPadded variants={textVariants}>
             <Title h={3}>{title}</Title>
             {text}
           </StyledTitleAndText>
