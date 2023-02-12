@@ -65,6 +65,8 @@ const StyledRollup = styled(motion.div)`
   right: 0;
   bottom: 0;
   left: 0;
+  transform: scaleY(0);
+  transform-origin: bottom;
 `;
 
 const StyledCaseThumbnailImageAndCaption = styled(motion.div)`
