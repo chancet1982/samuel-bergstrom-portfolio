@@ -132,7 +132,7 @@ function CaseThumbnail({ data, status, caseUrl }) {
     <StyledCaseThumbnailImageAndCaption>
       <StyledCaseThumbnailCaption>
         <TitleAndText title={title} h={3}>
-          <Paragraph>{text}</Paragraph>
+          <Paragraph xl>{text}</Paragraph>
         </TitleAndText>
       </StyledCaseThumbnailCaption>
 

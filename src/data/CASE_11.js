@@ -39,12 +39,7 @@ export const CASE_11 = {
   thumbnail: {
     overline: "Price Comparison Service",
     title: "Selling non-new products",
-    text: (
-      <>
-        Helping stores sell demo, <br />
-        refurbished, and used products
-      </>
-    ),
+    text: <>Helping stores sell demo, refurbished, and used products</>,
     imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
     imageAlt: "thumbnail",
     bgColor: SETTINGS.BG_COLOR,
