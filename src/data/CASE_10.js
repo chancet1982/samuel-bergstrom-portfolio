@@ -12,6 +12,7 @@ import Image from "../Components/Shared/ImageWithCaption";
 import Note from "../Components/Shared/Note";
 import List from "../Components/Shared/List";
 import Span from "../Components/Shared/Span";
+import Spacer from "../Components/Section_Elements/Spacer";
 import { SPACER_SIZES } from "./dictionaries/SPACER_SIZES";
 
 const SETTINGS = {
@@ -84,7 +85,7 @@ export const CASE_10 = {
                 Prisjakt started off by catering to computer enthusiasts and was
                 one of the first price comparison sites in the Nordics. It is
                 still the leading price comparison service but in recent years
-                Prisjak’t growth stagnated. Prisjakt’s main revenue originates
+                Prisjakt’s growth stagnated. Prisjakt’s main revenue originates
                 from click-outs where different categories have different CPC.
               </Paragraph>
             ),
@@ -267,7 +268,7 @@ export const CASE_10 = {
               <>
                 <Title h={4}>Looking internally</Title>
                 <Paragraph>
-                  We talked to all stakeholders and consucted ideation workshops
+                  We talked to all stakeholders and conducted ideation workshops
                   with each group. When the dust settled we had a list with a
                   little over 60 improvement suggestions.
                 </Paragraph>
@@ -394,7 +395,7 @@ export const CASE_10 = {
                   agreement. Making it more attractive to become a paying
                   customer.
                 </Paragraph>
-
+                <Spacer size={SPACER_SIZES.SMALL} />
                 <Title h={4}>Change the default sorting</Title>
                 <Paragraph>
                   On top of that, I suggested we should a recommended sorting on
@@ -411,6 +412,7 @@ export const CASE_10 = {
                   prevent any non-paying shop to be at the top of the list while
                   showing more relevant offers for users.
                 </Paragraph>
+                <Spacer size={SPACER_SIZES.SMALL} />
                 <Image
                   imageUrl={`${SETTINGS.MEDIA_BASE_URL}/sorting-change.png`}
                 />
@@ -500,7 +502,7 @@ export const CASE_10 = {
             text: (
               <>
                 <Paragraph large>
-                  On top of the direct impact, this change should expected to{" "}
+                  On top of the direct impact, this change is expected to{" "}
                   <strong>help onboard new customers</strong>. This is
                   especially true when expanding to new-markets and opens the
                   door for exploring new service offerings.

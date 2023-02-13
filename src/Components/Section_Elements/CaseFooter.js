@@ -91,11 +91,14 @@ function CaseFooter() {
           <Link href="https://www.linkedin.com/in/samuel-bergstr%C3%B6m-13bb8b1b/">
             LinkedIn
           </Link>
+          <Link href="https://adplist.org/mentors/samuel-bergstrom">
+            ADPlist
+          </Link>
+          <Link href="https://medium.com/@chancet1982">Medium</Link>
           <Link href="https://stackoverflow.com/users/4042508/samuel-bergstr%C3%B6m">
             StackOverflow
           </Link>
           <Link href="https://www.facebook.com/samuel.maayan">Facebook</Link>
-          <Link href="https://medium.com/@chancet1982">Medium</Link>
         </StyledLinksMenu>
       </StyledCaseFooter>
     </BackgroundWrapper>

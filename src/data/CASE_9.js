@@ -58,7 +58,8 @@ export const CASE_9 = {
               ),
               text: (
                 <Paragraph xxl>
-                  Creating a shortcut between users and products
+                  Creating a shortcut between
+                  <br /> users and products
                 </Paragraph>
               ),
             },
@@ -86,7 +87,7 @@ export const CASE_9 = {
                 Prisjakt started off by catering to computer enthusiasts and was
                 one of the first price comparison sites in the Nordics. It is
                 still the leading price comparison service but in recent years
-                Prisjak’t growth stagnated. Prisjakt’s main revenue originates
+                Prisjakt’s growth stagnated. Prisjakt’s main revenue originates
                 from click-outs where different categories have different CPC.
               </Paragraph>
             ),
@@ -149,9 +150,9 @@ export const CASE_9 = {
             h: 4,
             text: (
               <Paragraph>
-                Search is complex. and the manually tweaking the parameters was
-                not having an impact. Buying off-the-shelf solutions for such
-                large catalogue is expensive and dependent on data quality. So
+                Search is complex. Manually tweaking search parameters was slow
+                and ineffective. Buying off-the-shelf solutions for such large
+                catalogue is expensive and dependent on data quality. So
                 improving search success is no simple feat. I was asked to
                 assist and evaluate their search experience and evaluate
                 potential ROI for investing in the online search.

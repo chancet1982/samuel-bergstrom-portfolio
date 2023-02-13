@@ -18,9 +18,11 @@ function Menu({ isLight }) {
   const menuLinks = [
     { to: "/", text: "Home", end: true },
     { to: "/about", text: "About me" },
-    { to: "/cases", text: "Cases" },
+    { to: "/cases", text: "Design" },
     { to: "/contact", text: "Get in touch" },
   ];
+
+  /* {   to: "/leadership", text: "Leadership" }, */
 
   return (
     <StyledMenu>

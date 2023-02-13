@@ -20,6 +20,8 @@ const ViewCase = lazy(() => import("./Components/Views/ViewCase"));
 
 const ViewCases = lazy(() => import("./Components/Views/ViewCases"));
 
+const ViewLeadership = lazy(() => import("./Components/Views/ViewLeadership"));
+
 const ViewAboutMe = lazy(() => import("./Components/Views/ViewAboutMe"));
 
 const ViewContact = lazy(() => import("./Components/Views/ViewContact"));
@@ -47,6 +49,10 @@ function App() {
                         <Route exact path="/" element={<ViewLandingPage />} />
                         <Route path="/cases" element={<ViewCases />} />
                         <Route path="/cases/:id" element={<ViewCase />} />
+                        <Route
+                          path="/leadership"
+                          element={<ViewLeadership />}
+                        />
                         <Route path="/about" element={<ViewAboutMe />} />
                         <Route path="/contact" element={<ViewContact />} />
                         <Route path="/test" element={<ViewTest />} />

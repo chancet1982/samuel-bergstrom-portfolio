@@ -94,7 +94,7 @@ export const CASE_11 = {
                 Prisjakt started off by catering to computer enthusiasts and was
                 one of the first price comparison sites in the Nordics. It is
                 still the leading price comparison service but in recent years
-                Prisjak’t growth stagnated. Prisjakt’s main revenue originates
+                Prisjakt’s growth stagnated. Prisjakt’s main revenue originates
                 from click-outs where different categories have different CPC.
               </Paragraph>
             ),
@@ -322,7 +322,7 @@ export const CASE_11 = {
                 <Paragraph>
                   Now that we had 2 lists, we needed a way to switch between
                   them. Following Amazon’s example, we decided to introduce the
-                  switcher in the same way we handled variants. Variants and are
+                  switcher in the same way we handled variants. Variants are
                   typically included as part of the product page header. We
                   added the product condition switcher above existing variants
                   and made it visible only when used offers existed. We wanted
