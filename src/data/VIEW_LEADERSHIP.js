@@ -2,7 +2,6 @@
 import React from "react";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import Paragraph from "../Components/Shared/Paragraph";
-import Title from "../Components/Shared/Title";
 import List from "../Components/Shared/List";
 import colors from "../theme/colors";
 // import Span from "../Components/Shared/Span";
@@ -279,7 +278,6 @@ export const VIEW_LEADERSHIP = [
   },
   {
     fullScreen: true,
-    bgColor: colors.primary,
     sectionTitle: "Community activities and mentorship",
     elements: [
       {
@@ -325,29 +323,6 @@ export const VIEW_LEADERSHIP = [
               ),
             },
           ],
-        },
-      },
-    ],
-  },
-  {
-    fullScreen: true,
-    elements: [
-      {
-        template: SECTION_ELEMENTS.TEXTBOX,
-        data: {
-          title: "",
-          h: 1,
-          text: (
-            <>
-              <Title h={4}>Mentorship</Title>
-              <Paragraph />
-              <Paragraph>UX mentor for students on ECUtbildning</Paragraph>
-              <Paragraph>
-                Mentored several collegues during my years. These now work for
-                IBM, IKEA, TetraPak and other big names.
-              </Paragraph>
-            </>
-          ),
         },
       },
     ],
