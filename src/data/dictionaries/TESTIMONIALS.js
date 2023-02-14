@@ -149,7 +149,7 @@ export const TESTIMONIALS = [
   {
     author: {
       authorName: "Davor Tomic",
-      authorTitle: "Lead Consultant & Design Domain Lead, tretton37",
+      authorTitle: "Former Head of Design, tretton37",
       authorImageUrl: "assets/testimonials/davor-tomic.jpeg",
     },
     content: (

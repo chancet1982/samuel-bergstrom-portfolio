@@ -105,7 +105,7 @@ export const VIEW_ABOUT_ME = [
               text: (
                 <Paragraph>
                   A father of 2 (plus a dog) means I am no stranger to stress. I
-                  deal with chaos (ah sorry a “dynamic environment”) on a dialy
+                  deal with chaos (ah sorry a “dynamic environment”) on a daily
                   basis!.
                 </Paragraph>
               ),

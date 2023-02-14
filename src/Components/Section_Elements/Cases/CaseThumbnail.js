@@ -1,9 +1,8 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { useContext, useRef } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { motion } from "framer-motion";
-import { useIntersection } from "react-use";
+import { motion, useInView } from "framer-motion";
 import Badge from "../../Shared/Badge";
 import { CursorContext } from "../../../Context/CursorContext";
 import { CASE_STATUS } from "../../../data/dictionaries/CASE_STATUS";
@@ -113,31 +112,24 @@ function CaseThumbnail({ data, status, caseUrl }) {
 
   const { imageUrl, title, text } = data;
 
-  const intersectionRef = useRef(null);
-  const intersection = useIntersection(intersectionRef, {
-    root: null,
-    rootMargin: "0px",
-    threshold: 1,
-  });
-
-  const [showImage, setShowImage] = useState(false);
-
-  useEffect(() => {
-    if (intersection && intersection.intersectionRatio > 0.6) {
-      setShowImage(true);
-    }
-  }, [intersection]);
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, amount: "some" });
 
   const renderCaseThumbnail = () => (
     <StyledCaseThumbnailImageAndCaption>
-      <StyledCaseThumbnailCaption>
+      <StyledCaseThumbnailCaption
+        initial="hidden"
+        whileInView="inView"
+        viewport={{ once: true, amount: "some" }}
+        transition={{ staggerChildren: 0.1 }}
+      >
         <TitleAndText title={title} h={3}>
           <Paragraph xl>{text}</Paragraph>
         </TitleAndText>
       </StyledCaseThumbnailCaption>
 
-      {!showImage ? (
-        <StyledPlaceholder ref={intersectionRef} />
+      {!isInView ? (
+        <StyledPlaceholder ref={ref} />
       ) : (
         <StyledCaseThumbnailImageWrapper>
           <StyledCaseThumbnailImage
