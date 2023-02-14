@@ -19,10 +19,9 @@ function Menu({ isLight }) {
     { to: "/", text: "Home", end: true },
     { to: "/about", text: "About me" },
     { to: "/cases", text: "Design" },
+    { to: "/leadership", text: "Leadership" },
     { to: "/contact", text: "Get in touch" },
   ];
-
-  /* {   to: "/leadership", text: "Leadership" }, */
 
   return (
     <StyledMenu>

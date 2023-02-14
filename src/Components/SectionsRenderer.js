@@ -6,14 +6,25 @@ import SectionColorContextProvider from "../Context/SectionColorContext";
 
 const SectionsRenderer = ({ sections }) =>
   sections.map(
-    ({ elements, header, bgColor, isSticky, paddedUp, paddedDown }) => (
+    ({
+      elements,
+      header,
+      sectionTitle,
+      bgColor,
+      isSticky,
+      paddedUp,
+      paddedDown,
+      fullScreen,
+    }) => (
       <SectionColorContextProvider key={uuid()}>
         <Section
           header={header}
+          sectionTitle={sectionTitle}
           bgColor={bgColor}
           isSticky={isSticky}
           paddedUp={paddedUp}
           paddedDown={paddedDown}
+          fullScreen={fullScreen}
         >
           {elements.map(({ data, template }) => (
             <SectionElementsRenderer

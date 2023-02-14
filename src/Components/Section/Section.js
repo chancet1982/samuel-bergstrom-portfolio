@@ -14,6 +14,7 @@ const StyledSection = styled(motion.section)`
   height: fit-content;
   margin: 0 auto;
   position: relative;
+  box-sizing: border-box;
 
   ${({ $isSticky }) =>
     $isSticky && {
@@ -27,10 +28,19 @@ const StyledSection = styled(motion.section)`
       /* backgroundColor: "red", */
     }}
 
-${({ $paddedDown }) =>
+  ${({ $paddedDown }) =>
     $paddedDown && {
       paddingBottom: padding.vertical.quadruple,
       /* backgroundColor: "green", */
+    }}
+
+  ${({ $fullScreen }) =>
+    $fullScreen && {
+      display: "flex",
+      minHeight: "100vh",
+      alignItems: "center",
+      justifyContent: "center",
+      flexDirection: "column",
     }}
 
   ${({ $bgColor }) =>
@@ -51,6 +61,7 @@ function Section({
   isSticky,
   paddedUp,
   paddedDown,
+  fullScreen,
 }) {
   const [, setLight] = useContext(SectionColorContext);
   const { width } = useWindowSize();
@@ -71,9 +82,10 @@ function Section({
       $isSticky={isSticky}
       $paddedUp={paddedUp}
       $paddedDown={paddedDown}
+      $fullScreen={fullScreen}
     >
       {header && !isMobile && <SectionHeader>{header}</SectionHeader>}
-      {sectionTitle && <Title h={2}>{sectionTitle}</Title>}
+      {sectionTitle && <Title h={1}>{sectionTitle}</Title>}
       {children}
     </StyledSection>
   );
@@ -87,6 +99,7 @@ Section.propTypes = {
   isSticky: PropTypes.bool,
   paddedUp: PropTypes.bool,
   paddedDown: PropTypes.bool,
+  fullScreen: PropTypes.bool,
 };
 
 Section.defaultProps = {
@@ -96,6 +109,7 @@ Section.defaultProps = {
   isSticky: false,
   paddedUp: false,
   paddedDown: false,
+  fullScreen: false,
 };
 
 export default Section;

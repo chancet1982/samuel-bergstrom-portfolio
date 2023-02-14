@@ -130,7 +130,7 @@ function SplashScreen() {
         }
         variants={staticTextVariants}
       >
-        I Helped:
+        I Helped &nbsp;
       </Title>
       <AnimatePresence initial={false} mode="wait">
         <Title
