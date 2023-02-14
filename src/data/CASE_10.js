@@ -11,7 +11,6 @@ import Title from "../Components/Shared/Title";
 import Image from "../Components/Shared/ImageWithCaption";
 import Note from "../Components/Shared/Note";
 import List from "../Components/Shared/List";
-import Span from "../Components/Shared/Span";
 import Spacer from "../Components/Section_Elements/Spacer";
 import { SPACER_SIZES } from "./dictionaries/SPACER_SIZES";
 
@@ -155,29 +154,25 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>A BIG ask</>,
+            title: <>This project set out with 3 main goals in mind:</>,
             h: 4,
             text: (
-              <>
-                <Paragraph large>
-                  This project set out with 3 main goals in mind:
-                </Paragraph>
-                <List
-                  items={[
-                    <Span>
-                      1. <strong>Increase revenues</strong> by shifting traffic
-                      to paying customers
-                    </Span>,
-                    <Span>
-                      2. Encourage potential customers to{" "}
-                      <strong>sign agreements</strong>
-                    </Span>,
-                    <Span>
-                      3. Increase <strong>data quality</strong>
-                    </Span>,
-                  ]}
-                />
-              </>
+              <List
+                items={[
+                  <Paragraph large>
+                    <strong>1. Increase revenues </strong>
+                    <br /> by shifting traffic to paying clients
+                  </Paragraph>,
+                  <Paragraph large>
+                    <strong>2. Onboard new clients</strong>
+                    <br /> by increasing motivation to become a paying client
+                  </Paragraph>,
+                  <Paragraph large>
+                    <strong>3. Improve data quality</strong>
+                    <br /> by enforcing requirements on data reporting
+                  </Paragraph>,
+                ]}
+              />
             ),
           },
         },

@@ -278,6 +278,7 @@ export const VIEW_LEADERSHIP = [
   },
   {
     fullScreen: true,
+    paddedDown: true,
     sectionTitle: "Community activities and mentorship",
     elements: [
       {
