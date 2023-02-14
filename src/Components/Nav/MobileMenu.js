@@ -6,6 +6,7 @@ import colors from "../../theme/colors";
 import MenuLink from "./MenuLink";
 import { MenuExpandedContext } from "../../Context/MenuExpandedContext";
 import breakpoints from "../../theme/breakpoints";
+import { MENU_LINKS } from "../../data/dictionaries/MENU_LINKS";
 
 const StyledMobileMenu = styled(motion.menu)`
   position: absolute;
@@ -65,13 +66,6 @@ function MobileMenu({ isLight }) {
     collapsed: { opacity: 0 },
   };
 
-  const menuLinks = [
-    { to: "/", text: "Home", end: true },
-    { to: "/about", text: "About me" },
-    { to: "/cases", text: "Cases" },
-    { to: "/contact", text: "Get in touch" },
-  ];
-
   useEffect(() => {
     if (expanded) {
       document.body.style.overflow = "hidden";
@@ -92,7 +86,7 @@ function MobileMenu({ isLight }) {
         animate={expanded ? "expanded" : "collapsed"}
         variants={menuVariants}
       >
-        {menuLinks.map(({ to, text, end }) => (
+        {MENU_LINKS.map(({ to, text, end }) => (
           <MenuLink key={to} to={to} isLight={isLight} end={end}>
             {text}
           </MenuLink>

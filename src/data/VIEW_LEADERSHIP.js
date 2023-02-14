@@ -4,6 +4,7 @@ import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import Paragraph from "../Components/Shared/Paragraph";
 import Title from "../Components/Shared/Title";
 import List from "../Components/Shared/List";
+import colors from "../theme/colors";
 // import Span from "../Components/Shared/Span";
 
 export const VIEW_LEADERSHIP = [
@@ -14,7 +15,7 @@ export const VIEW_LEADERSHIP = [
       {
         template: SECTION_ELEMENTS.TEXTBOX,
         data: {
-          title: "Leadership phylosophy",
+          title: "Leadership philosophy",
           h: 1,
           text: (
             <Paragraph large>
@@ -51,6 +52,7 @@ export const VIEW_LEADERSHIP = [
   {
     fullScreen: true,
     sectionTitle: "tretton37",
+    bgColor: colors.offblack,
     elements: [
       {
         template: SECTION_ELEMENTS.INSIGHTS,
@@ -219,6 +221,7 @@ export const VIEW_LEADERSHIP = [
   },
   {
     fullScreen: true,
+    bgColor: colors.primary,
     sectionTitle: "EuroFinans",
     elements: [
       {
@@ -276,25 +279,68 @@ export const VIEW_LEADERSHIP = [
   },
   {
     fullScreen: true,
+    bgColor: colors.primary,
+    sectionTitle: "Community activities and mentorship",
+    elements: [
+      {
+        template: SECTION_ELEMENTS.INSIGHTS,
+        data: {
+          text: (
+            <Paragraph xl>
+              I started my career in design 15 years ago. At that time, a lot of
+              the information was not readly available. I since took active
+              roles in different constulations to mentor and help fellow
+              designers.
+            </Paragraph>
+          ),
+          items: [
+            {
+              title: "ADPList, Mentor",
+              text: (
+                <Paragraph>
+                  Active mentor on adplist which is the leading mentorship
+                  platform with 5000 vetted mentors worldwide.
+                </Paragraph>
+              ),
+            },
+            {
+              title: "MDN, Board Member",
+              text: (
+                <Paragraph>
+                  Board member of Malmö Design Network. The largest design
+                  network in Skåne with more than 600 members aimed at
+                  exchanging ideas and sharing knowledge
+                </Paragraph>
+              ),
+            },
+            {
+              title: "ECUtbildning, Mentor",
+              text: (
+                <Paragraph>
+                  UX mentor for students in ECUtbildning. As part of their
+                  education students are required to have a mentor. I was
+                  contacted by ECU after holding a talk there to be one of the
+                  mentors and am since then responsible for 4 students
+                </Paragraph>
+              ),
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    fullScreen: true,
     elements: [
       {
         template: SECTION_ELEMENTS.TEXTBOX,
         data: {
-          title: "Community activities and mentorship",
+          title: "",
           h: 1,
           text: (
             <>
-              <Paragraph large>
-                I started my career in design 15 years ago. At that time, a lot
-                of the information was not readly available. I since took active
-                roles in different constulations to mentor and help fellow
-                designers.
-              </Paragraph>
               <Title h={4}>Mentorship</Title>
-              <Paragraph>
-                Active mentor on adplist which is the leading mentorship
-                platform with 5000 vetted mentors worldwide.
-              </Paragraph>
+              <Paragraph />
               <Paragraph>UX mentor for students on ECUtbildning</Paragraph>
               <Paragraph>
                 Mentored several collegues during my years. These now work for
