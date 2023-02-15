@@ -5,6 +5,7 @@ import { motion, useTransform, useMotionValue, useScroll } from "framer-motion";
 import { useWindowSize, useMeasure } from "react-use";
 import Image from "../../Shared/Image";
 import { CLIENTS } from "../../../data/dictionaries/CLIENTS";
+import breakpoints from "../../../theme/breakpoints";
 
 const StyledClientsPreview = styled(motion.div)`
   display: flex;
@@ -14,7 +15,20 @@ const StyledClientsPreview = styled(motion.div)`
   object-position: 50% 50%;
 
   > img {
-    height: 128px;
+    height: 64px;
+  }
+
+  @media (min-width: ${breakpoints.mobileLarge}px) and (max-width: ${breakpoints.desktop -
+    1}px) {
+    > img {
+      height: 80px;
+    }
+  }
+
+  @media (min-width: ${breakpoints.desktop}px) {
+    > img {
+      height: 128px;
+    }
   }
 `;
 
