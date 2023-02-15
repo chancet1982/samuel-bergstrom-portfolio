@@ -24,10 +24,14 @@ const StyledAdditionalCasesCaseThumbnail = styled(motion.div)`
   overflow: hidden;
   position: relative;
 
-  height: ${({ $inAdditionalCases }) =>
-    $inAdditionalCases
-      ? `calc(92vw / 3 - 2 * ${padding.vertical.eighth})`
-      : "72vh"};
+  @media (max-width: ${breakpoints.desktop - 1}px) {
+    min-height: 320px;
+    height: 50vh;
+  }
+
+  @media (min-width: ${breakpoints.desktop}px) {
+    height: calc(92vw / 3 - 2 * ${padding.vertical.eighth});
+  }
 
   a {
     text-decoration: none;
@@ -73,12 +77,7 @@ const StyledAdditionalCasesCaseThumbnailImage = styled(motion.div)`
 `;
 
 /* TODO: cleanup all unused features as its only used in one place now */
-function AdditionalCasesCaseThumbnail({
-  data,
-  status,
-  caseUrl,
-  inAdditionalCases,
-}) {
+function AdditionalCasesCaseThumbnail({ data, status, caseUrl }) {
   const [, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
@@ -182,6 +181,7 @@ function AdditionalCasesCaseThumbnail({
       />
 
       <StyledAdditionalCasesCaseThumbnailCaption
+        animate="normal"
         variants={thumbnailCaptionVariants}
       >
         {/* <Overline>{overline}</Overline> */}
@@ -211,7 +211,6 @@ function AdditionalCasesCaseThumbnail({
       variants={thumbnailVariants}
       animate={inView ? "inView" : "hidden"}
       $bgColor={bgColor}
-      $inAdditionalCases={inAdditionalCases}
     >
       {status !== CASE_STATUS.COMING_SOON
         ? wrapWithLink(renderAdditionalCasesCaseThumbnail())
@@ -225,12 +224,10 @@ AdditionalCasesCaseThumbnail.propTypes = {
   data: PropTypes.object,
   status: PropTypes.string.isRequired,
   caseUrl: PropTypes.string.isRequired,
-  inAdditionalCases: PropTypes.bool,
 };
 
 AdditionalCasesCaseThumbnail.defaultProps = {
   data: {},
-  inAdditionalCases: false,
 };
 
 export default AdditionalCasesCaseThumbnail;
