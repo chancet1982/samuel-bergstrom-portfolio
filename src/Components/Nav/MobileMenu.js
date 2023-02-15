@@ -15,11 +15,16 @@ const StyledMobileMenu = styled(motion.menu)`
   width: 80vw;
   max-width: ${breakpoints.tablet}px;
   margin: 0;
-  height: calc(100vh - 5.5rem);
+  height: calc(100vh - 16rem);
   background: ${colors.offblack};
-  padding: 5.5rem 0 0 0;
+  padding: 8rem 0;
   display: flex;
   flex-direction: column;
+
+  > a {
+    max-height: 8vh;
+    min-height: 4rem;
+  }
 `;
 
 const StyledOverlay = styled(motion.div)`
