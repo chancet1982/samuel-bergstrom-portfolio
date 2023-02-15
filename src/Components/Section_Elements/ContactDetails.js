@@ -10,7 +10,7 @@ import padding from "../../theme/padding";
 import sizes from "../../theme/sizes";
 
 const StyledContactDetails = styled(motion.div)`
-  padding: ${padding.vertical.double} ${padding.horizontal.double};
+  padding: ${padding.vertical.double} ${padding.horizontal.quadruple}; /* TODO: This is a hack, hopefully we'll get rid of it some day */
   max-width: ${sizes.contentWidthLimit}px;
   margin: 0 auto;
   box-sizing: border-box;
