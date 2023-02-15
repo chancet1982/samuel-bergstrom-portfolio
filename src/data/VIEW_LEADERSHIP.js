@@ -236,39 +236,32 @@ export const VIEW_LEADERSHIP = [
           ),
           items: [
             {
-              title: "...",
+              title: "Increased design maturity",
               text: (
-                <List
-                  items={[
-                    <Paragraph>...</Paragraph>,
-                    <Paragraph>...</Paragraph>,
-                    <Paragraph>...</Paragraph>,
-                  ]}
-                />
+                <Paragraph>
+                  Shifted delivery from waterfall to more agile with rapid
+                  sessions of prototyping and testing instead of long release
+                  cycles.
+                </Paragraph>
               ),
             },
             {
-              title: "...",
+              title: "Introduced design system",
               text: (
-                <List
-                  items={[
-                    <Paragraph>...</Paragraph>,
-                    <Paragraph>...</Paragraph>,
-                    <Paragraph>...</Paragraph>,
-                  ]}
-                />
+                <Paragraph>
+                  Created a design system to support both EuroFinans and
+                  PrioritetFinans (mother company). The design system was
+                  shortened release cycles, reduced bugs, and aligned the design
+                  across all products and platforms
+                </Paragraph>
               ),
             },
             {
-              title: "Ways of working",
+              title: "Established a process",
               text: (
-                <List
-                  items={[
-                    <Paragraph>...</Paragraph>,
-                    <Paragraph>...</Paragraph>,
-                    <Paragraph>...</Paragraph>,
-                  ]}
-                />
+                <Paragraph>
+                  Coordinated deliveries and mentored 2 other designers.
+                </Paragraph>
               ),
             },
           ],
