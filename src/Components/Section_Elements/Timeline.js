@@ -60,7 +60,7 @@ const StyledTimelineItemEvents = styled(motion.div)`
   }
 
   @media (min-width: ${breakpoints.desktop}px) {
-    width: calc(1280px * 0.8);
+    width: calc(${sizes.contentWidthLimit}px * 0.8);
   }
 
   > div {

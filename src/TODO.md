@@ -11,6 +11,12 @@ FOOTER & CASE_FOOTER -> Clean up padding.
 SECTION_IMAGE: make selectable if you want it to scale down or preserve height
 NAVIGATION -> Navigation gets wrong bgColor when leaving a page with COVER when COVER is not in viewport.
 
+INVESTIGATE IF THIS CAN BE USED:
+https://www.framer.com/motion/use-velocity/
+
+https://university.webflow.com/lesson/horizontal-scrolling
+https://georgemaxwell.webflow.io/
+
 CONTENT:
 case-8 -> FINISH ME!
 case-7 -> Add pictures of the report. Better case cover.

@@ -7,6 +7,7 @@ import Title from "./Title";
 import padding from "../../theme/padding";
 import breakpoints from "../../theme/breakpoints";
 import { textVariants } from "../../animations/animations";
+import sizes from "../../theme/sizes";
 
 const StyledTitleAndText = styled(motion.div)`
   ${({ $isPadded }) =>
@@ -32,7 +33,7 @@ const StyledTitleAndText = styled(motion.div)`
 const StyledImageWithTitleAndText = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(2, 50%);
-  max-width: 1280px;
+  max-width: ${sizes.contentWidthLimit}px;
   margin: 0 auto;
   grid-template-areas: "a b";
   padding: 0 ${padding.horizontal.double};

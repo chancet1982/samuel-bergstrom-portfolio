@@ -6,13 +6,14 @@ import Title from "../Shared/Title";
 import colors from "../../theme/colors";
 import useBgColor from "../../utils/useBgColor";
 import padding from "../../theme/padding";
+import sizes from "../../theme/sizes";
 
 const StyledSectionHeader = styled(motion.header)`
   position: sticky;
   top: 0;
   left: 0;
   display: block;
-  width: calc(50% - 1280px / 2 - ${padding.horizontal.half});
+  width: calc(50% - ${sizes.contentWidthLimit}px / 2 - ${padding.horizontal.half});
   text-align: right;
   z-index: -1;
   height: 0;
