@@ -231,9 +231,9 @@ export const CASE_11 = {
                   inTextbox
                 />
                 <Title h={4}>Qualitative research</Title>
-                <Paragraph>
+                <Paragraph large>
                   We integrated this as part of our usability testing and asked
-                  participants to point out demo products.{" "}
+                  participants to point out demo products.<br/>
                   <strong>
                     Not a single participant managed to point these out.
                   </strong>
