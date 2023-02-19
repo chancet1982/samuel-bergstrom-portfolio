@@ -3,6 +3,7 @@ import React from "react";
 import Section from "./Section/Section";
 import SectionElementsRenderer from "./SectionElementsRenderer";
 import SectionColorContextProvider from "../Context/SectionColorContext";
+import HorizontalScrollingSection from "./Section/HorizontalScrollingSection";
 
 const SectionsRenderer = ({ sections }) =>
   sections.map(
@@ -15,7 +16,22 @@ const SectionsRenderer = ({ sections }) =>
       paddedUp,
       paddedDown,
       fullScreen,
+      horizontal,
     }) => (
+      horizontal ? 
+      <SectionColorContextProvider key={uuid()}>
+        <HorizontalScrollingSection bgColor={bgColor}>
+        {elements.map(({ data, template }) => (
+            <SectionElementsRenderer
+              key={uuid()}
+              elementKey={uuid()}
+              data={data}
+              template={template}
+            />
+          ))}
+        </HorizontalScrollingSection>
+      </SectionColorContextProvider>
+      :
       <SectionColorContextProvider key={uuid()}>
         <Section
           header={header}
