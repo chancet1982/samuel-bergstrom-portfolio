@@ -5,7 +5,12 @@ import { useWindowSize } from "react-use";
 import PropTypes from "prop-types";
 import { v4 as uuid } from "uuid";
 
-const StyledHorizontalScrollingSection = styled(motion.div)``;
+const StyledHorizontalScrollingSection = styled(motion.section)`
+  ${({ $bgColor }) =>
+    $bgColor && {
+      backgroundColor: $bgColor,
+    }}
+`;
 
 const StyledCamera = styled(motion.div) `
   width: 100vw;
@@ -33,7 +38,7 @@ const StyledFrame = styled(motion.div) `
     }}
 `; 
 
-function HorizontalScrollingSection({children}) {
+function HorizontalScrollingSection({children, bgColor}) {
   // const items =[{bgColor: "red"}, {bgColor: "blue"}, {bgColor: "green"}, {bgColor: "yellow"}, {bgColor: "purple"}]
 
   const ref = useRef(null)
@@ -51,9 +56,9 @@ function HorizontalScrollingSection({children}) {
   );
 
   const smoothHorizontalScroll = useSpring(horizontalScroll)
-  
+
   return (
-      <StyledHorizontalScrollingSection style={{height:`${children.length * 100}vw`}} ref={ref} >
+      <StyledHorizontalScrollingSection style={{height:`${children.length * 100}vw`}} ref={ref} $bgColor={bgColor} >
         <StyledCamera> 
         <StyledFrame style={{ x: smoothHorizontalScroll }}>
           {React.Children.map(children, child =>  <StyledItem key={uuid}>{child}</StyledItem>)}
@@ -65,9 +70,11 @@ function HorizontalScrollingSection({children}) {
 
 HorizontalScrollingSection.propTypes = {
   children: PropTypes.node.isRequired,
+  bgColor: PropTypes.string,
 };
 
 HorizontalScrollingSection.defaultProps = {
+  bgColor: null,
 };
 
 export default HorizontalScrollingSection;

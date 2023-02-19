@@ -25,7 +25,6 @@ const StyledCoverVideo = styled(motion.video)`
   width: auto;
   height: 92vh;
   object-fit: cover;
-  z-index: -1;
   object-position: top left;
 
   @media (min-width: ${breakpoints.mobileLarge}px) {

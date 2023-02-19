@@ -6,6 +6,7 @@ import Overview from "./Section_Elements/Overview";
 import Textbox from "./Section_Elements/Textbox";
 import Clients from "./Section_Elements/Clients";
 import Cases from "./Section_Elements/Cases";
+import CasesPreview from "./Section_Elements/CasesPreview";
 import ImageGallery from "./Section_Elements/ImageGallery";
 import FinalResult from "./Section_Elements/FinalResult";
 import BlockQuote from "./Section_Elements/BlockQuote";
@@ -195,6 +196,8 @@ function SectionElementsRenderer({ elementKey, data, template }) {
       );
     case SECTION_ELEMENTS.CASES:
       return <Cases key={elementKey} preview={data.preview} />;
+    case SECTION_ELEMENTS.CASES_PREVIEW:
+      return <CasesPreview key={elementKey} />;
     case SECTION_ELEMENTS.TESTIMONIALS:
       return (
         <Testimonials

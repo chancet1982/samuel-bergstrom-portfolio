@@ -8,6 +8,7 @@ export const SECTION_ELEMENTS = {
   QUOTE: "quote",
   CLIENTS: "clients",
   CASES: "cases",
+  CASES_PREVIEW: "casesPreview",
   IMAGE_GALLERY: "imageGallery",
   SECTION_IMAGE: "sectionImage",
   TESTIMONIALS: "testimonials",
