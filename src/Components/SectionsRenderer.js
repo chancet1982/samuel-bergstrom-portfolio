@@ -17,42 +17,42 @@ const SectionsRenderer = ({ sections }) =>
       paddedDown,
       fullScreen,
       horizontal,
-    }) => (
-      horizontal ? 
-      <SectionColorContextProvider key={uuid()}>
-        <HorizontalScrollingSection bgColor={bgColor}>
-        {elements.map(({ data, template }) => (
-            <SectionElementsRenderer
-              key={uuid()}
-              elementKey={uuid()}
-              data={data}
-              template={template}
-            />
-          ))}
-        </HorizontalScrollingSection>
-      </SectionColorContextProvider>
-      :
-      <SectionColorContextProvider key={uuid()}>
-        <Section
-          header={header}
-          sectionTitle={sectionTitle}
-          bgColor={bgColor}
-          isSticky={isSticky}
-          paddedUp={paddedUp}
-          paddedDown={paddedDown}
-          fullScreen={fullScreen}
-        >
-          {elements.map(({ data, template }) => (
-            <SectionElementsRenderer
-              key={uuid()}
-              elementKey={uuid()}
-              data={data}
-              template={template}
-            />
-          ))}
-        </Section>
-      </SectionColorContextProvider>
-    )
+    }) =>
+      horizontal ? (
+        <SectionColorContextProvider key={uuid()}>
+          <HorizontalScrollingSection bgColor={bgColor}>
+            {elements.map(({ data, template }) => (
+              <SectionElementsRenderer
+                key={uuid()}
+                elementKey={uuid()}
+                data={data}
+                template={template}
+              />
+            ))}
+          </HorizontalScrollingSection>
+        </SectionColorContextProvider>
+      ) : (
+        <SectionColorContextProvider key={uuid()}>
+          <Section
+            header={header}
+            sectionTitle={sectionTitle}
+            bgColor={bgColor}
+            isSticky={isSticky}
+            paddedUp={paddedUp}
+            paddedDown={paddedDown}
+            fullScreen={fullScreen}
+          >
+            {elements.map(({ data, template }) => (
+              <SectionElementsRenderer
+                key={uuid()}
+                elementKey={uuid()}
+                data={data}
+                template={template}
+              />
+            ))}
+          </Section>
+        </SectionColorContextProvider>
+      )
   );
 
 export default SectionsRenderer;

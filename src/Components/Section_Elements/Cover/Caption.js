@@ -13,6 +13,7 @@ function Caption({ overline, title, text, h }) {
 
   const captionLineHeight = useTransform(scrollY, effectRange, [1, 1.2]);
   const captionOpacity = useTransform(scrollY, effectRange, [1, 0]);
+  const captionYposition = useTransform(scrollY, effectRange, [0, -200]);
 
   return (
     <>
@@ -20,6 +21,8 @@ function Caption({ overline, title, text, h }) {
         <Overline
           style={{
             opacity: captionOpacity,
+            lineHeight: captionLineHeight,
+            y: captionYposition,
           }}
         >
           {overline}
@@ -31,6 +34,7 @@ function Caption({ overline, title, text, h }) {
         style={{
           opacity: captionOpacity,
           lineHeight: captionLineHeight,
+          y: captionYposition,
         }}
       >
         {text}

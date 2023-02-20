@@ -1,51 +1,63 @@
-import React, { useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useWindowSize } from "react-use";
 import Badge from "../../Shared/Badge";
 import { CursorContext } from "../../../Context/CursorContext";
 import { CASE_STATUS } from "../../../data/dictionaries/CASE_STATUS";
 import Paragraph from "../../Shared/Paragraph";
 import TitleAndText from "../../Shared/TitleAndText";
-import padding from "../../../theme/padding";
+import breakpoints from "../../../theme/breakpoints";
+import { ElementColorContext } from "../../../Context/ElementColorContext";
 
 const StyledCasePreviewThumbnail = styled(motion.div)`
   padding: 4vmin;
-  width: 100%;
-  height: 100%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  width: 100vw;
+  height: 100vh;
   box-sizing: border-box;
+  position: relative;
 
-
-    > a {
-      display:block;
-      width: 100%;
-      height: 100%;
-    }
+  > a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-decoration: none !important;
+  }
 `;
 
-const StyledCasePreviewThumbnailImageAndCaption = styled(motion.div)`
+const StyledCasePreviewThumbnailImage = styled(motion.div)`
   ${({ $imageUrl }) =>
     $imageUrl && {
       backgroundImage: `url(${$imageUrl})`,
       backgroundSize: "cover",
     }}
-          width: 100%;
-      height: 100%;
+  position: absolute;
+  top: 4vmin;
+  right: 4vmin;
+  bottom: 4vmin;
+  left: 4vmin;
 `;
 
 const StyledCasePreviewThumbnailCaption = styled(motion.div)`
   display: flex;
-
-  > div {
-    padding: ${padding.vertical.double} ${padding.horizontal.double};
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+  width: 100%;
+  height: 100%;
 `;
 
 function CasePreviewThumbnail({ data, status, caseUrl }) {
+  const [, setLight] = useContext(ElementColorContext);
+
+  useEffect(() => {
+    setLight(true);
+  }, [setLight]);
+
+  const { width } = useWindowSize();
+  const isMobile = width < breakpoints.desktop;
+
   const [, setCursorText, , setCursorVariant] = useContext(CursorContext);
 
   function casePreviewThumbnailMouseEnter() {
@@ -60,33 +72,53 @@ function CasePreviewThumbnail({ data, status, caseUrl }) {
 
   const { imageUrl, title, text } = data;
 
+  const spring = {
+    type: "spring",
+    damping: 20,
+    stiffness: 100,
+  };
+
+  const thumbnailImageVariants = {
+    normal: {
+      scale: 1,
+      opacity: 1,
+      transition: spring,
+    },
+    hover: {
+      scale: 0.9,
+      opacity: 0.2,
+      transition: spring,
+    },
+  };
+
   return (
     <StyledCasePreviewThumbnail
-      initial="hidden"
-      whileInView="inView"
-      viewport={{ once: true, amount: 0.7 }}
-      transition={{ staggerChildren: 0.2 }}
+      whileHover="hover"
+      animate={isMobile ? "hover" : "normal"}
+      initial="normal"
     >
-    <Link
-      to={caseUrl}
-      onMouseEnter={() => casePreviewThumbnailMouseEnter()}
-      onMouseLeave={() => casePreviewThumbnailMouseLeave()}
-    >
-
-<StyledCasePreviewThumbnailImageAndCaption $imageUrl={imageUrl}>
-      <StyledCasePreviewThumbnailCaption
-        initial="hidden"
-        whileInView="inView"
-        viewport={{ once: true, amount: "some" }}
-        transition={{ staggerChildren: 0.1 }}
+      <Link
+        to={caseUrl}
+        onMouseEnter={() => casePreviewThumbnailMouseEnter()}
+        onMouseLeave={() => casePreviewThumbnailMouseLeave()}
       >
-        <TitleAndText title={title} h={3}>
-          <Paragraph xl>{text}</Paragraph>
-        </TitleAndText>
-      </StyledCasePreviewThumbnailCaption>
-      {status === CASE_STATUS.COMING_SOON && <Badge>COMING SOON!</Badge>}
-    </StyledCasePreviewThumbnailImageAndCaption>
-    </Link>
+        <StyledCasePreviewThumbnailImage
+          variants={thumbnailImageVariants}
+          $imageUrl={imageUrl}
+        />
+
+        <StyledCasePreviewThumbnailCaption
+          initial="hidden"
+          whileInView="inView"
+          viewport={{ once: true, amount: "all" }}
+          transition={{ staggerChildren: 0.1 }}
+        >
+          <TitleAndText title={title} h={2} isCentered>
+            <Paragraph xl>{text}</Paragraph>
+          </TitleAndText>
+        </StyledCasePreviewThumbnailCaption>
+        {status === CASE_STATUS.COMING_SOON && <Badge>COMING SOON!</Badge>}
+      </Link>
     </StyledCasePreviewThumbnail>
   );
 }
