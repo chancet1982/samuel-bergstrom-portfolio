@@ -7,19 +7,14 @@ export const VIEW_CASES = [
   {
     paddedUp: true,
     paddedDown: true,
+    sectionTitle: <>Selected cases</>,
+    isCentered: true,
+    h: 1,
     elements: [
       {
         template: SECTION_ELEMENTS.SPACER,
         data: {
           size: SPACER_SIZES.MEDIUM,
-        },
-      },
-      {
-        template: SECTION_ELEMENTS.TEXTBOX,
-        data: {
-          isCentered: true,
-          title: <>Selected cases</>,
-          h: 1,
         },
       },
       {

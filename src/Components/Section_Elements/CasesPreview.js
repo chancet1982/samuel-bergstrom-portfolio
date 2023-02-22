@@ -39,7 +39,7 @@ function CasesPreview() {
 
   const horizontalScroll = useTransform(
     scrollYProgress,
-    [0.5 / cases.length, 1],
+    [0.72 / cases.length, 1],
     [0, -((cases.length - 1) * viewportWidth)]
   );
 

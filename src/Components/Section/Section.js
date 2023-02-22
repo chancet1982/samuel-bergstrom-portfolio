@@ -8,6 +8,7 @@ import padding from "../../theme/padding";
 import { SectionColorContext } from "../../Context/SectionColorContext";
 import colors from "../../theme/colors";
 import sizes from "../../theme/sizes";
+import breakpoints from "../../theme/breakpoints";
 import Title from "../Shared/Title";
 
 const StyledSection = styled(motion.section)`
@@ -24,14 +25,22 @@ const StyledSection = styled(motion.section)`
 
   ${({ $paddedUp }) =>
     $paddedUp && {
-      paddingTop: padding.vertical.quadruple,
-      /* backgroundColor: "red", */
+      paddingTop: padding.outsideElements.quadruple,
     }}
 
   ${({ $paddedDown }) =>
     $paddedDown && {
-      paddingBottom: padding.vertical.quadruple,
-      /* backgroundColor: "green", */
+      paddingBottom: padding.outsideElements.quadruple,
+    }}
+
+${({ $marginUp }) =>
+    $marginUp && {
+      marginTop: padding.outsideElements.quadruple,
+    }}
+
+  ${({ $marginDown }) =>
+    $marginDown && {
+      marginBottom: padding.outsideElements.quadruple,
     }}
 
   ${({ $fullScreen }) =>
@@ -46,16 +55,32 @@ const StyledSection = styled(motion.section)`
   ${({ $bgColor }) =>
     $bgColor && {
       backgroundColor: $bgColor,
-      paddingTop: padding.vertical.quadruple,
-      paddingBottom: padding.vertical.quadruple,
-      marginTop: padding.vertical.quadruple,
-      marginBottom: padding.vertical.quadruple,
+      paddingTop: padding.outsideElements.quadruple,
+      paddingBottom: padding.outsideElements.quadruple,
     }}
+`;
+
+const StyledSectionTitle = styled(motion.div)`
+  padding-bottom: ${padding.insideElements.double};
+  padding-right: ${padding.outsideElements.double};
+  padding-left: ${padding.outsideElements.double};
+
+  ${({ $isCentered }) =>
+    $isCentered && {
+      textAlign: "center",
+    }}
+
+  @media (min-width: ${breakpoints.desktop}px) {
+    max-width: ${sizes.contentWidthLimit}px;
+    margin: 0 auto;
+  }
 `;
 
 function Section({
   header,
   sectionTitle,
+  isCentered,
+  h,
   children,
   bgColor,
   isSticky,
@@ -85,7 +110,11 @@ function Section({
       $fullScreen={fullScreen}
     >
       {header && !isMobile && <SectionHeader>{header}</SectionHeader>}
-      {sectionTitle && <Title h={1}>{sectionTitle}</Title>}
+      {sectionTitle && (
+        <StyledSectionTitle $isCentered={isCentered}>
+          <Title h={h}>{sectionTitle}</Title>{" "}
+        </StyledSectionTitle>
+      )}
       {children}
     </StyledSection>
   );
@@ -94,6 +123,8 @@ function Section({
 Section.propTypes = {
   header: PropTypes.string,
   sectionTitle: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  isCentered: PropTypes.bool,
+  h: PropTypes.number,
   children: PropTypes.node.isRequired,
   bgColor: PropTypes.string,
   isSticky: PropTypes.bool,
@@ -105,6 +136,8 @@ Section.propTypes = {
 Section.defaultProps = {
   header: null,
   sectionTitle: null,
+  isCentered: false,
+  h: 2,
   bgColor: null,
   isSticky: false,
   paddedUp: false,

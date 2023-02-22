@@ -1,22 +1,22 @@
 import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
-import colors from "../../theme/colors";
+import breakpoints from "../../theme/breakpoints";
 import padding from "../../theme/padding";
+import sizes from "../../theme/sizes";
 import Span from "../Shared/Span";
 
 const StyledFooter = styled(motion.footer)`
-  padding: ${padding.vertical.double} ${padding.horizontal.quadruple};
-  background-color: ${colors.offwhite};
+  padding: ${padding.outsideElements.double}
+    ${padding.outsideElements.quadruple};
   position: relative;
-
-  p {
-    color: ${({
-      theme: {
-        colors: { text },
-      },
-    }) => text.dark.disabled};
-    margin: 0;
+  margin: 0;
+  text-align: center;
+  
+  @media (min-width: ${breakpoints.desktop}px) {
+    max-width: ${sizes.contentWidthLimit}px;
+    margin: 0 auto;
+  }
   }
 `;
 // TODO consider moving to section renderer

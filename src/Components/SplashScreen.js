@@ -11,10 +11,7 @@ import breakpoints from "../theme/breakpoints";
 const StyledSplashScreen = styled(motion.main)`
   display: flex;
   min-height: 100vh;
-  padding-left: ${padding.horizontal.quadruple};
-  padding-right: ${padding.horizontal.quadruple};
-  padding-top: ${padding.vertical.quadruple};
-  padding-bottom: ${padding.vertical.quadruple};
+  padding: ${padding.outsideElements.quadruple};
   box-sizing: border-box;
   background-color: ${colors.offblack};
 

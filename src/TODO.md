@@ -3,9 +3,6 @@ TODO list (What's left before you're done)
 FIXES:
 MOBILE_MENU -> Implement Clickoutside to close.
 MOBILE_MENU -> Implement staggered menulink animations.
-CARD -> left and right padding of 4vw (on mobile)
-CARD_LIST -> remove the padding-left and right from the UL
-BUTTON -> padding top and bottom is too big?
 CaseThumbnail -> Fix better tag for COMING SOON cases.
 FOOTER & CASE_FOOTER -> Clean up padding.
 SECTION_IMAGE: make selectable if you want it to scale down or preserve height

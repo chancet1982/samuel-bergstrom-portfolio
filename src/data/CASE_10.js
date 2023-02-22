@@ -37,12 +37,20 @@ export const CASE_10 = {
   caseStatus: CASE_STATUS.FEATURED,
   caseUrl: SETTINGS.URL,
   thumbnail: {
-    overline: "Price Comparison Service",
-    title: "Increasing traffic to paying customers",
-    text: <>Small change, big impact</>,
-    imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
-    imageAlt: "thumbnail",
     bgColor: SETTINGS.BG_COLOR,
+    caption: {
+      overline: "Price Comparison Service",
+      title: "Increasing revenue",
+      text: (
+        <Paragraph xxl>
+          Increasing traffic <br /> to paying customers
+        </Paragraph>
+      ),
+    },
+    fgImage: {
+      imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
+      mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
+    },
   },
   details: [
     {
@@ -326,29 +334,40 @@ export const CASE_10 = {
           data: {
             title: <>Initial idea: show only affeliated shops</>,
             text: (
-              <>
+              <Paragraph>
+                Its very simple. Hotels.com, booking.com and others are not
+                showing all hotels. It is common practice that comparison sites
+                will only compare prices from sites/stores that they are
+                affeliated with. In such a case, other stores can be hidden
+                behind a link that will either show or hide prices from
+                non-affeliated stores.
+              </Paragraph>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/initial-idea.png`,
+            limitMaxWidth: true,
+            imageAlt:
+              "example of how the site could look with with such a solution",
+            caption:
+              "example of how the site could look with with such a solution",
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            text: (
+              <Note>
                 <Paragraph>
-                  Its very simple. Hotels.com, booking.com and others are not
-                  showing all hotels. It is common practice that comparison
-                  sites will only compare prices from sites/stores that they are
-                  affeliated with. In such a case, other stores can be hidden
-                  behind a link that will either show or hide prices from
-                  non-affeliated stores.
+                  Due to the risk of losing market position and neutrality, it
+                  was decided against this solution. Since then, it seems like
+                  my client went more towards this solution but initially it was
+                  not possible.
                 </Paragraph>
-                <Image
-                  imageUrl={`${SETTINGS.MEDIA_BASE_URL}/initial-idea.png`}
-                  imageAlt="example of how the site could look with with such a solution"
-                  caption="example of how the site could look with with such a solution"
-                />
-                <Note>
-                  <Paragraph>
-                    Due to the risk of losing market position and neutrality, it
-                    was decided against this solution. Since then, it seems like
-                    my client went more towards this solution but initially it
-                    was not possible.
-                  </Paragraph>
-                </Note>
-              </>
+              </Note>
             ),
           },
         },

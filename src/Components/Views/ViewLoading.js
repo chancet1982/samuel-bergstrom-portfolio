@@ -3,13 +3,14 @@ import { motion } from "framer-motion";
 import styled from "styled-components";
 import FullScreenCenteredFlexContainer from "../Shared/FullScreenCenteredFlexContainer";
 import colors from "../../theme/colors";
+import padding from "../../theme/padding";
 
 const LoadingSlider = styled(motion.div)`
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
-  height: 0.25rem;
+  height: ${padding.insideElements.quarter};
   overflow-x: hidden;
 `;
 
@@ -17,14 +18,14 @@ const LoadingLine = styled(motion.div)`
   position: absolute;
   opacity: 0.4;
   background: ${colors.primary};
-  height: 0.25rem;
+  height: ${padding.insideElements.quarter};
 `;
 
 const LoadingSubline = styled(motion.div)`
   position: absolute;
   background: ${colors.primary};
   width: 150%;
-  height: 0.25rem;
+  height: ${padding.insideElements.quarter};
 
   &.inc {
     animation: increase 2s infinite;

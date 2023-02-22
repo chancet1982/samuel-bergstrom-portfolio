@@ -32,12 +32,16 @@ export const CASE_1 = {
   caseStatus: CASE_STATUS.PUBLISHED,
   caseUrl: SETTINGS.URL,
   thumbnail: {
-    overline: "Cash Distribution",
-    title: "Courier App redesign",
-    text: <>Redesign as an oppurtunity for change.</>,
-    imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
-    imageAlt: "thumbnail",
     bgColor: SETTINGS.BG_COLOR,
+    caption: {
+      overline: "Cash Distribution",
+      title: "Courier App redesign",
+      text: <Paragraph xxl>Redesign as an oppurtunity for change.</Paragraph>,
+    },
+    fgImage: {
+      imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
+      mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
+    },
   },
   details: [
     {

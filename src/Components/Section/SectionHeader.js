@@ -13,7 +13,9 @@ const StyledSectionHeader = styled(motion.header)`
   top: 0;
   left: 0;
   display: block;
-  width: calc(50% - ${sizes.contentWidthLimit}px / 2 - ${padding.horizontal.half});
+  width: calc(
+    50% - ${sizes.contentWidthLimit}px / 2 - ${padding.outsideElements.double}
+  );
   text-align: right;
   z-index: -1;
   height: 0;
@@ -22,8 +24,8 @@ const StyledSectionHeader = styled(motion.header)`
     margin: 0;
     line-height: 1;
     display: inline-block;
-    padding-bottom: ${padding.vertical.half};
-    margin-bottom: ${padding.vertical.half};
+    padding-bottom: ${padding.insideElements.half};
+    margin-bottom: ${padding.insideElements.half};
     color: ${({ $light }) =>
       $light ? colors.lighten.medium : colors.darken.medium};
     box-shadow: inset 0px -0.125rem 0px 0rem ${({ $light }) => ($light ? colors.lighten.medium : colors.darken.medium)};

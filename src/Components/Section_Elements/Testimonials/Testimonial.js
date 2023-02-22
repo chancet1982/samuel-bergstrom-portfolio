@@ -7,9 +7,9 @@ import Card from "../../Shared/Card";
 
 const StyledTestimonialContent = styled(motion.div)`
   /* removing the last bit of margin*/
-  > *:first-child {
+  /*> *:first-child {
     margin-top: 0;
-  }
+  }*/
 `;
 
 function Testimonial({ children, author }) {

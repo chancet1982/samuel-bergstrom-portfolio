@@ -10,7 +10,8 @@ import padding from "../../theme/padding";
 import TitleAndText from "../Shared/TitleAndText";
 
 const StyledListOfCards = styled(motion.div)`
-  padding: 0 ${padding.horizontal.double};
+  padding-right: ${padding.outsideElements.double};
+  padding-left: ${padding.outsideElements.double};
 
   @media (max-width: ${breakpoints.tablet}px) {
     overflow-x: hidden;
@@ -30,8 +31,6 @@ const StyledList = styled(motion.ul)`
   padding: 0;
   display: flex;
   width: max-content;
-  padding-left: ${padding.horizontal.double};
-  padding-right: ${padding.horizontal.double};
   cursor: grab;
 `;
 
@@ -39,7 +38,7 @@ const StyledListItem = styled(motion.li)`
   width: ${({ $listItemWidth }) => $listItemWidth};
   min-width: ${({ $listItemWidth }) => $listItemWidth};
 
-  margin-right: ${padding.horizontal.single};
+  margin-right: ${padding.outsideElements.double};
   display: flex;
 
   :last-of-type {

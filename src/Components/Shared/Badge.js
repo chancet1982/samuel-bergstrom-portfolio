@@ -5,6 +5,7 @@ import PropTypes from "prop-types";
 import Span from "./Span";
 import shadows from "../../theme/shadows";
 import colors from "../../theme/colors";
+import padding from "../../theme/padding";
 
 const StyledBadge = styled(motion.div)`
   position: absolute;
@@ -12,7 +13,7 @@ const StyledBadge = styled(motion.div)`
   right: -96px;
   transform: rotate(45deg);
   transform-origin: 0;
-  padding: 0.5rem 4rem;
+  padding: ${padding.insideElements.half} ${padding.insideElements.quadruple};
 
   ${({ $bgColor }) =>
     $bgColor && {

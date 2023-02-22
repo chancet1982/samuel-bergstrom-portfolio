@@ -8,7 +8,7 @@ import Label from "./Shared/Label";
 import Textarea from "./Shared/Textarea";
 
 const StyledDiv = styled(motion.div)`
-  padding-bottom: ${padding.vertical.half};
+  padding-bottom: ${padding.insideElements.single};
 `;
 
 // TODO: (later) provide better styling for the success/error messages

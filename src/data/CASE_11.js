@@ -37,12 +37,24 @@ export const CASE_11 = {
   caseStatus: CASE_STATUS.FEATURED,
   caseUrl: SETTINGS.URL,
   thumbnail: {
-    overline: "Price Comparison Service",
-    title: "Selling non-new products",
-    text: <>Helping stores sell demo, refurbished, and used products</>,
-    imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
-    imageAlt: "thumbnail",
     bgColor: SETTINGS.BG_COLOR,
+    caption: {
+      overline: "Price Comparison Service",
+      title: (
+        <>
+          Non-new <br /> products.
+        </>
+      ),
+      text: (
+        <Paragraph xxl>
+          Helping stores sell demo, <br /> refurbished, and used products
+        </Paragraph>
+      ),
+    },
+    fgImage: {
+      imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
+      mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
+    },
   },
   details: [
     {
@@ -233,7 +245,8 @@ export const CASE_11 = {
                 <Title h={4}>Qualitative research</Title>
                 <Paragraph large>
                   We integrated this as part of our usability testing and asked
-                  participants to point out demo products.<br/>
+                  participants to point out demo products.
+                  <br />
                   <strong>
                     Not a single participant managed to point these out.
                   </strong>

@@ -32,12 +32,16 @@ export const CASE_4 = {
   caseStatus: CASE_STATUS.PUBLISHED,
   caseUrl: SETTINGS.URL,
   thumbnail: {
-    overline: "Logistics",
-    title: "Delivery, unattended",
-    text: <>Home delivery box gets a companion app</>,
-    imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
-    imageAlt: "thumbnail",
     bgColor: SETTINGS.BG_COLOR,
+    caption: {
+      overline: "Logistics",
+      title: "Delivery, unattended",
+      text: <Paragraph xxl>Home delivery box gets a companion app</Paragraph>,
+    },
+    fgImage: {
+      imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
+      mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
+    },
   },
   details: [
     {

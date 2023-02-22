@@ -5,9 +5,11 @@ import Paragraph from "../Components/Shared/Paragraph";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
+import colors from "../theme/colors";
 
 export const VIEW_LANDING_PAGE = [
   {
+    isSticky: true,
     elements: [
       {
         template: SECTION_ELEMENTS.COVER,
@@ -43,16 +45,10 @@ export const VIEW_LANDING_PAGE = [
   },
   {
     paddedUp: true,
+    bgColor: "black",
     elements: [
       {
-        template: SECTION_ELEMENTS.TEXTBOX,
-        data: {
-          isCentered: true,
-          title: <>Latest work</>,
-        },
-      },
-      {
-        template: SECTION_ELEMENTS.CASES,
+        template: SECTION_ELEMENTS.CASES_PREVIEW,
         data: {
           preview: true,
         },
@@ -60,7 +56,7 @@ export const VIEW_LANDING_PAGE = [
     ],
   },
   {
-    paddedUp: true,
+    bgColor: "black",
     elements: [
       {
         template: SECTION_ELEMENTS.IMAGE_GALLERY,
@@ -85,6 +81,7 @@ export const VIEW_LANDING_PAGE = [
     ],
   },
   {
+    bgColor: colors.offblack,
     elements: [
       {
         template: SECTION_ELEMENTS.CASE_FOOTER,

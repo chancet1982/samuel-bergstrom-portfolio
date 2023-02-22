@@ -13,19 +13,13 @@ import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
 import breakpoints from "../../theme/breakpoints";
 
 const StyledBlockQuote = styled(motion.blockquote)`
-  padding: ${padding.vertical.single} ${padding.horizontal.double}
-    ${padding.vertical.single} ${padding.horizontal.quadruple};
-  max-width: ${sizes.contentWidthLimit}px;
+  padding: ${padding.insideElements.single} ${padding.outsideElements.double};
   position: relative;
   box-sizing: border-box;
-  margin-left: ${padding.horizontal.double};
-  margin-right: ${padding.horizontal.double};
-  margin-bottom: ${({ $light }) => ($light ? 0 : padding.vertical.double)};
 
-  @media (min-width: ${breakpoints.mobileLarge}px) {
-    margin: 0 auto;
-    padding: ${padding.vertical.double} ${padding.horizontal.quadruple};
-    margin-bottom: ${({ $light }) => ($light ? 0 : padding.vertical.double)};
+  @media (min-width: ${breakpoints.desktop}px) {
+    max-width: ${sizes.contentWidthLimit}px;
+    margin: ${padding.insideElements.single} auto;
   }
 
   :after {
@@ -33,11 +27,7 @@ const StyledBlockQuote = styled(motion.blockquote)`
     position: absolute;
     top: 0;
 
-    left: ${padding.horizontal.double};
-
-    @media (min-width: ${breakpoints.mobileLarge}px) {
-      left: 6vw; /* TODO: replace magic number */
-    }
+    left: 0;
 
     height: 100%;
     width: 2px;

@@ -199,14 +199,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
     case SECTION_ELEMENTS.CASES_PREVIEW:
       return <CasesPreview key={elementKey} />;
     case SECTION_ELEMENTS.TESTIMONIALS:
-      return (
-        <Testimonials
-          key={elementKey}
-          title={data.title}
-          text={data.text}
-          items={data.items}
-        />
-      );
+      return <Testimonials key={elementKey} />;
     default:
       return null;
   }

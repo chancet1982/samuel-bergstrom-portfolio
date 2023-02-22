@@ -2,8 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
-
-import padding from "../../theme/padding";
 import Span from "./Span";
 import Title from "./Title";
 
@@ -13,8 +11,6 @@ const StyledValueAndLabel = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   text-align: center;
-  padding: ${padding.vertical.double} ${padding.horizontal.double};
-  /*background-color: violet;*/
 `;
 
 /* TODO: Implement this in "FinalResult" as well, for that to happen youll need to control text alignment and padding as prop */

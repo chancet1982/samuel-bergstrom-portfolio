@@ -17,7 +17,9 @@ import padding from "../../theme/padding";
 const StyledTextbox = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  padding: 0 ${padding.horizontal.double};
+  padding-right: ${padding.outsideElements.double};
+  padding-left: ${padding.outsideElements.double};
+  column-gap: ${padding.insideElements.single};
 
   @media (min-width: ${breakpoints.desktop}px) {
     max-width: ${sizes.contentWidthLimit}px;
@@ -113,7 +115,7 @@ function Textbox({
     >
       {flip && imageUrl && renderImage()}
 
-      <TitleAndText h={h} title={title} isPadded isCentered={isCentered}>
+      <TitleAndText h={h} title={title} isCentered={isCentered}>
         {text}
       </TitleAndText>
 

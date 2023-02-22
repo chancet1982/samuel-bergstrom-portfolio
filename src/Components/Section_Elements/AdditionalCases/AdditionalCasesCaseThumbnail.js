@@ -30,7 +30,7 @@ const StyledAdditionalCasesCaseThumbnail = styled(motion.div)`
   }
 
   @media (min-width: ${breakpoints.desktop}px) {
-    height: calc(92vw / 3 - 2 * ${padding.vertical.eighth});
+    height: calc(92vw / 3 - 2 * ${padding.insideElements.quarter});
   }
 
   a {
@@ -44,8 +44,8 @@ const StyledAdditionalCasesCaseThumbnail = styled(motion.div)`
 `;
 
 const StyledAdditionalCasesCaseThumbnailCaption = styled(motion.div)`
-  padding-left: ${padding.horizontal.double};
-  padding-right: ${padding.horizontal.double};
+  padding-left: ${padding.outsideElements.double};
+  padding-right: ${padding.outsideElements.double};
   max-width: ${sizes.contentWidthLimit}px;
   margin: 0 auto;
   position: relative;

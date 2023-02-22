@@ -1,22 +1,16 @@
 const padding = {
-  horizontal: {
-    half: "1vw",
-    single: "2vw",
-    double: "4vw",
-    quadruple: "8vw",
+  outsideElements: {
+    double: "4vmin",
+    quadruple: "8vmin",
   },
-  vertical: {
-    eighth: ".25vh", /* Only used in one place, can most likely be removed */
-    quarter: ".5vh", /* Only used in one place, can most likely be removed */
-    half: "1vh",
-    single: "2vh",
-    double: "4vh",
-    quadruple: "8vh",
+  insideElements: {
+    quarter: "0.25rem",
+    half: "0.5rem",
+    single: "1rem",
+    double: "2rem",
+    tripple: "3rem",
+    quadruple: "4rem",
   },
-  rem: {
-    single: "1.5rem",
-    double: "3rem"
-  }
 };
 
 export default padding;

@@ -22,8 +22,8 @@ const StyledNav = styled(motion.nav)`
   top: 0;
   background-color: transparent;
   width: 100%;
-  padding-left: ${padding.horizontal.quadruple};
-  padding-right: ${padding.horizontal.quadruple};
+  padding-left: ${padding.outsideElements.double};
+  padding-right: ${padding.outsideElements.double};
   z-index: 2;
   box-sizing: border-box;
   display: flex;

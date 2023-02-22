@@ -14,8 +14,8 @@ import breakpoints from "../../theme/breakpoints";
 import sizes from "../../theme/sizes";
 
 const StyledAdditionalCases = styled(motion.div)`
-  padding-right: ${padding.horizontal.double};
-  padding-left: ${padding.horizontal.double};
+  padding-right: ${padding.outsideElements.double};
+  padding-left: ${padding.outsideElements.double};
 
   @media (min-width: ${breakpoints.desktop}px) {
     > div:first-of-type {
@@ -28,8 +28,8 @@ const StyledAdditionalCases = styled(motion.div)`
 const StyledCasesList = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  column-gap: 0.25rem;
-  row-gap: 0.25rem;
+  column-gap: 0.5rem;
+  row-gap: 0.5rem;
 
   @media (min-width: ${breakpoints.desktop}px) {
     grid-template-columns: repeat(3, 1fr);

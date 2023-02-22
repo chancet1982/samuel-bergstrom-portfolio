@@ -31,12 +31,21 @@ export const CASE_3 = {
   caseStatus: CASE_STATUS.PUBLISHED,
   caseUrl: SETTINGS.URL,
   thumbnail: {
-    overline: "Healthcare",
-    title: "Disrupting tech. digital pathology",
-    text: <>Tissue scanner interface design</>,
-    imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
-    imageAlt: "thumbnail",
     bgColor: SETTINGS.BG_COLOR,
+    caption: {
+      overline: "Healthcare",
+      title: (
+        <>
+          Digital
+          <br /> pathology
+        </>
+      ),
+      text: <Paragraph xxl>Tissue scanner interface design</Paragraph>,
+    },
+    fgImage: {
+      imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
+      mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
+    },
   },
   details: [
     {
@@ -47,7 +56,12 @@ export const CASE_3 = {
             bgColor: SETTINGS.BG_COLOR,
             caption: {
               overline: "Healthcare",
-              title: "Digital pathology",
+              title: (
+                <>
+                  Digital
+                  <br /> pathology
+                </>
+              ),
               text: <Paragraph xxl>Tissue scanner interface design</Paragraph>,
             },
             fgImage: {

@@ -42,7 +42,18 @@ const StyledAnchorLink = styled(motion.a)`
   }
 `;
 
-function Link({ small, large, xl, xxl, children, to, href, ...rest }) {
+function Link({
+  small,
+  large,
+  xl,
+  xxl,
+  children,
+  to,
+  href,
+  onMouseEnter,
+  onMouseLeave,
+  ...rest
+}) {
   const light = useBgColor();
 
   const mapSizeToNumber = () => {
@@ -60,6 +71,8 @@ function Link({ small, large, xl, xxl, children, to, href, ...rest }) {
       $fluidType={fluidType}
       $light={light}
       variants={textVariants}
+      onMouseEnter={onMouseEnter ? () => onMouseEnter() : null}
+      onMouseLeave={onMouseEnter ? () => onMouseLeave() : null}
       {...rest}
     >
       {children}
@@ -72,6 +85,8 @@ function Link({ small, large, xl, xxl, children, to, href, ...rest }) {
       target="_blank"
       rel="noopener noreferrer"
       variants={textVariants}
+      onMouseEnter={onMouseEnter ? () => onMouseEnter() : null}
+      onMouseLeave={onMouseEnter ? () => onMouseLeave() : null}
       {...rest}
     >
       {children}
@@ -87,6 +102,8 @@ Link.propTypes = {
   children: PropTypes.node.isRequired,
   to: PropTypes.string,
   href: PropTypes.string,
+  onMouseEnter: PropTypes.func,
+  onMouseLeave: PropTypes.func,
 };
 
 Link.defaultProps = {
@@ -96,6 +113,8 @@ Link.defaultProps = {
   xxl: false,
   to: null,
   href: null,
+  onMouseEnter: null,
+  onMouseLeave: null,
 };
 
 export default Link;

@@ -40,12 +40,16 @@ export const CASE_7 = {
   caseStatus: CASE_STATUS.FEATURED,
   caseUrl: SETTINGS.URL,
   thumbnail: {
-    overline: "Global fitness chain",
-    title: "e-Commerce Prestudy & concept",
-    text: <>Exploring potential service and product offering</>,
-    imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
-    imageAlt: "thumbnail",
     bgColor: SETTINGS.BG_COLOR,
+    caption: {
+      overline: "Global fitness chain",
+      title: "pre-study",
+      text: <Paragraph xxl>When fitness meets ecommerce</Paragraph>,
+    },
+    fgImage: {
+      imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
+      mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
+    },
   },
   details: [
     {
@@ -57,7 +61,7 @@ export const CASE_7 = {
             caption: {
               overline: "Global fitness chain",
               title: "pre-study",
-              text: <Paragraph xxl>Service and product offering</Paragraph>,
+              text: <Paragraph xxl>When fitness meets ecommerce</Paragraph>,
             },
             fgImage: {
               imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,

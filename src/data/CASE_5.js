@@ -31,12 +31,25 @@ export const CASE_5 = {
   caseStatus: CASE_STATUS.PUBLISHED,
   caseUrl: SETTINGS.URL,
   thumbnail: {
-    overline: "Renal Care",
-    title: "Self service Kiosk",
-    text: <>Speeding up admissions and discharge in dialysis clinics.</>,
-    imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
-    imageAlt: "thumbnail",
     bgColor: SETTINGS.BG_COLOR,
+    caption: {
+      overline: "Renal Care",
+      title: (
+        <>
+          Self-service
+          <br /> Kiosk
+        </>
+      ),
+      text: (
+        <Paragraph xxl>
+          Speeding up admissions and discharge in dialysis clinics.
+        </Paragraph>
+      ),
+    },
+    fgImage: {
+      imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
+      mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
+    },
   },
   details: [
     {
@@ -47,7 +60,12 @@ export const CASE_5 = {
             bgColor: SETTINGS.BG_COLOR,
             caption: {
               overline: "Renal Care",
-              title: "Self service Kiosk",
+              title: (
+                <>
+                  Self-service
+                  <br /> Kiosk
+                </>
+              ),
               text: (
                 <Paragraph xxl>
                   Speeding up admissions and discharge in dialysis clinics.

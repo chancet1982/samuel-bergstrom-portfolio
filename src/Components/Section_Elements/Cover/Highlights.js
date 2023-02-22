@@ -12,9 +12,12 @@ const StyledHighlights = styled(motion.div)`
   position: relative;
   display: grid;
   grid-template-columns: repeat(${({ $columns }) => $columns}, 1fr);
-  padding-left: ${padding.horizontal.double};
-  padding-right: ${padding.horizontal.double};
+  padding-left: ${padding.outsideElements.double};
+  padding-right: ${padding.outsideElements.double};
+  column-gap: ${padding.insideElements.single};
 
+  padding-top: ${padding.outsideElements.double};
+  padding-bottom: ${padding.outsideElements.double};
   > div {
     align-items: flex-start;
     justify-content: flex-start;

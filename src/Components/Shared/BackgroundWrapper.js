@@ -25,8 +25,8 @@ const StyledBackground = styled(motion.div)`
 
   ${({ $bgMedia, $bgColor, $isPadded }) =>
     (($bgMedia && $isPadded) || ($bgColor && $isPadded)) && {
-      paddingTop: padding.vertical.double,
-      paddingBottom: padding.vertical.double,
+      paddingTop: padding.outsideElements.double,
+      paddingBottom: padding.outsideElements.double,
     }}
 
   @media (min-width: ${breakpoints.desktop}px) {

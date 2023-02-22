@@ -16,8 +16,8 @@ const StyledImageWithCaption = styled(motion.figure)`
 const StyledCaption = styled(motion.figcaption)`
   text-align: center;
 
-  padding: ${padding.vertical.half} ${padding.horizontal.double}
-    ${padding.vertical.single};
+  padding: ${padding.insideElements.half} ${padding.outsideElements.double}
+    ${padding.insideElements.single};
 
   color: ${({
     theme: {

@@ -7,14 +7,14 @@ import TitleAndText from "../Shared/TitleAndText";
 import breakpoints from "../../theme/breakpoints";
 import Paragraph from "../Shared/Paragraph";
 import padding from "../../theme/padding";
-import colors from "../../theme/colors";
 import sizes from "../../theme/sizes";
 import Button from "../Shared/Button";
 
 const StyledTimelineWrapper = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  padding: 0 ${padding.horizontal.double};
+  padding-right: ${padding.outsideElements.double};
+  padding-left: ${padding.outsideElements.double};
   margin: 0;
 
   @media (min-width: ${breakpoints.desktop}px) {
@@ -25,7 +25,9 @@ const StyledTimelineWrapper = styled(motion.div)`
   > button {
     margin: 0 auto;
     width: 100%;
-    max-width: calc(${breakpoints.mobile}px - 2 * ${padding.horizontal.double});
+    max-width: calc(
+      ${breakpoints.mobile}px - 2 * ${padding.outsideElements.double}
+    );
     align-self: center;
     justify-self: center;
   }
@@ -38,8 +40,7 @@ const StyledTimeline = styled(motion.dl)`
 const StyledTimelineItemYear = styled(motion.div)`
   grid-column: 1 / span 1;
   align-items: flex-end;
-  padding-right: ${padding.horizontal.single};
-  padding-left: ${padding.horizontal.double};
+
   width: fit-content;
   box-sizing: border-box;
 
@@ -52,28 +53,18 @@ const StyledTimelineItemYear = styled(motion.div)`
 const StyledTimelineItemEvents = styled(motion.div)`
   grid-column: 2 / span 1;
   align-items: flex-start;
-  padding-right: ${padding.horizontal.double};
   box-sizing: border-box;
-
-  @media (max-width: ${breakpoints.mobileLarge - 1}px) {
-    padding-left: ${padding.horizontal.double};
-  }
 
   @media (min-width: ${breakpoints.desktop}px) {
     width: calc(${sizes.contentWidthLimit}px * 0.8);
   }
 
   > div {
-    margin-bottom: ${padding.vertical.half};
+    margin-bottom: ${padding.insideElements.half};
 
     p {
       margin: 0;
     }
-  }
-
-  /* removing the last bit of margin*/
-  > *:first-child {
-    margin-top: 0;
   }
 `;
 
@@ -106,22 +97,15 @@ TimelineItemEvent.propTypes = {
 
 const StyledTimelineItem = styled(motion.dt)`
   position: relative;
-  padding-top: calc(${padding.vertical.single});
-  padding-bottom: calc(${padding.vertical.single});
+  padding-top: calc(${padding.insideElements.single});
+  padding-bottom: calc(${padding.insideElements.single});
 
   @media (min-width: ${breakpoints.mobileLarge}px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /*border-top: solid 1px
-    ${({ light }) => (light ? colors.lighten.medium : colors.darken.medium)};*/
-
   :last-of-type {
-    /*border-bottom: solid 1px
-      ${({ light }) =>
-      light ? colors.lighten.medium : colors.darken.medium};*/
-
     ::after {
       content: "";
       position: absolute;

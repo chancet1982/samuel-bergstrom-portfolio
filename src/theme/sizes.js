@@ -3,7 +3,7 @@ const sizes = {
   medium: "36vh",
   large: "48vh",
   xl: "92vh",
-  contentWidthLimit: 1280,
+  contentWidthLimit: 1440,
   sectionHeaderWidthLimit: 400,
 };
 

@@ -24,6 +24,7 @@ const useFluidTypography = (h = 1, withMargin = true) => {
 
   const currentFontSize = magnify(size, getMod(width), 6 - h);
   const currentLineHeight = decrease(lh, inc, 6 - h);
+  const currentMarginTop = h === 1 ? 0.32 : currentLineHeight * 0.75;
 
   return `
     font-size: ${currentFontSize}rem;
@@ -31,7 +32,7 @@ const useFluidTypography = (h = 1, withMargin = true) => {
     ${
       withMargin
         ? `
-    margin-top: ${currentLineHeight}em;
+    margin-top: ${currentMarginTop}em;
     margin-bottom: 0;
     `
         : ` margin-top: 0; margin-bottom: 0;

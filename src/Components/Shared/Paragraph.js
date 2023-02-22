@@ -19,7 +19,8 @@ const StyledParagraph = styled(motion.p)`
       : $highContrast
       ? colors.text.dark.high
       : colors.text.dark.medium};
-
+  font-weight: 300;
+  font-stretch: 112%;
   max-width: 80ch;
   ${({ $fluidType }) => $fluidType};
   font-family: ${typography.bodyFont};

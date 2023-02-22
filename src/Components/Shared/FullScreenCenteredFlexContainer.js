@@ -10,10 +10,7 @@ const FullScreenCenteredFlexContainer = styled(motion.div)`
   justify-content: center;
   flex-direction: column;
   background-color: ${({ bgColor }) => bgColor};
-  padding-left: ${padding.horizontal.quadruple};
-  padding-right: ${padding.horizontal.quadruple};
-  padding-top: ${padding.vertical.quadruple};
-  padding-bottom: ${padding.vertical.quadruple};
+  padding: ${padding.outsideElements.double};
 `;
 
 export default FullScreenCenteredFlexContainer;

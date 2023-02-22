@@ -10,15 +10,24 @@ import Link from "../Shared/Link";
 import sizes from "../../theme/sizes";
 import { CursorContext } from "../../Context/CursorContext";
 import BackgroundWrapper from "../Shared/BackgroundWrapper";
+import colors from "../../theme/colors";
 
 const StyledCaseFooter = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  padding: 0 ${padding.horizontal.double};
 
+  padding-left: ${padding.outsideElements.double};
+  padding-right: ${padding.outsideElements.double};
+  column-gap: ${padding.insideElements.single};
+  row-gap: ${padding.insideElements.single};
+  padding-bottom: ${padding.insideElements.double};
   @media (min-width: ${breakpoints.desktop}px) {
     max-width: ${sizes.contentWidthLimit}px;
     margin: 0 auto;
+  }
+
+  button {
+    margin-top: 3rem;
   }
 
   > div:first-of-type {
@@ -44,13 +53,10 @@ const StyledLinksMenu = styled(motion.div)`
   justify-content: center;
   align-items: center;
 
-  padding-left: ${padding.horizontal.double};
-  padding-right: ${padding.horizontal.double};
-
   a {
     display: block;
     width: 100%;
-    padding: ${padding.vertical.quarter} 0;
+    padding: ${padding.insideElements.quarter} 0;
     box-sizing: border-box;
   }
 `;
@@ -69,7 +75,7 @@ function CaseFooter() {
   }
 
   return (
-    <BackgroundWrapper bgColor="white">
+    <BackgroundWrapper bgColor={colors.lighten.low}>
       <StyledCaseFooter
         initial="hidden"
         whileInView="inView"
@@ -77,7 +83,7 @@ function CaseFooter() {
         transition={{ staggerChildren: 0.2 }}
       >
         <TitleAndText h={3} title="Let's get in touch" isPadded>
-          <Paragraph>Found me interesting? Let’s talk</Paragraph>
+          <Paragraph xl>Found me interesting? Let’s talk</Paragraph>
 
           <Button
             to="/contact"

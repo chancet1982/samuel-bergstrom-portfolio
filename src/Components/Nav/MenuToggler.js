@@ -5,14 +5,15 @@ import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import colors from "../../theme/colors";
 import { MenuExpandedContext } from "../../Context/MenuExpandedContext";
+import padding from "../../theme/padding";
 
 const StyledMenuToggler = styled(motion.a)`
-  width: 48px;
-  height: 48px;
+  width: ${padding.insideElements.tripple};
+  height: ${padding.insideElements.tripple};
   box-sizing: border-box;
   align-self: center;
   margin: 0;
-  right: 4vw;
+  right: ${padding.outsideElements.double};
   transform: rotate(0deg);
   transition: 0.5s ease-in-out;
   cursor: pointer;
@@ -22,9 +23,9 @@ const StyledMenuToggler = styled(motion.a)`
   span {
     display: block;
     position: absolute;
-    height: 4px;
+    height: ${padding.insideElements.quarter};
     border-radius: 2px;
-    width: 32px;
+    width: ${padding.insideElements.double};
     margin: 0 auto;
     background: ${({ $isLight }) =>
       $isLight ? colors.text.light.high : colors.text.dark.high};

@@ -17,18 +17,12 @@ const StyledKeyFigures = styled(motion.div)`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  border-top: 1px solid ${colors.darken.medium};
-  border-bottom: 1px solid ${colors.darken.medium};
-  /*box-sizing: border-box;*/
 
-  /*> div {
-    flex: 1;
-  }*/
-
-  padding: ${({ bgColor }) =>
-    bgColor
-      ? `${padding.vertical.double} ${padding.horizontal.double}`
-      : `0 ${padding.horizontal.double}`};
+  ${({ $bgColor }) =>
+    $bgColor && {
+      paddingTop: padding.outsideElements.double,
+      paddingBottom: padding.outsideElements.double,
+    }}
 
   @media (min-width: ${breakpoints.mobileLarge}px) {
     flex-direction: row;

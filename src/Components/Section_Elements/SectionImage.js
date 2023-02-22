@@ -16,22 +16,21 @@ const StyledSectionImage = styled(motion.div)`
       }}
   }
 
-  /* TODO: align all elementHorizontalPadding in this way */
   ${({ $isPadded }) =>
     $isPadded && {
-      paddingRight: padding.horizontal.double,
-      paddingLeft: padding.horizontal.double,
+      paddingRight: padding.outsideElements.double,
+      paddingLeft: padding.outsideElements.double,
     }}
 
   ${({ $paddedUp }) =>
     $paddedUp && {
-      paddingTop: padding.vertical.double,
+      paddingTop: padding.insideElements.double,
       /* backgroundColor: "yellow", */
     }}
 
 ${({ $paddedDown }) =>
     $paddedDown && {
-      paddingBottom: padding.vertical.double,
+      paddingBottom: padding.insideElements.double,
       /* backgroundColor: "blue", */
     }}
 `;

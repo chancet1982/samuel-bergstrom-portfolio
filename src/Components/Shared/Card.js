@@ -6,6 +6,7 @@ import padding from "../../theme/padding";
 import useBgColor from "../../utils/useBgColor";
 import colors from "../../theme/colors";
 import { cardVariants } from "../../animations/animations";
+import breakpoints from "../../theme/breakpoints";
 
 const StyledCard = styled(motion.div)`
   background-color: ${({ $light }) => ($light ? colors.lighten.low : "white")};
@@ -23,7 +24,16 @@ const StyledCardMedia = styled(motion.div)`
 `;
 
 const StyledCardContent = styled(motion.div)`
-  padding: ${padding.vertical.single} ${padding.horizontal.single};
+  padding: ${padding.insideElements.single} ${padding.insideElements.single};
+
+  @media (min-width: ${breakpoints.mobileLarge}px) and (max-width: ${breakpoints.desktop -
+    1}px) {
+    padding: ${padding.insideElements.double} ${padding.insideElements.double};
+  }
+
+  @media (min-width: ${breakpoints.desktop}px) {
+    padding: ${padding.insideElements.tripple} ${padding.insideElements.tripple};
+  }
 `;
 
 function Card({ children, mediaUrl }) {

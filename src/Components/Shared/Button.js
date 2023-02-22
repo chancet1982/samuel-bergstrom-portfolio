@@ -11,20 +11,20 @@ import useFluidTypography from "../../utils/useBodyFluidTypography";
 import { formElementsVariants } from "../../animations/animations";
 
 const StyledButton = styled(motion.button)`
-  padding: ${padding.vertical.half} ${padding.horizontal.quadruple};
+  padding: ${padding.insideElements.single} ${padding.insideElements.double};
   background-color: ${({ $secondary }) =>
-    $secondary ? "white" : colors.primary};
+    $secondary ? "transparent" : colors.primary};
   color: ${({ $secondary }) =>
     $secondary ? colors.primary : colors.text.light.high};
   border: ${({ $secondary }) =>
     $secondary ? `solid 1px ${colors.primary}` : `solid 1px transparent`};
   ${shadows.short};
-  border-radius: 0.25rem;
+  border-radius: ${padding.insideElements.double};
   transition: all 0.3s;
   cursor: pointer;
   text-transform: uppercase;
   font-weight: 600;
-  padding: 1rem 1.5rem;
+
   ${({ $fluidType }) => $fluidType};
 
   &:hover {

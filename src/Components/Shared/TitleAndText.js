@@ -9,32 +9,23 @@ import sizes from "../../theme/sizes";
 
 const StyledTitleAndText = styled(motion.div)`
   /*background: orange;*/
-  /* removing the last bit of margin*/
-  > *:first-child {
-    margin-top: 0;
-  }
-
-  ${({ $isPadded }) =>
-    $isPadded && {
-      padding: `${padding.vertical.double} ${padding.horizontal.double}`,
-    }}
 
   ${({ $paddedUp }) =>
     $paddedUp && {
-      paddingTop: padding.vertical.double,
+      paddingTop: padding.outsideElements.double,
       /* backgroundColor: "yellow", */
     }}
 
-${({ $paddedDown }) =>
+  ${({ $paddedDown }) =>
     $paddedDown && {
-      paddingBottom: padding.vertical.double,
+      paddingBottom: padding.outsideElements.double,
       /* backgroundColor: "blue", */
     }}
 
   ${({ $isSticky }) =>
     $isSticky && {
       position: "sticky",
-      top: "6vw",
+      top: "6vw" /* TODO: replace magic number */,
       height: "fit-content",
     }}
 

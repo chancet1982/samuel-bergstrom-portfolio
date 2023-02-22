@@ -24,6 +24,8 @@ const StyledCaseThumbnail = styled(motion.div)`
     :nth-of-type(2n + 1) {
       a > div > div:first-of-type {
         grid-area: b;
+        padding-right: ${padding.outsideElements.double};
+        padding-left: ${padding.outsideElements.double};
       }
 
       a > div > div:last-of-type {
@@ -34,6 +36,8 @@ const StyledCaseThumbnail = styled(motion.div)`
     :nth-of-type(2n + 2) {
       a > div > div:first-of-type {
         grid-area: a;
+        padding-right: ${padding.outsideElements.double};
+        padding-left: ${padding.outsideElements.double};
       }
 
       a > div > div:last-of-type {
@@ -71,6 +75,7 @@ const StyledRollup = styled(motion.div)`
 const StyledCaseThumbnailImageAndCaption = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
+  column-gap: ${padding.insideElements.single};
   position: relative;
   overflow: hidden;
 
@@ -90,7 +95,6 @@ const StyledCaseThumbnailCaption = styled(motion.div)`
   display: flex;
 
   > div {
-    padding: ${padding.vertical.double} ${padding.horizontal.double};
     display: flex;
     flex-direction: column;
     justify-content: center;

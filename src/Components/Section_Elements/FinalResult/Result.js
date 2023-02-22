@@ -7,7 +7,7 @@ import Title from "../../Shared/Title";
 import padding from "../../../theme/padding";
 
 const StyledResult = styled(motion.div)`
-  margin-bottom: ${padding.vertical.half};
+  margin-bottom: ${padding.insideElements.half};
 `;
 
 function Result({ value, description }) {

@@ -11,6 +11,8 @@ const SectionsRenderer = ({ sections }) =>
       elements,
       header,
       sectionTitle,
+      isCentered,
+      h,
       bgColor,
       isSticky,
       paddedUp,
@@ -36,6 +38,8 @@ const SectionsRenderer = ({ sections }) =>
           <Section
             header={header}
             sectionTitle={sectionTitle}
+            isCentered={isCentered}
+            h={h}
             bgColor={bgColor}
             isSticky={isSticky}
             paddedUp={paddedUp}

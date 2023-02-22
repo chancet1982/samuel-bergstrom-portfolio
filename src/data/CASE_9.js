@@ -34,12 +34,26 @@ export const CASE_9 = {
   caseStatus: CASE_STATUS.FEATURED,
   caseUrl: SETTINGS.URL,
   thumbnail: {
-    overline: "Price Comparison Service",
-    title: "Invisible redesign",
-    text: <>Creating a shortcut between users and products</>,
-    imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
-    imageAlt: "thumbnail",
     bgColor: SETTINGS.BG_COLOR,
+    caption: {
+      overline: "Price Comparison Service",
+      title: (
+        <>
+          Invisible
+          <br /> redesign
+        </>
+      ),
+      text: (
+        <Paragraph xxl>
+          Creating a shortcut between
+          <br /> users and products
+        </Paragraph>
+      ),
+    },
+    fgImage: {
+      imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
+      mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
+    },
   },
   details: [
     {

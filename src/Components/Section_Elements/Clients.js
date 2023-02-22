@@ -10,10 +10,8 @@ import sizes from "../../theme/sizes";
 import Image from "../Shared/Image";
 
 const StyledClients = styled(motion.div)`
-  margin-left: ${padding.horizontal.quadruple};
-  margin-right: ${padding.horizontal.quadruple};
-  padding-left: ${padding.horizontal.double};
-  padding-right: ${padding.horizontal.double};
+  padding-left: ${padding.outsideElements.double};
+  padding-right: ${padding.outsideElements.double};
   box-sizing: border-box;
   max-width: ${sizes.contentWidthLimit}px;
   margin: 0 auto;

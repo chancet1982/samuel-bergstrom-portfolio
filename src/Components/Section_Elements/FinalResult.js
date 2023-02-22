@@ -16,6 +16,7 @@ import colors from "../../theme/colors";
 const StyledFinalResultContent = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  column-gap: ${padding.insideElements.single};
 
   @media (max-width: ${breakpoints.desktop - 1}px) {
     > div,
@@ -25,7 +26,7 @@ const StyledFinalResultContent = styled(motion.div)`
   }
 
   > img {
-    padding-top: ${padding.vertical.double};
+    padding-top: ${padding.insideElements.double};
     position: sticky;
     top: -32vh;
   }
@@ -33,7 +34,6 @@ const StyledFinalResultContent = styled(motion.div)`
   @media (min-width: ${breakpoints.desktop}px) {
     > img {
       grid-column: 1 / span 2;
-      padding: ${padding.vertical.quadruple} ${padding.horizontal.double};
     }
 
     > div {
@@ -47,12 +47,9 @@ const StyledFinalResultContent = styled(motion.div)`
 const StyledFinalResult = styled(motion.div)``;
 
 const StyledResultCaption = styled(motion.div)`
-  padding: ${padding.vertical.double} ${padding.horizontal.quadruple};
+  padding-left: ${padding.outsideElements.double};
+  padding-right: ${padding.outsideElements.double};
   z-index: 1;
-
-  @media (min-width: ${breakpoints.desktop}px) {
-    padding: ${padding.vertical.quadruple} ${padding.horizontal.double};
-  }
 
   box-sizing: border-box;
 

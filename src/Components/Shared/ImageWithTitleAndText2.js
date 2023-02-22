@@ -10,11 +10,6 @@ import { textVariants } from "../../animations/animations";
 import sizes from "../../theme/sizes";
 
 const StyledTitleAndText = styled(motion.div)`
-  ${({ $isPadded }) =>
-    $isPadded && {
-      padding: `${padding.vertical.double} ${padding.horizontal.double}`,
-      /* backgroundColor: "green", */
-    }}
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -36,7 +31,9 @@ const StyledImageWithTitleAndText = styled(motion.div)`
   max-width: ${sizes.contentWidthLimit}px;
   margin: 0 auto;
   grid-template-areas: "a b";
-  padding: 0 ${padding.horizontal.double};
+  padding-left: ${padding.outsideElements.double};
+  padding-right: ${padding.outsideElements.double};
+  column-gap: ${padding.insideElements.single};
 
   @media (max-width: ${breakpoints.mobileLarge - 1}px) {
     position: relative;
@@ -77,18 +74,14 @@ function ImageWithTitleAndText({ imageUrl, title, text, flip }) {
       {flip ? (
         <>
           <StyledImage $imageUrl={imageUrl} $flip />
-          <StyledTitleAndText
-            $isPadded
-            style={{ gridArea: "b" }}
-            variants={textVariants}
-          >
+          <StyledTitleAndText style={{ gridArea: "b" }} variants={textVariants}>
             <Title h={3}>{title}</Title>
             {text}
           </StyledTitleAndText>
         </>
       ) : (
         <>
-          <StyledTitleAndText $isPadded variants={textVariants}>
+          <StyledTitleAndText variants={textVariants}>
             <Title h={3}>{title}</Title>
             {text}
           </StyledTitleAndText>

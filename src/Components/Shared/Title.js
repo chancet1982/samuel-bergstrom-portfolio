@@ -11,12 +11,14 @@ import typography from "../../theme/typography";
 import { textVariants } from "../../animations/animations";
 
 const headlineFont = `
-font-weight: 600;
+font-weight: 800;
+font-stretch: 125%;
 font-family: ${typography.headlineFont};
 `;
 
 export const StyledH1 = styled(motion.h1)`
   max-width: 16ch;
+  text-transform: uppercase;
   color: ${({ $light }) =>
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
@@ -25,6 +27,7 @@ export const StyledH1 = styled(motion.h1)`
 
 export const StyledH2 = styled(motion.h2)`
   max-width: 40ch;
+  text-transform: uppercase;
   color: ${({ $light }) =>
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
@@ -33,6 +36,7 @@ export const StyledH2 = styled(motion.h2)`
 
 export const StyledH3 = styled(motion.h3)`
   max-width: 40ch;
+  text-transform: uppercase;
   color: ${({ $light }) =>
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
@@ -55,11 +59,10 @@ export const StyledH5 = styled(motion.h5)`
   ${headlineFont}
 `;
 
-/* TODO: Headlines dont seem to support withMargins. It should be flipped and hasMargins */
-function Title({ h, children, withMargin, isLight, ...rest }) {
+function Title({ h, children, isLight, ...rest }) {
   const light = useBgColor() || isLight;
 
-  const fluidType = useFluidTypography(h, withMargin);
+  const fluidType = useFluidTypography(h);
 
   const renderTitle = () => {
     switch (h) {
@@ -146,14 +149,12 @@ function Title({ h, children, withMargin, isLight, ...rest }) {
 Title.propTypes = {
   h: PropTypes.number,
   children: PropTypes.node,
-  withMargin: PropTypes.bool,
   isLight: PropTypes.bool,
 };
 
 Title.defaultProps = {
   h: 1,
   children: null,
-  withMargin: true,
   isLight: false,
 };
 

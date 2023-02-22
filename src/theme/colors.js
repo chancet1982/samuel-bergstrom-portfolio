@@ -2,13 +2,13 @@
 const colors = {
   text: {
     dark: {
-      high: "rgba(0, 0, 0, 0.88)",
-      medium: "rgba(0, 0, 0, 0.64)",
+      high: "#333333",
+      medium: "#555555",
       disabled: "rgba(0, 0, 0, 0.48)",
     },
     light: {
       medium: "rgba(255, 255, 255, 0.64)",
-      high: "rgba(255, 255, 255, 0.88)",
+      high: "white",
       disabled: "rgba(255, 255, 255, 0.48)",
     },
   },

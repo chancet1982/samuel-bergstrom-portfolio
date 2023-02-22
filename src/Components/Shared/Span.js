@@ -19,6 +19,8 @@ const StyledSpan = styled(motion.span)`
       : $highContrast
       ? colors.text.dark.high
       : colors.text.dark.medium};
+  font-weight: 300;
+  font-stretch: 112%;
 
   ${({ $fluidType }) => $fluidType};
   font-family: ${typography.bodyFont};
@@ -54,8 +56,8 @@ function Span({
   return (
     <StyledSpan
       $light={light}
-      $fluidType={fluidType}
       $highContrast={highContrast}
+      $fluidType={fluidType}
       variants={textVariants}
       {...rest}
     >

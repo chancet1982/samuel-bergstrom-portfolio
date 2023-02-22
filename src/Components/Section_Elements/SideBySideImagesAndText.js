@@ -11,8 +11,9 @@ import sizes from "../../theme/sizes";
 const StyledSideBySideImagesAndText = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(${({ $itemsLength }) => $itemsLength}, 1fr);
-  column-gap: ${padding.vertical.double};
-  padding: 0 ${padding.horizontal.double};
+  padding-left: ${padding.outsideElements.double};
+  padding-right: ${padding.outsideElements.double};
+  column-gap: ${padding.insideElements.single};
 
   @media (min-width: ${breakpoints.desktop}px) {
     ${({ $limitMaxWidth }) =>
@@ -22,8 +23,8 @@ const StyledSideBySideImagesAndText = styled(motion.div)`
       }}
   }
 
-  > div div {
-    padding-top: ${padding.vertical.single};
+  > div {
+    padding-top: ${padding.insideElements.single};
   }
 
   > div:nth-of-type(1) {

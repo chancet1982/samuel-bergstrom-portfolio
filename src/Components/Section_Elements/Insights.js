@@ -15,26 +15,20 @@ import BackgroundWrapper from "../Shared/BackgroundWrapper";
 const StyledInsights = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  padding: 0 ${padding.horizontal.double};
-
-  /*> div:first-of-type {
-    padding-top: 0;
-    padding-bottom: 0;
-  }*/
+  padding-right: ${padding.outsideElements.double};
+  padding-left: ${padding.outsideElements.double};
 
   @media (min-width: ${breakpoints.desktop}px) {
     max-width: ${sizes.contentWidthLimit}px;
     margin: 0 auto;
-    padding: ${padding.vertical.double} ${padding.horizontal.double};
   }
 `;
 
 const StyledInsightsContent = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  column-gap: ${padding.vertical.single};
-  row-gap: ${padding.vertical.single};
-  padding: 0 ${padding.horizontal.double};
+  column-gap: ${padding.insideElements.single};
+  row-gap: ${padding.insideElements.single};
 
   @media (min-width: ${breakpoints.mobileLarge}px) and (max-width: ${breakpoints.desktop -
     1}px) {

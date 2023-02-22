@@ -9,13 +9,13 @@ import { SPACER_SIZES } from "../../data/dictionaries/SPACER_SIZES";
 const StyledSpacer = styled(motion.div)`
   ${({ $size }) =>
     $size === SPACER_SIZES.MEDIUM && {
-      paddingTop: padding.vertical.quadruple,
+      paddingTop: padding.outsideElements.quadruple,
       /* backgroundColor: "pink", */
     }}
 
-${({ $size }) =>
+  ${({ $size }) =>
     $size === SPACER_SIZES.SMALL && {
-      paddingTop: padding.vertical.double,
+      paddingTop: padding.outsideElements.double,
       /* backgroundColor: "pink", */
     }}
 `;
@@ -25,10 +25,7 @@ function SectionSpacer({ size = SPACER_SIZES.MEDIUM }) {
 }
 
 SectionSpacer.propTypes = {
-  size: PropTypes.oneOf([
-    SPACER_SIZES.MEDIUM,
-    SPACER_SIZES.SMALL,
-  ]),
+  size: PropTypes.oneOf([SPACER_SIZES.MEDIUM, SPACER_SIZES.SMALL]),
 };
 
 export default SectionSpacer;

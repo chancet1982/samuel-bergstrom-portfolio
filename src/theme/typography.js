@@ -8,8 +8,8 @@ const typography = {
   inc: 0.1, // line height modifier
   ftMin: 560,
   ftMax: 1440,
-  headlineFont: `'Poppins', sans-serif`,
-  bodyFont: `'DM Sans', sans-serif`,
+  headlineFont: `'Mona Sans', sans-serif`,
+  bodyFont: `'Mona Sans', sans-serif`,
 };
 
 export default typography;

@@ -80,10 +80,8 @@ const StyledCoverCaption = styled(motion.div)`
   justify-content: flex-start;
   align-items: flex-start;
   justify-content: center;
-  box-sizing: border-box;
-  padding-top: ${padding.vertical.double};
-  padding-left: ${padding.horizontal.quadruple};
-  padding-right: ${padding.horizontal.quadruple};
+  padding-left: ${padding.outsideElements.double};
+  padding-right: ${padding.outsideElements.double};
   z-index: 1;
   width: 100%;
 
@@ -109,8 +107,6 @@ const StyledCoverCaption = styled(motion.div)`
   @media (min-width: ${breakpoints.desktop}px) {
     max-width: ${sizes.contentWidthLimit}px;
     margin: 0 auto;
-    padding-left: ${padding.horizontal.double};
-    padding-right: ${padding.horizontal.double};
   }
 `;
 
@@ -120,10 +116,12 @@ const StyledCoverFooter = styled(motion.div)`
   left: 0;
   right: 0;
   background: linear-gradient(
-    ${({ $isLight }) =>
-      !$isLight
-        ? `0deg, rgba(244, 244, 244, 1) 0%, rgba(244, 244, 244, 0.3) 50%, rgba(244, 244, 244, 0) 100%`
-        : `0deg, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0.08) 50%, rgba(0,0,0,0) 100%`}
+    ${({ $isLight, $clientsPreview }) =>
+      $isLight
+        ? $clientsPreview
+          ? `0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.32) 50%, rgba(0,0,0,0) 100%`
+          : `0deg, rgba(0,0,0,0.32) 0%, rgba(0,0,0,0.08) 50%, rgba(0,0,0,0) 100%`
+        : `0deg, rgba(244, 244, 244, 1) 0%, rgba(244, 244, 244, 0.3) 50%, rgba(244, 244, 244, 0) 100%`}
   );
   z-index: 1;
 `;
@@ -237,7 +235,11 @@ function Cover({
       )}
 
       {highlights || clientsPreview ? (
-        <StyledCoverFooter variants={coverFooterVariants} $isLight={light}>
+        <StyledCoverFooter
+          variants={coverFooterVariants}
+          $isLight={light}
+          $clientsPreview={clientsPreview}
+        >
           {renderCoverFooterContent()}
         </StyledCoverFooter>
       ) : null}

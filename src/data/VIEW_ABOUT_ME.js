@@ -41,13 +41,8 @@ export const VIEW_ABOUT_ME = [
   },
   {
     paddedUp: true,
+    sectionTitle: <>Why Sam?</>,
     elements: [
-      {
-        template: SECTION_ELEMENTS.TEXTBOX,
-        data: {
-          title: <>Why Sam?.</>,
-        },
-      },
       {
         template: SECTION_ELEMENTS.LIST_OF_CARDS,
         data: {
@@ -117,14 +112,8 @@ export const VIEW_ABOUT_ME = [
   },
   {
     paddedUp: true,
+    sectionTitle: <>Among my clients</>,
     elements: [
-      {
-        template: SECTION_ELEMENTS.TEXTBOX,
-        data: {
-          isCentered: true,
-          title: <>Among my clients</>,
-        },
-      },
       {
         template: SECTION_ELEMENTS.CLIENTS,
         data: {},
@@ -133,12 +122,10 @@ export const VIEW_ABOUT_ME = [
   },
   {
     bgColor: colors.offblack,
+    sectionTitle: <>What others say about me</>,
     elements: [
       {
         template: SECTION_ELEMENTS.TESTIMONIALS,
-        data: {
-          title: "What others say about me",
-        },
       },
     ],
   },

@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import TitleAndText from "./TitleAndText";
 import ImageWithCaption from "./ImageWithCaption";
 import { IMAGE_WITH_CAPTION_SIZES } from "../../data/dictionaries/IMAGE_WITH_CAPTION_SIZES";
-import padding from "../../theme/padding";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
 
@@ -27,11 +26,6 @@ const StyledImageWithTitleAndText = styled(motion.div)`
       ? "column-reverse"
       : "column"};
   align-items: center;
-
-  > div {
-    padding-left: ${padding.horizontal.double};
-    padding-right: ${padding.horizontal.double};
-  }
 `;
 
 function ImageWithTitleAndText({

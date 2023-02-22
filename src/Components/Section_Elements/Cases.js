@@ -3,7 +3,7 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
-import CaseThumbnail from "./Cases/CaseThumbnail";
+import CasePreviewThumbnail from "./CasesPreview/CasePreviewThumbnail";
 import { CASES } from "../../data/dictionaries/CASES";
 import breakpoints from "../../theme/breakpoints";
 import sizes from "../../theme/sizes";
@@ -16,16 +16,18 @@ const StyledPageLink = styled(motion.div)`
 `;
 
 const StyledCases = styled(motion.div)`
-  display: grid;
-  grid-template-columns: repeat(1, 1fr);
-  row-gap: ${padding.vertical.quadruple};
-  padding: 0 ${padding.horizontal.double};
-  padding-bottom: ${({ $preview }) => ($preview ? padding.vertical.double : 0)};
+  /*display: grid;
+  grid-template-columns: repeat(1, 1fr);*/
+  /*row-gap: ${padding.insideElements.quadruple};*/
+  /*padding-left: ${padding.outsideElements.double};
+  padding-right: ${padding.outsideElements.double};*/
+  padding-bottom: ${({ $preview }) =>
+    $preview ? padding.outsideElements.quadruple : 0};
 
-  @media (min-width: ${breakpoints.desktop}px) {
+  /*@media (min-width: ${breakpoints.desktop}px) {
     max-width: ${sizes.contentWidthLimit}px;
     margin: 0 auto;
-  }
+  }*/
 `;
 
 function SectionCases({ preview }) {
@@ -39,7 +41,7 @@ function SectionCases({ preview }) {
         )
           .reverse()
           .map(({ thumbnail, caseStatus, caseUrl }) => (
-            <CaseThumbnail
+            <CasePreviewThumbnail
               key={caseUrl}
               data={thumbnail}
               caseUrl={caseUrl}
