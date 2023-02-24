@@ -9,8 +9,8 @@ const StyledOverline = styled(Span)`
   display: inline-block;
   text-transform: uppercase;
   position: relative;
-  font-weight: 720 !important;
-  font-stretch: 88% !important;
+  font-weight: 600 !important;
+  font-stretch: 104% !important;
 `;
 
 function Overline({ children, ...rest }) {

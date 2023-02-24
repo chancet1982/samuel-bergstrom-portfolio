@@ -12,13 +12,13 @@ import { textVariants } from "../../animations/animations";
 
 const headlineFont = `
 font-weight: 800;
-font-stretch: 125%;
 font-family: ${typography.headlineFont};
 `;
 
 export const StyledH1 = styled(motion.h1)`
   max-width: 16ch;
   text-transform: uppercase;
+  font-stretch: 125%;
   color: ${({ $light }) =>
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
@@ -28,6 +28,7 @@ export const StyledH1 = styled(motion.h1)`
 export const StyledH2 = styled(motion.h2)`
   max-width: 40ch;
   text-transform: uppercase;
+  font-stretch: 125%;
   color: ${({ $light }) =>
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
@@ -36,7 +37,7 @@ export const StyledH2 = styled(motion.h2)`
 
 export const StyledH3 = styled(motion.h3)`
   max-width: 40ch;
-  text-transform: uppercase;
+  font-stretch: 116%;
   color: ${({ $light }) =>
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
@@ -45,6 +46,7 @@ export const StyledH3 = styled(motion.h3)`
 
 export const StyledH4 = styled(motion.h4)`
   max-width: 48ch;
+  font-stretch: 116%;
   color: ${({ $light }) =>
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
@@ -53,6 +55,7 @@ export const StyledH4 = styled(motion.h4)`
 
 export const StyledH5 = styled(motion.h5)`
   max-width: 48ch;
+  font-stretch: 116%;
   color: ${({ $light }) =>
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
