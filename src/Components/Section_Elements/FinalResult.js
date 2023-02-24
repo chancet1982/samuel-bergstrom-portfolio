@@ -47,8 +47,7 @@ const StyledFinalResultContent = styled(motion.div)`
 const StyledFinalResult = styled(motion.div)``;
 
 const StyledResultCaption = styled(motion.div)`
-  padding-left: ${padding.outsideElements.double};
-  padding-right: ${padding.outsideElements.double};
+  padding: ${padding.outsideElements.double};
   z-index: 1;
 
   box-sizing: border-box;

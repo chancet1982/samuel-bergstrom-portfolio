@@ -17,6 +17,8 @@ const SectionsRenderer = ({ sections }) =>
       isSticky,
       paddedUp,
       paddedDown,
+      marginUp,
+      marginDown,
       fullScreen,
       horizontal,
     }) =>
@@ -44,6 +46,8 @@ const SectionsRenderer = ({ sections }) =>
             isSticky={isSticky}
             paddedUp={paddedUp}
             paddedDown={paddedDown}
+            marginUp={marginUp}
+            marginDown={marginDown}
             fullScreen={fullScreen}
           >
             {elements.map(({ data, template }) => (

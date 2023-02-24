@@ -117,7 +117,6 @@ export const CASE_9 = {
       ],
     },
     {
-      paddedUp: true,
       header: "Background",
       elements: [
         {
@@ -210,6 +209,8 @@ export const CASE_9 = {
       ],
     },
     {
+      marginUp: true,
+      marginDown: true,
       bgColor: SETTINGS.BG_COLOR,
       elements: [
         {

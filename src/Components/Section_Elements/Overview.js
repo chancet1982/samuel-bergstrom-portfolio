@@ -39,11 +39,16 @@ const StyledOverviewText = styled(motion.div)`
 
   @media (min-width: ${breakpoints.tablet}px) {
     grid-column: 1 / span 2;
+    padding-right: ${padding.outsideElements.double};
   }
 `;
 
 const StyledOverviewItems = styled(motion.div)`
   grid-column: 1 / span 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
   > div {
     align-items: flex-start;
     text-align: left;

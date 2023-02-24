@@ -86,6 +86,8 @@ function Section({
   isSticky,
   paddedUp,
   paddedDown,
+  marginUp,
+  marginDown,
   fullScreen,
 }) {
   const [, setLight] = useContext(SectionColorContext);
@@ -107,6 +109,8 @@ function Section({
       $isSticky={isSticky}
       $paddedUp={paddedUp}
       $paddedDown={paddedDown}
+      $marginUp={marginUp}
+      $marginDown={marginDown}
       $fullScreen={fullScreen}
     >
       {header && !isMobile && <SectionHeader>{header}</SectionHeader>}
@@ -130,6 +134,8 @@ Section.propTypes = {
   isSticky: PropTypes.bool,
   paddedUp: PropTypes.bool,
   paddedDown: PropTypes.bool,
+  marginUp: PropTypes.bool,
+  marginDown: PropTypes.bool,
   fullScreen: PropTypes.bool,
 };
 
@@ -142,6 +148,8 @@ Section.defaultProps = {
   isSticky: false,
   paddedUp: false,
   paddedDown: false,
+  marginUp: false,
+  marginDown: false,
   fullScreen: false,
 };
 

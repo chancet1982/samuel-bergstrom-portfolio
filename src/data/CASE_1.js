@@ -104,7 +104,6 @@ export const CASE_1 = {
       ],
     },
     {
-      paddedUp: true,
       header: "Background",
       elements: [
         {
