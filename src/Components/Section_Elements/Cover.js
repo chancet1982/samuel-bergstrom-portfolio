@@ -94,6 +94,8 @@ const StyledCoverCaption = styled(motion.div)`
   }
 
   p {
+    max-width: 40ch;
+    
     @media (min-width: ${breakpoints.tablet}px) {
       max-width: 30ch;
     }
