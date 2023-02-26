@@ -112,6 +112,7 @@ export const VIEW_ABOUT_ME = [
   },
   {
     paddedUp: true,
+    paddedDown: true,
     sectionTitle: <>Among my clients</>,
     elements: [
       {
