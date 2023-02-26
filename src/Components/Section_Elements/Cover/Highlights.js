@@ -18,12 +18,14 @@ const StyledHighlights = styled(motion.div)`
 
   padding-top: ${padding.outsideElements.double};
   padding-bottom: ${padding.outsideElements.double};
+  
   > div {
     align-items: flex-start;
     justify-content: flex-start;
 
     > h5 {
       text-align: left;
+      margin-top:0;
     }
   }
 
