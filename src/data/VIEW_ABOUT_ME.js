@@ -131,6 +131,7 @@ export const VIEW_ABOUT_ME = [
     ],
   },
   {
+    paddedUp: true,
     elements: [
       {
         template: SECTION_ELEMENTS.TEXTBOX,
