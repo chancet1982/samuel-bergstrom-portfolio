@@ -12,7 +12,6 @@ import Image from "../Components/Shared/Image";
 import Note from "../Components/Shared/Note";
 import List from "../Components/Shared/List";
 import Span from "../Components/Shared/Span";
-import { SPACER_SIZES } from "./dictionaries/SPACER_SIZES";
 
 /* TODO: Add a slide about creating a design system (mostly a filler with some text above to explain why there is a missmatch) */
 const SETTINGS = {
@@ -154,10 +153,7 @@ export const CASE_11 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SPACER,
-          data: {
-            size: SPACER_SIZES.SMALL,
-          },
+          template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
@@ -169,10 +165,7 @@ export const CASE_11 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SPACER,
-          data: {
-            size: SPACER_SIZES.SMALL,
-          },
+          template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
           template: SECTION_ELEMENTS.TEXTBOX,
@@ -299,10 +292,7 @@ export const CASE_11 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SPACER,
-          data: {
-            size: SPACER_SIZES.SMALL,
-          },
+          template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,

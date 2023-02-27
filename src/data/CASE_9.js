@@ -5,12 +5,9 @@ import { TOOLS_AND_METHODS } from "./dictionaries/TOOLS_AND_METHODS";
 import { ROLES } from "./dictionaries/ROLES";
 import { PLATFORMS } from "./dictionaries/PLATFORMS";
 import Paragraph from "../Components/Shared/Paragraph";
-// import List from "../Components/Shared/List";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Shared/Title";
-import { SPACER_SIZES } from "./dictionaries/SPACER_SIZES";
-// import Span from "../Components/Shared/Span";
 
 const SETTINGS = {
   BG_COLOR: "#FF3366",
@@ -339,10 +336,7 @@ export const CASE_9 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SPACER,
-          data: {
-            size: SPACER_SIZES.SMALL,
-          },
+          template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
@@ -481,10 +475,7 @@ export const CASE_9 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SPACER,
-          data: {
-            size: SPACER_SIZES.SMALL,
-          },
+          template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,

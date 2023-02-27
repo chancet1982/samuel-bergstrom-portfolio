@@ -10,7 +10,6 @@ import Title from "../Components/Shared/Title";
 import List from "../Components/Shared/List";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import { PLATFORMS } from "./dictionaries/PLATFORMS";
-import { SPACER_SIZES } from "./dictionaries/SPACER_SIZES";
 import Note from "../Components/Shared/Note";
 
 const SETTINGS = {
@@ -147,6 +146,9 @@ export const CASE_7 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.SPACER_SMALL,
+        },
+        {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>2 Focus areas: onboarding, and cross-sales</>,
@@ -210,12 +212,8 @@ export const CASE_7 = {
             ),
           },
         },
-
         {
-          template: SECTION_ELEMENTS.SPACER,
-          data: {
-            size: SPACER_SIZES.MEDIUM,
-          },
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
           template: SECTION_ELEMENTS.INSIGHTS,
@@ -245,10 +243,7 @@ export const CASE_7 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SPACER,
-          data: {
-            size: SPACER_SIZES.MEDIUM,
-          },
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
           template: SECTION_ELEMENTS.TEXTBOX,
@@ -300,10 +295,7 @@ export const CASE_7 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SPACER,
-          data: {
-            size: SPACER_SIZES.MEDIUM,
-          },
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
@@ -313,10 +305,7 @@ export const CASE_7 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SPACER,
-          data: {
-            size: SPACER_SIZES.MEDIUM,
-          },
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
           template: SECTION_ELEMENTS.TEXTBOX,
@@ -449,10 +438,7 @@ export const CASE_7 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SPACER,
-          data: {
-            size: SPACER_SIZES.MEDIUM,
-          },
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
@@ -511,10 +497,7 @@ export const CASE_7 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SPACER,
-          data: {
-            size: SPACER_SIZES.MEDIUM,
-          },
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
@@ -556,10 +539,7 @@ export const CASE_7 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SPACER,
-          data: {
-            size: SPACER_SIZES.MEDIUM,
-          },
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
@@ -569,10 +549,7 @@ export const CASE_7 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SPACER,
-          data: {
-            size: SPACER_SIZES.MEDIUM,
-          },
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
           template: SECTION_ELEMENTS.TEXTBOX,
@@ -666,10 +643,7 @@ export const CASE_7 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SPACER,
-          data: {
-            size: SPACER_SIZES.MEDIUM,
-          },
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         /* {
           template: SECTION_ELEMENTS.SECTION_IMAGE,

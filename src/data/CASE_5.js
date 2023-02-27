@@ -191,6 +191,9 @@ export const CASE_5 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.SPACER_SMALL,
+        },
+        {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>Self service to expedite admission and discharge</>,
@@ -370,6 +373,7 @@ export const CASE_5 = {
       ],
     },
     {
+      paddedUp: true,
       header: "Design",
       elements: [
         {

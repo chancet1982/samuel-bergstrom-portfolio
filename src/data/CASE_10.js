@@ -10,7 +10,6 @@ import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Shared/Title";
 import Note from "../Components/Shared/Note";
 import List from "../Components/Shared/List";
-import { SPACER_SIZES } from "./dictionaries/SPACER_SIZES";
 
 const SETTINGS = {
   BG_COLOR: "#00ADDB",
@@ -288,10 +287,7 @@ export const CASE_10 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SPACER,
-          data: {
-            size: SPACER_SIZES.SMALL,
-          },
+          template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
@@ -377,10 +373,7 @@ export const CASE_10 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SPACER,
-          data: {
-            size: SPACER_SIZES.MEDIUM,
-          },
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
           template: SECTION_ELEMENTS.TEXTBOX,
@@ -431,10 +424,7 @@ export const CASE_10 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SPACER,
-          data: {
-            size: SPACER_SIZES.SMALL,
-          },
+          template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
           template: SECTION_ELEMENTS.TEXTBOX,
@@ -463,10 +453,7 @@ export const CASE_10 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SPACER,
-          data: {
-            size: SPACER_SIZES.SMALL,
-          },
+          template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,

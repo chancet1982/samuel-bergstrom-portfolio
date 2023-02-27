@@ -9,7 +9,6 @@ import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES"
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Note from "../Components/Shared/Note";
-import { SPACER_SIZES } from "./dictionaries/SPACER_SIZES";
 import Title from "../Components/Shared/Title";
 
 const SETTINGS = {
@@ -145,6 +144,9 @@ export const CASE_4 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.SPACER_SMALL,
+        },
+        {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>The goal:</>,
@@ -232,10 +234,7 @@ export const CASE_4 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SPACER,
-          data: {
-            size: SPACER_SIZES.MEDIUM,
-          },
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
           template: SECTION_ELEMENTS.TEXTBOX,
@@ -270,10 +269,7 @@ export const CASE_4 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SPACER,
-          data: {
-            size: SPACER_SIZES.MEDIUM,
-          },
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
           template: SECTION_ELEMENTS.INSIGHTS,
@@ -310,10 +306,7 @@ export const CASE_4 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SPACER,
-          data: {
-            size: SPACER_SIZES.MEDIUM,
-          },
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
       ],
     },
