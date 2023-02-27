@@ -25,6 +25,7 @@ import Insights from "./Section_Elements/Insights";
 import SectionVideo from "./Section_Elements/SectionVideo";
 import ListOfCards from "./Section_Elements/ListOfCards";
 import Spacer from "./Section_Elements/Spacer";
+import { SPACER_SIZES } from "../data/dictionaries/SPACER_SIZES";
 
 function SectionElementsRenderer({ elementKey, data, template }) {
   if (!template) {
@@ -63,6 +64,12 @@ function SectionElementsRenderer({ elementKey, data, template }) {
       );
     case SECTION_ELEMENTS.SPACER:
       return <Spacer size={data.size} />;
+    case SECTION_ELEMENTS.SPACER_LARGE:
+      return <Spacer size={SPACER_SIZES.LARGE} />;
+    case SECTION_ELEMENTS.SPACER_MEDIUM:
+      return <Spacer size={SPACER_SIZES.MEDIUM} />;
+    case SECTION_ELEMENTS.SPACER_SMALL:
+      return <Spacer size={SPACER_SIZES.SMALL} />;
     case SECTION_ELEMENTS.OVERVIEW:
       return (
         <Overview

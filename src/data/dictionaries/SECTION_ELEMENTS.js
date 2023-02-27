@@ -2,6 +2,9 @@
 export const SECTION_ELEMENTS = {
   COVER: "cover",
   SPACER: "spacer",
+  SPACER_LARGE: "spacerLarge",
+  SPACER_MEDIUM: "spacerMedium",
+  SPACER_SMALL: "spacerSmall",
   OVERVIEW: "overview",
   TEXTBOX: "textbox",
   INSIGHTS: "insights",

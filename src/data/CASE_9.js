@@ -9,6 +9,7 @@ import Paragraph from "../Components/Shared/Paragraph";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Shared/Title";
+import { SPACER_SIZES } from "./dictionaries/SPACER_SIZES";
 // import Span from "../Components/Shared/Span";
 
 const SETTINGS = {
@@ -338,6 +339,12 @@ export const CASE_9 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.SPACER,
+          data: {
+            size: SPACER_SIZES.SMALL,
+          },
+        },
+        {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/eureka.png`,
@@ -471,6 +478,12 @@ export const CASE_9 = {
                 </Paragraph>
               </>
             ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER,
+          data: {
+            size: SPACER_SIZES.SMALL,
           },
         },
         {
