@@ -1,7 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import React from "react";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
-import { SPACER_SIZES } from "./dictionaries/SPACER_SIZES";
 
 export const VIEW_CASES = [
   {
@@ -12,10 +11,7 @@ export const VIEW_CASES = [
     h: 1,
     elements: [
       {
-        template: SECTION_ELEMENTS.SPACER,
-        data: {
-          size: SPACER_SIZES.MEDIUM,
-        },
+        template: SECTION_ELEMENTS.SPACER_SMALL,
       },
       {
         template: SECTION_ELEMENTS.CASES,

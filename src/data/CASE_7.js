@@ -663,12 +663,6 @@ export const CASE_7 = {
               </Paragraph>
             ),
           },
-        },
-        {
-          template: SECTION_ELEMENTS.SPACER,
-          data: {
-            size: SPACER_SIZES.MEDIUM,
-          },
         }, */
       ],
     },
