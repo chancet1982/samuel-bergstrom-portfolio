@@ -98,7 +98,7 @@ const StyledCoverFooter = styled(motion.div)`
   bottom: 0;
   left: 0;
   right: 0;
-  background: ${({ $clientsPreview }) =>
+  ${({ $clientsPreview }) =>
     $clientsPreview && {
       background: `linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.32) 50%, rgba(0,0,0,0) 100%)`,
     }};
@@ -169,7 +169,7 @@ function Cover({
       y: 0,
       transition: {
         duration: 0.6,
-        staggerChildren: 0.2,
+        staggerChildren: clientsPreview ? 0 : 0.2,
       },
     },
   };

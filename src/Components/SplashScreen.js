@@ -119,6 +119,7 @@ function SplashScreen() {
     <StyledSplashScreen variants={variants}>
       <Title
         h={1}
+        style={{ fontWeight: "700", fontStrech: "104%" }}
         withMargin={false}
         isLight
         initial="initial"
