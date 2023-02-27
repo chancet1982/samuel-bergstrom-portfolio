@@ -12,6 +12,7 @@ import Image from "../Components/Shared/Image";
 import Note from "../Components/Shared/Note";
 import List from "../Components/Shared/List";
 import Span from "../Components/Shared/Span";
+import { SPACER_SIZES } from "./dictionaries/SPACER_SIZES";
 
 /* TODO: Add a slide about creating a design system (mostly a filler with some text above to explain why there is a missmatch) */
 const SETTINGS = {
@@ -153,12 +154,24 @@ export const CASE_11 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.SPACER,
+          data: {
+            size: SPACER_SIZES.SMALL,
+          },
+        },
+        {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/initial-used-product.png`,
             limitMaxWidth: true,
             imageAlt:
               "A picture of the tiny icon that indicated used products in the product page",
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER,
+          data: {
+            size: SPACER_SIZES.SMALL,
           },
         },
         {
@@ -283,6 +296,12 @@ export const CASE_11 = {
                 </Paragraph>
               </>
             ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER,
+          data: {
+            size: SPACER_SIZES.SMALL,
           },
         },
         {

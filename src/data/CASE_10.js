@@ -8,10 +8,8 @@ import Paragraph from "../Components/Shared/Paragraph";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Shared/Title";
-import Image from "../Components/Shared/ImageWithCaption";
 import Note from "../Components/Shared/Note";
 import List from "../Components/Shared/List";
-import Spacer from "../Components/Section_Elements/Spacer";
 import { SPACER_SIZES } from "./dictionaries/SPACER_SIZES";
 
 const SETTINGS = {
@@ -290,6 +288,12 @@ export const CASE_10 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.SPACER,
+          data: {
+            size: SPACER_SIZES.SMALL,
+          },
+        },
+        {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/ideation.png`,
@@ -387,8 +391,18 @@ export const CASE_10 = {
                 <Paragraph>
                   If we needed to show all shops regardless of affeliation, we
                   could at least do it in a better way.
-                </Paragraph>
-                <Title h={4}>Reducing free information</Title>
+                </Paragraph>{" "}
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Reducing free information</>,
+            h: 4,
+            text: (
+              <>
                 <Paragraph>
                   To start with I suggested reducing the amount of information
                   that is visible for free. limiting the information to only the
@@ -400,18 +414,35 @@ export const CASE_10 = {
                   On top of that, greying out the link to shops without an
                   agreement, would make those less attractive to click on &
                   would align better with users expectations (i.e. a disabled
-                  link)
+                  link). The idea was to increase the benefits shops get for
+                  signing an agreement. Making it more attractive to become a
+                  paying customer.
                 </Paragraph>
-                <Image
-                  imageUrl={`${SETTINGS.MEDIA_BASE_URL}/offer-change.png`}
-                />
-                <Paragraph>
-                  The idea was to increase the benefits shops get for signing an
-                  agreement. Making it more attractive to become a paying
-                  customer.
-                </Paragraph>
-                <Spacer size={SPACER_SIZES.SMALL} />
-                <Title h={4}>Change the default sorting</Title>
+              </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/offer-change.png`,
+            limitMaxWidth: true,
+            imageAlt: "?",
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER,
+          data: {
+            size: SPACER_SIZES.SMALL,
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Change the default sorting</>,
+            h: 4,
+            text: (
+              <>
                 <Paragraph>
                   On top of that, I suggested we should a recommended sorting on
                   top of the existing sorting which is based on price. Most
@@ -427,19 +458,37 @@ export const CASE_10 = {
                   prevent any non-paying shop to be at the top of the list while
                   showing more relevant offers for users.
                 </Paragraph>
-                <Spacer size={SPACER_SIZES.SMALL} />
-                <Image
-                  imageUrl={`${SETTINGS.MEDIA_BASE_URL}/sorting-change.png`}
-                />
-                <Title h={4}>Making sense of it</Title>
-                <Paragraph>
-                  In order to keep transparency, I suggested we use a grouping
-                  mechanism where we show all the offers where information is
-                  missing. <br /> <strong>This has 2 benefits:</strong>
-                  This on one hand In simple terms: Non-paying shops were now
-                  second-class citizens.
-                </Paragraph>
               </>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER,
+          data: {
+            size: SPACER_SIZES.SMALL,
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sorting-change.png`,
+            limitMaxWidth: true,
+            imageAlt: "?",
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>Putting it all together</>,
+            h: 4,
+            text: (
+              <Paragraph>
+                In order to keep transparency, I suggested we use a grouping
+                mechanism where we show all the offers where information is
+                missing. <br /> <strong>This has 2 benefits:</strong>
+                This on one hand In simple terms: Non-paying shops were now
+                second-class citizens.
+              </Paragraph>
             ),
           },
         },
