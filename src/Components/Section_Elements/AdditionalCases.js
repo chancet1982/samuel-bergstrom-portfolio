@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { v4 as uuid } from "uuid";
 import { useParams } from "react-router-dom";
-import AdditionalCasesCaseThumbnail from "./AdditionalCases/AdditionalCasesCaseThumbnail";
 import { CASES } from "../../data/dictionaries/CASES";
 import { CASE_STATUS } from "../../data/dictionaries/CASE_STATUS";
 import ElementContextProvider from "../../Context/ElementColorContext";
@@ -12,6 +11,7 @@ import TitleAndText from "../Shared/TitleAndText";
 import padding from "../../theme/padding";
 import breakpoints from "../../theme/breakpoints";
 import sizes from "../../theme/sizes";
+import CaseThumbnail from "./Cases/CaseThumbnail";
 
 const StyledAdditionalCases = styled(motion.div)`
   padding-right: ${padding.outsideElements.double};
@@ -40,15 +40,18 @@ const StyledCasesList = styled(motion.div)`
 
 function AdditionalCases() {
   const { id } = useParams();
-  const currentCaseTitle = CASES[id - 1].thumbnail.title;
-  const cases = CASES.filter(
-    ({ caseStatus, thumbnail: { title } }) =>
+  const currentCaseTitle = CASES[id - 1].thumbnail.caption.title;
+  const THREE_OTHER_CASES = CASES.filter(
+    ({ caseStatus, thumbnail }) =>
       caseStatus !== CASE_STATUS.DRAFT &&
       caseStatus !== CASE_STATUS.COMING_SOON &&
-      title !== currentCaseTitle
+      thumbnail &&
+      thumbnail.caption &&
+      thumbnail.caption.title !== currentCaseTitle
   )
     .sort(() => Math.random() - Math.random())
     .slice(0, 3);
+  console.log("CASES: ", THREE_OTHER_CASES);
 
   return (
     <StyledAdditionalCases>
@@ -59,10 +62,10 @@ function AdditionalCases() {
       </TitleAndText>
 
       <StyledCasesList>
-        {cases.map(({ thumbnail, caseUrl, caseStatus }, index) => (
+        {THREE_OTHER_CASES.map(({ thumbnail, caseUrl, caseStatus }, index) => (
           // eslint-disable-next-line react/no-array-index-key
           <ElementContextProvider key={index}>
-            <AdditionalCasesCaseThumbnail
+            <CaseThumbnail
               data={thumbnail}
               caseUrl={caseUrl}
               key={uuid()}

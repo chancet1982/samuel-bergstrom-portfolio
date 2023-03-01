@@ -62,10 +62,10 @@ export const StyledH5 = styled(motion.h5)`
   ${headlineFont}
 `;
 
-function Title({ h, children, isLight, ...rest }) {
+function Title({ h, children, isLight, withMargin, ...rest }) {
   const light = useBgColor() || isLight;
 
-  const fluidType = useFluidTypography(h);
+  const fluidType = useFluidTypography(h, withMargin);
 
   const renderTitle = () => {
     switch (h) {
@@ -153,12 +153,14 @@ Title.propTypes = {
   h: PropTypes.number,
   children: PropTypes.node,
   isLight: PropTypes.bool,
+  withMargin: PropTypes.bool,
 };
 
 Title.defaultProps = {
   h: 1,
   children: null,
   isLight: false,
+  withMargin: true,
 };
 
 export default Title;

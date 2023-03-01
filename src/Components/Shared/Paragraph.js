@@ -39,6 +39,7 @@ function Paragraph({
   children,
   highContrast,
   isLight,
+  withMargin,
   ...rest
 }) {
   const light = useBgColor() || isLight;
@@ -51,7 +52,7 @@ function Paragraph({
     return 2;
   };
 
-  const fluidType = useFluidTypography(mapSizeToNumber());
+  const fluidType = useFluidTypography(mapSizeToNumber(), withMargin);
 
   return (
     <StyledParagraph
@@ -74,6 +75,7 @@ Paragraph.propTypes = {
   children: PropTypes.node.isRequired,
   highContrast: PropTypes.bool,
   isLight: PropTypes.bool,
+  withMargin: PropTypes.bool,
 };
 
 Paragraph.defaultProps = {
@@ -83,6 +85,7 @@ Paragraph.defaultProps = {
   xxl: false,
   highContrast: false,
   isLight: false,
+  withMargin: true,
 };
 
 export default Paragraph;
