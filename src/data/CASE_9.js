@@ -43,8 +43,8 @@ export const CASE_9 = {
       ),
       text: (
         <Paragraph xxl>
-          Creating a shortcut between
-          <br /> users and products
+          Making the case for investing
+          <br /> in search
         </Paragraph>
       ),
     },
@@ -70,8 +70,8 @@ export const CASE_9 = {
               ),
               text: (
                 <Paragraph xxl>
-                  Creating a shortcut between
-                  <br /> users and products
+                  Making the case for investing
+                  <br /> in search
                 </Paragraph>
               ),
             },
