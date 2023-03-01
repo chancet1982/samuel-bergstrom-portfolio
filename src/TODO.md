@@ -7,7 +7,9 @@ CaseThumbnail -> Fix better tag for COMING SOON cases.
 SECTION_IMAGE: make selectable if you want it to scale down or preserve height
 NAVIGATION -> Navigation gets wrong bgColor when leaving a page with COVER when COVER is not in viewport.
 CASE_THUMBNAILS -> Mobile is not implemented.
-ADDITIONAL_CASES -> Fix design of cases to work with 3 column layout.
+ADDITIONAL_CASES -> Fix design of cases to work with 3 column layout. Fix title misalignment
+NOTE -> fix left alignment
+BLOCKQUOTE -> fix left alignment
 
 INVESTIGATE IF THIS CAN BE USED:
 https://www.framer.com/motion/use-velocity/

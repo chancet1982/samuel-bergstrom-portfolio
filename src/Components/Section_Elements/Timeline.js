@@ -16,6 +16,7 @@ const StyledTimelineWrapper = styled(motion.div)`
   padding-right: ${padding.outsideElements.double};
   padding-left: ${padding.outsideElements.double};
   margin: 0;
+  box-sizing: border-box;
 
   @media (min-width: ${breakpoints.desktop}px) {
     max-width: ${sizes.contentWidthLimit}px;

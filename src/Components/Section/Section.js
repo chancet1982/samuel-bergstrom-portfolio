@@ -64,6 +64,7 @@ const StyledSectionTitle = styled(motion.div)`
   padding-bottom: ${padding.insideElements.double};
   padding-right: ${padding.outsideElements.double};
   padding-left: ${padding.outsideElements.double};
+  box-sizing: border-box;
 
   ${({ $isCentered }) =>
     $isCentered && {

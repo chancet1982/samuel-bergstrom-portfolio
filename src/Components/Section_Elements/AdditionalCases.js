@@ -16,6 +16,7 @@ import CaseThumbnail from "./Cases/CaseThumbnail";
 const StyledAdditionalCases = styled(motion.div)`
   padding-right: ${padding.outsideElements.double};
   padding-left: ${padding.outsideElements.double};
+  box-sizing: border-box;
 
   @media (min-width: ${breakpoints.desktop}px) {
     > div:first-of-type {
@@ -54,8 +55,8 @@ function AdditionalCases() {
 
   return (
     <StyledAdditionalCases>
-      <TitleAndText h={2} title="Not what you were looking for?" isPadded>
-        <Paragraph>
+      <TitleAndText h={2} title="Not what you were looking for?">
+        <Paragraph xl>
           Perhaps one youll be interested in one of my other cases
         </Paragraph>
       </TitleAndText>

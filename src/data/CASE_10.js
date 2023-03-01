@@ -558,7 +558,7 @@ export const CASE_10 = {
                   especially true when expanding to new-markets and opens the
                   door for exploring new service offerings.
                 </Paragraph>
-                <Title h={3}>After thoughts: </Title>
+                <Title h={4}>After thoughts: </Title>
                 <Paragraph>
                   As I see this, it is only a first step in a much larger
                   journey. It is a great example of a minor tweak that really

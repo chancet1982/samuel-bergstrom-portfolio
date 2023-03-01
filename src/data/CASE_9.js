@@ -422,8 +422,8 @@ export const CASE_9 = {
             items: [
               {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/before.png`,
-                imageAlt: "Search suggestions, before",
-                title: "Search suggestions, before",
+                imageAlt: "Before",
+                title: "Before",
                 text: (
                   <Paragraph>
                     Pressing “ENTER” would lead users to the search results
@@ -433,8 +433,8 @@ export const CASE_9 = {
               },
               {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/after.png`,
-                imageAlt: "Search suggestions after",
-                title: "Search suggestions after",
+                imageAlt: "After",
+                title: "After",
                 text: (
                   <Paragraph>
                     Search suggestions with the new option added. Pressing
@@ -502,7 +502,7 @@ export const CASE_9 = {
                   annually. A potential increase of 1% to 3% secured resources
                   to shift the focus into improving the search on the service.
                 </Paragraph>
-                <Title h={3}>After thoughts: </Title>
+                <Title h={4}>After thoughts: </Title>
                 <Paragraph>
                   This wasn’t about creating a sustainable/maintainable
                   solution. It was about showing the potential of a good search

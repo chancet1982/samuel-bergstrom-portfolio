@@ -20,6 +20,7 @@ const StyledTextbox = styled(motion.div)`
   padding-right: ${padding.outsideElements.double};
   padding-left: ${padding.outsideElements.double};
   column-gap: ${padding.insideElements.single};
+  box-sizing: border-box;
 
   @media (min-width: ${breakpoints.desktop}px) {
     max-width: ${sizes.contentWidthLimit}px;

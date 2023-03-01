@@ -451,7 +451,7 @@ export const CASE_1 = {
                   positive. The app is still in development and will be released
                   soon.
                 </Paragraph>
-                <Title h={3}>After thoughts:</Title>
+                <Title h={4}>After thoughts:</Title>
                 <Paragraph>
                   Despite time constraints and focus on speedy delivery, a lot
                   of the issues uncovered and addressed. Given more time I would

@@ -16,6 +16,7 @@ const StyledOverviewWrapper = styled(motion.div)`
   padding-left: ${padding.outsideElements.double};
   padding-right: ${padding.outsideElements.double};
   column-gap: ${padding.insideElements.single};
+  box-sizing: border-box;
 
   min-height: ${({
     theme: {

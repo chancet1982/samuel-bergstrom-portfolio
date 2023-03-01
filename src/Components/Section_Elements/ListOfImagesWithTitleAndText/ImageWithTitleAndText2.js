@@ -3,27 +3,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import Title from "./Title";
-import padding from "../../theme/padding";
-import breakpoints from "../../theme/breakpoints";
-import { textVariants } from "../../animations/animations";
-import sizes from "../../theme/sizes";
-
-const StyledTitleAndText = styled(motion.div)`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  box-sizing: border-box;
-  grid-area: ${({ $flip }) => ($flip ? "b" : "a")};
-
-  @media (max-width: ${breakpoints.mobileLarge - 1}px) {
-    min-height: 80vh;
-  }
-
-  @media (min-width: ${breakpoints.mobileLarge}px) {
-    height: 80vh;
-  }
-`;
+import Title from "../../Shared/Title";
+import padding from "../../../theme/padding";
+import breakpoints from "../../../theme/breakpoints";
+import { textVariants } from "../../../animations/animations";
+import sizes from "../../../theme/sizes";
 
 const StyledImageWithTitleAndText = styled(motion.div)`
   display: grid;
@@ -34,6 +18,7 @@ const StyledImageWithTitleAndText = styled(motion.div)`
   padding-left: ${padding.outsideElements.double};
   padding-right: ${padding.outsideElements.double};
   column-gap: ${padding.insideElements.single};
+  box-sizing: border-box;
 
   @media (max-width: ${breakpoints.mobileLarge - 1}px) {
     position: relative;
@@ -61,6 +46,22 @@ const StyledImage = styled(motion.div)`
   background-position: ${({ $flip }) => ($flip ? "right" : "left")};
   left: ${({ $flip }) => ($flip ? "0" : "auto")};
   right: ${({ $flip }) => ($flip ? "auto" : "0")};
+`;
+
+const StyledTitleAndText = styled(motion.div)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
+  grid-area: ${({ $flip }) => ($flip ? "b" : "a")};
+
+  @media (max-width: ${breakpoints.mobileLarge - 1}px) {
+    min-height: 80vh;
+  }
+
+  @media (min-width: ${breakpoints.mobileLarge}px) {
+    height: 80vh;
+  }
 `;
 
 function ImageWithTitleAndText({ imageUrl, title, text, flip }) {

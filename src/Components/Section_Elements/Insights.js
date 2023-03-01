@@ -17,6 +17,7 @@ const StyledInsights = styled(motion.div)`
   grid-template-columns: repeat(1, 1fr);
   padding-right: ${padding.outsideElements.double};
   padding-left: ${padding.outsideElements.double};
+  box-sizing: border-box;
 
   @media (min-width: ${breakpoints.desktop}px) {
     max-width: ${sizes.contentWidthLimit}px;
@@ -69,7 +70,7 @@ function Insights({ title, h, items, bgColor, isTwoColumnsOnDesktop, text }) {
       viewport={{ once: true, amount: 0.2 }}
       transition={{ staggerChildren: 0.2 }}
     >
-      <TitleAndText h={h} title={title} isPadded>
+      <TitleAndText h={h} title={title}>
         {text && text}
       </TitleAndText>
       <StyledInsightsContent $isTwoColumnsOnDesktop={isTwoColumnsOnDesktop}>

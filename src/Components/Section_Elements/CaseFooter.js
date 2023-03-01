@@ -21,6 +21,8 @@ const StyledCaseFooter = styled(motion.div)`
   column-gap: ${padding.insideElements.single};
   row-gap: ${padding.insideElements.single};
   padding-bottom: ${padding.insideElements.double};
+  box-sizing: border-box;
+
   @media (min-width: ${breakpoints.desktop}px) {
     max-width: ${sizes.contentWidthLimit}px;
     margin: 0 auto;
@@ -82,7 +84,7 @@ function CaseFooter() {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ staggerChildren: 0.2 }}
       >
-        <TitleAndText h={3} title="Let's get in touch" isPadded>
+        <TitleAndText h={3} title="Let's get in touch">
           <Paragraph xl>Found me interesting? Let’s talk</Paragraph>
 
           <Button

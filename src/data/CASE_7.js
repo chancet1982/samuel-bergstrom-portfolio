@@ -682,7 +682,7 @@ export const CASE_7 = {
                   focus on removing obsticles in order to onboard members in a
                   better way.
                 </Paragraph>
-                <Title h={3}>After thoughts:</Title>
+                <Title h={4}>After thoughts:</Title>
                 <Paragraph>
                   Despite time constraints and focus on speedy delivery, a lot
                   of the issues uncovered during the research phase were

@@ -3,11 +3,11 @@ import React, { useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import TitleAndText from "./TitleAndText";
-import ImageWithCaption from "./ImageWithCaption";
-import { IMAGE_WITH_CAPTION_SIZES } from "../../data/dictionaries/IMAGE_WITH_CAPTION_SIZES";
-import { ElementColorContext } from "../../Context/ElementColorContext";
-import colors from "../../theme/colors";
+import TitleAndText from "../../Shared/TitleAndText";
+import ImageWithCaption from "../../Shared/ImageWithCaption";
+import { IMAGE_WITH_CAPTION_SIZES } from "../../../data/dictionaries/IMAGE_WITH_CAPTION_SIZES";
+import { ElementColorContext } from "../../../Context/ElementColorContext";
+import colors from "../../../theme/colors";
 
 const StyledImageWithTitleAndText = styled(motion.div)`
   display: flex;
@@ -66,7 +66,7 @@ function ImageWithTitleAndText({
         ignoreSize
         size={IMAGE_WITH_CAPTION_SIZES.MEDIUM_DOUBLE}
       />
-      <TitleAndText h={h} title={title} isPadded>
+      <TitleAndText h={h} title={title}>
         {text}
       </TitleAndText>
     </StyledImageWithTitleAndText>
@@ -86,7 +86,7 @@ ImageWithTitleAndText.propTypes = {
 };
 
 ImageWithTitleAndText.defaultProps = {
-  h: 3,
+  h: 4,
   caption: null,
   bgColor: null,
   horizontal: false,

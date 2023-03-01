@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import ImageWithTitleAndText from "../Shared/ImageWithTitleAndText";
+import ImageWithTitleAndText from "./SideBySideImagesAndText/ImageWithTitleAndText";
 import breakpoints from "../../theme/breakpoints";
 import ElementContextProvider from "../../Context/ElementColorContext";
 import padding from "../../theme/padding";
@@ -14,6 +14,7 @@ const StyledSideBySideImagesAndText = styled(motion.div)`
   padding-left: ${padding.outsideElements.double};
   padding-right: ${padding.outsideElements.double};
   column-gap: ${padding.insideElements.single};
+  box-sizing: border-box;
 
   @media (min-width: ${breakpoints.desktop}px) {
     ${({ $limitMaxWidth }) =>

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import ImageWithTitleAndText2 from "../Shared/ImageWithTitleAndText2";
+import ImageWithTitleAndText2 from "./ListOfImagesWithTitleAndText/ImageWithTitleAndText2";
 
 const StyledListOfImagesWithTitleAndText = styled(motion.div)``;
 

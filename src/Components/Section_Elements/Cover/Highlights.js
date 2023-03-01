@@ -14,18 +14,18 @@ const StyledHighlights = styled(motion.div)`
   grid-template-columns: repeat(${({ $columns }) => $columns}, 1fr);
   padding-left: ${padding.outsideElements.double};
   padding-right: ${padding.outsideElements.double};
-  column-gap: ${padding.insideElements.single};
-
   padding-top: ${padding.outsideElements.double};
   padding-bottom: ${padding.outsideElements.double};
-  
+  column-gap: ${padding.insideElements.single};
+  box-sizing: border-box;
+
   > div {
     align-items: flex-start;
     justify-content: flex-start;
 
     > h5 {
       text-align: left;
-      margin-top:0;
+      margin-top: 0;
     }
   }
 
