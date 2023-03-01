@@ -51,7 +51,6 @@ function AdditionalCases() {
   )
     .sort(() => Math.random() - Math.random())
     .slice(0, 3);
-  console.log("CASES: ", THREE_OTHER_CASES);
 
   return (
     <StyledAdditionalCases>

@@ -16,7 +16,7 @@ import { BG_MEDIA_TYPES } from "../../../data/dictionaries/BG_MEDIA_TYPES";
 import Overline from "../../Shared/Overline";
 import TitleAndText from "../../Shared/TitleAndText";
 
-const StyledCasePreviewThumbnail = styled(motion.div)`
+const StyledCaseThumbnail = styled(motion.div)`
   padding: ${padding.outsideElements.double};
   flex-grow: 0;
   flex-shrink: 0;
@@ -69,7 +69,7 @@ const StyledThumbnailCaption = styled(motion.div)`
 
   p {
     max-width: 40ch;
-    
+
     @media (min-width: ${breakpoints.tablet}px) {
       max-width: 30ch;
     }
@@ -97,7 +97,7 @@ const StyledFgImage = styled(motion.img)`
   transform-origin: center;
 `;
 
-function CasePreviewThumbnail({ data, status, caseUrl }) {
+function CaseThumbnail({ data, status, caseUrl }) {
   const [, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
@@ -115,12 +115,12 @@ function CasePreviewThumbnail({ data, status, caseUrl }) {
 
   const [, setCursorText, , setCursorVariant] = useContext(CursorContext);
 
-  function casePreviewThumbnailMouseEnter() {
+  function CaseThumbnailMouseEnter() {
     setCursorText("View");
     setCursorVariant("project");
   }
 
-  function casePreviewThumbnailMouseLeave() {
+  function CaseThumbnailMouseLeave() {
     setCursorText("");
     setCursorVariant("default");
   }
@@ -179,7 +179,7 @@ function CasePreviewThumbnail({ data, status, caseUrl }) {
   };
 
   return (
-    <StyledCasePreviewThumbnail
+    <StyledCaseThumbnail
       whileHover="hover"
       initial="hidden"
       whileInView={isMobile ? "hover" : "inView"}
@@ -193,8 +193,8 @@ function CasePreviewThumbnail({ data, status, caseUrl }) {
       >
         <StyledLink
           to={caseUrl}
-          onMouseEnter={() => casePreviewThumbnailMouseEnter()}
-          onMouseLeave={() => casePreviewThumbnailMouseLeave()}
+          onMouseEnter={() => CaseThumbnailMouseEnter()}
+          onMouseLeave={() => CaseThumbnailMouseLeave()}
         >
           {bgMedia && (
             <BgMedia type={bgMedia.type} mediaUrl={bgMedia.mediaUrl} />
@@ -223,11 +223,11 @@ function CasePreviewThumbnail({ data, status, caseUrl }) {
           {status === CASE_STATUS.COMING_SOON && <Badge>COMING SOON!</Badge>}
         </StyledLink>
       </StyledBackgroundColor>
-    </StyledCasePreviewThumbnail>
+    </StyledCaseThumbnail>
   );
 }
 
-CasePreviewThumbnail.propTypes = {
+CaseThumbnail.propTypes = {
   data: PropTypes.shape({
     bgMedia: PropTypes.shape({
       type: PropTypes.oneOf([BG_MEDIA_TYPES.IMAGE, BG_MEDIA_TYPES.VIDEO]),
@@ -250,8 +250,8 @@ CasePreviewThumbnail.propTypes = {
   caseUrl: PropTypes.string.isRequired,
 };
 
-CasePreviewThumbnail.defaultProps = {
+CaseThumbnail.defaultProps = {
   data: null,
 };
 
-export default CasePreviewThumbnail;
+export default CaseThumbnail;

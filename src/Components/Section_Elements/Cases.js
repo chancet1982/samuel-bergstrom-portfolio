@@ -2,7 +2,7 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import CasePreviewThumbnail from "./Cases/CaseThumbnail";
+import CaseThumbnail from "./Cases/CaseThumbnail";
 import { CASES } from "../../data/dictionaries/CASES";
 import { CASE_STATUS } from "../../data/dictionaries/CASE_STATUS";
 
@@ -15,7 +15,7 @@ function SectionCases() {
         {CASES.filter(({ caseStatus }) => caseStatus !== CASE_STATUS.DRAFT)
           .reverse()
           .map(({ thumbnail, caseStatus, caseUrl }) => (
-            <CasePreviewThumbnail
+            <CaseThumbnail
               key={caseUrl}
               data={thumbnail}
               caseUrl={caseUrl}
