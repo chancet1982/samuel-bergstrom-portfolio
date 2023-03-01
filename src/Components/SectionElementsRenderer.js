@@ -62,8 +62,6 @@ function SectionElementsRenderer({ elementKey, data, template }) {
           />
         </ElementColorContextProvider>
       );
-    case SECTION_ELEMENTS.SPACER:
-      return <Spacer size={data.size} />;
     case SECTION_ELEMENTS.SPACER_LARGE:
       return <Spacer size={SPACER_SIZES.LARGE} />;
     case SECTION_ELEMENTS.SPACER_MEDIUM:
@@ -202,7 +200,11 @@ function SectionElementsRenderer({ elementKey, data, template }) {
         </ElementColorContextProvider>
       );
     case SECTION_ELEMENTS.CASES:
-      return <Cases key={elementKey} preview={data.preview} />;
+      return (
+        <ElementColorContextProvider>
+          <Cases key={elementKey} preview={data.preview} />
+        </ElementColorContextProvider>
+      );
     case SECTION_ELEMENTS.CASES_PREVIEW:
       return <CasesPreview key={elementKey} />;
     case SECTION_ELEMENTS.TESTIMONIALS:
