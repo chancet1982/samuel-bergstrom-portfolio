@@ -64,7 +64,7 @@ const StyledCoverCaption = styled(motion.div)`
   padding-right: ${padding.outsideElements.double};
   z-index: 1;
   width: 100%;
-  /*box-sizing: border-box;*/
+  box-sizing: border-box;
 
   h1 {
     max-width: 15ch;

@@ -21,9 +21,13 @@ const StyledCaseThumbnail = styled(motion.div)`
   flex-grow: 0;
   flex-shrink: 0;
   width: 100vw;
-  height: 100vh;
   box-sizing: border-box;
   position: relative;
+  aspect-ratio: 1;
+
+  @media (min-width: ${breakpoints.desktop}px) {
+    height: 100vh;
+  }
 `;
 
 const StyledLink = styled(Link)`
@@ -58,6 +62,7 @@ const StyledThumbnailCaption = styled(motion.div)`
   padding-right: ${padding.outsideElements.double};
   z-index: 1;
   width: 100%;
+  box-sizing: border-box;
 
   h1 {
     max-width: 15ch;
@@ -88,11 +93,13 @@ const StyledThumbnailCaption = styled(motion.div)`
 
 const StyledFgImage = styled(motion.img)`
   position: absolute;
-  max-height: 92vh;
+  max-height: 100%;
   right: 0;
+  opacity: 0.1;
 
   @media (min-width: ${breakpoints.mobileLarge}px) {
     left: 50%;
+    opacity: 1;
   }
   transform-origin: center;
 `;
@@ -125,28 +132,6 @@ function CaseThumbnail({ data, status, caseUrl }) {
     setCursorVariant("default");
   }
 
-  const thumbnailImageVariants = {
-    hidden: { opacity: 0, scale: 0.7 },
-    inView: {
-      scale: 1,
-      opacity: 1,
-    },
-    hover: {
-      scale: 1.2,
-    },
-  };
-
-  const coverCaptionVariants = {
-    hidden: { opacity: 0, y: 10 },
-    inView: {
-      opacity: 0.96,
-      y: 0,
-    },
-    hover: {
-      opacity: 1,
-    },
-  };
-
   const caseThumbnailVariants = {
     hidden: {
       opacity: 0,
@@ -178,11 +163,33 @@ function CaseThumbnail({ data, status, caseUrl }) {
     },
   };
 
+  const caseThumbnailImageVariants = {
+    hidden: { opacity: 0, scale: 0.7 },
+    inView: {
+      scale: 1,
+      opacity: width < breakpoints.mobileLarge ? 0.1 : 1,
+    },
+    hover: {
+      scale: 1.2,
+    },
+  };
+
+  const caseThumbnailCaptionVariants = {
+    hidden: { opacity: 0, y: 10 },
+    inView: {
+      opacity: 0.96,
+      y: 0,
+    },
+    hover: {
+      opacity: 1,
+    },
+  };
+
   return (
     <StyledCaseThumbnail
       whileHover="hover"
       initial="hidden"
-      whileInView={isMobile ? "hover" : "inView"}
+      whileInView="inView"
       viewport={{ once: true, amount: "some" }}
       transition={{ staggerChildren: 0.1 }}
       variants={caseThumbnailVariants}
@@ -202,7 +209,7 @@ function CaseThumbnail({ data, status, caseUrl }) {
 
           {fgImage && (
             <StyledFgImage
-              variants={thumbnailImageVariants}
+              variants={caseThumbnailImageVariants}
               src={`${process.env.PUBLIC_URL}/${
                 // eslint-disable-next-line no-nested-ternary
                 isMobile ? (isLandscape ? imageUrl : mobileImageUrl) : imageUrl
@@ -211,7 +218,7 @@ function CaseThumbnail({ data, status, caseUrl }) {
             />
           )}
 
-          <StyledThumbnailCaption variants={coverCaptionVariants}>
+          <StyledThumbnailCaption variants={caseThumbnailCaptionVariants}>
             <>
               {overline && <Overline>{overline}</Overline>}
               <TitleAndText h={h} title={title}>

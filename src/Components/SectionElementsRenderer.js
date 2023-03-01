@@ -206,7 +206,11 @@ function SectionElementsRenderer({ elementKey, data, template }) {
         </ElementColorContextProvider>
       );
     case SECTION_ELEMENTS.CASES_PREVIEW:
-      return <CasesPreview key={elementKey} />;
+      return (
+        <ElementColorContextProvider>
+          <CasesPreview key={elementKey} />
+        </ElementColorContextProvider>
+      );
     case SECTION_ELEMENTS.TESTIMONIALS:
       return <Testimonials key={elementKey} />;
     default:

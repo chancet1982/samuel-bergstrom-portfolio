@@ -7,22 +7,30 @@ import { useWindowSize } from "react-use";
 import CaseThumbnail from "./Cases/CaseThumbnail";
 import { CASES } from "../../data/dictionaries/CASES";
 import { CASE_STATUS } from "../../data/dictionaries/CASE_STATUS";
-import ElementContextProvider from "../../Context/ElementColorContext";
+import breakpoints from "../../theme/breakpoints";
 
 const StyledCasesPreview = styled(motion.div)`
   background-color: black;
 `;
 
 const StyledCamera = styled(motion.div)`
-  width: 100vw;
-  height: 100vh;
-  position: sticky;
-  top: 0;
+  @media (min-width: ${breakpoints.desktop}px) {
+    width: 100vw;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+  }
 `;
 
 const StyledFrame = styled(motion.div)`
   display: flex;
-  height: 100%;
+  flex-direction: column;
+  height: fit-content;
+
+  @media (min-width: ${breakpoints.desktop}px) {
+    height: 100%;
+    flex-direction: row;
+  }
 `;
 
 function CasesPreview() {
@@ -43,19 +51,23 @@ function CasesPreview() {
     [0, -((cases.length - 1) * viewportWidth)]
   );
 
-  // const smoothHorizontalScroll = useSpring(horizontalScroll);
+  const { width } = useWindowSize();
+  const isMobile = width < breakpoints.desktop;
+
   return (
-    <StyledCasesPreview style={{ height: `${cases.length * 100}vw` }} ref={ref}>
+    <StyledCasesPreview
+      style={{ height: !isMobile ? `${cases.length * 100}vw` : "auto" }}
+      ref={ref}
+    >
       <StyledCamera>
-        <StyledFrame style={{ x: horizontalScroll }}>
+        <StyledFrame style={{ x: !isMobile ? horizontalScroll : "inherit" }}>
           {cases.map(({ thumbnail, caseStatus, caseUrl }) => (
-            <ElementContextProvider key={caseUrl}>
-              <CaseThumbnail
-                data={thumbnail}
-                caseUrl={caseUrl}
-                status={caseStatus}
-              />
-            </ElementContextProvider>
+            <CaseThumbnail
+              data={thumbnail}
+              caseUrl={caseUrl}
+              status={caseStatus}
+              key={caseUrl}
+            />
           ))}
         </StyledFrame>
       </StyledCamera>
