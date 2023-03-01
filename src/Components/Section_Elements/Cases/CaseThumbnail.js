@@ -46,7 +46,7 @@ const StyledBackgroundColor = styled(motion.div)`
   border-radius: ${padding.outsideElements.double};
   ${({ $bgColor }) =>
     $bgColor && {
-      backgroundColor: $bgColor,
+      background: $bgColor,
     }}
 `;
 

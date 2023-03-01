@@ -27,7 +27,7 @@ const StyledCover = styled(motion.div)`
 
   ${({ $bgColor }) =>
     $bgColor && {
-      backgroundColor: $bgColor,
+      background: $bgColor,
     }}
 
   :before {

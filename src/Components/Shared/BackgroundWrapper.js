@@ -20,7 +20,7 @@ const StyledBackground = styled(motion.div)`
 
   ${({ $bgColor }) =>
     $bgColor && {
-      backgroundColor: $bgColor || colors.offwhite,
+      background: $bgColor || colors.offwhite,
     }}
 
   ${({ $bgMedia, $bgColor, $isPadded }) =>

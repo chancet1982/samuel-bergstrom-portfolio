@@ -51,11 +51,12 @@ const StyledResultCaption = styled(motion.div)`
   z-index: 1;
 
   box-sizing: border-box;
-
-  ${({ $bgColor }) =>
-    $bgColor && {
-      backgroundColor: $bgColor,
-    }}
+  @media (max-width: ${breakpoints.desktop - 1}px) {
+    ${({ $bgColor }) =>
+      $bgColor && {
+        background: $bgColor,
+      }}
+  }
 `;
 
 function FinalResult({

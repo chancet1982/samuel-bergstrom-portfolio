@@ -54,7 +54,7 @@ ${({ $marginUp }) =>
 
   ${({ $bgColor }) =>
     $bgColor && {
-      backgroundColor: $bgColor,
+      background: $bgColor,
       paddingTop: padding.outsideElements.quadruple,
       paddingBottom: padding.outsideElements.quadruple,
     }}
