@@ -85,8 +85,8 @@ Insights.propTypes = {
   h: PropTypes.number,
   items: PropTypes.arrayOf(
     PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      text: PropTypes.string.isRequired,
+      title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
+      text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
     })
   ).isRequired,
   bgColor: PropTypes.string,
