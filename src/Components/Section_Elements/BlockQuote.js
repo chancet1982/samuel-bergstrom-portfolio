@@ -11,6 +11,7 @@ import colors from "../../theme/colors";
 import sizes from "../../theme/sizes";
 import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
 import breakpoints from "../../theme/breakpoints";
+import shouldUseLightText from "../../utils/shouldUseLightText";
 
 const StyledBlockQuote = styled(motion.blockquote)`
   padding: ${padding.insideElements.single} ${padding.outsideElements.double};
@@ -40,14 +41,7 @@ function BlockQuote({ cite, quote, bgColor, bgMedia }) {
   const [light, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
-    // eslint-disable-next-line no-unused-expressions
-    setLight !== null &&
-      setLight(
-        (bgColor !== null &&
-          bgColor !== colors.offwhite &&
-          bgColor !== colors.primaryShade) ||
-          bgMedia !== null
-      );
+    setLight(shouldUseLightText(bgColor) || bgMedia !== null);
   }, [setLight, bgColor, bgMedia]);
 
   const renderBlockQuote = () => (

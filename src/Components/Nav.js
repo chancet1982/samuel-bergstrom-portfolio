@@ -15,6 +15,7 @@ import Logo from "./Nav/Logo";
 import MenuToggler from "./Nav/MenuToggler";
 import Menu from "./Nav/Menu";
 import MobileMenu from "./Nav/MobileMenu";
+import shouldUseLightText from "../utils/shouldUseLightText";
 
 const StyledNav = styled(motion.nav)`
   height: 5.5rem;
@@ -63,13 +64,7 @@ function Nav() {
   }, [location, setNavBgColor, setCursorText, setCursorVariant]);
 
   useEffect(() => {
-    // eslint-disable-next-line no-unused-expressions
-    setIsLight !== null &&
-      setIsLight(
-        navBgColor !== null &&
-          navBgColor !== colors.offwhite &&
-          navBgColor !== colors.primaryShade
-      );
+    setIsLight(shouldUseLightText(navBgColor));
   }, [setIsLight, navBgColor]);
 
   const [navState, setNavState] = useState("transparent");

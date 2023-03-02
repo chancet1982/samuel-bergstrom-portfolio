@@ -10,6 +10,7 @@ import CustomCursor from "./CustomCursor";
 import breakpoints from "../theme/breakpoints";
 import SplashScreen from "./SplashScreen";
 import { SplashAnimationFinishedContext } from "../Context/SplashAnimationFinishedContext";
+import shouldUseLightText from "../utils/shouldUseLightText";
 
 const StyledView = styled(motion.main)`
   ${({ $bgColor }) =>
@@ -33,11 +34,7 @@ function View({ children, bgColor }) {
   const [, setLight] = useContext(ViewColorContext);
 
   useEffect(() => {
-    setLight(
-      bgColor !== null &&
-        bgColor !== colors.offwhite &&
-        bgColor !== colors.primaryShade
-    );
+    setLight(shouldUseLightText(bgColor));
   }, [setLight, bgColor]);
 
   const { width } = useWindowSize();

@@ -119,7 +119,11 @@ function SplashScreen() {
     <StyledSplashScreen variants={variants}>
       <Title
         h={1}
-        style={{ fontWeight: "700", fontStrech: "104%" }}
+        style={{
+          fontWeight: "600",
+          fontStretch: "112%",
+          textTransform: "none",
+        }}
         withMargin={false}
         isLight
         initial="initial"
@@ -128,7 +132,7 @@ function SplashScreen() {
         }
         variants={staticTextVariants}
       >
-        I Helped &nbsp;
+        I helped &nbsp;
       </Title>
       <AnimatePresence initial={false} mode="wait">
         <Title

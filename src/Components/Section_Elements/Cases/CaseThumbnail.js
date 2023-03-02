@@ -15,6 +15,7 @@ import sizes from "../../../theme/sizes";
 import { BG_MEDIA_TYPES } from "../../../data/dictionaries/BG_MEDIA_TYPES";
 import Overline from "../../Shared/Overline";
 import TitleAndText from "../../Shared/TitleAndText";
+import shouldUseLightText from "../../../utils/shouldUseLightText";
 
 const StyledCaseThumbnail = styled(motion.div)`
   padding: ${padding.outsideElements.double};
@@ -105,15 +106,14 @@ const StyledFgImage = styled(motion.img)`
 `;
 
 function CaseThumbnail({ data, status, caseUrl }) {
-  const [, setLight] = useContext(ElementColorContext);
-
-  useEffect(() => {
-    setLight(true);
-  }, [setLight]);
-
   const { bgColor, bgMedia, caption, fgImage } = data;
   const { overline, h, title, text } = caption;
   const { imageUrl, mobileImageUrl, imageAlt } = fgImage;
+  const [, setLight] = useContext(ElementColorContext);
+
+  useEffect(() => {
+    setLight(shouldUseLightText(bgColor));
+  }, [setLight, bgColor]);
 
   const { width } = useWindowSize();
   const isMobile = width < breakpoints.desktop;

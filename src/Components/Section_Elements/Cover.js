@@ -17,6 +17,7 @@ import padding from "../../theme/padding";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
 import { NavBgColorContext } from "../../Context/NavBgColorContext";
+import shouldUseLightText from "../../utils/shouldUseLightText";
 
 const StyledCover = styled(motion.div)`
   height: ${sizes.xl};
@@ -122,12 +123,7 @@ function Cover({
   const isTabletOrDesktop = width >= breakpoints.mobileLarge;
 
   useEffect(() => {
-    setLight(
-      isLight ||
-        (bgColor !== null &&
-          bgColor !== colors.offwhite &&
-          bgColor !== colors.primaryShade)
-    );
+    setLight(shouldUseLightText(bgColor));
   }, [setLight, bgColor, isLight]);
 
   useEffect(() => {

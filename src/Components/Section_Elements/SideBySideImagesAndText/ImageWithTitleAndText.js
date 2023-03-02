@@ -8,6 +8,7 @@ import ImageWithCaption from "../../Shared/ImageWithCaption";
 import { IMAGE_WITH_CAPTION_SIZES } from "../../../data/dictionaries/IMAGE_WITH_CAPTION_SIZES";
 import { ElementColorContext } from "../../../Context/ElementColorContext";
 import colors from "../../../theme/colors";
+import shouldUseLightText from "../../../utils/shouldUseLightText";
 
 const StyledImageWithTitleAndText = styled(motion.div)`
   display: flex;
@@ -42,11 +43,7 @@ function ImageWithTitleAndText({
   const [, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
-    setLight(
-      bgColor !== null &&
-        bgColor !== colors.offwhite &&
-        bgColor !== colors.primaryShade
-    );
+    setLight(shouldUseLightText(bgColor));
   }, [setLight, bgColor]);
 
   return (

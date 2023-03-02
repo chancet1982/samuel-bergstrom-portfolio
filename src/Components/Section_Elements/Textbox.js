@@ -10,9 +10,9 @@ import Image from "../Shared/Image";
 import sizes from "../../theme/sizes";
 import breakpoints from "../../theme/breakpoints";
 import { ElementColorContext } from "../../Context/ElementColorContext";
-import colors from "../../theme/colors";
 import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
 import padding from "../../theme/padding";
+import shouldUseLightText from "../../utils/shouldUseLightText";
 
 const StyledTextbox = styled(motion.div)`
   display: grid;
@@ -77,14 +77,7 @@ function Textbox({
   const [, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
-    // eslint-disable-next-line no-unused-expressions
-    setLight !== null &&
-      setLight(
-        (bgColor !== null &&
-          bgColor !== colors.offwhite &&
-          bgColor !== colors.primaryShade) ||
-          bgMedia !== null
-      );
+    setLight(shouldUseLightText(bgColor) || bgMedia !== null);
   }, [setLight, bgColor, bgMedia]);
 
   const renderImage = () =>

@@ -7,10 +7,10 @@ import breakpoints from "../../theme/breakpoints";
 import ValueAndLabel from "../Shared/ValueAndLabel";
 import BackgroundWrapper from "../Shared/BackgroundWrapper";
 import { ElementColorContext } from "../../Context/ElementColorContext";
-import colors from "../../theme/colors";
 import padding from "../../theme/padding";
 import sizes from "../../theme/sizes";
 import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
+import shouldUseLightText from "../../utils/shouldUseLightText";
 
 const StyledKeyFigures = styled(motion.div)`
   display: flex;
@@ -40,14 +40,7 @@ function KeyFigures({ items, bgColor, bgMedia }) {
   const [, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
-    // eslint-disable-next-line no-unused-expressions
-    setLight !== null &&
-      setLight(
-        (bgColor !== null &&
-          bgColor !== colors.offwhite &&
-          bgColor !== colors.primaryShade) ||
-          bgMedia !== null
-      );
+    setLight(shouldUseLightText(bgColor) || bgMedia !== null);
   }, [setLight, bgColor, bgMedia]);
 
   const renderKeyFigures = () => (

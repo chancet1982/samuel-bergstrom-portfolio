@@ -6,11 +6,11 @@ import { motion } from "framer-motion";
 import TitleAndText from "../Shared/TitleAndText";
 import breakpoints from "../../theme/breakpoints";
 import { ElementColorContext } from "../../Context/ElementColorContext";
-import colors from "../../theme/colors";
 import Paragraph from "../Shared/Paragraph";
 import padding from "../../theme/padding";
 import sizes from "../../theme/sizes";
 import BackgroundWrapper from "../Shared/BackgroundWrapper";
+import shouldUseLightText from "../../utils/shouldUseLightText";
 
 const StyledInsights = styled(motion.div)`
   display: grid;
@@ -46,13 +46,7 @@ function Insights({ title, h, items, bgColor, isTwoColumnsOnDesktop, text }) {
   const [, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
-    // eslint-disable-next-line no-unused-expressions
-    setLight !== null &&
-      setLight(
-        bgColor !== null &&
-          bgColor !== colors.offwhite &&
-          bgColor !== colors.primaryShade
-      );
+    setLight(shouldUseLightText(bgColor));
   }, [setLight, bgColor]);
 
   const convertRawInsightsToElements = () =>

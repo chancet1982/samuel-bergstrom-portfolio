@@ -11,7 +11,7 @@ import TitleAndText from "../Shared/TitleAndText";
 import padding from "../../theme/padding";
 import breakpoints from "../../theme/breakpoints";
 import { ElementColorContext } from "../../Context/ElementColorContext";
-import colors from "../../theme/colors";
+import shouldUseLightText from "../../utils/shouldUseLightText";
 
 const StyledFinalResultContent = styled(motion.div)`
   display: grid;
@@ -70,13 +70,7 @@ function FinalResult({
   const [, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
-    // eslint-disable-next-line no-unused-expressions
-    setLight !== null &&
-      setLight(
-        bgColor !== null &&
-          bgColor !== colors.offwhite &&
-          bgColor !== colors.primaryShade
-      );
+    setLight(shouldUseLightText(bgColor));
   }, [setLight, bgColor]);
 
   const { width } = useWindowSize();

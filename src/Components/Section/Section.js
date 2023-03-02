@@ -6,10 +6,10 @@ import { useWindowSize } from "react-use";
 import SectionHeader from "./SectionHeader";
 import padding from "../../theme/padding";
 import { SectionColorContext } from "../../Context/SectionColorContext";
-import colors from "../../theme/colors";
 import sizes from "../../theme/sizes";
 import breakpoints from "../../theme/breakpoints";
 import Title from "../Shared/Title";
+import shouldUseLightText from "../../utils/shouldUseLightText";
 
 const StyledSection = styled(motion.section)`
   height: fit-content;
@@ -97,11 +97,7 @@ function Section({
     width < sizes.contentWidthLimit + sizes.sectionHeaderWidthLimit;
 
   useEffect(() => {
-    setLight(
-      bgColor !== null &&
-        bgColor !== colors.offwhite &&
-        bgColor !== colors.primaryShade
-    );
+    setLight(shouldUseLightText(bgColor));
   }, [setLight, bgColor]);
 
   return (
