@@ -23,7 +23,7 @@ const StyledCover = styled(motion.div)`
   height: ${sizes.xl};
   position: relative;
   display: flex;
-
+  box-shadow: 0 0 100vmin rgb(0 0 0 / 24%) inset;
   overflow: hidden;
 
   ${({ $bgColor }) =>

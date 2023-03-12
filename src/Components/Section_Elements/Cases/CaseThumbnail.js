@@ -45,6 +45,13 @@ const StyledBackgroundColor = styled(motion.div)`
   position: relative;
   overflow: hidden;
   border-radius: ${padding.outsideElements.double};
+  box-shadow: 0 0 100vmin rgba(0 0 0 / 24%) inset;
+  transition: all 0.3s;
+
+  :hover {
+    box-shadow: 0 0 50vmin rgba(0 0 0 / 32%) inset;
+  }
+
   ${({ $bgColor }) =>
     $bgColor && {
       background: $bgColor,
