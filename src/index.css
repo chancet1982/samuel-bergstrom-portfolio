@@ -6,6 +6,11 @@
   font-stretch: 75% 125%;
 }
 
+/*@import url("typography-small.css") only screen and (max-width: 640px);
+@import url("typography-medium.css") only screen and (min-width: 641px) and
+  (max-width: 960px);
+@import url("typography-large.css") only screen and (min-width: 961px);*/
+
 html,
 body {
   max-width: 100vw;

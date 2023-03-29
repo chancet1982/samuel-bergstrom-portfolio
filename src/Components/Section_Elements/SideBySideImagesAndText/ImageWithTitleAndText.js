@@ -63,7 +63,7 @@ function ImageWithTitleAndText({
         ignoreSize
         size={IMAGE_WITH_CAPTION_SIZES.MEDIUM_DOUBLE}
       />
-      <TitleAndText h={h} title={title}>
+      <TitleAndText h={h} title={title} isCentered>
         {text}
       </TitleAndText>
     </StyledImageWithTitleAndText>

@@ -61,8 +61,9 @@ export const VIEW_ABOUT_ME = [
               title: "Mentor",
               text: (
                 <Paragraph>
-                  Active mentor in ADPList and ECUtbildning, sharing my
-                  knowledge with the community.
+                  I believe in growth and love helping others. I am currently a
+                  Board member of Malmö Design network and an active mentor in
+                  ADPList and ECUtbildning.
                 </Paragraph>
               ),
             },
@@ -141,33 +142,28 @@ export const VIEW_ABOUT_ME = [
           text: (
             <>
               <Paragraph>
-                My career started off 15 years ago when I was hired as a graphic
-                designer for a financial services provider in Copenhagen. I had
-                many hats at that time and eventually I was in charge of a small
-                team responsible for creating web and document creation
+                I started my career 15 years ago as a graphic designer for a
+                financial services provider in Copenhagen. Over time, I became
+                responsible for a small team that created web and document
                 solutions used by 50-70 banks and investment groups.
               </Paragraph>
               <Paragraph>
-                But work got repetative. I needed a new challenge. I signed up
-                to go back to university where I studied It Communications and
-                New Media while working full-time. After graduation, I worked as
-                a Front-end developer for a couple of years before going back to
-                design. This time working with data visualizations for medical
-                studies before being hired as a consultant.
+                However, the work became repetitive and I felt the need for a
+                new challenge. So, I signed up for university while continuing
+                to work full-time. There, I studied IT Communications and New
+                Media. After graduating, I worked as a front-end developer for a
+                couple of years before returning to design. This time, I focused
+                on data visualizations for medical studies. Later on, I worked
+                as a consultant and had the opportunity to be involved in all
+                stages of the product development process, from ideation to
+                evaluation.
               </Paragraph>
               <Paragraph>
-                As a consultant, I was hired to work as part of an in-house
-                delivery organization. This included involvement in all parts of
-                process. From from defining problems worth solving, through
-                product discovery, ideation, design, and validation, to
-                building, launching and evaluting the impact of our efforts.
-              </Paragraph>
-              <Paragraph>
-                Currently working as head of design at tretton37. I lead a team
-                of 20 designers and am responsible for working on our VP, EVP,
-                Competence development (in collaboration with a dedicated
-                competence lead) packaging design services, and generally trying
-                to ensure that designers have a home at tretton37.
+                Currently, I am the head of design at tretton37, where I lead a
+                team of 20 designers. My responsibilities include working on our
+                VP, EVP, Competence development (in collaboration with a
+                dedicated competence lead), packaging design services, and
+                ensuring that designers have a home at tretton37.
               </Paragraph>
               <Title h={4}>Some of my credentials</Title>
               <List
