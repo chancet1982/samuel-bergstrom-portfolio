@@ -250,6 +250,9 @@ export const CASE_5 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
+        },
+        {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/personas.png`,
@@ -319,6 +322,9 @@ export const CASE_5 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
+        },
+        {
           template: SECTION_ELEMENTS.SIDE_BY_SIDE_IMAGES_AND_TEXT,
           data: {
             items: [
@@ -327,21 +333,13 @@ export const CASE_5 = {
                 imageAlt: "Auto check-in",
                 title: "Auto check-in using facial recognition and OCR",
                 text: (
-                  <>
-                    <Paragraph>
-                      In the automated solution, I suggested using facial
-                      recognition and cameras for identifying the patients.
-                      Weighing patients would be done using a “hack” where
-                      instead of using a hardware integration use an external
-                      camera pointed at the display of the scales and feed in
-                      the values automatically using OCR.
-                    </Paragraph>
-                    <Paragraph>
-                      Clinics simply used too many different scales to make any
-                      “real” integration possible so a clever walk-around was
-                      the only alternative.
-                    </Paragraph>
-                  </>
+                  <Paragraph>
+                    In the automated solution, I suggested using facial
+                    recognition for patient identification. Weight would be
+                    recorded using an external camera with OCR. This workaround
+                    was necessary. Clinics used too many models of scales to do
+                    any real integration.
+                  </Paragraph>
                 ),
               },
               {
@@ -349,22 +347,15 @@ export const CASE_5 = {
                 imageAlt: "Manual check-in",
                 title: "Manual input of identify and weight",
                 text: (
-                  <>
-                    <Paragraph>
-                      The other solution was more “barebones”, patients will
-                      have to identify themselves by selecting their name from a
-                      list of patients that are scheduled for that shift. In
-                      some countries, some names are very common (even in a
-                      small group of 20), and an additional identifier had to be
-                      used. I proposed using the year of birth as a follow-up
-                      question in those cases.
-                    </Paragraph>
-                    <Paragraph>
-                      Once the patient identified him/herself, they would
-                      manually enter their weight. At any step, patients can go
-                      back and correct their errors or ask for staff assistance.
-                    </Paragraph>
-                  </>
+                  <Paragraph>
+                    In the manual solution, patients would identify themselves
+                    by selecting their name from a list of patients scheduled
+                    for treatment. We needed to implement an additional question
+                    as followup in case several patients shared a name (A likely
+                    scenario according in some countries) Once the patient
+                    identified him/herself, they would manually enter their
+                    weight.
+                  </Paragraph>
                 ),
               },
             ],
@@ -374,18 +365,11 @@ export const CASE_5 = {
     },
     {
       paddedUp: true,
-      header: "Design",
       elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>If at first, you don’t succeed.</>,
-            h: 3,
-            flip: true,
-            limitMaxWidth: false,
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/design.jpg`,
-            imageAlt: "One of the patients during our interview",
-            caption: "Patients during our interview",
             text: (
               <>
                 <Paragraph>
@@ -408,6 +392,20 @@ export const CASE_5 = {
               </>
             ),
           },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/design.jpg`,
+            imageAlt: "One of the patients during our interview",
+            caption: "Patients during our interview",
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
           template: SECTION_ELEMENTS.TEXTBOX,
@@ -433,16 +431,14 @@ export const CASE_5 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.IMAGE_GALLERY,
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
-            template: IMAGE_GALLERY_TEMPLATES.ONE_IMAGE_FULLSIZE,
-            images: [
-              {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/wip.png`,
-                imageAlt: "Workflow",
-                caption: "Some phases from my work in this project",
-              },
-            ],
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/wip.png`,
+            imageAlt: "Workflow",
+            caption: "Some phases from my work in this project",
           },
         },
         {
@@ -511,14 +507,22 @@ export const CASE_5 = {
       header: "Validation",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
-            title: <>2 days, 20 tests, and an overhaul</>,
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/validation.jpg`,
             imageAlt:
               "Participant during usability testing, first time ever using a tablet",
             caption:
               "Participant during usability testing, first time ever using a tablet",
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>2 days, 20 tests, and an overhaul</>,
             text: (
               <>
                 <Paragraph>

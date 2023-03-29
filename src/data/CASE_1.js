@@ -390,16 +390,14 @@ export const CASE_1 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.IMAGE_GALLERY,
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
-            template: IMAGE_GALLERY_TEMPLATES.ONE_IMAGE_FULLSIZE,
-            images: [
-              {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/wip.png`,
-                imageAlt: "Workflow",
-                caption: "Some phases from my work in this project",
-              },
-            ],
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/wip.png`,
+            imageAlt: "Workflow",
+            caption: "Some phases from my work in this project",
           },
         },
       ],
