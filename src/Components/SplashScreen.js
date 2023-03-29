@@ -120,8 +120,7 @@ function SplashScreen() {
       <Title
         h={1}
         style={{
-          fontWeight: "600",
-          fontStretch: "112%",
+          fontStretch: "75%",
           textTransform: "none",
         }}
         withMargin={false}

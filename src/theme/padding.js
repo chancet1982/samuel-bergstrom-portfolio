@@ -2,6 +2,7 @@ const padding = {
   outsideElements: {
     double: "4vmin",
     quadruple: "8vmin",
+    octuple: "16vmin",
   },
   insideElements: {
     quarter: "0.25rem",

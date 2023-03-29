@@ -297,6 +297,7 @@ export const CASE_2 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>Sharing learnings and planning the road ahead</>,
+            h: 3,
             text: (
               <Paragraph>
                 The insights were shared with the internal stakeholders and
@@ -317,7 +318,6 @@ export const CASE_2 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>Prioritizing features and scoping and MVP</>,
-            h: 3,
             text: (
               <Paragraph>
                 We sat with all stakeholders and mapped the functionality, the
@@ -325,6 +325,14 @@ export const CASE_2 = {
                 would balance user needs and business goals.
               </Paragraph>
             ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/design.jpg`,
             imageAlt: "Kickoff meeting, dot-voting on features",
             caption: "Kickoff meeting, dot-voting on features",
@@ -478,6 +486,9 @@ export const CASE_2 = {
             imageAlt: "Just some decoration",
           },
         },
+        {
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
+        },
       ],
     },
     {
@@ -489,10 +500,9 @@ export const CASE_2 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>Usability testing on a shoestring</>,
-            h: 2,
             text: (
               <>
-                <Paragraph>
+                <Paragraph xl>
                   At this point, we had an untested, accessible, pretty, design
                   but will it be usable?
                 </Paragraph>
@@ -508,9 +518,11 @@ export const CASE_2 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
+        },
+        {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
-            limitMaxWidth: true,
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/validation.jpg`,
             imageAlt:
               "Guerilla usability testing in Skånes universitetssjukhus Malmö cafeteria",
@@ -519,13 +531,16 @@ export const CASE_2 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
+        },
+        {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: <>2 hours, and 500 SEK later…</>,
-            h: 4,
+            h: 3,
             text: (
               <>
-                <Paragraph>
+                <Paragraph xl>
                   Like most things in Sweden, the answer was there all along.{" "}
                   <strong>Fika</strong>
                 </Paragraph>
@@ -546,6 +561,9 @@ export const CASE_2 = {
               </>
             ),
           },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER_LARGE,
         },
       ],
     },

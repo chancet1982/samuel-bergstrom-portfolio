@@ -8,6 +8,12 @@ import { SPACER_SIZES } from "../../data/dictionaries/SPACER_SIZES";
 
 const StyledSpacer = styled(motion.div)`
   ${({ $size }) =>
+    $size === SPACER_SIZES.LARGE && {
+      paddingTop: padding.outsideElements.octuple,
+      /* backgroundColor: "pink", */
+    }}
+
+  ${({ $size }) =>
     $size === SPACER_SIZES.MEDIUM && {
       paddingTop: padding.outsideElements.quadruple,
       /* backgroundColor: "pink", */

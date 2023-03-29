@@ -189,8 +189,6 @@ export const CASE_1 = {
                 </Paragraph>
               </>
             ),
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/flow-mapping.jpg`,
-            imageAlt: "Flow mapping stock photography",
           },
         },
         {
