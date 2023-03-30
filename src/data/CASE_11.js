@@ -8,7 +8,6 @@ import Paragraph from "../Components/Shared/Paragraph";
 import Title from "../Components/Shared/Title";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
-import Image from "../Components/Shared/Image";
 import Note from "../Components/Shared/Note";
 import List from "../Components/Shared/List";
 import Span from "../Components/Shared/Span";
@@ -160,6 +159,7 @@ export const CASE_11 = {
           data: {
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/initial-used-product.png`,
             limitMaxWidth: true,
+            isPadded: true,
             imageAlt:
               "A picture of the tiny icon that indicated used products in the product page",
           },
@@ -196,6 +196,7 @@ export const CASE_11 = {
             limitMaxWidth: true,
             imageAlt: "Which one of the CDON offers is a used product?",
             caption: "Which one of the CDON offers is a used product?",
+            isPadded: true,
           },
         },
         {
@@ -229,36 +230,45 @@ export const CASE_11 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Research</>,
+            title: "Looking at user feedback and quarterly survey responses.",
+            h: 4,
             text: (
-              <>
-                <Title h={4}>
-                  Looking at user feedback and quarterly survey responses.
-                </Title>
-                <Paragraph>
-                  Looking at user feedback it was an obvious pain point for the
-                  users. The layout led to numerous users misclicking “demo”
-                  products believing these were new. Leading complaints on the
-                  site was that “used and demo products are sold as new” and
-                  that the price history does not reflect the actual product
-                  price as it is contaminated with “demo” and “refurbished”
-                  products. In fact, during the quarterly survey, one of the
-                  most common complaints were related to“non-new” products.
-                </Paragraph>
-                <Image
-                  imageUrl={`/${SETTINGS.MEDIA_BASE_URL}/bad-reviews.png`}
-                  inTextbox
-                />
-                <Title h={4}>Qualitative research</Title>
-                <Paragraph large>
-                  We integrated this as part of our usability testing and asked
-                  participants to point out demo products.
-                  <br />
-                  <strong>
-                    Not a single participant managed to point these out.
-                  </strong>
-                </Paragraph>
-              </>
+              <Paragraph>
+                Looking at user feedback it was an obvious pain point for the
+                users. The layout led to numerous users misclicking “demo”
+                products believing these were new. Leading complaints on the
+                site was that “used and demo products are sold as new” and that
+                the price history does not reflect the actual product price as
+                it is contaminated with “demo” and “refurbished” products. In
+                fact, during the quarterly survey, one of the most common
+                complaints were related to“non-new” products.
+              </Paragraph>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/bad-reviews.png`,
+            imageAlt: "Some of the online reviews",
+            limitMaxWidth: true,
+            isPadded: true,
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: "Qualitative research",
+            h: 4,
+            text: (
+              <Paragraph large>
+                We integrated this as part of our usability testing and asked
+                participants to point out demo products.
+                <br />
+                <strong>
+                  Not a single participant managed to point these out.
+                </strong>
+              </Paragraph>
             ),
           },
         },
@@ -300,6 +310,7 @@ export const CASE_11 = {
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/spreadsheets.png`,
             limitMaxWidth: true,
             imageAlt: "?",
+            isPadded: true,
           },
         },
       ],
@@ -447,6 +458,7 @@ export const CASE_11 = {
           data: {
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/testing.png`,
             limitMaxWidth: true,
+            isPadded: true,
             imageAlt: "?",
             caption: "Conversion rate changes as measured in Optimizely",
           },
