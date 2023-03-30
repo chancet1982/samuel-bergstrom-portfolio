@@ -33,7 +33,7 @@ const useFluidTypography = (pSize = 2, withMargin = true) => {
       !!withMargin &&
       `
     margin-top: ${currentLineHeight * 0.5}em;
-    margin-bottom: 0;
+    margin-bottom: ${currentLineHeight * 0.5}em;
     `
     }}
   `;
