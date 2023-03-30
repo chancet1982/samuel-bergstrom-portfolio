@@ -144,6 +144,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
           imageAlt={data.imageAlt}
           caption={data.caption}
           limitMaxWidth={data.limitMaxWidth}
+          isPadded={data.isPadded}
         />
       );
     case SECTION_ELEMENTS.SIDE_BY_SIDE_IMAGES_AND_TEXT:

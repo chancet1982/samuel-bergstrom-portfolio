@@ -35,10 +35,17 @@ ${({ $paddedDown }) =>
     }}
 `;
 
-function SectionImage({ imageUrl, imageAlt, caption, limitMaxWidth }) {
+function SectionImage({
+  imageUrl,
+  imageAlt,
+  caption,
+  limitMaxWidth,
+  isPadded,
+}) {
   return (
     <StyledSectionImage
       $limitMaxWidth={limitMaxWidth}
+      $isPadded={isPadded}
       initial="hidden"
       whileInView="inView"
       viewport={{ once: true, amount: 0.2 }}
@@ -58,11 +65,13 @@ SectionImage.propTypes = {
   imageAlt: PropTypes.string.isRequired,
   caption: PropTypes.string,
   limitMaxWidth: PropTypes.bool,
+  isPadded: PropTypes.bool,
 };
 
 SectionImage.defaultProps = {
   caption: null,
   limitMaxWidth: false,
+  isPadded: false,
 };
 
 export default SectionImage;
