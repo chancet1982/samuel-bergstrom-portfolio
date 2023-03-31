@@ -325,7 +325,7 @@ export const CASE_5 = {
           template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
-          template: SECTION_ELEMENTS.SIDE_BY_SIDE_IMAGES_AND_TEXT,
+          template: SECTION_ELEMENTS.COLUMNS,
           data: {
             items: [
               {

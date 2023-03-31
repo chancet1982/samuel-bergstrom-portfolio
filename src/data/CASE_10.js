@@ -480,13 +480,14 @@ export const CASE_10 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SIDE_BY_SIDE_IMAGES_AND_TEXT,
+          template: SECTION_ELEMENTS.COLUMNS,
           data: {
             items: [
               {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/before.png`,
                 imageAlt: "Prices list, before",
                 title: "Before",
+                isCentered: true,
                 text: (
                   <Paragraph>
                     A mixture of paying and non-paying customers. Sorting is
@@ -498,6 +499,7 @@ export const CASE_10 = {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/after.png`,
                 imageAlt: "Prices list, after",
                 title: "After",
+                isCentered: true,
                 text: (
                   <Paragraph>
                     Recommended sorting in-place, non-paying shops grouped at

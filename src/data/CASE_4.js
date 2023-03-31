@@ -341,7 +341,7 @@ export const CASE_4 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SIDE_BY_SIDE_IMAGES_AND_TEXT,
+          template: SECTION_ELEMENTS.COLUMNS,
           data: {
             items: [
               {

@@ -363,13 +363,14 @@ export const CASE_11 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SIDE_BY_SIDE_IMAGES_AND_TEXT,
+          template: SECTION_ELEMENTS.COLUMNS,
           data: {
             items: [
               {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/before.png`,
                 imageAlt: "Expectation",
                 title: "Expectation",
+                isCentered: true,
                 text: (
                   <Paragraph>
                     Product variants typically are placed as part of the product
@@ -382,6 +383,7 @@ export const CASE_11 = {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/after.png`,
                 imageAlt: "Reality",
                 title: "Reality",
+                isCentered: true,
                 text: (
                   <Paragraph>
                     Due to technical constraints (at that time, the product page

@@ -417,13 +417,14 @@ export const CASE_9 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SIDE_BY_SIDE_IMAGES_AND_TEXT,
+          template: SECTION_ELEMENTS.COLUMNS,
           data: {
             items: [
               {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/before.png`,
                 imageAlt: "Before",
                 title: "Before",
+                isCentered: true,
                 text: (
                   <Paragraph>
                     Pressing “ENTER” would lead users to the search results
@@ -435,6 +436,7 @@ export const CASE_9 = {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/after.png`,
                 imageAlt: "After",
                 title: "After",
+                isCentered: true,
                 text: (
                   <Paragraph>
                     Search suggestions with the new option added. Pressing

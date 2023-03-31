@@ -10,7 +10,7 @@ import CasesPreview from "./Section_Elements/CasesPreview";
 import ImageGallery from "./Section_Elements/ImageGallery";
 import FinalResult from "./Section_Elements/FinalResult";
 import BlockQuote from "./Section_Elements/BlockQuote";
-import SideBySideImagesAndText from "./Section_Elements/SideBySideImagesAndText";
+import ContentColumns from "./Section_Elements/Columns";
 import ListOfImagesWithTitleAndText from "./Section_Elements/ListOfImagesWithTitleAndText";
 import SectionImage from "./Section_Elements/SectionImage";
 import Timeline from "./Section_Elements/Timeline";
@@ -147,9 +147,9 @@ function SectionElementsRenderer({ elementKey, data, template }) {
           isPadded={data.isPadded}
         />
       );
-    case SECTION_ELEMENTS.SIDE_BY_SIDE_IMAGES_AND_TEXT:
+    case SECTION_ELEMENTS.COLUMNS:
       return (
-        <SideBySideImagesAndText
+        <ContentColumns
           key={elementKey}
           limitMaxWidth={data.limitMaxWidth}
           items={data.items}

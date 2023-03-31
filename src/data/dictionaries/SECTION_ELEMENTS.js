@@ -15,7 +15,7 @@ export const SECTION_ELEMENTS = {
   IMAGE_GALLERY: "imageGallery",
   SECTION_IMAGE: "sectionImage",
   TESTIMONIALS: "testimonials",
-  SIDE_BY_SIDE_IMAGES_AND_TEXT: "sideBySideImagesAndText",
+  COLUMNS: "columns",
   LIST_OF_IMAGES_WITH_TITLE_AND_TEXT: "listOfImagesWithTitleAndText",
   LIST_OF_CARDS: "listOfCards",
   RESULT: "result",

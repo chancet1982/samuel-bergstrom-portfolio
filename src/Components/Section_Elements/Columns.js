@@ -2,13 +2,13 @@ import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import ImageWithTitleAndText from "./SideBySideImagesAndText/ImageWithTitleAndText";
+import ColumnContent from "./Columns/ColumnContent";
 import breakpoints from "../../theme/breakpoints";
 import ElementContextProvider from "../../Context/ElementColorContext";
 import padding from "../../theme/padding";
 import sizes from "../../theme/sizes";
 
-const StyledSideBySideImagesAndText = styled(motion.div)`
+const StyledColumns = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(${({ $itemsLength }) => $itemsLength}, 1fr);
   padding-left: ${padding.outsideElements.double};
@@ -48,44 +48,45 @@ const StyledSideBySideImagesAndText = styled(motion.div)`
   }
 `;
 
-function SideBySideImagesAndText({ limitMaxWidth, items }) {
+function Columns({ limitMaxWidth, items }) {
   return (
-    <StyledSideBySideImagesAndText
-      $limitMaxWidth={limitMaxWidth}
-      $itemsLength={items.length}
-    >
-      {items.map(({ imageUrl, imageAlt, title, h, text, bgColor }) => (
-        <ElementContextProvider key={imageUrl}>
-          <ImageWithTitleAndText
-            imageUrl={imageUrl}
-            imageAlt={imageAlt}
-            title={title}
-            h={h}
-            text={text}
-            bgColor={bgColor}
-          />
-        </ElementContextProvider>
-      ))}
-    </StyledSideBySideImagesAndText>
+    <StyledColumns $limitMaxWidth={limitMaxWidth} $itemsLength={items.length}>
+      {items.map(
+        ({ imageUrl, imageAlt, title, h, text, bgColor, isCentered }) => (
+          <ElementContextProvider key={imageUrl}>
+            <ColumnContent
+              imageUrl={imageUrl}
+              imageAlt={imageAlt}
+              title={title}
+              h={h}
+              text={text}
+              bgColor={bgColor}
+              isCentered={isCentered}
+            />
+          </ElementContextProvider>
+        )
+      )}
+    </StyledColumns>
   );
 }
 
-SideBySideImagesAndText.propTypes = {
+Columns.propTypes = {
   limitMaxWidth: PropTypes.bool,
   items: PropTypes.arrayOf(
     PropTypes.shape({
-      imageUrl: PropTypes.string.isRequired,
-      imageAlt: PropTypes.string.isRequired,
+      imageUrl: PropTypes.string,
+      imageAlt: PropTypes.string,
       title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
       h: PropTypes.number,
       text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
       bgColor: PropTypes.string,
+      isCentered: PropTypes.bool,
     })
   ).isRequired,
 };
 
-SideBySideImagesAndText.defaultProps = {
+Columns.defaultProps = {
   limitMaxWidth: true,
 };
 
-export default SideBySideImagesAndText;
+export default Columns;

@@ -7,15 +7,14 @@ import TitleAndText from "../../Shared/TitleAndText";
 import ImageWithCaption from "../../Shared/ImageWithCaption";
 import { IMAGE_WITH_CAPTION_SIZES } from "../../../data/dictionaries/IMAGE_WITH_CAPTION_SIZES";
 import { ElementColorContext } from "../../../Context/ElementColorContext";
-import colors from "../../../theme/colors";
 import shouldUseLightText from "../../../utils/shouldUseLightText";
 
-const StyledImageWithTitleAndText = styled(motion.div)`
+const StyledColumnContent = styled(motion.div)`
   display: flex;
 
   ${({ $bgColor }) =>
     $bgColor && {
-      backgroundColor: $bgColor || colors.offwhite,
+      backgroundColor: $bgColor,
     }}
 
   flex-direction: ${({ $horizontal, $flip }) =>
@@ -29,7 +28,7 @@ const StyledImageWithTitleAndText = styled(motion.div)`
   align-items: center;
 `;
 
-function ImageWithTitleAndText({
+function ColumnContent({
   imageUrl,
   imageAlt,
   caption,
@@ -39,6 +38,7 @@ function ImageWithTitleAndText({
   bgColor,
   horizontal,
   flip,
+  isCentered,
 }) {
   const [, setLight] = useContext(ElementColorContext);
 
@@ -47,7 +47,7 @@ function ImageWithTitleAndText({
   }, [setLight, bgColor]);
 
   return (
-    <StyledImageWithTitleAndText
+    <StyledColumnContent
       $horizontal={horizontal}
       $flip={flip}
       $bgColor={bgColor}
@@ -56,38 +56,48 @@ function ImageWithTitleAndText({
       viewport={{ once: true, amount: 0.2 }}
       transition={{ staggerChildren: 0.2 }}
     >
-      <ImageWithCaption
-        imageUrl={imageUrl}
-        imageAlt={imageAlt}
-        caption={caption}
-        ignoreSize
-        size={IMAGE_WITH_CAPTION_SIZES.MEDIUM_DOUBLE}
-      />
-      <TitleAndText h={h} title={title} isCentered>
-        {text}
-      </TitleAndText>
-    </StyledImageWithTitleAndText>
+      {imageUrl && (
+        <ImageWithCaption
+          imageUrl={imageUrl}
+          imageAlt={imageAlt}
+          caption={caption}
+          ignoreSize
+          size={IMAGE_WITH_CAPTION_SIZES.MEDIUM_DOUBLE}
+        />
+      )}
+      {title || text ? (
+        <TitleAndText h={h} title={title} isCentered={isCentered}>
+          {text}
+        </TitleAndText>
+      ) : null}
+    </StyledColumnContent>
   );
 }
 
-ImageWithTitleAndText.propTypes = {
+ColumnContent.propTypes = {
   bgColor: PropTypes.string,
-  imageUrl: PropTypes.string.isRequired,
-  imageAlt: PropTypes.string.isRequired,
+  imageUrl: PropTypes.string,
+  imageAlt: PropTypes.string,
   caption: PropTypes.string,
-  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   h: PropTypes.number,
-  text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
+  text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   horizontal: PropTypes.bool,
   flip: PropTypes.bool,
+  isCentered: PropTypes.bool,
 };
 
-ImageWithTitleAndText.defaultProps = {
+ColumnContent.defaultProps = {
   h: 4,
   caption: null,
   bgColor: null,
   horizontal: false,
   flip: false,
+  title: null,
+  text: null,
+  imageAlt: null,
+  imageUrl: null,
+  isCentered: false,
 };
 
-export default ImageWithTitleAndText;
+export default ColumnContent;
