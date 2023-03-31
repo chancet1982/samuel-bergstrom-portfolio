@@ -13,8 +13,9 @@ import pickRandom from "../../utils/pickRandom";
 import Button from "../Shared/Button";
 
 const StyledTestimonials = styled(motion.div)`
-  padding-right: ${padding.outsideElements.single};
+  padding-right: ${padding.outsideElements.double};
   padding-left: ${padding.outsideElements.double};
+  box-sizing: border-box;
 
   > button {
     width: 100%;

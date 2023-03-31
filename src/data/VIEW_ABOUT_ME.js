@@ -2,9 +2,7 @@
 import React from "react";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import Paragraph from "../Components/Shared/Paragraph";
-import List from "../Components/Shared/List";
 import colors from "../theme/colors";
-import Span from "../Components/Shared/Span";
 import Title from "../Components/Shared/Title";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
@@ -166,21 +164,22 @@ export const VIEW_ABOUT_ME = [
                 ensuring that designers have a home at tretton37.
               </Paragraph>
               <Title h={4}>Some of my credentials</Title>
-              <List
-                items={[
-                  <Span>
-                    <strong>UXC Spec. UX Management</strong>, NNg (Nielson
-                    Norman Group)
-                  </Span>,
-                  <Span>
-                    <strong>BSc</strong> Eng. ICT, Ålborg university
-                  </Span>,
-                  <Span>
-                    <strong>Assoc. Deg.</strong> Graphic Design, College of
-                    Management
-                  </Span>,
-                ]}
-              />
+              <Paragraph>
+                <strong>UXC Spec. UX Management</strong> <br />
+                Nielson Norman Group
+              </Paragraph>
+              <Paragraph>
+                <strong>UXC Spec. UX Research</strong> <br />
+                Nielson Norman Group
+              </Paragraph>
+              <Paragraph>
+                <strong>BSc. Eng. ITCOM</strong> <br />
+                Ålborg university, Copenhagen, DK
+              </Paragraph>
+              <Paragraph>
+                <strong>Associate, Graphic Design</strong> <br />
+                College of Management, Ashdod, Israel
+              </Paragraph>
             </>
           ),
         },
