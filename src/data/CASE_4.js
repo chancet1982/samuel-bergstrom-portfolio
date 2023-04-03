@@ -226,6 +226,7 @@ export const CASE_4 = {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
             limitMaxWidth: true,
+            isPadded: true,
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/flows.png`,
             imageAlt:
               "Flow map of old app, a lot of complex flows for red routes",
