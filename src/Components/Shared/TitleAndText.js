@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import Title from "./Title";
 import padding from "../../theme/padding";
 import sizes from "../../theme/sizes";
+import Overline from "./Overline";
 
 const StyledTitleAndText = styled(motion.div)`
   /*background: orange;*/
@@ -37,9 +38,18 @@ const StyledTitleAndText = styled(motion.div)`
     }}
 `;
 
-function TitleAndText({ title, h, children, isSticky, isCentered, ...rest }) {
+function TitleAndText({
+  overline,
+  title,
+  h,
+  children,
+  isSticky,
+  isCentered,
+  ...rest
+}) {
   return (
     <StyledTitleAndText $isSticky={isSticky} $isCentered={isCentered} {...rest}>
+      {overline && <Overline>{overline}</Overline>}
       {title && <Title h={h}>{title}</Title>}
       {children && children}
     </StyledTitleAndText>
@@ -47,6 +57,7 @@ function TitleAndText({ title, h, children, isSticky, isCentered, ...rest }) {
 }
 
 TitleAndText.propTypes = {
+  overline: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   h: PropTypes.number,
@@ -56,6 +67,7 @@ TitleAndText.propTypes = {
 };
 
 TitleAndText.defaultProps = {
+  overline: null,
   title: null,
   children: null,
   h: 1,

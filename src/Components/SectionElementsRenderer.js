@@ -82,6 +82,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
         <ElementColorContextProvider>
           <Textbox
             key={elementKey}
+            overline={data.overline}
             title={data.title}
             h={data.h}
             text={data.text}

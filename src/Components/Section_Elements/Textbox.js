@@ -63,6 +63,7 @@ const StyledTextboxImage = styled(motion.figure)`
 `;
 
 function Textbox({
+  overline,
   title,
   h,
   text,
@@ -109,7 +110,12 @@ function Textbox({
     >
       {flip && imageUrl && renderImage()}
 
-      <TitleAndText h={h} title={title} isCentered={isCentered}>
+      <TitleAndText
+        overline={overline}
+        title={title}
+        h={h}
+        isCentered={isCentered}
+      >
         {text}
       </TitleAndText>
 
@@ -127,6 +133,7 @@ function Textbox({
 }
 
 Textbox.propTypes = {
+  overline: null,
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   h: PropTypes.number,
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
@@ -143,6 +150,7 @@ Textbox.propTypes = {
 };
 
 Textbox.defaultProps = {
+  overline: null,
   title: null,
   text: null,
   h: 2,

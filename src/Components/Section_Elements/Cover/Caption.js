@@ -3,7 +3,6 @@ import { useScroll, useTransform } from "framer-motion";
 import PropTypes from "prop-types";
 import { useWindowSize } from "react-use";
 import TitleAndText from "../../Shared/TitleAndText";
-import Overline from "../../Shared/Overline";
 
 function Caption({ overline, title, text, h }) {
   const { height } = useWindowSize();
@@ -16,30 +15,18 @@ function Caption({ overline, title, text, h }) {
   const captionYposition = useTransform(scrollY, effectRange, [0, -200]);
 
   return (
-    <>
-      {overline && (
-        <Overline
-          style={{
-            opacity: captionOpacity,
-            lineHeight: captionLineHeight,
-            y: captionYposition,
-          }}
-        >
-          {overline}
-        </Overline>
-      )}
-      <TitleAndText
-        h={h}
-        title={title}
-        style={{
-          opacity: captionOpacity,
-          lineHeight: captionLineHeight,
-          y: captionYposition,
-        }}
-      >
-        {text}
-      </TitleAndText>
-    </>
+    <TitleAndText
+      h={h}
+      overline={overline}
+      title={title}
+      style={{
+        opacity: captionOpacity,
+        lineHeight: captionLineHeight,
+        y: captionYposition,
+      }}
+    >
+      {text}
+    </TitleAndText>
   );
 }
 

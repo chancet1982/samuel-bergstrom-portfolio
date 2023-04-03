@@ -13,7 +13,6 @@ import { ElementColorContext } from "../../../Context/ElementColorContext";
 import padding from "../../../theme/padding";
 import sizes from "../../../theme/sizes";
 import { BG_MEDIA_TYPES } from "../../../data/dictionaries/BG_MEDIA_TYPES";
-import Overline from "../../Shared/Overline";
 import TitleAndText from "../../Shared/TitleAndText";
 import shouldUseLightText from "../../../utils/shouldUseLightText";
 
@@ -226,12 +225,9 @@ function CaseThumbnail({ data, status, caseUrl }) {
           )}
 
           <StyledThumbnailCaption variants={caseThumbnailCaptionVariants}>
-            <>
-              {overline && <Overline>{overline}</Overline>}
-              <TitleAndText h={h} title={title}>
-                {text}
-              </TitleAndText>
-            </>
+            <TitleAndText overline={overline} title={title} h={h}>
+              {text}
+            </TitleAndText>
           </StyledThumbnailCaption>
 
           {status === CASE_STATUS.COMING_SOON && <Badge>COMING SOON!</Badge>}

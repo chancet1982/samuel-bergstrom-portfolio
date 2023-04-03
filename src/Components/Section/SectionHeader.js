@@ -49,7 +49,7 @@ SectionHeader.propTypes = {
 };
 
 SectionHeader.defaultProps = {
-  children: "overline",
+  children: null,
 };
 
 export default SectionHeader;
