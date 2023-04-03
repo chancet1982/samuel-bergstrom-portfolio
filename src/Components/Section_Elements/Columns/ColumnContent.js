@@ -32,6 +32,7 @@ function ColumnContent({
   imageUrl,
   imageAlt,
   caption,
+  overline,
   title,
   h,
   text,
@@ -66,7 +67,12 @@ function ColumnContent({
         />
       )}
       {title || text ? (
-        <TitleAndText h={h} title={title} isCentered={isCentered}>
+        <TitleAndText
+          overline={overline}
+          title={title}
+          h={h}
+          isCentered={isCentered}
+        >
           {text}
         </TitleAndText>
       ) : null}
@@ -79,6 +85,7 @@ ColumnContent.propTypes = {
   imageUrl: PropTypes.string,
   imageAlt: PropTypes.string,
   caption: PropTypes.string,
+  overline: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   h: PropTypes.number,
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
@@ -93,6 +100,7 @@ ColumnContent.defaultProps = {
   bgColor: null,
   horizontal: false,
   flip: false,
+  overline: null,
   title: null,
   text: null,
   imageAlt: null,

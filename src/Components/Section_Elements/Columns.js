@@ -52,11 +52,21 @@ function Columns({ limitMaxWidth, items }) {
   return (
     <StyledColumns $limitMaxWidth={limitMaxWidth} $itemsLength={items.length}>
       {items.map(
-        ({ imageUrl, imageAlt, title, h, text, bgColor, isCentered }) => (
+        ({
+          imageUrl,
+          imageAlt,
+          overline,
+          title,
+          h,
+          text,
+          bgColor,
+          isCentered,
+        }) => (
           <ElementContextProvider key={imageUrl}>
             <ColumnContent
               imageUrl={imageUrl}
               imageAlt={imageAlt}
+              overline={overline}
               title={title}
               h={h}
               text={text}
@@ -76,6 +86,7 @@ Columns.propTypes = {
     PropTypes.shape({
       imageUrl: PropTypes.string,
       imageAlt: PropTypes.string,
+      overline: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
       title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
       h: PropTypes.number,
       text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
