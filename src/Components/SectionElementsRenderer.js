@@ -130,6 +130,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
           images={data.images}
           template={data.template}
           limitMaxWidth={data.limitMaxWidth}
+          isPadded={data.isPadded}
         />
       );
     case SECTION_ELEMENTS.TIMELINE:

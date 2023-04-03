@@ -6,14 +6,21 @@ import { motion } from "framer-motion";
 import ImageWithCaption from "../Shared/ImageWithCaption";
 import sizes from "../../theme/sizes";
 import breakpoints from "../../theme/breakpoints";
+import padding from "../../theme/padding";
 
 const StyledImageGallery = styled(motion.div)`
   padding-top: 4rem; /* TODO: this needs to be update */
   grid-column: 1 / span 2;
   display: grid;
-  column-gap: 0.5rem;
-  row-gap: 0.5rem;
+  column-gap: ${padding.insideElements.single};
+  row-gap: ${padding.insideElements.single};
   ${({ $template }) => $template};
+
+  ${({ $isPadded }) =>
+    $isPadded && {
+      paddingRight: padding.outsideElements.double,
+      paddingLeft: padding.outsideElements.double,
+    }}
 
   @media (min-width: ${breakpoints.desktop}px) {
     ${({ $limitMaxWidth }) =>
@@ -24,11 +31,12 @@ const StyledImageGallery = styled(motion.div)`
   }
 `;
 
-function ImageGallery({ images, template, limitMaxWidth }) {
+function ImageGallery({ images, template, limitMaxWidth, isPadded }) {
   return (
     <StyledImageGallery
       $template={template}
       $limitMaxWidth={limitMaxWidth}
+      $isPadded={isPadded}
       initial="hidden"
       whileInView="inView"
       viewport={{ once: true, amount: 0.2 }}
@@ -58,10 +66,12 @@ ImageGallery.propTypes = {
   ).isRequired,
   template: PropTypes.string.isRequired,
   limitMaxWidth: PropTypes.bool,
+  isPadded: PropTypes.bool,
 };
 
 ImageGallery.defaultProps = {
   limitMaxWidth: false,
+  isPadded: false,
 };
 
 export default ImageGallery;

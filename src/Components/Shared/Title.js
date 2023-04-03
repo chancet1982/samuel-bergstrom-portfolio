@@ -27,38 +27,41 @@ export const StyledH1 = styled(motion.h1)`
 
 export const StyledH2 = styled(motion.h2)`
   max-width: 40ch;
-  font-stretch: 75%;
   color: ${({ $light }) =>
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
   ${headlineFont}
+  font-stretch: 80%;
 `;
 
 export const StyledH3 = styled(motion.h3)`
   max-width: 40ch;
-  font-stretch: 75%;
   color: ${({ $light }) =>
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
   ${headlineFont}
+  font-stretch: 80%;
+  font-weight: 600;
 `;
 
 export const StyledH4 = styled(motion.h4)`
   max-width: 48ch;
-  font-stretch: 75%;
   color: ${({ $light }) =>
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
   ${headlineFont}
+  font-stretch: 80%;
+  font-weight: 600;
 `;
 
 export const StyledH5 = styled(motion.h5)`
   max-width: 48ch;
-  font-stretch: 75%;
   color: ${({ $light }) =>
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
   ${headlineFont}
+  font-stretch: 80%;
+  font-weight: 600;
 `;
 
 function Title({ h, children, isLight, withMargin, ...rest }) {
