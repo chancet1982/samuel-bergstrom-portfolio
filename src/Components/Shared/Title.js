@@ -32,6 +32,7 @@ export const StyledH2 = styled(motion.h2)`
   ${({ $fluidType }) => $fluidType};
   ${headlineFont}
   font-stretch: 80%;
+  font-weight: 700;
 `;
 
 export const StyledH3 = styled(motion.h3)`
