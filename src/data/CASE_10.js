@@ -535,6 +535,9 @@ export const CASE_10 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.SPACER_SMALL,
+        },
+        {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
             limitMaxWidth: true,

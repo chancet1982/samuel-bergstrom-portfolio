@@ -207,12 +207,13 @@ export const CASE_9 = {
       marginUp: true,
       marginDown: true,
       bgColor: SETTINGS.BG_COLOR,
+      sectionTitle: <>Insights</>,
+      isCentered: true,
       elements: [
         {
           template: SECTION_ELEMENTS.INSIGHTS,
           data: {
             bgColor: SETTINGS.BG_COLOR,
-            title: <>Insights</>,
             items: [
               {
                 title: "Every search starts with Google",
