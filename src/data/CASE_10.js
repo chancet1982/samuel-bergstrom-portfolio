@@ -217,11 +217,12 @@ export const CASE_10 = {
       marginUp: true,
       marginDown: true,
       bgColor: SETTINGS.BG_COLOR,
+      sectionTitle: <>3 areas for improvement</>,
+      isCentered: true,
       elements: [
         {
           template: SECTION_ELEMENTS.INSIGHTS,
           data: {
-            title: <>3 areas for improvement</>,
             items: [
               {
                 title: "Motiviating potential customers",
@@ -344,7 +345,7 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Initial idea: show only affeliated shops</>,
+            title: <>Initial idea: hide unaffeliated shops</>,
             text: (
               <Paragraph>
                 Its very simple. Hotels.com, booking.com and others are not
@@ -389,40 +390,32 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Second idea: grouped display for all shops</>,
+            title: <>Second idea: Change the rules</>,
             text: (
-              <>
-                <Paragraph>
-                  If we needed to show all shops regardless of affeliation, we
-                  could at least do it in a better way.
-                </Paragraph>{" "}
-              </>
+              <Paragraph>
+                We needed to show all shops, but we could make them less
+                prominant. We needed to make them less attractive, drive traffic
+                to affeliated shops, and increase overall data quality.
+              </Paragraph>
             ),
           },
         },
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Reducing free information</>,
+            title: <>Step 1: Reducing free information</>,
             h: 4,
             text: (
-              <>
-                <Paragraph>
-                  To start with I suggested reducing the amount of information
-                  that is visible for free. limiting the information to only the
-                  product name, store name, and its ratings. Stock status and
-                  all other information from non-paying customers should be
-                  removed.
-                </Paragraph>
-                <Paragraph>
-                  On top of that, greying out the link to shops without an
-                  agreement, would make those less attractive to click on &
-                  would align better with users expectations (i.e. a disabled
-                  link). The idea was to increase the benefits shops get for
-                  signing an agreement. Making it more attractive to become a
-                  paying customer.
-                </Paragraph>
-              </>
+              <Paragraph>
+                To start with, I suggested reducing the amount of information
+                that is visible for free. Removing stock status and all
+                non-essential information for unaffeliated shops. On top of
+                that, unaffeliated shops should be displayed as disabled links.
+                This would better align expectations, and reduce their
+                prominance. The idea was to increase the benefits shops get for
+                signing an agreement. Making it more attractive to become a
+                paying customer.
+              </Paragraph>
             ),
           },
         },
@@ -440,26 +433,17 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Change the default sorting</>,
+            title: <>Step 2: Change the default sorting</>,
             h: 4,
             text: (
-              <>
-                <Paragraph>
-                  On top of that, I suggested we should a recommended sorting on
-                  top of the existing sorting which is based on price. Most
-                  users accept default sorting and will not change it unless
-                  they are unable to find what they are looking for. This will
-                  allow us to weigh in different factors and offer a better
-                  recommendation for our users.
-                </Paragraph>
-                <Paragraph>
-                  The algorithm should only consider products that are in stock,
-                  and rank the offer based on how cheap they are compared to the
-                  current lowest price and how good are the reviews. This should
-                  prevent any non-paying shop to be at the top of the list while
-                  showing more relevant offers for users.
-                </Paragraph>
-              </>
+              <Paragraph>
+                With that in place, I suggested we swap the default sorting to
+                consider price, stock status, and user reviews. Most users
+                accept default sorting and will not change it unless they are
+                unable to find what they are looking for. This provided a better
+                recommendation for our users and prevented unaffeliated shops
+                from being on top
+              </Paragraph>
             ),
           },
         },
@@ -477,18 +461,24 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Putting it all together</>,
+            title: <>Step 3: Grouping based on data completeness</>,
             h: 4,
             text: (
               <Paragraph>
-                In order to keep transparency, I suggested we use a grouping
-                mechanism where we show all the offers where information is
-                missing. <br /> <strong>This has 2 benefits:</strong>
-                This on one hand In simple terms: Non-paying shops were now
-                second-class citizens.
+                Finally, I suggested we group the results based on data
+                completeness which presented 2 main benefits:
+                <br />
+                1. Unaffeliated shops by default couldn’t be in the first group
+                because their stock status was missing.
+                <br />
+                2. Shops with incomplete data would be pushed to the second
+                encouraging them to complement missing data.
               </Paragraph>
             ),
           },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
           template: SECTION_ELEMENTS.COLUMNS,

@@ -31,7 +31,7 @@ export const StyledH2 = styled(motion.h2)`
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
   ${headlineFont}
-  font-stretch: 80%;
+  font-stretch: 88%;
   font-weight: 700;
 `;
 
@@ -41,7 +41,7 @@ export const StyledH3 = styled(motion.h3)`
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
   ${headlineFont}
-  font-stretch: 80%;
+  font-stretch: 88%;
   font-weight: 600;
 `;
 
@@ -51,7 +51,7 @@ export const StyledH4 = styled(motion.h4)`
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
   ${headlineFont}
-  font-stretch: 80%;
+  font-stretch: 88%;
   font-weight: 600;
 `;
 
@@ -61,7 +61,7 @@ export const StyledH5 = styled(motion.h5)`
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
   ${headlineFont}
-  font-stretch: 80%;
+  font-stretch: 88%;
   font-weight: 600;
 `;
 

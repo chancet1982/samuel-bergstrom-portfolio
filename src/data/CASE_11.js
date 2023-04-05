@@ -121,23 +121,17 @@ export const CASE_11 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Mixed product conditions lead to new challenges</>,
+            title: <>Selling used products is big business</>,
             text: (
               <>
                 <Paragraph>
-                  Today one of the leading categories is mobile phones.
-                  Smartphones over the years have grown in both popularity and
-                  cost and today the price of a new smartphone is higher than
-                  ever with flagship smartphones costing upwards of 10 000sek.
-                </Paragraph>
-                <Paragraph>
-                  Shops on the other hand have had an issue with selling demo,
-                  refurbished, and used phones. In the Nordics, every purchase
-                  is eligible by law to be returned for a full refund within 14
-                  days. This means that shops have a lot of products that are
-                  returned, hardly used but cannot be sold as “new”. Smartphones
-                  are one of these categories where a lot of demo products can
-                  be found.
+                  One of the leading categories on the site is mobile phones.
+                  Mobile phones, particularly smartphones, have become
+                  increasingly popular and expensive, with flagship models now
+                  costing upwards of 10,000 SEK. Due to the EU laws, customers
+                  can return purchased items for a full refund within 14 days
+                  leaving shops with many returned products that cannot be sold
+                  as new, including smartphones.
                 </Paragraph>
                 <Paragraph>
                   Shops have good margins on these products and want to promote
@@ -170,22 +164,20 @@ export const CASE_11 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
+            title: <>Not the optimal solution</>,
+            h: 3,
             text: (
-              <>
-                <Paragraph>
-                  These icons are <strong>easy to miss</strong>. The placement
-                  and color choice are problematic. On top of that, they are
-                  very generic. Making them hard to notice, and understand.
-                </Paragraph>
-                <Paragraph>
-                  Treating all different product conditions as one was{" "}
-                  <strong>contaminating the price history</strong>, triggering{" "}
-                  <strong>false price alerts</strong>, and leading to{" "}
-                  <strong>missclicks</strong>. This frustrated both users that
-                  accidentally ended up on a used product, and stores that pay
-                  for traffic that is unlikely to buy.
-                </Paragraph>
-              </>
+              <Paragraph>
+                Using icons that are <strong>easy to miss</strong>. and{" "}
+                <strong>hard to understand</strong> meant some users clicked
+                them accidently. On top of that, treating all different product
+                conditions as one{" "}
+                <strong>contaminated the price history</strong> and triggered{" "}
+                <strong>false price alerts</strong>. This was frustrating for
+                users who did not intend to buy used products and clicked them
+                by mistake, as well as for stores that paid for traffic that was
+                unlikely to convert.
+              </Paragraph>
             ),
           },
         },
@@ -202,8 +194,8 @@ export const CASE_11 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Choose non-new products.</>,
-            h: 4,
+            title: <>Driving traffic to non-new products.</>,
+            h: 3,
             text: (
               <Paragraph>
                 My goal was to lead more traffic to refurbished, used and demo
@@ -224,13 +216,15 @@ export const CASE_11 = {
     {
       marginUp: true,
       marginDown: true,
-      header: "Research",
+      sectionTitle: "Research",
+      isCentered: true,
       bgColor: SETTINGS.BG_COLOR,
       elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: "Looking at user feedback and quarterly survey responses.",
+            isCentered: true,
             h: 4,
             text: (
               <Paragraph>
@@ -259,6 +253,7 @@ export const CASE_11 = {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
             title: "Qualitative research",
+            isCentered: true,
             h: 4,
             text: (
               <Paragraph large>
@@ -280,24 +275,17 @@ export const CASE_11 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Looking at our competitors and best practices</>,
+            title: <>Heuristics and competitors</>,
             text: (
-              <>
-                <Paragraph>
-                  At this point, it was obvious that we had a problem worth
-                  solving just not how to solve it. Most competitors focused
-                  only on new products. The ones that did, considered “product
-                  condition” as variant. Looking at marketplaces, all 3 leading
-                  marketplaces in Europe used this approach.
-                </Paragraph>
-                <Title h={4}>How to best implement variants?</Title>
-                <Paragraph>
-                  We followed the guidelines published by Baymard institute and
-                  NNGroup when possible but at that point, variants were not
-                  supported on prisjakt and some technical debt was holding us
-                  back.
-                </Paragraph>
-              </>
+              <Paragraph>
+                At this point, we had a problem worth solving just not how to
+                solve it. Best practices from both NNg and Baymard pointed at
+                implementing product condition as variant. Our competitors
+                either implemented it as variant or focused on new products
+                only. Looking at marketplaces, all 3 leading marketplaces in
+                Europe implemented product condition as variant. However, due to
+                technical debt, product variants were not feasable.
+              </Paragraph>
             ),
           },
         },
