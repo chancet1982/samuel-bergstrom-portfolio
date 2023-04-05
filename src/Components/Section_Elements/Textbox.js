@@ -136,7 +136,7 @@ function Textbox({
 }
 
 Textbox.propTypes = {
-  overline: null,
+  overline: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   h: PropTypes.number,
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
