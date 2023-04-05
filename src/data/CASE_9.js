@@ -136,11 +136,8 @@ export const CASE_9 = {
                   Testing the search myself, I was shocked. Search suggestions
                   did not reflect the search results. Search results page had
                   many broken features and the overall search accuracy was low.
-                </Paragraph>
-                <Title h={4}>The users have spoken</Title>
-                <Paragraph>
                   It wasn’t just my poor search skills. Users were complaining
-                  on forums, support, in surveys, and in usability tests{" "}
+                  on forums, support, in surveys, and in usability tests
                 </Paragraph>
               </>
             ),
@@ -157,7 +154,7 @@ export const CASE_9 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: "The ROI of a better search",
+            title: "A better search is a HUGE invetment",
             h: 4,
             text: (
               <Paragraph>

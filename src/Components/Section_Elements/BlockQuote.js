@@ -13,6 +13,18 @@ import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
 import breakpoints from "../../theme/breakpoints";
 import shouldUseLightText from "../../utils/shouldUseLightText";
 
+const StyledBlockWrapper = styled(motion.div)`
+  padding-right: ${padding.outsideElements.double};
+  padding-left: ${padding.outsideElements.double};
+  position: relative;
+  box-sizing: border-box;
+
+  @media (min-width: ${breakpoints.desktop}px) {
+    max-width: ${sizes.contentWidthLimit}px;
+    margin: ${padding.insideElements.single} auto;
+  }
+`;
+
 const StyledBlockQuote = styled(motion.blockquote)`
   padding: ${padding.insideElements.single} ${padding.outsideElements.double};
   position: relative;
@@ -45,16 +57,17 @@ function BlockQuote({ cite, quote, bgColor, bgMedia }) {
   }, [setLight, bgColor, bgMedia]);
 
   const renderBlockQuote = () => (
-    <StyledBlockQuote
+    <StyledBlockWrapper
       initial="hidden"
       whileInView="inView"
       viewport={{ once: true, amount: 0.2 }}
       transition={{ staggerChildren: 0.2 }}
-      $light={light}
     >
-      <Quote>{quote}</Quote>
-      <Cite>{cite}</Cite>
-    </StyledBlockQuote>
+      <StyledBlockQuote $light={light}>
+        <Quote>{quote}</Quote>
+        <Cite>{cite}</Cite>
+      </StyledBlockQuote>
+    </StyledBlockWrapper>
   );
 
   return bgColor || bgMedia ? (
