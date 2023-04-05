@@ -33,6 +33,7 @@ const StyledTitleAndText = styled(motion.div)`
   ${({ $isCentered }) =>
     $isCentered && {
       textAlign: "center",
+      width: "72%",
       maxWidth: `calc(${sizes.contentWidthLimit}px * 0.72)`,
       margin: "0 auto",
     }}

@@ -333,21 +333,23 @@ export const CASE_11 = {
                   harming conversion rates.
                 </Paragraph>
 
-                <Title h={4}>Splitting the lists</Title>
+                <Title h={4}>Step 1: Splitting the lists</Title>
                 <Paragraph>
                   It was obvous that we couldn’t mix new and used products in
                   the same bucket. All non-new products were moved to a
                   dedicated list.
                 </Paragraph>
-                <Title h={4}>Reducing price confusion</Title>
+                <Title h={4}>Step 2: Aligning prices</Title>
                 <Paragraph>
                   It was important to ensure that the price shown across the
                   site is consistent. We decided to use the cheapest “new”
-                  product price throughout the site even if cheaper “used”
+                  product price throughout the site even if cheaper “used“
                   products existed. On top of that, the price history was
                   limited to account for new products only.
                 </Paragraph>
-                <Title h={4}>Introducing product condition as variant</Title>
+                <Title h={4}>
+                  Step 3: Introducing product condition as variant
+                </Title>
                 <Paragraph>
                   Now that we had 2 lists, we needed a way to switch between
                   them. Following Amazon’s example, we decided to introduce the

@@ -19,7 +19,7 @@ const StyledTextbox = styled(motion.div)`
   grid-template-columns: repeat(2, 1fr);
   padding-right: ${padding.outsideElements.double};
   padding-left: ${padding.outsideElements.double};
-  column-gap: ${padding.insideElements.single};
+  grid-gap: ${padding.outsideElements.double};
   box-sizing: border-box;
 
   @media (min-width: ${breakpoints.desktop}px) {

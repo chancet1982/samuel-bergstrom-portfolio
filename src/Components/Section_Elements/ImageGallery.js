@@ -12,8 +12,8 @@ const StyledImageGallery = styled(motion.div)`
   padding-top: 4rem; /* TODO: this needs to be update */
   grid-column: 1 / span 2;
   display: grid;
-  column-gap: ${padding.insideElements.single};
-  row-gap: ${padding.insideElements.single};
+  grid-gap: ${padding.outsideElements.double};
+
   ${({ $template }) => $template};
 
   ${({ $isPadded }) =>

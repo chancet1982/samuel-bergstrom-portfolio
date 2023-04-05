@@ -15,7 +15,7 @@ const StyledOverviewWrapper = styled(motion.div)`
   grid-template-columns: repeat(3, 1fr);
   padding-left: ${padding.outsideElements.double};
   padding-right: ${padding.outsideElements.double};
-  column-gap: ${padding.insideElements.single};
+  grid-gap: ${padding.outsideElements.double};
   box-sizing: border-box;
 
   min-height: ${({

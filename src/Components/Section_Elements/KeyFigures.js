@@ -17,7 +17,7 @@ const StyledKeyFigures = styled(motion.div)`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  column-gap: ${padding.insideElements.double};
+  grid-gap: ${padding.outsideElements.double};
 
   ${({ $bgColor }) =>
     $bgColor && {
