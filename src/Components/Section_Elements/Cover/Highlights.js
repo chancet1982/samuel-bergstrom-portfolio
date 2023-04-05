@@ -16,7 +16,10 @@ const StyledHighlights = styled(motion.div)`
   padding-right: ${padding.outsideElements.double};
   padding-top: ${padding.outsideElements.double};
   padding-bottom: ${padding.outsideElements.double};
-  grid-gap: ${padding.outsideElements.double};
+  grid-gap: max(
+    ${padding.outsideElements.double},
+    ${padding.insideElements.single}
+  );
   box-sizing: border-box;
 
   > div {

@@ -140,6 +140,7 @@ export const CASE_3 = {
           template: SECTION_ELEMENTS.IMAGE_GALLERY,
           data: {
             template: IMAGE_GALLERY_TEMPLATES.FOUR_IMAGES_TWO_COLUMNS,
+            isPadded: true,
             images: [
               {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-1.jpg`,
@@ -249,6 +250,7 @@ export const CASE_3 = {
           template: SECTION_ELEMENTS.IMAGE_GALLERY,
           data: {
             template: IMAGE_GALLERY_TEMPLATES.THREE_IMAGES_TWO_COLUMNS,
+            isPadded: true,
             images: [
               {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/research-1.jpg`,
@@ -444,6 +446,7 @@ export const CASE_3 = {
           template: SECTION_ELEMENTS.IMAGE_GALLERY,
           data: {
             template: IMAGE_GALLERY_TEMPLATES.FIVE_IMAGES_MIX_COLUMNS,
+            isPadded: true,
             images: [
               {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/design-1.jpg`,

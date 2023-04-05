@@ -16,7 +16,10 @@ import shouldUseLightText from "../../utils/shouldUseLightText";
 const StyledFinalResultContent = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  grid-gap: ${padding.outsideElements.double};
+  grid-gap: max(
+    ${padding.outsideElements.double},
+    ${padding.insideElements.single}
+  );
 
   @media (max-width: ${breakpoints.desktop - 1}px) {
     > div,

@@ -62,6 +62,7 @@ export const VIEW_LANDING_PAGE = [
         template: SECTION_ELEMENTS.IMAGE_GALLERY,
         data: {
           template: IMAGE_GALLERY_TEMPLATES.THREE_IMAGES_TWO_COLUMNS,
+          isPadded: true,
           images: [
             {
               imageUrl: "assets/me-1.jpg",

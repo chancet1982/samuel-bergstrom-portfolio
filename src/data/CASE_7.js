@@ -125,6 +125,7 @@ export const CASE_7 = {
           template: SECTION_ELEMENTS.IMAGE_GALLERY,
           data: {
             template: IMAGE_GALLERY_TEMPLATES.FOUR_IMAGES_TWO_COLUMNS,
+            isPadded: true,
             images: [
               {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-1.jpg`,
@@ -390,6 +391,7 @@ export const CASE_7 = {
         },
         {
           template: SECTION_ELEMENTS.IMAGE_GALLERY,
+          isPadded: true,
           data: {
             template: IMAGE_GALLERY_TEMPLATES.THREE_IMAGES_TWO_COLUMNS,
             images: [

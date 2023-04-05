@@ -17,7 +17,10 @@ const StyledImageWithTitleAndText = styled(motion.div)`
   grid-template-areas: "a b";
   padding-left: ${padding.outsideElements.double};
   padding-right: ${padding.outsideElements.double};
-  grid-gap: ${padding.outsideElements.double};
+  grid-gap: max(
+    ${padding.outsideElements.double},
+    ${padding.insideElements.single}
+  );
   box-sizing: border-box;
 
   @media (max-width: ${breakpoints.mobileLarge - 1}px) {

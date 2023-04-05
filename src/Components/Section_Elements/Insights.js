@@ -28,7 +28,10 @@ const StyledInsights = styled(motion.div)`
 const StyledInsightsContent = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-gap: ${padding.outsideElements.double};
+  grid-gap: max(
+    ${padding.outsideElements.double},
+    ${padding.insideElements.single}
+  );
 
   @media (min-width: ${breakpoints.mobileLarge}px) and (max-width: ${breakpoints.desktop -
     1}px) {

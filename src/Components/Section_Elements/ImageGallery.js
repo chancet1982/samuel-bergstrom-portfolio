@@ -12,7 +12,10 @@ const StyledImageGallery = styled(motion.div)`
   padding-top: 4rem; /* TODO: this needs to be update */
   grid-column: 1 / span 2;
   display: grid;
-  grid-gap: ${padding.outsideElements.double};
+  grid-gap: max(
+    ${padding.outsideElements.double},
+    ${padding.insideElements.single}
+  );
 
   ${({ $template }) => $template};
 

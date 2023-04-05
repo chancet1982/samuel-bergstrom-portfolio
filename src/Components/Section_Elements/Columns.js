@@ -13,7 +13,10 @@ const StyledColumns = styled(motion.div)`
   grid-template-columns: repeat(${({ $itemsLength }) => $itemsLength}, 1fr);
   padding-left: ${padding.outsideElements.double};
   padding-right: ${padding.outsideElements.double};
-  grid-gap: ${padding.outsideElements.double};
+  grid-gap: max(
+    ${padding.outsideElements.double},
+    ${padding.insideElements.single}
+  );
   box-sizing: border-box;
 
   @media (min-width: ${breakpoints.desktop}px) {

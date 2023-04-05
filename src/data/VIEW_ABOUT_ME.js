@@ -123,6 +123,7 @@ export const VIEW_ABOUT_ME = [
   {
     bgColor: colors.offblack,
     sectionTitle: <>What others say about me</>,
+    isCentered: true,
     elements: [
       {
         template: SECTION_ELEMENTS.TESTIMONIALS,
@@ -334,6 +335,7 @@ export const VIEW_ABOUT_ME = [
         template: SECTION_ELEMENTS.IMAGE_GALLERY,
         data: {
           template: IMAGE_GALLERY_TEMPLATES.FIVE_IMAGES_MIX_COLUMNS,
+          isPadded: true,
           images: [
             {
               imageUrl: "assets/pizza-1.jpg",

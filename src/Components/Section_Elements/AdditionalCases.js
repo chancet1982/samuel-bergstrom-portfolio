@@ -29,7 +29,10 @@ const StyledAdditionalCases = styled(motion.div)`
 const StyledCasesList = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  grid-gap: ${padding.outsideElements.double};
+  grid-gap: max(
+    ${padding.outsideElements.double},
+    ${padding.insideElements.single}
+  );
 
   @media (min-width: ${breakpoints.desktop}px) {
     grid-template-columns: repeat(3, 1fr);
