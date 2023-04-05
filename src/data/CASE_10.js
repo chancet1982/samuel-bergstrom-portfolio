@@ -113,22 +113,33 @@ export const CASE_10 = {
           data: {
             title: <>Price comparison, catch 22</>,
             text: (
+              <Paragraph large>
+                <strong>
+                  Price comparison sites face a multi layered problem.{" "}
+                </strong>
+                From one side, they need to include as many prices and find the
+                cheapest prices to be relevant. While from the other, only
+                stores that have an agreement with them generate revenue.
+              </Paragraph>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.TEXTBOX,
+          data: {
+            title: <>A double edged sward</>,
+            h: 3,
+            text: (
               <>
-                <Paragraph large>
-                  <strong>
-                    Price comparison sites face a multi layered problem.{" "}
-                  </strong>
-                  From one side, they need to include as many prices and find
-                  the cheapest prices to be relevant. While from the other, only
-                  stores that have an agreement with them generate revenue.
-                </Paragraph>
                 <Paragraph>
-                  Price comparison sites need quality data in order to preform,
-                  while they can only control the data quality when agreements
-                  are signed. In emerging markets, it is hard to motivate
-                  signing an agreement, unless you can prove you redirect
-                  valuable traffic, and you can’t redirect valuable traffic
-                  without good data.
+                  <strong>
+                    Price comparison sites need quality data in order to
+                    preform, while they can only control the data quality when
+                    agreements are signed.
+                  </strong>{" "}
+                  In emerging markets, it is hard to motivate signing an
+                  agreement, unless you can prove you redirect valuable traffic,
+                  and you can’t redirect valuable traffic without good data.
                 </Paragraph>
                 <Paragraph>
                   On top of that, we knew that some shops are “taking advantage
