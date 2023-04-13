@@ -44,7 +44,16 @@ const StyledInsightsContent = styled(motion.div)`
   }
 `;
 
-function Insights({ title, h, items, bgColor, isTwoColumnsOnDesktop, text }) {
+function Insights({
+  overline,
+  title,
+  h,
+  items,
+  bgColor,
+  isTwoColumnsOnDesktop,
+  text,
+  isCentered,
+}) {
   const [, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
@@ -66,7 +75,12 @@ function Insights({ title, h, items, bgColor, isTwoColumnsOnDesktop, text }) {
       viewport={{ once: true, amount: 0.2 }}
       transition={{ staggerChildren: 0.2 }}
     >
-      <TitleAndText h={h} title={title}>
+      <TitleAndText
+        overline={overline}
+        title={title}
+        h={h}
+        isCentered={isCentered}
+      >
         {text && text}
       </TitleAndText>
       <StyledInsightsContent $isTwoColumnsOnDesktop={isTwoColumnsOnDesktop}>
@@ -83,6 +97,7 @@ function Insights({ title, h, items, bgColor, isTwoColumnsOnDesktop, text }) {
 }
 
 Insights.propTypes = {
+  overline: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   h: PropTypes.number,
   items: PropTypes.arrayOf(
@@ -94,14 +109,17 @@ Insights.propTypes = {
   bgColor: PropTypes.string,
   isTwoColumnsOnDesktop: PropTypes.bool,
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
+  isCentered: PropTypes.bool,
 };
 
 Insights.defaultProps = {
+  overline: null,
   title: null,
   h: 2,
   bgColor: null,
   isTwoColumnsOnDesktop: false,
   text: null,
+  isCentered: false,
 };
 
 export default Insights;

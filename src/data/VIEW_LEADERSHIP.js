@@ -17,7 +17,7 @@ export const VIEW_LEADERSHIP = [
           title: "Leadership philosophy",
           h: 1,
           text: (
-            <Paragraph large>
+            <Paragraph xl>
               To me leadership is not about a systematic approach. There are
               different goals and circumstances that require different
               approaches to leadership. In some cases, it is about softer
@@ -29,25 +29,6 @@ export const VIEW_LEADERSHIP = [
       },
     ],
   },
-  /* {
-    elements: [
-      {
-        template: SECTION_ELEMENTS.TEXTBOX,
-        data: {
-          title: "Formal leadership",
-          h: 1,
-          text: (
-            <Paragraph large>
-              I had different roles throughout the years. Some had direct
-              leadership responsibilities while in others I needed to lead by
-              influence. In every case, I strived to take small iterative steps
-              in the right direction.
-            </Paragraph>
-          ),
-        },
-      },
-    ],
-  }, */
   {
     fullScreen: true,
     sectionTitle: "tretton37",
@@ -277,12 +258,12 @@ export const VIEW_LEADERSHIP = [
       {
         template: SECTION_ELEMENTS.INSIGHTS,
         data: {
+          isCentered: true,
           text: (
             <Paragraph xl>
-              I started my career in design 15 years ago. At that time, a lot of
-              the information was not readly available. I since took active
-              roles in different constulations to mentor and help fellow
-              designers.
+              Helping others grow outside my formal role. I am currently a board
+              member of Malmö Design Network and mentoring design students and
+              other designers online.
             </Paragraph>
           ),
           items: [

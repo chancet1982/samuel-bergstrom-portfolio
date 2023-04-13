@@ -101,12 +101,14 @@ function SectionElementsRenderer({ elementKey, data, template }) {
         <ElementColorContextProvider>
           <Insights
             key={elementKey}
+            overline={data.overline}
             title={data.title}
             h={data.h}
+            text={data.text}
             items={data.items}
             bgColor={data.bgColor}
             isTwoColumnsOnDesktop={data.isTwoColumnsOnDesktop}
-            text={data.text}
+            isCentered={data.isCentered}
           />
         </ElementColorContextProvider>
       );

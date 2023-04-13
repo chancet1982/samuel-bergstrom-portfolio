@@ -3,7 +3,6 @@ import React from "react";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import Paragraph from "../Components/Shared/Paragraph";
 import colors from "../theme/colors";
-import Title from "../Components/Shared/Title";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
 
@@ -134,56 +133,72 @@ export const VIEW_ABOUT_ME = [
     paddedUp: true,
     elements: [
       {
-        template: SECTION_ELEMENTS.TEXTBOX,
+        template: SECTION_ELEMENTS.COLUMNS,
         data: {
-          title: "My story",
-          h: 2,
-          text: (
-            <>
-              <Paragraph>
-                I started my career 15 years ago as a graphic designer for a
-                financial services provider in Copenhagen. Over time, I became
-                responsible for a small team that created web and document
-                solutions used by 50-70 banks and investment groups.
-              </Paragraph>
-              <Paragraph>
-                However, the work became repetitive and I felt the need for a
-                new challenge. So, I signed up for university while continuing
-                to work full-time. There, I studied IT Communications and New
-                Media. After graduating, I worked as a front-end developer for a
-                couple of years before returning to design. This time, I focused
-                on data visualizations for medical studies. Later on, I worked
-                as a consultant and had the opportunity to be involved in all
-                stages of the product development process, from ideation to
-                evaluation.
-              </Paragraph>
-              <Paragraph>
-                Currently, I am the head of design at tretton37, where I lead a
-                team of 20 designers. My responsibilities include working on our
-                VP, EVP, Competence development (in collaboration with a
-                dedicated competence lead), packaging design services, and
-                ensuring that designers have a home at tretton37.
-              </Paragraph>
-              <Title h={4}>Some of my credentials</Title>
-              <Paragraph>
-                <strong>UXC Spec. UX Management</strong> <br />
-                Nielson Norman Group
-              </Paragraph>
-              <Paragraph>
-                <strong>UXC Spec. UX Research</strong> <br />
-                Nielson Norman Group
-              </Paragraph>
-              <Paragraph>
-                <strong>BSc. Eng. ITCOM</strong> <br />
-                Ålborg university, Copenhagen, DK
-              </Paragraph>
-              <Paragraph>
-                <strong>Associate, Graphic Design</strong> <br />
-                College of Management, Ashdod, Israel
-              </Paragraph>
-            </>
-          ),
+          items: [
+            {
+              title: "My story",
+              h: 3,
+              text: (
+                <>
+                  <Paragraph>
+                    I started my career 15 years ago as a graphic designer for a
+                    financial services provider in Copenhagen. Over time, I
+                    became responsible for a small team that created web and
+                    document solutions used by 50-70 banks and investment
+                    groups.
+                  </Paragraph>
+                  <Paragraph>
+                    However, the work became repetitive and I felt the need for
+                    a new challenge. So, I signed up for university while
+                    continuing to work full-time. There, I studied IT
+                    Communications and New Media. After graduating, I worked as
+                    a front-end developer for a couple of years before returning
+                    to design. This time, I focused on data visualizations for
+                    medical studies. Later on, I worked as a consultant and had
+                    the opportunity to be involved in all stages of the product
+                    development process, from ideation to evaluation.
+                  </Paragraph>
+                  <Paragraph>
+                    Currently, I am the head of design at tretton37, where I
+                    lead a team of 20 designers. My responsibilities include
+                    working on our VP, EVP, Competence development (in
+                    collaboration with a dedicated competence lead), packaging
+                    design services, and ensuring that designers have a home at
+                    tretton37.
+                  </Paragraph>
+                </>
+              ),
+            },
+            {
+              title: "My credentials",
+              h: 3,
+              text: (
+                <>
+                  <Paragraph>
+                    <strong>UXC Spec. UX Management</strong> <br />
+                    Nielson Norman Group
+                  </Paragraph>
+                  <Paragraph>
+                    <strong>UXC Spec. UX Research</strong> <br />
+                    Nielson Norman Group
+                  </Paragraph>
+                  <Paragraph>
+                    <strong>BSc. Eng. ITCOM</strong> <br />
+                    Ålborg university, Copenhagen, DK
+                  </Paragraph>
+                  <Paragraph>
+                    <strong>Associate, Graphic Design</strong> <br />
+                    College of Management, Ashdod, Israel
+                  </Paragraph>
+                </>
+              ),
+            },
+          ],
         },
+      },
+      {
+        template: SECTION_ELEMENTS.SPACER_MEDIUM,
       },
       {
         template: SECTION_ELEMENTS.TIMELINE,
