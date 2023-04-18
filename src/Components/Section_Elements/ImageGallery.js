@@ -9,7 +9,7 @@ import breakpoints from "../../theme/breakpoints";
 import padding from "../../theme/padding";
 
 const StyledImageGallery = styled(motion.div)`
-  padding-top: 4rem; /* TODO: this needs to be update */
+  padding-top: ${padding.insideElements.quadruple};
   grid-column: 1 / span 2;
   display: grid;
   grid-gap: max(

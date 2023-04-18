@@ -6,9 +6,7 @@ import useBgColor from "../../../utils/useBgColor";
 import Span from "../../Shared/Span";
 import colors from "../../../theme/colors";
 
-/* TODO: check if this style is redaundant (one day) */
-
-const StyledCite = styled(motion.div)`
+const StyledCite = styled(motion.cite)`
   display: block;
 
   :before {
