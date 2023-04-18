@@ -8,6 +8,7 @@ import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
 
 export const VIEW_ABOUT_ME = [
   {
+    navBgColor: "#9c9090",
     elements: [
       {
         template: SECTION_ELEMENTS.COVER,

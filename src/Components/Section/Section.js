@@ -1,4 +1,4 @@
-import React, { useEffect, useContext } from "react";
+import React, { useEffect, useContext, useRef } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion } from "framer-motion";
@@ -10,6 +10,9 @@ import sizes from "../../theme/sizes";
 import breakpoints from "../../theme/breakpoints";
 import Title from "../Shared/Title";
 import shouldUseLightText from "../../utils/shouldUseLightText";
+import useIsTouchingTop from "../../utils/useIsTouchingTop";
+import colors from "../../theme/colors";
+import { NavBgColorContext } from "../../Context/NavBgColorContext";
 
 const StyledSection = styled(motion.section)`
   height: fit-content;
@@ -84,6 +87,7 @@ function Section({
   h,
   children,
   bgColor,
+  navBgColor,
   isSticky,
   paddedUp,
   paddedDown,
@@ -95,10 +99,25 @@ function Section({
   const { width } = useWindowSize();
   const isMobile =
     width < sizes.contentWidthLimit + sizes.sectionHeaderWidthLimit;
+  const ref = useRef(null);
+  const isTouchingTop = useIsTouchingTop(ref);
+  const [, setNavBgColor] = useContext(NavBgColorContext);
 
   useEffect(() => {
     setLight(shouldUseLightText(bgColor));
   }, [setLight, bgColor]);
+
+  useEffect(() => {
+    const color = bgColor || navBgColor;
+
+    if (isTouchingTop) {
+      if (color) {
+        setNavBgColor(color);
+      } else {
+        setNavBgColor(colors.offwhite);
+      }
+    }
+  }, [isTouchingTop, setNavBgColor, bgColor, navBgColor]);
 
   return (
     <StyledSection
@@ -109,6 +128,7 @@ function Section({
       $marginUp={marginUp}
       $marginDown={marginDown}
       $fullScreen={fullScreen}
+      ref={ref}
     >
       {header && !isMobile && <SectionHeader>{header}</SectionHeader>}
       {sectionTitle && (
@@ -128,6 +148,7 @@ Section.propTypes = {
   h: PropTypes.number,
   children: PropTypes.node.isRequired,
   bgColor: PropTypes.string,
+  navBgColor: PropTypes.string,
   isSticky: PropTypes.bool,
   paddedUp: PropTypes.bool,
   paddedDown: PropTypes.bool,
@@ -142,6 +163,7 @@ Section.defaultProps = {
   isCentered: false,
   h: 2,
   bgColor: null,
+  navBgColor: null,
   isSticky: false,
   paddedUp: false,
   paddedDown: false,

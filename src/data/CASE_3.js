@@ -48,6 +48,7 @@ export const CASE_3 = {
   },
   details: [
     {
+      navBgColor: SETTINGS.BG_COLOR,
       elements: [
         {
           template: SECTION_ELEMENTS.COVER,
@@ -510,6 +511,7 @@ export const CASE_3 = {
       ],
     },
     {
+      navBgColor: SETTINGS.BG_COLOR,
       elements: [
         {
           template: SECTION_ELEMENTS.RESULT,

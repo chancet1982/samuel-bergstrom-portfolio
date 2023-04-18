@@ -2,7 +2,7 @@
 /* eslint-disable no-nested-ternary */
 import React, { useEffect, useContext, useRef } from "react";
 import styled from "styled-components";
-import { motion, useInView } from "framer-motion";
+import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { useWindowSize } from "react-use";
 import BgMedia from "./Cover/BgMedia";
@@ -15,8 +15,6 @@ import sizes from "../../theme/sizes";
 import breakpoints from "../../theme/breakpoints";
 import padding from "../../theme/padding";
 import { ElementColorContext } from "../../Context/ElementColorContext";
-import colors from "../../theme/colors";
-import { NavBgColorContext } from "../../Context/NavBgColorContext";
 import shouldUseLightText from "../../utils/shouldUseLightText";
 
 const StyledCover = styled(motion.div)`
@@ -116,23 +114,13 @@ function Cover({
   isLight,
 }) {
   const ref = useRef(null);
-  const isInView = useInView(ref);
   const [, setLight] = useContext(ElementColorContext);
-  const [, setNavBgColor] = useContext(NavBgColorContext);
   const { width } = useWindowSize();
   const isTabletOrDesktop = width >= breakpoints.mobileLarge;
 
   useEffect(() => {
     setLight(shouldUseLightText(bgColor));
   }, [setLight, bgColor, isLight]);
-
-  useEffect(() => {
-    if ((isInView && bgColor !== colors.offwhite) || (isInView && isLight)) {
-      setNavBgColor(bgColor || "black");
-    } else {
-      setNavBgColor(colors.offwhite);
-    }
-  }, [isInView, setNavBgColor, bgColor]);
 
   const coverVariants = {
     hidden: {

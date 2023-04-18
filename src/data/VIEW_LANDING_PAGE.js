@@ -10,6 +10,7 @@ import colors from "../theme/colors";
 export const VIEW_LANDING_PAGE = [
   {
     isSticky: true,
+    navBgColor: "black",
     elements: [
       {
         template: SECTION_ELEMENTS.COVER,

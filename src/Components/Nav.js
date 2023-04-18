@@ -7,7 +7,6 @@ import { useWindowScroll, useWindowSize } from "react-use";
 import { useScrollDirection } from "../utils/useScrollDirection";
 import breakpoints from "../theme/breakpoints";
 import padding from "../theme/padding";
-import colors from "../theme/colors";
 import { SplashAnimationFinishedContext } from "../Context/SplashAnimationFinishedContext";
 import { NavBgColorContext } from "../Context/NavBgColorContext";
 import { CursorContext } from "../Context/CursorContext";
@@ -44,7 +43,7 @@ const StyledNav = styled(motion.nav)`
 
 function Nav() {
   const [, setCursorText, , setCursorVariant] = useContext(CursorContext);
-  const [navBgColor, setNavBgColor] = useContext(NavBgColorContext);
+  const [navBgColor] = useContext(NavBgColorContext);
 
   const { width } = useWindowSize();
   const isDesktop = width >= breakpoints.desktop;
@@ -55,13 +54,11 @@ function Nav() {
   const [isLight, setIsLight] = useState(false);
   const location = useLocation();
 
-  /* TODO: Resetting bgColor on navigation does not work when leaving a case to a different page (might be a sequencing issue) */
-  // Resetting things..
+  // TODO: resetting the cursor on route change, this should happen elsewhere...
   useEffect(() => {
-    setNavBgColor(colors.offwhite);
     setCursorText("");
     setCursorVariant("default");
-  }, [location, setNavBgColor, setCursorText, setCursorVariant]);
+  }, [location, setCursorText, setCursorVariant]);
 
   useEffect(() => {
     setIsLight(shouldUseLightText(navBgColor));
