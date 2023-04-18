@@ -177,7 +177,8 @@ export const CASE_7 = {
     },
     {
       paddedUp: true,
-      header: "Research",
+      paddedDown: true,
+      header: "Kickoff",
       elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
@@ -214,14 +215,15 @@ export const CASE_7 = {
             ),
           },
         },
-        {
-          template: SECTION_ELEMENTS.SPACER_MEDIUM,
-        },
+      ],
+    },
+    {
+      bgColor: SETTINGS.BG_COLOR,
+      elements: [
         {
           template: SECTION_ELEMENTS.INSIGHTS,
           data: {
             isTwoColumnsOnDesktop: true,
-            bgColor: SETTINGS.BG_COLOR,
             title: <>Insights:</>,
             items: [
               {
@@ -244,9 +246,12 @@ export const CASE_7 = {
             ],
           },
         },
-        {
-          template: SECTION_ELEMENTS.SPACER_MEDIUM,
-        },
+      ],
+    },
+    {
+      paddedUp: true,
+      header: "Research",
+      elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {

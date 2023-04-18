@@ -188,6 +188,7 @@ export const CASE_4 = {
     },
     {
       paddedUp: true,
+      paddedDown: true,
       header: "Process",
       elements: [
         {
@@ -271,15 +272,16 @@ export const CASE_4 = {
             ),
           },
         },
-        {
-          template: SECTION_ELEMENTS.SPACER_MEDIUM,
-        },
+      ],
+    },
+    {
+      bgColor: SETTINGS.BG_COLOR,
+      elements: [
         {
           template: SECTION_ELEMENTS.INSIGHTS,
           data: {
             title: <>Insights:</>,
             h: 2,
-            bgColor: SETTINGS.BG_COLOR,
             items: [
               {
                 title: "Onboarding is cumbersome",
@@ -307,9 +309,6 @@ export const CASE_4 = {
               },
             ],
           },
-        },
-        {
-          template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
       ],
     },

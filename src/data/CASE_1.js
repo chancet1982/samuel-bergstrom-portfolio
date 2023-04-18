@@ -168,6 +168,7 @@ export const CASE_1 = {
     },
     {
       paddedUp: true,
+      paddedDown: true,
       header: "Research",
       elements: [
         {
@@ -217,13 +218,14 @@ export const CASE_1 = {
             cite: "Mary, Currior, Norway",
           },
         },
-        {
-          template: SECTION_ELEMENTS.SPACER_MEDIUM,
-        },
+      ],
+    },
+    {
+      bgColor: SETTINGS.BG_COLOR,
+      elements: [
         {
           template: SECTION_ELEMENTS.INSIGHTS,
           data: {
-            bgColor: SETTINGS.BG_COLOR,
             title: "Insights",
             h: 2,
             items: [
@@ -253,9 +255,6 @@ export const CASE_1 = {
               },
             ],
           },
-        },
-        {
-          template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
       ],
     },

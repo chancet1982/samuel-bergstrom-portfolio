@@ -192,6 +192,7 @@ export const CASE_2 = {
     },
     {
       paddedUp: true,
+      paddedDown: true,
       header: "Research",
       elements: [
         {
@@ -250,14 +251,15 @@ export const CASE_2 = {
             ],
           },
         },
-        {
-          template: SECTION_ELEMENTS.SPACER_MEDIUM,
-        },
+      ],
+    },
+    {
+      bgColor: SETTINGS.BG_COLOR,
+      elements: [
         {
           template: SECTION_ELEMENTS.INSIGHTS,
           data: {
             title: <>Insights</>,
-            bgColor: SETTINGS.BG_COLOR,
             h: 2,
             isTwoColumnsOnDesktop: true,
             text: (
@@ -292,9 +294,11 @@ export const CASE_2 = {
             ],
           },
         },
-        {
-          template: SECTION_ELEMENTS.SPACER_MEDIUM,
-        },
+      ],
+    },
+    {
+      paddedUp: true,
+      elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {

@@ -186,6 +186,7 @@ export const CASE_3 = {
     {
       header: "Research",
       paddedUp: true,
+      paddedDown: true,
       elements: [
         {
           template: SECTION_ELEMENTS.TEXTBOX,
@@ -312,15 +313,16 @@ export const CASE_3 = {
             ),
           },
         },
-        {
-          template: SECTION_ELEMENTS.SPACER_MEDIUM,
-        },
+      ],
+    },
+    {
+      bgColor: SETTINGS.BG_COLOR,
+      elements: [
         {
           template: SECTION_ELEMENTS.INSIGHTS,
           data: {
             title: <>Insights:</>,
             h: 2,
-            bgColor: SETTINGS.BG_COLOR,
             items: [
               {
                 title: "Production line, not a lab",
@@ -337,9 +339,11 @@ export const CASE_3 = {
             ],
           },
         },
-        {
-          template: SECTION_ELEMENTS.SPACER_MEDIUM,
-        },
+      ],
+    },
+    {
+      paddedUp: true,
+      elements: [
         {
           template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
           data: {
