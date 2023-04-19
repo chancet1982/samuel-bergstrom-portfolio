@@ -36,11 +36,10 @@ const StyledOverlay = styled(motion.div)`
   backdrop-filter: blur(4px);
   width: 100vw;
   height: 100vh;
-  pointer-events: none;
 `;
 
 function MobileMenu({ isLight }) {
-  const [expanded] = useContext(MenuExpandedContext);
+  const [expanded, setExpanded] = useContext(MenuExpandedContext);
 
   const menuVariants = {
     expanded: {
@@ -85,6 +84,7 @@ function MobileMenu({ isLight }) {
         initial="collapsed"
         animate={expanded ? "expanded" : "collapsed"}
         variants={overlayVariants}
+        onClick={() => setExpanded(false)}
       />
       <StyledMobileMenu
         initial="collapsed"

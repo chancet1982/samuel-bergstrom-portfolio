@@ -1,7 +1,6 @@
 TODO list (What's left before you're done)
 
 FIXES:
-MOBILE_MENU -> Implement Clickoutside to close.
 MOBILE_MENU -> Implement staggered menulink animations.
 CaseThumbnail -> Fix better tag for COMING SOON cases.
 SECTION_IMAGE: make selectable if you want it to scale down or preserve height
