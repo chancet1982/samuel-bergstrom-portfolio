@@ -11,18 +11,19 @@ import typography from "../../theme/typography";
 import { textVariants } from "../../animations/animations";
 
 const headlineFont = `
-font-weight: 800;
-font-family: ${typography.headlineFont};
+  font-family: ${typography.headlineFont};
+  font-weight: 600;
 `;
 
 export const StyledH1 = styled(motion.h1)`
   max-width: 16ch;
-  text-transform: uppercase;
-  font-stretch: 125%;
   color: ${({ $light }) =>
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
   ${headlineFont}
+  font-weight: 800;
+  font-stretch: 125%;
+  text-transform: uppercase;
 `;
 
 export const StyledH2 = styled(motion.h2)`
@@ -31,8 +32,6 @@ export const StyledH2 = styled(motion.h2)`
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
   ${headlineFont}
-  font-stretch: 88%;
-  font-weight: 700;
 `;
 
 export const StyledH3 = styled(motion.h3)`
@@ -41,8 +40,6 @@ export const StyledH3 = styled(motion.h3)`
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
   ${headlineFont}
-  font-stretch: 88%;
-  font-weight: 600;
 `;
 
 export const StyledH4 = styled(motion.h4)`
@@ -51,8 +48,6 @@ export const StyledH4 = styled(motion.h4)`
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
   ${headlineFont}
-  font-stretch: 88%;
-  font-weight: 600;
 `;
 
 export const StyledH5 = styled(motion.h5)`
@@ -61,8 +56,6 @@ export const StyledH5 = styled(motion.h5)`
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
   ${headlineFont}
-  font-stretch: 88%;
-  font-weight: 600;
 `;
 
 function Title({ h, children, isLight, withMargin, ...rest }) {

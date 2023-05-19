@@ -17,7 +17,7 @@ export const VIEW_ABOUT_ME = [
           caption: {
             title: (
               <>
-                Creating <mark>business value</mark> through better experiences.
+                I create <mark>business value</mark> through better experiences.
               </>
             ),
             h: 1,
@@ -39,7 +39,57 @@ export const VIEW_ABOUT_ME = [
   },
   {
     paddedUp: true,
-    sectionTitle: <>Why Sam?</>,
+    elements: [
+      { template: SECTION_ELEMENTS.SPACER_MEDIUM },
+      {
+        template: SECTION_ELEMENTS.COLUMNS,
+        data: {
+          items: [
+            {
+              imageUrl: "assets/not-here-to-look-good.png",
+            },
+            {
+              title: "Designed to make you look good!",
+              h: 2,
+              text: (
+                <Paragraph>
+                  Its really not about me. I help businesses reach their goals,
+                  making you look good for your salary review.
+                </Paragraph>
+              ),
+            },
+          ],
+        },
+      },
+      { template: SECTION_ELEMENTS.SPACER_MEDIUM },
+      {
+        template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
+        data: {
+          items: [
+            {
+              imageUrl: "assets/packed-with-useful-ideas.png",
+              imageAlt: "Packed with useful ideas",
+              title: "Packed with useful ideas",
+              h: 2,
+              text: (
+                <Paragraph>
+                  <Paragraph>
+                    I am opinionated, knowledgable, and care about your success.
+                    Whatever the challenge, I will find a way to move forward.
+                  </Paragraph>
+                </Paragraph>
+              ),
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    paddedUp: true,
+    sectionTitle: <>Why me?</>,
+    h: 3,
+    bgColor: colors.darkgray,
     elements: [
       {
         template: SECTION_ELEMENTS.LIST_OF_CARDS,
@@ -112,7 +162,8 @@ export const VIEW_ABOUT_ME = [
   {
     paddedUp: true,
     paddedDown: true,
-    sectionTitle: <>Among my clients</>,
+    sectionTitle: <>Trusted by:</>,
+    isCentered: true,
     elements: [
       {
         template: SECTION_ELEMENTS.CLIENTS,
@@ -122,7 +173,7 @@ export const VIEW_ABOUT_ME = [
   },
   {
     bgColor: colors.offblack,
-    sectionTitle: <>What others say about me</>,
+    sectionTitle: <>Dont take my word for it!</>,
     isCentered: true,
     elements: [
       {
@@ -138,7 +189,7 @@ export const VIEW_ABOUT_ME = [
         data: {
           items: [
             {
-              title: "My story",
+              title: "My journey so far",
               h: 3,
               text: (
                 <>
@@ -209,7 +260,7 @@ export const VIEW_ABOUT_ME = [
               year: "2022",
               events: [
                 {
-                  title: "Head of Design, 1337",
+                  title: "Head of Design, tretton37",
                   content:
                     "Making sure design has a place in a tech consultancy",
                 },

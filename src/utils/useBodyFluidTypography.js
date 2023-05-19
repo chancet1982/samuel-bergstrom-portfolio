@@ -12,8 +12,16 @@ const multiply = (val, times) => val * times;
 const decrease = (val, dec, times) => val - dec * times;
 
 const useFluidTypography = (pSize = 2, withMargin = true) => {
-  const { size, lh, inc, minBMod, maxBMod, ftMax, ftMin } = typography;
+  const { minSize, maxSize, lh, inc, minBMod, maxBMod, ftMax, ftMin } =
+    typography;
   const { width } = useWindowSize();
+
+  const getSize = (res) =>
+    res >= ftMax
+      ? maxSize
+      : res < ftMax && res >= ftMin
+      ? minSize + ((res - ftMin) * (maxSize - minSize)) / (ftMax - ftMin)
+      : minSize;
 
   const getMod = (res) =>
     res >= ftMax
@@ -23,7 +31,7 @@ const useFluidTypography = (pSize = 2, withMargin = true) => {
       : minBMod;
 
   const currentFontSize =
-    pSize === 1 ? 1 : magnify(size, getMod(width), pSize - 2);
+    pSize === 1 ? 1 : magnify(getSize(width), getMod(width), pSize - 2);
   const currentLineHeight = decrease(lh, inc, pSize - 2);
 
   return `

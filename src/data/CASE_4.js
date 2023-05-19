@@ -74,6 +74,7 @@ export const CASE_4 = {
     },
     {
       paddedUp: true,
+      paddedDown: true,
       elements: [
         {
           template: SECTION_ELEMENTS.OVERVIEW,
@@ -194,7 +195,7 @@ export const CASE_4 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Gathering feedback and recruiting users.</>,
+            title: <>Problems and oppurtunities</>,
             h: 2,
             text: (
               <>
@@ -205,7 +206,6 @@ export const CASE_4 = {
                   their food deliveries, what is important for them and how do
                   they experience the current app.
                 </Paragraph>
-                <Title h={4}>Survey, anyone?</Title>
                 <Paragraph>
                   We decided to send a feedback questionnaire to test users and
                   An open survey to users that match the products’ target
@@ -224,6 +224,9 @@ export const CASE_4 = {
               </>
             ),
           },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
@@ -343,6 +346,9 @@ export const CASE_4 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
+        },
+        {
           template: SECTION_ELEMENTS.COLUMNS,
           data: {
             items: [
@@ -382,6 +388,9 @@ export const CASE_4 = {
               },
             ],
           },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
           template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
@@ -466,7 +475,7 @@ export const CASE_4 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: <>Current and redesigned app go head-to-head.</>,
+            title: <>New VS old app comparison.</>,
             h: 2,
             text: (
               <>

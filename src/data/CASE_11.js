@@ -92,6 +92,7 @@ export const CASE_11 = {
     },
     {
       paddedUp: true,
+      paddedDown: true,
       elements: [
         {
           template: SECTION_ELEMENTS.OVERVIEW,
@@ -224,7 +225,7 @@ export const CASE_11 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
-            title: "Looking at user feedback and quarterly survey responses.",
+            title: "In-app feedback",
             isCentered: true,
             h: 4,
             text: (
@@ -258,8 +259,8 @@ export const CASE_11 = {
             h: 4,
             text: (
               <Paragraph large>
-                We integrated this as part of our usability testing and asked
-                participants to point out demo products.
+                We asked participants to point out demo products in our
+                usability tests.
                 <br />
                 <strong>
                   Not a single participant managed to point these out.

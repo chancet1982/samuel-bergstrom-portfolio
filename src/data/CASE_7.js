@@ -108,6 +108,7 @@ export const CASE_7 = {
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
+            overline: "Background",
             title: <>Exploring new business</>,
             h: 2,
             text: (
