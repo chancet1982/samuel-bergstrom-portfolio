@@ -590,13 +590,6 @@ export const CASE_5 = {
     {
       elements: [
         {
-          template: SECTION_ELEMENTS.CASE_FOOTER,
-        },
-      ],
-    },
-    {
-      elements: [
-        {
           template: SECTION_ELEMENTS.FOOTER,
         },
       ],

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -44,6 +45,7 @@ function BackgroundWrapper({
   limitMaxWidth,
   children,
   isPadded,
+  ...rest
 }) {
   /* TODO: Add support for video background */
 
@@ -60,6 +62,7 @@ function BackgroundWrapper({
       $bgMedia={mediaUrl}
       $limitMaxWidth={limitMaxWidth}
       $isPadded={isPadded}
+      {...rest}
     >
       {children}
     </StyledBackground>

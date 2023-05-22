@@ -86,9 +86,6 @@ export const VIEW_LANDING_PAGE = [
     bgColor: colors.offblack,
     elements: [
       {
-        template: SECTION_ELEMENTS.CASE_FOOTER,
-      },
-      {
         template: SECTION_ELEMENTS.FOOTER,
       },
     ],

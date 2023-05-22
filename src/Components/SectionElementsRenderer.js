@@ -14,7 +14,6 @@ import ContentColumns from "./Section_Elements/Columns";
 import ListOfImagesWithTitleAndText from "./Section_Elements/ListOfImagesWithTitleAndText";
 import SectionImage from "./Section_Elements/SectionImage";
 import Timeline from "./Section_Elements/Timeline";
-import CaseFooter from "./Section_Elements/CaseFooter";
 import AdditionalCases from "./Section_Elements/AdditionalCases";
 import Footer from "./Section_Elements/Footer";
 import KeyFigures from "./Section_Elements/KeyFigures";
@@ -185,8 +184,6 @@ function SectionElementsRenderer({ elementKey, data, template }) {
       );
     case SECTION_ELEMENTS.CLIENTS:
       return <Clients key={elementKey} />;
-    case SECTION_ELEMENTS.CASE_FOOTER:
-      return <CaseFooter key={elementKey} />;
     case SECTION_ELEMENTS.ADDITIONAL_CASES:
       return <AdditionalCases key={elementKey} />;
     case SECTION_ELEMENTS.FOOTER:

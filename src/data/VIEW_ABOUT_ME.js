@@ -432,9 +432,6 @@ export const VIEW_ABOUT_ME = [
   {
     elements: [
       {
-        template: SECTION_ELEMENTS.CASE_FOOTER,
-      },
-      {
         template: SECTION_ELEMENTS.FOOTER,
       },
     ],
