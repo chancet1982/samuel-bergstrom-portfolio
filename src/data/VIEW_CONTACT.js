@@ -6,7 +6,6 @@ export const VIEW_CONTACT = [
   {
     paddedUp: true,
     paddedDown: true,
-    header: "Get in touch",
     elements: [
       {
         template: SECTION_ELEMENTS.CONTACT_DETAILS,
