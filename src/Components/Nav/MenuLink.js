@@ -13,9 +13,6 @@ import { MenuExpandedContext } from "../../Context/MenuExpandedContext";
 const StyledMenuLink = styled(NavLink)`
   font-size: ${typography.size}rem;
   font-family: ${typography.bodyFont};
-  font-weight: 300;
-  font-stretch: 112%;
-
   text-decoration: none;
   font-weight: 400;
   margin: 0;
