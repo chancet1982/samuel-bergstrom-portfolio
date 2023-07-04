@@ -1,5 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 export const TOOLS_AND_METHODS = {
+  LABEL: "Tools & Methods:",
   SURVEYS: "Surveys",
   SERVICE_DESIGN: "Service design",
   COMPETITOR_ANALYSIS: "Competitor analysis",

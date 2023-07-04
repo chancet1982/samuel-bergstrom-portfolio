@@ -4,6 +4,7 @@ import { SECTION_ELEMENTS } from "../data/dictionaries/SECTION_ELEMENTS";
 import Cover from "./Section_Elements/Cover";
 import Overview from "./Section_Elements/Overview";
 import Textbox from "./Section_Elements/Textbox";
+import SectionTitleAndText from "./Section_Elements/SectionTitleAndText";
 import Clients from "./Section_Elements/Clients";
 import Cases from "./Section_Elements/Cases";
 import CasesPreview from "./Section_Elements/CasesPreview";
@@ -147,8 +148,31 @@ function SectionElementsRenderer({ elementKey, data, template }) {
           imageAlt={data.imageAlt}
           caption={data.caption}
           limitMaxWidth={data.limitMaxWidth}
+          paddedUp={data.paddedUp}
+          paddedDown={data.paddedDown}
           isPadded={data.isPadded}
+          isSticky={data.isSticky}
         />
+      );
+    case SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT:
+      return (
+        <ElementColorContextProvider>
+          <SectionTitleAndText
+            key={elementKey}
+            bgColor={data.bgColor}
+            bgMedia={data.bgMedia}
+            overline={data.overline}
+            title={data.title}
+            h={data.h}
+            text={data.text}
+            paddedUp={data.paddedUp}
+            paddedDown={data.paddedDown}
+            isPadded={data.isPadded}
+            isSticky={data.isSticky}
+            isCentered={data.isCentered}
+            isFullScreen={data.isFullScreen}
+          />
+        </ElementColorContextProvider>
       );
     case SECTION_ELEMENTS.COLUMNS:
       return (

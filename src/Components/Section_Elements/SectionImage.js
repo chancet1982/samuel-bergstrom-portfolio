@@ -8,6 +8,8 @@ import breakpoints from "../../theme/breakpoints";
 import padding from "../../theme/padding";
 
 const StyledSectionImage = styled(motion.div)`
+  box-sizing: border-box;
+
   @media (min-width: ${breakpoints.desktop}px) {
     ${({ $limitMaxWidth }) =>
       $limitMaxWidth && {
@@ -25,13 +27,17 @@ const StyledSectionImage = styled(motion.div)`
   ${({ $paddedUp }) =>
     $paddedUp && {
       paddingTop: padding.insideElements.double,
-      /* backgroundColor: "yellow", */
     }}
 
-${({ $paddedDown }) =>
+  ${({ $paddedDown }) =>
     $paddedDown && {
       paddingBottom: padding.insideElements.double,
-      /* backgroundColor: "blue", */
+    }}
+
+  ${({ $isSticky }) =>
+    $isSticky && {
+      position: "sticky",
+      top: "0",
     }}
 `;
 
@@ -40,12 +46,18 @@ function SectionImage({
   imageAlt,
   caption,
   limitMaxWidth,
+  paddedUp,
+  paddedDown,
   isPadded,
+  isSticky,
 }) {
   return (
     <StyledSectionImage
       $limitMaxWidth={limitMaxWidth}
+      $paddedUp={paddedUp}
+      $paddedDown={paddedDown}
       $isPadded={isPadded}
+      $isSticky={isSticky}
       initial="hidden"
       whileInView="inView"
       viewport={{ once: true, amount: 0.2 }}
@@ -65,13 +77,19 @@ SectionImage.propTypes = {
   imageAlt: PropTypes.string.isRequired,
   caption: PropTypes.string,
   limitMaxWidth: PropTypes.bool,
+  paddedUp: PropTypes.bool,
+  paddedDown: PropTypes.bool,
   isPadded: PropTypes.bool,
+  isSticky: PropTypes.bool,
 };
 
 SectionImage.defaultProps = {
   caption: null,
   limitMaxWidth: false,
+  paddedUp: false,
+  paddedDown: false,
   isPadded: false,
+  isSticky: false,
 };
 
 export default SectionImage;

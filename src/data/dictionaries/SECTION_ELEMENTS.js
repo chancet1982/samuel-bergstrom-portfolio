@@ -14,6 +14,7 @@ export const SECTION_ELEMENTS = {
   CASES_PREVIEW: "casesPreview",
   IMAGE_GALLERY: "imageGallery",
   SECTION_IMAGE: "sectionImage",
+  SECTION_TITLE_AND_TEXT: "sectionTitleAndText",
   TESTIMONIALS: "testimonials",
   COLUMNS: "columns",
   LIST_OF_IMAGES_WITH_TITLE_AND_TEXT: "listOfImagesWithTitleAndText",
