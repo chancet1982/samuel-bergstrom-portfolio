@@ -276,16 +276,13 @@ export const CASE_2 = {
             items: [
               {
                 title:
+                  "Patients were not interested in medications, Reminders and intake",
+                text: "Most patients only care about side-affectss, very few wanted to learn about the medication itself. 66% of patients were not interested in medication reminders nor did they want to report medication intake.",
+              },
+              {
+                title:
                   "Most patients were interested in wellbeing and health tips.",
                 text: "72% would like to get health tips and ways to improve their wellbeing (13/18)",
-              },
-              {
-                title: "Patients wanted to keep informed",
-                text: "52% would like to follow up on their treatments",
-              },
-              {
-                title: "Patients want to follow up on lab results",
-                text: "Patients were mostly interested in lab results (blood, levels)",
               },
               {
                 title:
@@ -293,9 +290,12 @@ export const CASE_2 = {
                 text: " 64% of patients would want to be able to find and book a clinic via app.",
               },
               {
-                title:
-                  "Patients were not interested in medications, Reminders and intake",
-                text: "Most patients only care about side-affectss, very few wanted to learn about the medication itself. 66% of patients were not interested in medication reminders nor did they want to report medication intake.",
+                title: "Patients want to follow up on lab results",
+                text: "Patients were mostly interested in lab results (blood, levels)",
+              },
+              {
+                title: "Patients wanted to keep informed",
+                text: "52% would like to follow up on their treatments",
               },
             ],
           },
