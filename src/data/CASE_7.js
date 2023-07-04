@@ -346,6 +346,9 @@ export const CASE_7 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.SPACER_SMALL,
+        },
+        {
           template: SECTION_ELEMENTS.KEY_FIGURES,
           data: {
             title: "Noteworthy Insights:",
@@ -361,6 +364,9 @@ export const CASE_7 = {
               },
             ],
           },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
           template: SECTION_ELEMENTS.TEXTBOX,

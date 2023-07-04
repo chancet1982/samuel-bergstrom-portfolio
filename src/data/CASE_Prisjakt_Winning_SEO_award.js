@@ -167,16 +167,7 @@ export const CASE_9 = {
             ),
           },
         },
-        {
-          template: SECTION_ELEMENTS.KEY_FIGURES,
-          data: {
-            items: [
-              { value: "1", label: "When do people compare prices?" },
-              { value: "2", label: "What works well?" },
-              { value: "3", label: "What needs to be improved?" },
-            ],
-          },
-        },
+
         {
           template: SECTION_ELEMENTS.TEXTBOX,
           data: {
@@ -241,16 +232,6 @@ export const CASE_9 = {
             ),
             imageAlt: "Survey results, search indicated in green.",
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/survey.png`,
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.KEY_FIGURES,
-          data: {
-            items: [
-              { value: "2 500+", label: "Responses" },
-              { value: "2256", label: "Mapped insights" },
-              { value: "178", label: "Wanted to improve search" },
-            ],
           },
         },
       ],

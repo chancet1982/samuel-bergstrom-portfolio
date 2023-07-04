@@ -9,18 +9,22 @@ import sizes from "../../theme/sizes";
 import Overline from "./Overline";
 
 const StyledTitleAndText = styled(motion.div)`
-  /*background: orange;*/
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    text-wrap: balance;
+  }
 
   ${({ $paddedUp }) =>
     $paddedUp && {
       paddingTop: padding.outsideElements.double,
-      /* backgroundColor: "yellow", */
     }}
 
   ${({ $paddedDown }) =>
     $paddedDown && {
       paddingBottom: padding.outsideElements.double,
-      /* backgroundColor: "blue", */
     }}
 
   ${({ $isSticky }) =>
@@ -35,7 +39,6 @@ const StyledTitleAndText = styled(motion.div)`
       textAlign: "center",
       maxWidth: `calc(${sizes.contentWidthLimit}px * 0.72)`,
       margin: "0 auto",
-      textWrap: "balance",
     }}
 `;
 

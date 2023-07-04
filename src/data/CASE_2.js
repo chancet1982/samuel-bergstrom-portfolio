@@ -236,6 +236,9 @@ export const CASE_2 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.SPACER_SMALL,
+        },
+        {
           template: SECTION_ELEMENTS.KEY_FIGURES,
           data: {
             items: [
@@ -250,6 +253,9 @@ export const CASE_2 = {
               },
             ],
           },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER_SMALL,
         },
       ],
     },

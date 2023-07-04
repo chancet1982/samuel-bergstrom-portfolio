@@ -288,6 +288,9 @@ export const CASE_3 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.SPACER_SMALL,
+        },
+        {
           template: SECTION_ELEMENTS.KEY_FIGURES,
           data: {
             items: [
@@ -298,6 +301,9 @@ export const CASE_3 = {
               { value: "13", label: "Lab & expert interviews" },
             ],
           },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
           template: SECTION_ELEMENTS.TEXTBOX,
