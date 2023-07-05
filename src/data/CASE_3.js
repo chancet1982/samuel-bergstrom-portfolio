@@ -282,7 +282,7 @@ export const CASE_3 = {
                 We collaborated with 2 hospitals in Sweden and visited an
                 external pathology lab where we spoke to both lab technicians
                 and experts within pathology to gain knowledge of their work
-                environment, needs, and challanges.
+                environment, needs, and challenges.
               </Paragraph>
             ),
           },

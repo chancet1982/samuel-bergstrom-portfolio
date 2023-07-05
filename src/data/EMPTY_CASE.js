@@ -23,6 +23,10 @@ const SETTINGS = {
       label: PLATFORMS.LABEL,
       value: [PLATFORMS.DESKTOP, PLATFORMS.TABLET, PLATFORMS.MOBILE],
     },
+    TOOLS_AND_METHODS: {
+      label: TOOLS_AND_METHODS.LABEL,
+      value: [TOOLS_AND_METHODS.INTERVIEWS, TOOLS_AND_METHODS.WORKSHOPS],
+    },
     CASE_YEAR: { label: "Year:", value: "2021" },
     CASE_DURATION: { label: "Duration:", value: "1 month" },
   },
@@ -32,12 +36,16 @@ export const CASE_11 = {
   caseStatus: CASE_STATUS.DRAFT,
   caseUrl: SETTINGS.URL,
   thumbnail: {
-    overline: "Overline is usually the industry",
-    title: "What did you do?",
-    text: <>Some catch phrase here</>,
-    imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
-    imageAlt: "thumbnail",
     bgColor: SETTINGS.BG_COLOR,
+    caption: {
+      overline: "Overline is usually the industry",
+      title: "What did you do?",
+      text: <Paragraph>Some catch phrase here</Paragraph>,
+    },
+    fgImage: {
+      imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
+      imageAlt: "thumbnail",
+    },
   },
   details: [
     {
@@ -66,31 +74,73 @@ export const CASE_11 = {
       ],
     },
     {
+      header: "Challenge",
       elements: [
         {
-          template: SECTION_ELEMENTS.OVERVIEW,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
+            title: "Challenge",
             text: <Paragraph xl>...</Paragraph>,
-            toolsAndMethods: [
-              TOOLS_AND_METHODS.SURVEYS,
-              TOOLS_AND_METHODS.WEB_ANALYTICS,
-              TOOLS_AND_METHODS.FUNNEL_ANALYSIS,
-              TOOLS_AND_METHODS.USABILITY_TESTING,
-              TOOLS_AND_METHODS.AB_TESTING,
-            ],
+            isFullScreen: true,
+            isSticky: true,
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/challenge.jpg`,
+            imageAlt: "problem-framing",
+            caption: "Problem framing whiteboard",
+            limitMaxWidth: true,
+            isPadded: true,
           },
         },
       ],
     },
     {
+      header: "Solution",
       elements: [
         {
-          template: SECTION_ELEMENTS.RESULT,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/result-desktop.png`,
-            mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/result-mobile.png`,
-            bgColor: SETTINGS.BG_COLOR,
-            text: <Paragraph large>...</Paragraph>,
+            title: "Solution",
+            text: <Paragraph xl>...</Paragraph>,
+            isFullScreen: true,
+            isSticky: true,
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/solution.jpg`,
+            imageAlt: "problem-framing",
+            caption: "Problem framing whiteboard",
+            limitMaxWidth: true,
+            isPadded: true,
+          },
+        },
+      ],
+    },
+    {
+      header: "Result",
+      elements: [
+        {
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
+          data: {
+            title: "Result",
+            text: <Paragraph xl>...</Paragraph>,
+            isFullScreen: true,
+            isSticky: true,
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/result.jpg`,
+            imageAlt: "problem-framing",
+            caption: "Problem framing whiteboard",
+            limitMaxWidth: true,
+            isPadded: true,
           },
         },
       ],

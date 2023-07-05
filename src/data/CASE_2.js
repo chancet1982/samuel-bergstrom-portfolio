@@ -228,7 +228,7 @@ export const CASE_2 = {
                 </Paragraph>
                 <Paragraph>
                   On top of the survey we conducted interviews with renal
-                  patients to better understand what challanges they were
+                  patients to better understand what challenges they were
                   facing.
                 </Paragraph>
               </>

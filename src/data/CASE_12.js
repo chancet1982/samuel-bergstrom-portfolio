@@ -7,8 +7,11 @@ import { PLATFORMS } from "./dictionaries/PLATFORMS";
 import Paragraph from "../Components/Shared/Paragraph";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
+// import Note from "../Components/Shared/Note";
+// import List from "../Components/Shared/List";
+// import Span from "../Components/Shared/Span";
+import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
 
-/* TODO: This is empty example case */
 const SETTINGS = {
   BG_COLOR: "#00ADDB",
   URL: "/cases/12",
@@ -36,12 +39,16 @@ export const CASE_12 = {
   caseStatus: CASE_STATUS.PUBLISHED,
   caseUrl: SETTINGS.URL,
   thumbnail: {
-    overline: "Fitness & healthcare",
-    title: "Creating better habbits",
-    text: <>Concept validation for healthcare app</>,
-    imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
-    imageAlt: "thumbnail",
     bgColor: SETTINGS.BG_COLOR,
+    caption: {
+      overline: "Fitness & healthcare",
+      title: "Creating better habits",
+      text: <Paragraph>Concept validation for healthcare app</Paragraph>,
+    },
+    fgImage: {
+      imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
+      imageAlt: "thumbnail",
+    },
   },
   details: [
     {
@@ -50,7 +57,10 @@ export const CASE_12 = {
         {
           template: SECTION_ELEMENTS.COVER,
           data: {
-            bgColor: SETTINGS.BG_COLOR,
+            bgMedia: {
+              type: BG_MEDIA_TYPES.IMAGE,
+              mediaUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-bg.jpg`,
+            },
             caption: {
               overline: "Fitness & healthcare",
               title: "Creating better habbits",
@@ -59,7 +69,7 @@ export const CASE_12 = {
               ),
             },
             fgImage: {
-              imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
+              imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-fg.png`,
               mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
             highlights: [
@@ -72,43 +82,98 @@ export const CASE_12 = {
       ],
     },
     {
-      paddedUp: true,
-      paddedDown: true,
+      header: "Challenge",
       elements: [
         {
-          template: SECTION_ELEMENTS.OVERVIEW,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
+            title: "Challenge",
             text: (
               <Paragraph xl>
-                To expand their business, the client has the idea of an
-                application focused on health that could help people –
-                especially teenagers from age 12 to 18 – to live healthier. They
-                came to us for help in evaluating the idea and by the end of the
-                project, tried to validate it with the form of a prototype (that
-                they could also use as sales material) before moving forward
-                with the project.
+                Our client had an idea, they wanted to create an app that would
+                help adolescent children gain healthy habits. For this, they
+                proposed creating an app to help trainers select team members
+                that are likely to perform based on their routines. Our client
+                wanted to increase their chances of success and validate their
+                idea before going forward.
               </Paragraph>
             ),
-            toolsAndMethods: [
-              TOOLS_AND_METHODS.SURVEYS,
-              TOOLS_AND_METHODS.WEB_ANALYTICS,
-              TOOLS_AND_METHODS.FUNNEL_ANALYSIS,
-              TOOLS_AND_METHODS.USABILITY_TESTING,
-              TOOLS_AND_METHODS.AB_TESTING,
-            ],
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/challenge.jpg`,
+            imageAlt: "problem-framing",
+            caption: "Problem framing whiteboard",
+            limitMaxWidth: true,
+            isPadded: true,
           },
         },
       ],
     },
     {
+      header: "Solution",
       elements: [
         {
-          template: SECTION_ELEMENTS.RESULT,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/result-desktop.png`,
-            mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/result-mobile.png`,
-            bgColor: SETTINGS.BG_COLOR,
-            text: <Paragraph large>...</Paragraph>,
+            title: "Solution",
+            text: (
+              <Paragraph xl>
+                We conducted a pre-study and created a vision to secure funding
+                for further development. We facilitated workshops and
+                interviews, looked into statistics and general research,
+                conducted market research and competitor analysis, and created
+                mockups and prototypes.
+              </Paragraph>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/solution.jpg`,
+            imageAlt: "problem-framing",
+            caption: "Problem framing whiteboard",
+            limitMaxWidth: true,
+            isPadded: true,
+          },
+        },
+      ],
+    },
+    {
+      header: "Result",
+      elements: [
+        {
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
+          data: {
+            title: "Result",
+            text: (
+              <Paragraph xl>
+                With our recommendations in mind, our client was able to pivot
+                helping them to reach a wider audience, and were extremely happy
+                with the result.
+              </Paragraph>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.QUOTE,
+          data: {
+            quote:
+              "Efter många månaders planering och brainstorming fick vi igår se prototypen av vår kommande app. Tretton37 har gjort ett kanon jobb och vi är super nöjda. Nu ska vi se till att skapa världens bästa hälso och tränings app för föreningar, undgomar och så klart alla andra som vill ta del av den.",
+            cite: "Be@YourBest",
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/result.jpg`,
+            imageAlt: "problem-framing",
+            caption: "Problem framing whiteboard",
+            limitMaxWidth: true,
+            isPadded: true,
           },
         },
       ],
