@@ -37,7 +37,7 @@ const SETTINGS = {
 };
 
 export const CASE_13 = {
-  caseStatus: CASE_STATUS.PUBLISHED,
+  caseStatus: CASE_STATUS.FEATURED,
   caseUrl: SETTINGS.URL,
   thumbnail: {
     bgColor: SETTINGS.BG_COLOR,
@@ -243,7 +243,7 @@ export const CASE_13 = {
           data: {
             items: [
               {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/survey.jpg`,
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/survey.jpeg`,
                 imageAlt: "Employees & Customers",
                 title: "Employees & Customers",
                 text: (
