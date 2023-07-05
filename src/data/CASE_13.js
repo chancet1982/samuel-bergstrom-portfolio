@@ -33,7 +33,7 @@ const SETTINGS = {
 };
 
 export const CASE_13 = {
-  caseStatus: CASE_STATUS.PUBLISHED,
+  caseStatus: CASE_STATUS.DRAFT,
   caseUrl: SETTINGS.URL,
   thumbnail: {
     bgColor: SETTINGS.BG_COLOR,
