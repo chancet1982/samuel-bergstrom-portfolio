@@ -118,8 +118,8 @@ function CaseThumbnail({ data, status, caseUrl }) {
   const [, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
-    setLight(shouldUseLightText(bgColor));
-  }, [setLight, bgColor]);
+    setLight(bgMedia ? true : shouldUseLightText(bgColor));
+  }, [setLight, bgColor, bgMedia]);
 
   const { width } = useWindowSize();
   const isMobile = width < breakpoints.desktop;

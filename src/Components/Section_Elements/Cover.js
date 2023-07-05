@@ -120,8 +120,8 @@ function Cover({
 
   /* TODO: assuming white text when there is a background picture, this is not true but I dont have any better ideas */
   useEffect(() => {
-    setLight(bgMedia ? true : shouldUseLightText(bgColor));
-  }, [setLight, bgColor, isLight]);
+    setLight(bgMedia || isLight ? true : shouldUseLightText(bgColor));
+  }, [setLight, bgColor, bgMedia, isLight]);
 
   const coverVariants = {
     hidden: {
