@@ -10,7 +10,7 @@ import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Shared/Title";
 
 const SETTINGS = {
-  BG_COLOR: "#FF3366",
+  BG_COLOR: "#ee4570",
   URL: "/cases/9",
   MEDIA_BASE_URL: "assets/case-9",
   KEY_FIGURES: {
