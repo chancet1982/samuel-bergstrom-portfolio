@@ -308,10 +308,12 @@ export const CASE_12 = {
           data: {
             title: "Result",
             text: (
-              <Paragraph xl>
-                With our recommendations in mind, our client was able to pivot
-                helping them to reach a wider audience, and were extremely happy
-                with the result.
+              <Paragraph>
+                After presenting the Prototype and our findings, the client was
+                very impressed. We over-delivered on our promise helping to
+                reach a wider audience, and were extremely happy with the
+                result. I am personally looking forward to following their
+                journey.
               </Paragraph>
             ),
           },
@@ -324,10 +326,23 @@ export const CASE_12 = {
           template: SECTION_ELEMENTS.QUOTE,
           data: {
             isFullScreen: true,
+            bgMedia: {
+              type: BG_MEDIA_TYPES.IMAGE,
+              mediaUrl: `${SETTINGS.MEDIA_BASE_URL}/quote-bg.jpg`,
+            },
             quote:
               "Efter många månaders planering och brainstorming fick vi igår se prototypen av vår kommande app. Tretton37 har gjort ett kanon jobb och vi är super nöjda. Nu ska vi se till att skapa världens bästa hälso och tränings app för föreningar, undgomar och så klart alla andra som vill ta del av den.",
             cite: "Be@YourBest",
           },
+        },
+      ],
+    },
+    {
+      paddedUp: true,
+      paddedDown: true,
+      elements: [
+        {
+          template: SECTION_ELEMENTS.ADDITIONAL_CASES,
         },
       ],
     },

@@ -23,6 +23,14 @@ const StyledBlockWrapper = styled(motion.div)`
     max-width: ${sizes.contentWidthLimit}px;
     margin: ${padding.insideElements.single} auto;
   }
+
+  ${({ $isFullScreen }) =>
+    $isFullScreen && {
+      display: "flex",
+      minHeight: "100vh",
+      justifyContent: "center",
+      flexDirection: "column",
+    }}
 `;
 
 const StyledBlockQuote = styled(motion.blockquote)`
@@ -49,7 +57,7 @@ const StyledBlockQuote = styled(motion.blockquote)`
   }
 `;
 
-function BlockQuote({ cite, quote, bgColor, bgMedia }) {
+function BlockQuote({ cite, quote, bgColor, bgMedia, isFullScreen }) {
   const [light, setLight] = useContext(ElementColorContext);
 
   useEffect(() => {
@@ -62,6 +70,7 @@ function BlockQuote({ cite, quote, bgColor, bgMedia }) {
       whileInView="inView"
       viewport={{ once: true, amount: 0.2 }}
       transition={{ staggerChildren: 0.2 }}
+      $isFullScreen={isFullScreen}
     >
       <StyledBlockQuote $light={light}>
         <Quote>{quote}</Quote>
@@ -87,12 +96,14 @@ BlockQuote.propTypes = {
     type: PropTypes.oneOf([BG_MEDIA_TYPES.IMAGE, BG_MEDIA_TYPES.VIDEO]),
     mediaUrl: PropTypes.string,
   }),
+  isFullScreen: PropTypes.bool,
 };
 
 BlockQuote.defaultProps = {
   cite: null,
   bgColor: null,
   bgMedia: null,
+  isFullScreen: false,
 };
 
 export default BlockQuote;

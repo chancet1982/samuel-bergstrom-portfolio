@@ -221,7 +221,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
             cite={data.cite}
             bgColor={data.bgColor}
             bgMedia={data.bgMedia}
-            limitMaxWidth={data.limitMaxWidth}
+            isFullScreen={data.isFullScreen}
           />
         </ElementColorContextProvider>
       );
