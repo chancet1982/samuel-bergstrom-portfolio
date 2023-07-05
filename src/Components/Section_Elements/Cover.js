@@ -118,8 +118,9 @@ function Cover({
   const { width } = useWindowSize();
   const isTabletOrDesktop = width >= breakpoints.mobileLarge;
 
+  /* TODO: assuming white text when there is a background picture, this is not true but I dont have any better ideas */
   useEffect(() => {
-    setLight(shouldUseLightText(bgColor));
+    setLight(bgMedia ? true : shouldUseLightText(bgColor));
   }, [setLight, bgColor, isLight]);
 
   const coverVariants = {

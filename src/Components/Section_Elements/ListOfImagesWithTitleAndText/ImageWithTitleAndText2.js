@@ -57,6 +57,8 @@ const StyledTitleAndText = styled(motion.div)`
   justify-content: center;
   box-sizing: border-box;
   grid-area: ${({ $flip }) => ($flip ? "b" : "a")};
+  margin-right: ${({ $flip }) => ($flip ? 0 : padding.outsideElements.double)};
+  margin-left: ${({ $flip }) => ($flip ? padding.outsideElements.double : 0)};
 
   @media (max-width: ${breakpoints.mobileLarge - 1}px) {
     min-height: 80vh;

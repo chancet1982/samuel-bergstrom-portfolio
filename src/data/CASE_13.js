@@ -36,12 +36,16 @@ export const CASE_13 = {
   caseStatus: CASE_STATUS.PUBLISHED,
   caseUrl: SETTINGS.URL,
   thumbnail: {
-    overline: "Restaurant supplier",
-    title: "Restaurant branch, reimagined",
-    text: <>Creating a vision for the future of restaurant suppliers</>,
-    imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
-    imageAlt: "thumbnail",
     bgColor: SETTINGS.BG_COLOR,
+    caption: {
+      overline: "Restaurant supplier",
+      title: "Restaurant branch, reimagined",
+      text: <>Creating a vision for the future of restaurant suppliers</>,
+    },
+    fgImage: {
+      imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
+      imageAlt: "thumbnail",
+    },
   },
   details: [
     {
