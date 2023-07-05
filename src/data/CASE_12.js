@@ -37,14 +37,22 @@ const SETTINGS = {
 };
 
 export const CASE_12 = {
-  caseStatus: CASE_STATUS.PUBLISHED,
+  caseStatus: CASE_STATUS.FEATURED,
   caseUrl: SETTINGS.URL,
   thumbnail: {
     bgColor: SETTINGS.BG_COLOR,
     caption: {
-      overline: "Fitness & healthcare",
-      title: "Creating better habits",
-      text: <Paragraph>Concept validation for healthcare app</Paragraph>,
+      overline: "Fitness & well-being",
+      title: (
+        <>
+          Creating healthier <br /> habits
+        </>
+      ),
+      text: (
+        <Paragraph xxl>
+          Positive change through a healthier life begins early
+        </Paragraph>
+      ),
     },
     fgImage: {
       imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
@@ -63,10 +71,16 @@ export const CASE_12 = {
               mediaUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-bg.jpg`,
             },
             caption: {
-              overline: "Fitness & healthcare",
-              title: "Creating better habbits",
+              overline: "Fitness & well-being",
+              title: (
+                <>
+                  Creating healthier <br /> habits
+                </>
+              ),
               text: (
-                <Paragraph xxl>Concept validation for healthcare app</Paragraph>
+                <Paragraph xxl>
+                  Positive change through a healthier life begins early
+                </Paragraph>
               ),
             },
             highlights: [
