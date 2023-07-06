@@ -192,19 +192,32 @@ export const CASE_13 = {
           data: {
             title: <>Surveys</>,
             text: (
-              <>
-                <Paragraph>
-                  We sent out 3 surveys to learn more about 3 areas and recruit
-                  stakeholders for future interviews.
-                </Paragraph>
-                <List
-                  items={[
-                    <Span>Sales - 67 respondents</Span>,
-                    <Span>Logistics - 30 respondents</Span>,
-                    <Span>Delivery - 17 respondents</Span>,
-                  ]}
-                />
-              </>
+              <Paragraph>
+                We sent out 3 surveys to learn more about 3 areas and recruit
+                stakeholders for future interviews.
+              </Paragraph>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/surveys.png`,
+            imageAlt: "result",
+            limitMaxWidth: true,
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
+          data: {
+            text: (
+              <List
+                items={[
+                  <Span>Sales - 67 respondents</Span>,
+                  <Span>Logistics - 30 respondents</Span>,
+                  <Span>Delivery - 17 respondents</Span>,
+                ]}
+              />
             ),
           },
         },
@@ -304,23 +317,44 @@ export const CASE_13 = {
           data: {
             title: <>Design</>,
             text: (
-              <>
+              <Paragraph>
+                When tasked with using this knowledge to create a vision for
+                Svensk Cater, it was obvious. We needed to show what would be
+                possible in order to justify an investment, digital isn‘t cheap
+                and it‘s never “finished”.
+              </Paragraph>
+            ),
+          },
+        },
+        /* {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/customer-journey.jpg`,
+            imageAlt: "customer-journey",
+            limitMaxWidth: true,
+          },
+        }, */
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/flows.jpg`,
+            imageAlt: "flows",
+            limitMaxWidth: true,
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
+          data: {
+            text: (
+              <Note>
                 <Paragraph>
-                  When tasked with using this knowledge to create a vision for
-                  Svensk Cater, it was obvious. We needed to show what would be
-                  possible in order to justify an investment, digital isn‘t
-                  cheap and it‘s never “finished”.
+                  I believe the best way forward for them would have been to
+                  improve their online shopping experience. There were some
+                  simple fixes that had a potentially huge impact on their
+                  business but we needed to walk before we could run and needed
+                  to gain the client’s trust before we can partner up.
                 </Paragraph>
-                <Note>
-                  <Paragraph>
-                    I believe the best way forward for them would have been to
-                    improve their online shopping experience. There were some
-                    simple fixes that had a potentially huge impact on their
-                    business but we needed to walk before we could run and
-                    needed to gain the client’s trust before we can partner up.
-                  </Paragraph>
-                </Note>
-              </>
+              </Note>
             ),
           },
         },
