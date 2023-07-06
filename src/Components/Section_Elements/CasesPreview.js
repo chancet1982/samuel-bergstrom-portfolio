@@ -8,6 +8,7 @@ import CaseThumbnail from "./Cases/CaseThumbnail";
 import { CASES } from "../../data/dictionaries/CASES";
 import { CASE_STATUS } from "../../data/dictionaries/CASE_STATUS";
 import breakpoints from "../../theme/breakpoints";
+import ElementColorContextProvider from "../../Context/ElementColorContext";
 
 const StyledCasesPreview = styled(motion.div)`
   background-color: black;
@@ -62,12 +63,14 @@ function CasesPreview() {
       <StyledCamera>
         <StyledFrame style={{ x: !isMobile ? horizontalScroll : "inherit" }}>
           {cases.map(({ thumbnail, caseStatus, caseUrl }) => (
-            <CaseThumbnail
-              data={thumbnail}
-              caseUrl={caseUrl}
-              status={caseStatus}
-              key={caseUrl}
-            />
+            <ElementColorContextProvider>
+              <CaseThumbnail
+                data={thumbnail}
+                caseUrl={caseUrl}
+                status={caseStatus}
+                key={caseUrl}
+              />
+            </ElementColorContextProvider>
           ))}
         </StyledFrame>
       </StyledCamera>

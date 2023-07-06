@@ -8,7 +8,7 @@ const colors = {
     },
     light: {
       medium: "rgba(255, 255, 255, 0.64)",
-      high: "white",
+      high: "rgba(255, 255, 255, 1)",
       disabled: "rgba(255, 255, 255, 0.48)",
     },
   },

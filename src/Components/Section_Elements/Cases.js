@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import CaseThumbnail from "./Cases/CaseThumbnail";
 import { CASES } from "../../data/dictionaries/CASES";
 import { CASE_STATUS } from "../../data/dictionaries/CASE_STATUS";
+import ElementColorContextProvider from "../../Context/ElementColorContext";
 
 const StyledCases = styled(motion.div)``;
 
@@ -15,12 +16,14 @@ function SectionCases() {
         {CASES.filter(({ caseStatus }) => caseStatus !== CASE_STATUS.DRAFT)
           .reverse()
           .map(({ thumbnail, caseStatus, caseUrl }) => (
-            <CaseThumbnail
-              key={caseUrl}
-              data={thumbnail}
-              caseUrl={caseUrl}
-              status={caseStatus}
-            />
+            <ElementColorContextProvider>
+              <CaseThumbnail
+                key={caseUrl}
+                data={thumbnail}
+                caseUrl={caseUrl}
+                status={caseStatus}
+              />
+            </ElementColorContextProvider>
           ))}
       </StyledCases>
     </motion.div>

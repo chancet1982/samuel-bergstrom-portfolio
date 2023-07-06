@@ -10,12 +10,12 @@ import colors from "../theme/colors";
 export const VIEW_LANDING_PAGE = [
   {
     isSticky: true,
-    navBgColor: "black",
+    navBgColor: "#000000",
     elements: [
       {
         template: SECTION_ELEMENTS.COVER,
         data: {
-          bgColor: "black",
+          bgColor: "#000000",
           caption: {
             title: (
               <>
@@ -46,7 +46,7 @@ export const VIEW_LANDING_PAGE = [
   },
   {
     paddedUp: true,
-    bgColor: "black",
+    bgColor: "#000000",
     elements: [
       {
         template: SECTION_ELEMENTS.CASES_PREVIEW,
@@ -57,7 +57,7 @@ export const VIEW_LANDING_PAGE = [
     ],
   },
   {
-    bgColor: "black",
+    bgColor: "#000000",
     elements: [
       {
         template: SECTION_ELEMENTS.IMAGE_GALLERY,

@@ -1,7 +1,7 @@
 TODO list (What's left before you're done)
 
 FIXES:
-THUMBNAIL -> Should use light text isnt working. Text should be under the thumbnail image.
+LANDING_PAGE -> Is light is not working (because section has a background color so it overrides the element color context)
 MOBILE_MENU -> Implement staggered menulink animations.
 CaseThumbnail -> Fix better tag for COMING SOON cases.
 SECTION_IMAGE: make selectable if you want it to scale down or preserve height
