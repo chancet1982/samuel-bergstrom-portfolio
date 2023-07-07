@@ -11,7 +11,7 @@ import colors from "../../theme/colors";
 import sizes from "../../theme/sizes";
 import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
 import breakpoints from "../../theme/breakpoints";
-import shouldUseLightText from "../../utils/shouldUseLightText";
+import useBgColor from "../../utils/useBgColor";
 
 const StyledBlockWrapper = styled(motion.div)`
   padding-right: ${padding.outsideElements.double};
@@ -47,9 +47,7 @@ const StyledBlockQuote = styled(motion.blockquote)`
     content: "";
     position: absolute;
     top: 0;
-
     left: 0;
-
     height: 100%;
     width: 2px;
     background-color: ${({ $light }) =>
@@ -58,11 +56,16 @@ const StyledBlockQuote = styled(motion.blockquote)`
 `;
 
 function BlockQuote({ cite, quote, bgColor, bgMedia, isFullScreen }) {
-  const [light, setLight] = useContext(ElementColorContext);
+  const [, setElementBgColor] = useContext(ElementColorContext);
+  const light = useBgColor();
 
   useEffect(() => {
-    setLight(shouldUseLightText(bgColor) || bgMedia !== null);
-  }, [setLight, bgColor, bgMedia]);
+    if (bgColor) {
+      setElementBgColor(bgColor);
+    } else if (bgMedia !== null) {
+      setElementBgColor("#000000");
+    }
+  }, [setElementBgColor, bgColor, bgMedia]);
 
   const renderBlockQuote = () => (
     <StyledBlockWrapper

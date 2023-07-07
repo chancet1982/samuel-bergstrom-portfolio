@@ -7,7 +7,6 @@ import TitleAndText from "../../Shared/TitleAndText";
 import ImageWithCaption from "../../Shared/ImageWithCaption";
 import { IMAGE_WITH_CAPTION_SIZES } from "../../../data/dictionaries/IMAGE_WITH_CAPTION_SIZES";
 import { ElementColorContext } from "../../../Context/ElementColorContext";
-import shouldUseLightText from "../../../utils/shouldUseLightText";
 
 const StyledColumnContent = styled(motion.div)`
   display: flex;
@@ -41,11 +40,13 @@ function ColumnContent({
   flip,
   isCentered,
 }) {
-  const [, setLight] = useContext(ElementColorContext);
+  const [, setElementBgColor] = useContext(ElementColorContext);
 
   useEffect(() => {
-    setLight(shouldUseLightText(bgColor));
-  }, [setLight, bgColor]);
+    if (bgColor) {
+      setElementBgColor(bgColor);
+    }
+  }, [setElementBgColor, bgColor]);
 
   return (
     <StyledColumnContent

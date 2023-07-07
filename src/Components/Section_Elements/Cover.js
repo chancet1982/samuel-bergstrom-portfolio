@@ -15,7 +15,6 @@ import sizes from "../../theme/sizes";
 import breakpoints from "../../theme/breakpoints";
 import padding from "../../theme/padding";
 import { ElementColorContext } from "../../Context/ElementColorContext";
-import shouldUseLightText from "../../utils/shouldUseLightText";
 
 const StyledCover = styled(motion.div)`
   height: ${sizes.xl};
@@ -114,14 +113,19 @@ function Cover({
   isLight,
 }) {
   const ref = useRef(null);
-  const [, setLight] = useContext(ElementColorContext);
+
+  const [, setElementBgColor] = useContext(ElementColorContext);
+
+  useEffect(() => {
+    if (bgColor) {
+      setElementBgColor(bgColor);
+    } else if (isLight || bgMedia !== null) {
+      setElementBgColor("#000000");
+    }
+  }, [setElementBgColor, bgColor, bgMedia, isLight]);
+
   const { width } = useWindowSize();
   const isTabletOrDesktop = width >= breakpoints.mobileLarge;
-
-  /* TODO: assuming white text when there is a background picture, this is not true but I dont have any better ideas */
-  useEffect(() => {
-    setLight(bgMedia || isLight ? true : shouldUseLightText(bgColor));
-  }, [setLight, bgColor, bgMedia, isLight]);
 
   const coverVariants = {
     hidden: {

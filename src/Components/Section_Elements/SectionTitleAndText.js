@@ -11,7 +11,6 @@ import breakpoints from "../../theme/breakpoints";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
 import padding from "../../theme/padding";
-import shouldUseLightText from "../../utils/shouldUseLightText";
 
 const StyledSectionTitleAndText = styled(motion.div)`
   box-sizing: border-box;
@@ -89,10 +88,15 @@ function SectionTitleAndText({
   // eslint-disable-next-line no-unused-vars
   const fadeEffect = isSticky && isFullScreen ? fadeOnScrollEffect : 1;
 
-  const [, setLight] = useContext(ElementColorContext);
+  const [, setElementBgColor] = useContext(ElementColorContext);
+
   useEffect(() => {
-    setLight(shouldUseLightText(bgColor) || bgMedia !== null);
-  }, [setLight, bgColor, bgMedia]);
+    if (bgColor) {
+      setElementBgColor(bgColor);
+    } else if (bgMedia !== null) {
+      setElementBgColor("#000000");
+    }
+  }, [setElementBgColor, bgColor, bgMedia]);
 
   const renderSectionTitleAndText = () => (
     <StyledSectionTitleAndText

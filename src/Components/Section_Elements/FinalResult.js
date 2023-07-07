@@ -11,7 +11,6 @@ import TitleAndText from "../Shared/TitleAndText";
 import padding from "../../theme/padding";
 import breakpoints from "../../theme/breakpoints";
 import { ElementColorContext } from "../../Context/ElementColorContext";
-import shouldUseLightText from "../../utils/shouldUseLightText";
 
 const StyledFinalResultContent = styled(motion.div)`
   display: grid;
@@ -71,11 +70,13 @@ function FinalResult({
   text,
   results,
 }) {
-  const [, setLight] = useContext(ElementColorContext);
+  const [, setElementBgColor] = useContext(ElementColorContext);
 
   useEffect(() => {
-    setLight(shouldUseLightText(bgColor));
-  }, [setLight, bgColor]);
+    if (bgColor) {
+      setElementBgColor(bgColor);
+    }
+  }, [setElementBgColor, bgColor]);
 
   const { width } = useWindowSize();
   const isMobile = width < breakpoints.tablet;

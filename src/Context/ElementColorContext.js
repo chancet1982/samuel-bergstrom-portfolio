@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 const initialContext = [
-  false,
+  null,
   () => {
     // eslint-disable-next-line no-console
     console.error("No ElementContextProvider is wrapping this component");
@@ -15,10 +15,10 @@ const initialContext = [
 export const ElementColorContext = React.createContext(initialContext);
 
 function ElementColorContextProvider({ children }) {
-  const [light, setLight] = useState(false);
+  const [elementBgColor, setElementBgColor] = useState(null);
 
   return (
-    <ElementColorContext.Provider value={[light, setLight]}>
+    <ElementColorContext.Provider value={[elementBgColor, setElementBgColor]}>
       {children}
     </ElementColorContext.Provider>
   );

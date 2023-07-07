@@ -10,7 +10,6 @@ import CustomCursor from "./CustomCursor";
 import breakpoints from "../theme/breakpoints";
 import SplashScreen from "./SplashScreen";
 import { SplashAnimationFinishedContext } from "../Context/SplashAnimationFinishedContext";
-import shouldUseLightText from "../utils/shouldUseLightText";
 
 const StyledView = styled(motion.main)`
   ${({ $bgColor }) =>
@@ -31,11 +30,11 @@ const StyledRollUp = styled(motion.div)`
 
 function View({ children, bgColor }) {
   const isPresent = useIsPresent();
-  const [, setLight] = useContext(ViewColorContext);
+  const [, setViewBgColor] = useContext(ViewColorContext);
 
   useEffect(() => {
-    setLight(shouldUseLightText(bgColor));
-  }, [setLight, bgColor]);
+    setViewBgColor(bgColor);
+  }, [setViewBgColor, bgColor]);
 
   const { width } = useWindowSize();
   const isDesktop = width >= breakpoints.desktop;

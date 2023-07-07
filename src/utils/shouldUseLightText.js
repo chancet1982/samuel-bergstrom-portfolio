@@ -1,3 +1,4 @@
+/* TODO: note, only works with hex values so not sure what color "names" do */
 function shouldUseLightText(bgColor = "#333333") {
   if (bgColor === null) {
     return false;

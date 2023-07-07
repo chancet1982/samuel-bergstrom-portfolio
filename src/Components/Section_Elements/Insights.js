@@ -10,7 +10,6 @@ import Paragraph from "../Shared/Paragraph";
 import padding from "../../theme/padding";
 import sizes from "../../theme/sizes";
 import BackgroundWrapper from "../Shared/BackgroundWrapper";
-import shouldUseLightText from "../../utils/shouldUseLightText";
 
 const StyledInsights = styled(motion.div)`
   display: grid;
@@ -54,11 +53,13 @@ function Insights({
   text,
   isCentered,
 }) {
-  const [, setLight] = useContext(ElementColorContext);
+  const [, setElementBgColor] = useContext(ElementColorContext);
 
   useEffect(() => {
-    setLight(shouldUseLightText(bgColor));
-  }, [setLight, bgColor]);
+    if (bgColor) {
+      setElementBgColor(bgColor);
+    }
+  }, [setElementBgColor, bgColor]);
 
   const convertRawInsightsToElements = () =>
     items.map((item, index) => (

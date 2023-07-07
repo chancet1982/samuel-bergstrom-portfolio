@@ -9,7 +9,6 @@ import { SectionColorContext } from "../../Context/SectionColorContext";
 import sizes from "../../theme/sizes";
 import breakpoints from "../../theme/breakpoints";
 import Title from "../Shared/Title";
-import shouldUseLightText from "../../utils/shouldUseLightText";
 import useIsTouchingTop from "../../utils/useIsTouchingTop";
 import colors from "../../theme/colors";
 import { NavBgColorContext } from "../../Context/NavBgColorContext";
@@ -95,7 +94,7 @@ function Section({
   marginDown,
   fullScreen,
 }) {
-  const [, setLight] = useContext(SectionColorContext);
+  const [, setSectionBgColor] = useContext(SectionColorContext);
   const { width } = useWindowSize();
   const isMobile =
     width < sizes.contentWidthLimit + sizes.sectionHeaderWidthLimit;
@@ -104,8 +103,8 @@ function Section({
   const [, setNavBgColor] = useContext(NavBgColorContext);
 
   useEffect(() => {
-    setLight(shouldUseLightText(bgColor));
-  }, [setLight, bgColor]);
+    setSectionBgColor(bgColor);
+  }, [setSectionBgColor, bgColor]);
 
   useEffect(() => {
     const color = bgColor || navBgColor;

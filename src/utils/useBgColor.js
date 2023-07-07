@@ -1,15 +1,26 @@
-/* eslint-disable no-unused-vars */
+/* eslint-disable no-nested-ternary */
 import { useContext } from "react";
 import { ElementColorContext } from "../Context/ElementColorContext";
 import { SectionColorContext } from "../Context/SectionColorContext";
 import { ViewColorContext } from "../Context/ViewColorContext";
+import shouldUseLightText from "./shouldUseLightText";
+import colors from "../theme/colors";
 
 function useBgColor() {
-  const [hasViewBgColor] = useContext(ViewColorContext);
-  const [hasSectionBgColor] = useContext(SectionColorContext);
-  const [hasElementBgColor] = useContext(ElementColorContext);
+  const [viewBgColor] = useContext(ViewColorContext);
+  const [sectionBgColor] = useContext(SectionColorContext);
+  const [elementBgColor] = useContext(ElementColorContext);
 
-  return hasViewBgColor || hasSectionBgColor || hasElementBgColor;
+  const bgColor =
+    elementBgColor !== null
+      ? elementBgColor
+      : sectionBgColor !== null
+      ? sectionBgColor
+      : viewBgColor !== null
+      ? viewBgColor
+      : colors.offwhite;
+
+  return shouldUseLightText(bgColor);
 }
 
 useBgColor.propTypes = {};

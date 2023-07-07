@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 const initialContext = [
-  false,
+  null,
   () => {
     // eslint-disable-next-line no-console
     console.error("No ViewColorContextProvider is wrapping this component");
@@ -15,10 +15,10 @@ const initialContext = [
 export const ViewColorContext = React.createContext(initialContext);
 
 function ViewColorContextProvider({ children }) {
-  const [light, setLight] = useState(false);
+  const [viewBgColor, setViewBgColor] = useState(null);
 
   return (
-    <ViewColorContext.Provider value={[light, setLight]}>
+    <ViewColorContext.Provider value={[viewBgColor, setViewBgColor]}>
       {children}
     </ViewColorContext.Provider>
   );

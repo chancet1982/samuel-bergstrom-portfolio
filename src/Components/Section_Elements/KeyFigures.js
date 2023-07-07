@@ -10,7 +10,6 @@ import { ElementColorContext } from "../../Context/ElementColorContext";
 import padding from "../../theme/padding";
 import sizes from "../../theme/sizes";
 import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
-import shouldUseLightText from "../../utils/shouldUseLightText";
 
 const StyledKeyFigures = styled(motion.div)`
   display: flex;
@@ -43,11 +42,15 @@ const StyledKeyFigures = styled(motion.div)`
 `;
 
 function KeyFigures({ items, bgColor, bgMedia }) {
-  const [, setLight] = useContext(ElementColorContext);
+  const [, setElementBgColor] = useContext(ElementColorContext);
 
   useEffect(() => {
-    setLight(shouldUseLightText(bgColor) || bgMedia !== null);
-  }, [setLight, bgColor, bgMedia]);
+    if (bgColor) {
+      setElementBgColor(bgColor);
+    } else if (bgMedia !== null) {
+      setElementBgColor("#000000");
+    }
+  }, [setElementBgColor, bgColor, bgMedia]);
 
   const renderKeyFigures = () => (
     <StyledKeyFigures

@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 
 const initialContext = [
-  false,
+  null,
   () => {
     // eslint-disable-next-line no-console
     console.error("No SectionColorContextProvider is wrapping this component");
@@ -15,10 +15,10 @@ const initialContext = [
 export const SectionColorContext = React.createContext(initialContext);
 
 function SectionColorContextProvider({ children }) {
-  const [light, setLight] = useState(false);
+  const [sectionBgColor, setSectionBgColor] = useState(null);
 
   return (
-    <SectionColorContext.Provider value={[light, setLight]}>
+    <SectionColorContext.Provider value={[sectionBgColor, setSectionBgColor]}>
       {children}
     </SectionColorContext.Provider>
   );

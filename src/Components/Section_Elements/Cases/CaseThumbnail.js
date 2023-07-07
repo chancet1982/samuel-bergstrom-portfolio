@@ -14,7 +14,6 @@ import padding from "../../../theme/padding";
 import sizes from "../../../theme/sizes";
 import { BG_MEDIA_TYPES } from "../../../data/dictionaries/BG_MEDIA_TYPES";
 import TitleAndText from "../../Shared/TitleAndText";
-import shouldUseLightText from "../../../utils/shouldUseLightText";
 
 const StyledCaseThumbnail = styled(motion.div)`
   padding: ${padding.outsideElements.double};
@@ -115,11 +114,15 @@ function CaseThumbnail({ data, status, caseUrl }) {
   const { bgColor, bgMedia, caption, fgImage } = data;
   const { overline, h, title, text } = caption;
   const { imageUrl, mobileImageUrl, imageAlt } = fgImage;
-  const [, setLight] = useContext(ElementColorContext);
+  const [, setElementBgColor] = useContext(ElementColorContext);
 
   useEffect(() => {
-    setLight(bgMedia ? true : shouldUseLightText(bgColor));
-  }, [setLight, bgColor, bgMedia]);
+    if (bgColor) {
+      setElementBgColor(bgColor);
+    } else if (bgMedia !== null) {
+      setElementBgColor("#000000");
+    }
+  }, [setElementBgColor, bgColor, bgMedia]);
 
   const { width } = useWindowSize();
   const isMobile = width < breakpoints.desktop;

@@ -9,7 +9,8 @@ import { cardVariants } from "../../animations/animations";
 import breakpoints from "../../theme/breakpoints";
 
 const StyledCard = styled(motion.div)`
-  background-color: ${({ $light }) => ($light ? colors.lighten.low : "white")};
+  background-color: ${({ $light }) =>
+    $light ? colors.lighten.low : "#ffffff"};
   scroll-snap-align: start;
   position: relative;
   box-sizing: border-box;

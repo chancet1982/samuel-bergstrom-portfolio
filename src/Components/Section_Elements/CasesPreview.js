@@ -11,7 +11,7 @@ import breakpoints from "../../theme/breakpoints";
 import ElementColorContextProvider from "../../Context/ElementColorContext";
 
 const StyledCasesPreview = styled(motion.div)`
-  background-color: black;
+  background-color: "#000000";
 `;
 
 const StyledCamera = styled(motion.div)`
