@@ -14,9 +14,14 @@ import sizes from "../../theme/sizes";
 import CaseThumbnail from "./Cases/CaseThumbnail";
 
 const StyledAdditionalCases = styled(motion.div)`
-  padding-right: ${padding.outsideElements.double};
-  padding-left: ${padding.outsideElements.double};
-  box-sizing: border-box;
+  > div {
+    box-sizing: border-box;
+  }
+
+  > div:first-of-type {
+    padding-right: ${padding.outsideElements.double};
+    padding-left: ${padding.outsideElements.double};
+  }
 
   @media (min-width: ${breakpoints.desktop}px) {
     > div:first-of-type {
@@ -35,7 +40,7 @@ const StyledCasesList = styled(motion.div)`
   );
 
   @media (min-width: ${breakpoints.desktop}px) {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
   }
 `;
 
@@ -44,7 +49,7 @@ const StyledCasesList = styled(motion.div)`
 function AdditionalCases() {
   const { id } = useParams();
   const currentCaseTitle = CASES[id - 1].thumbnail.caption.title;
-  const THREE_OTHER_CASES = CASES.filter(
+  const ADDITIONAL_CASES = CASES.filter(
     ({ caseStatus, thumbnail }) =>
       caseStatus !== CASE_STATUS.DRAFT &&
       caseStatus !== CASE_STATUS.COMING_SOON &&
@@ -64,7 +69,7 @@ function AdditionalCases() {
       </TitleAndText>
 
       <StyledCasesList>
-        {THREE_OTHER_CASES.map(({ thumbnail, caseUrl, caseStatus }, index) => (
+        {ADDITIONAL_CASES.map(({ thumbnail, caseUrl, caseStatus }, index) => (
           // eslint-disable-next-line react/no-array-index-key
           <ElementContextProvider key={index}>
             <CaseThumbnail
@@ -72,7 +77,6 @@ function AdditionalCases() {
               caseUrl={caseUrl}
               key={uuid()}
               status={caseStatus}
-              inAdditionalCases
             />
           </ElementContextProvider>
         ))}
