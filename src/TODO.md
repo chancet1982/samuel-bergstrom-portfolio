@@ -27,4 +27,13 @@ COVER_CAPTION: Add "back" button (In cases)
 
 https://actualidea.com/
 
+Removeed these but might be worth keeping in mind:
+nanoclone
+lottie-react
+@splinetool/react-spline
+@splinetool/runtime
+
 <iframe width="1280" height="720" src="https://www.youtube.com/embed/UFk14H74w6E" title="WEBINAR: Samuel Bergstrom - Sentiment for better design decisions" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
+Finish Firebase authentication based on this:
+https://www.youtube.com/watch?v=x62aBvnRCKw&t=264s
