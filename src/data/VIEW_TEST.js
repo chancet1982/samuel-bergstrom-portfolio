@@ -30,7 +30,7 @@ export const VIEW_TEST = [
         template: SECTION_ELEMENTS.TEXTBOX,
         data: {
           title: <>Collaboration and co-creation</>,
-          h: 3,
+          h: 2,
           text: (
             <>
               <Paragraph large>
