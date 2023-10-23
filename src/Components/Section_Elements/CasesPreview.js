@@ -63,12 +63,11 @@ function CasesPreview() {
       <StyledCamera>
         <StyledFrame style={{ x: !isMobile ? horizontalScroll : "inherit" }}>
           {cases.map(({ thumbnail, caseStatus, caseUrl }) => (
-            <ElementColorContextProvider>
+            <ElementColorContextProvider key={caseUrl}>
               <CaseThumbnail
                 data={thumbnail}
                 caseUrl={caseUrl}
                 status={caseStatus}
-                key={caseUrl}
               />
             </ElementColorContextProvider>
           ))}

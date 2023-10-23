@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable no-nested-ternary */
 import React from "react";
 import PropTypes from "prop-types";
@@ -31,21 +32,17 @@ const StyledInput = styled(motion.input)`
 `;
 
 /* TODO: (later) add input validation */
-function Input({ type, name, required, small, large, xl }) {
-  const handleChange = (event) => {
-    event.target.checkValidity();
-  };
-
+function Input({ type, name, required, small, large, xl, ...rest }) {
   return (
     <StyledInput
       type={type}
       name={name}
       required={required}
-      onChange={required ? handleChange : null}
       $small={small}
       $large={large}
       $xl={xl}
       variants={formElementsVariants}
+      {...rest}
     />
   );
 }

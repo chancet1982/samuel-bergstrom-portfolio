@@ -1,14 +1,16 @@
 import React from "react";
 import View from "../View";
-import { VIEW_TEST } from "../../data/VIEW_TEST";
-import SectionsRenderer from "../SectionsRenderer";
+// import { VIEW_TEST } from "../../data/VIEW_TEST";
+// import SectionsRenderer from "../SectionsRenderer";
+import Signup from "../Signup";
 
 function ViewTest() {
-  const sectionsData = VIEW_TEST;
+  // const sectionsData = VIEW_TEST;
 
   return (
     <View>
-      <SectionsRenderer sections={sectionsData} />
+      <Signup />
+      {/* <SectionsRenderer sections={sectionsData} /> */}
     </View>
   );
 }
