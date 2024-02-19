@@ -17,13 +17,23 @@ export const VIEW_LEADERSHIP = [
           title: "Leadership philosophy",
           h: 1,
           text: (
-            <Paragraph xl>
-              To me leadership is not about a systematic approach. There are
-              different goals and circumstances that require different
-              approaches to leadership. In some cases, it is about softer
-              leadership and nudging results while in others it might be helping
-              others reach their goals.
-            </Paragraph>
+            <>
+              <Paragraph xl>
+                I believe strong teams working together towards a shared goal,
+                given freedom, trust, and mandate, will consistently (!)
+                outperform individual contributors working alone.
+              </Paragraph>
+              <Paragraph>
+                Companies cannot take this for granted. You must actively foster
+                alignment, collaboration, and growth. It all starts with finding
+                curious people who are driven and want to learn and helping them
+                succeed. My job is to make sure they know how to channel their
+                energy. Remove obstacles and make their path to success shorter.
+                I don’t need to have the final say. I would gladly share my
+                experience, but I believe it is vital that people do things
+                their way.
+              </Paragraph>
+            </>
           ),
         },
       },
@@ -41,7 +51,7 @@ export const VIEW_LEADERSHIP = [
           h: 3,
           text: (
             <Paragraph xl>
-              Increasing revenue from design related consultants with about 50%.
+              Increasing revenue from design-related consultants by about 50%.
               Increasing overall eNPS score
             </Paragraph>
           ),
@@ -52,13 +62,14 @@ export const VIEW_LEADERSHIP = [
                 <List
                   items={[
                     <Paragraph>
-                      Aligned and improved the recruitment a process to better
-                      identify high value candidates, expediate recruitment, and
+                      Aligned and improved the recruitment process to better
+                      identify high-value candidates, expedite recruitment, and
                       better evaluate potential candidates.
                     </Paragraph>,
                     <Paragraph>
-                      Tightened the collaboration between TA and design across
-                      regions. Ongoing work with EVP
+                      Created shared definitions for seniority levels accross
+                      offices. Tightened the collaboration between TA and design
+                      across regions.
                     </Paragraph>,
                     <Paragraph>
                       Introduced competence mapping as part of onboarding new
@@ -81,7 +92,6 @@ export const VIEW_LEADERSHIP = [
                       Introduced weekly meetup across offices
                     </Paragraph>,
                     <Paragraph>
-                      {" "}
                       Introduced career development paths and mentorship
                       programme (buddy system)
                     </Paragraph>,

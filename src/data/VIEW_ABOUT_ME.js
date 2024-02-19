@@ -2,6 +2,8 @@
 import React from "react";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import Paragraph from "../Components/Shared/Paragraph";
+import Span from "../Components/Shared/Span";
+import List from "../Components/Shared/List";
 import colors from "../theme/colors";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
@@ -17,14 +19,15 @@ export const VIEW_ABOUT_ME = [
           caption: {
             title: (
               <>
-                I create <mark>business value</mark> through better experiences.
+                I create <mark>impact</mark> through design.
               </>
             ),
             h: 1,
             text: (
               <Paragraph xl>
-                A digital product designer, engineer, speaker, mentor,
-                accessibility enthusiast, father, husband, and quite a nice guy.
+                An experienced design leader and CX/UX specialist with a flair
+                for technology and business. Helping companies succeed by
+                focusing on what matters to their customers.
               </Paragraph>
             ),
           },
@@ -201,24 +204,32 @@ export const VIEW_ABOUT_ME = [
                     groups.
                   </Paragraph>
                   <Paragraph>
-                    However, the work became repetitive and I felt the need for
-                    a new challenge. So, I signed up for university while
-                    continuing to work full-time. There, I studied IT
-                    Communications and New Media. After graduating, I worked as
-                    a front-end developer for a couple of years before returning
-                    to design. This time, I focused on data visualizations for
-                    medical studies. Later on, I worked as a consultant and had
-                    the opportunity to be involved in all stages of the product
-                    development process, from ideation to evaluation.
+                    However, the work became repetitive, and I needed a new
+                    challenge. So, I signed up for university while continuing
+                    to work full-time. There, I studied IT Communications and
+                    New Media. After graduating, I worked as a front-end
+                    developer for two years before returning to design. This
+                    time, I focused on data visualizations for medical studies.
+                    Later on, I worked as a consultant and had the opportunity
+                    to be involved in all stages of the product development
+                    process, from ideation to evaluation.
                   </Paragraph>
                   <Paragraph>
-                    Currently, I am the head of design at tretton37, where I
-                    lead a team of 20 designers. My responsibilities include
-                    working on our VP, EVP, Competence development (in
-                    collaboration with a dedicated competence lead), packaging
-                    design services, and ensuring that designers have a home at
-                    tretton37.
+                    Currently, I am the head of design at tretton37, leading a
+                    team of 20 designers. My responsibilities include:
                   </Paragraph>
+                  <List
+                    items={[
+                      <Span>
+                        Working on our VP, EVP, and Competence development (in
+                        collaboration with a dedicated competence lead).
+                      </Span>,
+                      <Span>Packaging design services.</Span>,
+                      <Span>
+                        Ensuring that designers have a home at tretton37.
+                      </Span>,
+                    ]}
+                  />
                 </>
               ),
             },
@@ -227,6 +238,15 @@ export const VIEW_ABOUT_ME = [
               h: 3,
               text: (
                 <>
+                  <Paragraph>
+                    <strong>Certified Scrum Product Owner® (CSPO®)</strong>{" "}
+                    <br />
+                    Scrum Alliance
+                  </Paragraph>
+                  <Paragraph>
+                    <strong>Certified ScrumMaster® (CSM®)</strong> <br />
+                    Scrum Alliance
+                  </Paragraph>
                   <Paragraph>
                     <strong>UXC Spec. UX Management</strong> <br />
                     Nielson Norman Group
@@ -389,11 +409,11 @@ export const VIEW_ABOUT_ME = [
           text: (
             <Paragraph>
               Did I mention I make some kick-ass pizzas? So yeah, sourdough,
-              Biga, Poolish, you name it. I started making neapolitan pizzas
-              about 5 years ago. I bought a small Ooni and started
-              experimenting. Now, 5 years, 3 pizza ovens, and several hundrads
-              of kilos of imported flour later, I think I&apos;m getting the
-              trick.
+              Biga, Poolish, you name it. I started making Neapolitan pizzas
+              about five years ago. I bought a small Ooni and started
+              experimenting. Now, after five years, three pizza ovens, and
+              several hundred kilos of imported flour later, I&apos;m getting
+              the trick.
             </Paragraph>
           ),
         },
