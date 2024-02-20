@@ -1,8 +1,14 @@
 TODO list (What's left before you're done)
 Mobile links are not working.
 SECTION_ELEMENTS.OVERVIEW -> Most likely not in use (other than in old, unfinished cases. Clean up old cases and remove. )
-SECTION_ELEMENTS.HIGHLIGHTS -> convert into 2 columns. One for everything and the other for tools and methods (that should be listed and not concatunated)
-phase out the TEXTBOX component (only cases 1-7 left)
+CASE_10 -> Needs better result picture (figure out what to do about the height)
+CASE_10 -> Add image of the final result
+CASE_09 -> Needs better result picture
+CASE_09 -> use quote with image background of the excel sheet in the background but blurred.
+CASE_07 -> Better case cover
+CASE_07 -> Add pictures of the report.
+CASE_05 -> Better case cover
+
 FIXES:
 LANDING_PAGE -> Is light is not working (because section has a background color so it overrides the element color context)
 MOBILE_MENU -> Implement staggered menulink animations.
@@ -13,12 +19,8 @@ ADDITIONAL_CASES -> Fix design of cases to work with 3 column layout. Fix title 
 NOTE -> fix left alignment
 
 CONTENT:
-case-10 -> Better final result picture.
-case-09 -> Better final result picture.
 case-8 -> FINISH ME!
-case-7 -> Add pictures of the report. Better case cover.
 case-6 -> FINISH ME!
-CASE-5 -> better case cover.
 CASE-1 -> Fix better images so it works on mobile
 
 One day...

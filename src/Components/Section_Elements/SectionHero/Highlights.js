@@ -23,7 +23,15 @@ const StyledHighlights = styled(motion.div)`
   box-sizing: border-box;
 
   div {
+    margin-top: ${padding.insideElements.single};
+    margin-bottom: ${padding.insideElements.single};
     justify-content: flex-start;
+    align-items: flex-start;
+
+    ul {
+      text-align: left;
+      margin: 0;
+    }
   }
 
   @media (min-width: ${breakpoints.desktop}px) {
@@ -32,9 +40,9 @@ const StyledHighlights = styled(motion.div)`
   }
 `;
 
-function Highlights({ items }) {
-  return (
-    <StyledHighlights $columns={items.length}>
+function Highlights({ columns }) {
+  const renderColumnContent = (items) => (
+    <div>
       {items.map(({ value, label, renderAsList }) => (
         <ValueAndLabel
           value={value}
@@ -44,12 +52,18 @@ function Highlights({ items }) {
           flip
         />
       ))}
+    </div>
+  );
+
+  return (
+    <StyledHighlights $columns={columns.length}>
+      {columns.map((items) => renderColumnContent(items))}
     </StyledHighlights>
   );
 }
 
 Highlights.propTypes = {
-  items: PropTypes.arrayOf(
+  columns: PropTypes.arrayOf(
     PropTypes.shape({
       value: PropTypes.oneOfType([
         PropTypes.string,

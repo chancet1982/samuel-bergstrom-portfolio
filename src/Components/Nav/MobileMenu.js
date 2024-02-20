@@ -36,6 +36,7 @@ const StyledOverlay = styled(motion.div)`
   backdrop-filter: blur(4px);
   width: 100vw;
   height: 100vh;
+  pointer-events: none;
 `;
 
 function MobileMenu({ isLight }) {
