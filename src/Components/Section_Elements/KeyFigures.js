@@ -10,29 +10,30 @@ import { ElementColorContext } from "../../Context/ElementColorContext";
 import padding from "../../theme/padding";
 import sizes from "../../theme/sizes";
 import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
+import Card from "../Shared/Card";
 
 const StyledKeyFigures = styled(motion.div)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  column-gap: max(
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(${({ $columns }) => $columns}, 1fr);
+  padding-left: ${padding.outsideElements.double};
+  padding-right: ${padding.outsideElements.double};
+  padding-top: ${padding.outsideElements.double};
+  padding-bottom: ${padding.outsideElements.double};
+  grid-gap: max(
     ${padding.outsideElements.double},
     ${padding.insideElements.single}
   );
-  padding-right: ${padding.outsideElements.double};
-  padding-left: ${padding.outsideElements.double};
   box-sizing: border-box;
 
-  ${({ $bgColor }) =>
-    $bgColor && {
-      paddingTop: padding.outsideElements.double,
-      paddingBottom: padding.outsideElements.double,
-    }}
-
-  @media (min-width: ${breakpoints.mobileLarge}px) {
-    flex-direction: row;
+  > div {
     align-items: flex-start;
+    justify-content: flex-start;
+
+    > h5 {
+      text-align: left;
+      margin-top: 0;
+    }
   }
 
   @media (min-width: ${breakpoints.desktop}px) {
@@ -58,9 +59,12 @@ function KeyFigures({ items, bgColor, bgMedia }) {
       whileInView="inView"
       viewport={{ once: true, amount: 0.2 }}
       transition={{ staggerChildren: 0.2 }}
+      $columns={items.length}
     >
       {items.map(({ value, label }) => (
-        <ValueAndLabel value={value} label={label} key={uuid()} h={3} />
+        <Card>
+          <ValueAndLabel label={value} value={label} key={uuid()} h={3} />
+        </Card>
       ))}
     </StyledKeyFigures>
   );
