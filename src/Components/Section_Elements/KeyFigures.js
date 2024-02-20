@@ -63,7 +63,7 @@ function KeyFigures({ items, bgColor, bgMedia }) {
     >
       {items.map(({ value, label }) => (
         <Card>
-          <ValueAndLabel label={value} value={label} key={uuid()} h={3} />
+          <ValueAndLabel label={label} value={value} key={uuid()} h={3} />
         </Card>
       ))}
     </StyledKeyFigures>

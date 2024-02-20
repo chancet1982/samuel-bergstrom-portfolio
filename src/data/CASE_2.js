@@ -244,7 +244,7 @@ export const CASE_2 = {
             items: [
               {
                 value: "102",
-                label: "Survey responses",
+                label: "Respondents",
               },
               { value: "5", label: "clinics" },
               {
