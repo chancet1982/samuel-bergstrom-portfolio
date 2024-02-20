@@ -9,7 +9,9 @@ import colors from "../../theme/colors";
 import breakpoints from "../../theme/breakpoints";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import Highlights from "./SectionHero/Highlights";
+import Spacer from "./Spacer";
 import padding from "../../theme/padding";
+import { SPACER_SIZES } from "../../data/dictionaries/SPACER_SIZES";
 
 function SectionHero({ bgColor, fgImage, caption, highlights }) {
   const { overline, title, h, text } = caption;
@@ -36,21 +38,24 @@ function SectionHero({ bgColor, fgImage, caption, highlights }) {
         isFadingOnScroll
         isHalfScreen
         title={title}
+        text={text}
         h={h}
       />
       <SectionImage
         imageUrl={imageUrl}
         mobileImageUrl={mobileImageUrl}
         imageAlt={imageAlt}
+        isSticky
         limitMaxWidth
       />
-      <Highlights items={highlights} bgColor={bgColor} />
-      <SectionTitleAndText
-        isCentered
-        text={text}
+      <BackgroundWrapper
         bgColor={bgColor}
-        paddedDown
-      />
+        style={{ position: "relative", zIndex: "1" }}
+      >
+        <Spacer size={SPACER_SIZES.MEDIUM} />
+        <Highlights items={highlights} bgColor={bgColor} />
+        <Spacer size={SPACER_SIZES.MEDIUM} />
+      </BackgroundWrapper>
     </BackgroundWrapper>
   );
 }
