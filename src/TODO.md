@@ -1,9 +1,8 @@
 TODO list (What's left before you're done)
 Mobile links are not working.
-SECTION_ELEMENTS.OVERVIEW -> Most likely not in use.
+SECTION_ELEMENTS.OVERVIEW -> Most likely not in use (other than in old, unfinished cases. Clean up old cases and remove. )
 SECTION_ELEMENTS.HIGHLIGHTS -> convert into 2 columns. One for everything and the other for tools and methods (that should be listed and not concatunated)
-SECTION_TEXTBOX -> Should be phased out. When that happens and everythign uses section_title_and_text then add support for displaying things in 2 columns.
-
+phase out the TEXTBOX component (only cases 1-7 left)
 FIXES:
 LANDING_PAGE -> Is light is not working (because section has a background color so it overrides the element color context)
 MOBILE_MENU -> Implement staggered menulink animations.

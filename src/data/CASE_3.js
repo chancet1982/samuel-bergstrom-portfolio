@@ -20,6 +20,17 @@ const SETTINGS = {
       label: PLATFORMS.LABEL,
       value: [PLATFORMS.TABLET_ANDROID],
     },
+    TOOLS_AND_METHODS: {
+      label: TOOLS_AND_METHODS.LABEL,
+      value: [
+        TOOLS_AND_METHODS.INTERVIEWS,
+        TOOLS_AND_METHODS.COMPETITOR_ANALYSIS,
+        TOOLS_AND_METHODS.FIELD_STUDIES,
+        TOOLS_AND_METHODS.MOCKUPS,
+        TOOLS_AND_METHODS.PROTOTYPING,
+        TOOLS_AND_METHODS.USABILITY_TESTING,
+      ],
+    },
     CASE_YEAR: { label: "Year:", value: "2019" },
     CASE_DURATION: { label: "Duration:", value: "7 months" },
   },
@@ -69,8 +80,8 @@ export const CASE_3 = {
               mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
             highlights: [
-              SETTINGS.KEY_FIGURES.CASE_YEAR,
               SETTINGS.KEY_FIGURES.CASE_TYPE,
+              SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS,
               SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
             ],
           },
@@ -81,7 +92,7 @@ export const CASE_3 = {
       paddedUp: true,
       elements: [
         {
-          template: SECTION_ELEMENTS.OVERVIEW,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             text: (
               <>
@@ -98,14 +109,6 @@ export const CASE_3 = {
                 </Paragraph>
               </>
             ),
-            toolsAndMethods: [
-              TOOLS_AND_METHODS.INTERVIEWS,
-              TOOLS_AND_METHODS.COMPETITOR_ANALYSIS,
-              TOOLS_AND_METHODS.FIELD_STUDIES,
-              TOOLS_AND_METHODS.MOCKUPS,
-              TOOLS_AND_METHODS.PROTOTYPING,
-              TOOLS_AND_METHODS.USABILITY_TESTING,
-            ],
           },
         },
       ],
@@ -114,7 +117,7 @@ export const CASE_3 = {
       header: "Background",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: "Interface a for medical hardware device",
             h: 2,
@@ -166,7 +169,7 @@ export const CASE_3 = {
           template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: "A proof of concept, nothing more",
             h: 4,
@@ -189,7 +192,7 @@ export const CASE_3 = {
       paddedDown: true,
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: "Digital pathology, crash course",
             h: 2,
@@ -231,7 +234,7 @@ export const CASE_3 = {
           template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: "Field Studies & Interviews",
             h: 4,
@@ -273,7 +276,7 @@ export const CASE_3 = {
           template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: "Collaborating with medical institutions",
             h: 4,
@@ -306,7 +309,7 @@ export const CASE_3 = {
           template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: "Pathology clinics, not what you'd expect",
             h: 4,
@@ -420,7 +423,7 @@ export const CASE_3 = {
       header: "Design",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: "Design",
             h: 2,
@@ -490,7 +493,7 @@ export const CASE_3 = {
       header: "Validation",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: "Testing without being able to test",
             text: (

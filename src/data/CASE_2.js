@@ -25,6 +25,18 @@ const SETTINGS = {
         PLATFORMS.TABLET_IOS,
       ],
     },
+    TOOLS_AND_METHODS: {
+      label: TOOLS_AND_METHODS.LABEL,
+      value: [
+        TOOLS_AND_METHODS.COMPETITOR_ANALYSIS,
+        TOOLS_AND_METHODS.FLOW_MAPPING,
+        TOOLS_AND_METHODS.INTERVIEWS,
+        TOOLS_AND_METHODS.SURVEYS,
+        TOOLS_AND_METHODS.MOCKUPS,
+        TOOLS_AND_METHODS.PROTOTYPING,
+        TOOLS_AND_METHODS.USABILITY_TESTING,
+      ],
+    },
     CASE_YEAR: { label: "Year:", value: "2019" },
     CASE_DURATION: { label: "Duration:", value: "3 months" },
   },
@@ -77,8 +89,8 @@ export const CASE_2 = {
               mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
             highlights: [
-              SETTINGS.KEY_FIGURES.CASE_YEAR,
               SETTINGS.KEY_FIGURES.CASE_TYPE,
+              SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS,
               SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
             ],
           },
@@ -89,7 +101,7 @@ export const CASE_2 = {
       paddedUp: true,
       elements: [
         {
-          template: SECTION_ELEMENTS.OVERVIEW,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             text: (
               <Paragraph xl>
@@ -102,15 +114,6 @@ export const CASE_2 = {
                 improve patients lives.
               </Paragraph>
             ),
-            toolsAndMethods: [
-              TOOLS_AND_METHODS.COMPETITOR_ANALYSIS,
-              TOOLS_AND_METHODS.FLOW_MAPPING,
-              TOOLS_AND_METHODS.INTERVIEWS,
-              TOOLS_AND_METHODS.SURVEYS,
-              TOOLS_AND_METHODS.MOCKUPS,
-              TOOLS_AND_METHODS.PROTOTYPING,
-              TOOLS_AND_METHODS.USABILITY_TESTING,
-            ],
           },
         },
       ],
@@ -119,7 +122,7 @@ export const CASE_2 = {
       header: "Background",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>The problem</>,
             h: 2,
@@ -172,7 +175,7 @@ export const CASE_2 = {
           template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>The goal:</>,
             h: 4,
@@ -196,7 +199,7 @@ export const CASE_2 = {
       header: "Research",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>First understand the problem, then solve it.</>,
             h: 2,
@@ -306,7 +309,7 @@ export const CASE_2 = {
       paddedUp: true,
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Sharing learnings and planning the road ahead</>,
             h: 3,
@@ -327,7 +330,7 @@ export const CASE_2 = {
       header: "Ideation & prioritization",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Prioritizing features and scoping and MVP</>,
             text: (
@@ -459,7 +462,7 @@ export const CASE_2 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Design for iOS and Android</>,
             h: 2,
@@ -509,7 +512,7 @@ export const CASE_2 = {
       header: "Validation",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Usability testing on a shoestring</>,
             text: (
@@ -546,7 +549,7 @@ export const CASE_2 = {
           template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>2 hours, and 500 SEK later…</>,
             h: 3,

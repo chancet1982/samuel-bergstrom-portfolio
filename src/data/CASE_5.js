@@ -22,6 +22,16 @@ const SETTINGS = {
       label: PLATFORMS.LABEL,
       value: [PLATFORMS.MOBILE_ANDROID],
     },
+    TOOLS_AND_METHODS: {
+      label: TOOLS_AND_METHODS.LABEL,
+      value: [
+        TOOLS_AND_METHODS.FIELD_STUDIES,
+        TOOLS_AND_METHODS.COMPETITOR_ANALYSIS,
+        TOOLS_AND_METHODS.FLOW_MAPPING,
+        TOOLS_AND_METHODS.PROTOTYPING,
+        TOOLS_AND_METHODS.USABILITY_TESTING,
+      ],
+    },
     CASE_YEAR: { label: "Year:", value: "2018" },
     CASE_DURATION: { label: "Duration:", value: "2 months" },
   },
@@ -78,8 +88,8 @@ export const CASE_5 = {
               mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
             highlights: [
-              SETTINGS.KEY_FIGURES.CASE_YEAR,
               SETTINGS.KEY_FIGURES.CASE_TYPE,
+              SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS,
               SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
             ],
           },
@@ -90,7 +100,7 @@ export const CASE_5 = {
       paddedUp: true,
       elements: [
         {
-          template: SECTION_ELEMENTS.OVERVIEW,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             text: (
               <>
@@ -108,13 +118,6 @@ export const CASE_5 = {
                 </Paragraph>
               </>
             ),
-            toolsAndMethods: [
-              TOOLS_AND_METHODS.FIELD_STUDIES,
-              TOOLS_AND_METHODS.COMPETITOR_ANALYSIS,
-              TOOLS_AND_METHODS.FLOW_MAPPING,
-              TOOLS_AND_METHODS.PROTOTYPING,
-              TOOLS_AND_METHODS.USABILITY_TESTING,
-            ],
           },
         },
       ],
@@ -123,7 +126,7 @@ export const CASE_5 = {
       header: "Background",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>An unexpected problem is blocking dialysis treatments</>,
             h: 2,
@@ -196,7 +199,7 @@ export const CASE_5 = {
           template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Self service to expedite admission and discharge</>,
             h: 4,
@@ -230,7 +233,7 @@ export const CASE_5 = {
       header: "Process",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title:
               "Designing for the elderlies, Accessibility, GDPR, and much more",
@@ -298,7 +301,7 @@ export const CASE_5 = {
       header: "Proposal",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>2 approaches to the same problem</>,
             text: (
@@ -369,7 +372,7 @@ export const CASE_5 = {
       paddedUp: true,
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>If at first, you don’t succeed.</>,
             text: (
@@ -410,7 +413,7 @@ export const CASE_5 = {
           template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Simplicity wins every time.</>,
             h: 2,
@@ -522,7 +525,7 @@ export const CASE_5 = {
           template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>2 days, 20 tests, and an overhaul</>,
             text: (

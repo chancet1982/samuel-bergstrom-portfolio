@@ -22,6 +22,15 @@ const SETTINGS = {
       label: PLATFORMS.LABEL,
       value: [PLATFORMS.MOBILE_ANDROID],
     },
+    TOOLS_AND_METHODS: {
+      label: TOOLS_AND_METHODS.LABEL,
+      value: [
+        TOOLS_AND_METHODS.INTERVIEWS,
+        TOOLS_AND_METHODS.FLOW_MAPPING,
+        TOOLS_AND_METHODS.MOCKUPS,
+        TOOLS_AND_METHODS.PROTOTYPING,
+      ],
+    },
     CASE_YEAR: { label: "Year:", value: "2020" },
     CASE_DURATION: { label: "Duration:", value: "4 weeks" },
   },
@@ -64,8 +73,8 @@ export const CASE_1 = {
               mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
             highlights: [
-              SETTINGS.KEY_FIGURES.CASE_YEAR,
               SETTINGS.KEY_FIGURES.CASE_TYPE,
+              SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS,
               SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
             ],
           },
@@ -76,7 +85,7 @@ export const CASE_1 = {
       paddedUp: true,
       elements: [
         {
-          template: SECTION_ELEMENTS.OVERVIEW,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             text: (
               <>
@@ -93,12 +102,6 @@ export const CASE_1 = {
                 </Paragraph>
               </>
             ),
-            toolsAndMethods: [
-              TOOLS_AND_METHODS.INTERVIEWS,
-              TOOLS_AND_METHODS.FLOW_MAPPING,
-              TOOLS_AND_METHODS.MOCKUPS,
-              TOOLS_AND_METHODS.PROTOTYPING,
-            ],
           },
         },
       ],
@@ -107,7 +110,7 @@ export const CASE_1 = {
       header: "Background",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Old devices in a new world</>,
             h: 2,
@@ -150,7 +153,7 @@ export const CASE_1 = {
           template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>A quick facelift as a footnote</>,
             h: 4,
@@ -172,7 +175,7 @@ export const CASE_1 = {
       header: "Research",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             flip: true,
             title: <>Finding a way forward</>,
@@ -195,7 +198,7 @@ export const CASE_1 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: "Meeting couriers and ATM service technicians",
             h: 4,
@@ -263,7 +266,7 @@ export const CASE_1 = {
       header: "Design",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: "Simple is key",
             h: 2,
@@ -353,7 +356,7 @@ export const CASE_1 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           h: 2,
           data: {
             title: <>Fast to implement, simple to use.</>,
@@ -409,7 +412,7 @@ export const CASE_1 = {
       header: "Validation",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           h: 2,
           data: {
             title: <>Open kitchen, everyone is welcome.</>,

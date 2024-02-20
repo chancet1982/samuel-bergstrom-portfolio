@@ -30,6 +30,18 @@ const SETTINGS = {
         PLATFORMS.MOBILE_IOS,
       ],
     },
+    TOOLS_AND_METHODS: {
+      label: TOOLS_AND_METHODS.LABEL,
+      value: [
+        TOOLS_AND_METHODS.FIELD_STUDIES,
+        TOOLS_AND_METHODS.SURVEYS,
+        TOOLS_AND_METHODS.INTERVIEWS,
+        TOOLS_AND_METHODS.WEB_ANALYTICS,
+        TOOLS_AND_METHODS.COMPETITOR_ANALYSIS,
+        TOOLS_AND_METHODS.PROTOTYPING,
+        TOOLS_AND_METHODS.USABILITY_TESTING,
+      ],
+    },
     CASE_YEAR: { label: "Year:", value: "2020" },
     CASE_DURATION: { label: "Duration:", value: "2 months" },
   },
@@ -68,8 +80,8 @@ export const CASE_7 = {
               mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
             highlights: [
-              SETTINGS.KEY_FIGURES.CASE_YEAR,
               SETTINGS.KEY_FIGURES.CASE_TYPE,
+              SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS,
               SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
             ],
           },
@@ -80,7 +92,7 @@ export const CASE_7 = {
       paddedUp: true,
       elements: [
         {
-          template: SECTION_ELEMENTS.OVERVIEW,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             text: (
               <Paragraph xl>
@@ -89,15 +101,6 @@ export const CASE_7 = {
                 increasing sign-ups and cross-sales potential online.
               </Paragraph>
             ),
-            toolsAndMethods: [
-              TOOLS_AND_METHODS.FIELD_STUDIES,
-              TOOLS_AND_METHODS.SURVEYS,
-              TOOLS_AND_METHODS.INTERVIEWS,
-              TOOLS_AND_METHODS.WEB_ANALYTICS,
-              TOOLS_AND_METHODS.COMPETITOR_ANALYSIS,
-              TOOLS_AND_METHODS.PROTOTYPING,
-              TOOLS_AND_METHODS.USABILITY_TESTING,
-            ],
           },
         },
       ],
@@ -106,7 +109,7 @@ export const CASE_7 = {
       header: "Background",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             overline: "Background",
             title: <>Exploring new business</>,
@@ -152,7 +155,7 @@ export const CASE_7 = {
           template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>2 Focus areas: onboarding, and cross-sales</>,
             h: 4,
@@ -182,7 +185,7 @@ export const CASE_7 = {
       header: "Kickoff",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Gathering internal insights</>,
             h: 2,
@@ -254,7 +257,7 @@ export const CASE_7 = {
       header: "Research",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Testing the current onboarding flow</>,
             h: 4,
@@ -316,7 +319,7 @@ export const CASE_7 = {
           template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>User insights & Competitor analysis</>,
             h: 2,
@@ -369,7 +372,7 @@ export const CASE_7 = {
           template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Visiting gyms and conducting interviews.</>,
             h: 4,
@@ -430,7 +433,7 @@ export const CASE_7 = {
       header: "Redesign",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Taking a small step in the right direction. </>,
             h: 2,
@@ -469,7 +472,7 @@ export const CASE_7 = {
       header: "eCommerce",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Shifting the focus to eCommerce</>,
             h: 2,
@@ -528,7 +531,7 @@ export const CASE_7 = {
       header: "Design",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Setting a vision for the future</>,
             h: 2,
@@ -567,7 +570,7 @@ export const CASE_7 = {
           template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Some key features</>,
             h: 2,
@@ -668,7 +671,7 @@ export const CASE_7 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Oh, one last thing</>,
             h: 2,

@@ -22,6 +22,16 @@ const SETTINGS = {
       label: PLATFORMS.LABEL,
       value: [PLATFORMS.MOBILE_ANDROID, PLATFORMS.MOBILE_IOS],
     },
+    TOOLS_AND_METHODS: {
+      label: TOOLS_AND_METHODS.LABEL,
+      value: [
+        TOOLS_AND_METHODS.SURVEYS,
+        TOOLS_AND_METHODS.COMPETITOR_ANALYSIS,
+        TOOLS_AND_METHODS.FLOW_MAPPING,
+        TOOLS_AND_METHODS.PROTOTYPING,
+        TOOLS_AND_METHODS.USABILITY_TESTING,
+      ],
+    },
     CASE_YEAR: { label: "Year:", value: "2019" },
     CASE_DURATION: { label: "Duration:", value: "3 months" },
   },
@@ -64,8 +74,8 @@ export const CASE_4 = {
               mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
             highlights: [
-              SETTINGS.KEY_FIGURES.CASE_YEAR,
               SETTINGS.KEY_FIGURES.CASE_TYPE,
+              SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS,
               SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
             ],
           },
@@ -77,7 +87,7 @@ export const CASE_4 = {
       paddedDown: true,
       elements: [
         {
-          template: SECTION_ELEMENTS.OVERVIEW,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             text: (
               <Paragraph xl>
@@ -90,13 +100,6 @@ export const CASE_4 = {
                 limited to those hours.
               </Paragraph>
             ),
-            toolsAndMethods: [
-              TOOLS_AND_METHODS.SURVEYS,
-              TOOLS_AND_METHODS.COMPETITOR_ANALYSIS,
-              TOOLS_AND_METHODS.FLOW_MAPPING,
-              TOOLS_AND_METHODS.PROTOTYPING,
-              TOOLS_AND_METHODS.USABILITY_TESTING,
-            ],
           },
         },
       ],
@@ -105,7 +108,7 @@ export const CASE_4 = {
       header: "Background",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Deliveries, never a good time.</>,
             text: (
@@ -150,7 +153,7 @@ export const CASE_4 = {
           template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>The goal:</>,
             h: 4,
@@ -193,7 +196,7 @@ export const CASE_4 = {
       header: "Process",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Problems and oppurtunities</>,
             h: 2,
@@ -244,7 +247,7 @@ export const CASE_4 = {
           template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Creating an index for comparison</>,
             h: 2,
@@ -320,7 +323,7 @@ export const CASE_4 = {
       header: "Design",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>When a bloated app goes on a diet</>,
             h: 2,
@@ -473,7 +476,7 @@ export const CASE_4 = {
       header: "Validation",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>New VS old app comparison.</>,
             h: 2,
