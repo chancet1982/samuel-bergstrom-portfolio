@@ -237,6 +237,7 @@ Cover.propTypes = {
         PropTypes.string,
         PropTypes.arrayOf(PropTypes.string),
       ]),
+      renderAsList: PropTypes.bool,
       label: PropTypes.string,
     })
   ),
