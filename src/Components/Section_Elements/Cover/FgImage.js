@@ -41,9 +41,10 @@ function FgImage({ imageUrl, mobileImageUrl, imageAlt }) {
   const coverHeight = (height / 100) * 92;
 
   const coverImageParallax = useTransform(scrollY, [0, coverHeight], [1, 1.5]);
+
   const { width } = useWindowSize();
-  const isMobile = width < breakpoints.tablet;
   const deviceOrientation = useOrientation();
+  const isMobile = width < breakpoints.tablet;
   const isLandscape = deviceOrientation.type === "landscape-primary";
 
   const imageVariants = {
@@ -63,7 +64,11 @@ function FgImage({ imageUrl, mobileImageUrl, imageAlt }) {
       variants={imageVariants}
       src={`${process.env.PUBLIC_URL}/${
         // eslint-disable-next-line no-nested-ternary
-        isMobile ? (isLandscape ? imageUrl : mobileImageUrl) : imageUrl
+        isMobile
+          ? isLandscape
+            ? imageUrl
+            : mobileImageUrl || imageUrl
+          : imageUrl
       }`}
       style={{ scale: coverImageParallax }}
       alt={imageAlt}
@@ -73,11 +78,12 @@ function FgImage({ imageUrl, mobileImageUrl, imageAlt }) {
 
 FgImage.propTypes = {
   imageUrl: PropTypes.string.isRequired,
-  mobileImageUrl: PropTypes.string.isRequired,
+  mobileImageUrl: PropTypes.string,
   imageAlt: PropTypes.string,
 };
 
 FgImage.defaultProps = {
+  mobileImageUrl: null,
   imageAlt: null,
 };
 

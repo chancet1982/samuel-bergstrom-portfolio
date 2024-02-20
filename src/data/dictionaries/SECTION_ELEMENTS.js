@@ -1,6 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 export const SECTION_ELEMENTS = {
   COVER: "cover",
+  SECTION_HERO: "SectionHero",
   SPACER: "spacer",
   SPACER_LARGE: "spacerLarge",
   SPACER_MEDIUM: "spacerMedium",

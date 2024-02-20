@@ -26,6 +26,7 @@ import SectionVideo from "./Section_Elements/SectionVideo";
 import ListOfCards from "./Section_Elements/ListOfCards";
 import Spacer from "./Section_Elements/Spacer";
 import { SPACER_SIZES } from "../data/dictionaries/SPACER_SIZES";
+import SectionHero from "./Section_Elements/SectionHero";
 
 function SectionElementsRenderer({ elementKey, data, template }) {
   if (!template) {
@@ -33,14 +34,23 @@ function SectionElementsRenderer({ elementKey, data, template }) {
   }
 
   switch (template) {
+    case SECTION_ELEMENTS.SECTION_HERO:
+      return (
+        <ElementColorContextProvider>
+          <SectionHero
+            key={elementKey}
+            caption={data.caption}
+            bgColor={data.bgColor}
+            fgImage={data.fgImage}
+            highlights={data.highlights}
+          />
+        </ElementColorContextProvider>
+      );
     case SECTION_ELEMENTS.COVER:
       return (
         <ElementColorContextProvider>
           <Cover
             key={elementKey}
-            overline={data.overline}
-            title={data.title}
-            text={data.text}
             bgMedia={data.bgMedia}
             bgColor={data.bgColor}
             fgImage={data.fgImage}
@@ -145,6 +155,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
         <SectionImage
           key={elementKey}
           imageUrl={data.imageUrl}
+          mobileImageUrl={data.mobileImageUrl}
           imageAlt={data.imageAlt}
           caption={data.caption}
           limitMaxWidth={data.limitMaxWidth}
@@ -171,6 +182,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
             isSticky={data.isSticky}
             isCentered={data.isCentered}
             isFullScreen={data.isFullScreen}
+            isHalfScreen={data.isHalfScreen}
           />
         </ElementColorContextProvider>
       );
