@@ -27,6 +27,16 @@ const SETTINGS = {
       label: PLATFORMS.LABEL,
       value: [PLATFORMS.DESKTOP, PLATFORMS.TABLET, PLATFORMS.MOBILE],
     },
+    TOOLS_AND_METHODS: {
+      label: TOOLS_AND_METHODS.LABEL,
+      value: [
+        TOOLS_AND_METHODS.SURVEYS,
+        TOOLS_AND_METHODS.WEB_ANALYTICS,
+        TOOLS_AND_METHODS.FUNNEL_ANALYSIS,
+        TOOLS_AND_METHODS.USABILITY_TESTING,
+        TOOLS_AND_METHODS.AB_TESTING,
+      ],
+    },
     CASE_YEAR: { label: "Year:", value: "2022" },
     CASE_DURATION: { label: "Duration:", value: "3 month" },
   },
@@ -82,8 +92,8 @@ export const CASE_11 = {
               mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
             highlights: [
-              SETTINGS.KEY_FIGURES.CASE_YEAR,
               SETTINGS.KEY_FIGURES.CASE_TYPE,
+              SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS,
               SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
             ],
           },
@@ -95,7 +105,7 @@ export const CASE_11 = {
       paddedDown: true,
       elements: [
         {
-          template: SECTION_ELEMENTS.OVERVIEW,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             text: (
               <Paragraph xl>
@@ -106,13 +116,6 @@ export const CASE_11 = {
                 from click-outs where different categories have different CPC.
               </Paragraph>
             ),
-            toolsAndMethods: [
-              TOOLS_AND_METHODS.SURVEYS,
-              TOOLS_AND_METHODS.WEB_ANALYTICS,
-              TOOLS_AND_METHODS.FUNNEL_ANALYSIS,
-              TOOLS_AND_METHODS.USABILITY_TESTING,
-              TOOLS_AND_METHODS.AB_TESTING,
-            ],
           },
         },
       ],
@@ -121,7 +124,7 @@ export const CASE_11 = {
       header: "Background",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Selling used products is big business</>,
             text: (
@@ -164,7 +167,7 @@ export const CASE_11 = {
           template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Not the optimal solution</>,
             h: 3,
@@ -194,7 +197,7 @@ export const CASE_11 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Driving traffic to non-new products.</>,
             h: 3,
@@ -223,7 +226,7 @@ export const CASE_11 = {
       bgColor: SETTINGS.BG_COLOR,
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: "In-app feedback",
             isCentered: true,
@@ -252,7 +255,7 @@ export const CASE_11 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: "Qualitative research",
             isCentered: true,
@@ -275,7 +278,7 @@ export const CASE_11 = {
       header: "Ideation",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Heuristics and competitors</>,
             text: (
@@ -311,7 +314,7 @@ export const CASE_11 = {
       header: "Design",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Design</>,
             text: (
@@ -425,7 +428,7 @@ export const CASE_11 = {
       header: "Testing",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Testing</>,
             text: (
@@ -458,7 +461,7 @@ export const CASE_11 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             text: (
               <Note>

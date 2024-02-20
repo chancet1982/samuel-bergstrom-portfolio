@@ -12,7 +12,7 @@ export const VIEW_LEADERSHIP = [
     fullScreen: true,
     elements: [
       {
-        template: SECTION_ELEMENTS.TEXTBOX,
+        template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
         data: {
           title: "Leadership philosophy",
           h: 1,

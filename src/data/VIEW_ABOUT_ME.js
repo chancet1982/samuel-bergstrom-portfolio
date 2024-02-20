@@ -402,7 +402,7 @@ export const VIEW_ABOUT_ME = [
     paddedUp: true,
     elements: [
       {
-        template: SECTION_ELEMENTS.TEXTBOX,
+        template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
         data: {
           title: "More than a designer",
           h: 2,
