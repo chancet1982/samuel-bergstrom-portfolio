@@ -16,7 +16,8 @@ const headlineFont = `
 `;
 
 export const StyledH1 = styled(motion.h1)`
-  max-width: 16ch;
+  text-wrap: balance;
+  max-inline-size: 16ch;
   color: ${({ $light }) =>
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
@@ -27,7 +28,8 @@ export const StyledH1 = styled(motion.h1)`
 `;
 
 export const StyledH2 = styled(motion.h2)`
-  max-width: 40ch;
+  text-wrap: balance;
+  max-inline-size: 40ch;
   color: ${({ $light }) =>
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
@@ -35,7 +37,8 @@ export const StyledH2 = styled(motion.h2)`
 `;
 
 export const StyledH3 = styled(motion.h3)`
-  max-width: 40ch;
+  text-wrap: balance;
+  max-inline-size: 40ch;
   color: ${({ $light }) =>
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
@@ -43,7 +46,8 @@ export const StyledH3 = styled(motion.h3)`
 `;
 
 export const StyledH4 = styled(motion.h4)`
-  max-width: 48ch;
+  text-wrap: balance;
+  max-inline-size: 48ch;
   color: ${({ $light }) =>
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
@@ -51,7 +55,8 @@ export const StyledH4 = styled(motion.h4)`
 `;
 
 export const StyledH5 = styled(motion.h5)`
-  max-width: 48ch;
+  text-wrap: balance;
+  max-inline-size: 48ch;
   color: ${({ $light }) =>
     $light ? colors.text.light.high : colors.text.dark.high};
   ${({ $fluidType }) => $fluidType};
