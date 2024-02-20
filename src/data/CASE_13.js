@@ -7,8 +7,6 @@ import { PLATFORMS } from "./dictionaries/PLATFORMS";
 import Paragraph from "../Components/Shared/Paragraph";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
-import List from "../Components/Shared/List";
-import Span from "../Components/Shared/Span";
 import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
 import Note from "../Components/Shared/Note";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
@@ -20,17 +18,21 @@ const SETTINGS = {
   KEY_FIGURES: {
     CASE_TYPE: {
       label: CASE_TYPES.LABEL,
-      value: CASE_TYPES.CONCEPT_VISUALISATION,
+      value: [CASE_TYPES.PRODUCT_DISCOVERY, CASE_TYPES.CONCEPT_VISUALISATION],
     },
-    MY_ROLE: { label: ROLES.LABEL, value: ROLES.LEAD },
     CASE_PLATFORMS: {
       label: PLATFORMS.LABEL,
-      value: [PLATFORMS.DESKTOP, PLATFORMS.TABLET, PLATFORMS.MOBILE],
+      value: [PLATFORMS.MOBILE_ANDROID, PLATFORMS.MOBILE_IOS],
     },
     TOOLS_AND_METHODS: {
       label: TOOLS_AND_METHODS.LABEL,
-      value: [TOOLS_AND_METHODS.INTERVIEWS, TOOLS_AND_METHODS.WORKSHOPS],
+      value: [
+        TOOLS_AND_METHODS.INTERVIEWS,
+        TOOLS_AND_METHODS.WORKSHOPS,
+        TOOLS_AND_METHODS.SURVEYS,
+      ],
     },
+    MY_ROLE: { label: ROLES.LABEL, value: ROLES.LEAD },
     CASE_YEAR: { label: "Year:", value: "2022" },
     CASE_DURATION: { label: "Duration:", value: "2 monthS" },
   },
@@ -75,8 +77,8 @@ export const CASE_13 = {
               mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
             highlights: [
-              SETTINGS.KEY_FIGURES.CASE_YEAR,
               SETTINGS.KEY_FIGURES.CASE_TYPE,
+              SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS,
               SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
             ],
           },
@@ -208,17 +210,19 @@ export const CASE_13 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
+          template: SECTION_ELEMENTS.KEY_FIGURES,
           data: {
-            text: (
-              <List
-                items={[
-                  <Span>Sales - 67 respondents</Span>,
-                  <Span>Logistics - 30 respondents</Span>,
-                  <Span>Delivery - 17 respondents</Span>,
-                ]}
-              />
-            ),
+            items: [
+              {
+                value: "67",
+                label: "Respondents from Sales",
+              },
+              { value: "30", label: "Respondents from Logistics" },
+              {
+                value: "17",
+                label: "Respondents from Delivery",
+              },
+            ],
           },
         },
         {

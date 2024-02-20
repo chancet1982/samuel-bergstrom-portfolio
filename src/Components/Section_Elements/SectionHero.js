@@ -8,14 +8,8 @@ import SectionImage from "./SectionImage";
 import colors from "../../theme/colors";
 import breakpoints from "../../theme/breakpoints";
 import { ElementColorContext } from "../../Context/ElementColorContext";
-import Highlights from "./Cover/Highlights";
+import Highlights from "./SectionHero/Highlights";
 import padding from "../../theme/padding";
-
-/*
-TODO: 
-1. Create a similar component to KeyFigures to be used in the new cover instead of keyfigures, perhaps make sure it doesnt animate.
-4. Section image should be added support for mobileImageUrls
-*/
 
 function SectionHero({ bgColor, fgImage, caption, highlights }) {
   const { overline, title, h, text } = caption;
@@ -51,7 +45,12 @@ function SectionHero({ bgColor, fgImage, caption, highlights }) {
         limitMaxWidth
       />
       <Highlights items={highlights} bgColor={bgColor} />
-      <SectionTitleAndText text={text} bgColor={bgColor} />
+      <SectionTitleAndText
+        isCentered
+        text={text}
+        bgColor={bgColor}
+        paddedDown
+      />
     </BackgroundWrapper>
   );
 }
