@@ -62,8 +62,8 @@ function KeyFigures({ items, bgColor, bgMedia }) {
       $columns={items.length}
     >
       {items.map(({ value, label }) => (
-        <Card>
-          <ValueAndLabel label={label} value={value} key={uuid()} h={3} />
+        <Card key={uuid()}>
+          <ValueAndLabel label={label} value={value} h={3} />
         </Card>
       ))}
     </StyledKeyFigures>

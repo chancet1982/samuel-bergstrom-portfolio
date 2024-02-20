@@ -1,9 +1,11 @@
+/* eslint-disable no-nested-ternary */
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import Span from "./Span";
 import Title from "./Title";
+import List from "./List";
 
 const StyledValueAndLabel = styled(motion.div)`
   display: flex;
@@ -14,22 +16,40 @@ const StyledValueAndLabel = styled(motion.div)`
 `;
 
 /* TODO: Implement this in "FinalResult" as well, for that to happen youll need to control text alignment and padding as prop */
-function ValueAndLabel({ value, label, flip, h, withMargin }) {
+function ValueAndLabel({ value, renderAsList, label, flip, h, withMargin }) {
   const renderValueAndLabel = () => {
-    const valueAsString = Array.isArray(value) ? value.join(", ") : value;
+    const convertValuesArrayToListItems = () => (
+      <List
+        items={value.map((item) => (
+          <Title h={h} withMargin={withMargin}>
+            {item}
+          </Title>
+        ))}
+      />
+    );
+
+    const renderValuesAsNode = Array.isArray(value) ? (
+      renderAsList ? (
+        convertValuesArrayToListItems()
+      ) : (
+        <Title h={h} withMargin={withMargin}>
+          {value.join(", ")}
+        </Title>
+      )
+    ) : (
+      <Title h={h} withMargin={withMargin}>
+        {value}
+      </Title>
+    );
 
     return flip ? (
       <>
         <Span>{label}</Span>
-        <Title h={h} withMargin={withMargin}>
-          {valueAsString}
-        </Title>
+        {renderValuesAsNode}
       </>
     ) : (
       <>
-        <Title h={h} withMargin={withMargin}>
-          {valueAsString}
-        </Title>
+        {renderValuesAsNode}
         <Span>{label}</Span>
       </>
     );
@@ -43,6 +63,7 @@ ValueAndLabel.propTypes = {
     PropTypes.string,
     PropTypes.arrayOf(PropTypes.string),
   ]).isRequired,
+  renderAsList: PropTypes.bool,
   label: PropTypes.string.isRequired,
   flip: PropTypes.bool,
   h: PropTypes.oneOf([3, 5]),
@@ -50,6 +71,7 @@ ValueAndLabel.propTypes = {
 };
 
 ValueAndLabel.defaultProps = {
+  renderAsList: false,
   flip: false,
   h: 5,
   withMargin: false,

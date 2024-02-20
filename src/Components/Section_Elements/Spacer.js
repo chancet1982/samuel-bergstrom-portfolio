@@ -31,7 +31,11 @@ function SectionSpacer({ size = SPACER_SIZES.MEDIUM }) {
 }
 
 SectionSpacer.propTypes = {
-  size: PropTypes.oneOf([SPACER_SIZES.MEDIUM, SPACER_SIZES.SMALL]),
+  size: PropTypes.oneOf([
+    SPACER_SIZES.LARGE,
+    SPACER_SIZES.MEDIUM,
+    SPACER_SIZES.SMALL,
+  ]),
 };
 
 export default SectionSpacer;

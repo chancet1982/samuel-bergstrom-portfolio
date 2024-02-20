@@ -35,8 +35,14 @@ const StyledHighlights = styled(motion.div)`
 function Highlights({ items }) {
   return (
     <StyledHighlights $columns={items.length}>
-      {items.map(({ value, label }) => (
-        <ValueAndLabel value={value} label={label} key={label} flip />
+      {items.map(({ value, label, renderAsList }) => (
+        <ValueAndLabel
+          value={value}
+          renderAsList={renderAsList}
+          label={label}
+          key={label}
+          flip
+        />
       ))}
     </StyledHighlights>
   );
@@ -49,6 +55,7 @@ Highlights.propTypes = {
         PropTypes.string,
         PropTypes.arrayOf(PropTypes.string),
       ]).isRequired,
+      renderAsList: PropTypes.bool,
       label: PropTypes.string.isRequired,
     })
   ).isRequired,
