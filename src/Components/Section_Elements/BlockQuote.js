@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Quote from "./BlockQuote/Quote";
 import Cite from "./BlockQuote/Cite";
 import padding from "../../theme/padding";
-import BackgroundWrapper from "../Shared/BackgroundWrapper";
+import ParallaxBackgroundImage from "../Shared/ParallaxBackgroundImage";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
 import sizes from "../../theme/sizes";
@@ -83,9 +83,9 @@ function BlockQuote({ cite, quote, bgColor, bgMedia, isFullScreen }) {
   );
 
   return bgColor || bgMedia ? (
-    <BackgroundWrapper bgColor={bgColor} bgMedia={bgMedia}>
+    <ParallaxBackgroundImage bgColor={bgColor} bgMedia={bgMedia}>
       {renderBlockQuote()}
-    </BackgroundWrapper>
+    </ParallaxBackgroundImage>
   ) : (
     renderBlockQuote()
   );
