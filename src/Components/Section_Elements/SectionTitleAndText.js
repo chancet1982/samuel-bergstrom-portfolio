@@ -53,6 +53,15 @@ const StyledSectionTitleAndText = styled(motion.div)`
       justifyContent: "center",
       flexDirection: "column",
     }}
+
+${({ $isHalfScreen }) =>
+    $isHalfScreen && {
+      display: "flex",
+      minHeight: "50vh",
+      /* alignItems: "center", */
+      justifyContent: "center",
+      flexDirection: "column",
+    }}
 `;
 
 /* TODO: images in textbox arent being used and can be safely removed. */
@@ -70,12 +79,14 @@ function SectionTitleAndText({
   isSticky,
   isCentered,
   isFullScreen,
+  isHalfScreen,
+  isFadingOnScroll,
 }) {
   const { scrollY } = useScroll();
   const { height } = useWindowSize();
   // const coverHeight = (height / 100) * 100; // For Now only works with 100%
   const fadeStart = 0;
-  const fadeEnd = height;
+  const fadeEnd = height * 0.7;
   const fadeFrom = 1;
   const fadeTo = 0;
 
@@ -86,7 +97,7 @@ function SectionTitleAndText({
   );
 
   // eslint-disable-next-line no-unused-vars
-  const fadeEffect = isSticky && isFullScreen ? fadeOnScrollEffect : 1;
+  const fadeEffect = isFadingOnScroll ? fadeOnScrollEffect : 1;
 
   const [, setElementBgColor] = useContext(ElementColorContext);
 
@@ -110,6 +121,7 @@ function SectionTitleAndText({
       $isPadded={isPadded}
       $isSticky={isSticky}
       $isFullScreen={isFullScreen}
+      $isHalfScreen={isHalfScreen}
     >
       <TitleAndText
         overline={overline}
@@ -149,6 +161,8 @@ SectionTitleAndText.propTypes = {
   isSticky: PropTypes.bool,
   isCentered: PropTypes.bool,
   isFullScreen: PropTypes.bool,
+  isHalfScreen: PropTypes.bool,
+  isFadingOnScroll: PropTypes.bool,
 };
 
 SectionTitleAndText.defaultProps = {
@@ -165,6 +179,8 @@ SectionTitleAndText.defaultProps = {
   isSticky: false,
   isCentered: false,
   isFullScreen: false,
+  isHalfScreen: false,
+  isFadingOnScroll: false,
 };
 
 export default SectionTitleAndText;
