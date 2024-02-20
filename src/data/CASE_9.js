@@ -23,6 +23,16 @@ const SETTINGS = {
       label: PLATFORMS.LABEL,
       value: [PLATFORMS.DESKTOP, PLATFORMS.TABLET, PLATFORMS.MOBILE],
     },
+    TOOLS_AND_METHODS: {
+      label: TOOLS_AND_METHODS.LABEL,
+      value: [
+        TOOLS_AND_METHODS.SURVEYS,
+        TOOLS_AND_METHODS.WEB_ANALYTICS,
+        TOOLS_AND_METHODS.FUNNEL_ANALYSIS,
+        TOOLS_AND_METHODS.USABILITY_TESTING,
+        TOOLS_AND_METHODS.AB_TESTING,
+      ],
+    },
     CASE_YEAR: { label: "Year:", value: "2021" },
     CASE_DURATION: { label: "Duration:", value: "1 month" },
   },
@@ -81,8 +91,8 @@ export const CASE_9 = {
               mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
             highlights: [
-              SETTINGS.KEY_FIGURES.CASE_YEAR,
               SETTINGS.KEY_FIGURES.CASE_TYPE,
+              SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS,
               SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
             ],
           },
@@ -93,7 +103,7 @@ export const CASE_9 = {
       paddedUp: true,
       elements: [
         {
-          template: SECTION_ELEMENTS.OVERVIEW,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             text: (
               <Paragraph xl>
@@ -104,13 +114,6 @@ export const CASE_9 = {
                 from click-outs where different categories have different CPC.
               </Paragraph>
             ),
-            toolsAndMethods: [
-              TOOLS_AND_METHODS.SURVEYS,
-              TOOLS_AND_METHODS.WEB_ANALYTICS,
-              TOOLS_AND_METHODS.FUNNEL_ANALYSIS,
-              TOOLS_AND_METHODS.USABILITY_TESTING,
-              TOOLS_AND_METHODS.AB_TESTING,
-            ],
           },
         },
       ],
@@ -119,7 +122,7 @@ export const CASE_9 = {
       header: "Background",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: "Searching +2 Mil. products is hard",
             text: (
@@ -153,7 +156,7 @@ export const CASE_9 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: "A better search is a HUGE invetment",
             h: 4,
@@ -176,7 +179,7 @@ export const CASE_9 = {
       header: "Research",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Reviewing what we know</>,
             text: (
@@ -245,7 +248,7 @@ export const CASE_9 = {
       header: "Ideation",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Considering our options</>,
             text: (
@@ -320,7 +323,7 @@ export const CASE_9 = {
       header: "Design",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>A moment of inspiration</>,
             text: (
@@ -346,7 +349,7 @@ export const CASE_9 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: "Eureka!",
             h: 4,
@@ -370,7 +373,7 @@ export const CASE_9 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Plan set in motion</>,
             h: 4,
@@ -393,7 +396,7 @@ export const CASE_9 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Is it feasible?</>,
             h: 4,
@@ -455,7 +458,7 @@ export const CASE_9 = {
       header: "Validation",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>AB testing and result</>,
             text: (

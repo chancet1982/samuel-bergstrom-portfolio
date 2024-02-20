@@ -25,6 +25,17 @@ const SETTINGS = {
       label: PLATFORMS.LABEL,
       value: [PLATFORMS.DESKTOP, PLATFORMS.TABLET, PLATFORMS.MOBILE],
     },
+    TOOLS_AND_METHODS: {
+      label: TOOLS_AND_METHODS.LABEL,
+      value: [
+        TOOLS_AND_METHODS.WORKSHOPS,
+        TOOLS_AND_METHODS.SURVEYS,
+        TOOLS_AND_METHODS.COMPETITOR_ANALYSIS,
+        TOOLS_AND_METHODS.FLOW_MAPPING,
+        TOOLS_AND_METHODS.PROTOTYPING,
+        TOOLS_AND_METHODS.USABILITY_TESTING,
+      ],
+    },
     CASE_YEAR: { label: "Year:", value: "2021" },
     CASE_DURATION: { label: "Duration:", value: "2 months" },
   },
@@ -71,8 +82,8 @@ export const CASE_10 = {
               mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
             highlights: [
-              SETTINGS.KEY_FIGURES.CASE_YEAR,
               SETTINGS.KEY_FIGURES.CASE_TYPE,
+              SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS,
               SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
             ],
           },
@@ -83,7 +94,7 @@ export const CASE_10 = {
       paddedUp: true,
       elements: [
         {
-          template: SECTION_ELEMENTS.OVERVIEW,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             text: (
               <Paragraph xl>
@@ -94,14 +105,6 @@ export const CASE_10 = {
                 from click-outs where different categories have different CPC.
               </Paragraph>
             ),
-            toolsAndMethods: [
-              TOOLS_AND_METHODS.WORKSHOPS,
-              TOOLS_AND_METHODS.SURVEYS,
-              TOOLS_AND_METHODS.COMPETITOR_ANALYSIS,
-              TOOLS_AND_METHODS.FLOW_MAPPING,
-              TOOLS_AND_METHODS.PROTOTYPING,
-              TOOLS_AND_METHODS.USABILITY_TESTING,
-            ],
           },
         },
       ],
@@ -110,7 +113,7 @@ export const CASE_10 = {
       header: "Background",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Price comparison, catch 22</>,
             text: (
@@ -126,7 +129,7 @@ export const CASE_10 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>A double edged sward</>,
             h: 3,
@@ -168,7 +171,7 @@ export const CASE_10 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>This project set out with 3 main goals in mind:</>,
             h: 4,
@@ -199,7 +202,7 @@ export const CASE_10 = {
       header: "Research",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Internal interviews</>,
             text: (
@@ -275,7 +278,7 @@ export const CASE_10 = {
       header: "Ideation",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Looking for ideas</>,
             text: (
@@ -312,7 +315,7 @@ export const CASE_10 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Prioritizing</>,
             h: 4,
@@ -344,7 +347,7 @@ export const CASE_10 = {
       header: "Design",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Initial idea: hide unaffeliated shops</>,
             text: (
@@ -371,7 +374,7 @@ export const CASE_10 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             text: (
               <Note>
@@ -389,7 +392,7 @@ export const CASE_10 = {
           template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Second idea: Change the rules</>,
             text: (
@@ -402,7 +405,7 @@ export const CASE_10 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Step 1: Reducing free information</>,
             h: 4,
@@ -432,7 +435,7 @@ export const CASE_10 = {
           template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Step 2: Change the default sorting</>,
             h: 4,
@@ -460,7 +463,7 @@ export const CASE_10 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Step 3: Grouping based on data completeness</>,
             h: 4,
@@ -521,7 +524,7 @@ export const CASE_10 = {
       header: "Validation",
       elements: [
         {
-          template: SECTION_ELEMENTS.TEXTBOX,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>AB testing and result</>,
             text: (
