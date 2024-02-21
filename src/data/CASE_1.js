@@ -48,8 +48,8 @@ export const CASE_1 = {
       text: <Paragraph xxl>Redesign as an oppurtunity for change.</Paragraph>,
     },
     fgImage: {
-      imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
-      mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
+      imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-desktop.png`,
+      imageAlt: "thumbnail",
     },
   },
   details: [

@@ -9,7 +9,7 @@ import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 
 /* TODO: This is a non-finished project. Finish it or remove. */
-export const CASE_6 = {
+export const CASE_UNUSED_6 = {
   caseStatus: CASE_STATUS.DRAFT,
   caseType: CASE_TYPES.DesignOps,
   caseUrl: "/cases/6",

@@ -54,7 +54,7 @@ export const CASE_13 = {
       ),
     },
     fgImage: {
-      imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
+      imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-desktop.png`,
       imageAlt: "thumbnail",
     },
   },

@@ -59,8 +59,8 @@ export const CASE_7 = {
       text: <Paragraph xxl>When fitness meets ecommerce</Paragraph>,
     },
     fgImage: {
-      imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
-      mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
+      imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-desktop.png`,
+      imageAlt: "thumbnail",
     },
   },
   details: [

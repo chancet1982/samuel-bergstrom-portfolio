@@ -1,9 +1,15 @@
 ----- TODO list (What's left before you're done) -----
-SECTION_ELEMENTS.CASE_THUMBNAIL -> Update case thumbnails on all cases where missing (1024\*1024)
-CASE_THUMBNAIL -> make sure it works with mobile thumbnail and add one to all cases.
-CASE_02 -> Better hero image
-CASE_01 -> Better hero image
+SECTION_ELEMENTS.CASE_THUMBNAIL -> Go through all cases and make sure that there is a good thumbnail for desktop and mobile (1024\*1024)
+
+CASE_06 -> Better thumbnail image,
+CASE_05 -> Better thumbnail image,
+CASE_04 -> Better thumbnail image,
+CASE_03 -> Better thumbnail image,
+CASE_02 -> Better thumbnail image, Better hero image
+CASE_01 -> Better thumbnail image, Better hero image
 SECTION_HERO -> Add support for background image to have same effect as blockquote background image
+KEY_FIGURES -> doesnt scale on mobile nicely
+SNEAKPEEK? -> doesnt look nice on mobile
 
 ----- ONCE DONE -----
 CASE_07 -> Add pictures of the report.

@@ -30,7 +30,8 @@ const StyledCaseThumbnail = styled(motion.div)`
 `;
 
 const StyledLink = styled(Link)`
-  display: block;
+  display: flex;
+  flex-direction: row-reverse;
   width: 100%;
   height: 100%;
   text-decoration: none !important;
@@ -69,6 +70,8 @@ const StyledThumbnailCaption = styled(motion.div)`
   z-index: 1;
   width: 100%;
   box-sizing: border-box;
+  position: absolute;
+  left: 0;
 
   h1 {
     max-width: 15ch;
@@ -98,9 +101,7 @@ const StyledThumbnailCaption = styled(motion.div)`
 `;
 
 const StyledFgImage = styled(motion.img)`
-  position: absolute;
   max-height: 100%;
-  right: 0;
   opacity: 0.1;
 
   @media (min-width: ${breakpoints.mobileLarge}px) {
