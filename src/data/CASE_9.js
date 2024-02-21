@@ -8,9 +8,10 @@ import Paragraph from "../Components/Shared/Paragraph";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Shared/Title";
+import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
 
 const SETTINGS = {
-  BG_COLOR: "#ee4570",
+  BG_COLOR: "#FF3467",
   URL: "/cases/9",
   MEDIA_BASE_URL: "assets/case-9",
   KEY_FIGURES: {
@@ -25,6 +26,7 @@ const SETTINGS = {
     },
     TOOLS_AND_METHODS: {
       label: TOOLS_AND_METHODS.LABEL,
+      renderAsList: true,
       value: [
         TOOLS_AND_METHODS.SURVEYS,
         TOOLS_AND_METHODS.WEB_ANALYTICS,
@@ -68,21 +70,16 @@ export const CASE_9 = {
       navBgColor: SETTINGS.BG_COLOR,
       elements: [
         {
-          template: SECTION_ELEMENTS.COVER,
+          template: SECTION_ELEMENTS.SECTION_HERO,
           data: {
             bgColor: SETTINGS.BG_COLOR,
             caption: {
               overline: "Price Comparison Service",
-              title: (
-                <>
-                  Invisible
-                  <br /> redesign
-                </>
-              ),
+              title: <>Invisible redesign</>,
+              h: 1,
               text: (
                 <Paragraph xxl>
-                  Making the case for investing
-                  <br /> in search
+                  Making the case for investing in search
                 </Paragraph>
               ),
             },
@@ -91,9 +88,12 @@ export const CASE_9 = {
               mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
             highlights: [
-              SETTINGS.KEY_FIGURES.CASE_TYPE,
-              SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS,
-              SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+              [
+                SETTINGS.KEY_FIGURES.CASE_TYPE,
+                SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+                SETTINGS.KEY_FIGURES.CASE_YEAR,
+              ],
+              [SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS],
             ],
           },
         },
@@ -341,14 +341,6 @@ export const CASE_9 = {
           template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
-          template: SECTION_ELEMENTS.SECTION_IMAGE,
-          data: {
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/eureka.png`,
-            limitMaxWidth: true,
-            imageAlt: "Spreadsheet bonanza!",
-          },
-        },
-        {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: "Eureka!",
@@ -365,12 +357,23 @@ export const CASE_9 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
+        },
+        {
           template: SECTION_ELEMENTS.QUOTE,
           data: {
+            isFullScreen: true,
+            bgMedia: {
+              type: BG_MEDIA_TYPES.IMAGE,
+              mediaUrl: `${SETTINGS.MEDIA_BASE_URL}/quote-bg.jpg`,
+            },
             quote:
               "77.5% of the searches could be manually mapped to existing products!",
             cite: "Me (being sneaky)",
           },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
@@ -498,7 +501,7 @@ export const CASE_9 = {
         {
           template: SECTION_ELEMENTS.RESULT,
           data: {
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/result.png`,
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/result-desktop.png`,
             bgColor: SETTINGS.BG_COLOR,
             text: (
               <>

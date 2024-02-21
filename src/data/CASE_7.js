@@ -32,6 +32,7 @@ const SETTINGS = {
     },
     TOOLS_AND_METHODS: {
       label: TOOLS_AND_METHODS.LABEL,
+      renderAsList: true,
       value: [
         TOOLS_AND_METHODS.FIELD_STUDIES,
         TOOLS_AND_METHODS.SURVEYS,
@@ -67,12 +68,13 @@ export const CASE_7 = {
       navBgColor: SETTINGS.BG_COLOR,
       elements: [
         {
-          template: SECTION_ELEMENTS.COVER,
+          template: SECTION_ELEMENTS.SECTION_HERO,
           data: {
             bgColor: SETTINGS.BG_COLOR,
             caption: {
               overline: "Global fitness chain",
               title: "pre-study",
+              h: 1,
               text: <Paragraph xxl>When fitness meets ecommerce</Paragraph>,
             },
             fgImage: {
@@ -80,9 +82,12 @@ export const CASE_7 = {
               mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
             highlights: [
-              SETTINGS.KEY_FIGURES.CASE_TYPE,
-              SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS,
-              SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+              [
+                SETTINGS.KEY_FIGURES.CASE_TYPE,
+                SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+                SETTINGS.KEY_FIGURES.CASE_YEAR,
+              ],
+              [SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS],
             ],
           },
         },
@@ -111,7 +116,6 @@ export const CASE_7 = {
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
-            overline: "Background",
             title: <>Exploring new business</>,
             h: 2,
             text: (

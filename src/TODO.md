@@ -1,34 +1,29 @@
 TODO list (What's left before you're done)
-Mobile links are not working.
-SECTION_ELEMENTS.OVERVIEW -> Most likely not in use (other than in old, unfinished cases. Clean up old cases and remove. )
-SECTION_HERO -> Add support for background image to have same effect as blockquote background image
 SECTION_ELEMENTS.CASE_THUMBNAIL -> Update case thumbnails to use new image aspect ratio (1600 \* 1080)
-
-CASE_10 -> Better result picture (figure out what to do about the height)
-CASE_10 -> Add image of the final result
-CASE_09 -> Better result picture
-CASE_09 -> use quote with image background of the excel sheet in the background but blurred.
-CASE_07 -> Better hero image
-CASE_07 -> Add pictures of the report.
-CASE_05 -> Better hero image
-CASE_04 -> Better hero image
-CASE_03 -> Better hero image
 CASE_02 -> Better hero image
 CASE_01 -> Better hero image
+SECTION_HERO -> Add support for background image to have same effect as blockquote background image
 
-FIXES:
+ONCE DONE:
+CASE_07 -> Add pictures of the report.
+RESULT -> Add support for mobile (like in cover images)
+Check the site on mobile and do whatever it takes to get it working.
+SECTION_ELEMENTS.CASE_THUMBNAILS -> Mobile is not implemented.
+Check -> left alignment on mobile and desktop
+SECTION_IMAGE: add support for parallax effect (can be nice to have on non-content-critical images)
+Consider using a more consitent color scheme 3 colors or so (pastels)
+
+OLD FIXES (NOT SURE IF RELEVANT ANYMORE):
+ADDITIONAL_CASES -> Fix design of cases to work with 3 column layout. Fix title misalignment
+CaseThumbnail -> Fix better tag for COMING SOON cases.
 LANDING_PAGE -> Is light is not working (because section has a background color so it overrides the element color context)
 MOBILE_MENU -> Implement staggered menulink animations.
-CaseThumbnail -> Fix better tag for COMING SOON cases.
 SECTION_IMAGE: make selectable if you want it to scale down or preserve height
-CASE_THUMBNAILS -> Mobile is not implemented.
-ADDITIONAL_CASES -> Fix design of cases to work with 3 column layout. Fix title misalignment
-NOTE -> fix left alignment
 
-CONTENT:
-case-8 -> FINISH ME!
-case-6 -> FINISH ME!
-CASE-1 -> Fix better images so it works on mobile
+CONTENT CLEANUP:
+case-8 -> FINISH OR REMOVE!
+case-6 -> FINISH OR REMOVE!
+SECTION_ELEMENTS.OVERVIEW -> Most likely not in use (other than in old, unfinished cases. Clean up old cases and remove. )
 
 One day...
 Use Contentful for content.

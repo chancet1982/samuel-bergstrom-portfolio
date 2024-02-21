@@ -27,6 +27,7 @@ const SETTINGS = {
     },
     TOOLS_AND_METHODS: {
       label: TOOLS_AND_METHODS.LABEL,
+      renderAsList: true,
       value: [
         TOOLS_AND_METHODS.COMPETITOR_ANALYSIS,
         TOOLS_AND_METHODS.FLOW_MAPPING,
@@ -49,11 +50,7 @@ export const CASE_2 = {
     bgColor: SETTINGS.BG_COLOR,
     caption: {
       overline: "Renal Care",
-      title: (
-        <>
-          Renal care <br /> Companion App
-        </>
-      ),
+      title: <>Renal care Companion App</>,
       text: (
         <Paragraph xxl>Empowering patients & improving treatment.</Paragraph>
       ),
@@ -68,16 +65,13 @@ export const CASE_2 = {
       navBgColor: SETTINGS.BG_COLOR,
       elements: [
         {
-          template: SECTION_ELEMENTS.COVER,
+          template: SECTION_ELEMENTS.SECTION_HERO,
           data: {
             bgColor: SETTINGS.BG_COLOR,
             caption: {
               overline: "Renal Care",
-              title: (
-                <>
-                  Renal care <br /> Companion App
-                </>
-              ),
+              title: <>Renal care Companion App</>,
+              h: 1,
               text: (
                 <Paragraph xxl>
                   Empowering patients & improving treatment.
@@ -89,9 +83,12 @@ export const CASE_2 = {
               mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
             highlights: [
-              SETTINGS.KEY_FIGURES.CASE_TYPE,
-              SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS,
-              SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+              [
+                SETTINGS.KEY_FIGURES.CASE_TYPE,
+                SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+                SETTINGS.KEY_FIGURES.CASE_YEAR,
+              ],
+              [SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS],
             ],
           },
         },

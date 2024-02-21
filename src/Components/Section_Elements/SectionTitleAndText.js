@@ -59,8 +59,9 @@ ${({ $isHalfScreen }) =>
       display: "flex",
       minHeight: "50vh",
       /* alignItems: "center", */
-      justifyContent: "center",
+      justifyContent: "flex-end",
       flexDirection: "column",
+      paddingBottom: padding.insideElements.quadruple,
     }}
 `;
 

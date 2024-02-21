@@ -24,6 +24,7 @@ const SETTINGS = {
     },
     TOOLS_AND_METHODS: {
       label: TOOLS_AND_METHODS.LABEL,
+      renderAsList: true,
       value: [
         TOOLS_AND_METHODS.INTERVIEWS,
         TOOLS_AND_METHODS.FLOW_MAPPING,
@@ -56,12 +57,13 @@ export const CASE_1 = {
       navBgColor: SETTINGS.BG_COLOR,
       elements: [
         {
-          template: SECTION_ELEMENTS.COVER,
+          template: SECTION_ELEMENTS.SECTION_HERO,
           data: {
             bgColor: SETTINGS.BG_COLOR,
             caption: {
               overline: "Cash Distribution",
               title: "Courier App redesign",
+              h: 1,
               text: (
                 <Paragraph xxl>
                   Redesign as an oppurtunity for change.
@@ -73,9 +75,12 @@ export const CASE_1 = {
               mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
             highlights: [
-              SETTINGS.KEY_FIGURES.CASE_TYPE,
-              SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS,
-              SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+              [
+                SETTINGS.KEY_FIGURES.CASE_TYPE,
+                SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+                SETTINGS.KEY_FIGURES.CASE_YEAR,
+              ],
+              [SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS],
             ],
           },
         },

@@ -22,6 +22,7 @@ const SETTINGS = {
     },
     TOOLS_AND_METHODS: {
       label: TOOLS_AND_METHODS.LABEL,
+      renderAsList: true,
       value: [
         TOOLS_AND_METHODS.INTERVIEWS,
         TOOLS_AND_METHODS.COMPETITOR_ANALYSIS,
@@ -44,12 +45,7 @@ export const CASE_3 = {
     bgColor: SETTINGS.BG_COLOR,
     caption: {
       overline: "Healthcare",
-      title: (
-        <>
-          Digital
-          <br /> pathology
-        </>
-      ),
+      title: <>Digital pathology</>,
       text: <Paragraph xxl>Tissue scanner interface design</Paragraph>,
     },
     fgImage: {
@@ -62,17 +58,13 @@ export const CASE_3 = {
       navBgColor: SETTINGS.BG_COLOR,
       elements: [
         {
-          template: SECTION_ELEMENTS.COVER,
+          template: SECTION_ELEMENTS.SECTION_HERO,
           data: {
             bgColor: SETTINGS.BG_COLOR,
             caption: {
               overline: "Healthcare",
-              title: (
-                <>
-                  Digital
-                  <br /> pathology
-                </>
-              ),
+              title: <>Digital pathology</>,
+              h: 1,
               text: <Paragraph xxl>Tissue scanner interface design</Paragraph>,
             },
             fgImage: {
@@ -80,9 +72,12 @@ export const CASE_3 = {
               mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
             highlights: [
-              SETTINGS.KEY_FIGURES.CASE_TYPE,
-              SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS,
-              SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+              [
+                SETTINGS.KEY_FIGURES.CASE_TYPE,
+                SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+                SETTINGS.KEY_FIGURES.CASE_YEAR,
+              ],
+              [SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS],
             ],
           },
         },

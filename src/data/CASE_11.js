@@ -14,7 +14,7 @@ import Span from "../Components/Shared/Span";
 
 /* TODO: Add a slide about creating a design system (mostly a filler with some text above to explain why there is a missmatch) */
 const SETTINGS = {
-  BG_COLOR: "#FFB100",
+  BG_COLOR: "#F0E7D2",
   URL: "/cases/11",
   MEDIA_BASE_URL: "assets/case-11",
   KEY_FIGURES: {
@@ -29,6 +29,7 @@ const SETTINGS = {
     },
     TOOLS_AND_METHODS: {
       label: TOOLS_AND_METHODS.LABEL,
+      renderAsList: true,
       value: [
         TOOLS_AND_METHODS.SURVEYS,
         TOOLS_AND_METHODS.WEB_ANALYTICS,
@@ -70,20 +71,16 @@ export const CASE_11 = {
       navBgColor: SETTINGS.BG_COLOR,
       elements: [
         {
-          template: SECTION_ELEMENTS.COVER,
+          template: SECTION_ELEMENTS.SECTION_HERO,
           data: {
             bgColor: SETTINGS.BG_COLOR,
             caption: {
               overline: "Price Comparison Service",
-              title: (
-                <>
-                  Non-new <br /> products.
-                </>
-              ),
+              title: <>Non-new products.</>,
+              h: 1,
               text: (
                 <Paragraph xxl>
-                  Helping stores sell demo, <br /> refurbished, and used
-                  products
+                  Helping stores sell demo, refurbished, and used products
                 </Paragraph>
               ),
             },
@@ -92,9 +89,12 @@ export const CASE_11 = {
               mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
             highlights: [
-              SETTINGS.KEY_FIGURES.CASE_TYPE,
-              SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS,
-              SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+              [
+                SETTINGS.KEY_FIGURES.CASE_TYPE,
+                SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+                SETTINGS.KEY_FIGURES.CASE_YEAR,
+              ],
+              [SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS],
             ],
           },
         },

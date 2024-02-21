@@ -12,7 +12,7 @@ import Note from "../Components/Shared/Note";
 import List from "../Components/Shared/List";
 
 const SETTINGS = {
-  BG_COLOR: "#00ADDB",
+  BG_COLOR: "#058DB2",
   URL: "/cases/10",
   MEDIA_BASE_URL: "assets/case-10",
   KEY_FIGURES: {
@@ -27,6 +27,7 @@ const SETTINGS = {
     },
     TOOLS_AND_METHODS: {
       label: TOOLS_AND_METHODS.LABEL,
+      renderAsList: true,
       value: [
         TOOLS_AND_METHODS.WORKSHOPS,
         TOOLS_AND_METHODS.SURVEYS,
@@ -65,15 +66,16 @@ export const CASE_10 = {
       navBgColor: SETTINGS.BG_COLOR,
       elements: [
         {
-          template: SECTION_ELEMENTS.COVER,
+          template: SECTION_ELEMENTS.SECTION_HERO,
           data: {
             bgColor: SETTINGS.BG_COLOR,
             caption: {
               overline: "Price Comparison Service",
               title: "Increasing revenue",
+              h: 1,
               text: (
                 <Paragraph xxl>
-                  Increasing traffic <br /> to paying customers
+                  Increasing traffic to paying customers
                 </Paragraph>
               ),
             },
@@ -82,9 +84,12 @@ export const CASE_10 = {
               mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
             highlights: [
-              SETTINGS.KEY_FIGURES.CASE_TYPE,
-              SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS,
-              SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+              [
+                SETTINGS.KEY_FIGURES.CASE_TYPE,
+                SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+                SETTINGS.KEY_FIGURES.CASE_YEAR,
+              ],
+              [SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS],
             ],
           },
         },
@@ -558,7 +563,7 @@ export const CASE_10 = {
         {
           template: SECTION_ELEMENTS.RESULT,
           data: {
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/result.png`,
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/result-desktop.png`,
             bgColor: SETTINGS.BG_COLOR,
             results: [{ value: "5.7", description: "mil. increse in revenue" }],
             text: (

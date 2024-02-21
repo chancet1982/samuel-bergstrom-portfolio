@@ -18,7 +18,7 @@ const SETTINGS = {
   KEY_FIGURES: {
     CASE_TYPE: {
       label: CASE_TYPES.LABEL,
-      value: [CASE_TYPES.PRODUCT_DISCOVERY, CASE_TYPES.CONCEPT_VISUALISATION],
+      value: [CASE_TYPES.PRODUCT_DISCOVERY],
     },
     CASE_PLATFORMS: {
       label: PLATFORMS.LABEL,
@@ -26,15 +26,18 @@ const SETTINGS = {
     },
     TOOLS_AND_METHODS: {
       label: TOOLS_AND_METHODS.LABEL,
+      renderAsList: true,
       value: [
+        TOOLS_AND_METHODS.COMPETITOR_ANALYSIS,
+        TOOLS_AND_METHODS.FIELD_STUDIES,
         TOOLS_AND_METHODS.INTERVIEWS,
         TOOLS_AND_METHODS.WORKSHOPS,
         TOOLS_AND_METHODS.SURVEYS,
       ],
     },
     MY_ROLE: { label: ROLES.LABEL, value: ROLES.LEAD },
-    CASE_YEAR: { label: "Year:", value: "2022" },
-    CASE_DURATION: { label: "Duration:", value: "2 monthS" },
+    CASE_YEAR: { label: "Year:", value: "2023" },
+    CASE_DURATION: { label: "Duration:", value: "2 months" },
   },
 };
 
@@ -60,16 +63,15 @@ export const CASE_13 = {
       navBgColor: SETTINGS.BG_COLOR,
       elements: [
         {
-          template: SECTION_ELEMENTS.COVER,
+          template: SECTION_ELEMENTS.SECTION_HERO,
           data: {
             bgColor: SETTINGS.BG_COLOR,
             caption: {
               overline: "Restaurant wholesales",
               title: <>Wholesales, reimagined</>,
+              h: 1,
               text: (
-                <Paragraph xxl>
-                  Creating a vision for restaurant wholesalers
-                </Paragraph>
+                <Paragraph xxl>A different take on resturant supply</Paragraph>
               ),
             },
             fgImage: {
@@ -77,9 +79,12 @@ export const CASE_13 = {
               mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
             },
             highlights: [
-              SETTINGS.KEY_FIGURES.CASE_TYPE,
-              SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS,
-              SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+              [
+                SETTINGS.KEY_FIGURES.CASE_TYPE,
+                SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+                SETTINGS.KEY_FIGURES.CASE_YEAR,
+              ],
+              [SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS],
             ],
           },
         },
@@ -330,21 +335,27 @@ export const CASE_13 = {
             ),
           },
         },
-        /* {
+        {
+          template: SECTION_ELEMENTS.SPACER_SMALL,
+        },
+        {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/customer-journey.jpg`,
             imageAlt: "customer-journey",
             limitMaxWidth: true,
           },
-        }, */
-        {
+        },
+        /* {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/flows.jpg`,
             imageAlt: "flows",
             limitMaxWidth: true,
           },
+        }, */
+        {
+          template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
