@@ -1,9 +1,5 @@
 ----- TODO list (What's left before you're done) -----
 SECTION_ELEMENTS.CASE_THUMBNAIL -> Go through all cases and make sure that there is a good thumbnail for desktop and mobile (1024\*1024)
-
-CASE_06 -> Better thumbnail image,
-CASE_05 -> Better thumbnail image,
-CASE_04 -> Better thumbnail image,
 CASE_03 -> Better thumbnail image,
 CASE_02 -> Better thumbnail image, Better hero image
 CASE_01 -> Better thumbnail image, Better hero image
