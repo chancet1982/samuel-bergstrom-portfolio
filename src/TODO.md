@@ -1,18 +1,30 @@
------ TODO list (What's left before you're done) -----
-CASE_01 -> Better thumbnail image, Better hero image
-SECTION_HERO -> Add support for background image to have same effect as blockquote background image
-
------ ONCE DONE -----
+----- Fixes for mobile version only -----
+CASE_2 -> Update cover-mobile.png AND thumbnail-mobile.png
+CASE_3 -> Update cover-mobile.png AND thumbnail-mobile.png
+CASE_4 -> Update cover-mobile.png AND thumbnail-mobile.png
+CASE_5 -> Update cover-mobile.png AND thumbnail-mobile.png
+CASE_7 -> Update cover-mobile.png AND thumbnail-mobile.png
+CASE_9 -> Update cover-mobile.png AND thumbnail-mobile.png
+CASE_10 -> Update cover-mobile.png AND thumbnail-mobile.png
+CASE_11 -> Update cover-mobile.png AND thumbnail-mobile.png
+CASE_12 -> Update cover-mobile.png AND thumbnail-mobile.png
+CASE_13 -> Update cover-mobile.png AND thumbnail-mobile.png
 KEY_FIGURES -> doesnt scale on mobile nicely
 SNEAKPEEK? -> doesnt look nice on mobile
-SECTION_ELEMENTS.CASE_THUMBNAIL -> Go through all cases and make sure that there is a good thumbnail-mobile (1024\*1024)
-CASE_07 -> Add pictures of the report.
 RESULT -> Add support for mobile (like in cover images)
 Check the site on mobile and do whatever it takes to get it working.
+
+----- TODO list (What's left before you're done) -----
+Change "Logo" to be plain-text a la adrian
+
+----- ONCE DONE -----
+SECTION_HERO -> Add support for background image to have same effect as blockquote background image
+SECTION_IMAGE: add support for parallax effect (can be nice to have on non-content-critical images)
+CASE_07 -> Add pictures of the report.
 SECTION_ELEMENTS.CASE_THUMBNAILS -> Mobile is not implemented.
 Check -> left alignment on mobile and desktop
-SECTION_IMAGE: add support for parallax effect (can be nice to have on non-content-critical images)
 Consider using a more consitent color scheme 3 colors or so (pastels)
+Generally speaking start considering how to make things more "monochromatic" and modern (gradients in the background, gradient headlines etc)
 
 ----- OLD FIXES (NOT SURE IF RELEVANT ANYMORE) -----
 ADDITIONAL_CASES -> Fix design of cases to work with 3 column layout. Fix title misalignment
