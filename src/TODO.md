@@ -1,10 +1,4 @@
 ----- Fixes for mobile version only -----
-CASE_4 -> Update cover-mobile.png AND thumbnail-mobile.png
-CASE_5 -> Update cover-mobile.png AND thumbnail-mobile.png
-CASE_7 -> Update cover-mobile.png AND thumbnail-mobile.png
-CASE_9 -> Update cover-mobile.png AND thumbnail-mobile.png
-CASE_10 -> Update cover-mobile.png AND thumbnail-mobile.png
-CASE_11 -> Update cover-mobile.png AND thumbnail-mobile.png
 CASE_12 -> Update cover-mobile.png AND thumbnail-mobile.png
 KEY_FIGURES -> doesnt scale on mobile nicely (pushes content in case_13 for example)
 SNEAKPEEK? -> doesnt look nice on mobile
