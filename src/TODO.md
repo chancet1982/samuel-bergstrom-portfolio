@@ -1,5 +1,6 @@
 ----- Fixes for mobile version only -----
-CASE_12 -> Update cover-mobile.png AND thumbnail-mobile.png
+SECTION_HERO -> Add support for background image to have same effect as blockquote background image
+SECTION_IMAGE: add support for parallax effect (can be nice to have on non-content-critical images)
 KEY_FIGURES -> doesnt scale on mobile nicely (pushes content in case_13 for example)
 SNEAKPEEK? -> doesnt look nice on mobile
 RESULT -> Add support for mobile (like in cover images)
@@ -9,8 +10,6 @@ Check the site on mobile and do whatever it takes to get it working.
 Change "Logo" to be plain-text a la adrian
 
 ----- ONCE DONE -----
-SECTION_HERO -> Add support for background image to have same effect as blockquote background image
-SECTION_IMAGE: add support for parallax effect (can be nice to have on non-content-critical images)
 CASE_07 -> Add pictures of the report.
 SECTION_ELEMENTS.CASE_THUMBNAILS -> Mobile is not implemented.
 Check -> left alignment on mobile and desktop
