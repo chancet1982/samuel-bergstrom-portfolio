@@ -53,8 +53,9 @@ export const CASE_3 = {
       text: <Paragraph xxl>Tissue scanner interface design</Paragraph>,
     },
     fgImage: {
-      imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
-      mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
+      imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-desktop.png`,
+      mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-mobile.png`,
+      imageAlt: "thumbnail",
     },
   },
   details: [
@@ -74,6 +75,7 @@ export const CASE_3 = {
             fgImage: {
               imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
               mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
+              imageAlt: "hero image",
             },
             highlights: [
               [

@@ -1,6 +1,4 @@
 ----- Fixes for mobile version only -----
-CASE_2 -> Update cover-mobile.png AND thumbnail-mobile.png
-CASE_3 -> Update cover-mobile.png AND thumbnail-mobile.png
 CASE_4 -> Update cover-mobile.png AND thumbnail-mobile.png
 CASE_5 -> Update cover-mobile.png AND thumbnail-mobile.png
 CASE_7 -> Update cover-mobile.png AND thumbnail-mobile.png
@@ -8,8 +6,7 @@ CASE_9 -> Update cover-mobile.png AND thumbnail-mobile.png
 CASE_10 -> Update cover-mobile.png AND thumbnail-mobile.png
 CASE_11 -> Update cover-mobile.png AND thumbnail-mobile.png
 CASE_12 -> Update cover-mobile.png AND thumbnail-mobile.png
-CASE_13 -> Update cover-mobile.png AND thumbnail-mobile.png
-KEY_FIGURES -> doesnt scale on mobile nicely
+KEY_FIGURES -> doesnt scale on mobile nicely (pushes content in case_13 for example)
 SNEAKPEEK? -> doesnt look nice on mobile
 RESULT -> Add support for mobile (like in cover images)
 Check the site on mobile and do whatever it takes to get it working.
