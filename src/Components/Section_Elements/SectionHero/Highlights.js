@@ -27,6 +27,7 @@ const StyledHighlights = styled(motion.div)`
     margin-bottom: ${padding.insideElements.single};
     justify-content: flex-start;
     align-items: flex-start;
+    text-align: left;
 
     ul {
       text-align: left;

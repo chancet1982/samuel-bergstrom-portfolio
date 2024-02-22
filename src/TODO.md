@@ -1,13 +1,11 @@
 ----- TODO list (What's left before you're done) -----
-SECTION_ELEMENTS.CASE_THUMBNAIL -> Go through all cases and make sure that there is a good thumbnail for desktop and mobile (1024\*1024)
-CASE_03 -> Better thumbnail image,
-CASE_02 -> Better thumbnail image, Better hero image
 CASE_01 -> Better thumbnail image, Better hero image
 SECTION_HERO -> Add support for background image to have same effect as blockquote background image
-KEY_FIGURES -> doesnt scale on mobile nicely
-SNEAKPEEK? -> doesnt look nice on mobile
 
 ----- ONCE DONE -----
+KEY_FIGURES -> doesnt scale on mobile nicely
+SNEAKPEEK? -> doesnt look nice on mobile
+SECTION_ELEMENTS.CASE_THUMBNAIL -> Go through all cases and make sure that there is a good thumbnail-mobile (1024\*1024)
 CASE_07 -> Add pictures of the report.
 RESULT -> Add support for mobile (like in cover images)
 Check the site on mobile and do whatever it takes to get it working.
@@ -24,9 +22,8 @@ MOBILE_MENU -> Implement staggered menulink animations.
 SECTION_IMAGE: make selectable if you want it to scale down or preserve height
 
 ----- CONTENT CLEANUP: -----
-case-8 -> FINISH OR REMOVE!
-case-6 -> FINISH OR REMOVE!
 SECTION_ELEMENTS.OVERVIEW -> Most likely not in use (other than in old, unfinished cases. Clean up old cases and remove. )
+FINISH Cases 6 & 8 (currently unused)
 
 One day...
 Use Contentful for content.
