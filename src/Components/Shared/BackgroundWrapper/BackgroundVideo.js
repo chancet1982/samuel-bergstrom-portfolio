@@ -45,7 +45,6 @@ function BackgroundVideo({
   ...rest
 }) {
   const mediaUrl = bgMedia ? bgMedia.mediaUrl : null;
-  console.log("rendering BackgroundWrapper -> BackgroundImageWithScrollScale");
 
   return (
     <StyledBackground

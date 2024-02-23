@@ -85,8 +85,6 @@ function BackgroundWrapper({
     return { children };
   };
 
-  // console.log(figureOutWhatTypeOfWrapperIsNeeded());
-
   return figureOutWhatTypeOfWrapperIsNeeded();
 }
 

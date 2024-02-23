@@ -16,6 +16,8 @@ const StyledBackground = styled(motion.div)`
     $bgMedia && {
       backgroundImage: `url(${process.env.PUBLIC_URL}/${$bgMedia})`,
       backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundAttachment: "fixed",
     }}
 
   ${({ $isPadded }) =>

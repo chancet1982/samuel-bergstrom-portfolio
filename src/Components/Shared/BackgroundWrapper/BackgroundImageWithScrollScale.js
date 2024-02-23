@@ -39,7 +39,7 @@ const StyledBackgroundImage = styled(motion.div)`
       backgroundImage: `url(${process.env.PUBLIC_URL}/${$mediaUrl})`,
       backgroundSize: "cover",
       backgroundPosition: "center",
-      backgroundAttachment: "scroll",
+      backgroundAttachment: "fixed",
     }}
 `;
 
@@ -59,8 +59,6 @@ function BackgroundImageWithScrollScale({
   const parallaxEffect = useTransform(scrollYProgress, [0, 1], ["1", "1.32"]);
   // const smoothParallaxEffect = useSpring(parallaxEffect);
   const mediaUrl = bgMedia ? bgMedia.mediaUrl : null;
-
-  console.log("rendering BackgroundWrapper -> BackgroundImageWithScrollScale");
 
   return (
     <StyledBackground

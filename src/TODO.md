@@ -1,9 +1,12 @@
 ----- Fixes for mobile version only -----
-SECTION_HERO -> Add support for background image to have same effect as blockquote background image
 SECTION_IMAGE: add support for parallax effect (can be nice to have on non-content-critical images)
 KEY_FIGURES -> doesnt scale on mobile nicely (pushes content in case_13 for example)
 SNEAKPEEK? -> doesnt look nice on mobile
 RESULT -> Add support for mobile (like in cover images)
+RESULT -> Check if "sticky" is working as it should (CASE_10, CASE_7, CASE_5, CASE_4, CASE_3, CASE_2, CASE_1 not working but CASE_9 does)
+COVER-DESKTOP -> CASE_2 is blurry
+BLOCK_QUOTE -> CASE_1 is too close to the text above it.
+TIMELINE -> ABOUT_ME doesnt look good (too much whitespace between year and content.)
 Check the site on mobile and do whatever it takes to get it working.
 
 ----- TODO list (What's left before you're done) -----
