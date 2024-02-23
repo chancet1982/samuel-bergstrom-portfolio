@@ -5,13 +5,13 @@ import { motion } from "framer-motion";
 import Quote from "./BlockQuote/Quote";
 import Cite from "./BlockQuote/Cite";
 import padding from "../../theme/padding";
-import ParallaxBackgroundImage from "../Shared/ParallaxBackgroundImage";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import colors from "../../theme/colors";
 import sizes from "../../theme/sizes";
 import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
 import breakpoints from "../../theme/breakpoints";
 import useBgColor from "../../utils/useBgColor";
+import BackgroundWrapper from "../Shared/BackgroundWrapper";
 
 const StyledBlockWrapper = styled(motion.div)`
   padding-right: ${padding.outsideElements.double};
@@ -83,9 +83,9 @@ function BlockQuote({ cite, quote, bgColor, bgMedia, isFullScreen }) {
   );
 
   return bgColor || bgMedia ? (
-    <ParallaxBackgroundImage bgColor={bgColor} bgMedia={bgMedia}>
+    <BackgroundWrapper bgColor={bgColor} bgMedia={bgMedia} isParallaxOnScroll>
       {renderBlockQuote()}
-    </ParallaxBackgroundImage>
+    </BackgroundWrapper>
   ) : (
     renderBlockQuote()
   );

@@ -40,6 +40,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
           <SectionHero
             key={elementKey}
             caption={data.caption}
+            bgMedia={data.bgMedia}
             bgColor={data.bgColor}
             fgImage={data.fgImage}
             highlights={data.highlights}

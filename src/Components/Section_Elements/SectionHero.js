@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, useRef } from "react";
+import React, { useEffect, useContext } from "react";
 import PropTypes from "prop-types";
 import BackgroundWrapper from "../Shared/BackgroundWrapper";
 import SectionTitleAndText from "./SectionTitleAndText";
@@ -6,12 +6,12 @@ import SectionImage from "./SectionImage";
 import colors from "../../theme/colors";
 import { ElementColorContext } from "../../Context/ElementColorContext";
 import Highlights from "./SectionHero/Highlights";
+import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
 
-function SectionHero({ bgColor, fgImage, caption, highlights }) {
+function SectionHero({ bgColor, bgMedia, fgImage, caption, highlights }) {
   const { title, h, text } = caption;
-  const { imageUrl, mobileImageUrl, imageAlt } = fgImage;
 
-  const ref = useRef(null);
+  const { imageUrl, mobileImageUrl, imageAlt } = fgImage || {};
 
   const [, setElementBgColor] = useContext(ElementColorContext);
 
@@ -20,9 +20,8 @@ function SectionHero({ bgColor, fgImage, caption, highlights }) {
       setElementBgColor(bgColor);
     }
   }, [setElementBgColor, bgColor]);
-
   return (
-    <BackgroundWrapper bgColor={bgColor} ref={ref}>
+    <BackgroundWrapper bgMedia={bgMedia} bgColor={bgColor} isScaleOnScroll>
       <SectionTitleAndText
         isSticky
         isCentered
@@ -32,24 +31,28 @@ function SectionHero({ bgColor, fgImage, caption, highlights }) {
         text={text}
         h={h}
       />
-      <SectionImage
-        imageUrl={imageUrl}
-        mobileImageUrl={mobileImageUrl}
-        imageAlt={imageAlt}
-        limitMaxWidth
-      />
-      <BackgroundWrapper
-        bgColor={bgColor}
-        style={{ position: "relative", zIndex: "1" }}
-      >
+      {fgImage && (
+        <SectionImage
+          imageUrl={imageUrl}
+          mobileImageUrl={mobileImageUrl}
+          imageAlt={imageAlt}
+          limitMaxWidth
+        />
+      )}
+
+      <div style={{ position: "relative", zIndex: "1" }}>
         <Highlights columns={highlights} bgColor={bgColor} />
-      </BackgroundWrapper>
+      </div>
     </BackgroundWrapper>
   );
 }
 
 SectionHero.propTypes = {
   bgColor: PropTypes.string,
+  bgMedia: PropTypes.shape({
+    type: PropTypes.oneOf([BG_MEDIA_TYPES.IMAGE, BG_MEDIA_TYPES.VIDEO]),
+    mediaUrl: PropTypes.string,
+  }),
   fgImage: PropTypes.shape({
     imageUrl: PropTypes.string,
     mobileImageUrl: PropTypes.string,
@@ -77,6 +80,7 @@ SectionHero.propTypes = {
 
 SectionHero.defaultProps = {
   bgColor: colors.offwhite,
+  bgMedia: null,
   fgImage: null,
   caption: {
     overline: "defualt overline",

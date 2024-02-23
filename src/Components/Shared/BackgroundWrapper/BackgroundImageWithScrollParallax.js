@@ -3,25 +3,19 @@ import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { motion, useTransform, useScroll } from "framer-motion";
-import colors from "../../theme/colors";
-import padding from "../../theme/padding";
-import sizes from "../../theme/sizes";
-import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
-import breakpoints from "../../theme/breakpoints";
+import padding from "../../../theme/padding";
+import sizes from "../../../theme/sizes";
+import { BG_MEDIA_TYPES } from "../../../data/dictionaries/BG_MEDIA_TYPES";
+import breakpoints from "../../../theme/breakpoints";
 
 const StyledBackground = styled(motion.div)`
   height: 100%;
   width: 100%;
   position: relative;
-  overflow: hidden;
+  contain: paint;
 
-  ${({ $bgColor }) =>
-    $bgColor && {
-      background: $bgColor || colors.offwhite,
-    }}
-
-  ${({ $bgMedia, $bgColor, $isPadded }) =>
-    (($bgMedia && $isPadded) || ($bgColor && $isPadded)) && {
+  ${({ $isPadded }) =>
+    $isPadded && {
       paddingTop: padding.outsideElements.double,
       paddingBottom: padding.outsideElements.double,
     }}
@@ -41,15 +35,16 @@ const StyledBackgroundImage = styled(motion.div)`
   width: 100%;
   position: absolute;
   scale: 1.32;
-  ${({ $bgMedia }) =>
-    $bgMedia && {
-      backgroundImage: `url(${process.env.PUBLIC_URL}/${$bgMedia})`,
+  ${({ $mediaUrl }) =>
+    $mediaUrl && {
+      backgroundImage: `url(${process.env.PUBLIC_URL}/${$mediaUrl})`,
       backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundAttachment: "fixed",
     }}
 `;
 
-function BackgroundWrapper({
-  bgColor,
+function BackgroundImageWithScrollParallax({
   bgMedia,
   limitMaxWidth,
   children,
@@ -66,42 +61,35 @@ function BackgroundWrapper({
   // const smoothParallaxEffect = useSpring(parallaxEffect);
   const mediaUrl = bgMedia ? bgMedia.mediaUrl : null;
 
-  return bgColor || mediaUrl ? (
+  return (
     <StyledBackground
       ref={ref}
-      $bgColor={bgColor}
       $limitMaxWidth={limitMaxWidth}
       $isPadded={isPadded}
-      $bgMedia={mediaUrl}
       {...rest}
     >
       <StyledBackgroundImage
-        $bgMedia={mediaUrl}
+        $mediaUrl={mediaUrl}
         style={{ top: parallaxEffect }}
       />
       {children}
     </StyledBackground>
-  ) : (
-    { children }
   );
 }
 
-BackgroundWrapper.propTypes = {
-  bgColor: PropTypes.string,
+BackgroundImageWithScrollParallax.propTypes = {
   bgMedia: PropTypes.shape({
     type: PropTypes.oneOf([BG_MEDIA_TYPES.IMAGE, BG_MEDIA_TYPES.VIDEO]),
     mediaUrl: PropTypes.string,
-  }),
+  }).isRequired,
   children: PropTypes.node.isRequired,
   limitMaxWidth: PropTypes.bool,
   isPadded: PropTypes.bool,
 };
 
-BackgroundWrapper.defaultProps = {
-  bgColor: null,
-  bgMedia: null,
+BackgroundImageWithScrollParallax.defaultProps = {
   limitMaxWidth: false,
   isPadded: true,
 };
 
-export default BackgroundWrapper;
+export default BackgroundImageWithScrollParallax;

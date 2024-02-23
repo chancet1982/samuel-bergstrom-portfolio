@@ -87,7 +87,7 @@ function SectionTitleAndText({
   const { height } = useWindowSize();
   // const coverHeight = (height / 100) * 100; // For Now only works with 100%
   const fadeStart = 0;
-  const fadeEnd = height * 0.7;
+  const fadeEnd = height * 0.4;
   const fadeFrom = 1;
   const fadeTo = 0;
 

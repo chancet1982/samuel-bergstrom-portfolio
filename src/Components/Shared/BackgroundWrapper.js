@@ -1,43 +1,12 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from "react";
 import PropTypes from "prop-types";
-import styled from "styled-components";
-import { motion } from "framer-motion";
-import colors from "../../theme/colors";
-import padding from "../../theme/padding";
-import sizes from "../../theme/sizes";
 import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
-import breakpoints from "../../theme/breakpoints";
-
-const StyledBackground = styled(motion.div)`
-  height: 100%;
-  width: 100%;
-
-  ${({ $bgMedia }) =>
-    $bgMedia && {
-      backgroundImage: `url(${process.env.PUBLIC_URL}/${$bgMedia})`,
-      backgroundSize: "cover",
-    }}
-
-  ${({ $bgColor }) =>
-    $bgColor && {
-      background: $bgColor || colors.offwhite,
-    }}
-
-  ${({ $bgMedia, $bgColor, $isPadded }) =>
-    (($bgMedia && $isPadded) || ($bgColor && $isPadded)) && {
-      paddingTop: padding.outsideElements.double,
-      paddingBottom: padding.outsideElements.double,
-    }}
-
-  @media (min-width: ${breakpoints.desktop}px) {
-    ${({ $limitMaxWidth }) =>
-      $limitMaxWidth && {
-        maxWidth: `${sizes.contentWidthLimit}px`,
-        margin: "0 auto",
-      }}
-  }
-`;
+import BackgroundVideo from "./BackgroundWrapper/BackgroundVideo";
+import BackgroundColor from "./BackgroundWrapper/BackgroundColor";
+import BackgroundImage from "./BackgroundWrapper/BackgroundImage";
+import BackgroundImageWithScrollParallax from "./BackgroundWrapper/BackgroundImageWithScrollParallax";
+import BackgroundImageWithScrollScale from "./BackgroundWrapper/BackgroundImageWithScrollScale";
 
 function BackgroundWrapper({
   bgColor,
@@ -45,30 +14,80 @@ function BackgroundWrapper({
   limitMaxWidth,
   children,
   isPadded,
+  isParallaxOnScroll,
+  isScaleOnScroll,
   ...rest
 }) {
-  /* TODO: Add support for video background */
-
-  /* <StyledCoverVideo autoPlay loop muted variants={imageVariants}>
-  <source src={`${process.env.PUBLIC_URL}/${mediaUrl}`} type="video/mp4" />
-  <source src={`${process.env.PUBLIC_URL}/${mediaUrl}`} type="video/webm" />
-  <source src={`${process.env.PUBLIC_URL}/${mediaUrl}`} type="video/ogg" />
-</StyledCoverVideo> */
   const mediaUrl = bgMedia ? bgMedia.mediaUrl : null;
+  /* TODO: return the right wrapper as well based on these conditions */
+  /* TODO: test if Video is working */
+  const figureOutWhatTypeOfWrapperIsNeeded = () => {
+    if (bgMedia) {
+      if (bgMedia.type === BG_MEDIA_TYPES.VIDEO && mediaUrl) {
+        return (
+          <BackgroundVideo
+            bgMedia={bgMedia}
+            limitMaxWidth={limitMaxWidth}
+            isPadded={isPadded}
+            {...rest}
+          >
+            {children}
+          </BackgroundVideo>
+        );
+      }
+      if (mediaUrl && isParallaxOnScroll) {
+        return (
+          <BackgroundImageWithScrollParallax
+            bgMedia={bgMedia}
+            limitMaxWidth={limitMaxWidth}
+            isPadded={isPadded}
+            {...rest}
+          >
+            {children}
+          </BackgroundImageWithScrollParallax>
+        );
+      }
+      if (mediaUrl && isScaleOnScroll) {
+        return (
+          <BackgroundImageWithScrollScale
+            bgMedia={bgMedia}
+            limitMaxWidth={limitMaxWidth}
+            isPadded={isPadded}
+            {...rest}
+          >
+            {children}
+          </BackgroundImageWithScrollScale>
+        );
+      }
+      return (
+        <BackgroundImage
+          bgMedia={bgMedia}
+          limitMaxWidth={limitMaxWidth}
+          isPadded={isPadded}
+          {...rest}
+        >
+          {children}
+        </BackgroundImage>
+      );
+    }
+    if (bgColor) {
+      return (
+        <BackgroundColor
+          $bgColor={bgColor}
+          $limitMaxWidth={limitMaxWidth}
+          $isPadded={isPadded}
+          {...rest}
+        >
+          {children}
+        </BackgroundColor>
+      );
+    }
+    return { children };
+  };
 
-  return bgColor || mediaUrl ? (
-    <StyledBackground
-      $bgColor={bgColor}
-      $bgMedia={mediaUrl}
-      $limitMaxWidth={limitMaxWidth}
-      $isPadded={isPadded}
-      {...rest}
-    >
-      {children}
-    </StyledBackground>
-  ) : (
-    { children }
-  );
+  // console.log(figureOutWhatTypeOfWrapperIsNeeded());
+
+  return figureOutWhatTypeOfWrapperIsNeeded();
 }
 
 BackgroundWrapper.propTypes = {
@@ -80,6 +99,8 @@ BackgroundWrapper.propTypes = {
   children: PropTypes.node.isRequired,
   limitMaxWidth: PropTypes.bool,
   isPadded: PropTypes.bool,
+  isParallaxOnScroll: PropTypes.bool,
+  isScaleOnScroll: PropTypes.bool,
 };
 
 BackgroundWrapper.defaultProps = {
@@ -87,6 +108,8 @@ BackgroundWrapper.defaultProps = {
   bgMedia: null,
   limitMaxWidth: false,
   isPadded: true,
+  isParallaxOnScroll: false,
+  isScaleOnScroll: false,
 };
 
 export default BackgroundWrapper;

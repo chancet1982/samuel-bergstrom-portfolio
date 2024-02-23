@@ -26,6 +26,7 @@ const SETTINGS = {
     },
     TOOLS_AND_METHODS: {
       label: TOOLS_AND_METHODS.LABEL,
+      renderAsList: true,
       value: [TOOLS_AND_METHODS.INTERVIEWS, TOOLS_AND_METHODS.WORKSHOPS],
     },
     CASE_YEAR: { label: "Year:", value: "2022" },
@@ -62,19 +63,22 @@ export const CASE_12 = {
       navBgColor: SETTINGS.BG_COLOR,
       elements: [
         {
-          template: SECTION_ELEMENTS.COVER,
+          template: SECTION_ELEMENTS.SECTION_HERO,
           data: {
+            bgColor: SETTINGS.BG_COLOR,
             bgMedia: {
               type: BG_MEDIA_TYPES.IMAGE,
               mediaUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-bg.jpg`,
             },
+            fgImage: {
+              imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
+              mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-mobile.png`,
+              imageAlt: "hero image",
+            },
             caption: {
               overline: "Fitness & well-being",
-              title: (
-                <>
-                  Creating healthier <br /> habits
-                </>
-              ),
+              title: <>Creating healthier habits</>,
+              h: 1,
               text: (
                 <Paragraph xxl>
                   Positive change through a healthier life begins early
@@ -82,9 +86,12 @@ export const CASE_12 = {
               ),
             },
             highlights: [
-              SETTINGS.KEY_FIGURES.CASE_TYPE,
-              SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS,
-              SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+              [
+                SETTINGS.KEY_FIGURES.CASE_TYPE,
+                SETTINGS.KEY_FIGURES.CASE_PLATFORMS,
+                SETTINGS.KEY_FIGURES.CASE_YEAR,
+              ],
+              [SETTINGS.KEY_FIGURES.TOOLS_AND_METHODS],
             ],
           },
         },
