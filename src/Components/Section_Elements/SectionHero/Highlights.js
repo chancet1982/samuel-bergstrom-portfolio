@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 import { motion } from "framer-motion";
-
+import { v4 as uuid } from "uuid";
 import breakpoints from "../../../theme/breakpoints";
 import ValueAndLabel from "../../Shared/ValueAndLabel";
 import sizes from "../../../theme/sizes";
@@ -43,7 +43,7 @@ const StyledHighlights = styled(motion.div)`
 
 function Highlights({ columns }) {
   const renderColumnContent = (items) => (
-    <div>
+    <div key={uuid()}>
       {items.map(({ value, label, renderAsList }) => (
         <ValueAndLabel
           value={value}
@@ -65,14 +65,16 @@ function Highlights({ columns }) {
 
 Highlights.propTypes = {
   columns: PropTypes.arrayOf(
-    PropTypes.shape({
-      value: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.arrayOf(PropTypes.string),
-      ]).isRequired,
-      renderAsList: PropTypes.bool,
-      label: PropTypes.string.isRequired,
-    })
+    PropTypes.arrayOf(
+      PropTypes.shape({
+        value: PropTypes.oneOfType([
+          PropTypes.string,
+          PropTypes.arrayOf(PropTypes.string),
+        ]),
+        renderAsList: PropTypes.bool,
+        label: PropTypes.string,
+      })
+    )
   ).isRequired,
 };
 

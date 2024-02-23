@@ -10,6 +10,12 @@ Check the site on mobile and do whatever it takes to get it working.
 Change "Logo" to be plain-text a la adrian
 
 ----- ONCE DONE -----
+Add support for Google Analytics + Google taag manager.
+Add bottom navigation in footer
+Limit splash screen to show only once.
+Better response after sending an email (isntead of generic "thanks")
+Add emogi on "submit" button in contact form
+
 CASE_07 -> Add pictures of the report.
 SECTION_ELEMENTS.CASE_THUMBNAILS -> Mobile is not implemented.
 Check -> left alignment on mobile and desktop
