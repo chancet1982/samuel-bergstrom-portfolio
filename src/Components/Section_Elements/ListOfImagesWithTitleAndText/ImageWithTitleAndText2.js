@@ -36,10 +36,10 @@ const StyledImage = styled(motion.div)`
 
   position: absolute;
 
-  @media (max-width: ${breakpoints.mobileLarge - 1}px) {
+  /*@media (max-width: ${breakpoints.mobileLarge - 1}px) {
     top: 50%;
     margin-top: -50%;
-  }
+  }*/
 
   ${({ $imageUrl }) =>
     $imageUrl && {
