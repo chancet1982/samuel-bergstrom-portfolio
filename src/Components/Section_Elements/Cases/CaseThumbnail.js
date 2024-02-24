@@ -221,8 +221,9 @@ function CaseThumbnail({ data, status, caseUrl }) {
             <StyledFgImage
               variants={caseThumbnailImageVariants}
               src={`${process.env.PUBLIC_URL}/${
-                // eslint-disable-next-line no-nested-ternary
-                isMobile ? (isLandscape ? imageUrl : mobileImageUrl) : imageUrl
+                isMobile && !isLandscape && mobileImageUrl
+                  ? mobileImageUrl
+                  : imageUrl
               }`}
               alt={imageAlt}
             />

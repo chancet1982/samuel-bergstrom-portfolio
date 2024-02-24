@@ -93,8 +93,9 @@ function FinalResult({
         <StyledFinalResultContent>
           <Image
             imageUrl={`${process.env.PUBLIC_URL}/${
-              // eslint-disable-next-line no-nested-ternary
-              isMobile ? (isLandscape ? imageUrl : mobileImageUrl) : imageUrl
+              isMobile && !isLandscape && mobileImageUrl
+                ? mobileImageUrl
+                : imageUrl
             }`}
           />
           {(results.length > 0 || text) && (

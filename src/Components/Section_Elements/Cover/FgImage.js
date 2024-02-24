@@ -63,12 +63,7 @@ function FgImage({ imageUrl, mobileImageUrl, imageAlt }) {
     <StyledFgImage
       variants={imageVariants}
       src={`${process.env.PUBLIC_URL}/${
-        // eslint-disable-next-line no-nested-ternary
-        isMobile
-          ? isLandscape
-            ? imageUrl
-            : mobileImageUrl || imageUrl
-          : imageUrl
+        isMobile && !isLandscape && mobileImageUrl ? mobileImageUrl : imageUrl
       }`}
       style={{ scale: coverImageParallax }}
       alt={imageAlt}

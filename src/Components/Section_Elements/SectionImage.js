@@ -1,4 +1,3 @@
-/* eslint-disable no-nested-ternary */
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
@@ -75,11 +74,7 @@ function SectionImage({
     >
       <ImageWithCaption
         imageUrl={
-          isMobile
-            ? isLandscape
-              ? imageUrl
-              : mobileImageUrl || imageUrl
-            : imageUrl
+          isMobile && !isLandscape && mobileImageUrl ? mobileImageUrl : imageUrl
         }
         imageAlt={imageAlt}
         caption={caption}
