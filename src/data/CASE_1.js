@@ -221,6 +221,9 @@ export const CASE_1 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.SPACER_SMALL,
+        },
+        {
           template: SECTION_ELEMENTS.QUOTE,
           data: {
             quote:
@@ -433,6 +436,9 @@ export const CASE_1 = {
               </Paragraph>
             ),
           },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
           template: SECTION_ELEMENTS.QUOTE,
