@@ -40,8 +40,8 @@ const StyledTimeline = styled(motion.dl)`
 
 const StyledTimelineItemYear = styled(motion.div)`
   grid-column: 1 / span 1;
-  align-items: flex-end;
-
+  align-items: flex-start;
+  padding-right: ${padding.insideElements.double};
   width: fit-content;
   box-sizing: border-box;
 
@@ -55,10 +55,10 @@ const StyledTimelineItemEvents = styled(motion.div)`
   grid-column: 2 / span 1;
   align-items: flex-start;
   box-sizing: border-box;
-
-  @media (min-width: ${breakpoints.desktop}px) {
+  flex: 1;
+  /*@media (min-width: ${breakpoints.desktop}px) {
     width: calc(${sizes.contentWidthLimit}px * 0.8);
-  }
+  }*/
 
   > div {
     margin-bottom: ${padding.insideElements.half};
@@ -102,8 +102,8 @@ const StyledTimelineItem = styled(motion.dt)`
   padding-bottom: calc(${padding.insideElements.single});
 
   @media (min-width: ${breakpoints.mobileLarge}px) {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: flex;
+    /*grid-template-columns: repeat(2, 1fr);*/
   }
 
   :last-of-type {
