@@ -9,27 +9,46 @@ import colors from "../../theme/colors";
 import shadows from "../../theme/shadows";
 import useFluidTypography from "../../utils/useBodyFluidTypography";
 import { formElementsVariants } from "../../animations/animations";
+import useBgColor from "../../utils/useBgColor";
 
 const StyledButton = styled(motion.button)`
-  padding: ${padding.insideElements.single} ${padding.insideElements.double};
-  background-color: ${({ $secondary }) =>
-    $secondary ? "transparent" : colors.primary};
-  color: ${({ $secondary }) =>
-    $secondary ? colors.primary : colors.text.light.high};
-  border: ${({ $secondary }) =>
-    $secondary ? `solid 1px ${colors.primary}` : `solid 1px transparent`};
+  padding: ${padding.insideElements.half} ${padding.insideElements.double};
+  background-color: ${({ $secondary, $light }) =>
+    $secondary ? "transparent" : $light ? colors.offwhite : colors.offblack};
+
+  color: ${({ $secondary, $light }) =>
+    $secondary
+      ? $light
+        ? colors.text.light.high
+        : colors.text.dark.high
+      : $light
+      ? colors.text.dark.high
+      : colors.text.light.high};
+
+  border: ${({ $secondary, $light }) =>
+    $secondary
+      ? $light
+        ? `solid 1px ${colors.offwhite}`
+        : `solid 1px ${colors.offwhite}`
+      : `solid 1px transparent`};
+
   ${shadows.short};
-  border-radius: ${padding.insideElements.double};
+  border-radius: ${padding.insideElements.single};
   transition: all 0.3s;
   cursor: pointer;
-  text-transform: uppercase;
+  /*text-transform: uppercase;*/
   font-weight: 600;
 
   ${({ $fluidType }) => $fluidType};
 
   &:hover {
     background-color: ${({ $secondary }) =>
-      $secondary ? colors.primaryShade : colors.primaryHover};
+      $secondary ? "transparent" : colors.primaryHover};
+
+    color: ${({ $secondary }) => $secondary && colors.primary};
+
+    border: ${({ $secondary }) =>
+      $secondary ? `solid 1px ${colors.primary}` : `solid 1px transparent`};
     ${shadows.soft}
   }
 
@@ -58,7 +77,10 @@ function Button({
   xl,
   disabled,
   to,
+  isLight,
 }) {
+  const light = useBgColor() || isLight;
+
   const mapSizeToNumber = () => {
     if (small) return 1;
     if (large) return 3;
@@ -71,6 +93,7 @@ function Button({
 
   return (
     <StyledButton
+      $light={light}
       $fluidType={fluidType}
       disabled={disabled}
       $secondary={secondary}
@@ -95,6 +118,7 @@ Button.propTypes = {
   large: PropTypes.bool,
   xl: PropTypes.bool,
   to: PropTypes.string,
+  isLight: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -108,6 +132,7 @@ Button.defaultProps = {
   large: false,
   xl: false,
   to: null,
+  isLight: false,
 };
 
 export default Button;

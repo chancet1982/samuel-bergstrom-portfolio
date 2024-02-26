@@ -1,3 +1,7 @@
+----- TODO list (What's left before you're done) -----
+Change "Logo" to be plain-text a la adrian
+Implement better case thumbnails
+
 ----- Fixes for mobile version only -----
 Add a show more after the "featured" cases.
 SECTION_IMAGE: add support for parallax effect (can be nice to have on non-content-critical images)
@@ -6,8 +10,6 @@ SNEAKPEEK? -> Create alternate design for mobile phones only
 RESULT -> Check if "sticky" is working as it should (CASE_10, CASE_7, CASE_5, CASE_4, CASE_3, CASE_2, CASE_1 not working but CASE_9 does)
 COLUMNS -> ABOUT_ME doesnt look good on mobile (somthing to do with the columns)
 Check the site on mobile and do whatever it takes to get it working.
------ TODO list (What's left before you're done) -----
-Change "Logo" to be plain-text a la adrian
 
 ----- ONCE DONE -----
 Add support for Google Analytics + Google tag manager.
