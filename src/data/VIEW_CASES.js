@@ -1,15 +1,24 @@
 /* eslint-disable import/prefer-default-export */
 import React from "react";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
+import Paragraph from "../Components/Shared/Paragraph";
 
 export const VIEW_CASES = [
   {
-    paddedUp: true,
-    paddedDown: true,
-    sectionTitle: <>Selected cases</>,
     isCentered: true,
-    h: 1,
     elements: [
+      {
+        template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
+        data: {
+          title: <>Some of my work</>,
+          h: 1,
+          text: <Paragraph>See some examples of my work</Paragraph>,
+          isHalfScreen: true,
+          isCentered: true,
+          isFadingOnScroll: true,
+          isSticky: true,
+        },
+      },
       {
         template: SECTION_ELEMENTS.SPACER_SMALL,
       },
@@ -18,6 +27,9 @@ export const VIEW_CASES = [
         data: {
           preview: false,
         },
+      },
+      {
+        template: SECTION_ELEMENTS.SPACER_MEDIUM,
       },
     ],
   },

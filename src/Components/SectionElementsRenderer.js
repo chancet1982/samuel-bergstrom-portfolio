@@ -184,6 +184,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
             isCentered={data.isCentered}
             isFullScreen={data.isFullScreen}
             isHalfScreen={data.isHalfScreen}
+            isFadingOnScroll={data.isFadingOnScroll}
           />
         </ElementColorContextProvider>
       );
