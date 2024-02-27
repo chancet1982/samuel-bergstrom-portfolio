@@ -48,14 +48,14 @@ const StyledCasesList = styled(motion.div)`
 
 function AdditionalCases() {
   const { id } = useParams();
-  const currentCaseTitle = CASES[id - 1].thumbnail.caption.title;
+
+  const currentCaseUrl = `/cases/${id}`;
+
   const ADDITIONAL_CASES = CASES.filter(
-    ({ caseStatus, thumbnail }) =>
+    ({ caseStatus, caseUrl }) =>
       caseStatus !== CASE_STATUS.DRAFT &&
       caseStatus !== CASE_STATUS.COMING_SOON &&
-      thumbnail &&
-      thumbnail.caption &&
-      thumbnail.caption.title !== currentCaseTitle
+      caseUrl !== currentCaseUrl
   )
     .sort(() => Math.random() - Math.random())
     .slice(0, 3);
@@ -69,17 +69,19 @@ function AdditionalCases() {
       </TitleAndText>
 
       <StyledCasesList>
-        {ADDITIONAL_CASES.map(({ thumbnail, caseUrl, caseStatus }, index) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <ElementContextProvider key={index}>
-            <CaseThumbnail
-              data={thumbnail}
-              caseUrl={caseUrl}
-              key={uuid()}
-              status={caseStatus}
-            />
-          </ElementContextProvider>
-        ))}
+        {ADDITIONAL_CASES.map(
+          ({ thumbnail = {}, caseUrl, caseStatus }, index) => (
+            // eslint-disable-next-line react/no-array-index-key
+            <ElementContextProvider key={index}>
+              <CaseThumbnail
+                data={thumbnail}
+                caseUrl={caseUrl}
+                key={uuid()}
+                status={caseStatus}
+              />
+            </ElementContextProvider>
+          )
+        )}
       </StyledCasesList>
     </StyledAdditionalCases>
   );
