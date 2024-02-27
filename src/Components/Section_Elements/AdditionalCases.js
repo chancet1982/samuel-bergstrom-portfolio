@@ -11,17 +11,15 @@ import TitleAndText from "../Shared/TitleAndText";
 import padding from "../../theme/padding";
 import breakpoints from "../../theme/breakpoints";
 import sizes from "../../theme/sizes";
-import CaseThumbnail from "./Cases/CaseThumbnail";
+import CaseThumbnail from "./Cases/CaseThumbnailInCases";
 
 const StyledAdditionalCases = styled(motion.div)`
   > div {
     box-sizing: border-box;
   }
 
-  > div:first-of-type {
-    padding-right: ${padding.outsideElements.double};
-    padding-left: ${padding.outsideElements.double};
-  }
+  padding-right: ${padding.outsideElements.double};
+  padding-left: ${padding.outsideElements.double};
 
   @media (min-width: ${breakpoints.desktop}px) {
     > div:first-of-type {
@@ -34,13 +32,16 @@ const StyledAdditionalCases = styled(motion.div)`
 const StyledCasesList = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
+  max-width: 100%;
+  overflow-x: auto;
+
   grid-gap: max(
     ${padding.outsideElements.double},
     ${padding.insideElements.single}
   );
 
   @media (min-width: ${breakpoints.desktop}px) {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 `;
 
@@ -60,6 +61,7 @@ function AdditionalCases() {
     .sort(() => Math.random() - Math.random())
     .slice(0, 3);
 
+  console.log(ADDITIONAL_CASES);
   return (
     <StyledAdditionalCases>
       <TitleAndText h={2} title="Not what you were looking for?">
@@ -69,19 +71,16 @@ function AdditionalCases() {
       </TitleAndText>
 
       <StyledCasesList>
-        {ADDITIONAL_CASES.map(
-          ({ thumbnail = {}, caseUrl, caseStatus }, index) => (
-            // eslint-disable-next-line react/no-array-index-key
-            <ElementContextProvider key={index}>
-              <CaseThumbnail
-                data={thumbnail}
-                caseUrl={caseUrl}
-                key={uuid()}
-                status={caseStatus}
-              />
-            </ElementContextProvider>
-          )
-        )}
+        {ADDITIONAL_CASES.map(({ thumbnail = {}, caseUrl, caseStatus }) => (
+          <ElementContextProvider key={caseUrl}>
+            <CaseThumbnail
+              data={thumbnail}
+              caseUrl={caseUrl}
+              key={uuid()}
+              status={caseStatus}
+            />
+          </ElementContextProvider>
+        ))}
       </StyledCasesList>
     </StyledAdditionalCases>
   );

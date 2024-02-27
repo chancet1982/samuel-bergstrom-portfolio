@@ -1,15 +1,14 @@
 ----- TODO list (What's left before you're done) -----
 Change "Logo" to be plain-text a la adrian
 LANDING_PAGE.COVER -> bgVideo fade on scroll -> Text should be sticky to top (pushing down half screen text) with fade on scroll.
-SECTION_TITLE_AND_TEXT + COVER -> ScrollY VS ScrollYprogress seems like the wrong value to use (absolute page scroll instead of relative - only works because its the first element in the page)
+CaseThumbnailInCases -> implement that the image has lower opacity based on container size.
 
 CASE_5 -> Fix colors
-ADDITIONAL_CASES -> implement better cases (potentially horizontal scrolling?)
-ADDITIONAL_CASES -> Fix design of cases to work with 3 column layout. Fix title misalignment
 LANDING_PAGE -> implement better cases
+LANDING_PAGE -> Add a show more after the "featured" cases.
+SECTION_TITLE_AND_TEXT + COVER -> ScrollY VS ScrollYprogress seems like the wrong value to use (absolute page scroll instead of relative - only works because its the first element in the page)
 
 ----- Fixes for mobile version only -----
-Add a show more after the "featured" cases.
 SECTION_IMAGE: add support for parallax effect (can be nice to have on non-content-critical images)
 KEY_FIGURES -> doesnt scale on mobile nicely (pushes content in case_13 for example)
 SNEAKPEEK? -> Create alternate design for mobile phones only
