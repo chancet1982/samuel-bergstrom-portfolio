@@ -42,6 +42,7 @@ function Image({
 }) {
   return (
     <StyledImage
+      rel="prefetch"
       $grayscale={grayscale}
       src={imageUrl}
       alt={imageAlt}
