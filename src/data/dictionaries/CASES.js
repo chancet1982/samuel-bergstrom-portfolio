@@ -10,20 +10,16 @@ import { CASE_10 } from "../CASE_10";
 import { CASE_11 } from "../CASE_11";
 import { CASE_12 } from "../CASE_12";
 import { CASE_13 } from "../CASE_13";
-import { CASE_UNUSED_8 } from "../CASE_UNUSED_8";
-import { CASE_UNUSED_6 } from "../CASE_UNUSED_6";
 
 export const CASES = [
   CASE_1,
+  CASE_9,
   CASE_2,
   CASE_3,
+  CASE_10,
   CASE_4,
   CASE_5,
-  CASE_UNUSED_6,
   CASE_7,
-  CASE_UNUSED_8,
-  CASE_9,
-  CASE_10,
   CASE_11,
   CASE_12,
   CASE_13,
