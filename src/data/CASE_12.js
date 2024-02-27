@@ -41,13 +41,10 @@ export const CASE_12 = {
     bgColor: SETTINGS.BG_COLOR,
     caption: {
       overline: "Fitness & well-being",
-      title: (
-        <>
-          Creating healthier <br /> habits
-        </>
-      ),
+      title: <>Creating healthier habits</>,
+      h: 3,
       text: (
-        <Paragraph xxl>
+        <Paragraph large>
           Positive change through a healthier life begins early
         </Paragraph>
       ),

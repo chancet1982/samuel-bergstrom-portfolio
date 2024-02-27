@@ -46,7 +46,8 @@ export const CASE_4 = {
     caption: {
       overline: "Logistics",
       title: "Delivery, unattended",
-      text: <Paragraph xxl>Home delivery box gets a companion app</Paragraph>,
+      h: 3,
+      text: <Paragraph large>Home delivery box gets a companion app</Paragraph>,
     },
     fgImage: {
       imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-desktop.png`,

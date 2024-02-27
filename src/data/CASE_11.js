@@ -14,7 +14,7 @@ import Span from "../Components/Shared/Span";
 
 /* TODO: Add a slide about creating a design system (mostly a filler with some text above to explain why there is a missmatch) */
 const SETTINGS = {
-  BG_COLOR: "#F0E7D2",
+  BG_COLOR: "#058db2",
   URL: "/cases/11",
   MEDIA_BASE_URL: "assets/case-11",
   KEY_FIGURES: {
@@ -50,14 +50,11 @@ export const CASE_11 = {
     bgColor: SETTINGS.BG_COLOR,
     caption: {
       overline: "Price Comparison Service",
-      title: (
-        <>
-          Non-new <br /> products.
-        </>
-      ),
+      title: <>Non-new products.</>,
+      h: 3,
       text: (
-        <Paragraph xxl>
-          Helping stores sell demo, <br /> refurbished, and used products
+        <Paragraph large>
+          Helping stores sell demo, refurbished, and used products
         </Paragraph>
       ),
     },

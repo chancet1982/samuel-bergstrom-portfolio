@@ -2,12 +2,25 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import CaseThumbnail from "./Cases/CaseThumbnail";
+import CaseThumbnail from "./Cases/CaseThumbnailInCases";
 import { CASES } from "../../data/dictionaries/CASES";
 import { CASE_STATUS } from "../../data/dictionaries/CASE_STATUS";
 import ElementColorContextProvider from "../../Context/ElementColorContext";
+import sizes from "../../theme/sizes";
+import breakpoints from "../../theme/breakpoints";
+import padding from "../../theme/padding";
 
-const StyledCases = styled(motion.div)``;
+const StyledCases = styled(motion.div)`
+  padding-right: ${padding.outsideElements.double};
+  padding-left: ${padding.outsideElements.double};
+  position: relative;
+  box-sizing: border-box;
+
+  @media (min-width: ${breakpoints.desktop}px) {
+    max-width: ${sizes.contentWidthLimit}px;
+    margin: ${padding.insideElements.single} auto;
+  }
+`;
 
 function SectionCases() {
   return (

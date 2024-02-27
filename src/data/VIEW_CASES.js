@@ -10,9 +10,9 @@ export const VIEW_CASES = [
       {
         template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
         data: {
-          title: <>Some of my work</>,
+          title: <>Some of My work</>,
           h: 1,
-          text: <Paragraph>See some examples of my work</Paragraph>,
+          text: <Paragraph xxl>Curated selection of client cases</Paragraph>,
           isHalfScreen: true,
           isCentered: true,
           isFadingOnScroll: true,

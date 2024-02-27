@@ -45,7 +45,8 @@ export const CASE_1 = {
     caption: {
       overline: "Cash Distribution",
       title: "Courier App redesign",
-      text: <Paragraph xxl>Redesign as an oppurtunity for change.</Paragraph>,
+      h: 3,
+      text: <Paragraph large>Redesign as an oppurtunity for change.</Paragraph>,
     },
     fgImage: {
       imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-desktop.png`,

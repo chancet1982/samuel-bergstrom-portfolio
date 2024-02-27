@@ -45,12 +45,9 @@ export const CASE_3 = {
     bgColor: SETTINGS.BG_COLOR,
     caption: {
       overline: "Healthcare",
-      title: (
-        <>
-          Digital <br /> pathology
-        </>
-      ),
-      text: <Paragraph xxl>Tissue scanner interface design</Paragraph>,
+      title: <>Digital pathology</>,
+      h: 3,
+      text: <Paragraph large>Tissue scanner interface design</Paragraph>,
     },
     fgImage: {
       imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-desktop.png`,

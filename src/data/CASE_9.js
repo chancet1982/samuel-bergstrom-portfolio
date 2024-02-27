@@ -11,7 +11,7 @@ import Title from "../Components/Shared/Title";
 import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
 
 const SETTINGS = {
-  BG_COLOR: "#FF3467",
+  BG_COLOR: "#058db2",
   URL: "/cases/9",
   MEDIA_BASE_URL: "assets/case-9",
   KEY_FIGURES: {
@@ -47,14 +47,10 @@ export const CASE_9 = {
     bgColor: SETTINGS.BG_COLOR,
     caption: {
       overline: "Price Comparison Service",
-      title: (
-        <>
-          Invisible
-          <br /> redesign
-        </>
-      ),
+      title: <>Invisible redesign</>,
+      h: 3,
       text: (
-        <Paragraph xxl>
+        <Paragraph large>
           Making the case for investing
           <br /> in search
         </Paragraph>

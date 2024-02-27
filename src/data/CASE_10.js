@@ -50,11 +50,8 @@ export const CASE_10 = {
     caption: {
       overline: "Price Comparison Service",
       title: "Increasing revenue",
-      text: (
-        <Paragraph xxl>
-          Increasing traffic <br /> to paying customers
-        </Paragraph>
-      ),
+      h: 3,
+      text: <Paragraph large>Increasing traffic to paying customers</Paragraph>,
     },
     fgImage: {
       imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-desktop.png`,

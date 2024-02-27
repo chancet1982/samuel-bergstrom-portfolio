@@ -12,7 +12,7 @@ import colors from "../theme/colors";
 import Title from "../Components/Shared/Title";
 
 const SETTINGS = {
-  BG_COLOR: "#158FC9",
+  BG_COLOR: "#4a99bc",
   URL: "/cases/5",
   MEDIA_BASE_URL: "assets/case-5",
   KEY_FIGURES: {
@@ -45,14 +45,10 @@ export const CASE_5 = {
     bgColor: SETTINGS.BG_COLOR,
     caption: {
       overline: "Renal Care",
-      title: (
-        <>
-          Self-service
-          <br /> Kiosk
-        </>
-      ),
+      title: <>Self-service Kiosk</>,
+      h: 3,
       text: (
-        <Paragraph xxl>
+        <Paragraph large>
           Speeding up admissions and discharge in dialysis clinics.
         </Paragraph>
       ),

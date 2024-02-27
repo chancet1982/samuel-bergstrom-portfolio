@@ -51,8 +51,9 @@ export const CASE_2 = {
     caption: {
       overline: "Renal Care",
       title: <>Renal care Companion App</>,
+      h: 3,
       text: (
-        <Paragraph xxl>Empowering patients & improving treatment.</Paragraph>
+        <Paragraph large>Empowering patients & improving treatment.</Paragraph>
       ),
     },
     fgImage: {
