@@ -1,10 +1,12 @@
 ----- TODO list (What's left before you're done) -----
 Change "Logo" to be plain-text a la adrian
-Implement better case thumbnails
-CASE_12.Cover.bgMedia -> Crop the top blur a little, darken a little, darken a lot on bottom
 LANDING_PAGE.COVER -> bgVideo fade on scroll -> Text should be sticky to top (pushing down half screen text) with fade on scroll.
-Make better case thumbnails.
-ScrollY VS ScrollYprogress -> It seems that Cover and Sectiontitleand text are using the wrong value (looking at general scroll position instead of )
+SECTION_TITLE_AND_TEXT + COVER -> ScrollY VS ScrollYprogress seems like the wrong value to use (absolute page scroll instead of relative - only works because its the first element in the page)
+
+CASE_5 -> Fix colors
+ADDITIONAL_CASES -> implement better cases (potentially horizontal scrolling?)
+ADDITIONAL_CASES -> Fix design of cases to work with 3 column layout. Fix title misalignment
+LANDING_PAGE -> implement better cases
 
 ----- Fixes for mobile version only -----
 Add a show more after the "featured" cases.
@@ -26,8 +28,7 @@ Consider using a more consitent color scheme 3 colors or so (pastels)
 Generally speaking start considering how to make things more "monochromatic" and modern (gradients in the background, gradient headlines etc)
 
 ----- OLD FIXES (NOT SURE IF RELEVANT ANYMORE) -----
-ADDITIONAL_CASES -> Fix design of cases to work with 3 column layout. Fix title misalignment
-CaseThumbnail -> Fix better tag for COMING SOON cases.
+CASE_THUMBNAIL -> Fix better tag for COMING SOON cases.
 LANDING_PAGE -> Is light is not working (because section has a background color so it overrides the element color context)
 MOBILE_MENU -> Implement staggered menulink animations.
 SECTION_IMAGE: make selectable if you want it to scale down or preserve height
