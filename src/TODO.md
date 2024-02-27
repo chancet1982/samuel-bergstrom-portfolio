@@ -1,6 +1,10 @@
 ----- TODO list (What's left before you're done) -----
 Change "Logo" to be plain-text a la adrian
 Implement better case thumbnails
+CASE_12.Cover.bgMedia -> Crop the top blur a little, darken a little, darken a lot on bottom
+LANDING_PAGE.COVER -> bgVideo fade on scroll -> Text should be sticky to top (pushing down half screen text) with fade on scroll.
+Make better case thumbnails.
+ScrollY VS ScrollYprogress -> It seems that Cover and Sectiontitleand text are using the wrong value (looking at general scroll position instead of )
 
 ----- Fixes for mobile version only -----
 Add a show more after the "featured" cases.
