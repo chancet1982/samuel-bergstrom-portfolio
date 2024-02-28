@@ -107,7 +107,7 @@ function Nav() {
       }
       variants={navVariants}
     >
-      <Logo />
+      <Logo isLight={isLight} />
 
       {!isDesktop ? (
         <>

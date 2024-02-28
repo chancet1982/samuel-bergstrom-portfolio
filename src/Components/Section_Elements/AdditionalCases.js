@@ -61,7 +61,6 @@ function AdditionalCases() {
     .sort(() => Math.random() - Math.random())
     .slice(0, 3);
 
-  console.log(ADDITIONAL_CASES);
   return (
     <StyledAdditionalCases>
       <TitleAndText h={2} title="Not what you were looking for?">

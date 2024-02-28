@@ -1,6 +1,6 @@
 ----- TODO list (What's left before you're done) -----
-Change "Logo" to be plain-text a la adrian
 LANDING_PAGE.COVER -> bgVideo fade on scroll -> Text should be sticky to top (pushing down half screen text) with fade on scroll.
+LANDING_PAGE.CASES_PREVIEW -> implement better solution.
 CaseThumbnailInCases -> implement that the image has lower opacity based on container size.
 
 CASE_5 -> Fix colors
