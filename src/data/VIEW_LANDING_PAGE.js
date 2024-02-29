@@ -89,12 +89,12 @@ export const VIEW_LANDING_PAGE = [
                 , part Product Manager specializing in{" "}
                 <Span xl highContrast>
                   product discovery and delivery
-                </Span>
+                </Span>{" "}
                 and part{" "}
                 <Span xl highContrast>
                   Engineer
                 </Span>
-                . Bring good ideas to life.
+                . Bringing good ideas to life since 2007.
               </Paragraph>
               <Paragraph xl>
                 <Span xl highContrast>
