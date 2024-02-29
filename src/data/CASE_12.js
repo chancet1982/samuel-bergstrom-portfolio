@@ -42,12 +42,7 @@ export const CASE_12 = {
     caption: {
       overline: "Fitness & well-being",
       title: <>Creating healthier habits</>,
-      h: 3,
-      text: (
-        <Paragraph large>
-          Positive change through a healthier life begins early
-        </Paragraph>
-      ),
+      text: <>Positive change through a healthier life begins early</>,
     },
     fgImage: {
       imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-desktop.png`,

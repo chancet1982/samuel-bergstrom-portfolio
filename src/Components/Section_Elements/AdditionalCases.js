@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { v4 as uuid } from "uuid";
 import { useParams } from "react-router-dom";
+import { useWindowSize } from "react-use";
 import { CASES } from "../../data/dictionaries/CASES";
 import { CASE_STATUS } from "../../data/dictionaries/CASE_STATUS";
 import ElementContextProvider from "../../Context/ElementColorContext";
@@ -11,7 +12,7 @@ import TitleAndText from "../Shared/TitleAndText";
 import padding from "../../theme/padding";
 import breakpoints from "../../theme/breakpoints";
 import sizes from "../../theme/sizes";
-import CaseThumbnail from "./Cases/CaseThumbnailInCases";
+import CaseThumbnail from "./Cases/CaseThumbnailLatest";
 
 const StyledAdditionalCases = styled(motion.div)`
   > div {
@@ -30,18 +31,48 @@ const StyledAdditionalCases = styled(motion.div)`
 `;
 
 const StyledCasesList = styled(motion.div)`
+  position: relative;
+  box-sizing: border-box;
   display: grid;
   grid-template-columns: repeat(1, 1fr);
-  max-width: 100%;
-  overflow-x: auto;
-
   grid-gap: max(
     ${padding.outsideElements.double},
     ${padding.insideElements.single}
   );
 
-  @media (min-width: ${breakpoints.desktop}px) {
+  > div {
+    max-width: calc(100vw - 2 * ${padding.outsideElements.double});
+  }
+
+  @media (${breakpoints.mobileLarge}px < width < ${breakpoints.desktop}px) {
+    grid-template-columns: repeat(2, 1fr);
+    > div {
+      max-width: calc(
+        (
+            100vw - 1 *
+              max(
+                ${padding.outsideElements.double},
+                ${padding.insideElements.single}
+              ) - 2 * ${padding.outsideElements.double}
+          ) / 2
+      );
+    }
+  }
+
+  @media (${breakpoints.desktop}px < width) {
     grid-template-columns: repeat(3, 1fr);
+
+    > div {
+      max-width: calc(
+        (
+            100vw - 2 *
+              max(
+                ${padding.outsideElements.double},
+                ${padding.insideElements.single}
+              ) - 2 * ${padding.outsideElements.double}
+          ) / 3
+      );
+    }
   }
 `;
 
@@ -52,6 +83,9 @@ function AdditionalCases() {
 
   const currentCaseUrl = `/cases/${id}`;
 
+  const { width } = useWindowSize();
+  const isDesktop = width >= breakpoints.desktop;
+
   const ADDITIONAL_CASES = CASES.filter(
     ({ caseStatus, caseUrl }) =>
       caseStatus !== CASE_STATUS.DRAFT &&
@@ -59,7 +93,7 @@ function AdditionalCases() {
       caseUrl !== currentCaseUrl
   )
     .sort(() => Math.random() - Math.random())
-    .slice(0, 3);
+    .slice(0, isDesktop ? 3 : 2);
 
   return (
     <StyledAdditionalCases>

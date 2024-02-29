@@ -45,9 +45,8 @@ export const CASE_4 = {
     bgColor: SETTINGS.BG_COLOR,
     caption: {
       overline: "Logistics",
-      title: "Delivery, unattended",
-      h: 3,
-      text: <Paragraph large>Home delivery box gets a companion app</Paragraph>,
+      title: <>Delivery, unattended</>,
+      text: <>Home delivery box gets a companion app</>,
     },
     fgImage: {
       imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-desktop.png`,

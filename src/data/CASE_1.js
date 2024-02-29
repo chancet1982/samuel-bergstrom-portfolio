@@ -44,9 +44,8 @@ export const CASE_1 = {
     bgColor: SETTINGS.BG_COLOR,
     caption: {
       overline: "Cash Distribution",
-      title: "Courier App redesign",
-      h: 3,
-      text: <Paragraph large>Redesign as an oppurtunity for change.</Paragraph>,
+      title: <>Courier App redesign</>,
+      text: <>Redesign as an oppurtunity for change.</>,
     },
     fgImage: {
       imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-desktop.png`,

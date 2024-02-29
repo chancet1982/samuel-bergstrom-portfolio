@@ -46,12 +46,7 @@ export const CASE_5 = {
     caption: {
       overline: "Renal Care",
       title: <>Self-service Kiosk</>,
-      h: 3,
-      text: (
-        <Paragraph large>
-          Speeding up admissions and discharge in dialysis clinics.
-        </Paragraph>
-      ),
+      text: <>Speeding up admissions and discharge in dialysis clinics.</>,
     },
     fgImage: {
       imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-desktop.png`,

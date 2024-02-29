@@ -51,12 +51,7 @@ export const CASE_11 = {
     caption: {
       overline: "Price Comparison Service",
       title: <>Non-new products.</>,
-      h: 3,
-      text: (
-        <Paragraph large>
-          Helping stores sell demo, refurbished, and used products
-        </Paragraph>
-      ),
+      text: <>Helping stores sell demo, refurbished, and used products</>,
     },
     fgImage: {
       imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-desktop.png`,

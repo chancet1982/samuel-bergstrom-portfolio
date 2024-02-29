@@ -48,13 +48,7 @@ export const CASE_9 = {
     caption: {
       overline: "Price Comparison Service",
       title: <>Invisible redesign</>,
-      h: 3,
-      text: (
-        <Paragraph large>
-          Making the case for investing
-          <br /> in search
-        </Paragraph>
-      ),
+      text: <>Making the case for investing in search</>,
     },
     fgImage: {
       imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-desktop.png`,

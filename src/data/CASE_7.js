@@ -55,9 +55,8 @@ export const CASE_7 = {
     bgColor: SETTINGS.BG_COLOR,
     caption: {
       overline: "Global fitness chain",
-      title: "pre-study",
-      h: 3,
-      text: <Paragraph large>When fitness meets ecommerce</Paragraph>,
+      title: <>pre-study</>,
+      text: <>When fitness meets ecommerce</>,
     },
     fgImage: {
       imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-desktop.png`,

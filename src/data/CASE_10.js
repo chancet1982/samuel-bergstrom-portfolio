@@ -49,9 +49,8 @@ export const CASE_10 = {
     bgColor: SETTINGS.BG_COLOR,
     caption: {
       overline: "Price Comparison Service",
-      title: "Increasing revenue",
-      h: 3,
-      text: <Paragraph large>Increasing traffic to paying customers</Paragraph>,
+      title: <>Increasing revenue</>,
+      text: <>Increasing traffic to paying customers</>,
     },
     fgImage: {
       imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-desktop.png`,

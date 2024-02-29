@@ -49,12 +49,7 @@ export const CASE_13 = {
     caption: {
       overline: "Restaurant wholesales",
       title: <>Wholesales, reimagined</>,
-      h: 3,
-      text: (
-        <Paragraph large>
-          Creating a vision for restaurant wholesalers
-        </Paragraph>
-      ),
+      text: <>Creating a vision for restaurant wholesalers</>,
     },
     fgImage: {
       imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-desktop.png`,
