@@ -70,7 +70,7 @@ function BackgroundWrapper({
         </BackgroundImage>
       );
     }
-    if (bgColor) {
+    if (bgColor && bgColor !== undefined) {
       return (
         <BackgroundColor
           $bgColor={bgColor}

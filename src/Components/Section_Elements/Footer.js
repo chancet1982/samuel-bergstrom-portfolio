@@ -9,8 +9,6 @@ import Button from "../Shared/Button";
 import Link from "../Shared/Link";
 import sizes from "../../theme/sizes";
 import { CursorContext } from "../../Context/CursorContext";
-import BackgroundWrapper from "../Shared/BackgroundWrapper";
-import colors from "../../theme/colors";
 import Span from "../Shared/Span";
 
 const StyledCaseFooter = styled(motion.div)`
@@ -93,7 +91,7 @@ function CaseFooter() {
 
   /*  TODO: Make the footer sticky like the one from tretton37 */
   return (
-    <BackgroundWrapper bgColor={colors.lighten.low}>
+    <>
       <StyledCaseFooter
         initial="hidden"
         whileInView="inView"
@@ -133,7 +131,7 @@ function CaseFooter() {
       >
         <Span small>2024, Samuel Bergström</Span>
       </StyledFooter>
-    </BackgroundWrapper>
+    </>
   );
 }
 

@@ -91,7 +91,7 @@ function SectionCases({ featured }) {
   return (
     <StyledCases>
       {cases.map(({ thumbnail, caseStatus, caseUrl }) => (
-        <ElementColorContextProvider>
+        <ElementColorContextProvider key={caseUrl}>
           <CaseThumbnail
             key={caseUrl}
             data={thumbnail}
