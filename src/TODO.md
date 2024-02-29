@@ -1,7 +1,6 @@
 ----- TODO list (What's left before you're done) -----
 LANDING_PAGE.COVER -> bgVideo fade on scroll -> Text should be sticky to top (pushing down half screen text) with fade on scroll.
 LANDING_PAGE.CASES_PREVIEW -> implement better solution.
-CaseThumbnailInCases -> implement that the image has lower opacity based on container size.
 CASES -> Add TLDR section
 CASES -> Gallery
 
@@ -29,7 +28,6 @@ Consider using a more consitent color scheme 3 colors or so (pastels)
 Generally speaking start considering how to make things more "monochromatic" and modern (gradients in the background, gradient headlines etc)
 
 ----- OLD FIXES (NOT SURE IF RELEVANT ANYMORE) -----
-CASE_THUMBNAIL -> Fix better tag for COMING SOON cases.
 LANDING_PAGE -> Is light is not working (because section has a background color so it overrides the element color context)
 MOBILE_MENU -> Implement staggered menulink animations.
 SECTION_IMAGE: make selectable if you want it to scale down or preserve height

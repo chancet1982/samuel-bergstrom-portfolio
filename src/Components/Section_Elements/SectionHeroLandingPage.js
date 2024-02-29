@@ -1,12 +1,6 @@
 /* eslint-disable react/forbid-prop-types */
 import React from "react";
-import {
-  motion,
-  useScroll,
-  useTransform,
-  useSpring,
-  useMotionValueEvent,
-} from "framer-motion";
+import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import BackgroundWrapper from "../Shared/BackgroundWrapper";
@@ -93,10 +87,6 @@ export function SectionHeroLandingPage({ bgColor, bgMedia, fgImage, caption }) {
   );
 
   const { overline, title, h, text } = caption;
-  useMotionValueEvent(scrollYProgress, "change", (latest) => {
-    console.log("Page scroll: ", latest);
-    console.log("translateX: ", translateX.current);
-  });
 
   return (
     <BackgroundWrapper bgMedia={bgMedia} bgColor={bgColor} isScaleOnScroll>
