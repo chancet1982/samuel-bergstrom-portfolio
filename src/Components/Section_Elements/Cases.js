@@ -24,13 +24,13 @@ const StyledCases = styled(motion.div)`
     ${padding.insideElements.single}
   );
 
-  > div {
+  > div:not(:last-of-type) {
     max-width: calc(100vw - 2 * ${padding.outsideElements.double});
   }
 
   @media (${breakpoints.mobileLarge}px < width < ${breakpoints.desktop}px) {
     grid-template-columns: repeat(2, 1fr);
-    > div {
+    > div:not(:last-of-type) {
       max-width: calc(
         (
             100vw - 1 *
@@ -46,7 +46,7 @@ const StyledCases = styled(motion.div)`
   @media (${breakpoints.desktop}px < width) {
     grid-template-columns: repeat(3, 1fr);
 
-    > div {
+    > div:not(:last-of-type) {
       max-width: calc(
         (
             100vw - 2 *
@@ -103,7 +103,9 @@ function SectionCases({ featured }) {
 
       {featured && (
         <StyledShowMoreSection>
-          <Button to="/cases/">More cases</Button>
+          <Button secondary to="/cases/">
+            See more cases
+          </Button>
         </StyledShowMoreSection>
       )}
     </StyledCases>

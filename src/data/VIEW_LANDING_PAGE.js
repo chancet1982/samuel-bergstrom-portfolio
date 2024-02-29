@@ -56,6 +56,9 @@ export const VIEW_LANDING_PAGE = [
         },
       },
       {
+        template: SECTION_ELEMENTS.SPACER_MEDIUM,
+      },
+      {
         template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
         data: {
           title: <>Jack of all trades and master of some</>,
@@ -105,6 +108,9 @@ export const VIEW_LANDING_PAGE = [
             </>
           ),
         },
+      },
+      {
+        template: SECTION_ELEMENTS.SPACER_MEDIUM,
       },
       {
         template: SECTION_ELEMENTS.IMAGE_GALLERY,

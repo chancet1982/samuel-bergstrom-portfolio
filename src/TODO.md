@@ -1,9 +1,9 @@
 ----- TODO list (What's left before you're done) -----
+Limit splash screen to show only once.
 LANDING_PAGE.COVER -> bgVideo fade on scroll -> Text should be sticky to top (pushing down half screen text) with fade on scroll.
+LANDING_PAGE.TESTIMONIALS -> Add preview of testimonials to landing page.
 All CASE -> Add TLDR section
-
 CASE_5 -> Fix colors
-LANDING_PAGE -> Center align the "show more" cases button.
 SECTION_TITLE_AND_TEXT + COVER -> ScrollY VS ScrollYprogress seems like the wrong value to use (absolute page scroll instead of relative - only works because its the first element in the page)
 
 ----- Fixes for mobile version only -----
@@ -17,7 +17,6 @@ Check the site on mobile and do whatever it takes to get it working.
 ----- ONCE DONE -----
 Add support for Google Analytics + Google tag manager.
 Add bottom navigation in footer
-Limit splash screen to show only once.
 Better response after sending an email (instead of generic "thanks")
 Add emogi on "submit" button in contact form
 CASE_07 -> Add pictures of the report.
