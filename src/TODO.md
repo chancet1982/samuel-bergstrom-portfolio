@@ -2,6 +2,8 @@
 LANDING_PAGE.COVER -> bgVideo fade on scroll -> Text should be sticky to top (pushing down half screen text) with fade on scroll.
 LANDING_PAGE.CASES_PREVIEW -> implement better solution.
 CaseThumbnailInCases -> implement that the image has lower opacity based on container size.
+CASES -> Add TLDR section
+CASES -> Gallery
 
 CASE_5 -> Fix colors
 LANDING_PAGE -> implement better cases
