@@ -6,6 +6,7 @@ import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
 import colors from "../theme/colors";
+import Span from "../Components/Shared/Span";
 
 export const VIEW_LANDING_PAGE = [
   {
@@ -49,16 +50,62 @@ export const VIEW_LANDING_PAGE = [
     bgColor: "#000000",
     elements: [
       {
-        template: SECTION_ELEMENTS.CASES_PREVIEW,
+        template: SECTION_ELEMENTS.CASES,
         data: {
-          preview: true,
+          featured: true,
         },
       },
-    ],
-  },
-  {
-    bgColor: "#000000",
-    elements: [
+      {
+        template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
+        data: {
+          title: <>Jack of all trades and master of some</>,
+          h: 2,
+          text: (
+            <>
+              <Paragraph xl>
+                My goal has always been creating products that{" "}
+                <Span xl highContrast>
+                  address real needs
+                </Span>
+                , are{" "}
+                <Span xl highContrast>
+                  easy to use
+                </Span>
+                , and create{" "}
+                <Span xl highContrast>
+                  business value
+                </Span>
+                . Simply put, I thrive on the intersection of Product, Design
+                and Technology.
+              </Paragraph>
+              <Paragraph xl>
+                Part Designer with a knack for{" "}
+                <Span xl highContrast>
+                  research and numbers
+                </Span>
+                , part Product Manager specializing in{" "}
+                <Span xl highContrast>
+                  product discovery and delivery
+                </Span>
+                and part{" "}
+                <Span xl highContrast>
+                  Engineer
+                </Span>
+                . Bring good ideas to life.
+              </Paragraph>
+              <Paragraph xl>
+                <Span xl highContrast>
+                  Interested (and certified) in accessibility
+                </Span>
+                , I believe that digital products must be made available for as
+                many as possible. I have deep knowledge of the current
+                accessibility guidelines and requirements and keep up to date
+                with the upcoming changes.
+              </Paragraph>
+            </>
+          ),
+        },
+      },
       {
         template: SECTION_ELEMENTS.IMAGE_GALLERY,
         data: {

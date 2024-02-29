@@ -1,12 +1,9 @@
 ----- TODO list (What's left before you're done) -----
 LANDING_PAGE.COVER -> bgVideo fade on scroll -> Text should be sticky to top (pushing down half screen text) with fade on scroll.
-LANDING_PAGE.CASES_PREVIEW -> implement better solution.
-CASES -> Add TLDR section
-CASES -> Gallery
+All CASE -> Add TLDR section
 
 CASE_5 -> Fix colors
-LANDING_PAGE -> implement better cases
-LANDING_PAGE -> Add a show more after the "featured" cases.
+LANDING_PAGE -> Center align the "show more" cases button.
 SECTION_TITLE_AND_TEXT + COVER -> ScrollY VS ScrollYprogress seems like the wrong value to use (absolute page scroll instead of relative - only works because its the first element in the page)
 
 ----- Fixes for mobile version only -----
@@ -26,6 +23,7 @@ Add emogi on "submit" button in contact form
 CASE_07 -> Add pictures of the report.
 Consider using a more consitent color scheme 3 colors or so (pastels)
 Generally speaking start considering how to make things more "monochromatic" and modern (gradients in the background, gradient headlines etc)
+COVER_CAPTION: Add "back" button (In cases)
 
 ----- OLD FIXES (NOT SURE IF RELEVANT ANYMORE) -----
 LANDING_PAGE -> Is light is not working (because section has a background color so it overrides the element color context)
@@ -41,9 +39,6 @@ Use Contentful for content.
 server side rendering using Next.js (?)
 Add password protection to cases
 cleanup limitMaxWidth & bgColor props to be used only where relevant
-COVER_CAPTION: Add "back" button (In cases)
-
-https://actualidea.com/
 
 Removeed these but might be worth keeping in mind:
 nanoclone

@@ -240,7 +240,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
         </ElementColorContextProvider>
       );
     case SECTION_ELEMENTS.CASES:
-      return <Cases key={elementKey} preview={data.preview} />;
+      return <Cases key={elementKey} featured={data.featured} />;
     case SECTION_ELEMENTS.CASES_PREVIEW:
       return <CasesPreview key={elementKey} />;
     case SECTION_ELEMENTS.TESTIMONIALS:

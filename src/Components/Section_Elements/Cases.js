@@ -2,12 +2,15 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import PropTypes from "prop-types";
+import { useWindowSize } from "react-use";
 import CaseThumbnail from "./Cases/CaseThumbnailLatest";
 import { CASES } from "../../data/dictionaries/CASES";
 import { CASE_STATUS } from "../../data/dictionaries/CASE_STATUS";
 import ElementColorContextProvider from "../../Context/ElementColorContext";
 import breakpoints from "../../theme/breakpoints";
 import padding from "../../theme/padding";
+import Button from "../Shared/Button";
 
 const StyledCases = styled(motion.div)`
   padding-right: ${padding.outsideElements.double};
@@ -57,27 +60,62 @@ const StyledCases = styled(motion.div)`
   }
 `;
 
-function SectionCases() {
+const StyledShowMoreSection = styled(motion.div)`
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  /*@media (${breakpoints.mobileLarge}px < width < ${breakpoints.desktop}px) {
+    grid-column: auto / span 2;
+  }
+
+  @media (${breakpoints.desktop}px < width) {
+    grid-column: auto / span 3;
+  }*/
+`;
+
+function SectionCases({ featured }) {
+  const { width } = useWindowSize();
+  const isDesktop = width >= breakpoints.desktop;
+
+  const cases = featured
+    ? CASES.filter(({ caseStatus }) => caseStatus === CASE_STATUS.FEATURED)
+        .reverse()
+        .slice(0, isDesktop ? 3 : 2)
+    : CASES.filter(
+        ({ caseStatus }) => caseStatus !== CASE_STATUS.DRAFT
+      ).reverse();
+
   return (
     <StyledCases>
-      {CASES.filter(({ caseStatus }) => caseStatus !== CASE_STATUS.DRAFT)
-        .reverse()
-        .map(({ thumbnail, caseStatus, caseUrl }) => (
-          <ElementColorContextProvider>
-            <CaseThumbnail
-              key={caseUrl}
-              data={thumbnail}
-              caseUrl={caseUrl}
-              status={caseStatus}
-            />
-          </ElementColorContextProvider>
-        ))}
+      {cases.map(({ thumbnail, caseStatus, caseUrl }) => (
+        <ElementColorContextProvider>
+          <CaseThumbnail
+            key={caseUrl}
+            data={thumbnail}
+            caseUrl={caseUrl}
+            status={caseStatus}
+          />
+        </ElementColorContextProvider>
+      ))}
+
+      {featured && (
+        <StyledShowMoreSection>
+          <Button to="/cases/">More cases</Button>
+        </StyledShowMoreSection>
+      )}
     </StyledCases>
   );
 }
 
-SectionCases.propTypes = {};
+SectionCases.propTypes = {
+  featured: PropTypes.bool,
+};
 
-SectionCases.defaultProps = {};
+SectionCases.defaultProps = {
+  featured: false,
+};
 
 export default SectionCases;
