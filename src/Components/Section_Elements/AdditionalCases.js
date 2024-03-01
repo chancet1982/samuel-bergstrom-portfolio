@@ -12,7 +12,7 @@ import TitleAndText from "../Shared/TitleAndText";
 import padding from "../../theme/padding";
 import breakpoints from "../../theme/breakpoints";
 import sizes from "../../theme/sizes";
-import CaseThumbnail from "./Cases/CaseThumbnailLatest";
+import CaseThumbnail from "./Cases/CaseThumbnail";
 
 const StyledAdditionalCases = styled(motion.div)`
   > div {

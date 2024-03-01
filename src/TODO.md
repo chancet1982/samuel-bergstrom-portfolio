@@ -3,7 +3,10 @@
 LANDING_PAGE:
 
 - Test the footer color as slightly lighter black.
-- Social media links need a tooltip.
+- Move about me hero image a tad down.
+- 2 tone needs to be more emphasised or removed.
+- In About me, the are with a picture of me "holding a lamp" we need to remove the padding bottom in that instance only (not sure how)
+- Social media links need a tooltip (and hover effect)
 - Add featured testimonials under the featured cases.
 - Add customers slider under the testimonials and remove from the hero/cover.
 - Add a small piece about you(!) in the landing page after the
@@ -11,6 +14,7 @@ LANDING_PAGE:
 - Thumbnail covers need some more polish (alignment, headlines, etc)
 - Change order in about me to be show testimonials and logos first and then the "about me" card later.
 - Remove the hover effect on the "submit" in the form.
+- Thumbnails not balanced due to no icon button to the right. see if it makes a difference.
 
 CONTACT_FORM:
 

@@ -7,7 +7,7 @@ import BackgroundWrapper from "../Shared/BackgroundWrapper";
 import colors from "../../theme/colors";
 import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
 import SectionTitleAndText from "./SectionTitleAndText";
-import CaseThumbnail from "./Cases/CaseThumbnailLatest";
+import CaseThumbnail from "./Cases/CaseThumbnail";
 import ElementColorContextProvider from "../../Context/ElementColorContext";
 import { CASES } from "../../data/dictionaries/CASES";
 import FgImage from "./SectionHero/FgImage";
