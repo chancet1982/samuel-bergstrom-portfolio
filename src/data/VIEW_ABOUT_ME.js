@@ -187,7 +187,7 @@ export const VIEW_ABOUT_ME = [
     ],
   },
   {
-    bgColor: "#ffffff",
+    bgColor: colors.offwhite,
     paddedUp: true,
     elements: [
       {
