@@ -63,22 +63,7 @@ const StyledCoverCaption = styled(motion.div)`
   z-index: 1;
   width: 100%;
   box-sizing: border-box;
-
-  h1 {
-    max-width: 15ch;
-    ${({ $h }) =>
-      $h === 0 && {
-        fontWeight: 900,
-      }}
-  }
-
-  p {
-    max-width: 40ch;
-
-    @media (min-width: ${breakpoints.tablet}px) {
-      max-width: 30ch;
-    }
-  }
+  text-wrap: balance;
 
   @media (min-width: ${breakpoints.mobileLarge}px) {
     justify-content: center;

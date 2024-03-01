@@ -1,8 +1,7 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import { motion, useScroll, useTransform } from "framer-motion";
 import PropTypes from "prop-types";
-import { useWindowSize } from "react-use";
 import { BG_MEDIA_TYPES } from "../../../data/dictionaries/BG_MEDIA_TYPES";
 import breakpoints from "../../../theme/breakpoints";
 
@@ -18,7 +17,6 @@ const StyledCoverImage = styled(motion.img)`
 
 const StyledCoverVideo = styled(motion.video)`
   position: absolute;
-  top: 0;
   right: -50%;
   bottom: 0;
   min-width: 100vw;
@@ -26,9 +24,11 @@ const StyledCoverVideo = styled(motion.video)`
   height: 92vh;
   object-fit: cover;
   object-position: top left;
+  scale: 1.32;
+  top: 0;
+  transform: translateY(-12%);
 
   @media (min-width: ${breakpoints.mobileLarge}px) {
-    /*left: 0;*/
     right: 0;
   }
 
@@ -38,28 +38,36 @@ const StyledCoverVideo = styled(motion.video)`
 `;
 
 function BgMedia({ type, mediaUrl }) {
-  const { scrollY } = useScroll();
-  const { height } = useWindowSize();
-  const coverHeight = (height / 100) * 92;
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
 
-  const coverImageParallax = useTransform(scrollY, [0, coverHeight], [1, 1.5]);
+  const parallaxEffect = useTransform(scrollYProgress, [0, 1], ["-12%", "18%"]);
 
   const imageVariants = {
-    hidden: { opacity: 0, y: 10 },
+    hidden: { opacity: 0 },
     inView: {
       opacity: 1,
-      y: 0,
     },
   };
 
   return type === BG_MEDIA_TYPES.IMAGE ? (
     <StyledCoverImage
+      ref={ref}
       variants={imageVariants}
       src={`${process.env.PUBLIC_URL}/${mediaUrl}`}
-      style={{ scale: coverImageParallax }}
+      style={{ y: parallaxEffect }}
     />
   ) : (
-    <StyledCoverVideo autoPlay muted variants={imageVariants}>
+    <StyledCoverVideo
+      autoPlay
+      muted
+      variants={imageVariants}
+      ref={ref}
+      style={{ y: parallaxEffect }}
+    >
       <source src={`${process.env.PUBLIC_URL}/${mediaUrl}`} type="video/mp4" />
     </StyledCoverVideo>
   );

@@ -9,7 +9,6 @@ import Span from "../Components/Shared/Span";
 
 export const VIEW_LANDING_PAGE = [
   {
-    isSticky: true,
     navBgColor: "#000000",
     elements: [
       {

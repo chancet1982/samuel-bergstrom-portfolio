@@ -1,6 +1,5 @@
 ----- TODO list (What's left before you're done) -----
 
-- In the Cover, change from sticky and add a parallax effect instead on the bgVideo, remove it from the caption.
 - Remove customer logos from the hero.
 - Move customers under testimonials (or above) sliding based on scroll position.
 - Add a small piece about you(!) in the landing page after the
@@ -11,6 +10,8 @@
 - SECTION_TITLE_AND_TEXT + COVER -> ScrollY VS ScrollYprogress seems like the wrong value to use (absolute page scroll instead of relative - only works because its the first element in the page)
 - All CASE -> Add TLDR section (potentially repurpose the overview component)
 - SECTION_IMAGE: add support for parallax effect (can be nice to have on non-content-critical images)
+- Make sure parallax in section quote is not jumpy (like you fixed it in cover)
+- Fix gradient in bottom of cover
 
 ----- Fixes for mobile version only -----
 KEY_FIGURES -> doesnt scale on mobile nicely (pushes content in case_13 for example)
@@ -20,10 +21,10 @@ COLUMNS -> ABOUT_ME doesnt look good on mobile (somthing to do with the columns)
 Check the site on mobile and do whatever it takes to get it working.
 
 ----- ONCE DONE -----
+Add emogi on "submit" button in contact form
 Add support for Google Analytics + Google tag manager.
 Add bottom navigation in footer
 Better response after sending an email (instead of generic "thanks")
-Add emogi on "submit" button in contact form
 CASE_07 -> Add pictures of the report.
 Consider using a more consitent color scheme 3 colors or so (pastels)
 Generally speaking start considering how to make things more "monochromatic" and modern (gradients in the background, gradient headlines etc)
