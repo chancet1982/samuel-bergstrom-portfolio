@@ -24,13 +24,13 @@ const StyledCases = styled(motion.div)`
     ${padding.insideElements.single}
   );
 
-  > div:not(:last-of-type) {
+  > div {
     max-width: calc(100vw - 2 * ${padding.outsideElements.double});
   }
 
   @media (${breakpoints.mobileLarge}px < width < ${breakpoints.desktop}px) {
     grid-template-columns: repeat(2, 1fr);
-    > div:not(:last-of-type) {
+    > div {
       max-width: calc(
         (
             100vw - 1 *
@@ -46,7 +46,7 @@ const StyledCases = styled(motion.div)`
   @media (${breakpoints.desktop}px < width) {
     grid-template-columns: repeat(3, 1fr);
 
-    > div:not(:last-of-type) {
+    > div {
       max-width: calc(
         (
             100vw - 2 *
@@ -66,7 +66,7 @@ const StyledShowMoreSection = styled(motion.div)`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
+  max-width: 100% !important;
   /*@media (${breakpoints.mobileLarge}px < width < ${breakpoints.desktop}px) {
     grid-column: auto / span 2;
   }
@@ -89,7 +89,7 @@ function SectionCases({ featured }) {
       ).reverse();
 
   return (
-    <StyledCases>
+    <StyledCases $featured={featured}>
       {cases.map(({ thumbnail, caseStatus, caseUrl }) => (
         <ElementColorContextProvider key={caseUrl}>
           <CaseThumbnail
