@@ -35,7 +35,7 @@ const StyledBackgroundColor = styled(motion.div)`
   height: 100%;
   position: relative;
   overflow: hidden;
-  border-radius: ${padding.insideElements.half};
+  border-radius: ${padding.insideElements.single};
   transition: all 0.3s;
 
   ${({ $bgColor }) =>

@@ -7,13 +7,14 @@ import { motion } from "framer-motion";
 import colors from "../../theme/colors";
 import typography from "../../theme/typography";
 import { formElementsVariants } from "../../animations/animations";
+import padding from "../../theme/padding";
 
 const { size, lh, inc } = typography;
 
 const StyledInput = styled(motion.input)`
   display: block;
   width: fill-available;
-  border-radius: 0.25rem;
+  border-radius: ${padding.insideElements.half};
   line-height: ${({ $small, $large }) =>
     $small ? lh + inc : $large ? lh - inc : lh};
   border: solid 0.125rem ${colors.darkgray};

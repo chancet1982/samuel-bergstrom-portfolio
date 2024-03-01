@@ -1,11 +1,19 @@
 /* eslint-disable import/prefer-default-export */
 import React from "react";
+import styled from "styled-components";
+import { motion } from "framer-motion";
 import Button from "../Components/Shared/Button";
 import Paragraph from "../Components/Shared/Paragraph";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
 import Span from "../Components/Shared/Span";
+import padding from "../theme/padding";
+
+const StyledButtonsContainer = styled(motion.div)`
+  display: flex;
+  gap: ${padding.insideElements.half};
+`;
 
 export const VIEW_LANDING_PAGE = [
   {
@@ -31,7 +39,12 @@ export const VIEW_LANDING_PAGE = [
                   </Span>
                   .
                 </Paragraph>
-                <Button to="about">Get to know me</Button>
+                <StyledButtonsContainer>
+                  <Button to="cases">My work</Button>
+                  <Button to="about" secondary>
+                    Get to know me
+                  </Button>
+                </StyledButtonsContainer>
               </>
             ),
           },

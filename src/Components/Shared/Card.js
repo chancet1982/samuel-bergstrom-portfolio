@@ -14,7 +14,7 @@ const StyledCard = styled(motion.div)`
   scroll-snap-align: start;
   position: relative;
   box-sizing: border-box;
-  border-radius: 20px;
+  border-radius: ${padding.insideElements.single};
   box-shadow: 5px 5px 10px rgb(0 0 0 / 5%);
 `;
 

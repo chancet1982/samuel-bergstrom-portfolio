@@ -33,7 +33,7 @@ const StyledButton = styled(motion.button)`
       : `solid 1px transparent`};
 
   ${shadows.short};
-  border-radius: ${padding.insideElements.single};
+  border-radius: ${padding.insideElements.half};
   transition: all 0.3s;
   cursor: pointer;
   /*text-transform: uppercase;*/

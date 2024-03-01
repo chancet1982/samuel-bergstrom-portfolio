@@ -2,10 +2,15 @@
 
 LANDING_PAGE:
 
+- Test the footer color as slightly lighter black.
+- Social media links need a tooltip.
 - Add featured testimonials under the featured cases.
 - Add customers slider under the testimonials and remove from the hero/cover.
 - Add a small piece about you(!) in the landing page after the
 - Fix gradient in bottom of cover
+- Thumbnail covers need some more polish (alignment, headlines, etc)
+- Change order in about me to be show testimonials and logos first and then the "about me" card later.
+- Remove the hover effect on the "submit" in the form.
 
 CONTACT_FORM:
 
