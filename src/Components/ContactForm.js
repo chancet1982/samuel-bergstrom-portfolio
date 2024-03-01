@@ -1,18 +1,30 @@
 import { motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import styled from "styled-components";
 import padding from "../theme/padding";
 import Button from "./Shared/Button";
 import Input from "./Shared/Input";
 import Label from "./Shared/Label";
 import Textarea from "./Shared/Textarea";
+import { CursorContext } from "../Context/CursorContext";
 
 const StyledDiv = styled(motion.div)`
   padding-bottom: ${padding.insideElements.single};
 `;
 
-// TODO: (later) provide better styling for the success/error messages
 function ContactForm() {
+  const [, setCursorText, , setCursorVariant] = useContext(CursorContext);
+
+  function caseFooterButtonMouseEnter() {
+    setCursorText("👋");
+    setCursorVariant("contact");
+  }
+
+  function caseFooterButtonMouseLeave() {
+    setCursorText("");
+    setCursorVariant("default");
+  }
+
   const [status, setStatus] = useState("");
 
   const submitForm = (ev) => {
@@ -49,7 +61,16 @@ function ContactForm() {
         <Label>Message: </Label>
         <Textarea name="message" rows="4" cols="50" />
       </StyledDiv>
-      {status === "SUCCESS" ? <p>Thanks!</p> : <Button>Submit</Button>}
+      {status === "SUCCESS" ? (
+        <p>Thanks!</p>
+      ) : (
+        <Button
+          onMouseEnter={() => caseFooterButtonMouseEnter()}
+          onMouseLeave={() => caseFooterButtonMouseLeave()}
+        >
+          Submit
+        </Button>
+      )}
       {status === "ERROR" && <p>Ooops! There was an error.</p>}
     </form>
   );

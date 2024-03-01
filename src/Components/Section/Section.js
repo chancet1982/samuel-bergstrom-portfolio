@@ -25,6 +25,13 @@ const StyledSection = styled(motion.section)`
       top: "0",
     }}
 
+  ${({ $isStickyBottom }) =>
+    $isStickyBottom && {
+      position: "sticky",
+      bottom: "0",
+      zIndex: "-1",
+    }}    
+
   ${({ $paddedUp }) =>
     $paddedUp && {
       paddingTop: padding.outsideElements.quadruple,
@@ -88,6 +95,7 @@ function Section({
   bgColor,
   navBgColor,
   isSticky,
+  isStickyBottom,
   paddedUp,
   paddedDown,
   marginUp,
@@ -122,6 +130,7 @@ function Section({
     <StyledSection
       $bgColor={bgColor}
       $isSticky={isSticky}
+      $isStickyBottom={isStickyBottom}
       $paddedUp={paddedUp}
       $paddedDown={paddedDown}
       $marginUp={marginUp}
@@ -149,6 +158,7 @@ Section.propTypes = {
   bgColor: PropTypes.string,
   navBgColor: PropTypes.string,
   isSticky: PropTypes.bool,
+  isStickyBottom: PropTypes.bool,
   paddedUp: PropTypes.bool,
   paddedDown: PropTypes.bool,
   marginUp: PropTypes.bool,
@@ -164,6 +174,7 @@ Section.defaultProps = {
   bgColor: null,
   navBgColor: null,
   isSticky: false,
+  isStickyBottom: false,
   paddedUp: false,
   paddedDown: false,
   marginUp: false,

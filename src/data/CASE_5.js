@@ -59,7 +59,7 @@ export const CASE_5 = {
       navBgColor: SETTINGS.BG_COLOR,
       elements: [
         {
-          template: SECTION_ELEMENTS.SECTION_HERO,
+          template: SECTION_ELEMENTS.SECTION_HERO_CASES,
           data: {
             bgColor: SETTINGS.BG_COLOR,
             caption: {

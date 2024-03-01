@@ -1,7 +1,7 @@
 /* eslint-disable import/prefer-default-export */
 export const SECTION_ELEMENTS = {
   COVER: "cover",
-  SECTION_HERO: "SectionHero",
+  SECTION_HERO_CASES: "SectionHeroCases",
   SPACER: "spacer",
   SPACER_LARGE: "spacerLarge",
   SPACER_MEDIUM: "spacerMedium",
@@ -27,5 +27,6 @@ export const SECTION_ELEMENTS = {
   FOOTER: "footer",
   KEY_FIGURES: "keyFigures",
   CONTACT_DETAILS: "contactDetails",
+  SECTION_CONTACT_FORM: "sectionContactForm",
   VIDEO: "video",
 };

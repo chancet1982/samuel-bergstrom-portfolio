@@ -1,17 +1,33 @@
 ----- TODO list (What's left before you're done) -----
 
-- Remove customer logos from the hero.
-- Move customers under testimonials (or above) sliding based on scroll position.
+LANDING_PAGE:
+
+- Add featured testimonials under the featured cases.
+- Add customers slider under the testimonials and remove from the hero/cover.
 - Add a small piece about you(!) in the landing page after the
-- Open the Contact Us form as a section at the bottom of the landing page.
+- Fix gradient in bottom of cover
+
+CONTACT_FORM:
+
+- provide better styling for the success/error messages
+- Contact me link -> make slide to contact form
+- Add support for better color controls/SVG as button icons perhaps?
+
+SPLASH_SCREEN:
+
 - Limit splash screen to show only once.
 - CaseThumbnail -> re-add Appear inView animation, and hover.
+
+CONTENT_FIXES FOR CASES:
+
 - CASE_5 -> Fix colors
-- SECTION_TITLE_AND_TEXT + COVER -> ScrollY VS ScrollYprogress seems like the wrong value to use (absolute page scroll instead of relative - only works because its the first element in the page)
 - All CASE -> Add TLDR section (potentially repurpose the overview component)
+
+PARALLAX_FIXES:
+
 - SECTION_IMAGE: add support for parallax effect (can be nice to have on non-content-critical images)
 - Make sure parallax in section quote is not jumpy (like you fixed it in cover)
-- Fix gradient in bottom of cover
+- SECTION_TITLE_AND_TEXT -> ScrollY VS ScrollYprogress seems like the wrong value to use (absolute page scroll instead of relative - only works because its the first element in the page)
 
 ----- Fixes for mobile version only -----
 KEY_FIGURES -> doesnt scale on mobile nicely (pushes content in case_13 for example)
@@ -20,8 +36,7 @@ RESULT -> Check if "sticky" is working as it should (CASE_10, CASE_7, CASE_5, CA
 COLUMNS -> ABOUT_ME doesnt look good on mobile (somthing to do with the columns)
 Check the site on mobile and do whatever it takes to get it working.
 
------ ONCE DONE -----
-Add emogi on "submit" button in contact form
+----- ONE DAY -----
 Add support for Google Analytics + Google tag manager.
 Add bottom navigation in footer
 Better response after sending an email (instead of generic "thanks")
@@ -29,6 +44,10 @@ CASE_07 -> Add pictures of the report.
 Consider using a more consitent color scheme 3 colors or so (pastels)
 Generally speaking start considering how to make things more "monochromatic" and modern (gradients in the background, gradient headlines etc)
 COVER_CAPTION: Add "back" button (In cases)
+Use Contentful for content.
+server side rendering using Next.js (?)
+Add password protection to cases
+cleanup limitMaxWidth & bgColor props to be used only where relevant
 
 ----- OLD FIXES (NOT SURE IF RELEVANT ANYMORE) -----
 LANDING_PAGE -> Is light is not working (because section has a background color so it overrides the element color context)
@@ -39,13 +58,7 @@ SECTION_IMAGE: make selectable if you want it to scale down or preserve height
 SECTION_ELEMENTS.OVERVIEW -> Most likely not in use (other than in old, unfinished cases. Clean up old cases and remove. )
 FINISH Cases 6 & 8 (currently unused)
 
-One day...
-Use Contentful for content.
-server side rendering using Next.js (?)
-Add password protection to cases
-cleanup limitMaxWidth & bgColor props to be used only where relevant
-
-Removeed these but might be worth keeping in mind:
+Removed these but might be worth keeping in mind:
 nanoclone
 lottie-react
 @splinetool/react-spline

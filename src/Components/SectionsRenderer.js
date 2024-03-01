@@ -16,6 +16,7 @@ const SectionsRenderer = ({ sections }) =>
       bgColor,
       navBgColor,
       isSticky,
+      isStickyBottom,
       paddedUp,
       paddedDown,
       marginUp,
@@ -46,6 +47,7 @@ const SectionsRenderer = ({ sections }) =>
             bgColor={bgColor}
             navBgColor={navBgColor}
             isSticky={isSticky}
+            isStickyBottom={isStickyBottom}
             paddedUp={paddedUp}
             paddedDown={paddedDown}
             marginUp={marginUp}

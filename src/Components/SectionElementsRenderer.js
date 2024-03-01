@@ -21,6 +21,7 @@ import KeyFigures from "./Section_Elements/KeyFigures";
 import Testimonials from "./Section_Elements/Testimonials";
 import ElementColorContextProvider from "../Context/ElementColorContext";
 import ContactDetails from "./Section_Elements/ContactDetails";
+import SectionContactFrom from "./Section_Elements/SectionContactForm";
 import Insights from "./Section_Elements/Insights";
 import SectionVideo from "./Section_Elements/SectionVideo";
 import ListOfCards from "./Section_Elements/ListOfCards";
@@ -34,7 +35,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
   }
 
   switch (template) {
-    case SECTION_ELEMENTS.SECTION_HERO:
+    case SECTION_ELEMENTS.SECTION_HERO_CASES:
       return (
         <ElementColorContextProvider>
           <SectionHeroCases
@@ -151,6 +152,8 @@ function SectionElementsRenderer({ elementKey, data, template }) {
       return <Timeline key={elementKey} items={data.items} />;
     case SECTION_ELEMENTS.CONTACT_DETAILS:
       return <ContactDetails key={elementKey} />;
+    case SECTION_ELEMENTS.SECTION_CONTACT_FORM:
+      return <SectionContactFrom key={elementKey} />;
     case SECTION_ELEMENTS.SECTION_IMAGE:
       return (
         <SectionImage

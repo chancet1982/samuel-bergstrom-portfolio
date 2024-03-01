@@ -41,6 +41,7 @@ export const VIEW_ABOUT_ME = [
     ],
   },
   {
+    bgColor: "#ffffff",
     paddedUp: true,
     elements: [
       { template: SECTION_ELEMENTS.SPACER_MEDIUM },
@@ -163,6 +164,7 @@ export const VIEW_ABOUT_ME = [
     ],
   },
   {
+    bgColor: "#ffffff",
     paddedUp: true,
     paddedDown: true,
     sectionTitle: <>Trusted by:</>,
@@ -185,6 +187,7 @@ export const VIEW_ABOUT_ME = [
     ],
   },
   {
+    bgColor: "#ffffff",
     paddedUp: true,
     elements: [
       {
@@ -399,7 +402,9 @@ export const VIEW_ABOUT_ME = [
     ],
   },
   {
+    bgColor: "#ffffff",
     paddedUp: true,
+    paddedDown: true,
     elements: [
       {
         template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
@@ -450,8 +455,12 @@ export const VIEW_ABOUT_ME = [
     ],
   },
   {
-    paddedUp: true,
+    isStickyBottom: true,
+    bgColor: "#000000",
     elements: [
+      {
+        template: SECTION_ELEMENTS.SECTION_CONTACT_FORM,
+      },
       {
         template: SECTION_ELEMENTS.FOOTER,
       },

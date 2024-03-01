@@ -2,10 +2,13 @@
 import React from "react";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import Paragraph from "../Components/Shared/Paragraph";
+import colors from "../theme/colors";
 
 export const VIEW_CASES = [
   {
+    bgColor: colors.offwhite,
     isCentered: true,
+    paddedDown: true,
     elements: [
       {
         template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
@@ -34,7 +37,12 @@ export const VIEW_CASES = [
     ],
   },
   {
+    isStickyBottom: true,
+    bgColor: "#000000",
     elements: [
+      {
+        template: SECTION_ELEMENTS.SECTION_CONTACT_FORM,
+      },
       {
         template: SECTION_ELEMENTS.FOOTER,
       },
