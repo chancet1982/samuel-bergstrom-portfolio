@@ -26,7 +26,7 @@ import SectionVideo from "./Section_Elements/SectionVideo";
 import ListOfCards from "./Section_Elements/ListOfCards";
 import Spacer from "./Section_Elements/Spacer";
 import { SPACER_SIZES } from "../data/dictionaries/SPACER_SIZES";
-import SectionHero from "./Section_Elements/SectionHero";
+import SectionHeroCases from "./Section_Elements/SectionHeroCases";
 
 function SectionElementsRenderer({ elementKey, data, template }) {
   if (!template) {
@@ -37,7 +37,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
     case SECTION_ELEMENTS.SECTION_HERO:
       return (
         <ElementColorContextProvider>
-          <SectionHero
+          <SectionHeroCases
             key={elementKey}
             caption={data.caption}
             bgMedia={data.bgMedia}

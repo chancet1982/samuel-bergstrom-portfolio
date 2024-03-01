@@ -5,7 +5,7 @@ import SectionTitleAndText from "./SectionTitleAndText";
 import SectionImage from "./SectionImage";
 import colors from "../../theme/colors";
 import { ElementColorContext } from "../../Context/ElementColorContext";
-import Highlights from "./SectionHero/Highlights";
+import Highlights from "./SectionHeroCases/Highlights";
 import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
 
 function SectionHero({ bgColor, bgMedia, fgImage, caption, highlights }) {
