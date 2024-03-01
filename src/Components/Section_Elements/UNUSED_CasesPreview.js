@@ -4,7 +4,7 @@ import styled from "styled-components";
 import { motion, useScroll, useTransform } from "framer-motion";
 // import PropTypes from "prop-types";
 import { useWindowSize } from "react-use";
-import CaseThumbnail from "./Cases/CaseThumbnail";
+import CaseThumbnail from "./Cases/UNUSED_CaseThumbnail";
 import { CASES } from "../../data/dictionaries/CASES";
 import { CASE_STATUS } from "../../data/dictionaries/CASE_STATUS";
 import breakpoints from "../../theme/breakpoints";
