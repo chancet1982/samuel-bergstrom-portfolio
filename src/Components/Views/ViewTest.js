@@ -4,7 +4,7 @@ import View from "../View";
 // import SectionsRenderer from "../SectionsRenderer";
 // import Signup from "../Signup";
 // eslint-disable-next-line import/no-named-as-default
-import LandingPageHero from "../Section_Elements/SectionHeroLandingPage";
+import LandingPageHero from "../Section_Elements/UNUSED_SectionHeroLandingPage";
 import Paragraph from "../Shared/Paragraph";
 import Section from "../Section/Section";
 
