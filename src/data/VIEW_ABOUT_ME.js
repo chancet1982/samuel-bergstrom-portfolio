@@ -13,7 +13,7 @@ export const VIEW_ABOUT_ME = [
     navBgColor: "#9c9090",
     elements: [
       {
-        template: SECTION_ELEMENTS.COVER,
+        template: SECTION_ELEMENTS.SECTION_HERO,
         data: {
           bgColor: "#9c9090",
           caption: {

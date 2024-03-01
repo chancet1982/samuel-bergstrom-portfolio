@@ -25,7 +25,7 @@ export const CASE_UNUSED_8 = {
     {
       elements: [
         {
-          template: SECTION_ELEMENTS.COVER,
+          template: SECTION_ELEMENTS.SECTION_HERO,
           data: {
             overline: "Mitsubishi Electric",
             title: "e-commerce concept",

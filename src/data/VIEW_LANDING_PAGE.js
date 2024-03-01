@@ -12,7 +12,7 @@ export const VIEW_LANDING_PAGE = [
     navBgColor: "#000000",
     elements: [
       {
-        template: SECTION_ELEMENTS.COVER,
+        template: SECTION_ELEMENTS.SECTION_HERO,
         data: {
           bgColor: "#000000",
           caption: {

@@ -10,7 +10,7 @@ import SectionTitleAndText from "./SectionTitleAndText";
 import CaseThumbnail from "./Cases/CaseThumbnailLatest";
 import ElementColorContextProvider from "../../Context/ElementColorContext";
 import { CASES } from "../../data/dictionaries/CASES";
-import FgImage from "./Cover/FgImage";
+import FgImage from "./SectionHero/FgImage";
 
 const StyledRow = styled(motion.div)`
   display: flex;

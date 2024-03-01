@@ -7,7 +7,7 @@ import { useWindowSize, useOrientation } from "react-use";
 import Badge from "../../Shared/Badge";
 import { CursorContext } from "../../../Context/CursorContext";
 import { CASE_STATUS } from "../../../data/dictionaries/CASE_STATUS";
-import BgMedia from "../Cover/BgMedia";
+import BgMedia from "../SectionHero/BgMedia";
 import breakpoints from "../../../theme/breakpoints";
 import { ElementColorContext } from "../../../Context/ElementColorContext";
 import padding from "../../../theme/padding";

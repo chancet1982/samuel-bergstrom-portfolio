@@ -26,7 +26,7 @@ export const CASE_UNUSED_6 = {
     {
       elements: [
         {
-          template: SECTION_ELEMENTS.COVER,
+          template: SECTION_ELEMENTS.SECTION_HERO,
           data: {
             overline: "Finance",
             title: "Design system",

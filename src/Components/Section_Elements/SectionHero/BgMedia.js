@@ -25,8 +25,7 @@ const StyledCoverVideo = styled(motion.video)`
   object-fit: cover;
   object-position: top left;
   scale: 1.32;
-  top: 0;
-  transform: translateY(-12%);
+  top: -16%;
 
   @media (min-width: ${breakpoints.mobileLarge}px) {
     right: 0;
@@ -44,7 +43,11 @@ function BgMedia({ type, mediaUrl }) {
     offset: ["start start", "end start"],
   });
 
-  const parallaxEffect = useTransform(scrollYProgress, [0, 1], ["-12%", "18%"]);
+  const parallaxEffect = useTransform(
+    scrollYProgress,
+    [0.16, 0.84],
+    ["-16%", "24%"]
+  );
 
   const imageVariants = {
     hidden: { opacity: 0 },
@@ -58,7 +61,7 @@ function BgMedia({ type, mediaUrl }) {
       ref={ref}
       variants={imageVariants}
       src={`${process.env.PUBLIC_URL}/${mediaUrl}`}
-      style={{ y: parallaxEffect }}
+      style={{ top: parallaxEffect }}
     />
   ) : (
     <StyledCoverVideo
@@ -66,7 +69,7 @@ function BgMedia({ type, mediaUrl }) {
       muted
       variants={imageVariants}
       ref={ref}
-      style={{ y: parallaxEffect }}
+      style={{ top: parallaxEffect }}
     >
       <source src={`${process.env.PUBLIC_URL}/${mediaUrl}`} type="video/mp4" />
     </StyledCoverVideo>

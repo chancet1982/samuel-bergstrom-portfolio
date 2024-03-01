@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { SECTION_ELEMENTS } from "../data/dictionaries/SECTION_ELEMENTS";
-import Cover from "./Section_Elements/Cover";
+import SectionHero from "./Section_Elements/SectionHero";
 import Overview from "./Section_Elements/UNUSED_Overview";
 import Textbox from "./Section_Elements/Textbox";
 import SectionTitleAndText from "./Section_Elements/SectionTitleAndText";
@@ -48,10 +48,10 @@ function SectionElementsRenderer({ elementKey, data, template }) {
           />
         </ElementColorContextProvider>
       );
-    case SECTION_ELEMENTS.COVER:
+    case SECTION_ELEMENTS.SECTION_HERO:
       return (
         <ElementColorContextProvider>
-          <Cover
+          <SectionHero
             key={elementKey}
             bgMedia={data.bgMedia}
             bgColor={data.bgColor}
