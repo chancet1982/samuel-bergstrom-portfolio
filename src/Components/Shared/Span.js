@@ -47,7 +47,7 @@ function Span({
     if (small) return 1;
     if (large) return 3;
     if (xl) return 4;
-    if (xxl) return 8;
+    if (xxl) return 6;
     return 2;
   };
 

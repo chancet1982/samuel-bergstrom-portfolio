@@ -1,13 +1,18 @@
 ----- TODO list (What's left before you're done) -----
-Limit splash screen to show only once.
-LANDING_PAGE.COVER -> bgVideo fade on scroll -> Text should be sticky to top (pushing down half screen text) with fade on scroll.
-LANDING_PAGE.TESTIMONIALS -> Add preview of testimonials to landing page.
-All CASE -> Add TLDR section
-CASE_5 -> Fix colors
-SECTION_TITLE_AND_TEXT + COVER -> ScrollY VS ScrollYprogress seems like the wrong value to use (absolute page scroll instead of relative - only works because its the first element in the page)
+
+- In the Cover, change from sticky and add a parallax effect instead on the bgVideo, remove it from the caption.
+- Remove customer logos from the hero.
+- Move customers under testimonials (or above) sliding based on scroll position.
+- Add a small piece about you(!) in the landing page after the
+- Open the Contact Us form as a section at the bottom of the landing page.
+- Limit splash screen to show only once.
+- CaseThumbnail -> re-add Appear inView animation, and hover.
+- CASE_5 -> Fix colors
+- SECTION_TITLE_AND_TEXT + COVER -> ScrollY VS ScrollYprogress seems like the wrong value to use (absolute page scroll instead of relative - only works because its the first element in the page)
+- All CASE -> Add TLDR section (potentially repurpose the overview component)
+- SECTION_IMAGE: add support for parallax effect (can be nice to have on non-content-critical images)
 
 ----- Fixes for mobile version only -----
-SECTION_IMAGE: add support for parallax effect (can be nice to have on non-content-critical images)
 KEY_FIGURES -> doesnt scale on mobile nicely (pushes content in case_13 for example)
 SNEAKPEEK? -> Create alternate design for mobile phones only
 RESULT -> Check if "sticky" is working as it should (CASE_10, CASE_7, CASE_5, CASE_4, CASE_3, CASE_2, CASE_1 not working but CASE_9 does)

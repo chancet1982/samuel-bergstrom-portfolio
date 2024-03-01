@@ -19,16 +19,18 @@ export const VIEW_LANDING_PAGE = [
           caption: {
             title: (
               <>
-                Samuel
-                <br /> Bergström
+                I design products <mark>that work</mark>
               </>
             ),
             h: 1,
             text: (
               <>
                 <Paragraph xxl>
-                  Design lead, speaker, mentor, father, husband, and quite a
-                  nice guy.
+                  Helping companies create products that work for their{" "}
+                  <Span xxl highContrast>
+                    business and customers
+                  </Span>
+                  .
                 </Paragraph>
                 <Button to="about">Get to know me</Button>
               </>
