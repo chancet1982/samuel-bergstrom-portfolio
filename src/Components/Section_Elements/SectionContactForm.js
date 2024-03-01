@@ -10,6 +10,8 @@ import Paragraph from "../Shared/Paragraph";
 import Image from "../Shared/Image";
 import Link from "../Shared/Link";
 import Title from "../Shared/Title";
+import Icon from "../Shared/Icons";
+import { ICON_PATHS } from "../../data/dictionaries/ICON_PATHS";
 
 const StyledSectionContactForm = styled(motion.div)`
   display: grid;
@@ -37,10 +39,13 @@ const StyledSocialMediaLinks = styled(motion.div)`
   gap: ${padding.insideElements.single};
 
   a {
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 64px;
     height: 64px;
-    padding: ${padding.insideElements.quarter} 0;
+    padding: ${padding.insideElements.quarter} ${padding.insideElements.half}
+      ${padding.insideElements.half} ${padding.insideElements.half};
     border-radius: 50%;
     border: solid 1px #ffffff;
     box-sizing: border-box;
@@ -65,24 +70,16 @@ function SectionContactForm() {
         <Title h={4}>Find me on social media</Title>
         <StyledSocialMediaLinks>
           <Link href="https://www.linkedin.com/in/samuel-bergstr%C3%B6m-13bb8b1b/">
-            <Image
-              imageUrl={`${process.env.PUBLIC_URL}/assets/social-media-links-linkedin.png`}
-            />
+            <Icon path={ICON_PATHS.LINKEDIN} color="#ffffff" size={40} />
           </Link>
           <Link href="https://adplist.org/mentors/samuel-bergstrom">
-            <Image
-              imageUrl={`${process.env.PUBLIC_URL}/assets/social-media-links-adplist.png`}
-            />
+            <Icon path={ICON_PATHS.ADPLIST} color="#ffffff" size={40} />
           </Link>
           <Link href="https://medium.com/@chancet1982">
-            <Image
-              imageUrl={`${process.env.PUBLIC_URL}/assets/social-media-links-medium.png`}
-            />
+            <Icon path={ICON_PATHS.MEDIUM} color="#ffffff" size={40} />
           </Link>
           <Link href="https://stackoverflow.com/users/4042508/samuel-bergstr%C3%B6m">
-            <Image
-              imageUrl={`${process.env.PUBLIC_URL}/assets/social-media-links-stackexchange.png`}
-            />
+            <Icon path={ICON_PATHS.STACK_EXCHANGE} color="#ffffff" size={40} />
           </Link>
         </StyledSocialMediaLinks>
       </motion.div>

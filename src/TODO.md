@@ -11,7 +11,6 @@ CONTACT_FORM:
 
 - provide better styling for the success/error messages
 - Contact me link -> make slide to contact form
-- Add support for better color controls/SVG as button icons perhaps?
 
 SPLASH_SCREEN:
 
