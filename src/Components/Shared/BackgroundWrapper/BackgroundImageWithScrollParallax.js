@@ -35,6 +35,7 @@ const StyledBackgroundImage = styled(motion.div)`
   width: 100%;
   position: absolute;
   scale: 1.32;
+  top: -16%;
   ${({ $mediaUrl }) =>
     $mediaUrl && {
       backgroundImage: `url(${process.env.PUBLIC_URL}/${$mediaUrl})`,

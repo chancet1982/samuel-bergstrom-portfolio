@@ -21,11 +21,11 @@ CONTENT_FIXES FOR CASES:
 
 - CASE_5 -> Fix colors
 - All CASE -> Add TLDR section (potentially repurpose the overview component)
+- Better mobile thumbnails (now that we updated the thumbnail the mobile one looks funny)
 
 PARALLAX_FIXES:
 
 - SECTION_IMAGE: add support for parallax effect (can be nice to have on non-content-critical images)
-- Make sure parallax in section quote is not jumpy (like you fixed it in cover)
 - SECTION_TITLE_AND_TEXT -> ScrollY VS ScrollYprogress seems like the wrong value to use (absolute page scroll instead of relative - only works because its the first element in the page)
 
 ----- Fixes for mobile version only -----

@@ -19,15 +19,24 @@ export const VIEW_ABOUT_ME = [
           caption: {
             title: (
               <>
-                I create <mark>impact</mark> through design.
+                <mark>Unicorns</mark> are real!
               </>
             ),
             h: 1,
             text: (
               <Paragraph xl>
-                An experienced design leader and CX/UX specialist with a flair
-                for technology and business. Helping companies succeed by
-                focusing on what matters to their customers.
+                Designer with a knack for{" "}
+                <Span xl highContrast>
+                  research and numbers
+                </Span>
+                , Product Manager specializing in{" "}
+                <Span xl highContrast>
+                  product discovery and delivery
+                </Span>{" "}
+                and{" "}
+                <Span xl highContrast>
+                  Engineer
+                </Span>
               </Paragraph>
             ),
           },
