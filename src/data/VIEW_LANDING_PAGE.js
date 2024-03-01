@@ -18,7 +18,7 @@ export const VIEW_LANDING_PAGE = [
           caption: {
             title: (
               <>
-                I design products <mark>that work</mark>
+                I design things <mark>that work</mark>
               </>
             ),
             h: 1,
