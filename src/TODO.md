@@ -1,6 +1,6 @@
 ----- TODO list (What's left before you're done) -----
 
-- Social media links convert to iconButtons and add hover effects.
+- Social media icons center the icons
 - Social media links need a tooltip (and hover effect)
 - Test the footer color as slightly lighter black (for it to work the image must use a mask instead of gradient.)
 - 2 tone needs to be more emphasised or removed.

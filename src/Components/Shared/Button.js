@@ -10,6 +10,7 @@ import shadows from "../../theme/shadows";
 import useFluidTypography from "../../utils/useBodyFluidTypography";
 import { formElementsVariants } from "../../animations/animations";
 import useBgColor from "../../utils/useBgColor";
+import Icon from "./Icons";
 
 const StyledButton = styled(motion.button)`
   padding: ${padding.insideElements.half} ${padding.insideElements.double};
@@ -41,11 +42,26 @@ const StyledButton = styled(motion.button)`
 
   ${({ $fluidType }) => $fluidType};
 
+  > svg path {
+    transition: all 0.3s;
+    fill: ${({ $secondary, $light }) =>
+      $secondary
+        ? $light
+          ? colors.text.light.high
+          : colors.text.dark.high
+        : $light
+        ? colors.text.dark.high
+        : colors.text.light.high};
+  }
   &:hover {
     background-color: ${({ $secondary }) =>
       $secondary ? "transparent" : colors.primaryHover};
 
     color: ${({ $secondary }) => $secondary && colors.primary};
+
+    > svg path {
+      fill: ${({ $secondary }) => $secondary && colors.primary};
+    }
 
     border: ${({ $secondary }) =>
       $secondary ? `solid 1px ${colors.primary}` : `solid 1px transparent`};
@@ -64,6 +80,14 @@ const StyledButton = styled(motion.button)`
   > a {
     text-decoration: none !important;
   }
+
+  ${({ $iconButton }) =>
+    $iconButton && {
+      padding: padding.insideElements.threequarters,
+      fontSize: "0",
+      height: "fit-content",
+      borderRadius: "50%",
+    }}
 `;
 
 function Button({
@@ -78,6 +102,8 @@ function Button({
   disabled,
   to,
   isLight,
+  iconButton,
+  icon,
 }) {
   const light = useBgColor() || isLight;
 
@@ -101,7 +127,10 @@ function Button({
       onMouseEnter={onMouseEnter ? () => onMouseEnter() : null}
       onMouseLeave={onMouseEnter ? () => onMouseLeave() : null}
       variants={formElementsVariants}
+      $iconButton={iconButton}
     >
+      {icon && <Icon path={icon} size={40} />}
+
       {children}
     </StyledButton>
   );
@@ -119,6 +148,8 @@ Button.propTypes = {
   xl: PropTypes.bool,
   to: PropTypes.string,
   isLight: PropTypes.bool,
+  iconButton: PropTypes.bool,
+  icon: PropTypes.string,
 };
 
 Button.defaultProps = {
@@ -133,6 +164,8 @@ Button.defaultProps = {
   xl: false,
   to: null,
   isLight: false,
+  iconButton: false,
+  icon: null,
 };
 
 export default Button;

@@ -8,10 +8,9 @@ import ContactForm from "../ContactForm";
 import TitleAndText from "../Shared/TitleAndText";
 import Paragraph from "../Shared/Paragraph";
 import Image from "../Shared/Image";
-import Link from "../Shared/Link";
 import Title from "../Shared/Title";
-import Icon from "../Shared/Icons";
 import { ICON_PATHS } from "../../data/dictionaries/ICON_PATHS";
+import Button from "../Shared/Button";
 
 const StyledSectionContactForm = styled(motion.div)`
   display: grid;
@@ -69,18 +68,30 @@ function SectionContactForm() {
         <ContactForm />
         <Title h={4}>Find me on social media</Title>
         <StyledSocialMediaLinks>
-          <Link href="https://www.linkedin.com/in/samuel-bergstr%C3%B6m-13bb8b1b/">
-            <Icon path={ICON_PATHS.LINKEDIN} color="#ffffff" size={40} />
-          </Link>
-          <Link href="https://adplist.org/mentors/samuel-bergstrom">
-            <Icon path={ICON_PATHS.ADPLIST} color="#ffffff" size={40} />
-          </Link>
-          <Link href="https://medium.com/@chancet1982">
-            <Icon path={ICON_PATHS.MEDIUM} color="#ffffff" size={40} />
-          </Link>
-          <Link href="https://stackoverflow.com/users/4042508/samuel-bergstr%C3%B6m">
-            <Icon path={ICON_PATHS.STACK_EXCHANGE} color="#ffffff" size={40} />
-          </Link>
+          <Button
+            secondary
+            iconButton
+            to="https://www.linkedin.com/in/samuel-bergstr%C3%B6m-13bb8b1b/"
+            icon={ICON_PATHS.LINKEDIN}
+          />
+          <Button
+            secondary
+            iconButton
+            to="https://adplist.org/mentors/samuel-bergstrom"
+            icon={ICON_PATHS.ADPLIST}
+          />
+          <Button
+            secondary
+            iconButton
+            to="https://medium.com/@chancet1982"
+            icon={ICON_PATHS.MEDIUM}
+          />
+          <Button
+            secondary
+            iconButton
+            to="https://stackoverflow.com/users/4042508/samuel-bergstr%C3%B6m"
+            icon={ICON_PATHS.STACK_EXCHANGE}
+          />
         </StyledSocialMediaLinks>
       </motion.div>
     </StyledSectionContactForm>
