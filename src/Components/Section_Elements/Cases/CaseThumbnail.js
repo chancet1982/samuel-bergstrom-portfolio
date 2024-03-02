@@ -99,45 +99,25 @@ function CaseThumbnail({ data, status, caseUrl }) {
     setCursorVariant("default");
   }
 
-  /* const caseThumbnailVariants = {
+  const caseThumbnailVariants = {
     hidden: {
       opacity: 0,
-      scale: 0.6,
+      y: 10,
     },
     inView: {
       opacity: 1,
-      scale: 1,
+      y: 0,
       transition: {
-        staggerChildren: 0.2,
-      },
-    },
-  };
-
-  const caseThumbnailBackgroundColorVariants = {
-    hidden: {
-      opacity: 0,
-      scale: 0.6,
-    },
-    inView: {
-      opacity: 1,
-      scale: 1,
-      transition: {
+        duration: 0.3,
         staggerChildren: 0.2,
       },
     },
     hover: {
-      scale: 0.96,
-    },
-  };
-
-  const caseThumbnailImageVariants = {
-    hidden: { opacity: 0, scale: 0.7 },
-    inView: {
-      scale: 1,
-      opacity: width < breakpoints.mobileLarge ? 0.1 : 1,
-    },
-    hover: {
-      scale: 1.2,
+      opacity: 1,
+      scale: 1.02,
+      transition: {
+        duration: 0.25,
+      },
     },
   };
 
@@ -150,10 +130,17 @@ function CaseThumbnail({ data, status, caseUrl }) {
     hover: {
       opacity: 1,
     },
-  }; */
+  };
 
   return (
-    <StyledCaseThumbnail whileHover="hover">
+    <StyledCaseThumbnail
+      whileHover="hover"
+      initial="hidden"
+      whileInView="inView"
+      viewport={{ once: true, amount: "some" }}
+      transition={{ staggerChildren: 0.1 }}
+      variants={caseThumbnailVariants}
+    >
       <StyledBackgroundColor $bgColor={bgColor}>
         <StyledLink
           to={caseUrl}
@@ -181,7 +168,7 @@ function CaseThumbnail({ data, status, caseUrl }) {
             />
           )}
 
-          <StyledThumbnailCaption>
+          <StyledThumbnailCaption variants={caseThumbnailCaptionVariants}>
             <TitleAndText title={title} h={5} isCentered>
               <Paragraph>{text}</Paragraph>
             </TitleAndText>
