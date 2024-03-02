@@ -2,7 +2,7 @@
 /* eslint-disable no-nested-ternary */
 import React, { useEffect, useContext, useRef } from "react";
 import styled from "styled-components";
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import PropTypes from "prop-types";
 import { useWindowSize } from "react-use";
 import BgMedia from "./SectionHero/BgMedia";
@@ -98,8 +98,14 @@ function Cover({
   isLight,
 }) {
   const ref = useRef(null);
-
   const [, setElementBgColor] = useContext(ElementColorContext);
+
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+
+  const parallaxEffect = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   useEffect(() => {
     if (bgColor) {
@@ -168,7 +174,13 @@ function Cover({
       $isCaseCover={highlights !== null}
       ref={ref}
     >
-      {bgMedia && <BgMedia type={bgMedia.type} mediaUrl={bgMedia.mediaUrl} />}
+      {bgMedia && (
+        <BgMedia
+          type={bgMedia.type}
+          mediaUrl={bgMedia.mediaUrl}
+          style={{ top: parallaxEffect }}
+        />
+      )}
 
       <StyledCoverCaption variants={coverCaptionVariants}>
         <Caption

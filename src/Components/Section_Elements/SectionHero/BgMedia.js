@@ -1,6 +1,7 @@
-import React, { useRef } from "react";
+/* eslint-disable react/jsx-props-no-spreading */
+import React from "react";
 import styled from "styled-components";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import PropTypes from "prop-types";
 import { BG_MEDIA_TYPES } from "../../../data/dictionaries/BG_MEDIA_TYPES";
 import breakpoints from "../../../theme/breakpoints";
@@ -24,8 +25,6 @@ const StyledCoverVideo = styled(motion.video)`
   height: 92vh;
   object-fit: cover;
   object-position: top left;
-  scale: 1.32;
-  top: -16%;
 
   @media (min-width: ${breakpoints.mobileLarge}px) {
     right: 0;
@@ -36,19 +35,7 @@ const StyledCoverVideo = styled(motion.video)`
   }
 `;
 
-function BgMedia({ type, mediaUrl }) {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-
-  const parallaxEffect = useTransform(
-    scrollYProgress,
-    [0.16, 0.84],
-    ["-16%", "24%"]
-  );
-
+function BgMedia({ type, mediaUrl, ...rest }) {
   const imageVariants = {
     hidden: { opacity: 0 },
     inView: {
@@ -58,19 +45,12 @@ function BgMedia({ type, mediaUrl }) {
 
   return type === BG_MEDIA_TYPES.IMAGE ? (
     <StyledCoverImage
-      ref={ref}
       variants={imageVariants}
       src={`${process.env.PUBLIC_URL}/${mediaUrl}`}
-      style={{ top: parallaxEffect }}
+      {...rest}
     />
   ) : (
-    <StyledCoverVideo
-      autoPlay
-      muted
-      variants={imageVariants}
-      ref={ref}
-      style={{ top: parallaxEffect }}
-    >
+    <StyledCoverVideo autoPlay muted variants={imageVariants} {...rest}>
       <source src={`${process.env.PUBLIC_URL}/${mediaUrl}`} type="video/mp4" />
     </StyledCoverVideo>
   );

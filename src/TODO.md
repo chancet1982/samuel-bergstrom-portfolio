@@ -3,7 +3,6 @@
 - Social media links convert to iconButtons and add hover effects.
 - Social media links need a tooltip (and hover effect)
 - Test the footer color as slightly lighter black (for it to work the image must use a mask instead of gradient.)
-- Move "about me" hero image a tad down.
 - 2 tone needs to be more emphasised or removed.
 - In About me, the are with a picture of me "holding a lamp" we need to remove the padding bottom in that instance only (not sure how)
 - Add featured testimonials under the featured cases.
