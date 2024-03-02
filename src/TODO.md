@@ -1,11 +1,11 @@
 ----- TODO list (What's left before you're done) -----
 
+- Social media links convert to iconButtons and add hover effects.
+- Social media links need a tooltip (and hover effect)
 - Test the footer color as slightly lighter black (for it to work the image must use a mask instead of gradient.)
 - Move "about me" hero image a tad down.
 - 2 tone needs to be more emphasised or removed.
 - In About me, the are with a picture of me "holding a lamp" we need to remove the padding bottom in that instance only (not sure how)
-- Social media links need a tooltip (and hover effect)
-- Social media links convert to iconButtons and add hover effects.
 - Add featured testimonials under the featured cases.
 - Add customers slider under the testimonials and remove from the hero/cover.
 - Add a small piece about you(!) in the landing page after the
@@ -14,9 +14,8 @@
 - Remove the hover effect on the "submit" in the form.
 - Thumbnails covers need some more polish (alignment, headlines, etc)
 - Thumbnails not balanced due to no icon button to the right. see if it makes a difference.
-- Test why cursor isnt responding in hover effects/form etc.
-- Input background to lighten instad of white.
-- Text color should be white when hover.
+- Test why cursor isnt responding in hover effects/form etc. (it's the z-index);
+- Primary button text color should be white when hover.
 
 CONTACT_FORM:
 

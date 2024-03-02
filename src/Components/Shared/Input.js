@@ -8,24 +8,29 @@ import colors from "../../theme/colors";
 import typography from "../../theme/typography";
 import { formElementsVariants } from "../../animations/animations";
 import padding from "../../theme/padding";
+import useBgColor from "../../utils/useBgColor";
 
 const { size, lh, inc } = typography;
 
 const StyledInput = styled(motion.input)`
+  box-sizing: border-box;
   display: block;
   width: fill-available;
   border-radius: ${padding.insideElements.half};
   line-height: ${({ $small, $large }) =>
     $small ? lh + inc : $large ? lh - inc : lh};
-  border: solid 0.125rem ${colors.darkgray};
   font-family: ${typography.bodyFont};
   font-size: ${({ $small, $large, $xl }) =>
     $small ? size / 1.2 : $large ? size * 1.2 : $xl ? size * 1.618 : size}rem;
-  color: ${colors.text.dark.high};
   padding: 0.5rem;
-  box-sizing: border-box;
+  background-color: ${colors.lighten.low};
+  border: solid 0.125rem
+    ${({ $light }) => ($light ? colors.lighten.medium : colors.darken.medium)};
+  color: ${({ $light }) =>
+    $light ? colors.text.light.high : colors.text.dark.high};
 
   :focus {
+    background-color: ${colors.lighten.low};
     box-shadow: 0 0 0.25rem ${colors.primary};
     border: solid 0.125rem ${colors.primary};
     outline: none;
@@ -33,9 +38,11 @@ const StyledInput = styled(motion.input)`
 `;
 
 /* TODO: (later) add input validation */
-function Input({ type, name, required, small, large, xl, ...rest }) {
+function Input({ type, name, required, small, large, xl, isLight, ...rest }) {
+  const light = useBgColor() || isLight;
   return (
     <StyledInput
+      $light={light}
       type={type}
       name={name}
       required={required}
@@ -63,6 +70,7 @@ Input.propTypes = {
   small: PropTypes.bool,
   large: PropTypes.bool,
   xl: PropTypes.bool,
+  isLight: PropTypes.bool,
 };
 
 Input.defaultProps = {
@@ -71,6 +79,7 @@ Input.defaultProps = {
   small: false,
   large: false,
   xl: false,
+  isLight: false,
 };
 
 export default Input;
