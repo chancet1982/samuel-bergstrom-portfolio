@@ -10,8 +10,14 @@ import CustomCursor from "./CustomCursor";
 import breakpoints from "../theme/breakpoints";
 import SplashScreen from "./SplashScreen";
 import { SplashAnimationFinishedContext } from "../Context/SplashAnimationFinishedContext";
+import Footer from "./Footer";
+import SectionColorContextProvider from "../Context/SectionColorContext";
 
 const StyledView = styled(motion.main)`
+  z-index: 1;
+  position: relative;
+  background-color: #ffffff;
+
   ${({ $bgColor }) =>
     $bgColor && {
       backgroundColor: $bgColor,
@@ -60,6 +66,9 @@ function View({ children, bgColor }) {
         exit={{ scaleY: 1, transition: { duration: 0.6, ease: "circIn" } }}
         style={{ originY: isPresent ? 0 : 1 }}
       />
+      <SectionColorContextProvider>
+        <Footer />
+      </SectionColorContextProvider>
     </>
   );
 }

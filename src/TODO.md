@@ -1,16 +1,14 @@
 ----- TODO list (What's left before you're done) -----
 
-- Social media icons center the icons
-- Social media links need a tooltip (and hover effect)
-- Test the footer color as slightly lighter black (for it to work the image must use a mask instead of gradient.)
-- 2 tone needs to be more emphasised or removed.
+1. Add featured testimonials under the featured cases.
+2. Add customers slider under the testimonials and remove from the hero/cover.
+3. Change order in about me to be show testimonials and logos first and then the "about me" card later.
+
+- 2 tone text needs to be more emphasised or removed.
 - In About me, the are with a picture of me "holding a lamp" we need to remove the padding bottom in that instance only (not sure how)
-- Add featured testimonials under the featured cases.
-- Add customers slider under the testimonials and remove from the hero/cover.
+
 - Add a small piece about you(!) in the landing page after the
 - Fix gradient in bottom of cover
-- Change order in about me to be show testimonials and logos first and then the "about me" card later.
-- Remove the hover effect on the "submit" in the form.
 - Thumbnails covers need some more polish (alignment, headlines, etc)
 - Thumbnails not balanced due to no icon button to the right. see if it makes a difference.
 - Test why cursor isnt responding in hover effects/form etc. (it's the z-index);
@@ -18,6 +16,8 @@
 
 CONTACT_FORM:
 
+- Social media links need a tooltip (and hover effect)
+- Remove the hover effect on the "submit" in the form.
 - provide better styling for the success/error messages
 - Contact me link -> make slide to contact form
 

@@ -148,16 +148,4 @@ export const VIEW_LANDING_PAGE = [
       },
     ],
   },
-  {
-    bgColor: "#000000",
-    isStickyBottom: true,
-    elements: [
-      {
-        template: SECTION_ELEMENTS.SECTION_CONTACT_FORM,
-      },
-      {
-        template: SECTION_ELEMENTS.FOOTER,
-      },
-    ],
-  },
 ];

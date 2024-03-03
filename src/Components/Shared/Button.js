@@ -29,8 +29,8 @@ const StyledButton = styled(motion.button)`
   border: ${({ $secondary, $light }) =>
     $secondary
       ? $light
-        ? `solid 1px ${colors.offwhite}`
-        : `solid 1px ${colors.offwhite}`
+        ? `solid 1px ${colors.text.light.medium}`
+        : `solid 1px ${colors.text.dark.medium}`
       : `solid 1px transparent`};
 
   ${shadows.short};

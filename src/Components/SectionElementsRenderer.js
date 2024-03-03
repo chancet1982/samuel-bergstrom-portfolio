@@ -16,12 +16,10 @@ import ListOfImagesWithTitleAndText from "./Section_Elements/ListOfImagesWithTit
 import SectionImage from "./Section_Elements/SectionImage";
 import Timeline from "./Section_Elements/Timeline";
 import AdditionalCases from "./Section_Elements/AdditionalCases";
-import Footer from "./Section_Elements/Footer";
 import KeyFigures from "./Section_Elements/KeyFigures";
 import Testimonials from "./Section_Elements/Testimonials";
 import ElementColorContextProvider from "../Context/ElementColorContext";
 import ContactDetails from "./Section_Elements/ContactDetails";
-import SectionContactFrom from "./Section_Elements/SectionContactForm";
 import Insights from "./Section_Elements/Insights";
 import SectionVideo from "./Section_Elements/SectionVideo";
 import ListOfCards from "./Section_Elements/ListOfCards";
@@ -152,8 +150,6 @@ function SectionElementsRenderer({ elementKey, data, template }) {
       return <Timeline key={elementKey} items={data.items} />;
     case SECTION_ELEMENTS.CONTACT_DETAILS:
       return <ContactDetails key={elementKey} />;
-    case SECTION_ELEMENTS.SECTION_CONTACT_FORM:
-      return <SectionContactFrom key={elementKey} />;
     case SECTION_ELEMENTS.SECTION_IMAGE:
       return (
         <SectionImage
@@ -227,8 +223,6 @@ function SectionElementsRenderer({ elementKey, data, template }) {
       return <Clients key={elementKey} />;
     case SECTION_ELEMENTS.ADDITIONAL_CASES:
       return <AdditionalCases key={elementKey} />;
-    case SECTION_ELEMENTS.FOOTER:
-      return <Footer key={elementKey} />;
     case SECTION_ELEMENTS.QUOTE:
       return (
         <ElementColorContextProvider>

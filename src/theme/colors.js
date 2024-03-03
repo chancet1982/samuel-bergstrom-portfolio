@@ -1,5 +1,7 @@
 /* Colors are currently used outside as well, primary color and text dark are used in index.css and secondary color used in landing page */
 const colors = {
+  white: "#ffffff",
+  black: "#000000",
   text: {
     dark: {
       high: "#333333",

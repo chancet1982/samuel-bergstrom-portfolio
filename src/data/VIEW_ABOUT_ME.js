@@ -463,16 +463,4 @@ export const VIEW_ABOUT_ME = [
       },
     ],
   },
-  {
-    isStickyBottom: true,
-    bgColor: "#000000",
-    elements: [
-      {
-        template: SECTION_ELEMENTS.SECTION_CONTACT_FORM,
-      },
-      {
-        template: SECTION_ELEMENTS.FOOTER,
-      },
-    ],
-  },
 ];

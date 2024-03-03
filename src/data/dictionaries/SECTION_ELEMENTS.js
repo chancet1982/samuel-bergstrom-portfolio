@@ -24,9 +24,7 @@ export const SECTION_ELEMENTS = {
   TIMELINE: "timeline",
   SOCIAL_MEDIA_LINKS: "socialmedialinks",
   ADDITIONAL_CASES: "additionalCases",
-  FOOTER: "footer",
   KEY_FIGURES: "keyFigures",
   CONTACT_DETAILS: "contactDetails",
-  SECTION_CONTACT_FORM: "sectionContactForm",
   VIDEO: "video",
 };
