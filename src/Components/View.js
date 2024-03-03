@@ -16,7 +16,7 @@ import SectionColorContextProvider from "../Context/SectionColorContext";
 const StyledView = styled(motion.main)`
   z-index: 1;
   position: relative;
-  background-color: #ffffff;
+  background-color: ${colors.white};
 
   ${({ $bgColor }) =>
     $bgColor && {

@@ -10,6 +10,7 @@ import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
 import Note from "../Components/Shared/Note";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
+import colors from "../theme/colors";
 
 const SETTINGS = {
   BG_COLOR: "#abc0ce",
@@ -251,7 +252,7 @@ export const CASE_13 = {
     {
       paddedUp: true,
       paddedDown: true,
-      bgColor: "#ffffff",
+      bgColor: colors.white,
       header: "insights",
       elements: [
         {

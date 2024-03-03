@@ -78,7 +78,6 @@ const StyledSocialMediaLinks = styled(motion.div)`
     padding: ${padding.insideElements.quarter} ${padding.insideElements.half}
       ${padding.insideElements.half} ${padding.insideElements.half};
     border-radius: 50%;
-    border: solid 1px #ffffff;
     box-sizing: border-box;
     cursor: pointer;
   }

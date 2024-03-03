@@ -9,6 +9,7 @@ import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
+import colors from "../theme/colors";
 
 const SETTINGS = {
   BG_COLOR: "#333333",
@@ -174,7 +175,7 @@ export const CASE_12 = {
     {
       paddedUp: true,
       paddedDown: true,
-      bgColor: "#ffffff",
+      bgColor: colors.white,
       elements: [
         {
           template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,

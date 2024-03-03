@@ -10,7 +10,7 @@ import breakpoints from "../../theme/breakpoints";
 
 const StyledCard = styled(motion.div)`
   background-color: ${({ $light }) =>
-    $light ? colors.lighten.low : "#ffffff"};
+    $light ? colors.lighten.low : colors.white};
   scroll-snap-align: start;
   position: relative;
   box-sizing: border-box;

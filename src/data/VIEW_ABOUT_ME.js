@@ -50,7 +50,7 @@ export const VIEW_ABOUT_ME = [
     ],
   },
   {
-    bgColor: "#ffffff",
+    bgColor: colors.white,
     paddedUp: true,
     elements: [
       { template: SECTION_ELEMENTS.SPACER_MEDIUM },
@@ -411,7 +411,7 @@ export const VIEW_ABOUT_ME = [
     ],
   },
   {
-    bgColor: "#ffffff",
+    bgColor: colors.white,
     paddedUp: true,
     paddedDown: true,
     elements: [
