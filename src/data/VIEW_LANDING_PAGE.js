@@ -9,6 +9,7 @@ import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES"
 import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
 import Span from "../Components/Shared/Span";
 import padding from "../theme/padding";
+import colors from "../theme/colors";
 
 const StyledButtonsContainer = styled(motion.div)`
   display: flex;
@@ -52,7 +53,6 @@ export const VIEW_LANDING_PAGE = [
             type: BG_MEDIA_TYPES.VIDEO,
             mediaUrl: "assets/landing-page-1.mp4",
           },
-          clientsPreview: true,
           isLight: true,
         },
       },
@@ -60,6 +60,7 @@ export const VIEW_LANDING_PAGE = [
   },
   {
     paddedUp: true,
+    paddedDown: true,
     bgColor: "#000000",
     elements: [
       {
@@ -68,9 +69,29 @@ export const VIEW_LANDING_PAGE = [
           featured: true,
         },
       },
+    ],
+  },
+  {
+    paddedUp: true,
+    paddedDown: true,
+    bgColor: colors.white,
+    elements: [
       {
-        template: SECTION_ELEMENTS.SPACER_MEDIUM,
+        template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
+        data: {
+          title: "Trusted by",
+          isCentered: true,
+        },
       },
+      {
+        template: SECTION_ELEMENTS.SECTION_CLIENTS,
+      },
+    ],
+  },
+  {
+    paddedUp: true,
+    paddedDown: true,
+    elements: [
       {
         template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
         data: {
