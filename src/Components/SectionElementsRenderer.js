@@ -27,6 +27,7 @@ import Spacer from "./Section_Elements/Spacer";
 import { SPACER_SIZES } from "../data/dictionaries/SPACER_SIZES";
 import SectionHeroCases from "./Section_Elements/SectionHeroCases";
 import SectionClients from "./Section_Elements/SectionClients";
+import SectionClientsMarquee from "./Section_Elements/SectionClientsMarquee";
 
 function SectionElementsRenderer({ elementKey, data, template }) {
   if (!template) {
@@ -56,9 +57,8 @@ function SectionElementsRenderer({ elementKey, data, template }) {
             bgColor={data.bgColor}
             fgImage={data.fgImage}
             caption={data.caption}
-            highlights={data.highlights}
-            clientsPreview={data.clientsPreview}
             isLight={data.isLight}
+            withGradientBottom={data.withGradientBottom}
           />
         </ElementColorContextProvider>
       );
@@ -224,6 +224,8 @@ function SectionElementsRenderer({ elementKey, data, template }) {
       return <Clients key={elementKey} />;
     case SECTION_ELEMENTS.SECTION_CLIENTS:
       return <SectionClients key={elementKey} />;
+    case SECTION_ELEMENTS.SECTION_CLIENTS_MARQUEE:
+      return <SectionClientsMarquee key={elementKey} />;
     case SECTION_ELEMENTS.ADDITIONAL_CASES:
       return <AdditionalCases key={elementKey} />;
     case SECTION_ELEMENTS.QUOTE:

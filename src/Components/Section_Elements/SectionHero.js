@@ -4,12 +4,9 @@ import React, { useEffect, useContext, useRef } from "react";
 import styled from "styled-components";
 import { motion, useScroll, useTransform } from "framer-motion";
 import PropTypes from "prop-types";
-import { useWindowSize } from "react-use";
 import BgMedia from "./SectionHero/BgMedia";
 import Caption from "./SectionHero/Caption";
 import FgImage from "./SectionHero/FgImage";
-import Highlights from "./SectionHero/Highlights";
-import ClientPreview from "./SectionHero/ClientsPreview";
 import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
 import sizes from "../../theme/sizes";
 import breakpoints from "../../theme/breakpoints";
@@ -36,17 +33,10 @@ const StyledCover = styled(motion.div)`
     width: 100%;
     height: 100%;
     z-index: 1;
-    ${({ $isCaseCover }) =>
-      !$isCaseCover && {
-        background: `linear-gradient( 72deg, rgba(0, 0, 0, 0.64) 0%, rgba(0, 0, 0, 0) 100%)`,
+    ${({ $withGradientBottom }) =>
+      $withGradientBottom && {
+        background: `linear-gradient(0deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.32) 50%, rgba(0, 0, 0, 0) 100%)`,
       }}
-
-    @media (min-width: ${breakpoints.mobileLarge}px) {
-      ${({ $isCaseCover }) =>
-        !$isCaseCover && {
-          background: `linear-gradient( 72deg, rgba(0, 0, 0, 0.64) 0%, rgba(0, 0, 0, 0) 64%)`,
-        }}
-    }
   }
 `;
 
@@ -76,25 +66,12 @@ const StyledCoverCaption = styled(motion.div)`
   }
 `;
 
-const StyledCoverFooter = styled(motion.div)`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  ${({ $clientsPreview }) =>
-    $clientsPreview && {
-      background: `linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(0,0,0,0.32) 50%, rgba(0,0,0,0) 100%)`,
-    }};
-  z-index: 1;
-`;
-
 function Cover({
   bgColor,
   bgMedia,
   caption,
   fgImage,
-  highlights,
-  clientsPreview,
+  withGradientBottom,
   isLight,
 }) {
   const ref = useRef(null);
@@ -114,9 +91,6 @@ function Cover({
       setElementBgColor("#000000");
     }
   }, [setElementBgColor, bgColor, bgMedia, isLight]);
-
-  const { width } = useWindowSize();
-  const isTabletOrDesktop = width >= breakpoints.mobileLarge;
 
   const coverVariants = {
     hidden: {
@@ -142,27 +116,6 @@ function Cover({
     },
   };
 
-  const coverFooterVariants = {
-    hidden: { opacity: 0, y: "100%", transition: { duration: 0.6 } },
-    inView: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.6,
-        staggerChildren: clientsPreview ? 0 : 0.2,
-      },
-    },
-  };
-
-  const renderCoverFooterContent = () =>
-    highlights ? (
-      isTabletOrDesktop ? (
-        <Highlights items={highlights} />
-      ) : null
-    ) : clientsPreview ? (
-      <ClientPreview />
-    ) : null;
-
   return (
     <StyledCover
       $bgColor={bgColor}
@@ -171,8 +124,8 @@ function Cover({
       whileInView="inView"
       viewport={{ once: true, amount: 0.2 }}
       transition={{ staggerChildren: 0.2 }}
-      $isCaseCover={highlights !== null}
       ref={ref}
+      $withGradientBottom={withGradientBottom}
     >
       {bgMedia && (
         <BgMedia
@@ -198,15 +151,6 @@ function Cover({
           imageAlt={fgImage.imageAlt}
         />
       )}
-
-      {highlights || clientsPreview ? (
-        <StyledCoverFooter
-          variants={coverFooterVariants}
-          $clientsPreview={clientsPreview}
-        >
-          {renderCoverFooterContent()}
-        </StyledCoverFooter>
-      ) : null}
     </StyledCover>
   );
 }
@@ -228,17 +172,7 @@ Cover.propTypes = {
     h: PropTypes.number,
     text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   }),
-  highlights: PropTypes.arrayOf(
-    PropTypes.shape({
-      value: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.arrayOf(PropTypes.string),
-      ]),
-      renderAsList: PropTypes.bool,
-      label: PropTypes.string,
-    })
-  ),
-  clientsPreview: PropTypes.bool,
+  withGradientBottom: PropTypes.bool,
   isLight: PropTypes.bool,
 };
 
@@ -247,8 +181,7 @@ Cover.defaultProps = {
   bgColor: null,
   fgImage: null,
   caption: null,
-  highlights: null,
-  clientsPreview: false,
+  withGradientBottom: false,
   isLight: false,
 };
 

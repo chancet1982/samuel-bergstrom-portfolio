@@ -23,6 +23,7 @@ export const VIEW_LANDING_PAGE = [
       {
         template: SECTION_ELEMENTS.SECTION_HERO,
         data: {
+          withGradientBottom: true,
           bgColor: "#000000",
           caption: {
             title: (
@@ -72,25 +73,23 @@ export const VIEW_LANDING_PAGE = [
     ],
   },
   {
-    paddedUp: true,
-    paddedDown: true,
     bgColor: colors.white,
     elements: [
       {
         template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
         data: {
           title: "Trusted by",
+          h: 3,
           isCentered: true,
         },
       },
       {
-        template: SECTION_ELEMENTS.SECTION_CLIENTS,
+        template: SECTION_ELEMENTS.SECTION_CLIENTS_MARQUEE,
       },
     ],
   },
   {
-    paddedUp: true,
-    paddedDown: true,
+    bgColor: colors.offwhite,
     elements: [
       {
         template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,

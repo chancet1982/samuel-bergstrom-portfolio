@@ -1,8 +1,7 @@
 ----- TODO list (What's left before you're done) -----
 
-0. Re-introduce the bottom gradient to Cover in the landing page.
-1. Add featured testimonials under the featured cases.
-2. Change order in about me to be show testimonials and logos first and then the "about me" card later.
+2. Add featured testimonials under the featured cases.
+3. Update design of "about me" and remove testimonials and client logos from page. Update to be more of a story/timeline instead of CV (POTENTIALLY COPY THE EFFECT FROM GITHUB)
 
 - 2 tone text needs to be more emphasised or removed.
 - In About me, the are with a picture of me "holding a lamp" we need to remove the padding bottom in that instance only (not sure how)
