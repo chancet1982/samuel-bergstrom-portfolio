@@ -160,7 +160,7 @@ function Footer({ bgColor, navBgColor }) {
             <Button
               secondary
               iconButton
-              onMouseEnter={() => socialMediaLinkMouseEnter("adplist")}
+              onMouseEnter={() => socialMediaLinkMouseEnter("APDlist")}
               onMouseLeave={() => socialMediaLinkMouseLeave()}
               onClick={() =>
                 window.open(
@@ -173,7 +173,7 @@ function Footer({ bgColor, navBgColor }) {
             <Button
               secondary
               iconButton
-              onMouseEnter={() => socialMediaLinkMouseEnter("medium")}
+              onMouseEnter={() => socialMediaLinkMouseEnter("Medium")}
               onMouseLeave={() => socialMediaLinkMouseLeave()}
               onClick={() =>
                 window.open("https://medium.com/@chancet1982", "_blank")
