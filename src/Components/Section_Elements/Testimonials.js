@@ -37,7 +37,9 @@ const StyledTestimonials = styled(motion.div)`
 function Testimonials({ inLandingPage, limitMaxWidth }) {
   const { width } = useWindowSize();
   const [isPreview, togglePreview] = useState(width <= breakpoints.mobileLarge); // TODO: this works but does not account for resize: ;
-  const testimonials = isPreview ? pickRandom(TESTIMONIALS, 3) : TESTIMONIALS;
+  const testimonials = isPreview
+    ? pickRandom(TESTIMONIALS, width >= breakpoints.desktop ? 3 : 2)
+    : TESTIMONIALS;
 
   useEffect(() => {
     if (inLandingPage) {

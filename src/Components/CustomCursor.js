@@ -5,6 +5,7 @@ import Span from "./Shared/Span";
 import useMousePosition from "../utils/useMousePosition";
 import { CursorContext } from "../Context/CursorContext";
 import colors from "../theme/colors";
+import padding from "../theme/padding";
 
 const StyledCursor = styled(motion.div)`
   position: fixed;
@@ -53,7 +54,7 @@ function CustomCursor() {
       opacity: 1,
       height: 0,
       width: 0,
-      fontSize: "16px",
+      fontSize: "1rem",
       backgroundColor: colors.offblack,
       x: mouseXPosition,
       y: mouseYPosition,
@@ -66,9 +67,14 @@ function CustomCursor() {
       opacity: 1,
       backgroundColor: colors.white,
       color: colors.text.light.high,
-      height: 80,
-      width: 80,
-      fontSize: "18px",
+      height: "auto",
+      paddingTop: padding.insideElements.quarter,
+      paddingRight: padding.insideElements.single,
+      paddingBottom: padding.insideElements.quarter,
+      paddingLeft: padding.insideElements.single,
+      width: "auto",
+      fontSize: "1rem",
+      lineHeight: "1.5rem",
       x: mouseXPosition - 32,
       y: mouseYPosition - 32,
     },

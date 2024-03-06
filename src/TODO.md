@@ -1,28 +1,16 @@
 ----- TODO list (What's left before you're done) -----
 
-3. Update design of "about me" and remove testimonials and client logos from page. Update to be more of a story/timeline instead of CV (POTENTIALLY COPY THE EFFECT FROM GITHUB)
-
+- Update design of "about me" and remove testimonials and client logos from page. Update to be more of a story/timeline instead of CV (POTENTIALLY COPY THE EFFECT FROM GITHUB)
 - 2 tone text needs to be more emphasised or removed.
 - In About me, the are with a picture of me "holding a lamp" we need to remove the padding bottom in that instance only (not sure how)
-
 - Add a small piece about you(!) in the landing page after the
-- Fix gradient in bottom of cover
 - Thumbnails covers need some more polish (alignment, headlines, etc)
 - Thumbnails not balanced due to no icon button to the right. see if it makes a difference.
-- Test why cursor isnt responding in hover effects/form etc. (it's the z-index);
 - Primary button text color should be white when hover.
-
-CONTACT_FORM:
-
-- Social media links need a tooltip (and hover effect)
+- Limit splash screen to show only once.
 - Remove the hover effect on the "submit" in the form.
 - provide better styling for the success/error messages
 - Contact me link -> make slide to contact form
-
-SPLASH_SCREEN:
-
-- Limit splash screen to show only once.
-- CaseThumbnail -> re-add Appear inView animation, and hover.
 
 CONTENT_FIXES FOR CASES:
 
@@ -33,7 +21,6 @@ CONTENT_FIXES FOR CASES:
 PARALLAX_FIXES:
 
 - SECTION_IMAGE: add support for parallax effect (can be nice to have on non-content-critical images)
-- SECTION_TITLE_AND_TEXT -> ScrollY VS ScrollYprogress seems like the wrong value to use (absolute page scroll instead of relative - only works because its the first element in the page)
 
 ----- Fixes for mobile version only -----
 KEY_FIGURES -> doesnt scale on mobile nicely (pushes content in case_13 for example)
@@ -53,7 +40,6 @@ COVER_CAPTION: Add "back" button (In cases)
 Use Contentful for content.
 server side rendering using Next.js (?)
 Add password protection to cases
-cleanup limitMaxWidth & bgColor props to be used only where relevant
 
 ----- OLD FIXES (NOT SURE IF RELEVANT ANYMORE) -----
 LANDING_PAGE -> Is light is not working (because section has a background color so it overrides the element color context)

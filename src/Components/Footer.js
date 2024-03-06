@@ -17,6 +17,7 @@ import colors from "../theme/colors";
 import { SectionColorContext } from "../Context/SectionColorContext";
 import useIsTouchingTop from "../utils/useIsTouchingTop";
 import { NavBgColorContext } from "../Context/NavBgColorContext";
+import { CursorContext } from "../Context/CursorContext";
 
 const StyledFooter = styled(motion.footer)`
   margin: 0;
@@ -106,6 +107,18 @@ function Footer({ bgColor, navBgColor }) {
     }
   }, [isTouchingTop, setNavBgColor, bgColor, navBgColor]);
 
+  const [, setCursorText, , setCursorVariant] = useContext(CursorContext);
+
+  function socialMediaLinkMouseEnter(text) {
+    setCursorText(text);
+    setCursorVariant("project");
+  }
+
+  function socialMediaLinkMouseLeave() {
+    setCursorText("");
+    setCursorVariant("default");
+  }
+
   return (
     <StyledFooter
       initial="hidden"
@@ -134,25 +147,52 @@ function Footer({ bgColor, navBgColor }) {
             <Button
               secondary
               iconButton
-              to="https://www.linkedin.com/in/samuel-bergstr%C3%B6m-13bb8b1b/"
+              onMouseEnter={() => socialMediaLinkMouseEnter("Linkedin")}
+              onMouseLeave={() => socialMediaLinkMouseLeave()}
+              onClick={() =>
+                window.open(
+                  "https://www.linkedin.com/in/samuel-bergstr%C3%B6m-13bb8b1b/",
+                  "_blank"
+                )
+              }
               icon={ICON_PATHS.LINKEDIN}
             />
             <Button
               secondary
               iconButton
-              to="https://adplist.org/mentors/samuel-bergstrom"
+              onMouseEnter={() => socialMediaLinkMouseEnter("adplist")}
+              onMouseLeave={() => socialMediaLinkMouseLeave()}
+              onClick={() =>
+                window.open(
+                  "https://adplist.org/mentors/samuel-bergstrom",
+                  "_blank"
+                )
+              }
               icon={ICON_PATHS.ADPLIST}
             />
             <Button
               secondary
               iconButton
-              to="https://medium.com/@chancet1982"
+              onMouseEnter={() => socialMediaLinkMouseEnter("medium")}
+              onMouseLeave={() => socialMediaLinkMouseLeave()}
+              onClick={() =>
+                window.open("https://medium.com/@chancet1982", "_blank")
+              }
               icon={ICON_PATHS.MEDIUM}
             />
             <Button
               secondary
               iconButton
-              to="https://stackoverflow.com/users/4042508/samuel-bergstr%C3%B6m"
+              onMouseEnter={() =>
+                socialMediaLinkMouseEnter("UX stack exchange")
+              }
+              onMouseLeave={() => socialMediaLinkMouseLeave()}
+              onClick={() =>
+                window.open(
+                  "https://stackoverflow.com/users/4042508/samuel-bergstr%C3%B6m",
+                  "_blank"
+                )
+              }
               icon={ICON_PATHS.STACK_EXCHANGE}
             />
           </StyledSocialMediaLinks>

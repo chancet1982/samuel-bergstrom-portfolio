@@ -90,7 +90,7 @@ function CaseThumbnail({ data, status, caseUrl }) {
   const [, setCursorText, , setCursorVariant] = useContext(CursorContext);
 
   function CaseThumbnailMouseEnter() {
-    setCursorText("View");
+    setCursorText("See project");
     setCursorVariant("project");
   }
 
