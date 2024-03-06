@@ -246,7 +246,13 @@ function SectionElementsRenderer({ elementKey, data, template }) {
     case SECTION_ELEMENTS.CASES_PREVIEW:
       return <CasesPreview key={elementKey} />;
     case SECTION_ELEMENTS.TESTIMONIALS:
-      return <Testimonials key={elementKey} />;
+      return (
+        <Testimonials
+          key={elementKey}
+          inLandingPage={data.inLandingPage}
+          limitMaxWidth={data.limitMaxWidth}
+        />
+      );
     default:
       return null;
   }

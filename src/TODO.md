@@ -1,6 +1,5 @@
 ----- TODO list (What's left before you're done) -----
 
-2. Add featured testimonials under the featured cases.
 3. Update design of "about me" and remove testimonials and client logos from page. Update to be more of a story/timeline instead of CV (POTENTIALLY COPY THE EFFECT FROM GITHUB)
 
 - 2 tone text needs to be more emphasised or removed.

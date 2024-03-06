@@ -94,6 +94,29 @@ export const VIEW_LANDING_PAGE = [
       {
         template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
         data: {
+          title: "Dont take my word for it",
+          h: 3,
+          text: <Paragraph>This is what others have to say about me</Paragraph>,
+          isCentered: true,
+        },
+      },
+      {
+        template: SECTION_ELEMENTS.SPACER_SMALL,
+      },
+      {
+        template: SECTION_ELEMENTS.TESTIMONIALS,
+        data: {
+          inLandingPage: true,
+        },
+      },
+    ],
+  },
+  {
+    bgColor: colors.offwhite,
+    elements: [
+      {
+        template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
+        data: {
           title: <>Jack of all trades and master of some</>,
           h: 2,
           text: (
