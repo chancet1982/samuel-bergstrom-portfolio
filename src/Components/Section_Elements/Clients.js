@@ -17,7 +17,7 @@ const StyledClients = styled(motion.div)`
   margin: 0 auto;
   display: grid;
   grid-gap: max(
-    ${padding.outsideElements.double},
+    ${padding.outsideElements.single},
     ${padding.insideElements.single}
   );
   grid-template-columns: repeat(auto-fit, minmax(144px, 1fr));

@@ -65,15 +65,14 @@ function CustomCursor() {
     },
     project: {
       opacity: 1,
-      backgroundColor: colors.white,
-      color: colors.text.light.high,
+      backgroundColor: colors.darkgray,
       height: "auto",
       paddingTop: padding.insideElements.quarter,
-      paddingRight: padding.insideElements.single,
+      paddingRight: padding.insideElements.double,
       paddingBottom: padding.insideElements.quarter,
-      paddingLeft: padding.insideElements.single,
+      paddingLeft: padding.insideElements.double,
       width: "auto",
-      fontSize: "1rem",
+      fontSize: "0.75rem",
       lineHeight: "1.5rem",
       x: mouseXPosition - 32,
       y: mouseYPosition - 32,
@@ -99,12 +98,13 @@ function CustomCursor() {
   return (
     <StyledCursor
       variants={variants}
-      className="circle"
       animate={cursorVariant}
       transition={spring}
     >
       <StyledCursorText>
-        <Span highContrast>{cursorText}</Span>
+        <Span highContrast isLight={cursorVariant === "project"}>
+          {cursorText}
+        </Span>
       </StyledCursorText>
     </StyledCursor>
   );

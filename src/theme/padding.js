@@ -1,5 +1,6 @@
 const padding = {
   outsideElements: {
+    single: "2vmin",
     double: "4vmin",
     quadruple: "8vmin",
     octuple: "16vmin",

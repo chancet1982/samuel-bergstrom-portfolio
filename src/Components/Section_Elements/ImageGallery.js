@@ -13,7 +13,7 @@ const StyledImageGallery = styled(motion.div)`
   grid-column: 1 / span 2;
   display: grid;
   grid-gap: max(
-    ${padding.outsideElements.double},
+    ${padding.outsideElements.single},
     ${padding.insideElements.single}
   );
 

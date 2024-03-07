@@ -16,7 +16,7 @@ const StyledFinalResultContent = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: max(
-    ${padding.outsideElements.double},
+    ${padding.outsideElements.single},
     ${padding.insideElements.single}
   );
 

@@ -114,6 +114,13 @@ function Button({
     return 2;
   };
 
+  const mapSizeToIconSize = () => {
+    if (small) return 16;
+    if (large) return 32;
+    if (xl) return 40;
+    return 24;
+  };
+
   const fluidType = useFluidTypography(mapSizeToNumber());
   const navigate = useNavigate();
 
@@ -129,7 +136,7 @@ function Button({
       variants={formElementsVariants}
       $iconButton={iconButton}
     >
-      {icon && <Icon path={icon} size={40} />}
+      {icon && <Icon path={icon} size={mapSizeToIconSize()} />}
 
       {children}
     </StyledButton>

@@ -18,7 +18,7 @@ const StyledCaseFooter = styled(motion.div)`
   padding-left: ${padding.outsideElements.double};
   padding-right: ${padding.outsideElements.double};
   grid-gap: max(
-    ${padding.outsideElements.double},
+    ${padding.outsideElements.single},
     ${padding.insideElements.single}
   );
   padding-bottom: ${padding.insideElements.double};

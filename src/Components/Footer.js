@@ -41,7 +41,7 @@ const StyledSectionContactForm = styled(motion.div)`
   padding-left: ${padding.outsideElements.double};
   padding-right: ${padding.outsideElements.double};
   grid-gap: max(
-    ${padding.outsideElements.double},
+    ${padding.outsideElements.single},
     ${padding.insideElements.single}
   );
   padding-bottom: ${padding.insideElements.double};
@@ -147,6 +147,7 @@ function Footer({ bgColor, navBgColor }) {
             <Button
               secondary
               iconButton
+              large
               onMouseEnter={() => socialMediaLinkMouseEnter("Linkedin")}
               onMouseLeave={() => socialMediaLinkMouseLeave()}
               onClick={() =>
@@ -160,6 +161,7 @@ function Footer({ bgColor, navBgColor }) {
             <Button
               secondary
               iconButton
+              large
               onMouseEnter={() => socialMediaLinkMouseEnter("APDlist")}
               onMouseLeave={() => socialMediaLinkMouseLeave()}
               onClick={() =>
@@ -173,6 +175,7 @@ function Footer({ bgColor, navBgColor }) {
             <Button
               secondary
               iconButton
+              large
               onMouseEnter={() => socialMediaLinkMouseEnter("Medium")}
               onMouseLeave={() => socialMediaLinkMouseLeave()}
               onClick={() =>
@@ -183,6 +186,7 @@ function Footer({ bgColor, navBgColor }) {
             <Button
               secondary
               iconButton
+              large
               onMouseEnter={() =>
                 socialMediaLinkMouseEnter("UX stack exchange")
               }

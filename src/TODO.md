@@ -5,7 +5,6 @@
 - In About me, the are with a picture of me "holding a lamp" we need to remove the padding bottom in that instance only (not sure how)
 - Add a small piece about you(!) in the landing page after the
 - Thumbnails covers need some more polish (alignment, headlines, etc)
-- Thumbnails not balanced due to no icon button to the right. see if it makes a difference.
 - Primary button text color should be white when hover.
 - Limit splash screen to show only once.
 - Remove the hover effect on the "submit" in the form.
@@ -37,12 +36,11 @@ CASE_07 -> Add pictures of the report.
 Consider using a more consitent color scheme 3 colors or so (pastels)
 Generally speaking start considering how to make things more "monochromatic" and modern (gradients in the background, gradient headlines etc)
 COVER_CAPTION: Add "back" button (In cases)
-Use Contentful for content.
-server side rendering using Next.js (?)
 Add password protection to cases
+server side rendering using Next.js (?)
+Use Contentful for content.
 
 ----- OLD FIXES (NOT SURE IF RELEVANT ANYMORE) -----
-LANDING_PAGE -> Is light is not working (because section has a background color so it overrides the element color context)
 MOBILE_MENU -> Implement staggered menulink animations.
 SECTION_IMAGE: make selectable if you want it to scale down or preserve height
 

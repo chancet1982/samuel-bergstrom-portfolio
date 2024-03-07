@@ -15,6 +15,8 @@ import { BG_MEDIA_TYPES } from "../../../data/dictionaries/BG_MEDIA_TYPES";
 import TitleAndText from "../../Shared/TitleAndText";
 import Overline from "../../Shared/Overline";
 import Paragraph from "../../Shared/Paragraph";
+import Button from "../../Shared/Button";
+import { ICON_PATHS } from "../../../data/dictionaries/ICON_PATHS";
 
 const StyledCaseThumbnail = styled(motion.div)`
   box-sizing: border-box;
@@ -58,6 +60,10 @@ const StyledThumbnailCaption = styled(motion.div)`
   padding-top: 0;
   box-sizing: border-box;
   text-wrap: balance;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 
   h5 {
     margin: 0 !important;
@@ -169,9 +175,10 @@ function CaseThumbnail({ data, status, caseUrl }) {
           )}
 
           <StyledThumbnailCaption variants={caseThumbnailCaptionVariants}>
-            <TitleAndText title={title} h={5} isCentered>
+            <TitleAndText title={title} h={5}>
               <Paragraph>{text}</Paragraph>
             </TitleAndText>
+            <Button iconButton icon={ICON_PATHS.ARROW_RIGHT} />
           </StyledThumbnailCaption>
 
           {status === CASE_STATUS.COMING_SOON && <Badge>COMING SOON!</Badge>}

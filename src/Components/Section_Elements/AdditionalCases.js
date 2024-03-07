@@ -13,6 +13,8 @@ import padding from "../../theme/padding";
 import breakpoints from "../../theme/breakpoints";
 import sizes from "../../theme/sizes";
 import CaseThumbnail from "./Cases/CaseThumbnail";
+import { SPACER_SIZES } from "../../data/dictionaries/SPACER_SIZES";
+import Spacer from "./Spacer";
 
 const StyledAdditionalCases = styled(motion.div)`
   > div {
@@ -36,7 +38,7 @@ const StyledCasesList = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: max(
-    ${padding.outsideElements.double},
+    ${padding.outsideElements.single},
     ${padding.insideElements.single}
   );
 
@@ -51,7 +53,7 @@ const StyledCasesList = styled(motion.div)`
         (
             100vw - 1 *
               max(
-                ${padding.outsideElements.double},
+                ${padding.outsideElements.single},
                 ${padding.insideElements.single}
               ) - 2 * ${padding.outsideElements.double}
           ) / 2
@@ -67,7 +69,7 @@ const StyledCasesList = styled(motion.div)`
         (
             100vw - 2 *
               max(
-                ${padding.outsideElements.double},
+                ${padding.outsideElements.single},
                 ${padding.insideElements.single}
               ) - 2 * ${padding.outsideElements.double}
           ) / 3
@@ -102,7 +104,7 @@ function AdditionalCases() {
           Perhaps one youll be interested in one of my other cases
         </Paragraph>
       </TitleAndText>
-
+      <Spacer size={SPACER_SIZES.SMALL} />
       <StyledCasesList>
         {ADDITIONAL_CASES.map(({ thumbnail = {}, caseUrl, caseStatus }) => (
           <ElementContextProvider key={caseUrl}>

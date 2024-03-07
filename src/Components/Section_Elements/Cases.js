@@ -20,7 +20,7 @@ const StyledCases = styled(motion.div)`
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: max(
-    ${padding.outsideElements.double},
+    ${padding.outsideElements.single},
     ${padding.insideElements.single}
   );
 
@@ -35,7 +35,7 @@ const StyledCases = styled(motion.div)`
         (
             100vw - 1 *
               max(
-                ${padding.outsideElements.double},
+                ${padding.outsideElements.single},
                 ${padding.insideElements.single}
               ) - 2 * ${padding.outsideElements.double}
           ) / 2
@@ -51,7 +51,7 @@ const StyledCases = styled(motion.div)`
         (
             100vw - 2 *
               max(
-                ${padding.outsideElements.double},
+                ${padding.outsideElements.single},
                 ${padding.insideElements.single}
               ) - 2 * ${padding.outsideElements.double}
           ) / 3
