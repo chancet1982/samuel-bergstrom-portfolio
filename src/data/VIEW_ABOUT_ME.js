@@ -192,6 +192,9 @@ export const VIEW_ABOUT_ME = [
     elements: [
       {
         template: SECTION_ELEMENTS.TESTIMONIALS,
+        data: {
+          inLandingPage: false,
+        },
       },
     ],
   },
