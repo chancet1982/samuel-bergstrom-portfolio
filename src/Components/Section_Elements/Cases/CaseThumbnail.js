@@ -29,6 +29,7 @@ const StyledLink = styled(Link)`
   width: 100%;
   height: 100%;
   text-decoration: none !important;
+  justify-content: space-between;
 `;
 
 const StyledBackgroundColor = styled(motion.div)`

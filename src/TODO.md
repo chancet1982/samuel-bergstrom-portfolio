@@ -1,5 +1,6 @@
 ----- TODO list (What's left before you're done) -----
 
+- Case thumbnail -> Coming soon needs a tad more polish and the link to the underlying case shouldnt be active.
 - Update design of "about me" and remove testimonials and client logos from page. Update to be more of a story/timeline instead of CV (POTENTIALLY COPY THE EFFECT FROM GITHUB)
 - 2 tone text needs to be more emphasised or removed.
 - In About me, the are with a picture of me "holding a lamp" we need to remove the padding bottom in that instance only (not sure how)
