@@ -174,6 +174,7 @@ export const CASE_6 = {
       ],
     },
     {
+      paddedDown: true,
       elements: [
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
@@ -219,6 +220,7 @@ export const CASE_6 = {
         {
           template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
           data: {
+            plainImage: true,
             items: [
               {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/typography.jpg`,
@@ -256,6 +258,8 @@ export const CASE_6 = {
       ],
     },
     {
+      paddedUp: true,
+      paddedDown: true,
       sectionTitle: <>My approach to creating practical design systems</>,
       elements: [
         {
@@ -326,6 +330,7 @@ export const CASE_6 = {
         {
           template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
           data: {
+            plainImage: true,
             items: [
               {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/atoms.jpg`,
@@ -353,6 +358,8 @@ export const CASE_6 = {
       ],
     },
     {
+      paddedUp: true,
+      paddedDown: true,
       elements: [
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
@@ -393,10 +400,6 @@ export const CASE_6 = {
             ),
           },
         },
-      ],
-    },
-    {
-      elements: [
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
@@ -421,6 +424,10 @@ export const CASE_6 = {
             ),
           },
         },
+      ],
+    },
+    {
+      elements: [
         {
           template: SECTION_ELEMENTS.QUOTE,
           data: {

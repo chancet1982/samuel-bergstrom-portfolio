@@ -199,7 +199,11 @@ function SectionElementsRenderer({ elementKey, data, template }) {
     case SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT:
       return (
         <ElementColorContextProvider>
-          <ListOfImagesWithTitleAndText key={elementKey} items={data.items} />
+          <ListOfImagesWithTitleAndText
+            key={elementKey}
+            items={data.items}
+            plainImage={data.plainImage}
+          />
         </ElementColorContextProvider>
       );
     case SECTION_ELEMENTS.LIST_OF_CARDS:

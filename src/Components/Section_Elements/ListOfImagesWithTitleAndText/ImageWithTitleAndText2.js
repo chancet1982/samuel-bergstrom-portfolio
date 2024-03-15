@@ -8,6 +8,7 @@ import padding from "../../../theme/padding";
 import breakpoints from "../../../theme/breakpoints";
 import { textVariants } from "../../../animations/animations";
 import sizes from "../../../theme/sizes";
+import Image from "../../Shared/Image";
 
 const StyledImageWithTitleAndText = styled(motion.div)`
   display: grid;
@@ -69,7 +70,7 @@ const StyledTitleAndText = styled(motion.div)`
   }
 `;
 
-function ImageWithTitleAndText({ imageUrl, title, text, flip }) {
+function ImageWithTitleAndText({ imageUrl, title, text, flip, plainImage }) {
   return (
     <StyledImageWithTitleAndText
       initial="hidden"
@@ -79,19 +80,28 @@ function ImageWithTitleAndText({ imageUrl, title, text, flip }) {
     >
       {flip ? (
         <>
-          <StyledImage $imageUrl={imageUrl} $flip />
-          <StyledTitleAndText style={{ gridArea: "b" }} variants={textVariants}>
+          {plainImage ? (
+            <Image imageUrl={`/${imageUrl}`} />
+          ) : (
+            <StyledImage $imageUrl={imageUrl} $flip />
+          )}
+
+          <StyledTitleAndText $flip={flip} variants={textVariants}>
             <Title h={3}>{title}</Title>
             {text}
           </StyledTitleAndText>
         </>
       ) : (
         <>
-          <StyledTitleAndText variants={textVariants}>
+          <StyledTitleAndText $flip={flip} variants={textVariants}>
             <Title h={3}>{title}</Title>
             {text}
           </StyledTitleAndText>
-          <StyledImage $imageUrl={imageUrl} />
+          {plainImage ? (
+            <Image imageUrl={`/${imageUrl}`} />
+          ) : (
+            <StyledImage $imageUrl={imageUrl} />
+          )}
         </>
       )}
     </StyledImageWithTitleAndText>
@@ -103,10 +113,12 @@ ImageWithTitleAndText.propTypes = {
   title: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   flip: PropTypes.bool,
+  plainImage: PropTypes.bool,
 };
 
 ImageWithTitleAndText.defaultProps = {
   flip: false,
+  plainImage: false,
 };
 
 export default ImageWithTitleAndText;
