@@ -11,7 +11,8 @@
 - Remove the hover effect on the "submit" in the form.
 - provide better styling for the success/error messages
 - Contact me link -> make slide to contact form
-- Nav text color only works when there is a cover. otherwise not working
+- Footer bgColor does not impact the navBgColor (as it is fixed to the top atm)
+
   CONTENT_FIXES FOR CASES:
 
 - CASE_5 -> Fix colors

@@ -15,8 +15,6 @@ import { ICON_PATHS } from "../data/dictionaries/ICON_PATHS";
 import Button from "./Shared/Button";
 import colors from "../theme/colors";
 import { SectionColorContext } from "../Context/SectionColorContext";
-import useIsTouchingTop from "../utils/useIsTouchingTop";
-import { NavBgColorContext } from "../Context/NavBgColorContext";
 import { CursorContext } from "../Context/CursorContext";
 
 const StyledFooter = styled(motion.footer)`
@@ -84,7 +82,7 @@ const StyledSocialMediaLinks = styled(motion.div)`
   }
 `;
 
-function Footer({ bgColor, navBgColor }) {
+function Footer({ bgColor }) {
   const [, setSectionBgColor] = useContext(SectionColorContext);
 
   useEffect(() => {
@@ -92,20 +90,6 @@ function Footer({ bgColor, navBgColor }) {
   }, [setSectionBgColor, bgColor]);
 
   const ref = useRef(null);
-  const isTouchingTop = useIsTouchingTop(ref);
-  const [, setNavBgColor] = useContext(NavBgColorContext);
-
-  useEffect(() => {
-    const color = bgColor || navBgColor;
-
-    if (isTouchingTop) {
-      if (color) {
-        setNavBgColor(color);
-      } else {
-        setNavBgColor(colors.offwhite);
-      }
-    }
-  }, [isTouchingTop, setNavBgColor, bgColor, navBgColor]);
 
   const [, setCursorText, , setCursorVariant] = useContext(CursorContext);
 
@@ -211,12 +195,10 @@ function Footer({ bgColor, navBgColor }) {
 
 Footer.propTypes = {
   bgColor: PropTypes.string,
-  navBgColor: PropTypes.string,
 };
 
 Footer.defaultProps = {
   bgColor: colors.offblack,
-  navBgColor: null,
 };
 
 export default Footer;
