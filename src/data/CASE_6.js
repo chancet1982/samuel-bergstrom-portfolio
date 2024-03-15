@@ -36,7 +36,7 @@ const SETTINGS = {
 };
 
 export const CASE_6 = {
-  caseStatus: CASE_STATUS.DRAFT,
+  caseStatus: CASE_STATUS.PUBLISHED,
   caseUrl: SETTINGS.URL,
   thumbnail: {
     bgColor: SETTINGS.BG_COLOR,
@@ -193,13 +193,64 @@ export const CASE_6 = {
             ),
           },
         },
+      ],
+    },
+    {
+      bgColor: SETTINGS.BG_COLOR,
+      elements: [
         {
-          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/typography.jpg`,
-            imageAlt: "typography",
-            limitMaxWidth: true,
-            imageCaption: "Using trello",
+            title: <>Create a solid foundation</>,
+            h: 2,
+            text: (
+              <Paragraph>
+                Before creating any components, I typically make the typographIc
+                scale and collect all the icons and colors to create a
+                theme.Before creating any components, I typically make the
+                typographIc scale and collect all the icons and colors to create
+                a theme. It just makes life easier. In this case, a modular
+                scale for medium information density was used and all existing
+                icons and illustrations were collected.
+              </Paragraph>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
+          data: {
+            items: [
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/typography.jpg`,
+                imageAlt: "Typography",
+                title: "Typography",
+                text: (
+                  <Paragraph>
+                    Some text about typography would be here...
+                  </Paragraph>
+                ),
+              },
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/colors.jpg`,
+                imageAlt: "Color scheme",
+                title: "Color scheme",
+                text: (
+                  <Paragraph>
+                    Some text about colors scheme would be here...
+                  </Paragraph>
+                ),
+              },
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/icons-and-illustrations.jpg`,
+                imageAlt: "icons and illustrations",
+                title: "Icons and illustrations",
+                text: (
+                  <Paragraph>
+                    Some text about icons and illustrations...
+                  </Paragraph>
+                ),
+              },
+            ],
           },
         },
       ],
@@ -235,65 +286,6 @@ export const CASE_6 = {
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
-            title: <>Create a solid foundation</>,
-            h: 3,
-            text: (
-              <Paragraph>
-                Before creating any components, I typically make the typographIc
-                scale and collect all the icons and colors to create a
-                theme.Before creating any components, I typically make the
-                typographIc scale and collect all the icons and colors to create
-                a theme. It just makes life easier. In this case, a modular
-                scale for medium information density was used and all existing
-                icons and illustrations were collected.
-              </Paragraph>
-            ),
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.SPACER_MEDIUM,
-        },
-        {
-          template: SECTION_ELEMENTS.SECTION_IMAGE,
-          data: {
-            bgColor: SETTINGS.BG_COLOR,
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/foundation.jpg`,
-            imageAlt: "foundational elements",
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.SPACER_MEDIUM,
-        },
-        {
-          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
-          data: {
-            title: <>(The most) Reusable components come first.</>,
-            h: 3,
-            text: (
-              <Paragraph>
-                Once in place, create fundamental components such as buttons and
-                form elements. More complex components are inherently less
-                reusable and are placed in a backlog for future consideration.
-              </Paragraph>
-            ),
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.SPACER_MEDIUM,
-        },
-        {
-          template: SECTION_ELEMENTS.SECTION_IMAGE,
-          data: {
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/components.png`,
-            imageAlt: "basic components",
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.SPACER_MEDIUM,
-        },
-        {
-          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
-          data: {
             title: <>Iterate and expand based on value.</>,
             h: 3,
             text: (
@@ -310,6 +302,52 @@ export const CASE_6 = {
           data: {
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/process.png`,
             imageAlt: "process",
+          },
+        },
+      ],
+    },
+    {
+      bgColor: SETTINGS.BG_COLOR,
+      elements: [
+        {
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
+          data: {
+            title: <>(The most) Reusable components come first.</>,
+            h: 3,
+            text: (
+              <Paragraph>
+                Once in place, create fundamental components such as buttons and
+                form elements. More complex components are inherently less
+                reusable and are placed in a backlog for future consideration.
+              </Paragraph>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
+          data: {
+            items: [
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/atoms.jpg`,
+                imageAlt: "Basic components",
+                title: "Basic components",
+                text: (
+                  <Paragraph>
+                    Some text about Basic components would be here...
+                  </Paragraph>
+                ),
+              },
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/molecules.jpg`,
+                imageAlt: "molecules",
+                title: "Molecules",
+                text: (
+                  <Paragraph>
+                    Some text about colors scheme would be here...
+                  </Paragraph>
+                ),
+              },
+            ],
           },
         },
       ],

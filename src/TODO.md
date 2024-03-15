@@ -11,8 +11,8 @@
 - Remove the hover effect on the "submit" in the form.
 - provide better styling for the success/error messages
 - Contact me link -> make slide to contact form
-
-CONTENT_FIXES FOR CASES:
+- Nav text color only works when there is a cover. otherwise not working
+  CONTENT_FIXES FOR CASES:
 
 - CASE_5 -> Fix colors
 - All CASE -> Add TLDR section (potentially repurpose the overview component)
