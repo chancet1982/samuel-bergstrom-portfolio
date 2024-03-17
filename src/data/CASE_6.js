@@ -227,9 +227,22 @@ export const CASE_6 = {
                 imageAlt: "Typography",
                 title: "Typography",
                 text: (
-                  <Paragraph>
-                    Some text about typography would be here...
-                  </Paragraph>
+                  <>
+                    <Paragraph>
+                      For this design system, I decided to use a modular scale
+                      based on a base size of 16px and 4px increments as it
+                      accommodates well for high-information density. Using this
+                      the headlines were then 16, 20, 24, 32, and 40px in size.
+                      Line heights were adjusted as well based on the font size
+                      and were smaller as text size grew while keeping to the
+                      4px grid.
+                    </Paragraph>
+                    <Paragraph>
+                      On mobile, the increments were reduced to 2px increments,
+                      and line heights and margins were adjusted accordingly to
+                      use the viewport efficiently.
+                    </Paragraph>
+                  </>
                 ),
               },
               {
@@ -237,9 +250,20 @@ export const CASE_6 = {
                 imageAlt: "Color scheme",
                 title: "Color scheme",
                 text: (
-                  <Paragraph>
-                    Some text about colors scheme would be here...
-                  </Paragraph>
+                  <>
+                    <Paragraph>
+                      In this case, Euro Finans already had 2 brand colors that
+                      were extensively used. Prioritet Finans however, only used
+                      one. I extended the color scheme to include an accent
+                      color and created a theme for each of the brands.
+                    </Paragraph>
+                    <Paragraph>
+                      Both brands shared their neutral and supporting colors and
+                      included support for both dark and light text with 3
+                      emphasis levels. On top of that, 2 colors (primary and
+                      secondary) were used across all applications and services.
+                    </Paragraph>
+                  </>
                 ),
               },
               {
@@ -248,7 +272,14 @@ export const CASE_6 = {
                 title: "Icons and illustrations",
                 text: (
                   <Paragraph>
-                    Some text about icons and illustrations...
+                    Another designer was focused on creating all illustrations
+                    and aligned them to share a style across all the products. I
+                    then inventoried and collected all the icons that were used
+                    or were known as needed. I made sure that these were all the
+                    same size and were monochromatic (so that we could control
+                    their colors using CSS) then it was only a question of
+                    making sure they all had the same line-thickness and corner
+                    radius and we were ready to go.
                   </Paragraph>
                 ),
               },
@@ -337,9 +368,23 @@ export const CASE_6 = {
                 imageAlt: "Basic components",
                 title: "Basic components",
                 text: (
-                  <Paragraph>
-                    Some text about Basic components would be here...
-                  </Paragraph>
+                  <>
+                    <Paragraph>
+                      In my experience, no design system should cover all
+                      components. There are diminishing returns. In most cases,
+                      the most basic components are the most important ones.
+                      Because of that, I tend to create icon components, Text
+                      components, Buttons, and basic form elements first.
+                    </Paragraph>
+                    <Paragraph>
+                      I typically use “atomic design” (not religiously but more
+                      because it is a great way to both have a shared
+                      understanding of how component composition works) and
+                      focus most efforts on the atoms and molecules. In most
+                      cases for a smaller organization, you never need to go
+                      beyond that.
+                    </Paragraph>
+                  </>
                 ),
               },
               {
@@ -347,9 +392,23 @@ export const CASE_6 = {
                 imageAlt: "molecules",
                 title: "Molecules",
                 text: (
-                  <Paragraph>
-                    Some text about colors scheme would be here...
-                  </Paragraph>
+                  <>
+                    <Paragraph>
+                      Molecules are typically more complex components that are
+                      made of several atoms. For example, a dropdown is an atom.
+                      In most cases though, a dropdown would have a menu that
+                      opens up, with different options, and it would have a
+                      label. And may include some validation. Other examples may
+                      include tables, tabs, and navigation bars.
+                    </Paragraph>
+                    <Paragraph>
+                      The one exception I have is that I typically avoid
+                      creating container components (such as cards, panels, etc)
+                      as design components in Figma as support is lacking in my
+                      eyes. They are of course designed and implemented as code
+                      components.
+                    </Paragraph>
+                  </>
                 ),
               },
             ],
