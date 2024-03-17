@@ -50,7 +50,6 @@ export const VIEW_ABOUT_ME = [
     ],
   },
   {
-    bgColor: colors.white,
     paddedUp: true,
     elements: [
       { template: SECTION_ELEMENTS.SPACER_MEDIUM },
