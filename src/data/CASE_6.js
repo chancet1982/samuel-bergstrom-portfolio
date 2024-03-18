@@ -36,7 +36,7 @@ const SETTINGS = {
 };
 
 export const CASE_6 = {
-  caseStatus: CASE_STATUS.PUBLISHED,
+  caseStatus: CASE_STATUS.COMING_SOON,
   caseUrl: SETTINGS.URL,
   thumbnail: {
     bgColor: SETTINGS.BG_COLOR,
@@ -221,6 +221,7 @@ export const CASE_6 = {
           template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
           data: {
             plainImage: true,
+            stickyText: true,
             items: [
               {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/typography.jpg`,
@@ -362,6 +363,7 @@ export const CASE_6 = {
           template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
           data: {
             plainImage: true,
+            stickyText: true,
             items: [
               {
                 imageUrl: `${SETTINGS.MEDIA_BASE_URL}/atoms.jpg`,

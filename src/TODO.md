@@ -1,7 +1,6 @@
 ----- TODO list (What's left before you're done) -----
 
-- IMAGE_WITH_TITLE_AND_TEXT_2: Add support for sticky text when image is not scaling.
-- CASE_THUMBNAIL: "Coming soon" needs a tad more polish and the link to the underlying case shouldnt be active.
+- IMAGE_WITH_TITLE_AND_TEXT_2: Better mobile version.
 - CASE_THUMBNAIL: Remove button hover and focus (perhaps rotate the button 45 deg)
 - SECTION_IMAGE: add support for parallax effect (can be nice to have on non-content-critical images)
 - SECTION_IMAGE: make it nicer on mobile

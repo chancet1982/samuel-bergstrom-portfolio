@@ -68,9 +68,27 @@ const StyledTitleAndText = styled(motion.div)`
   @media (min-width: ${breakpoints.mobileLarge}px) {
     height: 80vh;
   }
+
+  ${({ $stickyText }) =>
+    $stickyText && {
+      display: "block",
+      position: "sticky",
+      top: padding.insideElements.double,
+      paddingTop: padding.insideElements.double,
+      paddingBottom: padding.insideElements.double,
+      height: "fit-content !important",
+      minHeight: "auto",
+    }}
 `;
 
-function ImageWithTitleAndText({ imageUrl, title, text, flip, plainImage }) {
+function ImageWithTitleAndText({
+  imageUrl,
+  title,
+  text,
+  flip,
+  plainImage,
+  stickyText,
+}) {
   return (
     <StyledImageWithTitleAndText
       initial="hidden"
@@ -86,14 +104,22 @@ function ImageWithTitleAndText({ imageUrl, title, text, flip, plainImage }) {
             <StyledImage $imageUrl={imageUrl} $flip />
           )}
 
-          <StyledTitleAndText $flip={flip} variants={textVariants}>
+          <StyledTitleAndText
+            $flip={flip}
+            variants={textVariants}
+            $stickyText={stickyText}
+          >
             <Title h={3}>{title}</Title>
             {text}
           </StyledTitleAndText>
         </>
       ) : (
         <>
-          <StyledTitleAndText $flip={flip} variants={textVariants}>
+          <StyledTitleAndText
+            $flip={flip}
+            variants={textVariants}
+            $stickyText={stickyText}
+          >
             <Title h={3}>{title}</Title>
             {text}
           </StyledTitleAndText>
@@ -114,11 +140,13 @@ ImageWithTitleAndText.propTypes = {
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   flip: PropTypes.bool,
   plainImage: PropTypes.bool,
+  stickyText: PropTypes.bool,
 };
 
 ImageWithTitleAndText.defaultProps = {
   flip: false,
   plainImage: false,
+  stickyText: false,
 };
 
 export default ImageWithTitleAndText;

@@ -40,6 +40,13 @@ const StyledTitleAndText = styled(motion.div)`
       maxWidth: `calc(${sizes.contentWidthLimit}px * 0.72)`,
       margin: "0 auto",
     }}
+
+  h1, h2, h3, h4, h5 {
+    ${({ $isCentered }) =>
+      $isCentered && {
+        maxInlineSize: "auto",
+      }}
+  }
 `;
 
 function TitleAndText({

@@ -30,6 +30,11 @@ const StyledLink = styled(Link)`
   height: 100%;
   text-decoration: none !important;
   justify-content: space-between;
+
+  ${({ $isDisabled }) =>
+    $isDisabled && {
+      pointerEvents: "none",
+    }}
 `;
 
 const StyledBackgroundColor = styled(motion.div)`
@@ -153,6 +158,7 @@ function CaseThumbnail({ data, status, caseUrl }) {
           to={caseUrl}
           onMouseEnter={() => CaseThumbnailMouseEnter()}
           onMouseLeave={() => CaseThumbnailMouseLeave()}
+          $isDisabled={status === CASE_STATUS.COMING_SOON}
         >
           {bgMedia && (
             <BgMedia type={bgMedia.type} mediaUrl={bgMedia.mediaUrl} />

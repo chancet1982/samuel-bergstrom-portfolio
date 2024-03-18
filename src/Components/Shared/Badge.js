@@ -8,12 +8,14 @@ import colors from "../../theme/colors";
 import padding from "../../theme/padding";
 
 const StyledBadge = styled(motion.div)`
+  width: 250px;
+  top: 48px;
+  text-align: center;
+  right: -56px;
+  padding: 0.5rem 0;
   position: absolute;
-  top: -40px;
-  right: -96px;
   transform: rotate(45deg);
-  transform-origin: 0;
-  padding: ${padding.insideElements.half} ${padding.insideElements.quadruple};
+  padding: ${padding.insideElements.half} 0;
 
   ${({ $bgColor }) =>
     $bgColor && {
@@ -26,7 +28,7 @@ const StyledBadge = styled(motion.div)`
 function Badge({ children, bgColor }) {
   return (
     <StyledBadge $bgColor={bgColor}>
-      <Span highContrast isLight>
+      <Span highContrast isLight small>
         <strong>{children}</strong>
       </Span>
     </StyledBadge>

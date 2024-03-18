@@ -203,6 +203,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
             key={elementKey}
             items={data.items}
             plainImage={data.plainImage}
+            stickyText={data.stickyText}
           />
         </ElementColorContextProvider>
       );

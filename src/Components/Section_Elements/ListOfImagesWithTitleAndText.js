@@ -6,7 +6,7 @@ import ImageWithTitleAndText2 from "./ListOfImagesWithTitleAndText/ImageWithTitl
 
 const StyledListOfImagesWithTitleAndText = styled(motion.div)``;
 
-function ListOfImagesWithTitleAndText({ items, plainImage }) {
+function ListOfImagesWithTitleAndText({ items, plainImage, stickyText }) {
   return (
     <StyledListOfImagesWithTitleAndText>
       {items.map(({ imageUrl, imageAlt, title, text }, index) => (
@@ -19,6 +19,7 @@ function ListOfImagesWithTitleAndText({ items, plainImage }) {
           flip={index % 2 === 1}
           key={imageUrl}
           plainImage={plainImage}
+          stickyText={stickyText}
         />
       ))}
     </StyledListOfImagesWithTitleAndText>
@@ -36,10 +37,12 @@ ListOfImagesWithTitleAndText.propTypes = {
     })
   ).isRequired,
   plainImage: PropTypes.bool,
+  stickyText: PropTypes.bool,
 };
 
 ListOfImagesWithTitleAndText.defaultProps = {
   plainImage: false,
+  stickyText: false,
 };
 
 export default ListOfImagesWithTitleAndText;
