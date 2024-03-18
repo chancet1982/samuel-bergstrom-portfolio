@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable no-nested-ternary */
 import React from "react";
 import PropTypes from "prop-types";
@@ -110,6 +111,7 @@ function Button({
   iconButton,
   icon,
   isDisabled,
+  ...rest
 }) {
   const light = useBgColor() || isLight;
 
@@ -142,6 +144,7 @@ function Button({
       variants={formElementsVariants}
       $iconButton={iconButton}
       $isDisabled={isDisabled}
+      {...rest}
     >
       {icon && <Icon path={icon} size={mapSizeToIconSize()} />}
 

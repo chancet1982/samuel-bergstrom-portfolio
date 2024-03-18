@@ -185,7 +185,12 @@ function CaseThumbnail({ data, status, caseUrl }) {
             <TitleAndText title={title} h={5}>
               <Paragraph>{text}</Paragraph>
             </TitleAndText>
-            <Button iconButton isDisabled icon={ICON_PATHS.ARROW_RIGHT} />
+            <Button
+              iconButton
+              isDisabled
+              icon={ICON_PATHS.ARROW_RIGHT}
+              tabindex="-1"
+            />
           </StyledThumbnailCaption>
 
           {status === CASE_STATUS.COMING_SOON && <Badge>COMING SOON!</Badge>}
