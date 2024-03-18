@@ -81,6 +81,11 @@ const StyledButton = styled(motion.button)`
     text-decoration: none !important;
   }
 
+  ${({ $isDisabled }) =>
+    $isDisabled && {
+      pointerEvents: "none",
+    }}
+
   ${({ $iconButton }) =>
     $iconButton && {
       padding: padding.insideElements.threequarters,
@@ -104,6 +109,7 @@ function Button({
   isLight,
   iconButton,
   icon,
+  isDisabled,
 }) {
   const light = useBgColor() || isLight;
 
@@ -135,6 +141,7 @@ function Button({
       onMouseLeave={onMouseEnter ? () => onMouseLeave() : null}
       variants={formElementsVariants}
       $iconButton={iconButton}
+      $isDisabled={isDisabled}
     >
       {icon && <Icon path={icon} size={mapSizeToIconSize()} />}
 
@@ -157,6 +164,7 @@ Button.propTypes = {
   isLight: PropTypes.bool,
   iconButton: PropTypes.bool,
   icon: PropTypes.string,
+  isDisabled: PropTypes.bool,
 };
 
 Button.defaultProps = {
@@ -173,6 +181,7 @@ Button.defaultProps = {
   isLight: false,
   iconButton: false,
   icon: null,
+  isDisabled: false,
 };
 
 export default Button;
