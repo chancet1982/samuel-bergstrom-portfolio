@@ -186,7 +186,7 @@ function CaseThumbnail({ data, status, caseUrl }) {
             iconButton
             isDisabled
             icon={ICON_PATHS.ARROW_RIGHT}
-            tabindex="-1"
+            tabIndex="-1"
           />
         </StyledThumbnailCaption>
 

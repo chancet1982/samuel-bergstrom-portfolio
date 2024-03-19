@@ -52,6 +52,7 @@ function View({ children, bgColor }) {
   ) : (
     <>
       <StyledView
+        id="main"
         $bgColor={bgColor}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

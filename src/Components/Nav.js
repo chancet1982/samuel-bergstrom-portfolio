@@ -1,5 +1,5 @@
 /* eslint-disable no-nested-ternary */
-import React, { useEffect, useState, useContext } from "react";
+import React, { useRef, useEffect, useState, useContext } from "react";
 import styled from "styled-components";
 import { useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -92,16 +92,29 @@ function Nav() {
   };
 
   const [animationFinished] = useContext(SplashAnimationFinishedContext);
+  const navRef = useRef(null);
+
+  const [hasFocus, setHasFocus] = useState(false);
+
+  const handleFocusChange = () => {
+    if (!navRef.current) return;
+
+    setHasFocus(Boolean(navRef.current.querySelector("a:focus")));
+  };
 
   /* TODO: implement a better logo that only shows once you scroll past a certain point */
   return animationFinished ? (
     <StyledNav
+      ref={navRef}
       $opaque={navState === "opaque"}
       $navBgColor={navBgColor}
       $isLight={isLight}
+      onFocusCapture={() => handleFocusChange()}
+      onBlurCapture={() => handleFocusChange()}
       initial="show"
       animate={
-        scrollDirection === "down" && (isDesktop || (!expanded && !isDesktop))
+        scrollDirection === "down" &&
+        ((isDesktop && !hasFocus) || (!expanded && !isDesktop && !hasFocus))
           ? "hide"
           : "show"
       }

@@ -12,6 +12,7 @@ import SplashAnimationFinishedContextProvider from "./Context/SplashAnimationFin
 import NavBgColorContextProvider from "./Context/NavBgColorContext";
 import MenuExpandedContextProvider from "./Context/MenuExpandedContext";
 import AuthContextProvider from "./Context/AuthContext";
+import ScrollToHashElement from "./utils/ScrollToHashElement";
 
 const ViewLandingPage = lazy(() =>
   import("./Components/Views/ViewLandingPage")
@@ -38,6 +39,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
       <ErrorBoundary>
+        <ScrollToHashElement />
         <SplashAnimationFinishedContextProvider>
           <AuthContextProvider>
             <CursorContextProvider>
