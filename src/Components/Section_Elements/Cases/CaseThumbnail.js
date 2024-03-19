@@ -17,38 +17,37 @@ import Overline from "../../Shared/Overline";
 import Paragraph from "../../Shared/Paragraph";
 import Button from "../../Shared/Button";
 import { ICON_PATHS } from "../../../data/dictionaries/ICON_PATHS";
+import colors from "../../../theme/colors";
 
 const StyledCaseThumbnail = styled(motion.div)`
-  box-sizing: border-box;
   position: relative;
 `;
 
 const StyledLink = styled(Link)`
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
   width: 100%;
   height: 100%;
   text-decoration: none !important;
   justify-content: space-between;
-
-  ${({ $isDisabled }) =>
-    $isDisabled && {
-      pointerEvents: "none",
-    }}
-`;
-
-const StyledBackgroundColor = styled(motion.div)`
-  display: block;
-  width: 100%;
-  height: 100%;
   position: relative;
-  overflow: hidden;
   border-radius: ${padding.insideElements.single};
   transition: all 0.3s;
 
   ${({ $bgColor }) =>
     $bgColor && {
       background: $bgColor,
+    }}
+
+  :focus {
+    box-shadow: 0 0 0.25rem ${colors.primary};
+    outline: solid 0.125rem ${colors.primary};
+  }
+
+  ${({ $isDisabled }) =>
+    $isDisabled && {
+      pointerEvents: "none",
     }}
 `;
 
@@ -153,49 +152,46 @@ function CaseThumbnail({ data, status, caseUrl }) {
       transition={{ staggerChildren: 0.1 }}
       variants={caseThumbnailVariants}
     >
-      <StyledBackgroundColor $bgColor={bgColor}>
-        <StyledLink
-          to={caseUrl}
-          onMouseEnter={() => CaseThumbnailMouseEnter()}
-          onMouseLeave={() => CaseThumbnailMouseLeave()}
-          $isDisabled={status === CASE_STATUS.COMING_SOON}
-        >
-          {bgMedia && (
-            <BgMedia type={bgMedia.type} mediaUrl={bgMedia.mediaUrl} />
-          )}
+      <StyledLink
+        to={caseUrl}
+        onMouseEnter={() => CaseThumbnailMouseEnter()}
+        onMouseLeave={() => CaseThumbnailMouseLeave()}
+        $isDisabled={status === CASE_STATUS.COMING_SOON}
+        $bgColor={bgColor}
+      >
+        {bgMedia && <BgMedia type={bgMedia.type} mediaUrl={bgMedia.mediaUrl} />}
 
-          {overline && (
-            <StyledCaseThumbnailOverline>
-              <Overline>{overline}</Overline>
-            </StyledCaseThumbnailOverline>
-          )}
+        {overline && (
+          <StyledCaseThumbnailOverline>
+            <Overline>{overline}</Overline>
+          </StyledCaseThumbnailOverline>
+        )}
 
-          {fgImage && (
-            <StyledFgImage
-              src={`${process.env.PUBLIC_URL}/${
-                isMobile && !isLandscape && mobileImageUrl
-                  ? mobileImageUrl
-                  : imageUrl
-              }`}
-              alt={imageAlt}
-            />
-          )}
+        {fgImage && (
+          <StyledFgImage
+            src={`${process.env.PUBLIC_URL}/${
+              isMobile && !isLandscape && mobileImageUrl
+                ? mobileImageUrl
+                : imageUrl
+            }`}
+            alt={imageAlt}
+          />
+        )}
 
-          <StyledThumbnailCaption variants={caseThumbnailCaptionVariants}>
-            <TitleAndText title={title} h={5}>
-              <Paragraph>{text}</Paragraph>
-            </TitleAndText>
-            <Button
-              iconButton
-              isDisabled
-              icon={ICON_PATHS.ARROW_RIGHT}
-              tabindex="-1"
-            />
-          </StyledThumbnailCaption>
+        <StyledThumbnailCaption variants={caseThumbnailCaptionVariants}>
+          <TitleAndText title={title} h={5}>
+            <Paragraph>{text}</Paragraph>
+          </TitleAndText>
+          <Button
+            iconButton
+            isDisabled
+            icon={ICON_PATHS.ARROW_RIGHT}
+            tabindex="-1"
+          />
+        </StyledThumbnailCaption>
 
-          {status === CASE_STATUS.COMING_SOON && <Badge>COMING SOON!</Badge>}
-        </StyledLink>
-      </StyledBackgroundColor>
+        {status === CASE_STATUS.COMING_SOON && <Badge>COMING SOON!</Badge>}
+      </StyledLink>
     </StyledCaseThumbnail>
   );
 }

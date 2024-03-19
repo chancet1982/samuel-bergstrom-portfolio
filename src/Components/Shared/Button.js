@@ -73,6 +73,11 @@ const StyledButton = styled(motion.button)`
     box-shadow: none;
   }
 
+  :focus {
+    box-shadow: 0 0 0.25rem ${colors.primary};
+    outline: solid 0.125rem ${colors.primary};
+  }
+
   :disabled {
     opacity: 0.3;
     box-shadow: none !important;
