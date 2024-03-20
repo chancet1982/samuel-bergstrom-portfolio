@@ -10,6 +10,7 @@ import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Note from "../Components/Shared/Note";
 import Title from "../Components/Shared/Title";
+import colors from "../theme/colors";
 
 const SETTINGS = {
   BG_COLOR: "#546368",
@@ -42,7 +43,7 @@ export const CASE_4 = {
   caseStatus: CASE_STATUS.PUBLISHED,
   caseUrl: SETTINGS.URL,
   thumbnail: {
-    bgColor: SETTINGS.BG_COLOR,
+    bgColor: colors.offwhite,
     caption: {
       overline: "Logistics",
       title: <>Delivery, unattended</>,

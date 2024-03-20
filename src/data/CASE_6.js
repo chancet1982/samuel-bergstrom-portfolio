@@ -8,9 +8,10 @@ import Paragraph from "../Components/Shared/Paragraph";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
+import colors from "../theme/colors";
 
 const SETTINGS = {
-  BG_COLOR: "#F0F0F0",
+  BG_COLOR: colors.offwhite,
   URL: "/cases/6",
   MEDIA_BASE_URL: "assets/case-6",
   KEY_FIGURES: {
@@ -336,7 +337,7 @@ export const CASE_6 = {
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/process.png`,
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/process.jpg`,
             imageAlt: "process",
           },
         },

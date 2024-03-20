@@ -10,9 +10,10 @@ import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Shared/Title";
 import Note from "../Components/Shared/Note";
 import List from "../Components/Shared/List";
+import colors from "../theme/colors";
 
 const SETTINGS = {
-  BG_COLOR: "#058DB2",
+  BG_COLOR: colors.offwhite,
   URL: "/cases/10",
   MEDIA_BASE_URL: "assets/case-10",
   KEY_FIGURES: {
