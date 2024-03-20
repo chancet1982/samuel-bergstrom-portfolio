@@ -39,16 +39,16 @@ export const CASE_12 = {
   caseStatus: CASE_STATUS.FEATURED,
   caseUrl: SETTINGS.URL,
   thumbnail: {
-    bgColor: SETTINGS.BG_COLOR,
+    doubleSize: true,
+    bgColor: colors.offblack,
+    bgMedia: {
+      type: BG_MEDIA_TYPES.IMAGE,
+      mediaUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-bg.jpg`,
+    },
     caption: {
       overline: "Fitness & well-being",
       title: <>Creating healthier habits</>,
       text: <>Positive change through a healthier life begins early</>,
-    },
-    fgImage: {
-      imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-desktop.png`,
-      mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-mobile.png`,
-      imageAlt: "thumbnail",
     },
   },
   details: [

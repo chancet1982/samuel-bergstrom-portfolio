@@ -24,39 +24,12 @@ const StyledCases = styled(motion.div)`
     ${padding.insideElements.single}
   );
 
-  > div {
-    max-width: calc(100vw - 2 * ${padding.outsideElements.double});
-  }
-
   @media (${breakpoints.mobileLarge}px < width < ${breakpoints.desktop}px) {
     grid-template-columns: repeat(2, 1fr);
-    > div {
-      max-width: calc(
-        (
-            100vw - 1 *
-              max(
-                ${padding.outsideElements.single},
-                ${padding.insideElements.single}
-              ) - 2 * ${padding.outsideElements.double}
-          ) / 2
-      );
-    }
   }
 
   @media (${breakpoints.desktop}px < width) {
     grid-template-columns: repeat(3, 1fr);
-
-    > div {
-      max-width: calc(
-        (
-            100vw - 2 *
-              max(
-                ${padding.outsideElements.single},
-                ${padding.insideElements.single}
-              ) - 2 * ${padding.outsideElements.double}
-          ) / 3
-      );
-    }
   }
 `;
 
@@ -67,13 +40,6 @@ const StyledShowMoreSection = styled(motion.div)`
   justify-content: center;
   flex-direction: column;
   max-width: 100% !important;
-  /*@media (${breakpoints.mobileLarge}px < width < ${breakpoints.desktop}px) {
-    grid-column: auto / span 2;
-  }
-
-  @media (${breakpoints.desktop}px < width) {
-    grid-column: auto / span 3;
-  }*/
 `;
 
 function SectionCases({ featured }) {
@@ -97,6 +63,7 @@ function SectionCases({ featured }) {
             data={thumbnail}
             caseUrl={caseUrl}
             status={caseStatus}
+            featured={featured}
           />
         </ElementColorContextProvider>
       ))}

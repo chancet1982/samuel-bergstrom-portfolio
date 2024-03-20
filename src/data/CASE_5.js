@@ -10,6 +10,7 @@ import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import colors from "../theme/colors";
 import Title from "../Components/Shared/Title";
+import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
 
 const SETTINGS = {
   BG_COLOR: colors.offwhite,
@@ -42,16 +43,16 @@ export const CASE_5 = {
   caseStatus: CASE_STATUS.PUBLISHED,
   caseUrl: SETTINGS.URL,
   thumbnail: {
-    bgColor: SETTINGS.BG_COLOR,
+    doubleSize: true,
+    bgColor: colors.offblack,
+    bgMedia: {
+      type: BG_MEDIA_TYPES.IMAGE,
+      mediaUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-bg.jpg`,
+    },
     caption: {
       overline: "Renal Care",
       title: <>Self-service Kiosk</>,
       text: <>Speeding up admissions and discharge in dialysis clinics.</>,
-    },
-    fgImage: {
-      imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-desktop.png`,
-      mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-mobile.png`,
-      imageAlt: "thumbnail",
     },
   },
   details: [

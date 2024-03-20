@@ -9,6 +9,7 @@ import sizes from "../../../theme/sizes";
 import breakpoints from "../../../theme/breakpoints";
 
 const StyledBackground = styled(motion.div)`
+  box-sizing: border-box;
   height: 100%;
   width: 100%;
 

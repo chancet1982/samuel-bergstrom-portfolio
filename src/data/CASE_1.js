@@ -1,7 +1,6 @@
 /* eslint-disable import/prefer-default-export */
 import React from "react";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
-// import { ROLES } from "./dictionaries/ROLES";
 import { TOOLS_AND_METHODS } from "./dictionaries/TOOLS_AND_METHODS";
 import { PLATFORMS } from "./dictionaries/PLATFORMS";
 import { ROLES } from "./dictionaries/ROLES";
@@ -11,6 +10,7 @@ import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES"
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import colors from "../theme/colors";
+import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
 
 const SETTINGS = {
   BG_COLOR: colors.offwhite,
@@ -42,16 +42,16 @@ export const CASE_1 = {
   caseStatus: CASE_STATUS.PUBLISHED,
   caseUrl: SETTINGS.URL,
   thumbnail: {
-    bgColor: SETTINGS.BG_COLOR,
+    doubleSize: true,
+    bgColor: colors.offblack,
+    bgMedia: {
+      type: BG_MEDIA_TYPES.IMAGE,
+      mediaUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-bg.jpg`,
+    },
     caption: {
       overline: "Cash Distribution",
       title: <>Courier App redesign</>,
       text: <>Redesign as an oppurtunity for change.</>,
-    },
-    fgImage: {
-      imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-desktop.png`,
-      mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-mobile.png`,
-      imageAlt: "thumbnail",
     },
   },
   details: [

@@ -1,5 +1,7 @@
 ----- TODO list (What's left before you're done) -----
 
+- SECTION_HERO_CASES: make isScaleOnScroll selectable.
+- SECTION_HERO: make sure it uses background wrapper instead of current solution.
 - IMAGE_WITH_TITLE_AND_TEXT_2: Better mobile version.
 - SECTION_IMAGE: add support for parallax effect (can be nice to have on non-content-critical images)
 - SECTION_IMAGE: make it nicer on mobile

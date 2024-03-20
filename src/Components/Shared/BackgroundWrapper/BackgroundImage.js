@@ -8,7 +8,9 @@ import sizes from "../../../theme/sizes";
 import { BG_MEDIA_TYPES } from "../../../data/dictionaries/BG_MEDIA_TYPES";
 import breakpoints from "../../../theme/breakpoints";
 
+// NOTE TO SELF: REMOVED THIS: backgroundAttachment: "fixed", SO THINGS MAY BREAK
 const StyledBackground = styled(motion.div)`
+  box-sizing: border-box;
   height: 100%;
   width: 100%;
 
@@ -17,7 +19,6 @@ const StyledBackground = styled(motion.div)`
       backgroundImage: `url(${process.env.PUBLIC_URL}/${$bgMedia})`,
       backgroundSize: "cover",
       backgroundPosition: "center",
-      backgroundAttachment: "fixed",
     }}
 
   ${({ $isPadded }) =>
