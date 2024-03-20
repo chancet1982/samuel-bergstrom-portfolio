@@ -13,7 +13,7 @@ import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES"
 import colors from "../theme/colors";
 
 const SETTINGS = {
-  BG_COLOR: "#abc0ce",
+  BG_COLOR: colors.offwhite,
   URL: "/cases/13",
   MEDIA_BASE_URL: "assets/case-13",
   KEY_FIGURES: {
@@ -458,7 +458,7 @@ export const CASE_13 = {
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/result.png`,
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/result.jpg`,
             imageAlt: "result",
           },
         },
