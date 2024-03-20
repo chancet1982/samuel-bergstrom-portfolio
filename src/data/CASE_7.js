@@ -11,9 +11,10 @@ import List from "../Components/Shared/List";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import { PLATFORMS } from "./dictionaries/PLATFORMS";
 import Note from "../Components/Shared/Note";
+import colors from "../theme/colors";
 
 const SETTINGS = {
-  BG_COLOR: "#2161C9",
+  BG_COLOR: colors.offwhite,
   URL: "/cases/7",
   MEDIA_BASE_URL: "assets/case-7",
   KEY_FIGURES: {
@@ -467,7 +468,7 @@ export const CASE_7 = {
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/wip-1.png`,
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/wip-1.jpg`,
             imageAlt: "Workflow",
           },
         },
@@ -526,7 +527,7 @@ export const CASE_7 = {
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/wip-2.png`,
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/wip-2.jpg`,
             imageAlt: "Workflow",
           },
         },
@@ -568,7 +569,7 @@ export const CASE_7 = {
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/wip-3.png`,
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/wip-3.jpg`,
             imageAlt: "Workflow",
           },
         },

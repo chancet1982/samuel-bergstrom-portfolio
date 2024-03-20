@@ -11,10 +11,11 @@ import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Note from "../Components/Shared/Note";
 import List from "../Components/Shared/List";
 import Span from "../Components/Shared/Span";
+import colors from "../theme/colors";
 
 /* TODO: Add a slide about creating a design system (mostly a filler with some text above to explain why there is a missmatch) */
 const SETTINGS = {
-  BG_COLOR: "#058db2",
+  BG_COLOR: colors.offwhite,
   URL: "/cases/11",
   MEDIA_BASE_URL: "assets/case-11",
   KEY_FIGURES: {

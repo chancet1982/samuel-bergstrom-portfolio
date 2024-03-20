@@ -12,7 +12,7 @@ import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES"
 import colors from "../theme/colors";
 
 const SETTINGS = {
-  BG_COLOR: "#333333",
+  BG_COLOR: colors.offwhite,
   URL: "/cases/12",
   MEDIA_BASE_URL: "assets/case-12",
   KEY_FIGURES: {
@@ -53,12 +53,12 @@ export const CASE_12 = {
   },
   details: [
     {
-      navBgColor: SETTINGS.BG_COLOR,
+      navBgColor: colors.offblack,
       elements: [
         {
           template: SECTION_ELEMENTS.SECTION_HERO_CASES,
           data: {
-            bgColor: SETTINGS.BG_COLOR,
+            bgColor: colors.offblack,
             bgMedia: {
               type: BG_MEDIA_TYPES.IMAGE,
               mediaUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-bg.jpg`,
@@ -304,7 +304,7 @@ export const CASE_12 = {
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/result.png`,
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/result.jpg`,
             imageAlt: "problem-framing",
           },
         },

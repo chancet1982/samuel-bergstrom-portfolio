@@ -12,7 +12,7 @@ import colors from "../theme/colors";
 import Title from "../Components/Shared/Title";
 
 const SETTINGS = {
-  BG_COLOR: "#4a99bc",
+  BG_COLOR: colors.offwhite,
   URL: "/cases/5",
   MEDIA_BASE_URL: "assets/case-5",
   KEY_FIGURES: {
@@ -253,12 +253,15 @@ export const CASE_5 = {
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/personas.png`,
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/personas.jpg`,
             imageAlt:
               "Personas, 3 distincs user groups that have contact surface with the app",
             caption:
               "Personas, 3 distincs user groups that have contact surface with the app",
           },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
           template: SECTION_ELEMENTS.INSIGHTS,
@@ -327,7 +330,7 @@ export const CASE_5 = {
           data: {
             items: [
               {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/side-by-side-1.png`,
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/side-by-side-1.jpg`,
                 imageAlt: "Auto check-in",
                 title: "Auto check-in using facial recognition and OCR",
                 text: (
@@ -341,7 +344,7 @@ export const CASE_5 = {
                 ),
               },
               {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/side-by-side-2.png`,
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/side-by-side-2.jpg`,
                 imageAlt: "Manual check-in",
                 title: "Manual input of identify and weight",
                 text: (
@@ -434,7 +437,7 @@ export const CASE_5 = {
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/wip.png`,
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/wip.jpg`,
             imageAlt: "Workflow",
             caption: "Some phases from my work in this project",
           },
