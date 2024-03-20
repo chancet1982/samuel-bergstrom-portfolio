@@ -8,9 +8,10 @@ import { ROLES } from "./dictionaries/ROLES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
+import colors from "../theme/colors";
 
 const SETTINGS = {
-  BG_COLOR: "#47C8BC",
+  BG_COLOR: colors.offwhite,
   URL: "/cases/3",
   MEDIA_BASE_URL: "assets/case-3",
   KEY_FIGURES: {
@@ -223,7 +224,7 @@ export const CASE_3 = {
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/personas.png`,
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/personas.jpg`,
             imageAlt: "The personas used for this project",
           },
         },

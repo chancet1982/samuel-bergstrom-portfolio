@@ -9,9 +9,10 @@ import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES"
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Shared/Title";
+import colors from "../theme/colors";
 
 const SETTINGS = {
-  BG_COLOR: "#FF8D48",
+  BG_COLOR: colors.offwhite,
   URL: "/cases/2",
   MEDIA_BASE_URL: "assets/case-2",
   KEY_FIGURES: {
@@ -353,6 +354,7 @@ export const CASE_2 = {
       ],
     },
     {
+      paddedUp: true,
       header: "Design",
       elements: [
         {

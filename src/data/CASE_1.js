@@ -10,9 +10,10 @@ import Title from "../Components/Shared/Title";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
+import colors from "../theme/colors";
 
 const SETTINGS = {
-  BG_COLOR: "#FE636F",
+  BG_COLOR: colors.offwhite,
   URL: "/cases/1",
   MEDIA_BASE_URL: "assets/case-1",
   KEY_FIGURES: {
@@ -409,7 +410,7 @@ export const CASE_1 = {
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/wip.png`,
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/wip.jpg`,
             imageAlt: "Workflow",
             caption: "Some phases from my work in this project",
           },
