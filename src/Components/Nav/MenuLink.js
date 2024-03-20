@@ -17,7 +17,7 @@ const StyledMenuLink = styled(NavLink)`
   font-weight: 400;
   margin: 0;
 
-  :focus {
+  :focus-visible {
     box-shadow: 0 0 0.25rem ${colors.primary};
     outline: solid 0.125rem ${colors.primary};
   }

@@ -29,7 +29,7 @@ const StyledLink = styled(RouterLink)`
       $light ? colors.text.light.medium : colors.primary};
   }
 
-  :focus {
+  :focus-visible {
     box-shadow: 0 0 0.25rem ${colors.primary};
     outline: solid 0.125rem ${colors.primary};
   }
@@ -46,7 +46,7 @@ const StyledAnchorLink = styled(motion.a)`
       $light ? colors.text.light.medium : colors.primary};
   }
 
-  :focus {
+  :focus-visible {
     box-shadow: 0 0 0.25rem ${colors.primary};
     outline: solid 0.125rem ${colors.primary};
   }

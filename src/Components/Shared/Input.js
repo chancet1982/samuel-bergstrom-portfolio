@@ -29,7 +29,7 @@ const StyledInput = styled(motion.input)`
   color: ${({ $light }) =>
     $light ? colors.text.light.high : colors.text.dark.high};
 
-  :focus {
+  :focus-visible {
     background-color: ${colors.lighten.low};
     box-shadow: 0 0 0.25rem ${colors.primary};
     border: solid 0.125rem ${colors.primary};

@@ -14,7 +14,7 @@ const StyledLogo = styled(motion.div)`
     padding: 0.75rem 1.25rem;
     text-decoration: none;
 
-    :focus {
+    :focus-visible {
       box-shadow: 0 0 0.25rem ${colors.primary};
       outline: solid 0.125rem ${colors.primary};
     }
@@ -33,7 +33,7 @@ const StyledSkipLink = styled(Link)`
   height: 1px;
   overflow: hidden;
 
-  :focus {
+  :focus-visible {
     left: 0;
     top: 0;
     width: auto;

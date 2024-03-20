@@ -99,7 +99,7 @@ function Nav() {
   const handleFocusChange = () => {
     if (!navRef.current) return;
 
-    setHasFocus(Boolean(navRef.current.querySelector("a:focus")));
+    setHasFocus(Boolean(navRef.current.querySelector("a:focus-visible")));
   };
 
   /* TODO: implement a better logo that only shows once you scroll past a certain point */

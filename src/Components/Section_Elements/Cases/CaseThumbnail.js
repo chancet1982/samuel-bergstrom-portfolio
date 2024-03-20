@@ -74,7 +74,7 @@ const StyledLink = styled(Link)`
       background: $bgColor,
     }}
 
-  :focus {
+  :focus-visible {
     box-shadow: 0 0 0.25rem ${colors.primary};
     outline: solid 0.125rem ${colors.primary};
   }
