@@ -17,7 +17,7 @@ const colors = {
   primary: "#E91D63",
   primaryHover: "#ED417C",
   primaryShade: "#FCE4EC",
-  offwhite: "#F9F9F9",
+  offwhite: "#F7F7F7",
   offblack: "#080808",
   darkgray: "#424242", // Used in input & text area borders only
   lighten: {

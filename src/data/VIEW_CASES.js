@@ -6,7 +6,7 @@ import colors from "../theme/colors";
 
 export const VIEW_CASES = [
   {
-    bgColor: colors.offwhite,
+    bgColor: colors.white,
     isCentered: true,
     paddedDown: true,
     elements: [
