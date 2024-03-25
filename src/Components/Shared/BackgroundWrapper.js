@@ -74,8 +74,8 @@ function BackgroundWrapper({
       return (
         <BackgroundColor
           $bgColor={bgColor}
-          $limitMaxWidth={limitMaxWidth}
-          $isPadded={isPadded}
+          limitMaxWidth={limitMaxWidth}
+          isPadded={isPadded}
           {...rest}
         >
           {children}

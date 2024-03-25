@@ -19,11 +19,10 @@ import { ICON_PATHS } from "../../../data/dictionaries/ICON_PATHS";
 import colors from "../../../theme/colors";
 import BackgroundWrapper from "../../Shared/BackgroundWrapper";
 
-const StyledCaseThumbnail = styled(motion.div)`
+const StyledCaseThumbnail = styled(BackgroundWrapper)`
   position: relative;
-  overflow: hidden;
   border-radius: ${padding.insideElements.single};
-
+  padding: 0 !important;
   max-width: calc(100vw - 2 * ${padding.outsideElements.double});
 
   @media (${breakpoints.mobileLarge}px < width < ${breakpoints.desktop}px) {
@@ -69,11 +68,6 @@ const StyledLink = styled(Link)`
   border-radius: ${padding.insideElements.single};
   transition: all 0.3s;
 
-  ${({ $bgColor }) =>
-    $bgColor && {
-      background: $bgColor,
-    }}
-
   :focus-visible {
     box-shadow: 0 0 0.25rem ${colors.primary};
     outline: solid 0.125rem ${colors.primary};
@@ -86,8 +80,8 @@ const StyledLink = styled(Link)`
 `;
 
 const StyledCaseThumbnailOverline = styled(motion.div)`
-  padding-left: ${padding.outsideElements.double};
-  padding-right: ${padding.outsideElements.double};
+  padding: ${padding.outsideElements.double};
+  padding-bottom: 0;
 `;
 
 const StyledFgImage = styled(motion.img)`
@@ -95,8 +89,8 @@ const StyledFgImage = styled(motion.img)`
 `;
 
 const StyledThumbnailCaption = styled(motion.div)`
-  padding-left: ${padding.outsideElements.double};
-  padding-right: ${padding.outsideElements.double};
+  padding: ${padding.outsideElements.double};
+  padding-top: 0;
   box-sizing: border-box;
   text-wrap: balance;
   display: flex;
@@ -186,46 +180,46 @@ function CaseThumbnail({ data, status, caseUrl, featured }) {
       transition={{ staggerChildren: 0.1 }}
       variants={caseThumbnailVariants}
       $doubleSize={doubleSize && !featured}
+      bgMedia={bgMedia}
+      bgColor={bgColor}
     >
-      <BackgroundWrapper bgMedia={bgMedia} bgColor={bgColor}>
-        <StyledLink
-          to={caseUrl}
-          onMouseEnter={() => CaseThumbnailMouseEnter()}
-          onMouseLeave={() => CaseThumbnailMouseLeave()}
-          $isDisabled={status === CASE_STATUS.COMING_SOON}
-        >
-          {overline && (
-            <StyledCaseThumbnailOverline>
-              <Overline>{overline}</Overline>
-            </StyledCaseThumbnailOverline>
-          )}
+      <StyledLink
+        to={caseUrl}
+        onMouseEnter={() => CaseThumbnailMouseEnter()}
+        onMouseLeave={() => CaseThumbnailMouseLeave()}
+        $isDisabled={status === CASE_STATUS.COMING_SOON}
+      >
+        {overline && (
+          <StyledCaseThumbnailOverline>
+            <Overline>{overline}</Overline>
+          </StyledCaseThumbnailOverline>
+        )}
 
-          {fgImage && (
-            <StyledFgImage
-              src={`${process.env.PUBLIC_URL}/${
-                isMobile && !isLandscape && mobileImageUrl
-                  ? mobileImageUrl
-                  : imageUrl
-              }`}
-              alt={imageAlt}
-            />
-          )}
+        {fgImage && (
+          <StyledFgImage
+            src={`${process.env.PUBLIC_URL}/${
+              isMobile && !isLandscape && mobileImageUrl
+                ? mobileImageUrl
+                : imageUrl
+            }`}
+            alt={imageAlt}
+          />
+        )}
 
-          <StyledThumbnailCaption variants={caseThumbnailCaptionVariants}>
-            <TitleAndText title={title} h={5}>
-              <Paragraph>{text}</Paragraph>
-            </TitleAndText>
-            <Button
-              iconButton
-              isDisabled
-              icon={ICON_PATHS.ARROW_RIGHT}
-              tabIndex="-1"
-            />
-          </StyledThumbnailCaption>
+        <StyledThumbnailCaption variants={caseThumbnailCaptionVariants}>
+          <TitleAndText title={title} h={5}>
+            <Paragraph>{text}</Paragraph>
+          </TitleAndText>
+          <Button
+            iconButton
+            isDisabled
+            icon={ICON_PATHS.ARROW_RIGHT}
+            tabIndex="-1"
+          />
+        </StyledThumbnailCaption>
 
-          {status === CASE_STATUS.COMING_SOON && <Badge>COMING SOON!</Badge>}
-        </StyledLink>
-      </BackgroundWrapper>
+        {status === CASE_STATUS.COMING_SOON && <Badge>COMING SOON!</Badge>}
+      </StyledLink>
     </StyledCaseThumbnail>
   );
 }
