@@ -113,6 +113,7 @@ function AdditionalCases() {
               caseUrl={caseUrl}
               key={uuid()}
               status={caseStatus}
+              featured
             />
           </ElementContextProvider>
         ))}
