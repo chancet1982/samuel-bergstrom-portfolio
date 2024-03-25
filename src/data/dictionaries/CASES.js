@@ -6,12 +6,12 @@ import { CASE_4 } from "../CASE_4";
 import { CASE_5 } from "../CASE_5";
 import { CASE_6 } from "../CASE_6";
 import { CASE_7 } from "../CASE_7";
+import { CASE_8 } from "../CASE_8";
 import { CASE_9 } from "../CASE_9";
 import { CASE_10 } from "../CASE_10";
 import { CASE_11 } from "../CASE_11";
 import { CASE_12 } from "../CASE_12";
 import { CASE_13 } from "../CASE_13";
-import { CASE_14 } from "../CASE_14";
 
 export const CASES = [
   CASE_1,
@@ -26,5 +26,5 @@ export const CASES = [
   CASE_11,
   CASE_12,
   CASE_13,
-  CASE_14,
+  CASE_8,
 ];
