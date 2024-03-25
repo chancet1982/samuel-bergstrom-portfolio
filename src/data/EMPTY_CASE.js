@@ -7,28 +7,31 @@ import { PLATFORMS } from "./dictionaries/PLATFORMS";
 import Paragraph from "../Components/Shared/Paragraph";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
+import colors from "../theme/colors";
 
-/* TODO: This is empty example case */
 const SETTINGS = {
-  BG_COLOR: "#00ADDB",
-  URL: "/cases/11",
-  MEDIA_BASE_URL: "assets/case-11",
+  BG_COLOR: colors.offwhite,
+  URL: "/cases/14",
+  MEDIA_BASE_URL: "assets/case-6",
   KEY_FIGURES: {
-    CASE_TYPE: {
-      label: CASE_TYPES.LABEL,
-      value: CASE_TYPES.IMPROVING_EXISTING_SERVICE,
-    },
-    MY_ROLE: { label: ROLES.LABEL, value: ROLES.CONSULTANT },
+    CASE_TYPE: { label: CASE_TYPES.LABEL, value: CASE_TYPES.DESIGN_OPS },
+    MY_ROLE: { label: ROLES.LABEL, value: ROLES.UI_UX },
     CASE_PLATFORMS: {
       label: PLATFORMS.LABEL,
-      value: [PLATFORMS.DESKTOP, PLATFORMS.TABLET, PLATFORMS.MOBILE],
+      value: [PLATFORMS.MOBILE_ANDROID],
     },
     TOOLS_AND_METHODS: {
       label: TOOLS_AND_METHODS.LABEL,
-      value: [TOOLS_AND_METHODS.INTERVIEWS, TOOLS_AND_METHODS.WORKSHOPS],
+      renderAsList: true,
+      value: [
+        TOOLS_AND_METHODS.USABILITY_TESTING,
+        TOOLS_AND_METHODS.WORKSHOPS,
+        TOOLS_AND_METHODS.MOCKUPS,
+        TOOLS_AND_METHODS.PROTOTYPING,
+      ],
     },
-    CASE_YEAR: { label: "Year:", value: "2021" },
-    CASE_DURATION: { label: "Duration:", value: "1 month" },
+    CASE_YEAR: { label: "Year:", value: "2020" },
+    CASE_DURATION: { label: "Duration:", value: "4 months" },
   },
 };
 

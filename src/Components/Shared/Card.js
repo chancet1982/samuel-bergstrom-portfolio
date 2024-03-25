@@ -15,7 +15,7 @@ const StyledCard = styled(motion.div)`
   position: relative;
   box-sizing: border-box;
   border-radius: ${padding.insideElements.single};
-  box-shadow: 5px 5px 10px rgb(0 0 0 / 5%);
+  /*box-shadow: 5px 5px 10px rgb(0 0 0 / 5%);*/
 `;
 
 const StyledCardMedia = styled(motion.div)`
