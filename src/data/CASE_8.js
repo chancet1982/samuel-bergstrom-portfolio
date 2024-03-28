@@ -212,7 +212,7 @@ export const CASE_8 = {
       ],
     },
     {
-      sectionTitle: <>This is how</>,
+      sectionTitle: <>The process</>,
       elements: [
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
