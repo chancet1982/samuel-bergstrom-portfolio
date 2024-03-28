@@ -11,14 +11,9 @@
 - Add a small piece about you(!) in the landing page after the
 - Primary button text color should be white when hover.
 - Limit splash screen to show only once.
-- Remove the hover effect on the "submit" in the form.
 - provide better styling for the success/error messages
 - Contact me link -> make slide to contact form
 - Footer bgColor does not impact the navBgColor (as it is fixed to the top atm)
-
-  CONTENT_FIXES FOR CASES:
-
-- CASE_5 -> Fix colors
 - All CASE -> Add TLDR section (potentially repurpose the overview component)
 - Better mobile thumbnails (now that we updated the thumbnail the mobile one looks funny)
 
@@ -46,7 +41,6 @@ MOBILE_MENU -> Implement staggered menulink animations.
 
 ----- CONTENT CLEANUP: -----
 SECTION_ELEMENTS.OVERVIEW -> Most likely not in use (other than in old, unfinished cases. Clean up old cases and remove. )
-FINISH Cases 6 & 8 (currently unused)
 
 Removed these but might be worth keeping in mind:
 nanoclone

@@ -42,7 +42,6 @@ export const CASE_1 = {
   caseStatus: CASE_STATUS.PUBLISHED,
   caseUrl: SETTINGS.URL,
   thumbnail: {
-    doubleSize: true,
     bgColor: colors.offblack,
     bgMedia: {
       type: BG_MEDIA_TYPES.IMAGE,

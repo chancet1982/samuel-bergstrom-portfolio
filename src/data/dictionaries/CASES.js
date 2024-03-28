@@ -20,11 +20,11 @@ export const CASES = [
   CASE_3,
   CASE_10,
   CASE_4,
+  CASE_11,
   CASE_5,
   CASE_6,
   CASE_7,
-  CASE_11,
+  CASE_8,
   CASE_12,
   CASE_13,
-  CASE_8,
 ];

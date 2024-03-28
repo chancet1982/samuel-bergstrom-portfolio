@@ -8,6 +8,7 @@ import Paragraph from "../Components/Shared/Paragraph";
 import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import colors from "../theme/colors";
+import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 
 const SETTINGS = {
   BG_COLOR: colors.offwhite,
@@ -36,7 +37,7 @@ const SETTINGS = {
 };
 
 export const CASE_8 = {
-  caseStatus: CASE_STATUS.DRAFT,
+  caseStatus: CASE_STATUS.PUBLISHED,
   caseUrl: SETTINGS.URL,
   thumbnail: {
     bgColor: SETTINGS.BG_COLOR,
@@ -47,19 +48,20 @@ export const CASE_8 = {
         <Paragraph>Launching a design system after failed attempts</Paragraph>
       ),
     },
-    /* fgImage: {
-      imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail.png`,
+    fgImage: {
+      imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-desktop.png`,
+      mobileImageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-mobile.png`,
       imageAlt: "thumbnail",
-    }, */
+    },
   },
   details: [
     {
-      navBgColor: SETTINGS.BG_COLOR,
+      bgColor: colors.white,
       elements: [
         {
           template: SECTION_ELEMENTS.SECTION_HERO_CASES,
           data: {
-            bgColor: SETTINGS.BG_COLOR,
+            bgColor: colors.white,
             caption: {
               overline: "Price Comparison Service",
               title: <>Design system</>,
@@ -133,10 +135,36 @@ export const CASE_8 = {
           template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
-          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          template: SECTION_ELEMENTS.IMAGE_GALLERY,
           data: {
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/growing-pain.png`,
-            imageAlt: "Workflow",
+            template: IMAGE_GALLERY_TEMPLATES.SIX_IMAGES_THREE_COLUMNS,
+            isPadded: true,
+            images: [
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-01.webp`,
+                imageAlt: "?",
+              },
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-02.webp`,
+                imageAlt: "?",
+              },
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-03.webp`,
+                imageAlt: "?",
+              },
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-04.webp`,
+                imageAlt: "?",
+              },
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-05.webp`,
+                imageAlt: "?",
+              },
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-06.webp`,
+                imageAlt: "?",
+              },
+            ],
           },
         },
         {
@@ -210,21 +238,82 @@ export const CASE_8 = {
           },
         },
         {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            limitMaxWidth: true,
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/recreating-base-screens.jpg`,
+            imageAlt: "Recreating base screens in Figma",
+            caption: "Recreating base screens in Figma",
+          },
+        },
+        {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             title: <>Migrating existing teams</>,
             h: 3,
             text: (
               <Paragraph>
-                Once some screens and components are in place, I’ll get the rest
-                of the team access and training to evaluate it. Transitioning to
-                Figma would, in theory, be cheaper and better for everyone. So,
-                I got a green light. After a short introduction and after
-                creating some of the basic screens and components, other teams
-                started using Figma and the component library that it offers.
+                Once some screens and components were in place, I added the rest
+                of the team to a temporary license. Transitioning to Figma
+                would, in theory, be cheaper and better for everyone, so I got
+                the green light. After a short introduction and after creating
+                some of the basic screens and components, other teams started
+                using Figma and the component library that it offers. The
+                product was so big that we had to transition gradually to using
+                reusable components.
               </Paragraph>
             ),
           },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
+        },
+        {
+          template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
+          data: {
+            items: [
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/typography.jpg`,
+                imageAlt: "Cleaning up the typography",
+                title: "Cleaning up the typography",
+                text: (
+                  <>
+                    <Paragraph>
+                      I ran CSS STATS and compared it to our competitors. We
+                      were using 15 different text sizes and more than 50
+                      different colors. Some text sizes were so small or so
+                      large that they were practically unreadable.
+                    </Paragraph>
+                    <Paragraph>
+                      All designers met, and we agreed to try to use a limited
+                      set of sizes based on a modular scale. (1.25 for desktop
+                      and 1.125 for mobile). To ensure the new scale worked, we
+                      updated all existing base screens to use the new scale.
+                    </Paragraph>
+                  </>
+                ),
+              },
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/colors.jpg`,
+                imageAlt: "Color scheme",
+                title: "Colors, colors everywhere!",
+                text: (
+                  <Paragraph>
+                    Prisjakt is known to be colorful. Perhaps a bit too
+                    colorful, using more than 60 unique colors. When everything
+                    demands attention, it can easily be overwhelming (just think
+                    of sales season when showing all “offers” from all shops).
+                    Instead, we used a “limited” color scheme of 29 colors and
+                    narrowed it down even more to use mostly shades of grey and
+                    a light blue as “action” color.
+                  </Paragraph>
+                ),
+              },
+            ],
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
@@ -232,27 +321,107 @@ export const CASE_8 = {
             title: <>Developing some simple components</>,
             h: 3,
             text: (
-              <Paragraph>
-                What sets me apart from other designers is that I can code. I
-                often discuss the pros and cons of different design decisions
-                with developers. Find walk-arounds, navigate my way around IDE
-                APIs, and even create some simple components for a design
-                system. In this case, I had some lying around from other
-                projects that I could copy-paste-modify to create the code
-                implementations for Icons and Badges. I contributed some
-                components to the now-growing components library and helped the
-                team solve some of the challenges with others.
-              </Paragraph>
+              <>
+                <Paragraph>
+                  What sets me apart from other designers is that I can code. I
+                  often discuss the pros and cons of different design decisions
+                  with developers. Find walk-arounds, navigate my way around IDE
+                  APIs, and even create some simple components for a design
+                  system.
+                </Paragraph>
+                <Paragraph>
+                  In this case, I had some lying around from other projects that
+                  I could copy-paste-modify to create the code implementations
+                  for Icons and Badges. I contributed some components to the
+                  now-growing components library and helped the team solve some
+                  of the challenges with others.
+                </Paragraph>
+              </>
             ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_IMAGE,
+          data: {
+            isPadded: true,
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/icons.jpg`,
+            imageAlt: "Icons in figma and in JS",
+            caption: "Icons in figma and in JS",
           },
         },
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
-            title: <>Documentation and natural expansion</>,
-            h: 3,
-            text: <Paragraph>...</Paragraph>,
+            title: <>Components in focus</>,
+            h: 2,
+            text: (
+              <Paragraph>
+                While transitioning to reusable components, we took the chance
+                to rethink some widely used components. I just want to highlight
+                2 of these components here:
+              </Paragraph>
+            ),
           },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
+        },
+        {
+          template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
+          data: {
+            items: [
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/product-card.jpg`,
+                imageAlt: "Product card",
+                title: "Product card",
+                text: (
+                  <>
+                    <Paragraph>
+                      The product is widely used on Prisjakt to link to product
+                      pages and specific offers and deals. It fills many roles,
+                      including selecting and comparing products, linking to
+                      external pages, and creating price notifications. In
+                      addition, it needed to support both the normal card layout
+                      and a wider list layout (which is used in category and
+                      search results pages).
+                    </Paragraph>
+                    <Paragraph>
+                      We aimed to make the card more distinct, with a clearer
+                      hit area and better readability. We created many
+                      iterations and eventually compromised on the following
+                      design.
+                    </Paragraph>
+                  </>
+                ),
+              },
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/offer-item.jpg`,
+                imageAlt: "Offer item",
+                title: "Offer item optimization",
+                text: (
+                  <>
+                    <Paragraph>
+                      The offer item is a key component on Prisjakt. It displays
+                      information about the shop (ratings, payment, delivery
+                      options) and the specific offer (price, stock,
+                      conditions), which means cramming a lot of information in
+                      a very small space. This is even more challenging on
+                      mobile or when new pieces of information need to be added
+                      (“member prices,” “shipping information,” etc.)
+                    </Paragraph>
+                    <Paragraph>
+                      We started by moving away from the table layout. Then,
+                      through a series of experiments, optimized the delivery
+                      text, store information, and CTA)
+                    </Paragraph>
+                  </>
+                ),
+              },
+            ],
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
@@ -264,9 +433,9 @@ export const CASE_8 = {
                 <Paragraph>
                   One of the things that killed the design system before was its
                   complexity. Every design change required additional overhead
-                  and complexity. Developers hesitated to contribute to the
-                  design system. Without management support, there was no
-                  mandate to force anyone to do so.
+                  and complexity, and developers hesitated to contribute to it.
+                  Without management support, there was no mandate to force
+                  anyone to do so.
                 </Paragraph>
                 <Paragraph>
                   I joined the “Design system forum,” where I pitched the idea
@@ -287,13 +456,28 @@ export const CASE_8 = {
       ],
     },
     {
-      header: "Result",
       elements: [
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
-            title: "Result",
-            text: <Paragraph xl>...</Paragraph>,
+            title: "Its never about the documentation",
+            text: (
+              <>
+                <Paragraph xl>
+                  The real benefit of using design systems is threefold. It
+                  creates a sense of consistency and familiarity for users. It
+                  saves time for developers and designers, and it saves money
+                  for the organization.
+                </Paragraph>
+                <Paragraph xl>
+                  Here it was no different. We could see a gradual increase in
+                  user satisfaction. We saw developers both using and
+                  contributing to the design system. This meant more time could
+                  be spent on making Prisjakt better for its users and customers
+                  and less time creating “yet another button”
+                </Paragraph>
+              </>
+            ),
             isFullScreen: true,
             isSticky: true,
           },
@@ -302,10 +486,7 @@ export const CASE_8 = {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
             imageUrl: `${SETTINGS.MEDIA_BASE_URL}/result.jpg`,
-            imageAlt: "problem-framing",
-            caption: "Problem framing whiteboard",
-            limitMaxWidth: true,
-            isPadded: true,
+            imageAlt: "some of the components in the system",
           },
         },
       ],
