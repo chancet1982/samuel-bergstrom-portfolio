@@ -34,13 +34,18 @@ const StyledBackgroundImage = styled(motion.div)`
   height: 100%;
   width: 100%;
   position: absolute;
-  scale: 1.32;
-  top: -16%;
+  background-size: cover;
+  background-position: center;
+
   ${({ $mediaUrl }) =>
     $mediaUrl && {
       backgroundImage: `url(${process.env.PUBLIC_URL}/${$mediaUrl})`,
-      backgroundSize: "cover",
-      backgroundPosition: "center",
+    }}
+
+  ${({ $isInHero }) =>
+    !$isInHero && {
+      scale: "1.32",
+      top: "-16%",
       backgroundAttachment: "fixed",
     }}
 `;
@@ -50,15 +55,21 @@ function BackgroundImageWithScrollParallax({
   limitMaxWidth,
   children,
   isPadded,
+  isInHero,
   ...rest
 }) {
   const ref = useRef(null);
+
+  const offsetScroll = isInHero
+    ? ["start start", "end start"]
+    : ["start 0.8", "end 0.2"];
+  const effectRange = isInHero ? ["0%", "50%"] : ["-16%", "16%"];
+
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 0.8", "end 0.2"],
+    offset: offsetScroll,
   });
-
-  const parallaxEffect = useTransform(scrollYProgress, [0, 1], ["-16%", "16%"]);
+  const parallaxEffect = useTransform(scrollYProgress, [0, 1], effectRange);
   // const smoothParallaxEffect = useSpring(parallaxEffect);
   const mediaUrl = bgMedia ? bgMedia.mediaUrl : null;
 
@@ -71,6 +82,7 @@ function BackgroundImageWithScrollParallax({
     >
       <StyledBackgroundImage
         $mediaUrl={mediaUrl}
+        $isInHero={isInHero}
         style={{ top: parallaxEffect }}
       />
       {children}
@@ -86,11 +98,13 @@ BackgroundImageWithScrollParallax.propTypes = {
   children: PropTypes.node.isRequired,
   limitMaxWidth: PropTypes.bool,
   isPadded: PropTypes.bool,
+  isInHero: PropTypes.bool,
 };
 
 BackgroundImageWithScrollParallax.defaultProps = {
   limitMaxWidth: false,
   isPadded: true,
+  isInHero: false,
 };
 
 export default BackgroundImageWithScrollParallax;

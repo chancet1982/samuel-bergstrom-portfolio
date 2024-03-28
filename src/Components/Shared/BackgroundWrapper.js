@@ -16,6 +16,7 @@ function BackgroundWrapper({
   isPadded,
   isParallaxOnScroll,
   isScaleOnScroll,
+  isInHero,
   ...rest
 }) {
   const mediaUrl = bgMedia ? bgMedia.mediaUrl : null;
@@ -41,6 +42,7 @@ function BackgroundWrapper({
             bgMedia={bgMedia}
             limitMaxWidth={limitMaxWidth}
             isPadded={isPadded}
+            isInHero={isInHero}
             {...rest}
           >
             {children}
@@ -53,6 +55,7 @@ function BackgroundWrapper({
             bgMedia={bgMedia}
             limitMaxWidth={limitMaxWidth}
             isPadded={isPadded}
+            isInHero={isInHero}
             {...rest}
           >
             {children}
@@ -99,6 +102,7 @@ BackgroundWrapper.propTypes = {
   isPadded: PropTypes.bool,
   isParallaxOnScroll: PropTypes.bool,
   isScaleOnScroll: PropTypes.bool,
+  isInHero: PropTypes.bool,
 };
 
 BackgroundWrapper.defaultProps = {
@@ -108,6 +112,7 @@ BackgroundWrapper.defaultProps = {
   isPadded: true,
   isParallaxOnScroll: false,
   isScaleOnScroll: false,
+  isInHero: false,
 };
 
 export default BackgroundWrapper;

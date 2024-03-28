@@ -10,7 +10,7 @@ import { BG_MEDIA_TYPES } from "../../data/dictionaries/BG_MEDIA_TYPES";
 
 function SectionHero({ bgColor, bgMedia, fgImage, caption, highlights }) {
   const { title, h, text } = caption;
-
+  const { isParallaxOnScroll } = bgMedia || {};
   const { imageUrl, mobileImageUrl, imageAlt } = fgImage || {};
 
   const [, setElementBgColor] = useContext(ElementColorContext);
@@ -21,7 +21,14 @@ function SectionHero({ bgColor, bgMedia, fgImage, caption, highlights }) {
     }
   }, [setElementBgColor, bgColor]);
   return (
-    <BackgroundWrapper bgMedia={bgMedia} bgColor={bgColor} isScaleOnScroll>
+    <BackgroundWrapper
+      bgMedia={bgMedia}
+      bgColor={bgColor}
+      isScaleOnScroll={!isParallaxOnScroll}
+      isParallaxOnScroll={isParallaxOnScroll}
+      isInHero
+      isPadded={false}
+    >
       <SectionTitleAndText
         isSticky
         isCentered
@@ -52,6 +59,8 @@ SectionHero.propTypes = {
   bgMedia: PropTypes.shape({
     type: PropTypes.oneOf([BG_MEDIA_TYPES.IMAGE, BG_MEDIA_TYPES.VIDEO]),
     mediaUrl: PropTypes.string,
+    isParallaxOnScroll: PropTypes.bool,
+    isInHero: PropTypes.bool,
   }),
   fgImage: PropTypes.shape({
     imageUrl: PropTypes.string,

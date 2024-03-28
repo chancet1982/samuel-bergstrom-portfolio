@@ -9,6 +9,7 @@ import { CASE_STATUS } from "./dictionaries/CASE_STATUS";
 import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import colors from "../theme/colors";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
+import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
 
 const SETTINGS = {
   BG_COLOR: colors.offwhite,
@@ -56,7 +57,6 @@ export const CASE_8 = {
   },
   details: [
     {
-      bgColor: colors.white,
       elements: [
         {
           template: SECTION_ELEMENTS.SECTION_HERO_CASES,
@@ -71,6 +71,11 @@ export const CASE_8 = {
                   Launching a design system after failed attempts
                 </Paragraph>
               ),
+            },
+            bgMedia: {
+              type: BG_MEDIA_TYPES.IMAGE,
+              mediaUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-bg.jpg`,
+              isParallaxOnScroll: true,
             },
             fgImage: {
               imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,
@@ -141,27 +146,27 @@ export const CASE_8 = {
             isPadded: true,
             images: [
               {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-01.webp`,
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-01.jpg`,
                 imageAlt: "?",
               },
               {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-02.webp`,
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-02.jpg`,
                 imageAlt: "?",
               },
               {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-03.webp`,
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-03.jpg`,
                 imageAlt: "?",
               },
               {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-04.webp`,
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-04.jpg`,
                 imageAlt: "?",
               },
               {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-05.webp`,
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-05.jpg`,
                 imageAlt: "?",
               },
               {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-06.webp`,
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/mood-06.jpg`,
                 imageAlt: "?",
               },
             ],

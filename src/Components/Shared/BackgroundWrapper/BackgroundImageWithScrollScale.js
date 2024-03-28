@@ -48,12 +48,17 @@ function BackgroundImageWithScrollScale({
   limitMaxWidth,
   children,
   isPadded,
+  isInHero,
   ...rest
 }) {
   const ref = useRef(null);
+  const offsetScroll = isInHero
+    ? ["start start", "end start"]
+    : ["start 0.8", "end 0.2"];
+
   const { scrollYProgress } = useScroll({
     target: ref,
-    offset: ["start 0.8", "end 0.2"],
+    offset: offsetScroll,
   });
 
   const parallaxEffect = useTransform(scrollYProgress, [0, 1], ["1", "1.32"]);
@@ -84,11 +89,13 @@ BackgroundImageWithScrollScale.propTypes = {
   children: PropTypes.node.isRequired,
   limitMaxWidth: PropTypes.bool,
   isPadded: PropTypes.bool,
+  isInHero: PropTypes.bool,
 };
 
 BackgroundImageWithScrollScale.defaultProps = {
   limitMaxWidth: false,
   isPadded: true,
+  isInHero: false,
 };
 
 export default BackgroundImageWithScrollScale;
