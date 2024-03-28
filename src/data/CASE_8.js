@@ -198,7 +198,7 @@ export const CASE_8 = {
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
-            title: <>We can, we should, we just did it in secret</>,
+            title: <>Can we?</>,
             text: (
               <Paragraph>
                 In this case, the answer was to create a more simplistic design
@@ -207,16 +207,6 @@ export const CASE_8 = {
                 for the company.
               </Paragraph>
             ),
-          },
-        },
-        {
-          template: SECTION_ELEMENTS.SECTION_IMAGE,
-          data: {
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/solution.jpg`,
-            imageAlt: "problem-framing",
-            caption: "Problem framing whiteboard",
-            limitMaxWidth: true,
-            isPadded: true,
           },
         },
       ],
