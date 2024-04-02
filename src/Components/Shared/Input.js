@@ -13,9 +13,9 @@ import useBgColor from "../../utils/useBgColor";
 const { size, lh, inc } = typography;
 
 const StyledInput = styled(motion.input)`
+  width: 100%;
   box-sizing: border-box;
   display: block;
-  width: fill-available;
   border-radius: ${padding.insideElements.half};
   line-height: ${({ $small, $large }) =>
     $small ? lh + inc : $large ? lh - inc : lh};

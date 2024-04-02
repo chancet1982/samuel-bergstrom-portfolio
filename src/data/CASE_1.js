@@ -302,7 +302,7 @@ export const CASE_1 = {
           data: {
             items: [
               {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-1.png`,
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-1.jpg`,
                 imageAlt: "Easy access to common discrepancies",
                 title: "Easy access to common discrepancies",
                 text: (
@@ -323,7 +323,7 @@ export const CASE_1 = {
                 ),
               },
               {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-2.png`,
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-2.jpg`,
                 imageAlt: "Making route messages prominent",
                 title: "Making route messages prominent",
                 text: (
@@ -344,7 +344,7 @@ export const CASE_1 = {
                 ),
               },
               {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-3.png`,
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-3.jpg`,
                 imageAlt: "Adding support for long customer names",
                 title: "Adding support for long customer names",
                 text: (

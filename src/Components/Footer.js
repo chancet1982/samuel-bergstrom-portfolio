@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useRef } from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import PropTypes from "prop-types";
+import { useWindowSize } from "react-use";
 import breakpoints from "../theme/breakpoints";
 import padding from "../theme/padding";
 import sizes from "../theme/sizes";
@@ -33,19 +34,22 @@ const StyledFooter = styled(motion.footer)`
 `;
 
 const StyledSectionContactForm = styled(motion.div)`
+  box-sizing: border-box;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-
+  grid-template-columns: repeat(1, 1fr);
   padding-left: ${padding.outsideElements.double};
   padding-right: ${padding.outsideElements.double};
+  padding-bottom: ${padding.insideElements.double};
   grid-gap: max(
     ${padding.outsideElements.single},
     ${padding.insideElements.single}
   );
-  padding-bottom: ${padding.insideElements.double};
-  box-sizing: border-box;
 
-  @media (min-width: ${breakpoints.desktop}px) {
+  @media (width > ${breakpoints.mobileLarge}px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (width > ${breakpoints.desktop}px) {
     max-width: ${sizes.contentWidthLimit}px;
     margin: 0 auto;
   }
@@ -61,6 +65,8 @@ const StyledSectionCopyright = styled(motion.div)`
     margin: 0 auto;
   }
 `;
+
+const StyledContactFormContent = styled(motion.div)``;
 
 const StyledSocialMediaLinks = styled(motion.div)`
   display: flex;
@@ -103,6 +109,9 @@ function Footer({ bgColor }) {
     setCursorVariant("default");
   }
 
+  const { width } = useWindowSize();
+  const isNotMobile = width > breakpoints.mobileLarge;
+
   return (
     <StyledFooter
       initial="hidden"
@@ -120,8 +129,13 @@ function Footer({ bgColor }) {
         viewport={{ once: true, amount: 0.2 }}
         transition={{ staggerChildren: 0.2 }}
       >
-        <Image imageUrl={`${process.env.PUBLIC_URL}/assets/contact-form.png`} />
-        <motion.div>
+        {isNotMobile && (
+          <Image
+            imageUrl={`${process.env.PUBLIC_URL}/assets/contact-form.png`}
+          />
+        )}
+
+        <StyledContactFormContent>
           <TitleAndText h={3} title="Let’s get in touch">
             <Paragraph xl>Found me interesting? Let’s talk</Paragraph>
           </TitleAndText>
@@ -184,7 +198,7 @@ function Footer({ bgColor }) {
               icon={ICON_PATHS.STACK_EXCHANGE}
             />
           </StyledSocialMediaLinks>
-        </motion.div>
+        </StyledContactFormContent>
       </StyledSectionContactForm>
       <StyledSectionCopyright>
         <Span small>2024, Samuel Bergström</Span>

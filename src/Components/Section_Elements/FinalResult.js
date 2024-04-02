@@ -28,9 +28,9 @@ const StyledFinalResultContent = styled(motion.div)`
   }
 
   > img {
-    padding-top: ${padding.insideElements.double};
+    padding-top: ${padding.outsideElements.double};
     position: sticky;
-    top: -32vh;
+    top: ${padding.outsideElements.double};
   }
 
   @media (min-width: ${breakpoints.desktop}px) {

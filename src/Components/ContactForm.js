@@ -8,6 +8,8 @@ import Label from "./Shared/Label";
 import Textarea from "./Shared/Textarea";
 import { CursorContext } from "../Context/CursorContext";
 
+const StyledForm = styled(motion.form)``;
+
 const StyledDiv = styled(motion.div)`
   padding-bottom: ${padding.insideElements.single};
 `;
@@ -48,7 +50,7 @@ function ContactForm() {
   };
 
   return (
-    <form
+    <StyledForm
       onSubmit={submitForm}
       action="https://formspree.io/f/xqkgwqjz"
       method="POST"
@@ -72,7 +74,7 @@ function ContactForm() {
         </Button>
       )}
       {status === "ERROR" && <p>Ooops! There was an error.</p>}
-    </form>
+    </StyledForm>
   );
 }
 
