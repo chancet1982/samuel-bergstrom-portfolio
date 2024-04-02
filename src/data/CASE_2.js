@@ -237,9 +237,6 @@ export const CASE_2 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SPACER_SMALL,
-        },
-        {
           template: SECTION_ELEMENTS.KEY_FIGURES,
           data: {
             items: [
@@ -256,12 +253,24 @@ export const CASE_2 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SPACER_SMALL,
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
+          data: {
+            title: <>Sharing learnings and planning the road ahead</>,
+            h: 3,
+            text: (
+              <Paragraph>
+                The insights were shared with the internal stakeholders and
+                helped define priorities for the app. Some feaures presented
+                high value for the business hence were included even if their
+                user value was limited.
+              </Paragraph>
+            ),
+          },
         },
       ],
     },
     {
-      bgColor: SETTINGS.BG_COLOR,
+      bgColor: "#FCEAE1",
       elements: [
         {
           template: SECTION_ELEMENTS.INSIGHTS,
@@ -305,26 +314,6 @@ export const CASE_2 = {
     },
     {
       paddedUp: true,
-      elements: [
-        {
-          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
-          data: {
-            title: <>Sharing learnings and planning the road ahead</>,
-            h: 3,
-            text: (
-              <Paragraph>
-                The insights were shared with the internal stakeholders and
-                helped define priorities for the app. Some feaures presented
-                high value for the business hence were included even if their
-                user value was limited.
-              </Paragraph>
-            ),
-          },
-        },
-      ],
-    },
-    {
-      paddedUp: true,
       header: "Ideation & prioritization",
       elements: [
         {
@@ -362,7 +351,7 @@ export const CASE_2 = {
           data: {
             items: [
               {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-1.png`,
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-1.jpg`,
                 imageAlt: "Reducing friction in self-reporting.",
                 title: "Reducing friction in self-reporting.",
                 text: (
@@ -389,7 +378,7 @@ export const CASE_2 = {
                 ),
               },
               {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-2.png`,
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-2.jpg`,
                 imageAlt: "Finding dialysis clinics abroad",
                 title: "Finding dialysis clinics abroad",
                 text: (
@@ -407,7 +396,7 @@ export const CASE_2 = {
                 ),
               },
               {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-3.png`,
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-3.jpg`,
                 imageAlt: "Health tips, not values",
                 title: "Health tips, not values",
                 text: (
@@ -433,7 +422,7 @@ export const CASE_2 = {
                 ),
               },
               {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-4.png`,
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/sneakpeek-4.jpg`,
                 imageAlt: "Medication reminders",
                 title: "Medication reminders",
                 text: (
@@ -459,6 +448,9 @@ export const CASE_2 = {
               },
             ],
           },
+        },
+        {
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,

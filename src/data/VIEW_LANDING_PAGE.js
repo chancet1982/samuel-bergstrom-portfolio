@@ -89,7 +89,7 @@ export const VIEW_LANDING_PAGE = [
     ],
   },
   {
-    bgColor: colors.offwhite,
+    bgColor: colors.white,
     elements: [
       {
         template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
