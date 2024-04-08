@@ -63,6 +63,15 @@ export const StyledH5 = styled(motion.h5)`
   ${headlineFont}
 `;
 
+export const StyledH6 = styled(motion.h6)`
+  text-wrap: balance;
+  max-inline-size: 48ch;
+  color: ${({ $light }) =>
+    $light ? colors.text.light.high : colors.text.dark.high};
+  ${({ $fluidType }) => $fluidType};
+  ${headlineFont}
+`;
+
 function Title({ h, children, isLight, withMargin, ...rest }) {
   const light = useBgColor() || isLight;
 
@@ -141,6 +150,18 @@ function Title({ h, children, isLight, withMargin, ...rest }) {
           >
             {children}
           </StyledH5>
+        );
+      case 6:
+        return (
+          <StyledH6
+            $light={light}
+            h={h}
+            $fluidType={fluidType}
+            variants={textVariants}
+            {...rest}
+          >
+            {children}
+          </StyledH6>
         );
       default:
         return null;

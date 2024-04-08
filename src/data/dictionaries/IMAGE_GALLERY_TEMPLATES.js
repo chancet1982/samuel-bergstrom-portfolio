@@ -14,3 +14,15 @@ export const IMAGE_GALLERY_TEMPLATES = {
   SIX_IMAGES_THREE_COLUMNS: `grid-template-columns: repeat(3, 1fr); grid-template-areas: "a b c" "a b c" "a d c" "e d f" "e d f"; grid-template-rows: repeat(5, 20vh);` /* 6 images 3 columns (Height "double", "triple") */,
   SEVEN_IMAGES_THREE_COLUMNS: `grid-template-columns: repeat(3, 1fr); grid-template-areas: "a b c" "a b c" "a d c" "e d g" "e f g" "e f g"; grid-template-rows: repeat(6, 20vh);` /* 7 images 3 columns (Height "double", "triple") */,
 };
+
+export const PROBLEMATIC_IMAGE_GALLERY_TEMPLATES = new Set()
+  .add(IMAGE_GALLERY_TEMPLATES.THREE_IMAGES_ROW)
+  .add(IMAGE_GALLERY_TEMPLATES.THREE_IMAGES_ROW_INVERTED)
+  .add(IMAGE_GALLERY_TEMPLATES.FOUR_IMAGES_ROW)
+  .add(IMAGE_GALLERY_TEMPLATES.FIVE_IMAGES_MIX_COLUMNS)
+  .add(IMAGE_GALLERY_TEMPLATES.SIX_IMAGES_THREE_COLUMNS)
+  .add(IMAGE_GALLERY_TEMPLATES.SEVEN_IMAGES_THREE_COLUMNS);
+
+export const PROBLEMATIC_IMAGE_GALLERY_TEMPLATES_WITH_THREE_IMAGES = new Set()
+  .add(IMAGE_GALLERY_TEMPLATES.THREE_IMAGES_ROW)
+  .add(IMAGE_GALLERY_TEMPLATES.THREE_IMAGES_ROW_INVERTED);

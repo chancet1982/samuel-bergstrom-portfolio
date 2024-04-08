@@ -50,6 +50,7 @@ function Highlights({ columns }) {
           renderAsList={renderAsList}
           label={label}
           key={label}
+          h={6}
           flip
         />
       ))}

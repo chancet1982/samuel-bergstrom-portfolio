@@ -27,8 +27,9 @@ const StyledBackground = styled(motion.div)`
   @media (min-width: ${breakpoints.desktop}px) {
     ${({ $limitMaxWidth }) =>
       $limitMaxWidth && {
-        maxWidth: `${sizes.contentWidthLimit}px`,
+        maxWidth: `calc(${sizes.contentWidthLimit}px + 2 *  ${padding.outsideElements.double})`,
         margin: "0 auto",
+        borderRadius: "3rem",
       }}
   }
 `;

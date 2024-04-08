@@ -10,6 +10,8 @@ import Paragraph from "../Shared/Paragraph";
 import padding from "../../theme/padding";
 import sizes from "../../theme/sizes";
 import BackgroundWrapper from "../Shared/BackgroundWrapper";
+import { SPACER_SIZES } from "../../data/dictionaries/SPACER_SIZES";
+import Spacer from "./Spacer";
 
 const StyledInsights = styled(motion.div)`
   display: grid;
@@ -49,6 +51,7 @@ function Insights({
   h,
   items,
   bgColor,
+  limitMaxWidth,
   isTwoColumnsOnDesktop,
   text,
   isCentered,
@@ -87,11 +90,16 @@ function Insights({
       <StyledInsightsContent $isTwoColumnsOnDesktop={isTwoColumnsOnDesktop}>
         {convertRawInsightsToElements()}
       </StyledInsightsContent>
+      <Spacer size={SPACER_SIZES.SMALL} />
     </StyledInsights>
   );
 
   return bgColor ? (
-    <BackgroundWrapper bgColor={bgColor}>{renderInsights()}</BackgroundWrapper>
+    <BackgroundWrapper bgColor={bgColor} limitMaxWidth={limitMaxWidth}>
+      <Spacer size={SPACER_SIZES.SMALL} />
+      {renderInsights()}
+      <Spacer size={SPACER_SIZES.SMALL} />
+    </BackgroundWrapper>
   ) : (
     renderInsights()
   );
@@ -108,6 +116,7 @@ Insights.propTypes = {
     })
   ).isRequired,
   bgColor: PropTypes.string,
+  limitMaxWidth: PropTypes.bool,
   isTwoColumnsOnDesktop: PropTypes.bool,
   text: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   isCentered: PropTypes.bool,
@@ -118,6 +127,7 @@ Insights.defaultProps = {
   title: null,
   h: 2,
   bgColor: null,
+  limitMaxWidth: false,
   isTwoColumnsOnDesktop: false,
   text: null,
   isCentered: false,

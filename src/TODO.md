@@ -7,8 +7,6 @@
 - SECTION_IMAGE: add support for parallax effect (can be nice to have on non-content-critical images)
 - SECTION_IMAGE: make it nicer on mobile
 - Update design of "about me" and remove testimonials and client logos from page. Update to be more of a story/timeline instead of CV (POTENTIALLY COPY THE EFFECT FROM GITHUB)
-- 2 tone text needs to be more emphasised or removed.
-- Add a small piece about you(!) in the landing page after the
 - Primary button text color should be white when hover.
 - Limit splash screen to show only once.
 - provide better styling for the success/error messages
@@ -18,7 +16,6 @@
 - Better mobile thumbnails (now that we updated the thumbnail the mobile one looks funny)
 
 ----- Fixes for mobile version only -----
-KEY_FIGURES -> doesnt scale on mobile nicely (pushes content in case_13 for example)
 SNEAKPEEK? -> Create alternate design for mobile phones only
 RESULT -> Check if "sticky" is working as it should (CASE_10, CASE_7, CASE_5, CASE_4, CASE_3, CASE_2, CASE_1 not working but CASE_9 does)
 COLUMNS -> ABOUT_ME doesnt look good on mobile (somthing to do with the columns)
@@ -29,15 +26,10 @@ Add support for Google Analytics + Google tag manager.
 Add bottom navigation in footer
 Better response after sending an email (instead of generic "thanks")
 CASE_07 -> Add pictures of the report.
-Consider using a more consitent color scheme 3 colors or so (pastels)
-Generally speaking start considering how to make things more "monochromatic" and modern (gradients in the background, gradient headlines etc)
 COVER_CAPTION: Add "back" button (In cases)
 Add password protection to cases
 server side rendering using Next.js (?)
 Use Contentful for content.
-
------ OLD FIXES (NOT SURE IF RELEVANT ANYMORE) -----
-MOBILE_MENU -> Implement staggered menulink animations.
 
 ----- CONTENT CLEANUP: -----
 SECTION_ELEMENTS.OVERVIEW -> Most likely not in use (other than in old, unfinished cases. Clean up old cases and remove. )

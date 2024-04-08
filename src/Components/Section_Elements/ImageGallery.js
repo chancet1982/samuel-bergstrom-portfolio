@@ -1,12 +1,19 @@
+/* eslint-disable no-nested-ternary */
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
 import { v4 as uuid } from "uuid";
 import { motion } from "framer-motion";
+import { useWindowSize, useOrientation } from "react-use";
 import ImageWithCaption from "../Shared/ImageWithCaption";
 import sizes from "../../theme/sizes";
 import breakpoints from "../../theme/breakpoints";
 import padding from "../../theme/padding";
+import {
+  PROBLEMATIC_IMAGE_GALLERY_TEMPLATES,
+  IMAGE_GALLERY_TEMPLATES,
+  PROBLEMATIC_IMAGE_GALLERY_TEMPLATES_WITH_THREE_IMAGES,
+} from "../../data/dictionaries/IMAGE_GALLERY_TEMPLATES";
 
 const StyledImageGallery = styled(motion.div)`
   padding-top: ${padding.insideElements.quadruple};
@@ -18,6 +25,10 @@ const StyledImageGallery = styled(motion.div)`
   );
 
   ${({ $template }) => $template};
+
+  > figure {
+    border-radius: ${padding.insideElements.single};
+  }
 
   ${({ $isPadded }) =>
     $isPadded && {
@@ -35,9 +46,29 @@ const StyledImageGallery = styled(motion.div)`
 `;
 
 function ImageGallery({ images, template, limitMaxWidth, isPadded }) {
+  const { width } = useWindowSize();
+  const deviceOrientation = useOrientation();
+  const isMobile = width < breakpoints.tablet;
+  const isLandscape = deviceOrientation.type === "landscape-primary";
+
+  const imagesInGallery =
+    isMobile &&
+    !isLandscape &&
+    PROBLEMATIC_IMAGE_GALLERY_TEMPLATES.has(template)
+      ? images.length >= 4
+        ? images.slice(0, 4)
+        : images.slice(0, 3)
+      : images;
+
+  const selectMobileTemplate = PROBLEMATIC_IMAGE_GALLERY_TEMPLATES.has(template)
+    ? PROBLEMATIC_IMAGE_GALLERY_TEMPLATES_WITH_THREE_IMAGES.has(template)
+      ? IMAGE_GALLERY_TEMPLATES.THREE_IMAGES_TWO_COLUMNS
+      : IMAGE_GALLERY_TEMPLATES.FOUR_IMAGES_TWO_COLUMNS
+    : template;
+
   return (
     <StyledImageGallery
-      $template={template}
+      $template={isMobile && !isLandscape ? selectMobileTemplate : template}
       $limitMaxWidth={limitMaxWidth}
       $isPadded={isPadded}
       initial="hidden"
@@ -45,7 +76,7 @@ function ImageGallery({ images, template, limitMaxWidth, isPadded }) {
       viewport={{ once: true, amount: 0.2 }}
       transition={{ staggerChildren: 0.2 }}
     >
-      {images.map(({ imageUrl, imageAlt, caption }, index) => (
+      {imagesInGallery.map(({ imageUrl, imageAlt, caption }, index) => (
         <ImageWithCaption
           imageUrl={imageUrl}
           imageAlt={imageAlt}

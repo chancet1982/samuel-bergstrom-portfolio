@@ -120,6 +120,7 @@ function SectionElementsRenderer({ elementKey, data, template }) {
             bgColor={data.bgColor}
             isTwoColumnsOnDesktop={data.isTwoColumnsOnDesktop}
             isCentered={data.isCentered}
+            limitMaxWidth={data.limitMaxWidth}
           />
         </ElementColorContextProvider>
       );

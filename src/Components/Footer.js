@@ -8,8 +8,6 @@ import padding from "../theme/padding";
 import sizes from "../theme/sizes";
 import Span from "./Shared/Span";
 import ContactForm from "./ContactForm";
-import TitleAndText from "./Shared/TitleAndText";
-import Paragraph from "./Shared/Paragraph";
 import Image from "./Shared/Image";
 import Title from "./Shared/Title";
 import { ICON_PATHS } from "../data/dictionaries/ICON_PATHS";
@@ -17,6 +15,8 @@ import Button from "./Shared/Button";
 import colors from "../theme/colors";
 import { SectionColorContext } from "../Context/SectionColorContext";
 import { CursorContext } from "../Context/CursorContext";
+import { SPACER_SIZES } from "../data/dictionaries/SPACER_SIZES";
+import Spacer from "./Section_Elements/Spacer";
 
 const StyledFooter = styled(motion.footer)`
   margin: 0;
@@ -136,11 +136,9 @@ function Footer({ bgColor }) {
         )}
 
         <StyledContactFormContent>
-          <TitleAndText h={3} title="Let’s get in touch">
-            <Paragraph xl>Found me interesting? Let’s talk</Paragraph>
-          </TitleAndText>
+          <Title h={3}>Send me a message</Title>
           <ContactForm />
-          <Title h={4}>Find me on social media</Title>
+          <Spacer size={SPACER_SIZES.SMALL} />
           <StyledSocialMediaLinks>
             <Button
               secondary

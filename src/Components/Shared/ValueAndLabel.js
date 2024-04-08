@@ -66,7 +66,7 @@ ValueAndLabel.propTypes = {
   renderAsList: PropTypes.bool,
   label: PropTypes.string.isRequired,
   flip: PropTypes.bool,
-  h: PropTypes.oneOf([3, 5]),
+  h: PropTypes.oneOf([3, 5, 6]),
   withMargin: PropTypes.bool,
 };
 

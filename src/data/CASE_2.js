@@ -62,12 +62,12 @@ export const CASE_2 = {
   },
   details: [
     {
-      navBgColor: SETTINGS.BG_COLOR,
+      navBgColor: "#FCEAE1",
       elements: [
         {
           template: SECTION_ELEMENTS.SECTION_HERO_CASES,
           data: {
-            bgColor: SETTINGS.BG_COLOR,
+            bgColor: "#FCEAE1",
             caption: {
               overline: "Renal Care",
               title: <>Renal care Companion App</>,
@@ -122,14 +122,14 @@ export const CASE_2 = {
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
-            title: <>The problem</>,
+            title: <>Most renal care happens at home</>,
             h: 2,
             text: (
               <>
                 <Paragraph>
-                  Proving care for a chronic condition is a never-ending battle.
-                  You cant treat patients in the clinics alone. In order to
-                  provide optimal treatment for over 40 000 renal patients
+                  Providing care for a chronic condition is a never-ending
+                  battle. You cant treat patients in the clinics alone. In order
+                  to provide optimal treatment for over 40 000 renal patients
                   worldwide, you need to track their intake and values even at
                   home. This is a laborious task, reporting back daily puts a
                   burden both on patients and staff.
@@ -175,8 +175,10 @@ export const CASE_2 = {
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
-            title: <>The goal:</>,
-            h: 4,
+            title: (
+              <>The goal: Empower patients to take control over their care</>
+            ),
+            h: 3,
             text: (
               <Paragraph>
                 The goal, in this case, was simply, “make a better app”. From an
@@ -199,7 +201,7 @@ export const CASE_2 = {
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
-            title: <>First understand the problem, then solve it.</>,
+            title: <>Understanding the Patients’ perspective.</>,
             h: 2,
             text: (
               <>
@@ -210,14 +212,14 @@ export const CASE_2 = {
                   groups internally to provide their perspectives. Then we
                   needed to look outwards...
                 </Paragraph>
-                <Title h={4}>General research</Title>
+                <Title h={3}>General research</Title>
                 <Paragraph>
                   We gathered general insights and best practices regarding
                   designing for the elderly and accessible design from NNg’s
                   research report on the matter, hoping to avoid common pitfalls
                   and known design issues.
                 </Paragraph>
-                <Title h={4}>
+                <Title h={3}>
                   Survey and Interviews to understand user needs
                 </Title>
                 <Paragraph>
@@ -243,11 +245,13 @@ export const CASE_2 = {
               {
                 value: "102",
                 label: "Respondents",
+                bgColor: "#E0F3F7",
               },
-              { value: "5", label: "clinics" },
+              { value: "5", label: "clinics", bgColor: "#FFF4DF" },
               {
                 value: "3",
                 label: "countries",
+                bgColor: "#DFE7E3",
               },
             ],
           },
@@ -270,19 +274,15 @@ export const CASE_2 = {
       ],
     },
     {
-      bgColor: "#FCEAE1",
       elements: [
         {
           template: SECTION_ELEMENTS.INSIGHTS,
           data: {
-            title: <>Insights</>,
+            bgColor: "#FCEAE1",
+            limitMaxWidth: true,
+            title: <>Notable insights</>,
             h: 2,
             isTwoColumnsOnDesktop: true,
-            text: (
-              <Paragraph>
-                Based on the surveys and interviews we could conclude that:
-              </Paragraph>
-            ),
             items: [
               {
                 title:
@@ -300,12 +300,8 @@ export const CASE_2 = {
                 text: " 64% of patients would want to be able to find and book a clinic via app.",
               },
               {
-                title: "Patients want to follow up on lab results",
-                text: "Patients were mostly interested in lab results (blood, levels)",
-              },
-              {
-                title: "Patients wanted to keep informed",
-                text: "52% would like to follow up on their treatments",
+                title: "Patients want to follow up on treatments & lab results",
+                text: "52% would like to follow up on how their treatment is going and interested in lab results (blood, levels)",
               },
             ],
           },

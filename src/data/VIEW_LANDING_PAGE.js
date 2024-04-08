@@ -117,49 +117,28 @@ export const VIEW_LANDING_PAGE = [
       {
         template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
         data: {
-          title: <>Jack of all trades and master of some</>,
+          title: <>Creating things that work requires more than design.</>,
           h: 2,
           text: (
             <>
-              <Paragraph xl>
-                My goal has always been creating products that{" "}
-                <Span xl highContrast>
-                  address real needs
-                </Span>
-                , are{" "}
-                <Span xl highContrast>
-                  easy to use
-                </Span>
-                , and create{" "}
-                <Span xl highContrast>
-                  business value
-                </Span>
-                . Simply put, I thrive on the intersection of Product, Design
-                and Technology.
+              <Paragraph>
+                My goal has always been to create products that address real
+                needs, are easy to use, and create business value. This requires
+                more than “just” design and unlike other designers, I have some
+                additional tricks up my sleeve.
               </Paragraph>
-              <Paragraph xl>
-                Part Designer with a knack for{" "}
-                <Span xl highContrast>
-                  research and numbers
-                </Span>
-                , part Product Manager specializing in{" "}
-                <Span xl highContrast>
-                  product discovery and delivery
-                </Span>{" "}
-                and part{" "}
-                <Span xl highContrast>
-                  Engineer
-                </Span>
-                . Bringing good ideas to life since 2007.
+              <Paragraph>
+                I am a part designer with a knack for research and numbers, a
+                part product manager specializing in product discovery and
+                delivery, and a part engineer. I work across product, design,
+                and technology to create things that work for businesses and
+                their customers.
               </Paragraph>
-              <Paragraph xl>
-                <Span xl highContrast>
-                  Interested (and certified) in accessibility
-                </Span>
-                , I believe that digital products must be made available for as
-                many as possible. I have deep knowledge of the current
-                accessibility guidelines and requirements and keep up to date
-                with the upcoming changes.
+              <Paragraph>
+                I believe digital products must be available for as many as
+                possible. I am interested (and certified) in accessibility, with
+                deep knowledge of both requirements and techniques for creating
+                inclusive and accessible digital experiences.
               </Paragraph>
             </>
           ),

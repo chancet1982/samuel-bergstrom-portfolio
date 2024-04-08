@@ -99,8 +99,8 @@ function AdditionalCases() {
 
   return (
     <StyledAdditionalCases>
-      <TitleAndText h={2} title="Not what you were looking for?">
-        <Paragraph xl>
+      <TitleAndText h={3} title="Not what you were looking for?">
+        <Paragraph>
           Perhaps one youll be interested in one of my other cases
         </Paragraph>
       </TitleAndText>
