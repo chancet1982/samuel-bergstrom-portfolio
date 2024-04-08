@@ -12,7 +12,7 @@ import Image from "../../Shared/Image";
 
 const StyledImageWithTitleAndText = styled(motion.div)`
   display: grid;
-  grid-template-columns: repeat(2, 50%);
+  grid-template-columns: repeat(2, 1fr);
   max-width: ${sizes.contentWidthLimit}px;
   margin: 0 auto;
   grid-template-areas: "a b";
@@ -34,13 +34,8 @@ const StyledImage = styled(motion.div)`
   background-repeat: no-repeat;
   background-size: auto 100%;
   width: 50%;
-
   position: absolute;
-
-  /*@media (max-width: ${breakpoints.mobileLarge - 1}px) {
-    top: 50%;
-    margin-top: -50%;
-  }*/
+  max-width: calc(100% - (240px + 2 * 4vmin));
 
   ${({ $imageUrl }) =>
     $imageUrl && {
@@ -60,12 +55,13 @@ const StyledTitleAndText = styled(motion.div)`
   grid-area: ${({ $flip }) => ($flip ? "b" : "a")};
   margin-right: ${({ $flip }) => ($flip ? 0 : padding.outsideElements.double)};
   margin-left: ${({ $flip }) => ($flip ? padding.outsideElements.double : 0)};
+  min-width: 240px;
 
-  @media (max-width: ${breakpoints.mobileLarge - 1}px) {
+  @media (width < ${breakpoints.mobileLarge}px) {
     min-height: 80vh;
   }
 
-  @media (min-width: ${breakpoints.mobileLarge}px) {
+  @media (width >= ${breakpoints.mobileLarge}px) {
     height: 80vh;
   }
 
