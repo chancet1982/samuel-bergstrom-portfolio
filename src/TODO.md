@@ -44,3 +44,7 @@ lottie-react
 
 Finish Firebase authentication based on this:
 https://www.youtube.com/watch?v=x62aBvnRCKw&t=264s
+
+IDEAS FOR ADDITIONAL CASES:
+HELPING PRISJAKT WIN AN SEO AWARD.
+HELPING PRISJAKT MEASURING UX.
