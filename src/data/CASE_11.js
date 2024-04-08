@@ -73,7 +73,7 @@ export const CASE_11 = {
               title: <>Non-new products.</>,
               h: 1,
               text: (
-                <Paragraph xxl>
+                <Paragraph xl>
                   Helping stores sell demo, refurbished, and used products
                 </Paragraph>
               ),

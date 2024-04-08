@@ -72,9 +72,7 @@ export const CASE_10 = {
               title: "Increasing revenue",
               h: 1,
               text: (
-                <Paragraph xxl>
-                  Increasing traffic to paying customers
-                </Paragraph>
+                <Paragraph xl>Increasing traffic to paying customers</Paragraph>
               ),
             },
             fgImage: {

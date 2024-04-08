@@ -68,7 +68,7 @@ export const CASE_5 = {
               title: <>Self-service Kiosk</>,
               h: 1,
               text: (
-                <Paragraph xxl>
+                <Paragraph xl>
                   Speeding up admissions and discharge in dialysis clinics.
                 </Paragraph>
               ),

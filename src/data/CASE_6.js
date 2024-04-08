@@ -70,7 +70,7 @@ export const CASE_6 = {
               title: <>Design system</>,
               h: 1,
               text: (
-                <Paragraph xxl>
+                <Paragraph xl>
                   Creating a multi-brand design system to expedite development
                   and improve consistency
                 </Paragraph>

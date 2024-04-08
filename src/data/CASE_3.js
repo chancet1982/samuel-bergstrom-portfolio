@@ -67,7 +67,7 @@ export const CASE_3 = {
               overline: "Healthcare",
               title: <>Digital pathology</>,
               h: 1,
-              text: <Paragraph xxl>Tissue scanner interface design</Paragraph>,
+              text: <Paragraph xl>Tissue scanner interface design</Paragraph>,
             },
             fgImage: {
               imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,

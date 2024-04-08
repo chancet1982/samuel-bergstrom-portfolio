@@ -30,8 +30,8 @@ const useFluidTypography = (h = 1, withMargin = true) => {
       ? minHMod + ((width - ftMin) * (maxHMod - minHMod)) / (ftMax - ftMin)
       : minHMod;
 
-  const currentFontSize = magnify(getSize(), getMod(), 6 - h);
-  const currentLineHeight = decrease(lh, inc, 6 - h);
+  const currentFontSize = magnify(getSize(), getMod(), 7 - h);
+  const currentLineHeight = decrease(lh, inc, 7 - h);
   const currentMarginTop = currentLineHeight * 0.75;
 
   return `

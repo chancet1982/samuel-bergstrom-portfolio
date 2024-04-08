@@ -73,7 +73,7 @@ export const CASE_2 = {
               title: <>Renal care Companion App</>,
               h: 1,
               text: (
-                <Paragraph xxl>
+                <Paragraph xl>
                   Empowering patients & improving treatment.
                 </Paragraph>
               ),

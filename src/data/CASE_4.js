@@ -68,9 +68,7 @@ export const CASE_4 = {
               title: "Delivery, unattended",
               h: 1,
               text: (
-                <Paragraph xxl>
-                  Home delivery box gets a companion app
-                </Paragraph>
+                <Paragraph xl>Home delivery box gets a companion app</Paragraph>
               ),
             },
             fgImage: {

@@ -60,7 +60,7 @@ export const CASE_11 = {
             caption: {
               overline: "Overline is usually the industry",
               title: "What did you do?",
-              text: <Paragraph xxl>Some catch phrase here</Paragraph>,
+              text: <Paragraph xl>Some catch phrase here</Paragraph>,
             },
             fgImage: {
               imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,

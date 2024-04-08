@@ -7,7 +7,6 @@ import Paragraph from "../Components/Shared/Paragraph";
 import { SECTION_ELEMENTS } from "./dictionaries/SECTION_ELEMENTS";
 import { IMAGE_GALLERY_TEMPLATES } from "./dictionaries/IMAGE_GALLERY_TEMPLATES";
 import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
-import Span from "../Components/Shared/Span";
 import padding from "../theme/padding";
 import colors from "../theme/colors";
 
@@ -34,12 +33,9 @@ export const VIEW_LANDING_PAGE = [
             h: 1,
             text: (
               <>
-                <Paragraph xxl>
-                  Helping companies create products that work for their{" "}
-                  <Span xxl highContrast>
-                    business and customers
-                  </Span>
-                  .
+                <Paragraph xl>
+                  Helping companies create products & services that
+                  <br /> work for their <strong>business and customers</strong>.
                 </Paragraph>
                 <StyledButtonsContainer>
                   <Button to="cases">My work</Button>

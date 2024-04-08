@@ -1,16 +1,14 @@
 import React from "react";
 import View from "../View";
-import SectionClientsMarquee from "../Section_Elements/SectionClientsMarquee";
-// import { VIEW_TEST } from "../../data/VIEW_TEST";
-// import SectionsRenderer from "../SectionsRenderer";
+import { VIEW_TEST } from "../../data/VIEW_TEST";
+import SectionsRenderer from "../SectionsRenderer";
 // import Signup from "../Signup";
 // eslint-disable-next-line import/no-named-as-default
 // import LandingPageHero from "../Section_Elements/UNUSED_SectionHeroLandingPage";
 // import Paragraph from "../Shared/Paragraph";
-import Section from "../Section/Section";
 
 function ViewTest() {
-  // const sectionsData = VIEW_TEST;
+  const sectionsData = VIEW_TEST;
   /* const caption = {
     overline: "WHATEVER",
     title: "Some title to show im good",
@@ -30,10 +28,7 @@ function ViewTest() {
 
   return (
     <View>
-      <Section>
-        <SectionClientsMarquee />
-      </Section>
-      {/* <SectionsRenderer sections={sectionsData} /> */}
+      <SectionsRenderer sections={sectionsData} />
     </View>
   );
 }

@@ -78,7 +78,7 @@ export const CASE_12 = {
               title: <>Product Discovery</>,
               h: 1,
               text: (
-                <Paragraph xxl>
+                <Paragraph xl>
                   Exploration and visualization: Habit-tracking app focused on
                   team perfomance.
                 </Paragraph>

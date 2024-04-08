@@ -56,7 +56,6 @@ function Link({
   small,
   large,
   xl,
-  xxl,
   children,
   to,
   href,
@@ -70,7 +69,6 @@ function Link({
     if (small) return 1;
     if (large) return 3;
     if (xl) return 4;
-    if (xxl) return 8;
     return 2;
   };
 
@@ -108,7 +106,6 @@ Link.propTypes = {
   small: PropTypes.bool,
   large: PropTypes.bool,
   xl: PropTypes.bool,
-  xxl: PropTypes.bool,
   children: PropTypes.node.isRequired,
   to: PropTypes.string,
   href: PropTypes.string,
@@ -120,7 +117,6 @@ Link.defaultProps = {
   small: false,
   large: false,
   xl: false,
-  xxl: false,
   to: null,
   href: null,
   onMouseEnter: null,

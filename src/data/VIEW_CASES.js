@@ -15,7 +15,7 @@ export const VIEW_CASES = [
         data: {
           title: <>Some of My work</>,
           h: 1,
-          text: <Paragraph xxl>Curated selection of client cases</Paragraph>,
+          text: <Paragraph xl>Curated selection of client cases</Paragraph>,
           isHalfScreen: true,
           isCentered: true,
           isFadingOnScroll: true,

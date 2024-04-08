@@ -77,7 +77,7 @@ export const CASE_7 = {
               overline: "Global fitness chain",
               title: "pre-study",
               h: 1,
-              text: <Paragraph xxl>When fitness meets ecommerce</Paragraph>,
+              text: <Paragraph xl>When fitness meets ecommerce</Paragraph>,
             },
             fgImage: {
               imageUrl: `${SETTINGS.MEDIA_BASE_URL}/cover-desktop.png`,

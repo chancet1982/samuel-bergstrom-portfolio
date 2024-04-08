@@ -66,9 +66,7 @@ export const CASE_1 = {
               title: "Courier App redesign",
               h: 1,
               text: (
-                <Paragraph xxl>
-                  Redesign as an oppurtunity for change.
-                </Paragraph>
+                <Paragraph xl>Redesign as an oppurtunity for change.</Paragraph>
               ),
             },
             fgImage: {

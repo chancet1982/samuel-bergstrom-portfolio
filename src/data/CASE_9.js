@@ -70,7 +70,7 @@ export const CASE_9 = {
               title: <>Invisible redesign</>,
               h: 1,
               text: (
-                <Paragraph xxl>
+                <Paragraph xl>
                   Making the case for investing in search
                 </Paragraph>
               ),

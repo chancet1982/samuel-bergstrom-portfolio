@@ -71,7 +71,7 @@ export const CASE_13 = {
               title: <>Wholesales, reimagined</>,
               h: 1,
               text: (
-                <Paragraph xxl>A different take on resturant supply</Paragraph>
+                <Paragraph xl>A different take on resturant supply</Paragraph>
               ),
             },
             fgImage: {

@@ -33,7 +33,7 @@ function Paragraph({
   small,
   large,
   xl,
-  xxl,
+
   children,
   highContrast,
   isLight,
@@ -46,7 +46,6 @@ function Paragraph({
     if (small) return 1;
     if (large) return 3;
     if (xl) return 4;
-    if (xxl) return 6;
     return 2;
   };
 
@@ -69,7 +68,6 @@ Paragraph.propTypes = {
   small: PropTypes.bool,
   large: PropTypes.bool,
   xl: PropTypes.bool,
-  xxl: PropTypes.bool,
   children: PropTypes.node.isRequired,
   highContrast: PropTypes.bool,
   isLight: PropTypes.bool,
@@ -80,7 +78,6 @@ Paragraph.defaultProps = {
   small: false,
   large: false,
   xl: false,
-  xxl: false,
   highContrast: false,
   isLight: false,
   withMargin: true,

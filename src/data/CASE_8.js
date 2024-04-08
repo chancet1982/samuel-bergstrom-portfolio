@@ -38,7 +38,7 @@ const SETTINGS = {
 };
 
 export const CASE_8 = {
-  caseStatus: CASE_STATUS.PUBLISHED,
+  caseStatus: CASE_STATUS.FEATURED,
   caseUrl: SETTINGS.URL,
   thumbnail: {
     bgColor: SETTINGS.BG_COLOR,
@@ -65,7 +65,7 @@ export const CASE_8 = {
               title: <>Design system</>,
               h: 1,
               text: (
-                <Paragraph xxl>
+                <Paragraph xl>
                   Launching a design system after failed attempts
                 </Paragraph>
               ),
