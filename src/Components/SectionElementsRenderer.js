@@ -268,11 +268,12 @@ SectionElementsRenderer.propTypes = {
   elementKey: PropTypes.string.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   data: PropTypes.object,
-  template: PropTypes.node.isRequired,
+  template: PropTypes.node,
 };
 
 SectionElementsRenderer.defaultProps = {
   data: null,
+  template: null,
 };
 
 export default SectionElementsRenderer;

@@ -15,7 +15,9 @@ function MasonryLayout({ columns, children, gap }) {
   for (let i = 0; i < children.length; i++) {
     const columnIndex = i % columns;
     columnWrapper[`column${columnIndex}`].push(
-      <div style={{ marginBottom: `${gap}px` }}>{children[i]}</div>
+      <div key={i} style={{ marginBottom: `${gap}px` }}>
+        {children[i]}
+      </div>
     );
   }
 
@@ -27,6 +29,7 @@ function MasonryLayout({ columns, children, gap }) {
           marginLeft: `${i > 0 ? gap : 0}px`,
           flex: 1,
         }}
+        key={i}
       >
         {columnWrapper[`column${i}`]}
       </div>

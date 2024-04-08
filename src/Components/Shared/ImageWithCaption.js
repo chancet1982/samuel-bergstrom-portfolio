@@ -57,7 +57,7 @@ function ImageWithCaption({
 
 ImageWithCaption.propTypes = {
   imageUrl: PropTypes.string.isRequired,
-  imageAlt: PropTypes.string.isRequired,
+  imageAlt: PropTypes.string,
   caption: PropTypes.string,
   bgColor: PropTypes.string,
   inGallery: PropTypes.bool,
@@ -67,6 +67,7 @@ ImageWithCaption.propTypes = {
 };
 
 ImageWithCaption.defaultProps = {
+  imageAlt: " ",
   caption: null,
   bgColor: null,
   inGallery: false,
