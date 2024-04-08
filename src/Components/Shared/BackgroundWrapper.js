@@ -76,7 +76,7 @@ function BackgroundWrapper({
     if (bgColor && bgColor !== undefined) {
       return (
         <BackgroundColor
-          $bgColor={bgColor}
+          bgColor={bgColor}
           limitMaxWidth={limitMaxWidth}
           isPadded={isPadded}
           {...rest}

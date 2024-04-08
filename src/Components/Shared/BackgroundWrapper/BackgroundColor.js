@@ -41,7 +41,6 @@ function BackgroundColor({
   isPadded,
   ...rest
 }) {
-  console.log("bgColor is: ", bgColor);
   return (
     <StyledBackground
       $bgColor={bgColor}
