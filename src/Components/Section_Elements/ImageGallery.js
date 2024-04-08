@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import { v4 as uuid } from "uuid";
 import { motion } from "framer-motion";
-import { useWindowSize, useOrientation } from "react-use";
+import { useWindowSize } from "react-use";
 import ImageWithCaption from "../Shared/ImageWithCaption";
 import sizes from "../../theme/sizes";
 import breakpoints from "../../theme/breakpoints";
@@ -47,28 +47,26 @@ const StyledImageGallery = styled(motion.div)`
 
 function ImageGallery({ images, template, limitMaxWidth, isPadded }) {
   const { width } = useWindowSize();
-  const deviceOrientation = useOrientation();
   const isMobile = width < breakpoints.tablet;
-  const isLandscape = deviceOrientation.type === "landscape-primary";
 
   const imagesInGallery =
-    isMobile &&
-    !isLandscape &&
-    PROBLEMATIC_IMAGE_GALLERY_TEMPLATES.has(template)
+    isMobile && PROBLEMATIC_IMAGE_GALLERY_TEMPLATES.has(template)
       ? images.length >= 4
         ? images.slice(0, 4)
         : images.slice(0, 3)
       : images;
 
-  const selectMobileTemplate = PROBLEMATIC_IMAGE_GALLERY_TEMPLATES.has(template)
-    ? PROBLEMATIC_IMAGE_GALLERY_TEMPLATES_WITH_THREE_IMAGES.has(template)
-      ? IMAGE_GALLERY_TEMPLATES.THREE_IMAGES_TWO_COLUMNS
-      : IMAGE_GALLERY_TEMPLATES.FOUR_IMAGES_TWO_COLUMNS
+  const ImageGalleryTemplate = isMobile
+    ? PROBLEMATIC_IMAGE_GALLERY_TEMPLATES.has(template)
+      ? PROBLEMATIC_IMAGE_GALLERY_TEMPLATES_WITH_THREE_IMAGES.has(template)
+        ? IMAGE_GALLERY_TEMPLATES.THREE_IMAGES_TWO_COLUMNS
+        : IMAGE_GALLERY_TEMPLATES.FOUR_IMAGES_TWO_COLUMNS
+      : template
     : template;
 
   return (
     <StyledImageGallery
-      $template={isMobile && !isLandscape ? selectMobileTemplate : template}
+      $template={ImageGalleryTemplate}
       $limitMaxWidth={limitMaxWidth}
       $isPadded={isPadded}
       initial="hidden"
