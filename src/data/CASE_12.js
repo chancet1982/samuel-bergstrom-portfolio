@@ -47,8 +47,13 @@ export const CASE_12 = {
     },
     caption: {
       overline: "Fitness & well-being",
-      title: <>Creating healthier habits</>,
-      text: <>Positive change through a healthier life begins early</>,
+      title: <>Product Discovery</>,
+      text: (
+        <>
+          Exploration and visualization: Habit-tracking app focused on team
+          perfomance.
+        </>
+      ),
     },
   },
   details: [
@@ -70,11 +75,12 @@ export const CASE_12 = {
             },
             caption: {
               overline: "Fitness & well-being",
-              title: <>Creating healthier habits</>,
+              title: <>Product Discovery</>,
               h: 1,
               text: (
                 <Paragraph xxl>
-                  Positive change through a healthier life begins early
+                  Exploration and visualization: Habit-tracking app focused on
+                  team perfomance.
                 </Paragraph>
               ),
             },
@@ -98,21 +104,21 @@ export const CASE_12 = {
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
-            title: "Challenge",
+            title: <>A startup with an idea seeks validation.</>,
             text: (
               <>
                 <Paragraph>
                   Be@YourBest is a fitness and healthcare company aiming to help
-                  everyone live a healthier life. They collaborate with top
+                  everyone live healthier lives. They collaborate with top
                   athletes, consult on nutrition and training, sell food
-                  supplements and apparel, own a clothing brand
+                  supplements and apparel, and own a clothing brand.
                 </Paragraph>
                 <Paragraph>
-                  Our client had an idea, they wanted to create an app that
+                  Our client had an idea: They wanted to create an app that
                   would help adolescent children gain healthy habits. For this,
                   they proposed creating an app to help trainers select team
-                  members that are likely to perform based on their routines.
-                  Our client wanted to increase their chances of success and
+                  members who are likely to perform based on their routines. Our
+                  client wanted to increase their chances of success and
                   validate their idea before going forward.
                 </Paragraph>
               </>
@@ -158,7 +164,7 @@ export const CASE_12 = {
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
-            title: "Solution",
+            title: "Understanding the market, and refining their concept",
             text: (
               <Paragraph>
                 We conducted a pre-study and created a vision to secure funding
