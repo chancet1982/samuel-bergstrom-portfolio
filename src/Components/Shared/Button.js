@@ -12,6 +12,7 @@ import useFluidTypography from "../../utils/useBodyFluidTypography";
 import { formElementsVariants } from "../../animations/animations";
 import useBgColor from "../../utils/useBgColor";
 import Icon from "./Icons";
+import typography from "../../theme/typography";
 
 const StyledButton = styled(motion.button)`
   padding: ${padding.insideElements.half} ${padding.insideElements.double};
@@ -38,10 +39,10 @@ const StyledButton = styled(motion.button)`
   border-radius: ${padding.insideElements.half};
   transition: all 0.3s;
   cursor: pointer;
-  /*text-transform: uppercase;*/
   font-weight: 600;
 
   ${({ $fluidType }) => $fluidType};
+  font-family: ${typography.bodyFont};
 
   > svg path {
     transition: all 0.3s;

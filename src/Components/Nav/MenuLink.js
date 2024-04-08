@@ -7,11 +7,11 @@ import PropTypes from "prop-types";
 import breakpoints from "../../theme/breakpoints";
 import colors from "../../theme/colors";
 import typography from "../../theme/typography";
-import useFluidTypography from "../../utils/useHeadlinesFluidTypography";
+import useFluidTypography from "../../utils/useBodyFluidTypography";
 import { MenuExpandedContext } from "../../Context/MenuExpandedContext";
 
 const StyledMenuLink = styled(NavLink)`
-  font-size: ${typography.size}rem;
+  ${({ $fluidType }) => $fluidType};
   font-family: ${typography.bodyFont};
   text-decoration: none;
   font-weight: 400;
@@ -26,8 +26,7 @@ const StyledMenuLink = styled(NavLink)`
     font-weight: 600;
   }
 
-  @media (max-width: ${breakpoints.desktop - 1}px) {
-    ${({ $fluidType }) => $fluidType};
+  @media (width < ${breakpoints.desktop}px) {
     color: ${colors.text.light.medium};
     padding: 0 12vw;
     flex: 1;
@@ -41,7 +40,7 @@ const StyledMenuLink = styled(NavLink)`
     }
   }
 
-  @media (min-width: ${breakpoints.desktop}px) {
+  @media (width >= ${breakpoints.desktop}px) {
     padding: 0.75rem 1.25rem;
     color: ${({ $isLight }) =>
       $isLight ? colors.text.light.medium : colors.text.dark.medium};
@@ -61,7 +60,7 @@ const StyledMenuLink = styled(NavLink)`
 `;
 
 function MenuLink({ to, children, isLight, end }) {
-  const fluidType = useFluidTypography(4, false);
+  const fluidType = useFluidTypography(2, false);
   const [, setExpanded] = useContext(MenuExpandedContext);
 
   return (
