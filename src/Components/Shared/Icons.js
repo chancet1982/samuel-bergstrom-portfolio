@@ -17,7 +17,6 @@ const StyledIconPath = styled.path`
 `;
 
 StyledIcon.propTypes = {
-  path: PropTypes.string.isRequired,
   size: PropTypes.number,
 };
 
