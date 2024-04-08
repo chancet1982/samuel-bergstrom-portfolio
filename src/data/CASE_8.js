@@ -45,9 +45,7 @@ export const CASE_8 = {
     caption: {
       overline: "Price Comparison Service",
       title: "Design system",
-      text: (
-        <Paragraph>Launching a design system after failed attempts</Paragraph>
-      ),
+      text: <>Launching a design system after failed attempts</>,
     },
     fgImage: {
       imageUrl: `${SETTINGS.MEDIA_BASE_URL}/thumbnail-desktop.png`,
