@@ -366,12 +366,15 @@ export const CASE_7 = {
             items: [
               {
                 value: "51.2%",
-                label: "Prefer signing up to gyms online.",
+                label: "Prefer online registration",
               },
-              { value: "44%", label: "Interested in group training" },
+              {
+                value: "44%",
+                label: "Interested in group training",
+              },
               {
                 value: "31.6%",
-                label: "Would consider a personal tainer.",
+                label: "Consider a personal tainer",
               },
             ],
           },

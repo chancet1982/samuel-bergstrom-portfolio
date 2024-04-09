@@ -298,9 +298,16 @@ export const CASE_3 = {
             items: [
               {
                 value: "2",
-                label: "Hospitals visited",
+                label: "Pathology clinics visited",
               },
-              { value: "13", label: "Lab & expert interviews" },
+              {
+                value: "1",
+                label: "Specialist Lab",
+              },
+              {
+                value: "13",
+                label: "Interviews conducted",
+              },
             ],
           },
         },

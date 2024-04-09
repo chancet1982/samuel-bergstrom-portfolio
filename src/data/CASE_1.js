@@ -113,6 +113,7 @@ export const CASE_1 = {
       ],
     },
     {
+      paddedDown: true,
       header: "Background",
       elements: [
         {
@@ -130,6 +131,21 @@ export const CASE_1 = {
                 and increasingly hard to service and replace. The new devices
                 chosen to replace the old hardware were using a different
                 platform, and that required a redesign of the old interface.
+              </Paragraph>
+            ),
+          },
+        },
+        {
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
+          data: {
+            title: <>New devices require new interfaces</>,
+            h: 4,
+            text: (
+              <Paragraph>
+                The goal was creating a solution that would be “fast and simple”
+                to implement, “familiar” to the users, including all
+                functionality, and addresses some of the known issues that
+                exists with the old design.
               </Paragraph>
             ),
           },
@@ -155,24 +171,6 @@ export const CASE_1 = {
             ],
           },
         },
-        {
-          template: SECTION_ELEMENTS.SPACER_SMALL,
-        },
-        {
-          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
-          data: {
-            title: <>A quick facelift as a footnote</>,
-            h: 4,
-            text: (
-              <Paragraph>
-                The goal was creating a solution that would be “fast and simple”
-                to implement, “familiar” to the users, including all
-                functionality, and addresses some of the known issues that
-                exists with the old design.
-              </Paragraph>
-            ),
-          },
-        },
       ],
     },
     {
@@ -187,19 +185,14 @@ export const CASE_1 = {
             title: <>Finding a way forward</>,
             h: 2,
             text: (
-              <>
-                <Paragraph>
-                  I sat with all stakeholders and mapped the functionality
-                  included in the existing app.
-                </Paragraph>
-                <Paragraph>
-                  I then sat with the developers to define our ways of working.
-                  We agreed that we will collaborate and deliver the design
-                  iteratively to reduce risks. Focusing first on the known
-                  areas, I could ensure that the first pieces would be ready to
-                  implement after only 7 days.
-                </Paragraph>
-              </>
+              <Paragraph>
+                I sat with all stakeholders and mapped the functionality
+                included in the existing app. I then sat with the developers to
+                define our ways of working. We agreed that we will collaborate
+                and deliver the design iteratively to reduce risks. Focusing
+                first on the known areas, I could ensure that the first pieces
+                would be ready to implement after only 7 days.
+              </Paragraph>
             ),
           },
         },
