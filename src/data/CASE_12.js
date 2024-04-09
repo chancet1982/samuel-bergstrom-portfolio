@@ -98,6 +98,24 @@ export const CASE_12 = {
     },
     {
       paddedUp: true,
+      elements: [
+        {
+          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
+          data: {
+            text: (
+              <Paragraph large>
+                Be@YourBest is a fitness and healthcare company aiming to help
+                everyone live healthier lives. They collaborate with top
+                athletes, consult on nutrition and training, sell food
+                supplements and apparel, and own a clothing brand.
+              </Paragraph>
+            ),
+          },
+        },
+        { template: SECTION_ELEMENTS.SPACER_SMALL },
+      ],
+    },
+    {
       paddedDown: true,
       header: "Challenge",
       elements: [
@@ -106,22 +124,14 @@ export const CASE_12 = {
           data: {
             title: <>A startup with an idea seeks validation.</>,
             text: (
-              <>
-                <Paragraph>
-                  Be@YourBest is a fitness and healthcare company aiming to help
-                  everyone live healthier lives. They collaborate with top
-                  athletes, consult on nutrition and training, sell food
-                  supplements and apparel, and own a clothing brand.
-                </Paragraph>
-                <Paragraph>
-                  Our client had an idea: They wanted to create an app that
-                  would help adolescent children gain healthy habits. For this,
-                  they proposed creating an app to help trainers select team
-                  members who are likely to perform based on their routines. Our
-                  client wanted to increase their chances of success and
-                  validate their idea before going forward.
-                </Paragraph>
-              </>
+              <Paragraph>
+                Our client had an idea: They wanted to create an app that would
+                help adolescent children gain healthy habits. For this, they
+                proposed creating an app to help trainers select team members
+                who are likely to perform based on their routines. Our client
+                wanted to increase their chances of success and validate their
+                idea before going forward.
+              </Paragraph>
             ),
           },
         },

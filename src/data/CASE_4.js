@@ -11,6 +11,8 @@ import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Note from "../Components/Shared/Note";
 import Title from "../Components/Shared/Title";
 import colors from "../theme/colors";
+import ImageWithCaption from "../Components/Shared/ImageWithCaption";
+import TitleAndText from "../Components/Shared/TitleAndText";
 
 const SETTINGS = {
   BG_COLOR: "#546368",
@@ -90,13 +92,12 @@ export const CASE_4 = {
     },
     {
       paddedUp: true,
-      paddedDown: true,
       elements: [
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             text: (
-              <Paragraph xl>
+              <Paragraph large>
                 NoWaste is a leading Global Logistics and transport company.
                 Their subsidiary e-drop was trying to solve some of the issues
                 with food deliveries. In Sweden, most supermarkets provide home
@@ -108,6 +109,7 @@ export const CASE_4 = {
             ),
           },
         },
+        { template: SECTION_ELEMENTS.SPACER_SMALL },
       ],
     },
     {
@@ -358,14 +360,15 @@ export const CASE_4 = {
           template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
-          template: SECTION_ELEMENTS.COLUMNS,
+          template: SECTION_ELEMENTS.SECTION_COLUMNS,
           data: {
             items: [
-              {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/before.png`,
-                imageAlt: "Unlocking the locker before redesign",
-                title: "Before",
-                text: (
+              <>
+                <ImageWithCaption
+                  imageUrl={`${SETTINGS.MEDIA_BASE_URL}/before.png`}
+                  imageAlt="Unlocking the locker before redesign"
+                />
+                <TitleAndText title="Before" h={4}>
                   <Paragraph>
                     Before, lockers were not listed in the home screen. In order
                     to unlock a locker (the most common use for the app) users
@@ -376,13 +379,14 @@ export const CASE_4 = {
                     example if a user was not home but wanted a deliver to take
                     place)
                   </Paragraph>
-                ),
-              },
-              {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/after.png`,
-                imageAlt: "Unlocking the locker before after",
-                title: "After",
-                text: (
+                </TitleAndText>
+              </>,
+              <>
+                <ImageWithCaption
+                  imageUrl={`${SETTINGS.MEDIA_BASE_URL}/after.png`}
+                  imageAlt="Unlocking the locker before after"
+                />
+                <TitleAndText title="After" h={4}>
                   <Paragraph>
                     Considering that the most common scenraio is that a user
                     will only have one locker it made sense to by default show
@@ -393,8 +397,8 @@ export const CASE_4 = {
                     allows to accept deliveries even when users were away or
                     accept deliveries by other trusted individuals.
                   </Paragraph>
-                ),
-              },
+                </TitleAndText>
+              </>,
             ],
           },
         },

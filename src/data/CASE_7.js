@@ -103,7 +103,7 @@ export const CASE_7 = {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             text: (
-              <Paragraph xl>
+              <Paragraph large>
                 My client operates more than 250 gyms in 7 different countries.
                 I was tasked to help them conduct a pre-study focusing on
                 increasing sign-ups and cross-sales potential online.
@@ -111,6 +111,7 @@ export const CASE_7 = {
             ),
           },
         },
+        { template: SECTION_ELEMENTS.SPACER_SMALL },
       ],
     },
     {

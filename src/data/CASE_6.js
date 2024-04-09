@@ -100,7 +100,7 @@ export const CASE_6 = {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             text: (
-              <Paragraph xl>
+              <Paragraph large>
                 EuroFinans is one of Sweden’s leading invoicing solutions
                 providers. They are a subsidiary of Prioritet Finans. While both
                 companies openly compete, offering the same services in
@@ -110,6 +110,7 @@ export const CASE_6 = {
             ),
           },
         },
+        { template: SECTION_ELEMENTS.SPACER_SMALL },
       ],
     },
     {

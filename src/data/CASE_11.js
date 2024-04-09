@@ -12,6 +12,8 @@ import Note from "../Components/Shared/Note";
 import List from "../Components/Shared/List";
 import Span from "../Components/Shared/Span";
 import colors from "../theme/colors";
+import ImageWithCaption from "../Components/Shared/ImageWithCaption";
+import TitleAndText from "../Components/Shared/TitleAndText";
 
 /* TODO: Add a slide about creating a design system (mostly a filler with some text above to explain why there is a missmatch) */
 const SETTINGS = {
@@ -97,13 +99,12 @@ export const CASE_11 = {
     },
     {
       paddedUp: true,
-      paddedDown: true,
       elements: [
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             text: (
-              <Paragraph xl>
+              <Paragraph large>
                 Prisjakt started off by catering to computer enthusiasts and was
                 one of the first price comparison sites in the Nordics. It is
                 still the leading price comparison service but in recent years
@@ -113,9 +114,11 @@ export const CASE_11 = {
             ),
           },
         },
+        { template: SECTION_ELEMENTS.SPACER_SMALL },
       ],
     },
     {
+      paddedDown: true,
       header: "Background",
       elements: [
         {
@@ -353,36 +356,38 @@ export const CASE_11 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.COLUMNS,
+          template: SECTION_ELEMENTS.SECTION_COLUMNS,
           data: {
+            paddedUp: true,
+            paddedDown: true,
             items: [
-              {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/before.png`,
-                imageAlt: "Expectation",
-                title: "Expectation",
-                isCentered: true,
-                text: (
+              <>
+                <ImageWithCaption
+                  imageUrl={`${SETTINGS.MEDIA_BASE_URL}/before.png`}
+                  imageAlt="Expectation"
+                />
+                <TitleAndText title="Expectation" h={4} isCentered>
                   <Paragraph>
                     Product variants typically are placed as part of the product
                     header. So our initial idea was to add the product condition
                     to the header.
                   </Paragraph>
-                ),
-              },
-              {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/after.png`,
-                imageAlt: "Reality",
-                title: "Reality",
-                isCentered: true,
-                text: (
+                </TitleAndText>
+              </>,
+              <>
+                <ImageWithCaption
+                  imageUrl={`${SETTINGS.MEDIA_BASE_URL}/after.png`}
+                  imageAlt="Reality"
+                />
+                <TitleAndText title="Reality" h={4} isCentered>
                   <Paragraph>
                     Due to technical constraints (at that time, the product page
                     was in fact 4 separate pages), we had to temporarly place
                     the product condition switcher under the tabs which is not
                     optimal.
                   </Paragraph>
-                ),
-              },
+                </TitleAndText>
+              </>,
             ],
           },
         },

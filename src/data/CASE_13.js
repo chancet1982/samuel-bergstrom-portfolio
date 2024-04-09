@@ -93,13 +93,12 @@ export const CASE_13 = {
     },
     {
       paddedUp: true,
-      paddedDown: true,
       elements: [
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             text: (
-              <Paragraph xl>
+              <Paragraph large>
                 Svensk Cater is one of the leading restaurant wholesalers in the
                 Nordics. They have 16 offices and would go above and beyond to
                 help their customers. However, low digital sales figures
@@ -108,12 +107,12 @@ export const CASE_13 = {
             ),
           },
         },
+        { template: SECTION_ELEMENTS.SPACER_SMALL },
       ],
     },
     {
-      paddedUp: true,
       paddedDown: true,
-      heaeder: "Challenge",
+      header: "Challenge",
       elements: [
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,

@@ -20,6 +20,7 @@ export const SECTION_ELEMENTS = {
   SECTION_TITLE_AND_TEXT: "sectionTitleAndText",
   TESTIMONIALS: "testimonials",
   COLUMNS: "columns",
+  SECTION_COLUMNS: "sectionColumns",
   LIST_OF_IMAGES_WITH_TITLE_AND_TEXT: "listOfImagesWithTitleAndText",
   LIST_OF_CARDS: "listOfCards",
   RESULT: "result",

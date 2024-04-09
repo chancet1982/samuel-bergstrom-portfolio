@@ -11,6 +11,8 @@ import Title from "../Components/Shared/Title";
 import Note from "../Components/Shared/Note";
 import List from "../Components/Shared/List";
 import colors from "../theme/colors";
+import ImageWithCaption from "../Components/Shared/ImageWithCaption";
+import TitleAndText from "../Components/Shared/TitleAndText";
 
 const SETTINGS = {
   BG_COLOR: colors.offwhite,
@@ -99,7 +101,7 @@ export const CASE_10 = {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             text: (
-              <Paragraph xl>
+              <Paragraph large>
                 Prisjakt started off by catering to computer enthusiasts and was
                 one of the first price comparison sites in the Nordics. It is
                 still the leading price comparison service but in recent years
@@ -109,9 +111,11 @@ export const CASE_10 = {
             ),
           },
         },
+        { template: SECTION_ELEMENTS.SPACER_SMALL },
       ],
     },
     {
+      paddedDown: true,
       header: "Background",
       elements: [
         {
@@ -487,34 +491,34 @@ export const CASE_10 = {
           template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
-          template: SECTION_ELEMENTS.COLUMNS,
+          template: SECTION_ELEMENTS.SECTION_COLUMNS,
           data: {
             items: [
-              {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/before.png`,
-                imageAlt: "Prices list, before",
-                title: "Before",
-                isCentered: true,
-                text: (
+              <>
+                <ImageWithCaption
+                  imageUrl={`${SETTINGS.MEDIA_BASE_URL}/before.png`}
+                  imageAlt="Prices list, before"
+                />
+                <TitleAndText title="Before" h={4} isCentered>
                   <Paragraph>
                     A mixture of paying and non-paying customers. Sorting is
                     based on price only.
                   </Paragraph>
-                ),
-              },
-              {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/after.png`,
-                imageAlt: "Prices list, after",
-                title: "After",
-                isCentered: true,
-                text: (
+                </TitleAndText>
+              </>,
+              <>
+                <ImageWithCaption
+                  imageUrl={`${SETTINGS.MEDIA_BASE_URL}/after.png`}
+                  imageAlt="Prices list, after"
+                />
+                <TitleAndText title="After" h={4} isCentered>
                   <Paragraph>
                     Recommended sorting in-place, non-paying shops grouped at
                     the bottoms. Users can still sort by price only if they
                     prefer.
                   </Paragraph>
-                ),
-              },
+                </TitleAndText>
+              </>,
             ],
           },
         },

@@ -102,7 +102,7 @@ export const CASE_2 = {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             text: (
-              <Paragraph xl>
+              <Paragraph large>
                 My client is one of the largest private renal care providers in
                 the world. They treat more than 40 000 patients, operate over
                 400 clinics in 20 countries. Renal patients need to constantly
@@ -114,6 +114,7 @@ export const CASE_2 = {
             ),
           },
         },
+        { template: SECTION_ELEMENTS.SPACER_SMALL },
       ],
     },
     {

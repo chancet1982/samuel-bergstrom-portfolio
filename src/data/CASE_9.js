@@ -10,6 +10,8 @@ import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import Title from "../Components/Shared/Title";
 import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
 import colors from "../theme/colors";
+import ImageWithCaption from "../Components/Shared/ImageWithCaption";
+import TitleAndText from "../Components/Shared/TitleAndText";
 
 const SETTINGS = {
   BG_COLOR: colors.offwhite,
@@ -99,7 +101,7 @@ export const CASE_9 = {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             text: (
-              <Paragraph xl>
+              <Paragraph large>
                 Prisjakt started off by catering to computer enthusiasts and was
                 one of the first price comparison sites in the Nordics. It is
                 still the leading price comparison service but in recent years
@@ -109,9 +111,11 @@ export const CASE_9 = {
             ),
           },
         },
+        { template: SECTION_ELEMENTS.SPACER_SMALL },
       ],
     },
     {
+      paddedDown: true,
       header: "Background",
       elements: [
         {
@@ -415,34 +419,34 @@ export const CASE_9 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.COLUMNS,
+          template: SECTION_ELEMENTS.SECTION_COLUMNS,
           data: {
             items: [
-              {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/before.png`,
-                imageAlt: "Before",
-                title: "Before",
-                isCentered: true,
-                text: (
+              <>
+                <ImageWithCaption
+                  imageUrl={`${SETTINGS.MEDIA_BASE_URL}/before.png`}
+                  imageAlt="Before"
+                />
+                <TitleAndText title="Before" h={4} isCentered>
                   <Paragraph>
                     Pressing “ENTER” would lead users to the search results
                     page.
                   </Paragraph>
-                ),
-              },
-              {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/after.png`,
-                imageAlt: "After",
-                title: "After",
-                isCentered: true,
-                text: (
+                </TitleAndText>
+              </>,
+              <>
+                <ImageWithCaption
+                  imageUrl={`${SETTINGS.MEDIA_BASE_URL}/after.png`}
+                  imageAlt="After"
+                />
+                <TitleAndText title="After" h={4} isCentered>
                   <Paragraph>
                     Search suggestions with the new option added. Pressing
                     “ENTER” (on specific popular keywords) would lead users
                     directly to the product page.
                   </Paragraph>
-                ),
-              },
+                </TitleAndText>
+              </>,
             ],
           },
         },

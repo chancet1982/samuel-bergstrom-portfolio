@@ -99,7 +99,7 @@ export const CASE_8 = {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
             text: (
-              <Paragraph xl>
+              <Paragraph large>
                 Prisjakt started by catering to computer enthusiasts and was one
                 of the first price comparison sites in the Nordics. It is still
                 the leading price comparison service, but Prisjakt’s growth has
@@ -109,6 +109,7 @@ export const CASE_8 = {
             ),
           },
         },
+        { template: SECTION_ELEMENTS.SPACER_SMALL },
       ],
     },
     {

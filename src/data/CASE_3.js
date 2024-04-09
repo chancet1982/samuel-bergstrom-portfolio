@@ -94,14 +94,14 @@ export const CASE_3 = {
           data: {
             text: (
               <>
-                <Paragraph xl>
+                <Paragraph large>
                   A medical startup that developed a new technology that can
                   revolutionize Cancer diagnosis. Their idea was to provide a
                   view that will only show mutated cells, not healthy tissue. In
                   order to do that they developed a new staining technology
                   unsupported by current-day scanners.
                 </Paragraph>
-                <Paragraph xl>
+                <Paragraph large>
                   They asked for our help in creating the software for their new
                   tissue scanner that will support their new staining type.
                 </Paragraph>
@@ -109,6 +109,7 @@ export const CASE_3 = {
             ),
           },
         },
+        { template: SECTION_ELEMENTS.SPACER_SMALL },
       ],
     },
     {

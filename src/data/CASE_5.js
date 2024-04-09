@@ -11,6 +11,8 @@ import { CASE_TYPES } from "./dictionaries/CASE_TYPES";
 import colors from "../theme/colors";
 import Title from "../Components/Shared/Title";
 import { BG_MEDIA_TYPES } from "./dictionaries/BG_MEDIA_TYPES";
+import ImageWithCaption from "../Components/Shared/ImageWithCaption";
+import TitleAndText from "../Components/Shared/TitleAndText";
 
 const SETTINGS = {
   BG_COLOR: colors.offwhite,
@@ -98,13 +100,13 @@ export const CASE_5 = {
           data: {
             text: (
               <>
-                <Paragraph xl>
+                <Paragraph large>
                   My client, one of the largest private renal care providers in
                   the world. It employs more than 11 000, treating over 40 000
                   patients suffering from kidney failure. They operate more than
                   400 clinics across 22 countries.
                 </Paragraph>
-                <Paragraph xl>
+                <Paragraph large>
                   Admission and discharge blocked the treatment stations and
                   required staff intervention for every patient. I helped our
                   client create a self-service kiosk for patient admission and
@@ -114,6 +116,7 @@ export const CASE_5 = {
             ),
           },
         },
+        { template: SECTION_ELEMENTS.SPACER_SMALL },
       ],
     },
     {
@@ -327,14 +330,18 @@ export const CASE_5 = {
           template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
-          template: SECTION_ELEMENTS.COLUMNS,
+          template: SECTION_ELEMENTS.SECTION_COLUMNS,
           data: {
             items: [
-              {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/side-by-side-1.jpg`,
-                imageAlt: "Auto check-in",
-                title: "Auto check-in using facial recognition and OCR",
-                text: (
+              <>
+                <ImageWithCaption
+                  imageUrl={`${SETTINGS.MEDIA_BASE_URL}/side-by-side-1.jpg`}
+                  imageAlt="Auto check-in"
+                />
+                <TitleAndText
+                  title="Auto check-in using facial recognition and OCR"
+                  h={4}
+                >
                   <Paragraph>
                     In the automated solution, I suggested using facial
                     recognition for patient identification. Weight would be
@@ -342,13 +349,14 @@ export const CASE_5 = {
                     was necessary. Clinics used too many models of scales to do
                     any real integration.
                   </Paragraph>
-                ),
-              },
-              {
-                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/side-by-side-2.jpg`,
-                imageAlt: "Manual check-in",
-                title: "Manual input of identify and weight",
-                text: (
+                </TitleAndText>
+              </>,
+              <>
+                <ImageWithCaption
+                  imageUrl={`${SETTINGS.MEDIA_BASE_URL}/side-by-side-2.jpg`}
+                  imageAlt="Manual check-in"
+                />
+                <TitleAndText title="Manual input of identify and weight" h={4}>
                   <Paragraph>
                     In the manual solution, patients would identify themselves
                     by selecting their name from a list of patients scheduled
@@ -358,8 +366,8 @@ export const CASE_5 = {
                     identified him/herself, they would manually enter their
                     weight.
                   </Paragraph>
-                ),
-              },
+                </TitleAndText>
+              </>,
             ],
           },
         },

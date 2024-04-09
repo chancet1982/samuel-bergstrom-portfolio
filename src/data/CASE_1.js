@@ -94,13 +94,13 @@ export const CASE_1 = {
           data: {
             text: (
               <>
-                <Paragraph xl>
+                <Paragraph large>
                   A world-leading integrated cash distribution network had a
                   problem. Their couriers were using Windows mobile devices for
                   monitoring their daily routes. These devices were old, slow,
                   and increasingly hard to replace in case of failure.
                 </Paragraph>
-                <Paragraph xl>
+                <Paragraph large>
                   They decided to move the application to a new device running
                   Android. I was tasked to migrate the UI from the existing app
                   to a new platform.
@@ -109,6 +109,7 @@ export const CASE_1 = {
             ),
           },
         },
+        { template: SECTION_ELEMENTS.SPACER_SMALL },
       ],
     },
     {
@@ -117,7 +118,7 @@ export const CASE_1 = {
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
-            title: <>Old devices in a new world</>,
+            title: <>Using aging hardware gets too expensive</>,
             h: 2,
             text: (
               <Paragraph>

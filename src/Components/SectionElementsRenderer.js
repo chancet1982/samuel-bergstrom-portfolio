@@ -11,7 +11,7 @@ import CasesPreview from "./Section_Elements/UNUSED_CasesPreview";
 import ImageGallery from "./Section_Elements/ImageGallery";
 import FinalResult from "./Section_Elements/FinalResult";
 import BlockQuote from "./Section_Elements/BlockQuote";
-import ContentColumns from "./Section_Elements/Columns";
+import SectionColumns from "./Section_Elements/SectionColumns";
 import ListOfImagesWithTitleAndText from "./Section_Elements/ListOfImagesWithTitleAndText";
 import SectionImage from "./Section_Elements/SectionImage";
 import Timeline from "./Section_Elements/Timeline";
@@ -189,11 +189,14 @@ function SectionElementsRenderer({ elementKey, data, template }) {
           />
         </ElementColorContextProvider>
       );
-    case SECTION_ELEMENTS.COLUMNS:
+    case SECTION_ELEMENTS.SECTION_COLUMNS:
       return (
-        <ContentColumns
+        <SectionColumns
           key={elementKey}
           limitMaxWidth={data.limitMaxWidth}
+          paddedUp={data.paddedUp}
+          paddedDown={data.paddedDown}
+          isPadded={data.isPadded}
           items={data.items}
         />
       );
