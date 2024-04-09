@@ -20,7 +20,7 @@ const StyledSectionHeader = styled(motion.header)`
   z-index: -1;
   height: 0;
 
-  h5 {
+  h6 {
     margin: 0;
     line-height: 1;
     display: inline-block;
@@ -39,7 +39,7 @@ function SectionHeader({ children }) {
 
   return (
     <StyledSectionHeader $light={light}>
-      <Title h={5}>{children}</Title>
+      <Title h={6}>{children}</Title>
     </StyledSectionHeader>
   );
 }

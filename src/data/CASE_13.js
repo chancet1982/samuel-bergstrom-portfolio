@@ -117,7 +117,7 @@ export const CASE_13 = {
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
-            title: <>Challenge</>,
+            title: <>Investing in meaningful digitalization</>,
             text: (
               <Paragraph>
                 We were asked to help them optimize their customer experience,
@@ -163,26 +163,25 @@ export const CASE_13 = {
     {
       paddedUp: true,
       paddedDown: true,
-      heaeder: "Solution",
+      header: "Solution",
       elements: [
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
-            title: <>Solution</>,
+            title: <>Pre-study to identify key areas for digitalization</>,
             text: (
               <>
                 <Paragraph>
-                  We started off approaching this as a pre-study, during which
-                  we interviewed internal stakeholders. Investigated how they
-                  are performing in the digital arena compared to the
-                  competition and looked at their tech and infrastructure. We
-                  sent out surveys internal and conducted external interviews
-                  with restaurants.{" "}
+                  We started approaching this as a pre-study, during which we
+                  interviewed internal stakeholders. Investigated their
+                  performance in the digital arena compared to the competition
+                  and looked at their tech and infrastructure. We sent out
+                  surveys and conducted external interviews with restaurants.
                 </Paragraph>
                 <Paragraph>
-                  The main idea was to try and identify areas where they can
-                  with minimal investment both prove the value of digitalization
-                  but also increase their own revenue.
+                  The main idea was to try and identify key areas where they
+                  can, with minimal investment, prove the value of
+                  digitalization and increase their revenue.
                 </Paragraph>
               </>
             ),
@@ -192,17 +191,28 @@ export const CASE_13 = {
     },
     {
       paddedUp: true,
-      heaeder: "Research",
+      header: "Research",
       elements: [
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
-            title: <>Surveys</>,
+            title: <>Identifying pain points.</>,
             text: (
-              <Paragraph>
-                We sent out 3 surveys to learn more about 3 areas and recruit
-                stakeholders for future interviews.
-              </Paragraph>
+              <>
+                <Paragraph>
+                  We set out to collect input. Our goal was to identify areas
+                  that can benefit from better tooling, either internally or
+                  externally. We sent out surveys to identify employee pain
+                  points and tried (unsuccessfully) to meet with employees.
+                </Paragraph>
+                <Paragraph>
+                  Regarding their customers, we simply started asking restaurant
+                  owners questions whenever we were dining. Most restaurants are
+                  Svensk Cater’s customers, so interviewing (even without
+                  support) was easy and owners were happy to talk about their
+                  challenges.
+                </Paragraph>
+              </>
             ),
           },
         },
@@ -437,7 +447,7 @@ export const CASE_13 = {
     {
       paddedUp: true,
       paddedDown: true,
-      heaeder: "Result",
+      header: "Result",
       elements: [
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
