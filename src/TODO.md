@@ -18,7 +18,6 @@
 ----- Fixes for mobile version only -----
 SNEAKPEEK? -> Create alternate design for mobile phones only
 RESULT -> Check if "sticky" is working as it should (CASE_10, CASE_7, CASE_5, CASE_4, CASE_3, CASE_2, CASE_1 not working but CASE_9 does)
-COLUMNS -> ABOUT_ME doesnt look good on mobile (somthing to do with the columns)
 Check the site on mobile and do whatever it takes to get it working.
 
 ----- ONE DAY -----
@@ -30,9 +29,6 @@ COVER_CAPTION: Add "back" button (In cases)
 Add password protection to cases
 server side rendering using Next.js (?)
 Use Contentful for content.
-
------ CONTENT CLEANUP: -----
-SECTION_ELEMENTS.OVERVIEW -> Most likely not in use (other than in old, unfinished cases. Clean up old cases and remove. )
 
 Removed these but might be worth keeping in mind:
 nanoclone

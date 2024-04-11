@@ -41,7 +41,7 @@ const StyledTitleAndText = styled(motion.div)`
       margin: "0 auto",
     }}
 
-  h1, h2, h3, h4, h5 {
+  h1, h2, h3, h4, h5, p {
     ${({ $isCentered }) =>
       $isCentered && {
         maxInlineSize: "auto",

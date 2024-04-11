@@ -48,12 +48,7 @@ export const CASE_12 = {
     caption: {
       overline: "Fitness & well-being",
       title: <>Product Discovery</>,
-      text: (
-        <>
-          Exploration and visualization: Habit-tracking app focused on team
-          perfomance.
-        </>
-      ),
+      text: <>Does habit-tracking improve team perfomance?</>,
     },
   },
   details: [
@@ -79,8 +74,7 @@ export const CASE_12 = {
               h: 1,
               text: (
                 <Paragraph xl>
-                  Exploration and visualization: Habit-tracking app focused on
-                  team perfomance.
+                  Does habit-tracking improve team perfomance?
                 </Paragraph>
               ),
             },

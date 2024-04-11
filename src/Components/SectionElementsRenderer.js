@@ -2,12 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { SECTION_ELEMENTS } from "../data/dictionaries/SECTION_ELEMENTS";
 import SectionHero from "./Section_Elements/SectionHero";
-import Overview from "./Section_Elements/UNUSED_Overview";
 import Textbox from "./Section_Elements/Textbox";
 import SectionTitleAndText from "./Section_Elements/SectionTitleAndText";
 import Clients from "./Section_Elements/Clients";
 import Cases from "./Section_Elements/Cases";
-import CasesPreview from "./Section_Elements/UNUSED_CasesPreview";
 import ImageGallery from "./Section_Elements/ImageGallery";
 import FinalResult from "./Section_Elements/FinalResult";
 import BlockQuote from "./Section_Elements/BlockQuote";
@@ -79,15 +77,6 @@ function SectionElementsRenderer({ elementKey, data, template }) {
       return <Spacer size={SPACER_SIZES.MEDIUM} />;
     case SECTION_ELEMENTS.SPACER_SMALL:
       return <Spacer size={SPACER_SIZES.SMALL} />;
-    case SECTION_ELEMENTS.OVERVIEW:
-      return (
-        <Overview
-          key={elementKey}
-          text={data.text}
-          toolsAndMethods={data.toolsAndMethods}
-          bgColor={data.bgColor}
-        />
-      );
     case SECTION_ELEMENTS.TEXTBOX:
       return (
         <ElementColorContextProvider>
@@ -252,8 +241,6 @@ function SectionElementsRenderer({ elementKey, data, template }) {
       );
     case SECTION_ELEMENTS.CASES:
       return <Cases key={elementKey} featured={data.featured} />;
-    case SECTION_ELEMENTS.CASES_PREVIEW:
-      return <CasesPreview key={elementKey} />;
     case SECTION_ELEMENTS.TESTIMONIALS:
       return (
         <Testimonials

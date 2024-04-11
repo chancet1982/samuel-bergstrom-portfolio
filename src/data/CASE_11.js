@@ -149,51 +149,46 @@ export const CASE_11 = {
           },
         },
         {
-          template: SECTION_ELEMENTS.SPACER_SMALL,
+          template: SECTION_ELEMENTS.SPACER_MEDIUM,
         },
         {
           template: SECTION_ELEMENTS.SECTION_IMAGE,
           data: {
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/initial-used-product.png`,
-            limitMaxWidth: true,
-            isPadded: true,
-            imageAlt:
-              "A picture of the tiny icon that indicated used products in the product page",
+            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/problem-1.jpeg`,
+            imageAlt: "",
           },
         },
         {
           template: SECTION_ELEMENTS.SPACER_SMALL,
         },
         {
-          template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
+          template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
           data: {
-            title: <>Not the optimal solution</>,
-            h: 3,
-            text: (
-              <Paragraph>
-                Using icons that are <strong>easy to miss</strong>. and{" "}
-                <strong>hard to understand</strong> meant some users clicked
-                them accidently. On top of that, treating all different product
-                conditions as one{" "}
-                <strong>contaminated the price history</strong> and triggered{" "}
-                <strong>false price alerts</strong>. This was frustrating for
-                users who did not intend to buy used products and clicked them
-                by mistake, as well as for stores that paid for traffic that was
-                unlikely to convert.
-              </Paragraph>
-            ),
+            items: [
+              {
+                imageUrl: `${SETTINGS.MEDIA_BASE_URL}/problem-2.jpg`,
+                imageAlt: "",
+                title: "Not the optimal solution",
+                h: 3,
+                text: (
+                  <Paragraph>
+                    Using icons that are <strong>easy to miss</strong>. and{" "}
+                    <strong>hard to understand</strong> meant some users clicked
+                    them accidently. On top of that, treating all different
+                    product conditions as one{" "}
+                    <strong>contaminated the price history</strong> and
+                    triggered <strong>false price alerts</strong>. This was
+                    frustrating for users who did not intend to buy used
+                    products and clicked them by mistake, as well as for stores
+                    that paid for traffic that was unlikely to convert.
+                  </Paragraph>
+                ),
+              },
+            ],
           },
         },
-        {
-          template: SECTION_ELEMENTS.SECTION_IMAGE,
-          data: {
-            imageUrl: `${SETTINGS.MEDIA_BASE_URL}/problem.png`,
-            limitMaxWidth: true,
-            imageAlt: "Which one of the CDON offers is a used product?",
-            caption: "Which one of the CDON offers is a used product?",
-            isPadded: true,
-          },
-        },
+
+        { template: SECTION_ELEMENTS.SPACER_MEDIUM },
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
@@ -278,7 +273,7 @@ export const CASE_11 = {
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
-            title: <>Heuristics and competitors</>,
+            title: <>Looking at competitors and best practices</>,
             text: (
               <Paragraph>
                 At this point, we had a problem worth solving just not how to
@@ -314,47 +309,65 @@ export const CASE_11 = {
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
-            title: <>Design</>,
+            title: <>Design goals:</>,
             text: (
               <>
                 <Paragraph>
-                  The new design needed to improve clarity for users (what
-                  products am I looking at now?), and encourage users to buy
-                  used products, all without adding to the clutter and risk
-                  harming conversion rates.
+                  The new design needed to <strong>improve clarity</strong> for
+                  users (what products am I looking at now?), and{" "}
+                  <strong>encourage users to buy used products</strong>, all
+                  without adding to the clutter and risk harming conversion
+                  rates.
                 </Paragraph>
-
-                <Title h={4}>Step 1: Splitting the lists</Title>
-                <Paragraph>
-                  It was obvous that we couldn’t mix new and used products in
-                  the same bucket. All non-new products were moved to a
-                  dedicated list.
-                </Paragraph>
-                <Title h={4}>Step 2: Aligning prices</Title>
-                <Paragraph>
-                  It was important to ensure that the price shown across the
-                  site is consistent. We decided to use the cheapest “new”
-                  product price throughout the site even if cheaper “used“
-                  products existed. On top of that, the price history was
-                  limited to account for new products only.
-                </Paragraph>
-                <Title h={4}>
-                  Step 3: Introducing product condition as variant
-                </Title>
-                <Paragraph>
-                  Now that we had 2 lists, we needed a way to switch between
-                  them. Following Amazon’s example, we decided to introduce the
-                  switcher in the same way we handled variants. Variants are
-                  typically included as part of the product page header. We
-                  added the product condition switcher above existing variants
-                  and made it visible only when used offers existed. We wanted
-                  to nudge users towards used products so we included the
-                  cheapest offer price (“From XXkr”) as part of the switcher.
-                </Paragraph>
+                <Title h={4}>Transitioning towards a better solution:</Title>
               </>
             ),
           },
         },
+        {
+          template: SECTION_ELEMENTS.SECTION_COLUMNS,
+          data: {
+            paddedDown: true,
+            items: [
+              <TitleAndText h={5} title="1) Splitting the lists">
+                <Paragraph>
+                  Mixing new and used products was confusing users and a big
+                  source of complaints.
+                </Paragraph>
+                <Paragraph>
+                  The first step would then obviously be removing non-new
+                  products from the list of offers for a given product and
+                  moving them to a dedicated list.
+                </Paragraph>
+              </TitleAndText>,
+              <TitleAndText h={5} title="2) Aligning prices">
+                <Paragraph>
+                  Pricing is a key issue. The cheapest price drives alerts and
+                  notifications and is visible on categories, search pages, and
+                  the price history.
+                </Paragraph>
+                <Paragraph>
+                  We decided to use the cheapest “new” product price throughout
+                  the site even if cheaper “used“ products existed.
+                </Paragraph>
+              </TitleAndText>,
+              <TitleAndText h={5} title="3) Condition as a variant">
+                <Paragraph>
+                  Now, we had 2 lists, we needed a way to switch between them.
+                  We followed Amazon’s example and introduced “condition” as a
+                  product variant.
+                </Paragraph>
+                <Paragraph>
+                  The product condition variant was only visible when non-new
+                  offers existed and was added above other variants. We decided
+                  to include the cheapest offer price (“From XXkr”) to surface
+                  potential savings.
+                </Paragraph>
+              </TitleAndText>,
+            ],
+          },
+        },
+        { template: SECTION_ELEMENTS.SPACER_MEDIUM },
         {
           template: SECTION_ELEMENTS.SECTION_COLUMNS,
           data: {
@@ -391,6 +404,7 @@ export const CASE_11 = {
             ],
           },
         },
+        { template: SECTION_ELEMENTS.SPACER_MEDIUM },
         {
           template: SECTION_ELEMENTS.LIST_OF_IMAGES_WITH_TITLE_AND_TEXT,
           data: {

@@ -13,7 +13,7 @@ const StyledResult = styled(motion.div)`
 function Result({ value, description }) {
   return (
     <StyledResult>
-      <Title h={3} withMargin={false}>
+      <Title h={4} withMargin={false}>
         {value}
       </Title>
       <Span>{description}</Span>
