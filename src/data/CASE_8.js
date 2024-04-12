@@ -122,14 +122,14 @@ export const CASE_8 = {
             text: (
               <Paragraph>
                 Prisjakt’s B2C site has millions of pages. Some are dynamically
-                created. Others are static static. On top of that, Prisjakt
-                offers native apps for both Android and iOS. At the time, four
-                design teams were working on the consumer-facing app, and
-                creating a consistent experience was increasingly challenging.
-                To make things worse, the old version of the site “classic” had
-                to be maintained in parallel, doubling the efforts required for
-                every fix. Auditing the site on CSS stats and comparing it to
-                our competitors made it clear we had a lot of potential for
+                created. Others are static. On top of that, Prisjakt offers
+                native apps for both Android and iOS. At the time, four design
+                teams were working on the consumer-facing app, and creating a
+                consistent experience was increasingly challenging. To make
+                things worse, the old version of the site “classic” had to be
+                maintained in parallel, doubling the efforts required for every
+                fix. Auditing the site on CSS stats and comparing it to our
+                competitors made it clear we had a lot of potential for
                 improvement.
               </Paragraph>
             ),
@@ -457,13 +457,13 @@ export const CASE_8 = {
             title: "Its never about the documentation",
             text: (
               <>
-                <Paragraph xl>
+                <Paragraph>
                   The real benefit of using design systems is threefold. It
                   creates a sense of consistency and familiarity for users. It
                   saves time for developers and designers, and it saves money
                   for the organization.
                 </Paragraph>
-                <Paragraph xl>
+                <Paragraph>
                   Here it was no different. We could see a gradual increase in
                   user satisfaction. We saw developers both using and
                   contributing to the design system. This meant more time could

@@ -155,7 +155,7 @@ export const CASE_9 = {
         {
           template: SECTION_ELEMENTS.SECTION_TITLE_AND_TEXT,
           data: {
-            title: "A better search is a HUGE invetment",
+            title: "A better search is a HUGE investment",
             h: 4,
             text: (
               <Paragraph>
@@ -303,10 +303,10 @@ export const CASE_9 = {
                 text: (
                   <Paragraph>
                     After searching users see the search results page. There we
-                    saw a xl dropoff of about 60%. Still, at this point, we only
-                    know that the search results page is failing, not why. So I
-                    needed to look for some qualitative data to evaluate what
-                    seems to be the problem.
+                    saw a dropoff rate of about 60%. Still, at this point, we
+                    only know that the search results page is failing, not why.
+                    So I needed to look for some qualitative data to evaluate
+                    what seems to be the problem.
                   </Paragraph>
                 ),
               },
