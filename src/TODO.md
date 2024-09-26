@@ -1,5 +1,5 @@
 ----- TODO list (What's left before you're done) -----
-
+- update
 - CASE_THUMBNAIL: Fix thumbnail height on mobile when using bgImage
 - SECTION_HERO_CASES: make isScaleOnScroll selectable.
 - SECTION_HERO: make sure it uses background wrapper instead of current solution.
