@@ -2,7 +2,6 @@
 import React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import { v4 as uuid } from "uuid";
 import { motion } from "framer-motion";
 import { useWindowSize } from "react-use";
 import ImageWithCaption from "../Shared/ImageWithCaption";
@@ -45,6 +44,11 @@ const StyledImageGallery = styled(motion.div)`
   }
 `;
 
+// Helper function outside the component
+function getGridArea(index) {
+  return String.fromCharCode(index + 65).toLowerCase();
+}
+
 function ImageGallery({ images, template, limitMaxWidth, isPadded }) {
   const { width } = useWindowSize();
   const isMobile = width < breakpoints.tablet;
@@ -79,8 +83,8 @@ function ImageGallery({ images, template, limitMaxWidth, isPadded }) {
           imageUrl={imageUrl}
           imageAlt={imageAlt}
           caption={caption}
-          gridArea={String.fromCharCode(index + 65).toLowerCase()} // Mother of all hacks
-          key={uuid()}
+          gridArea={getGridArea(index)} // Mother of all hacks
+          key={imageUrl}
           inGallery
         />
       ))}
